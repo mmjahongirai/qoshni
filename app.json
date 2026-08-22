@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "QO'SHNI",
+    "slug": "qoshni",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "scheme": "qoshni",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "uz.qoshni.app"
+    },
+    "android": {
+      "package": "uz.qoshni.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
