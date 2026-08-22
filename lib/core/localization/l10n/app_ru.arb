@@ -1,0 +1,7 @@
+{
+  "@@locale": "ru",
+  "appTitle": "QO'SHNI",
+  "homeHeadline": "Основа готова",
+  "homeSubtitle": "Масштабируемая архитектура для локальных сервисов и маркетплейса.",
+  "environmentLabel": "Среда: {env}"
+}

@@ -1,0 +1,24 @@
+{
+  "@@locale": "en",
+  "appTitle": "QO'SHNI",
+  "@appTitle": {
+    "description": "Application display name"
+  },
+  "homeHeadline": "Foundation ready",
+  "@homeHeadline": {
+    "description": "Temporary home headline while features are not implemented"
+  },
+  "homeSubtitle": "Scalable architecture for local services and marketplace.",
+  "@homeSubtitle": {
+    "description": "Temporary home subtitle"
+  },
+  "environmentLabel": "Environment: {env}",
+  "@environmentLabel": {
+    "description": "Shows the active build environment",
+    "placeholders": {
+      "env": {
+        "type": "String"
+      }
+    }
+  }
+}

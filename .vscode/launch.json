@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "QO'SHNI (development)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_development.dart"
+    },
+    {
+      "name": "QO'SHNI (staging)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_staging.dart"
+    },
+    {
+      "name": "QO'SHNI (production)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_production.dart"
+    }
+  ]
+}
