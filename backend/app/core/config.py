@@ -43,6 +43,14 @@ class Settings(BaseSettings):
         default=None,
         validation_alias=AliasChoices("QOSHNI_DATABASE_URL", "DATABASE_URL"),
     )
+    database_pool_size: int = Field(default=5, ge=1)
+    database_max_overflow: int = Field(default=10, ge=0)
+    database_pool_timeout: int = Field(default=30, ge=1)
+    database_pool_recycle: int = Field(default=1800, ge=0)
+    database_echo: bool = Field(
+        default=False,
+        description="SQLAlchemy SQL echo for local debugging only; keep disabled in production.",
+    )
 
     model_config = SettingsConfigDict(
         env_file=_ENV_FILE,
