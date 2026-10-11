@@ -6,6 +6,7 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 from fastapi.testclient import TestClient
+from sqlalchemy.engine import make_url
 from sqlalchemy.orm import Session
 
 from app.core.config import Settings, get_settings
@@ -71,10 +72,21 @@ def test_get_engine_uses_settings_and_caches_engine(
     assert first is mock_engine
     assert second is mock_engine
     create_engine_mock.assert_called_once()
-    _args, kwargs = create_engine_mock.call_args
+    args, kwargs = create_engine_mock.call_args
+    assert len(args) == 1
+    url = make_url(args[0])
+    expected_url = make_url(sample_url)
+    assert url.drivername == "postgresql+psycopg"
+    assert url.username == "postgres"
+    assert url.host == "localhost"
+    assert url.port == 5432
+    assert url.database == "qoshni"
+    assert url.password == expected_url.password
+    hidden_url = url.render_as_string(hide_password=True)
+    assert "secret-pass" not in repr(url)
+    assert "secret-pass" not in hidden_url
     assert kwargs["pool_pre_ping"] is True
     assert kwargs["pool_size"] == settings.database_pool_size
-    assert "secret-pass" not in str(create_engine_mock.call_args)
 
 
 def test_get_engine_rejects_conflicting_settings_without_exposing_credentials(
