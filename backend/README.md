@@ -12,8 +12,8 @@ Minimal FastAPI foundation for the QO'SHNI platform.
 - Lazy SQLAlchemy engine and request-scoped session dependency (no connection until used)
 - Health endpoint tests
 
-Database migrations, authentication, business features, Docker, and deployment
-workflows are intentionally outside this phase.
+Alembic migration scaffolding (baseline revision only), authentication, business
+features, Docker, and deployment workflows are intentionally outside later phases.
 
 ## Local setup
 
@@ -51,3 +51,30 @@ Use `.env` only for local values. Never commit secrets or credentials.
   error rather than silently reusing a mismatched cached engine.
 - `QOSHNI_DATABASE_ECHO=true` enables SQLAlchemy statement logging for controlled
   local debugging only. Keep it disabled in production.
+
+## Database migrations (Alembic)
+
+- Migrations are **never** run automatically during FastAPI startup.
+- Run Alembic manually from the `backend/` directory when schema work is ready.
+- Alembic reads `QOSHNI_DATABASE_URL` (or `DATABASE_URL`) through the same
+  application settings layer used by the API.
+- The baseline revision is an empty anchor and does not create business tables.
+- PostGIS may already be enabled on managed Supabase projects. This repository
+  does not run `CREATE EXTENSION postgis` in the baseline migration.
+- For Supabase, use a **direct/session** database connection string when running
+  `alembic upgrade head`. Avoid transaction-pooler URLs for DDL migrations.
+
+```powershell
+# Requires QOSHNI_DATABASE_URL in the environment or backend/.env
+alembic upgrade head
+alembic current
+alembic history
+```
+
+Autogenerate workflow for future schema changes:
+
+```powershell
+alembic revision --autogenerate -m "describe change"
+```
+
+Review generated SQL carefully before applying it to shared environments.
