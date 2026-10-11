@@ -6,6 +6,7 @@ from typing import Literal
 
 from pydantic import AliasChoices, Field, SecretStr, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic_core import PydanticCustomError
 from sqlalchemy.engine import make_url
 
 
@@ -48,6 +49,7 @@ class Settings(BaseSettings):
         env_prefix="QOSHNI_",
         extra="ignore",
         populate_by_name=True,
+        hide_input_in_errors=True,
     )
 
     @field_validator("database_url", mode="before")
@@ -62,11 +64,12 @@ class Settings(BaseSettings):
 
         try:
             make_url(raw)
-        except Exception as exc:
-            safe_url = redact_database_url(raw)
-            raise ValueError(
-                f"Invalid database URL format: {safe_url}",
-            ) from exc
+        except Exception:
+            raise PydanticCustomError(
+                "database_url_invalid",
+                "Invalid database URL format: {safe_url}",
+                {"safe_url": redact_database_url(raw)},
+            )
 
         return SecretStr(raw)
 

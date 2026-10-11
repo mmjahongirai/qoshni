@@ -51,16 +51,25 @@ def test_database_url_reads_from_database_url_alias(
     assert settings.database_url.get_secret_value() == sample_url
 
 
-def test_invalid_database_url_error_does_not_expose_password(
+@pytest.mark.parametrize(
+    "invalid_database_url",
+    [
+        "postgres:super-secret@not-a-url",
+        "not-a-url://postgres:secret-pass@db.example.supabase.co:5432/postgres",
+    ],
+)
+def test_invalid_database_url_validation_error_never_exposes_credentials(
     monkeypatch: pytest.MonkeyPatch,
+    invalid_database_url: str,
 ) -> None:
-    monkeypatch.setenv("QOSHNI_DATABASE_URL", "postgres:super-secret@not-a-url")
+    monkeypatch.setenv("QOSHNI_DATABASE_URL", invalid_database_url)
 
     with pytest.raises(ValidationError) as exc_info:
         Settings()
 
     error_text = str(exc_info.value)
     assert "super-secret" not in error_text
+    assert "secret-pass" not in error_text
 
 
 def test_redact_database_url_masks_password() -> None:
