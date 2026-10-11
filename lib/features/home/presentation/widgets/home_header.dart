@@ -1,0 +1,78 @@
+import 'package:flutter/material.dart';
+import 'package:qoshni/core/localization/generated/app_localizations.dart';
+import 'package:qoshni/core/localization/locale_controller.dart';
+import 'package:qoshni/core/theme/theme_controller.dart';
+
+class HomeHeader extends StatelessWidget {
+  const HomeHeader({
+    required this.themeController,
+    required this.localeController,
+    super.key,
+  });
+
+  final ThemeController themeController;
+  final LocaleController localeController;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final textTheme = Theme.of(context).textTheme;
+    final colorScheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                l10n.appTitle,
+                style: textTheme.headlineLarge?.copyWith(
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: -0.8,
+                  color: colorScheme.onSurface,
+                ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                l10n.homeSubtitle,
+                style: textTheme.bodyMedium?.copyWith(
+                  color: colorScheme.onSurfaceVariant,
+                  height: 1.35,
+                ),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ],
+          ),
+        ),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconButton(
+              tooltip: l10n.toggleThemeTooltip,
+              visualDensity: VisualDensity.compact,
+              onPressed: themeController.toggleLightDark,
+              icon: Icon(
+                isDark ? Icons.light_mode_outlined : Icons.dark_mode_outlined,
+              ),
+            ),
+            PopupMenuButton<Locale?>(
+              tooltip: l10n.languageTooltip,
+              icon: const Icon(Icons.language_outlined),
+              onSelected: localeController.setLocale,
+              itemBuilder: (context) => const [
+                PopupMenuItem(value: Locale('uz'), child: Text('O‘zbekcha')),
+                PopupMenuItem(value: Locale('ru'), child: Text('Русский')),
+                PopupMenuItem(value: Locale('en'), child: Text('English')),
+                PopupMenuItem(value: null, child: Text('System')),
+              ],
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
