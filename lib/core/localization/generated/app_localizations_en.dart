@@ -345,4 +345,309 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get profileAboutGuestNote =>
       'Guest mode preview — no personal data is stored on this device beyond the current session.';
+
+  @override
+  String get businessDetailSectionCatalog => 'Products & services';
+
+  @override
+  String get businessDetailCatalogEmptyTitle => 'No demo offerings yet';
+
+  @override
+  String get businessDetailCatalogEmptyBody =>
+      'Sample products and services for this business will appear here in future updates.';
+
+  @override
+  String get catalogItemTypeProduct => 'Product';
+
+  @override
+  String get catalogItemTypeService => 'Service';
+
+  @override
+  String catalogSamplePriceDemo(int amount) {
+    return 'Demo price: $amount so\'m';
+  }
+
+  @override
+  String get catalogItemDetailSectionDescription => 'Description';
+
+  @override
+  String get catalogItemDetailParentBusiness => 'Business';
+
+  @override
+  String get catalogItemDetailNotFoundTitle => 'Offering not found';
+
+  @override
+  String get catalogItemDetailNotFoundBody =>
+      'This demo item does not exist or does not belong to the selected business.';
+
+  @override
+  String get catalogBarakaFreshBreadName => 'Sample — village bread';
+
+  @override
+  String get catalogBarakaFreshBreadDesc =>
+      'Fictional daily bread listing for the demo grocery.';
+
+  @override
+  String get catalogBarakaDailyBasketName => 'Sample — essentials basket';
+
+  @override
+  String get catalogBarakaDailyBasketDesc =>
+      'Fictional bundle of pantry staples (demo only).';
+
+  @override
+  String get catalogSamarkandPlovName => 'Sample — house plov';
+
+  @override
+  String get catalogSamarkandPlovDesc =>
+      'Fictional single-portion plov for menu preview.';
+
+  @override
+  String get catalogSamarkandGreenTeaName => 'Sample — green tea';
+
+  @override
+  String get catalogSamarkandGreenTeaDesc =>
+      'Fictional teapot serving for the demo cafe.';
+
+  @override
+  String get catalogShifoVitaminCName => 'Sample — vitamin C tablets';
+
+  @override
+  String get catalogShifoVitaminCDesc =>
+      'Fictional OTC item; not a real pharmacy product.';
+
+  @override
+  String get catalogShifoFirstAidKitName => 'Sample — first aid kit';
+
+  @override
+  String get catalogShifoFirstAidKitDesc =>
+      'Fictional basic kit for demonstration.';
+
+  @override
+  String get catalogTechUsbHubName => 'Sample — USB hub';
+
+  @override
+  String get catalogTechUsbHubDesc =>
+      'Fictional accessory for the demo electronics shop.';
+
+  @override
+  String get catalogTechPhoneCaseName => 'Sample — phone case';
+
+  @override
+  String get catalogTechPhoneCaseDesc => 'Fictional universal case listing.';
+
+  @override
+  String get catalogStyleCottonTeeName => 'Sample — cotton T-shirt';
+
+  @override
+  String get catalogStyleCottonTeeDesc =>
+      'Fictional apparel item for the demo boutique.';
+
+  @override
+  String get catalogPipeLeakVisitName => 'Sample — leak inspection';
+
+  @override
+  String get catalogPipeLeakVisitDesc =>
+      'Fictional call-out plumbing service (demo).';
+
+  @override
+  String get catalogPipeTapInstallName => 'Sample — tap installation';
+
+  @override
+  String get catalogPipeTapInstallDesc =>
+      'Fictional installation service with demo pricing.';
+
+  @override
+  String get catalogElectricSocketCheckName => 'Sample — socket safety check';
+
+  @override
+  String get catalogElectricSocketCheckDesc =>
+      'Fictional electrician visit for the demo catalog.';
+
+  @override
+  String get catalogRentStudioNightName => 'Sample — studio (1 night)';
+
+  @override
+  String get catalogRentStudioNightDesc =>
+      'Fictional short-stay listing; not a real rental.';
+
+  @override
+  String get catalogRentSedanDayName => 'Sample — sedan (1 day)';
+
+  @override
+  String get catalogRentSedanDayDesc =>
+      'Fictional car hire listing for demo purposes.';
+
+  @override
+  String get cartTitle => 'Cart';
+
+  @override
+  String get cartOpenTooltip => 'Cart';
+
+  @override
+  String get cartAddToCart => 'Add to cart';
+
+  @override
+  String cartAddedSnackBar(String itemName) {
+    return '$itemName added to cart (demo)';
+  }
+
+  @override
+  String get cartCannotAddNoPrice =>
+      'This demo item has no sample price and cannot be added to the cart total.';
+
+  @override
+  String get cartEmptyTitle => 'Your cart is empty';
+
+  @override
+  String get cartEmptyBody =>
+      'Browse businesses and add demo products or services from an offering page.';
+
+  @override
+  String get cartBrowseHome => 'Back to Home';
+
+  @override
+  String get cartQuantityIncrease => 'Increase quantity';
+
+  @override
+  String get cartQuantityDecrease => 'Decrease quantity';
+
+  @override
+  String get cartRemoveItem => 'Remove from cart';
+
+  @override
+  String get cartClearAction => 'Clear';
+
+  @override
+  String get cartClearConfirmTitle => 'Clear cart?';
+
+  @override
+  String get cartClearConfirmBody => 'Remove all demo items from your cart?';
+
+  @override
+  String get cartClearConfirmYes => 'Clear cart';
+
+  @override
+  String get cartClearConfirmCancel => 'Cancel';
+
+  @override
+  String cartDemoAmountUzs(String amount) {
+    return '$amount so\'m (demo sample price)';
+  }
+
+  @override
+  String cartLineSubtotal(String amount) {
+    return 'Line subtotal (demo): $amount';
+  }
+
+  @override
+  String cartEstimatedTotalLabel(String amount) {
+    return 'Estimated demo total: $amount';
+  }
+
+  @override
+  String get cartDemoEstimateDisclaimer =>
+      'This is a local demo estimate only — not a quote, invoice, or payment.';
+
+  @override
+  String get cartProceedCheckout => 'Proceed to checkout';
+
+  @override
+  String get checkoutTitle => 'Checkout';
+
+  @override
+  String get checkoutReviewNotice =>
+      'Review your demo cart. No payment or personal details are collected in this preview.';
+
+  @override
+  String get checkoutConfirmDemoOrder => 'Confirm demo order';
+
+  @override
+  String checkoutQuantityLabel(int quantity) {
+    return 'Qty: $quantity';
+  }
+
+  @override
+  String get checkoutEmptyTitle => 'Nothing to check out';
+
+  @override
+  String get checkoutEmptyBody =>
+      'Your cart is empty. Add demo items before checkout.';
+
+  @override
+  String get demoOrderConfirmationTitle => 'Demo confirmation';
+
+  @override
+  String get demoOrderPreparedHeading => 'Demo order prepared';
+
+  @override
+  String demoOrderReferenceLabel(String referenceId) {
+    return 'Demo reference: $referenceId';
+  }
+
+  @override
+  String get demoOrderNoRealSubmissionNotice =>
+      'No real order was sent to any business. No payment was taken and no delivery or booking was scheduled.';
+
+  @override
+  String get demoOrderReturnHome => 'Return to Home';
+
+  @override
+  String get demoOrderInvalidTitle => 'Confirmation unavailable';
+
+  @override
+  String get demoOrderInvalidBody =>
+      'This demo confirmation is missing or expired. Start again from the cart.';
+
+  @override
+  String get demoOrdersTitle => 'Orders';
+
+  @override
+  String get demoOrdersEmptyTitle => 'No demo orders yet';
+
+  @override
+  String get demoOrdersEmptyBody =>
+      'Confirm a demo checkout to see a local order preview here. Nothing is sent to businesses.';
+
+  @override
+  String demoOrdersListSummary(int lineCount, int unitCount) {
+    String _temp0 = intl.Intl.pluralLogic(
+      lineCount,
+      locale: localeName,
+      other: '$lineCount lines · $unitCount units',
+      one: '1 line · $unitCount unit',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get demoOrderDetailTitle => 'Demo order';
+
+  @override
+  String get demoOrderDetailNotFoundTitle => 'Order not found';
+
+  @override
+  String get demoOrderDetailNotFoundBody =>
+      'This demo order is not in your current session history. Confirm a new demo order or return home.';
+
+  @override
+  String get demoOrderStatusPreparedNotSent => 'Demo prepared — not sent';
+
+  @override
+  String get demoOrderStatusLocalOnlyNote =>
+      'Status is stored only on this device for the demo. There is no business acceptance, payment, delivery, or booking progress.';
+
+  @override
+  String get demoOrderViewHistory => 'View order history';
+
+  @override
+  String profileDemoOrdersSavedCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count demo orders this session',
+      one: '1 demo order this session',
+      zero: 'No demo orders this session',
+    );
+    return '$_temp0';
+  }
 }

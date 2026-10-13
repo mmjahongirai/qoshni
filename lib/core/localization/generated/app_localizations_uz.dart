@@ -348,4 +348,307 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get profileAboutGuestNote =>
       'Mehmon rejimi — shaxsiy ma’lumotlar joriy seansdan tashqari saqlanmaydi.';
+
+  @override
+  String get businessDetailSectionCatalog => 'Mahsulotlar va xizmatlar';
+
+  @override
+  String get businessDetailCatalogEmptyTitle =>
+      'Hozircha namuna takliflar yo‘q';
+
+  @override
+  String get businessDetailCatalogEmptyBody =>
+      'Bu biznes uchun demo mahsulot va xizmatlar keyinroq shu yerda ko‘rsatiladi.';
+
+  @override
+  String get catalogItemTypeProduct => 'Mahsulot';
+
+  @override
+  String get catalogItemTypeService => 'Xizmat';
+
+  @override
+  String catalogSamplePriceDemo(int amount) {
+    return 'Namuna narxi: $amount so‘m';
+  }
+
+  @override
+  String get catalogItemDetailSectionDescription => 'Tavsif';
+
+  @override
+  String get catalogItemDetailParentBusiness => 'Biznes';
+
+  @override
+  String get catalogItemDetailNotFoundTitle => 'Taklif topilmadi';
+
+  @override
+  String get catalogItemDetailNotFoundBody =>
+      'Bu demo element mavjud emas yoki tanlangan biznesga tegishli emas.';
+
+  @override
+  String get catalogBarakaFreshBreadName => 'Namuna — qishloq noni';
+
+  @override
+  String get catalogBarakaFreshBreadDesc =>
+      'Demo do‘kon uchun o‘ylashma non pozitsiyasi.';
+
+  @override
+  String get catalogBarakaDailyBasketName => 'Namuna — kundalik savat';
+
+  @override
+  String get catalogBarakaDailyBasketDesc =>
+      'Asosiy oziq-ovqat to‘plami (faqat demo).';
+
+  @override
+  String get catalogSamarkandPlovName => 'Namuna — uy palovi';
+
+  @override
+  String get catalogSamarkandPlovDesc =>
+      'Demo kafe uchun o‘ylashma bir porsiya palov.';
+
+  @override
+  String get catalogSamarkandGreenTeaName => 'Namuna — yashil choy';
+
+  @override
+  String get catalogSamarkandGreenTeaDesc =>
+      'Demo kafe uchun o‘ylashma choynak.';
+
+  @override
+  String get catalogShifoVitaminCName => 'Namuna — C vitamini';
+
+  @override
+  String get catalogShifoVitaminCDesc =>
+      'O‘ylashma dorixona mahsuloti; haqiqiy dori emas.';
+
+  @override
+  String get catalogShifoFirstAidKitName => 'Namuna — dori qutisi';
+
+  @override
+  String get catalogShifoFirstAidKitDesc =>
+      'Ko‘rsatish uchun o‘ylashma to‘plam.';
+
+  @override
+  String get catalogTechUsbHubName => 'Namuna — USB hub';
+
+  @override
+  String get catalogTechUsbHubDesc => 'Demo elektronika do‘koni aksessuari.';
+
+  @override
+  String get catalogTechPhoneCaseName => 'Namuna — telefon g\'ilofi';
+
+  @override
+  String get catalogTechPhoneCaseDesc => 'O‘ylashma universal g\'ilof.';
+
+  @override
+  String get catalogStyleCottonTeeName => 'Namuna — paxta futbolka';
+
+  @override
+  String get catalogStyleCottonTeeDesc => 'Demo butik uchun o‘ylashma kiyim.';
+
+  @override
+  String get catalogPipeLeakVisitName => 'Namuna — oqish tekshiruvi';
+
+  @override
+  String get catalogPipeLeakVisitDesc => 'Demo chaqiruv santexnika xizmati.';
+
+  @override
+  String get catalogPipeTapInstallName => 'Namuna — krani o‘rnatish';
+
+  @override
+  String get catalogPipeTapInstallDesc =>
+      'Demo narx bilan o‘ylashma o‘rnatish xizmati.';
+
+  @override
+  String get catalogElectricSocketCheckName => 'Namuna — rozetka tekshiruvi';
+
+  @override
+  String get catalogElectricSocketCheckDesc =>
+      'Demo katalog uchun o‘ylashma elektrik tashrifi.';
+
+  @override
+  String get catalogRentStudioNightName => 'Namuna — studiya (1 tun)';
+
+  @override
+  String get catalogRentStudioNightDesc =>
+      'O‘ylashma qisqa muddatli ijara; haqiqiy emas.';
+
+  @override
+  String get catalogRentSedanDayName => 'Namuna — sedan (1 kun)';
+
+  @override
+  String get catalogRentSedanDayDesc =>
+      'Demo avto ijarasi uchun o‘ylashma e’lon.';
+
+  @override
+  String get cartTitle => 'Savat';
+
+  @override
+  String get cartOpenTooltip => 'Savat';
+
+  @override
+  String get cartAddToCart => 'Savatga qo‘shish';
+
+  @override
+  String cartAddedSnackBar(String itemName) {
+    return '$itemName savatga qo‘shildi (demo)';
+  }
+
+  @override
+  String get cartCannotAddNoPrice =>
+      'Bu demo elementda namuna narx yo‘q — jami hisobga qo‘shib bo‘lmaydi.';
+
+  @override
+  String get cartEmptyTitle => 'Savat bo‘sh';
+
+  @override
+  String get cartEmptyBody =>
+      'Bizneslarni ko‘ring va taklif sahifasidan demo mahsulot yoki xizmat qo‘shing.';
+
+  @override
+  String get cartBrowseHome => 'Bosh sahifaga qaytish';
+
+  @override
+  String get cartQuantityIncrease => 'Miqdorni oshirish';
+
+  @override
+  String get cartQuantityDecrease => 'Miqdorni kamaytirish';
+
+  @override
+  String get cartRemoveItem => 'Savatdan olib tashlash';
+
+  @override
+  String get cartClearAction => 'Tozalash';
+
+  @override
+  String get cartClearConfirmTitle => 'Savat tozalansinmi?';
+
+  @override
+  String get cartClearConfirmBody =>
+      'Barcha demo mahsulotlar savatdan olib tashlansinmi?';
+
+  @override
+  String get cartClearConfirmYes => 'Savatni tozalash';
+
+  @override
+  String get cartClearConfirmCancel => 'Bekor qilish';
+
+  @override
+  String cartDemoAmountUzs(String amount) {
+    return '$amount so‘m (namuna demo narx)';
+  }
+
+  @override
+  String cartLineSubtotal(String amount) {
+    return 'Qator bo‘yicha (demo): $amount';
+  }
+
+  @override
+  String cartEstimatedTotalLabel(String amount) {
+    return 'Taxminiy demo jami: $amount';
+  }
+
+  @override
+  String get cartDemoEstimateDisclaimer =>
+      'Bu faqat mahalliy demo taxmin — haqiqiy hisob-faktura yoki to‘lov emas.';
+
+  @override
+  String get cartProceedCheckout => 'Buyurtmani rasmiylashtirish';
+
+  @override
+  String get checkoutTitle => 'Buyurtma';
+
+  @override
+  String get checkoutReviewNotice =>
+      'Demo savatingizni tekshiring. Ushbu ko‘rinishda to‘lov yoki shaxsiy ma’lumot so‘ralmaydi.';
+
+  @override
+  String get checkoutConfirmDemoOrder => 'Demo buyurtmani tasdiqlash';
+
+  @override
+  String checkoutQuantityLabel(int quantity) {
+    return 'Miqdor: $quantity';
+  }
+
+  @override
+  String get checkoutEmptyTitle => 'Buyurtma uchun hech narsa yo‘q';
+
+  @override
+  String get checkoutEmptyBody => 'Savat bo‘sh. Avval demo mahsulot qo‘shing.';
+
+  @override
+  String get demoOrderConfirmationTitle => 'Demo tasdiq';
+
+  @override
+  String get demoOrderPreparedHeading => 'Demo buyurtma tayyorlandi';
+
+  @override
+  String demoOrderReferenceLabel(String referenceId) {
+    return 'Demo raqam: $referenceId';
+  }
+
+  @override
+  String get demoOrderNoRealSubmissionNotice =>
+      'Hech qanday biznesga haqiqiy buyurtma yuborilmadi. To‘lov olinmadi va yetkazib berish yoki bron rejalashtirilmadi.';
+
+  @override
+  String get demoOrderReturnHome => 'Bosh sahifaga qaytish';
+
+  @override
+  String get demoOrderInvalidTitle => 'Tasdiq mavjud emas';
+
+  @override
+  String get demoOrderInvalidBody =>
+      'Bu demo tasdiq topilmadi yoki muddati tugagan. Savatdan qayta boshlang.';
+
+  @override
+  String get demoOrdersTitle => 'Buyurtmalar';
+
+  @override
+  String get demoOrdersEmptyTitle => 'Hali demo buyurtmalar yo‘q';
+
+  @override
+  String get demoOrdersEmptyBody =>
+      'Mahalliy buyurtma ko‘rinishi uchun demo rasmiylashtirishni tasdiqlang. Bizneslarga hech narsa yuborilmaydi.';
+
+  @override
+  String demoOrdersListSummary(int lineCount, int unitCount) {
+    String _temp0 = intl.Intl.pluralLogic(
+      lineCount,
+      locale: localeName,
+      other: '$lineCount qator · $unitCount dona',
+      one: '1 qator · $unitCount dona',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get demoOrderDetailTitle => 'Demo buyurtma';
+
+  @override
+  String get demoOrderDetailNotFoundTitle => 'Buyurtma topilmadi';
+
+  @override
+  String get demoOrderDetailNotFoundBody =>
+      'Bu demo buyurtma joriy seans tarixida yo‘q. Yangi demo buyurtma tasdiqlang yoki bosh sahifaga qayting.';
+
+  @override
+  String get demoOrderStatusPreparedNotSent => 'Demo tayyor — yuborilmagan';
+
+  @override
+  String get demoOrderStatusLocalOnlyNote =>
+      'Holat faqat ushbu qurilmada demo uchun saqlanadi. Biznes tasdiqi, to‘lov, yetkazish yoki bron jarayoni yo‘q.';
+
+  @override
+  String get demoOrderViewHistory => 'Buyurtmalar tarixini ko‘rish';
+
+  @override
+  String profileDemoOrdersSavedCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Bu seansda $count ta demo buyurtma',
+      one: 'Bu seansda 1 ta demo buyurtma',
+      zero: 'Bu seansda demo buyurtma yo‘q',
+    );
+    return '$_temp0';
+  }
 }

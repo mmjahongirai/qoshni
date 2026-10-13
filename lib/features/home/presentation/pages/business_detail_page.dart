@@ -6,7 +6,9 @@ import 'package:qoshni/features/home/presentation/data/home_mock_data.dart';
 import 'package:qoshni/features/home/presentation/data/mock_business_id.dart';
 import 'package:qoshni/di/injection.dart';
 import 'package:qoshni/features/home/presentation/data/service_category_id.dart';
+import 'package:qoshni/features/home/presentation/data/business_catalog_mock_data.dart';
 import 'package:qoshni/features/home/presentation/favorites/favorites_controller.dart';
+import 'package:qoshni/features/home/presentation/widgets/catalog_offering_tile.dart';
 
 class BusinessDetailPage extends StatelessWidget {
   const BusinessDetailPage({
@@ -163,6 +165,11 @@ class _BusinessDetailBody extends StatelessWidget {
                 body: _sectionBody(context, item.hours),
               ),
               const SizedBox(height: 12),
+              _BusinessCatalogSection(
+                l10n: l10n,
+                businessId: item.id,
+              ),
+              const SizedBox(height: 12),
             ],
           ),
         ),
@@ -264,6 +271,82 @@ class _DetailSection extends StatelessWidget {
                 height: 1.4,
               ),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _BusinessCatalogSection extends StatelessWidget {
+  const _BusinessCatalogSection({
+    required this.l10n,
+    required this.businessId,
+  });
+
+  final AppLocalizations l10n;
+  final MockBusinessId businessId;
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    final textTheme = Theme.of(context).textTheme;
+    final offerings = catalogItemsForBusiness(l10n, businessId);
+
+    return Card(
+      margin: EdgeInsets.zero,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(16, 14, 16, 16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(Icons.inventory_2_outlined,
+                    size: 20, color: colorScheme.primary),
+                const SizedBox(width: 8),
+                Text(
+                  l10n.businessDetailSectionCatalog,
+                  style: textTheme.titleSmall?.copyWith(
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 12),
+            if (offerings.isEmpty)
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    l10n.businessDetailCatalogEmptyTitle,
+                    style: textTheme.titleSmall?.copyWith(
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(height: 6),
+                  Text(
+                    l10n.businessDetailCatalogEmptyBody,
+                    style: textTheme.bodyMedium?.copyWith(
+                      color: colorScheme.onSurfaceVariant,
+                      height: 1.35,
+                    ),
+                  ),
+                ],
+              )
+            else
+              Column(
+                children: [
+                  for (var i = 0; i < offerings.length; i++) ...[
+                    if (i > 0) const SizedBox(height: 10),
+                    CatalogOfferingTile(
+                      item: offerings[i],
+                      businessId: businessId,
+                      l10n: l10n,
+                    ),
+                  ],
+                ],
+              ),
           ],
         ),
       ),

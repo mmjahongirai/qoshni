@@ -6,6 +6,7 @@ import 'package:qoshni/core/responsive/responsive_layout.dart';
 import 'package:qoshni/core/theme/theme_controller.dart';
 import 'package:qoshni/di/injection.dart';
 import 'package:qoshni/features/home/presentation/favorites/favorites_controller.dart';
+import 'package:qoshni/features/home/presentation/orders/demo_order_controller.dart';
 import 'package:qoshni/routing/route_paths.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -17,6 +18,7 @@ class ProfilePage extends StatelessWidget {
     final themeController = getIt<ThemeController>();
     final localeController = getIt<LocaleController>();
     final favoritesController = getIt<FavoritesController>();
+    final demoOrderController = getIt<DemoOrderController>();
 
     return Scaffold(
       appBar: AppBar(
@@ -29,6 +31,7 @@ class ProfilePage extends StatelessWidget {
             themeController,
             localeController,
             favoritesController,
+            demoOrderController,
           ]),
           builder: (context, _) {
             return ResponsiveLayout(
@@ -38,6 +41,7 @@ class ProfilePage extends StatelessWidget {
                 themeController: themeController,
                 localeController: localeController,
                 favoritesController: favoritesController,
+                demoOrderController: demoOrderController,
               ),
               tablet: _ProfileBody(
                 maxWidth: 760,
@@ -45,6 +49,7 @@ class ProfilePage extends StatelessWidget {
                 themeController: themeController,
                 localeController: localeController,
                 favoritesController: favoritesController,
+                demoOrderController: demoOrderController,
               ),
             );
           },
@@ -61,6 +66,7 @@ class _ProfileBody extends StatelessWidget {
     required this.themeController,
     required this.localeController,
     required this.favoritesController,
+    required this.demoOrderController,
   });
 
   final double maxWidth;
@@ -68,12 +74,14 @@ class _ProfileBody extends StatelessWidget {
   final ThemeController themeController;
   final LocaleController localeController;
   final FavoritesController favoritesController;
+  final DemoOrderController demoOrderController;
 
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
     final favoriteCount = favoritesController.favoriteIds.length;
+    final demoOrderCount = demoOrderController.orderCount;
 
     return Align(
       alignment: Alignment.topCenter,
@@ -128,18 +136,37 @@ class _ProfileBody extends StatelessWidget {
               const SizedBox(height: 16),
               _ProfileSettingsCard(
                 title: l10n.profileSectionShortcuts,
-                child: ListTile(
-                  contentPadding: const EdgeInsets.symmetric(horizontal: 8),
-                  leading: Icon(
-                    Icons.favorite_border_rounded,
-                    color: colorScheme.primary,
-                  ),
-                  title: Text(l10n.favoritesTitle),
-                  subtitle: Text(
-                    l10n.profileFavoritesSavedCount(favoriteCount),
-                  ),
-                  trailing: const Icon(Icons.chevron_right_rounded),
-                  onTap: () => context.pushNamed(RouteNames.favorites),
+                child: Column(
+                  children: [
+                    ListTile(
+                      contentPadding:
+                          const EdgeInsets.symmetric(horizontal: 8),
+                      leading: Icon(
+                        Icons.favorite_border_rounded,
+                        color: colorScheme.primary,
+                      ),
+                      title: Text(l10n.favoritesTitle),
+                      subtitle: Text(
+                        l10n.profileFavoritesSavedCount(favoriteCount),
+                      ),
+                      trailing: const Icon(Icons.chevron_right_rounded),
+                      onTap: () => context.pushNamed(RouteNames.favorites),
+                    ),
+                    ListTile(
+                      contentPadding:
+                          const EdgeInsets.symmetric(horizontal: 8),
+                      leading: Icon(
+                        Icons.receipt_long_outlined,
+                        color: colorScheme.primary,
+                      ),
+                      title: Text(l10n.demoOrdersTitle),
+                      subtitle: Text(
+                        l10n.profileDemoOrdersSavedCount(demoOrderCount),
+                      ),
+                      trailing: const Icon(Icons.chevron_right_rounded),
+                      onTap: () => context.pushNamed(RouteNames.demoOrders),
+                    ),
+                  ],
                 ),
               ),
               const SizedBox(height: 12),

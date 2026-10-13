@@ -344,4 +344,303 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get profileAboutGuestNote =>
       'Гостевой режим — личные данные не сохраняются после текущего сеанса.';
+
+  @override
+  String get businessDetailSectionCatalog => 'Товары и услуги';
+
+  @override
+  String get businessDetailCatalogEmptyTitle => 'Пока нет демо-предложений';
+
+  @override
+  String get businessDetailCatalogEmptyBody =>
+      'Примеры товаров и услуг для этого бизнеса появятся здесь позже.';
+
+  @override
+  String get catalogItemTypeProduct => 'Товар';
+
+  @override
+  String get catalogItemTypeService => 'Услуга';
+
+  @override
+  String catalogSamplePriceDemo(int amount) {
+    return 'Демо-цена: $amount сум';
+  }
+
+  @override
+  String get catalogItemDetailSectionDescription => 'Описание';
+
+  @override
+  String get catalogItemDetailParentBusiness => 'Бизнес';
+
+  @override
+  String get catalogItemDetailNotFoundTitle => 'Предложение не найдено';
+
+  @override
+  String get catalogItemDetailNotFoundBody =>
+      'Этот демо-элемент не существует или не относится к выбранному бизнесу.';
+
+  @override
+  String get catalogBarakaFreshBreadName => 'Пример — деревенский хлеб';
+
+  @override
+  String get catalogBarakaFreshBreadDesc =>
+      'Вымышленная позиция для демо-магазина.';
+
+  @override
+  String get catalogBarakaDailyBasketName => 'Пример — корзина essentials';
+
+  @override
+  String get catalogBarakaDailyBasketDesc =>
+      'Вымышленный набор продуктов (только демо).';
+
+  @override
+  String get catalogSamarkandPlovName => 'Пример — домашний плов';
+
+  @override
+  String get catalogSamarkandPlovDesc => 'Вымышленная порция для демо-кафе.';
+
+  @override
+  String get catalogSamarkandGreenTeaName => 'Пример — зелёный чай';
+
+  @override
+  String get catalogSamarkandGreenTeaDesc => 'Вымышленная подача чая для демо.';
+
+  @override
+  String get catalogShifoVitaminCName => 'Пример — витамин C';
+
+  @override
+  String get catalogShifoVitaminCDesc =>
+      'Вымышленный OTC-товар; не реальный препарат.';
+
+  @override
+  String get catalogShifoFirstAidKitName => 'Пример — аптечка';
+
+  @override
+  String get catalogShifoFirstAidKitDesc =>
+      'Вымышленный набор для демонстрации.';
+
+  @override
+  String get catalogTechUsbHubName => 'Пример — USB-хаб';
+
+  @override
+  String get catalogTechUsbHubDesc => 'Вымышленный аксессуар демо-магазина.';
+
+  @override
+  String get catalogTechPhoneCaseName => 'Пример — чехол';
+
+  @override
+  String get catalogTechPhoneCaseDesc => 'Вымышленный универсальный чехол.';
+
+  @override
+  String get catalogStyleCottonTeeName => 'Пример — хлопковая футболка';
+
+  @override
+  String get catalogStyleCottonTeeDesc => 'Вымышленная одежда для демо-бутика.';
+
+  @override
+  String get catalogPipeLeakVisitName => 'Пример — проверка протечки';
+
+  @override
+  String get catalogPipeLeakVisitDesc => 'Вымышленный выезд сантехника (демо).';
+
+  @override
+  String get catalogPipeTapInstallName => 'Пример — установка крана';
+
+  @override
+  String get catalogPipeTapInstallDesc => 'Вымышленная услуга с демо-ценой.';
+
+  @override
+  String get catalogElectricSocketCheckName => 'Пример — проверка розеток';
+
+  @override
+  String get catalogElectricSocketCheckDesc =>
+      'Вымышленный визит электрика для демо.';
+
+  @override
+  String get catalogRentStudioNightName => 'Пример — студия (1 ночь)';
+
+  @override
+  String get catalogRentStudioNightDesc =>
+      'Вымышленная аренда; не реальное объявление.';
+
+  @override
+  String get catalogRentSedanDayName => 'Пример — седан (1 день)';
+
+  @override
+  String get catalogRentSedanDayDesc => 'Вымышленная аренда авто для демо.';
+
+  @override
+  String get cartTitle => 'Корзина';
+
+  @override
+  String get cartOpenTooltip => 'Корзина';
+
+  @override
+  String get cartAddToCart => 'В корзину';
+
+  @override
+  String cartAddedSnackBar(String itemName) {
+    return '$itemName добавлено в корзину (демо)';
+  }
+
+  @override
+  String get cartCannotAddNoPrice =>
+      'У этого демо-элемента нет sample-цены — нельзя добавить в итог.';
+
+  @override
+  String get cartEmptyTitle => 'Корзина пуста';
+
+  @override
+  String get cartEmptyBody =>
+      'Просмотрите бизнесы и добавьте демо-товары или услуги со страницы предложения.';
+
+  @override
+  String get cartBrowseHome => 'На главную';
+
+  @override
+  String get cartQuantityIncrease => 'Увеличить количество';
+
+  @override
+  String get cartQuantityDecrease => 'Уменьшить количество';
+
+  @override
+  String get cartRemoveItem => 'Удалить из корзины';
+
+  @override
+  String get cartClearAction => 'Очистить';
+
+  @override
+  String get cartClearConfirmTitle => 'Очистить корзину?';
+
+  @override
+  String get cartClearConfirmBody => 'Удалить все демо-позиции из корзины?';
+
+  @override
+  String get cartClearConfirmYes => 'Очистить';
+
+  @override
+  String get cartClearConfirmCancel => 'Отмена';
+
+  @override
+  String cartDemoAmountUzs(String amount) {
+    return '$amount сум (демо sample-цена)';
+  }
+
+  @override
+  String cartLineSubtotal(String amount) {
+    return 'Промежуточный итог (демо): $amount';
+  }
+
+  @override
+  String cartEstimatedTotalLabel(String amount) {
+    return 'Оценочный демо-итог: $amount';
+  }
+
+  @override
+  String get cartDemoEstimateDisclaimer =>
+      'Только локальная демо-оценка — не счёт и не оплата.';
+
+  @override
+  String get cartProceedCheckout => 'Перейти к оформлению';
+
+  @override
+  String get checkoutTitle => 'Оформление';
+
+  @override
+  String get checkoutReviewNotice =>
+      'Проверьте демо-корзину. В этом превью не собираются оплата и личные данные.';
+
+  @override
+  String get checkoutConfirmDemoOrder => 'Подтвердить демо-заказ';
+
+  @override
+  String checkoutQuantityLabel(int quantity) {
+    return 'Кол-во: $quantity';
+  }
+
+  @override
+  String get checkoutEmptyTitle => 'Нечего оформлять';
+
+  @override
+  String get checkoutEmptyBody =>
+      'Корзина пуста. Добавьте демо-товары перед оформлением.';
+
+  @override
+  String get demoOrderConfirmationTitle => 'Демо-подтверждение';
+
+  @override
+  String get demoOrderPreparedHeading => 'Демо-заказ подготовлен';
+
+  @override
+  String demoOrderReferenceLabel(String referenceId) {
+    return 'Демо-номер: $referenceId';
+  }
+
+  @override
+  String get demoOrderNoRealSubmissionNotice =>
+      'Реальный заказ бизнесу не отправлен. Оплата не списана, доставка и бронирование не назначены.';
+
+  @override
+  String get demoOrderReturnHome => 'На главную';
+
+  @override
+  String get demoOrderInvalidTitle => 'Подтверждение недоступно';
+
+  @override
+  String get demoOrderInvalidBody =>
+      'Это демо-подтверждение отсутствует или устарело. Начните снова из корзины.';
+
+  @override
+  String get demoOrdersTitle => 'Заказы';
+
+  @override
+  String get demoOrdersEmptyTitle => 'Демо-заказов пока нет';
+
+  @override
+  String get demoOrdersEmptyBody =>
+      'Подтвердите демо-оформление, чтобы увидеть локальный предпросмотр заказа. Бизнесам ничего не отправляется.';
+
+  @override
+  String demoOrdersListSummary(int lineCount, int unitCount) {
+    String _temp0 = intl.Intl.pluralLogic(
+      lineCount,
+      locale: localeName,
+      other: '$lineCount поз. · $unitCount шт.',
+      one: '1 позиция · $unitCount шт.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get demoOrderDetailTitle => 'Демо-заказ';
+
+  @override
+  String get demoOrderDetailNotFoundTitle => 'Заказ не найден';
+
+  @override
+  String get demoOrderDetailNotFoundBody =>
+      'Этого демо-заказа нет в истории текущей сессии. Подтвердите новый демо-заказ или вернитесь на главную.';
+
+  @override
+  String get demoOrderStatusPreparedNotSent =>
+      'Демо подготовлен — не отправлен';
+
+  @override
+  String get demoOrderStatusLocalOnlyNote =>
+      'Статус хранится только на этом устройстве для демо. Нет принятия бизнесом, оплаты, доставки или бронирования.';
+
+  @override
+  String get demoOrderViewHistory => 'История заказов';
+
+  @override
+  String profileDemoOrdersSavedCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count демо-заказов в этой сессии',
+      one: '1 демо-заказ в этой сессии',
+      zero: 'Нет демо-заказов в этой сессии',
+    );
+    return '$_temp0';
+  }
 }

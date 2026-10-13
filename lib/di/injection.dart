@@ -6,7 +6,9 @@ import 'package:qoshni/core/logging/app_logger.dart';
 import 'package:qoshni/core/network/api_client.dart';
 import 'package:qoshni/core/network/network_info.dart';
 import 'package:qoshni/core/theme/theme_controller.dart';
+import 'package:qoshni/features/home/presentation/cart/cart_controller.dart';
 import 'package:qoshni/features/home/presentation/favorites/favorites_controller.dart';
+import 'package:qoshni/features/home/presentation/orders/demo_order_controller.dart';
 import 'package:qoshni/routing/app_router.dart';
 
 final GetIt getIt = GetIt.instance;
@@ -26,6 +28,8 @@ Future<void> configureDependencies(AppConfig config) async {
     ..registerLazySingleton<ThemeController>(ThemeController.new)
     ..registerLazySingleton<LocaleController>(LocaleController.new)
     ..registerLazySingleton<FavoritesController>(FavoritesController.new)
+    ..registerLazySingleton<CartController>(CartController.new)
+    ..registerLazySingleton<DemoOrderController>(DemoOrderController.new)
     ..registerLazySingleton<NetworkInfo>(UnimplementedNetworkInfo.new)
     ..registerLazySingleton<ApiClient>(
       () => ApiClient(

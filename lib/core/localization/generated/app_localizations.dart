@@ -729,6 +729,504 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Guest mode preview — no personal data is stored on this device beyond the current session.'**
   String get profileAboutGuestNote;
+
+  /// No description provided for @businessDetailSectionCatalog.
+  ///
+  /// In en, this message translates to:
+  /// **'Products & services'**
+  String get businessDetailSectionCatalog;
+
+  /// No description provided for @businessDetailCatalogEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No demo offerings yet'**
+  String get businessDetailCatalogEmptyTitle;
+
+  /// No description provided for @businessDetailCatalogEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample products and services for this business will appear here in future updates.'**
+  String get businessDetailCatalogEmptyBody;
+
+  /// No description provided for @catalogItemTypeProduct.
+  ///
+  /// In en, this message translates to:
+  /// **'Product'**
+  String get catalogItemTypeProduct;
+
+  /// No description provided for @catalogItemTypeService.
+  ///
+  /// In en, this message translates to:
+  /// **'Service'**
+  String get catalogItemTypeService;
+
+  /// No description provided for @catalogSamplePriceDemo.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo price: {amount} so\'m'**
+  String catalogSamplePriceDemo(int amount);
+
+  /// No description provided for @catalogItemDetailSectionDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get catalogItemDetailSectionDescription;
+
+  /// No description provided for @catalogItemDetailParentBusiness.
+  ///
+  /// In en, this message translates to:
+  /// **'Business'**
+  String get catalogItemDetailParentBusiness;
+
+  /// No description provided for @catalogItemDetailNotFoundTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Offering not found'**
+  String get catalogItemDetailNotFoundTitle;
+
+  /// No description provided for @catalogItemDetailNotFoundBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This demo item does not exist or does not belong to the selected business.'**
+  String get catalogItemDetailNotFoundBody;
+
+  /// No description provided for @catalogBarakaFreshBreadName.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample — village bread'**
+  String get catalogBarakaFreshBreadName;
+
+  /// No description provided for @catalogBarakaFreshBreadDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Fictional daily bread listing for the demo grocery.'**
+  String get catalogBarakaFreshBreadDesc;
+
+  /// No description provided for @catalogBarakaDailyBasketName.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample — essentials basket'**
+  String get catalogBarakaDailyBasketName;
+
+  /// No description provided for @catalogBarakaDailyBasketDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Fictional bundle of pantry staples (demo only).'**
+  String get catalogBarakaDailyBasketDesc;
+
+  /// No description provided for @catalogSamarkandPlovName.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample — house plov'**
+  String get catalogSamarkandPlovName;
+
+  /// No description provided for @catalogSamarkandPlovDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Fictional single-portion plov for menu preview.'**
+  String get catalogSamarkandPlovDesc;
+
+  /// No description provided for @catalogSamarkandGreenTeaName.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample — green tea'**
+  String get catalogSamarkandGreenTeaName;
+
+  /// No description provided for @catalogSamarkandGreenTeaDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Fictional teapot serving for the demo cafe.'**
+  String get catalogSamarkandGreenTeaDesc;
+
+  /// No description provided for @catalogShifoVitaminCName.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample — vitamin C tablets'**
+  String get catalogShifoVitaminCName;
+
+  /// No description provided for @catalogShifoVitaminCDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Fictional OTC item; not a real pharmacy product.'**
+  String get catalogShifoVitaminCDesc;
+
+  /// No description provided for @catalogShifoFirstAidKitName.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample — first aid kit'**
+  String get catalogShifoFirstAidKitName;
+
+  /// No description provided for @catalogShifoFirstAidKitDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Fictional basic kit for demonstration.'**
+  String get catalogShifoFirstAidKitDesc;
+
+  /// No description provided for @catalogTechUsbHubName.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample — USB hub'**
+  String get catalogTechUsbHubName;
+
+  /// No description provided for @catalogTechUsbHubDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Fictional accessory for the demo electronics shop.'**
+  String get catalogTechUsbHubDesc;
+
+  /// No description provided for @catalogTechPhoneCaseName.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample — phone case'**
+  String get catalogTechPhoneCaseName;
+
+  /// No description provided for @catalogTechPhoneCaseDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Fictional universal case listing.'**
+  String get catalogTechPhoneCaseDesc;
+
+  /// No description provided for @catalogStyleCottonTeeName.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample — cotton T-shirt'**
+  String get catalogStyleCottonTeeName;
+
+  /// No description provided for @catalogStyleCottonTeeDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Fictional apparel item for the demo boutique.'**
+  String get catalogStyleCottonTeeDesc;
+
+  /// No description provided for @catalogPipeLeakVisitName.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample — leak inspection'**
+  String get catalogPipeLeakVisitName;
+
+  /// No description provided for @catalogPipeLeakVisitDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Fictional call-out plumbing service (demo).'**
+  String get catalogPipeLeakVisitDesc;
+
+  /// No description provided for @catalogPipeTapInstallName.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample — tap installation'**
+  String get catalogPipeTapInstallName;
+
+  /// No description provided for @catalogPipeTapInstallDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Fictional installation service with demo pricing.'**
+  String get catalogPipeTapInstallDesc;
+
+  /// No description provided for @catalogElectricSocketCheckName.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample — socket safety check'**
+  String get catalogElectricSocketCheckName;
+
+  /// No description provided for @catalogElectricSocketCheckDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Fictional electrician visit for the demo catalog.'**
+  String get catalogElectricSocketCheckDesc;
+
+  /// No description provided for @catalogRentStudioNightName.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample — studio (1 night)'**
+  String get catalogRentStudioNightName;
+
+  /// No description provided for @catalogRentStudioNightDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Fictional short-stay listing; not a real rental.'**
+  String get catalogRentStudioNightDesc;
+
+  /// No description provided for @catalogRentSedanDayName.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample — sedan (1 day)'**
+  String get catalogRentSedanDayName;
+
+  /// No description provided for @catalogRentSedanDayDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Fictional car hire listing for demo purposes.'**
+  String get catalogRentSedanDayDesc;
+
+  /// No description provided for @cartTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Cart'**
+  String get cartTitle;
+
+  /// No description provided for @cartOpenTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Cart'**
+  String get cartOpenTooltip;
+
+  /// No description provided for @cartAddToCart.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to cart'**
+  String get cartAddToCart;
+
+  /// No description provided for @cartAddedSnackBar.
+  ///
+  /// In en, this message translates to:
+  /// **'{itemName} added to cart (demo)'**
+  String cartAddedSnackBar(String itemName);
+
+  /// No description provided for @cartCannotAddNoPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'This demo item has no sample price and cannot be added to the cart total.'**
+  String get cartCannotAddNoPrice;
+
+  /// No description provided for @cartEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your cart is empty'**
+  String get cartEmptyTitle;
+
+  /// No description provided for @cartEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse businesses and add demo products or services from an offering page.'**
+  String get cartEmptyBody;
+
+  /// No description provided for @cartBrowseHome.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to Home'**
+  String get cartBrowseHome;
+
+  /// No description provided for @cartQuantityIncrease.
+  ///
+  /// In en, this message translates to:
+  /// **'Increase quantity'**
+  String get cartQuantityIncrease;
+
+  /// No description provided for @cartQuantityDecrease.
+  ///
+  /// In en, this message translates to:
+  /// **'Decrease quantity'**
+  String get cartQuantityDecrease;
+
+  /// No description provided for @cartRemoveItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove from cart'**
+  String get cartRemoveItem;
+
+  /// No description provided for @cartClearAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear'**
+  String get cartClearAction;
+
+  /// No description provided for @cartClearConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear cart?'**
+  String get cartClearConfirmTitle;
+
+  /// No description provided for @cartClearConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove all demo items from your cart?'**
+  String get cartClearConfirmBody;
+
+  /// No description provided for @cartClearConfirmYes.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear cart'**
+  String get cartClearConfirmYes;
+
+  /// No description provided for @cartClearConfirmCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cartClearConfirmCancel;
+
+  /// No description provided for @cartDemoAmountUzs.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} so\'m (demo sample price)'**
+  String cartDemoAmountUzs(String amount);
+
+  /// No description provided for @cartLineSubtotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Line subtotal (demo): {amount}'**
+  String cartLineSubtotal(String amount);
+
+  /// No description provided for @cartEstimatedTotalLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Estimated demo total: {amount}'**
+  String cartEstimatedTotalLabel(String amount);
+
+  /// No description provided for @cartDemoEstimateDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'This is a local demo estimate only — not a quote, invoice, or payment.'**
+  String get cartDemoEstimateDisclaimer;
+
+  /// No description provided for @cartProceedCheckout.
+  ///
+  /// In en, this message translates to:
+  /// **'Proceed to checkout'**
+  String get cartProceedCheckout;
+
+  /// No description provided for @checkoutTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Checkout'**
+  String get checkoutTitle;
+
+  /// No description provided for @checkoutReviewNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Review your demo cart. No payment or personal details are collected in this preview.'**
+  String get checkoutReviewNotice;
+
+  /// No description provided for @checkoutConfirmDemoOrder.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm demo order'**
+  String get checkoutConfirmDemoOrder;
+
+  /// No description provided for @checkoutQuantityLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Qty: {quantity}'**
+  String checkoutQuantityLabel(int quantity);
+
+  /// No description provided for @checkoutEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing to check out'**
+  String get checkoutEmptyTitle;
+
+  /// No description provided for @checkoutEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your cart is empty. Add demo items before checkout.'**
+  String get checkoutEmptyBody;
+
+  /// No description provided for @demoOrderConfirmationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo confirmation'**
+  String get demoOrderConfirmationTitle;
+
+  /// No description provided for @demoOrderPreparedHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo order prepared'**
+  String get demoOrderPreparedHeading;
+
+  /// No description provided for @demoOrderReferenceLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo reference: {referenceId}'**
+  String demoOrderReferenceLabel(String referenceId);
+
+  /// No description provided for @demoOrderNoRealSubmissionNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'No real order was sent to any business. No payment was taken and no delivery or booking was scheduled.'**
+  String get demoOrderNoRealSubmissionNotice;
+
+  /// No description provided for @demoOrderReturnHome.
+  ///
+  /// In en, this message translates to:
+  /// **'Return to Home'**
+  String get demoOrderReturnHome;
+
+  /// No description provided for @demoOrderInvalidTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirmation unavailable'**
+  String get demoOrderInvalidTitle;
+
+  /// No description provided for @demoOrderInvalidBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This demo confirmation is missing or expired. Start again from the cart.'**
+  String get demoOrderInvalidBody;
+
+  /// No description provided for @demoOrdersTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Orders'**
+  String get demoOrdersTitle;
+
+  /// No description provided for @demoOrdersEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No demo orders yet'**
+  String get demoOrdersEmptyTitle;
+
+  /// No description provided for @demoOrdersEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm a demo checkout to see a local order preview here. Nothing is sent to businesses.'**
+  String get demoOrdersEmptyBody;
+
+  /// No description provided for @demoOrdersListSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'{lineCount, plural, =1{1 line · {unitCount} unit} other{{lineCount} lines · {unitCount} units}}'**
+  String demoOrdersListSummary(int lineCount, int unitCount);
+
+  /// No description provided for @demoOrderDetailTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo order'**
+  String get demoOrderDetailTitle;
+
+  /// No description provided for @demoOrderDetailNotFoundTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Order not found'**
+  String get demoOrderDetailNotFoundTitle;
+
+  /// No description provided for @demoOrderDetailNotFoundBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This demo order is not in your current session history. Confirm a new demo order or return home.'**
+  String get demoOrderDetailNotFoundBody;
+
+  /// No description provided for @demoOrderStatusPreparedNotSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo prepared — not sent'**
+  String get demoOrderStatusPreparedNotSent;
+
+  /// No description provided for @demoOrderStatusLocalOnlyNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Status is stored only on this device for the demo. There is no business acceptance, payment, delivery, or booking progress.'**
+  String get demoOrderStatusLocalOnlyNote;
+
+  /// No description provided for @demoOrderViewHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'View order history'**
+  String get demoOrderViewHistory;
+
+  /// No description provided for @profileDemoOrdersSavedCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No demo orders this session} =1{1 demo order this session} other{{count} demo orders this session}}'**
+  String profileDemoOrdersSavedCount(int count);
 }
 
 class _AppLocalizationsDelegate

@@ -128,5 +128,154 @@
   "profileLanguageRu": "Русский",
   "profileLanguageEn": "English",
   "profileAboutTitle": "About",
-  "profileAboutGuestNote": "Guest mode preview — no personal data is stored on this device beyond the current session."
+  "profileAboutGuestNote": "Guest mode preview — no personal data is stored on this device beyond the current session.",
+  "businessDetailSectionCatalog": "Products & services",
+  "businessDetailCatalogEmptyTitle": "No demo offerings yet",
+  "businessDetailCatalogEmptyBody": "Sample products and services for this business will appear here in future updates.",
+  "catalogItemTypeProduct": "Product",
+  "catalogItemTypeService": "Service",
+  "catalogSamplePriceDemo": "Demo price: {amount} so'm",
+  "@catalogSamplePriceDemo": {
+    "placeholders": {
+      "amount": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogItemDetailSectionDescription": "Description",
+  "catalogItemDetailParentBusiness": "Business",
+  "catalogItemDetailNotFoundTitle": "Offering not found",
+  "catalogItemDetailNotFoundBody": "This demo item does not exist or does not belong to the selected business.",
+  "catalogBarakaFreshBreadName": "Sample — village bread",
+  "catalogBarakaFreshBreadDesc": "Fictional daily bread listing for the demo grocery.",
+  "catalogBarakaDailyBasketName": "Sample — essentials basket",
+  "catalogBarakaDailyBasketDesc": "Fictional bundle of pantry staples (demo only).",
+  "catalogSamarkandPlovName": "Sample — house plov",
+  "catalogSamarkandPlovDesc": "Fictional single-portion plov for menu preview.",
+  "catalogSamarkandGreenTeaName": "Sample — green tea",
+  "catalogSamarkandGreenTeaDesc": "Fictional teapot serving for the demo cafe.",
+  "catalogShifoVitaminCName": "Sample — vitamin C tablets",
+  "catalogShifoVitaminCDesc": "Fictional OTC item; not a real pharmacy product.",
+  "catalogShifoFirstAidKitName": "Sample — first aid kit",
+  "catalogShifoFirstAidKitDesc": "Fictional basic kit for demonstration.",
+  "catalogTechUsbHubName": "Sample — USB hub",
+  "catalogTechUsbHubDesc": "Fictional accessory for the demo electronics shop.",
+  "catalogTechPhoneCaseName": "Sample — phone case",
+  "catalogTechPhoneCaseDesc": "Fictional universal case listing.",
+  "catalogStyleCottonTeeName": "Sample — cotton T-shirt",
+  "catalogStyleCottonTeeDesc": "Fictional apparel item for the demo boutique.",
+  "catalogPipeLeakVisitName": "Sample — leak inspection",
+  "catalogPipeLeakVisitDesc": "Fictional call-out plumbing service (demo).",
+  "catalogPipeTapInstallName": "Sample — tap installation",
+  "catalogPipeTapInstallDesc": "Fictional installation service with demo pricing.",
+  "catalogElectricSocketCheckName": "Sample — socket safety check",
+  "catalogElectricSocketCheckDesc": "Fictional electrician visit for the demo catalog.",
+  "catalogRentStudioNightName": "Sample — studio (1 night)",
+  "catalogRentStudioNightDesc": "Fictional short-stay listing; not a real rental.",
+  "catalogRentSedanDayName": "Sample — sedan (1 day)",
+  "catalogRentSedanDayDesc": "Fictional car hire listing for demo purposes.",
+  "cartTitle": "Cart",
+  "cartOpenTooltip": "Cart",
+  "cartAddToCart": "Add to cart",
+  "cartAddedSnackBar": "{itemName} added to cart (demo)",
+  "@cartAddedSnackBar": {
+    "placeholders": {
+      "itemName": {
+        "type": "String"
+      }
+    }
+  },
+  "cartCannotAddNoPrice": "This demo item has no sample price and cannot be added to the cart total.",
+  "cartEmptyTitle": "Your cart is empty",
+  "cartEmptyBody": "Browse businesses and add demo products or services from an offering page.",
+  "cartBrowseHome": "Back to Home",
+  "cartQuantityIncrease": "Increase quantity",
+  "cartQuantityDecrease": "Decrease quantity",
+  "cartRemoveItem": "Remove from cart",
+  "cartClearAction": "Clear",
+  "cartClearConfirmTitle": "Clear cart?",
+  "cartClearConfirmBody": "Remove all demo items from your cart?",
+  "cartClearConfirmYes": "Clear cart",
+  "cartClearConfirmCancel": "Cancel",
+  "cartDemoAmountUzs": "{amount} so'm (demo sample price)",
+  "@cartDemoAmountUzs": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "cartLineSubtotal": "Line subtotal (demo): {amount}",
+  "@cartLineSubtotal": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "cartEstimatedTotalLabel": "Estimated demo total: {amount}",
+  "@cartEstimatedTotalLabel": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "cartDemoEstimateDisclaimer": "This is a local demo estimate only — not a quote, invoice, or payment.",
+  "cartProceedCheckout": "Proceed to checkout",
+  "checkoutTitle": "Checkout",
+  "checkoutReviewNotice": "Review your demo cart. No payment or personal details are collected in this preview.",
+  "checkoutConfirmDemoOrder": "Confirm demo order",
+  "checkoutQuantityLabel": "Qty: {quantity}",
+  "@checkoutQuantityLabel": {
+    "placeholders": {
+      "quantity": {
+        "type": "int"
+      }
+    }
+  },
+  "checkoutEmptyTitle": "Nothing to check out",
+  "checkoutEmptyBody": "Your cart is empty. Add demo items before checkout.",
+  "demoOrderConfirmationTitle": "Demo confirmation",
+  "demoOrderPreparedHeading": "Demo order prepared",
+  "demoOrderReferenceLabel": "Demo reference: {referenceId}",
+  "@demoOrderReferenceLabel": {
+    "placeholders": {
+      "referenceId": {
+        "type": "String"
+      }
+    }
+  },
+  "demoOrderNoRealSubmissionNotice": "No real order was sent to any business. No payment was taken and no delivery or booking was scheduled.",
+  "demoOrderReturnHome": "Return to Home",
+  "demoOrderInvalidTitle": "Confirmation unavailable",
+  "demoOrderInvalidBody": "This demo confirmation is missing or expired. Start again from the cart.",
+  "demoOrdersTitle": "Orders",
+  "demoOrdersEmptyTitle": "No demo orders yet",
+  "demoOrdersEmptyBody": "Confirm a demo checkout to see a local order preview here. Nothing is sent to businesses.",
+  "demoOrdersListSummary": "{lineCount, plural, =1{1 line · {unitCount} unit} other{{lineCount} lines · {unitCount} units}}",
+  "@demoOrdersListSummary": {
+    "placeholders": {
+      "lineCount": {
+        "type": "int"
+      },
+      "unitCount": {
+        "type": "int"
+      }
+    }
+  },
+  "demoOrderDetailTitle": "Demo order",
+  "demoOrderDetailNotFoundTitle": "Order not found",
+  "demoOrderDetailNotFoundBody": "This demo order is not in your current session history. Confirm a new demo order or return home.",
+  "demoOrderStatusPreparedNotSent": "Demo prepared — not sent",
+  "demoOrderStatusLocalOnlyNote": "Status is stored only on this device for the demo. There is no business acceptance, payment, delivery, or booking progress.",
+  "demoOrderViewHistory": "View order history",
+  "profileDemoOrdersSavedCount": "{count, plural, =0{No demo orders this session} =1{1 demo order this session} other{{count} demo orders this session}}",
+  "@profileDemoOrdersSavedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }

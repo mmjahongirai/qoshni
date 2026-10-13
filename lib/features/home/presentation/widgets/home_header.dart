@@ -4,6 +4,7 @@ import 'package:qoshni/core/localization/generated/app_localizations.dart';
 import 'package:qoshni/routing/route_paths.dart';
 import 'package:qoshni/core/localization/locale_controller.dart';
 import 'package:qoshni/core/theme/theme_controller.dart';
+import 'package:qoshni/features/home/presentation/widgets/home_cart_header_button.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({
@@ -68,6 +69,7 @@ class HomeHeader extends StatelessWidget {
                 onPressed: () => context.pushNamed(RouteNames.favorites),
                 icon: const Icon(Icons.favorite_border_rounded),
               ),
+              const HomeCartHeaderButton(),
               IconButton(
                 tooltip: l10n.toggleThemeTooltip,
                 visualDensity: VisualDensity.compact,
