@@ -33,6 +33,9 @@ migrate_working_dir/
 /build/
 /coverage/
 
+# Vercel / CI Flutter SDK checkout (scripts/vercel-install-flutter.sh)
+.flutter-sdk/
+
 # Symbolication related
 app.*.symbols
 

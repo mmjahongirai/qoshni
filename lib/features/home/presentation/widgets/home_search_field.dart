@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class HomeSearchField extends StatelessWidget {
   const HomeSearchField({
     required this.hintText,
+    required this.onTap,
     super.key,
   });
 
   final String hintText;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class HomeSearchField extends StatelessWidget {
 
     return TextField(
       readOnly: true,
-      onTap: () {},
+      onTap: onTap,
       decoration: InputDecoration(
         hintText: hintText,
         prefixIcon: Icon(Icons.search, color: colorScheme.onSurfaceVariant),

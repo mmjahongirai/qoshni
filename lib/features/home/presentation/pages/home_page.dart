@@ -84,11 +84,20 @@ class _HomeScrollContent extends StatelessWidget {
                 localeController: localeController,
               ),
               const SizedBox(height: 22),
-              HomeSearchField(hintText: l10n.homeSearchHint),
+              HomeSearchField(
+                hintText: l10n.homeSearchHint,
+                onTap: () => context.pushNamed(RouteNames.search),
+              ),
               const SizedBox(height: 28),
               HomeSectionTitle(title: l10n.homeMainHeading),
               const SizedBox(height: 16),
-              ServiceCategoryGrid(categories: categories),
+              ServiceCategoryGrid(
+                categories: categories,
+                onCategorySelected: (categoryId) => context.pushNamed(
+                  RouteNames.categoryListing,
+                  pathParameters: {'categoryId': categoryId.name},
+                ),
+              ),
               const SizedBox(height: 28),
               NearbyBusinessSection(
                 title: l10n.homeNearbyTitle,

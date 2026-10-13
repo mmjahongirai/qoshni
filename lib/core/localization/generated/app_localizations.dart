@@ -214,11 +214,29 @@ abstract class AppLocalizations {
   /// **'Baraka Market'**
   String get nearbyMock1Name;
 
-  /// No description provided for @nearbyMock1Subtitle.
+  /// No description provided for @nearbyMock1Distance.
   ///
   /// In en, this message translates to:
-  /// **'Groceries • 0.8 km'**
-  String get nearbyMock1Subtitle;
+  /// **'0.8 km'**
+  String get nearbyMock1Distance;
+
+  /// No description provided for @nearbyMock1Description.
+  ///
+  /// In en, this message translates to:
+  /// **'Fictional neighborhood grocery with fresh produce and everyday essentials (demo listing).'**
+  String get nearbyMock1Description;
+
+  /// No description provided for @nearbyMock1Address.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample District, Demo Street 12'**
+  String get nearbyMock1Address;
+
+  /// No description provided for @nearbyMock1Hours.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily, 8:00–22:00'**
+  String get nearbyMock1Hours;
 
   /// No description provided for @nearbyMock2Name.
   ///
@@ -226,11 +244,29 @@ abstract class AppLocalizations {
   /// **'Samarkand Cafe'**
   String get nearbyMock2Name;
 
-  /// No description provided for @nearbyMock2Subtitle.
+  /// No description provided for @nearbyMock2Distance.
   ///
   /// In en, this message translates to:
-  /// **'Restaurant • 1.2 km'**
-  String get nearbyMock2Subtitle;
+  /// **'1.2 km'**
+  String get nearbyMock2Distance;
+
+  /// No description provided for @nearbyMock2Description.
+  ///
+  /// In en, this message translates to:
+  /// **'Fictional cafe serving local-style dishes and drinks for this MVP preview.'**
+  String get nearbyMock2Description;
+
+  /// No description provided for @nearbyMock2Address.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample District, Demo Avenue 5'**
+  String get nearbyMock2Address;
+
+  /// No description provided for @nearbyMock2Hours.
+  ///
+  /// In en, this message translates to:
+  /// **'Mon–Sun, 9:00–23:00'**
+  String get nearbyMock2Hours;
 
   /// No description provided for @nearbyMock3Name.
   ///
@@ -238,11 +274,269 @@ abstract class AppLocalizations {
   /// **'Shifo Plus'**
   String get nearbyMock3Name;
 
-  /// No description provided for @nearbyMock3Subtitle.
+  /// No description provided for @nearbyMock3Distance.
   ///
   /// In en, this message translates to:
-  /// **'Pharmacy • 1.5 km'**
-  String get nearbyMock3Subtitle;
+  /// **'1.5 km'**
+  String get nearbyMock3Distance;
+
+  /// No description provided for @nearbyMock3Description.
+  ///
+  /// In en, this message translates to:
+  /// **'Fictional pharmacy mock entry for over-the-counter items in the demo catalog.'**
+  String get nearbyMock3Description;
+
+  /// No description provided for @nearbyMock3Address.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample District, Health Lane 3'**
+  String get nearbyMock3Address;
+
+  /// No description provided for @nearbyMock3Hours.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily, 8:00–20:00'**
+  String get nearbyMock3Hours;
+
+  /// No description provided for @listingMockShop1Name.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample — Tech Corner'**
+  String get listingMockShop1Name;
+
+  /// No description provided for @listingMockShop1Distance.
+  ///
+  /// In en, this message translates to:
+  /// **'1.0 km'**
+  String get listingMockShop1Distance;
+
+  /// No description provided for @listingMockShop1Description.
+  ///
+  /// In en, this message translates to:
+  /// **'Fictional electronics shop used to preview category listings.'**
+  String get listingMockShop1Description;
+
+  /// No description provided for @listingMockShop1Address.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo Mall, Level 1, Unit 7'**
+  String get listingMockShop1Address;
+
+  /// No description provided for @listingMockShop1Hours.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily, 10:00–21:00'**
+  String get listingMockShop1Hours;
+
+  /// No description provided for @listingMockShop2Name.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample — Style Shop'**
+  String get listingMockShop2Name;
+
+  /// No description provided for @listingMockShop2Distance.
+  ///
+  /// In en, this message translates to:
+  /// **'1.8 km'**
+  String get listingMockShop2Distance;
+
+  /// No description provided for @listingMockShop2Description.
+  ///
+  /// In en, this message translates to:
+  /// **'Fictional clothing boutique mock for the shops category.'**
+  String get listingMockShop2Description;
+
+  /// No description provided for @listingMockShop2Address.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo Bazaar, Row B, Shop 14'**
+  String get listingMockShop2Address;
+
+  /// No description provided for @listingMockShop2Hours.
+  ///
+  /// In en, this message translates to:
+  /// **'Tue–Sun, 10:00–19:00'**
+  String get listingMockShop2Hours;
+
+  /// No description provided for @listingMockMaster1Name.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample — Pipe Fix'**
+  String get listingMockMaster1Name;
+
+  /// No description provided for @listingMockMaster1Distance.
+  ///
+  /// In en, this message translates to:
+  /// **'2.1 km'**
+  String get listingMockMaster1Distance;
+
+  /// No description provided for @listingMockMaster1Description.
+  ///
+  /// In en, this message translates to:
+  /// **'Fictional plumbing service mock for home repairs preview.'**
+  String get listingMockMaster1Description;
+
+  /// No description provided for @listingMockMaster1Address.
+  ///
+  /// In en, this message translates to:
+  /// **'On-call — demo service area only'**
+  String get listingMockMaster1Address;
+
+  /// No description provided for @listingMockMaster1Hours.
+  ///
+  /// In en, this message translates to:
+  /// **'Mon–Sat, 9:00–18:00'**
+  String get listingMockMaster1Hours;
+
+  /// No description provided for @listingMockMaster2Name.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample — Electric Help'**
+  String get listingMockMaster2Name;
+
+  /// No description provided for @listingMockMaster2Distance.
+  ///
+  /// In en, this message translates to:
+  /// **'2.6 km'**
+  String get listingMockMaster2Distance;
+
+  /// No description provided for @listingMockMaster2Description.
+  ///
+  /// In en, this message translates to:
+  /// **'Fictional electrician mock entry for the masters category.'**
+  String get listingMockMaster2Description;
+
+  /// No description provided for @listingMockMaster2Address.
+  ///
+  /// In en, this message translates to:
+  /// **'On-call — demo service area only'**
+  String get listingMockMaster2Address;
+
+  /// No description provided for @listingMockMaster2Hours.
+  ///
+  /// In en, this message translates to:
+  /// **'Mon–Fri, 8:00–17:00'**
+  String get listingMockMaster2Hours;
+
+  /// No description provided for @listingMockRent1Name.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample — Apartment Hub'**
+  String get listingMockRent1Name;
+
+  /// No description provided for @listingMockRent1Distance.
+  ///
+  /// In en, this message translates to:
+  /// **'3.0 km'**
+  String get listingMockRent1Distance;
+
+  /// No description provided for @listingMockRent1Description.
+  ///
+  /// In en, this message translates to:
+  /// **'Fictional short-term apartment rental mock for the rent category.'**
+  String get listingMockRent1Description;
+
+  /// No description provided for @listingMockRent1Address.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample District, Demo Residence Block'**
+  String get listingMockRent1Address;
+
+  /// No description provided for @listingMockRent1Hours.
+  ///
+  /// In en, this message translates to:
+  /// **'Office hours: Mon–Fri, 9:00–18:00'**
+  String get listingMockRent1Hours;
+
+  /// No description provided for @listingMockRent2Name.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample — Car Rent'**
+  String get listingMockRent2Name;
+
+  /// No description provided for @listingMockRent2Distance.
+  ///
+  /// In en, this message translates to:
+  /// **'3.4 km'**
+  String get listingMockRent2Distance;
+
+  /// No description provided for @listingMockRent2Description.
+  ///
+  /// In en, this message translates to:
+  /// **'Fictional car rental mock entry for local mobility preview.'**
+  String get listingMockRent2Description;
+
+  /// No description provided for @listingMockRent2Address.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo Airport Road, Parking Lot C'**
+  String get listingMockRent2Address;
+
+  /// No description provided for @listingMockRent2Hours.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily, 7:00–22:00'**
+  String get listingMockRent2Hours;
+
+  /// No description provided for @businessDetailSectionAbout.
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get businessDetailSectionAbout;
+
+  /// No description provided for @businessDetailSectionLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get businessDetailSectionLocation;
+
+  /// No description provided for @businessDetailSectionHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Hours'**
+  String get businessDetailSectionHours;
+
+  /// No description provided for @businessDetailInfoNotAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Not provided in this demo listing.'**
+  String get businessDetailInfoNotAvailable;
+
+  /// No description provided for @businessDetailNotFoundTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Business not found'**
+  String get businessDetailNotFoundTitle;
+
+  /// No description provided for @businessDetailNotFoundBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Go back and choose another listing from search or categories.'**
+  String get businessDetailNotFoundBody;
+
+  /// No description provided for @categoryListingEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No listings yet'**
+  String get categoryListingEmptyTitle;
+
+  /// No description provided for @categoryListingEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'New partners in this category will appear here soon.'**
+  String get categoryListingEmptyBody;
+
+  /// No description provided for @categoryListingUnknownTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Category not found'**
+  String get categoryListingUnknownTitle;
+
+  /// No description provided for @categoryListingUnknownBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Go back and choose a category from the home screen.'**
+  String get categoryListingUnknownBody;
 
   /// No description provided for @toggleThemeTooltip.
   ///
@@ -255,6 +549,186 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Language'**
   String get languageTooltip;
+
+  /// No description provided for @searchTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get searchTitle;
+
+  /// No description provided for @searchClearQuery.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear query'**
+  String get searchClearQuery;
+
+  /// No description provided for @searchInitialTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What are you looking for?'**
+  String get searchInitialTitle;
+
+  /// No description provided for @searchInitialBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Type a service, store, or category name.'**
+  String get searchInitialBody;
+
+  /// No description provided for @searchEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No results found'**
+  String get searchEmptyTitle;
+
+  /// No description provided for @searchEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Try a different search term.'**
+  String get searchEmptyBody;
+
+  /// No description provided for @searchCategoryEntrySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get searchCategoryEntrySubtitle;
+
+  /// No description provided for @favoritesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites'**
+  String get favoritesTitle;
+
+  /// No description provided for @favoritesAddTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Save to favorites'**
+  String get favoritesAddTooltip;
+
+  /// No description provided for @favoritesRemoveTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove from favorites'**
+  String get favoritesRemoveTooltip;
+
+  /// No description provided for @favoritesEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No saved businesses yet'**
+  String get favoritesEmptyTitle;
+
+  /// No description provided for @favoritesEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the heart on a business page to save it here for quick access.'**
+  String get favoritesEmptyBody;
+
+  /// No description provided for @favoritesGoHome.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to Home'**
+  String get favoritesGoHome;
+
+  /// No description provided for @profileTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profileTitle;
+
+  /// No description provided for @profileOpenTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profileOpenTooltip;
+
+  /// No description provided for @profileGuestTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Guest user'**
+  String get profileGuestTitle;
+
+  /// No description provided for @profileGuestBody.
+  ///
+  /// In en, this message translates to:
+  /// **'You are using QO‘SHNI without signing in. Account features will arrive in a later release.'**
+  String get profileGuestBody;
+
+  /// No description provided for @profileSectionShortcuts.
+  ///
+  /// In en, this message translates to:
+  /// **'Shortcuts'**
+  String get profileSectionShortcuts;
+
+  /// No description provided for @profileFavoritesSavedCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} saved'**
+  String profileFavoritesSavedCount(int count);
+
+  /// No description provided for @profileSectionAppearance.
+  ///
+  /// In en, this message translates to:
+  /// **'Appearance'**
+  String get profileSectionAppearance;
+
+  /// No description provided for @profileThemeSystem.
+  ///
+  /// In en, this message translates to:
+  /// **'System'**
+  String get profileThemeSystem;
+
+  /// No description provided for @profileThemeLight.
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get profileThemeLight;
+
+  /// No description provided for @profileThemeDark.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get profileThemeDark;
+
+  /// No description provided for @profileSectionLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get profileSectionLanguage;
+
+  /// No description provided for @profileLanguageSystem.
+  ///
+  /// In en, this message translates to:
+  /// **'System default'**
+  String get profileLanguageSystem;
+
+  /// No description provided for @profileLanguageUz.
+  ///
+  /// In en, this message translates to:
+  /// **'O‘zbekcha'**
+  String get profileLanguageUz;
+
+  /// No description provided for @profileLanguageRu.
+  ///
+  /// In en, this message translates to:
+  /// **'Русский'**
+  String get profileLanguageRu;
+
+  /// No description provided for @profileLanguageEn.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get profileLanguageEn;
+
+  /// No description provided for @profileAboutTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get profileAboutTitle;
+
+  /// No description provided for @profileAboutGuestNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Guest mode preview — no personal data is stored on this device beyond the current session.'**
+  String get profileAboutGuestNote;
 }
 
 class _AppLocalizationsDelegate
