@@ -12,9 +12,14 @@ class ThemeController extends ChangeNotifier {
     notifyListeners();
   }
 
-  void toggleLightDark() {
+  /// Sets light or dark to the opposite of the currently visible [effectiveBrightness].
+  ///
+  /// When [themeMode] is [ThemeMode.system], pass [Brightness] from [Theme.of].
+  void toggleLightDark(Brightness effectiveBrightness) {
     setThemeMode(
-      _themeMode == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark,
+      effectiveBrightness == Brightness.dark
+          ? ThemeMode.light
+          : ThemeMode.dark,
     );
   }
 }

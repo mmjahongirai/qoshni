@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:qoshni/core/localization/generated/app_localizations.dart';
+import 'package:qoshni/routing/route_paths.dart';
 import 'package:qoshni/core/localization/locale_controller.dart';
 import 'package:qoshni/core/theme/theme_controller.dart';
 
@@ -18,7 +20,8 @@ class HomeHeader extends StatelessWidget {
     final l10n = AppLocalizations.of(context);
     final textTheme = Theme.of(context).textTheme;
     final colorScheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final effectiveBrightness = Theme.of(context).brightness;
+    final isDark = effectiveBrightness == Brightness.dark;
 
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,29 +51,58 @@ class HomeHeader extends StatelessWidget {
             ],
           ),
         ),
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            IconButton(
-              tooltip: l10n.toggleThemeTooltip,
-              visualDensity: VisualDensity.compact,
-              onPressed: themeController.toggleLightDark,
-              icon: Icon(
-                isDark ? Icons.light_mode_outlined : Icons.dark_mode_outlined,
+        Flexible(
+          child: Wrap(
+            alignment: WrapAlignment.end,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            children: [
+              IconButton(
+                tooltip: l10n.profileOpenTooltip,
+                visualDensity: VisualDensity.compact,
+                onPressed: () => context.pushNamed(RouteNames.profile),
+                icon: const Icon(Icons.person_outline_rounded),
               ),
-            ),
-            PopupMenuButton<Locale?>(
-              tooltip: l10n.languageTooltip,
-              icon: const Icon(Icons.language_outlined),
-              onSelected: localeController.setLocale,
-              itemBuilder: (context) => const [
-                PopupMenuItem(value: Locale('uz'), child: Text('O‘zbekcha')),
-                PopupMenuItem(value: Locale('ru'), child: Text('Русский')),
-                PopupMenuItem(value: Locale('en'), child: Text('English')),
-                PopupMenuItem(value: null, child: Text('System')),
-              ],
-            ),
-          ],
+              IconButton(
+                tooltip: l10n.favoritesTitle,
+                visualDensity: VisualDensity.compact,
+                onPressed: () => context.pushNamed(RouteNames.favorites),
+                icon: const Icon(Icons.favorite_border_rounded),
+              ),
+              IconButton(
+                tooltip: l10n.toggleThemeTooltip,
+                visualDensity: VisualDensity.compact,
+                onPressed: () => themeController.toggleLightDark(
+                  effectiveBrightness,
+                ),
+                icon: Icon(
+                  isDark ? Icons.light_mode_outlined : Icons.dark_mode_outlined,
+                ),
+              ),
+              PopupMenuButton<Locale?>(
+                tooltip: l10n.languageTooltip,
+                icon: const Icon(Icons.language_outlined),
+                onSelected: localeController.setLocale,
+                itemBuilder: (context) => [
+                  PopupMenuItem(
+                    value: const Locale('uz'),
+                    child: Text(l10n.profileLanguageUz),
+                  ),
+                  PopupMenuItem(
+                    value: const Locale('ru'),
+                    child: Text(l10n.profileLanguageRu),
+                  ),
+                  PopupMenuItem(
+                    value: const Locale('en'),
+                    child: Text(l10n.profileLanguageEn),
+                  ),
+                  PopupMenuItem(
+                    value: null,
+                    child: Text(l10n.profileLanguageSystem),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ],
     );
