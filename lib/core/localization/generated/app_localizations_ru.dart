@@ -1195,4 +1195,75 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get authSessionExpiredNotice =>
       'Сессия завершена. Вы сможете войти снова, когда сервис будет доступен.';
+
+  @override
+  String get userProfileDisplayNameHint => 'Отображаемое имя';
+
+  @override
+  String get userProfileDisplayNameEmpty => 'Имя не задано';
+
+  @override
+  String get userProfileEditDisplayNameAction => 'Изменить имя';
+
+  @override
+  String get userProfileClearDisplayNameAction => 'Удалить имя';
+
+  @override
+  String get userProfileSaveAction => 'Сохранить';
+
+  @override
+  String get userProfileCancelAction => 'Отмена';
+
+  @override
+  String get userProfileRetryAction => 'Повторить';
+
+  @override
+  String get userProfileLoadError => 'Не удалось загрузить профиль.';
+
+  @override
+  String get userProfileSaveSuccess => 'Профиль обновлён.';
+
+  @override
+  String get userProfilePreferencesSaveSuccess => 'Настройки сохранены.';
+
+  @override
+  String get userProfileApiNotConfigured =>
+      'Сервер аккаунта не настроен для этой сборки. Укажите QOSHNI_API_BASE_URL при сборке.';
+
+  @override
+  String get userProfileErrorNetwork =>
+      'Ошибка сети. Проверьте подключение и повторите.';
+
+  @override
+  String get userProfileErrorServiceUnavailable =>
+      'Сервис профиля временно недоступен.';
+
+  @override
+  String get userProfileNotFound =>
+      'Профиль пока недоступен. Повторите попытку или войдите снова.';
+
+  @override
+  String get userProfilePreferencesNotFound =>
+      'Настройки пока недоступны. Повторите попытку или войдите снова.';
+
+  @override
+  String get userProfileErrorValidation =>
+      'Недопустимое значение. Проверьте имя или язык.';
+
+  @override
+  String get userProfileErrorGeneric =>
+      'Что-то пошло не так. Попробуйте снова.';
+
+  @override
+  String get userProfileSectionPersonalization => 'Персонализация';
+
+  @override
+  String get userProfilePersonalizationTitle => 'Персональные подсказки';
+
+  @override
+  String get userProfilePersonalizationBody =>
+      'Если включено, QO‘SHNI может использовать ваши явные настройки для подсказок. По умолчанию выключено.';
+
+  @override
+  String get userProfileSaving => 'Сохранение…';
 }

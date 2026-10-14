@@ -22,6 +22,9 @@ import 'package:qoshni/features/business_platform/presentation/business_profile_
 import 'package:qoshni/features/home/presentation/cart/cart_controller.dart';
 import 'package:qoshni/features/home/presentation/favorites/favorites_controller.dart';
 import 'package:qoshni/features/home/presentation/orders/demo_order_controller.dart';
+import 'package:qoshni/features/user_profile/data/user_profile_api_repository.dart';
+import 'package:qoshni/features/user_profile/domain/user_profile_repository.dart';
+import 'package:qoshni/features/user_profile/presentation/user_profile_controller.dart';
 import 'package:qoshni/routing/app_router.dart';
 
 final GetIt getIt = GetIt.instance;
@@ -93,6 +96,20 @@ Future<void> configureDependencies(AppConfig config) async {
       () => AuthController(
         repository: getIt<AuthRepository>(),
         credentialStore: getIt<AuthCredentialStore>(),
+        config: getIt<AppConfig>(),
+      ),
+    )
+    ..registerLazySingleton<UserProfileRepository>(
+      () => UserProfileApiRepository(
+        apiClient: getIt<ApiClient>(),
+        config: getIt<AppConfig>(),
+      ),
+    )
+    ..registerLazySingleton<UserProfileController>(
+      () => UserProfileController(
+        repository: getIt<UserProfileRepository>(),
+        authController: getIt<AuthController>(),
+        localeController: getIt<LocaleController>(),
         config: getIt<AppConfig>(),
       ),
     )

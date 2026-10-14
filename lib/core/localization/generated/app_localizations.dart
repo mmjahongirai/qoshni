@@ -2198,6 +2198,132 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Your session ended. You can sign in again when the service is available.'**
   String get authSessionExpiredNotice;
+
+  /// No description provided for @userProfileDisplayNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Display name'**
+  String get userProfileDisplayNameHint;
+
+  /// No description provided for @userProfileDisplayNameEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No display name yet'**
+  String get userProfileDisplayNameEmpty;
+
+  /// No description provided for @userProfileEditDisplayNameAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit display name'**
+  String get userProfileEditDisplayNameAction;
+
+  /// No description provided for @userProfileClearDisplayNameAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear display name'**
+  String get userProfileClearDisplayNameAction;
+
+  /// No description provided for @userProfileSaveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get userProfileSaveAction;
+
+  /// No description provided for @userProfileCancelAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get userProfileCancelAction;
+
+  /// No description provided for @userProfileRetryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get userProfileRetryAction;
+
+  /// No description provided for @userProfileLoadError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load your profile.'**
+  String get userProfileLoadError;
+
+  /// No description provided for @userProfileSaveSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile updated.'**
+  String get userProfileSaveSuccess;
+
+  /// No description provided for @userProfilePreferencesSaveSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Preferences saved.'**
+  String get userProfilePreferencesSaveSuccess;
+
+  /// No description provided for @userProfileApiNotConfigured.
+  ///
+  /// In en, this message translates to:
+  /// **'Account server is not configured for this build. Set QOSHNI_API_BASE_URL at compile time.'**
+  String get userProfileApiNotConfigured;
+
+  /// No description provided for @userProfileErrorNetwork.
+  ///
+  /// In en, this message translates to:
+  /// **'Network connection failed. Check your connection and try again.'**
+  String get userProfileErrorNetwork;
+
+  /// No description provided for @userProfileErrorServiceUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile service is temporarily unavailable.'**
+  String get userProfileErrorServiceUnavailable;
+
+  /// No description provided for @userProfileNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Your profile is not available yet. Try again or sign in again.'**
+  String get userProfileNotFound;
+
+  /// No description provided for @userProfilePreferencesNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Your preferences are not available yet. Try again or sign in again.'**
+  String get userProfilePreferencesNotFound;
+
+  /// No description provided for @userProfileErrorValidation.
+  ///
+  /// In en, this message translates to:
+  /// **'That value is not allowed. Check the display name or language and try again.'**
+  String get userProfileErrorValidation;
+
+  /// No description provided for @userProfileErrorGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong. Please try again.'**
+  String get userProfileErrorGeneric;
+
+  /// No description provided for @userProfileSectionPersonalization.
+  ///
+  /// In en, this message translates to:
+  /// **'Personalization'**
+  String get userProfileSectionPersonalization;
+
+  /// No description provided for @userProfilePersonalizationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Personalized suggestions'**
+  String get userProfilePersonalizationTitle;
+
+  /// No description provided for @userProfilePersonalizationBody.
+  ///
+  /// In en, this message translates to:
+  /// **'When enabled, QO‘SHNI may use your explicit preferences to tailor suggestions. This stays off until you turn it on.'**
+  String get userProfilePersonalizationBody;
+
+  /// No description provided for @userProfileSaving.
+  ///
+  /// In en, this message translates to:
+  /// **'Saving…'**
+  String get userProfileSaving;
 }
 
 class _AppLocalizationsDelegate

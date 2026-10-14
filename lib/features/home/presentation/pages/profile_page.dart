@@ -13,10 +13,29 @@ import 'package:qoshni/core/widgets/app_message_banner.dart';
 import 'package:qoshni/core/widgets/app_surface_card.dart';
 import 'package:qoshni/core/widgets/primary_navigation_shell.dart';
 import 'package:qoshni/core/widgets/profile_avatar_fallback.dart';
+import 'package:qoshni/features/user_profile/data/user_profile_dtos.dart';
+import 'package:qoshni/features/user_profile/presentation/user_profile_controller.dart';
+import 'package:qoshni/features/user_profile/presentation/user_profile_messages.dart';
 import 'package:qoshni/routing/route_paths.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
+
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final userProfile = getIt<UserProfileController>();
+      if (getIt<AuthController>().isSignedIn) {
+        userProfile.refresh();
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +45,7 @@ class ProfilePage extends StatelessWidget {
     final favoritesController = getIt<FavoritesController>();
     final demoOrderController = getIt<DemoOrderController>();
     final authController = getIt<AuthController>();
+    final userProfileController = getIt<UserProfileController>();
 
     return PrimaryNavigationShell(
       destination: PrimaryNavDestination.profile,
@@ -42,6 +62,7 @@ class ProfilePage extends StatelessWidget {
               favoritesController,
               demoOrderController,
               authController,
+              userProfileController,
             ]),
             builder: (context, _) {
               return ResponsiveLayout(
@@ -53,6 +74,7 @@ class ProfilePage extends StatelessWidget {
                   favoritesController: favoritesController,
                   demoOrderController: demoOrderController,
                   authController: authController,
+                  userProfileController: userProfileController,
                 ),
                 tablet: _ProfileBody(
                   maxWidth: 760,
@@ -62,6 +84,7 @@ class ProfilePage extends StatelessWidget {
                   favoritesController: favoritesController,
                   demoOrderController: demoOrderController,
                   authController: authController,
+                  userProfileController: userProfileController,
                 ),
               );
             },
@@ -81,6 +104,7 @@ class _ProfileBody extends StatelessWidget {
     required this.favoritesController,
     required this.demoOrderController,
     required this.authController,
+    required this.userProfileController,
   });
 
   final double maxWidth;
@@ -90,6 +114,7 @@ class _ProfileBody extends StatelessWidget {
   final FavoritesController favoritesController;
   final DemoOrderController demoOrderController;
   final AuthController authController;
+  final UserProfileController userProfileController;
 
   @override
   Widget build(BuildContext context) {
@@ -97,6 +122,8 @@ class _ProfileBody extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     final favoriteCount = favoritesController.favoriteIds.length;
     final demoOrderCount = demoOrderController.orderCount;
+    final signedIn = authController.isSignedIn;
+    final displayName = userProfileController.profile?.displayName;
 
     return Align(
       alignment: Alignment.topCenter,
@@ -111,19 +138,26 @@ class _ProfileBody extends StatelessWidget {
                 child: Column(
                   children: [
                     ProfileAvatarFallback(
-                      signedIn: authController.isSignedIn,
+                      signedIn: signedIn,
                     ),
                     const SizedBox(height: AppSpacing.md),
+                    if (signedIn && userProfileController.loading)
+                      const Padding(
+                        padding: EdgeInsets.only(bottom: AppSpacing.sm),
+                        child: LinearProgressIndicator(),
+                      ),
                     Text(
-                      authController.isSignedIn
-                          ? l10n.authSignedInTitle
+                      signedIn
+                          ? (displayName?.isNotEmpty == true
+                              ? displayName!
+                              : l10n.userProfileDisplayNameEmpty)
                           : l10n.profileGuestTitle,
                       style: textTheme.titleLarge,
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: AppSpacing.xs),
                     Text(
-                      authController.isSignedIn
+                      signedIn
                           ? l10n.authSignedInBody
                           : l10n.profileGuestBody,
                       style: textTheme.bodyMedium?.copyWith(
@@ -132,12 +166,85 @@ class _ProfileBody extends StatelessWidget {
                       ),
                       textAlign: TextAlign.center,
                     ),
+                    if (signedIn) ...[
+                      const SizedBox(height: AppSpacing.sm),
+                      Wrap(
+                        alignment: WrapAlignment.center,
+                        spacing: AppSpacing.xs,
+                        runSpacing: AppSpacing.xxs,
+                        children: [
+                          FilledButton.tonalIcon(
+                            onPressed: userProfileController.savingProfile
+                                ? null
+                                : () => _showEditDisplayNameDialog(context),
+                            icon: const Icon(Icons.edit_outlined, size: 18),
+                            label: Text(l10n.userProfileEditDisplayNameAction),
+                          ),
+                          if (displayName?.isNotEmpty == true)
+                            TextButton(
+                              onPressed: userProfileController.savingProfile
+                                  ? null
+                                  : userProfileController.clearDisplayName,
+                              child: Text(l10n.userProfileClearDisplayNameAction),
+                            ),
+                        ],
+                      ),
+                      if (userProfileController.savingProfile)
+                        Padding(
+                          padding: const EdgeInsets.only(top: AppSpacing.xs),
+                          child: Text(
+                            l10n.userProfileSaving,
+                            style: textTheme.bodySmall?.copyWith(
+                              color: colorScheme.onSurfaceVariant,
+                            ),
+                          ),
+                        ),
+                      if (userProfileController.profileSaveSucceeded)
+                        Padding(
+                          padding: const EdgeInsets.only(top: AppSpacing.sm),
+                          child: AppMessageBanner(
+                            message: l10n.userProfileSaveSuccess,
+                            icon: Icons.check_circle_outline,
+                            tone: AppMessageTone.info,
+                          ),
+                        ),
+                      if (userProfileController.profileSaveFailure != null)
+                        Padding(
+                          padding: const EdgeInsets.only(top: AppSpacing.sm),
+                          child: AppMessageBanner(
+                            message: localizedUserProfileFailure(
+                              l10n,
+                              userProfileController.profileSaveFailure!,
+                            ),
+                            icon: Icons.error_outline,
+                            tone: AppMessageTone.error,
+                          ),
+                        ),
+                    ],
                     if (authController.status == AuthStatus.sessionExpired) ...[
                       const SizedBox(height: AppSpacing.sm),
                       AppMessageBanner(
                         message: l10n.authSessionExpiredNotice,
                         icon: Icons.lock_clock_outlined,
                         tone: AppMessageTone.warning,
+                      ),
+                    ],
+                    if (signedIn && userProfileController.loadFailure != null) ...[
+                      const SizedBox(height: AppSpacing.sm),
+                      AppMessageBanner(
+                        message: localizedUserProfileFailure(
+                          l10n,
+                          userProfileController.loadFailure!,
+                        ),
+                        icon: Icons.cloud_off_outlined,
+                        tone: AppMessageTone.warning,
+                      ),
+                      TextButton.icon(
+                        onPressed: userProfileController.loading
+                            ? null
+                            : userProfileController.refresh,
+                        icon: const Icon(Icons.refresh_rounded),
+                        label: Text(l10n.userProfileRetryAction),
                       ),
                     ],
                   ],
@@ -148,7 +255,7 @@ class _ProfileBody extends StatelessWidget {
                 title: l10n.profileSectionShortcuts,
                 child: Column(
                   children: [
-                    if (authController.isSignedIn) ...[
+                    if (signedIn) ...[
                       ListTile(
                         contentPadding:
                             const EdgeInsets.symmetric(horizontal: 8),
@@ -260,29 +367,92 @@ class _ProfileBody extends StatelessWidget {
                       label: l10n.profileLanguageSystem,
                       value: null,
                       groupValue: localeController.locale,
-                      onSelect: localeController.setLocale,
+                      onSelect: (value) => _onLocaleSelected(value),
                     ),
                     _LocaleTile(
                       label: l10n.profileLanguageUz,
                       value: const Locale('uz'),
                       groupValue: localeController.locale,
-                      onSelect: localeController.setLocale,
+                      onSelect: (value) => _onLocaleSelected(value),
                     ),
                     _LocaleTile(
                       label: l10n.profileLanguageRu,
                       value: const Locale('ru'),
                       groupValue: localeController.locale,
-                      onSelect: localeController.setLocale,
+                      onSelect: (value) => _onLocaleSelected(value),
                     ),
                     _LocaleTile(
                       label: l10n.profileLanguageEn,
                       value: const Locale('en'),
                       groupValue: localeController.locale,
-                      onSelect: localeController.setLocale,
+                      onSelect: (value) => _onLocaleSelected(value),
                     ),
+                    if (signedIn &&
+                        userProfileController.preferencesSaveFailure != null)
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(8, 4, 8, 8),
+                        child: AppMessageBanner(
+                          message: localizedUserProfileFailure(
+                            l10n,
+                            userProfileController.preferencesSaveFailure!,
+                          ),
+                          icon: Icons.error_outline,
+                          tone: AppMessageTone.error,
+                        ),
+                      ),
+                    if (signedIn &&
+                        userProfileController.preferencesSaveSucceeded)
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(8, 4, 8, 8),
+                        child: AppMessageBanner(
+                          message: l10n.userProfilePreferencesSaveSuccess,
+                          icon: Icons.check_circle_outline,
+                          tone: AppMessageTone.info,
+                        ),
+                      ),
                   ],
                 ),
               ),
+              if (signedIn) ...[
+                const SizedBox(height: 12),
+                _ProfileSettingsCard(
+                  title: l10n.userProfileSectionPersonalization,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SwitchListTile(
+                        contentPadding:
+                            const EdgeInsets.symmetric(horizontal: 4),
+                        title: Text(l10n.userProfilePersonalizationTitle),
+                        subtitle: Text(
+                          l10n.userProfilePersonalizationBody,
+                          style: textTheme.bodySmall?.copyWith(
+                            color: colorScheme.onSurfaceVariant,
+                            height: 1.35,
+                          ),
+                        ),
+                        value: userProfileController
+                                .preferences?.personalizationEnabled ??
+                            false,
+                        onChanged: userProfileController.savingPreferences ||
+                                userProfileController.loading
+                            ? null
+                            : userProfileController.setPersonalizationEnabled,
+                      ),
+                      if (userProfileController.savingPreferences)
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(12, 0, 12, 8),
+                          child: Text(
+                            l10n.userProfileSaving,
+                            style: textTheme.bodySmall?.copyWith(
+                              color: colorScheme.onSurfaceVariant,
+                            ),
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+              ],
               const SizedBox(height: 12),
               _ProfileSettingsCard(
                 title: l10n.profileAboutTitle,
@@ -323,6 +493,59 @@ class _ProfileBody extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _onLocaleSelected(Locale? value) {
+    if (value == null) {
+      localeController.setLocale(null);
+      return;
+    }
+    if (authController.isSignedIn) {
+      final code = PreferredLanguageCode.tryParse(value.languageCode);
+      if (code != null) {
+        userProfileController.updatePreferredLanguage(code);
+        return;
+      }
+    }
+    localeController.setLocale(value);
+  }
+
+  Future<void> _showEditDisplayNameDialog(BuildContext context) async {
+    final controller = TextEditingController(
+      text: userProfileController.profile?.displayName ?? '',
+    );
+    final saved = await showDialog<bool>(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text(l10n.userProfileEditDisplayNameAction),
+          content: TextField(
+            controller: controller,
+            maxLength: 64,
+            decoration: InputDecoration(
+              labelText: l10n.userProfileDisplayNameHint,
+            ),
+            autofocus: true,
+            textInputAction: TextInputAction.done,
+            onSubmitted: (_) => Navigator.of(context).pop(true),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: Text(l10n.userProfileCancelAction),
+            ),
+            FilledButton(
+              onPressed: () => Navigator.of(context).pop(true),
+              child: Text(l10n.userProfileSaveAction),
+            ),
+          ],
+        );
+      },
+    );
+    if (saved == true && context.mounted) {
+      await userProfileController.updateDisplayName(controller.text);
+    }
+    controller.dispose();
   }
 }
 
