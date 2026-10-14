@@ -36,15 +36,31 @@ void main() {
     });
   });
 
-  group('resolveBoolDefine', () {
+  group('parseBoolDefineValue', () {
     test('falls back when define is empty', () {
       expect(
-        AppConfig.resolveBoolDefine(
-          'QOSHNI_TEST_UNSET_DEFINE_${DateTime.now().microsecondsSinceEpoch}',
-          defaultValue: true,
-        ),
+        AppConfig.parseBoolDefineValue('', defaultValue: true),
         isTrue,
       );
+    });
+
+    test('parses true and false literals', () {
+      expect(
+        AppConfig.parseBoolDefineValue('true', defaultValue: false),
+        isTrue,
+      );
+      expect(
+        AppConfig.parseBoolDefineValue('false', defaultValue: true),
+        isFalse,
+      );
+    });
+  });
+
+  group('forEnvironment bootstrap safety', () {
+    test('does not throw for any environment', () {
+      for (final env in AppEnvironment.values) {
+        expect(() => AppConfig.forEnvironment(env), returnsNormally);
+      }
     });
   });
 }
