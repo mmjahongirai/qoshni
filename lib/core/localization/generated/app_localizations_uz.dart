@@ -43,6 +43,44 @@ class AppLocalizationsUz extends AppLocalizations {
   String get openMap => 'Xaritani ochish';
 
   @override
+  String get homeMapPreviewStatus =>
+      'Demo xarita ko‘rinishi — jonli joylashuv keyinroq ulanadi.';
+
+  @override
+  String get homeNearbyChainsTitle => 'Yaqin atrofdagi tarmoqlar';
+
+  @override
+  String get homeNearbyChainsSubtitle =>
+      'Filiallar va kerakli joylarni tez toping.';
+
+  @override
+  String get homeEssentialSupermarkets => 'Supermarketlar';
+
+  @override
+  String get homeEssentialPharmacies => 'Dorixonalar';
+
+  @override
+  String get homeEssentialHospitals => 'Shifoxonalar va klinikalar';
+
+  @override
+  String get homeEssentialRestaurants => 'Kafelar va restoranlar';
+
+  @override
+  String get homeEssentialPlaceTypeHint => 'Demo kategoriya yorliği';
+
+  @override
+  String get homeMapLegendMarkets => 'Bozorlar';
+
+  @override
+  String get homeMapLegendPharmacy => 'Dorixona';
+
+  @override
+  String get homeMapLegendHealth => 'Sog‘liq';
+
+  @override
+  String get homeMapLegendFood => 'Ovqat';
+
+  @override
   String get mapPlaceholderTitle => 'Xarita';
 
   @override

@@ -160,6 +160,78 @@ abstract class AppLocalizations {
   /// **'Open map'**
   String get openMap;
 
+  /// No description provided for @homeMapPreviewStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo map preview — live location and places will connect later.'**
+  String get homeMapPreviewStatus;
+
+  /// No description provided for @homeNearbyChainsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Nearby chains & essentials'**
+  String get homeNearbyChainsTitle;
+
+  /// No description provided for @homeNearbyChainsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Find branches and everyday places quickly.'**
+  String get homeNearbyChainsSubtitle;
+
+  /// No description provided for @homeEssentialSupermarkets.
+  ///
+  /// In en, this message translates to:
+  /// **'Supermarkets'**
+  String get homeEssentialSupermarkets;
+
+  /// No description provided for @homeEssentialPharmacies.
+  ///
+  /// In en, this message translates to:
+  /// **'Pharmacies'**
+  String get homeEssentialPharmacies;
+
+  /// No description provided for @homeEssentialHospitals.
+  ///
+  /// In en, this message translates to:
+  /// **'Hospitals & clinics'**
+  String get homeEssentialHospitals;
+
+  /// No description provided for @homeEssentialRestaurants.
+  ///
+  /// In en, this message translates to:
+  /// **'Cafes & restaurants'**
+  String get homeEssentialRestaurants;
+
+  /// No description provided for @homeEssentialPlaceTypeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo category shortcut'**
+  String get homeEssentialPlaceTypeHint;
+
+  /// No description provided for @homeMapLegendMarkets.
+  ///
+  /// In en, this message translates to:
+  /// **'Markets'**
+  String get homeMapLegendMarkets;
+
+  /// No description provided for @homeMapLegendPharmacy.
+  ///
+  /// In en, this message translates to:
+  /// **'Pharmacy'**
+  String get homeMapLegendPharmacy;
+
+  /// No description provided for @homeMapLegendHealth.
+  ///
+  /// In en, this message translates to:
+  /// **'Health'**
+  String get homeMapLegendHealth;
+
+  /// No description provided for @homeMapLegendFood.
+  ///
+  /// In en, this message translates to:
+  /// **'Food'**
+  String get homeMapLegendFood;
+
   /// No description provided for @mapPlaceholderTitle.
   ///
   /// In en, this message translates to:

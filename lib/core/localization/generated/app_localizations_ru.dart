@@ -43,6 +43,44 @@ class AppLocalizationsRu extends AppLocalizations {
   String get openMap => 'Открыть карту';
 
   @override
+  String get homeMapPreviewStatus =>
+      'Демо-карта — живая геолокация и места появятся позже.';
+
+  @override
+  String get homeNearbyChainsTitle => 'Сети и важные места рядом';
+
+  @override
+  String get homeNearbyChainsSubtitle =>
+      'Быстро находите филиалы и нужные точки.';
+
+  @override
+  String get homeEssentialSupermarkets => 'Супермаркеты';
+
+  @override
+  String get homeEssentialPharmacies => 'Аптеки';
+
+  @override
+  String get homeEssentialHospitals => 'Больницы и клиники';
+
+  @override
+  String get homeEssentialRestaurants => 'Кафе и рестораны';
+
+  @override
+  String get homeEssentialPlaceTypeHint => 'Демо-ярлык категории';
+
+  @override
+  String get homeMapLegendMarkets => 'Магазины';
+
+  @override
+  String get homeMapLegendPharmacy => 'Аптека';
+
+  @override
+  String get homeMapLegendHealth => 'Медицина';
+
+  @override
+  String get homeMapLegendFood => 'Еда';
+
+  @override
   String get mapPlaceholderTitle => 'Карта';
 
   @override

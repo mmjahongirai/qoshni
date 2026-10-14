@@ -43,6 +43,44 @@ class AppLocalizationsEn extends AppLocalizations {
   String get openMap => 'Open map';
 
   @override
+  String get homeMapPreviewStatus =>
+      'Demo map preview — live location and places will connect later.';
+
+  @override
+  String get homeNearbyChainsTitle => 'Nearby chains & essentials';
+
+  @override
+  String get homeNearbyChainsSubtitle =>
+      'Find branches and everyday places quickly.';
+
+  @override
+  String get homeEssentialSupermarkets => 'Supermarkets';
+
+  @override
+  String get homeEssentialPharmacies => 'Pharmacies';
+
+  @override
+  String get homeEssentialHospitals => 'Hospitals & clinics';
+
+  @override
+  String get homeEssentialRestaurants => 'Cafes & restaurants';
+
+  @override
+  String get homeEssentialPlaceTypeHint => 'Demo category shortcut';
+
+  @override
+  String get homeMapLegendMarkets => 'Markets';
+
+  @override
+  String get homeMapLegendPharmacy => 'Pharmacy';
+
+  @override
+  String get homeMapLegendHealth => 'Health';
+
+  @override
+  String get homeMapLegendFood => 'Food';
+
+  @override
   String get mapPlaceholderTitle => 'Map';
 
   @override
