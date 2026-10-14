@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:qoshni/core/config/app_environment.dart';
 
 /// Compile-time override keys (public feature flags — not security controls).
@@ -37,12 +38,10 @@ class AppConfig {
       appName: _appNameFor(environment),
       apiBaseUrl: resolveApiBaseUrl(),
       enableLogging: !environment.isProduction,
-      enableBusinessProfileSamples: resolveBoolDefine(
-        AppConfigDefines.enableBusinessProfileSamples,
+      enableBusinessProfileSamples: _businessProfileSamplesFromEnvironment(
         defaultValue: profileSamplesDefault,
       ),
-      enableBusinessOfferingSamples: resolveBoolDefine(
-        AppConfigDefines.enableBusinessOfferingSamples,
+      enableBusinessOfferingSamples: _businessOfferingSamplesFromEnvironment(
         defaultValue: offeringSamplesDefault,
       ),
     );
@@ -69,12 +68,12 @@ class AppConfig {
     return '';
   }
 
-  /// Reads `--dart-define=NAME=true|false`. Empty define uses [defaultValue].
-  static bool resolveBoolDefine(
-    String defineName, {
+  /// Parses a compile-time `--dart-define` string. Empty [raw] uses [defaultValue].
+  @visibleForTesting
+  static bool parseBoolDefineValue(
+    String raw, {
     required bool defaultValue,
   }) {
-    final raw = String.fromEnvironment(defineName);
     if (raw.isEmpty) {
       return defaultValue;
     }
@@ -86,6 +85,25 @@ class AppConfig {
       return false;
     }
     return defaultValue;
+  }
+
+  /// Each flag uses a const [String.fromEnvironment] — required for web release.
+  static bool _businessProfileSamplesFromEnvironment({
+    required bool defaultValue,
+  }) {
+    const raw = String.fromEnvironment(
+      AppConfigDefines.enableBusinessProfileSamples,
+    );
+    return parseBoolDefineValue(raw, defaultValue: defaultValue);
+  }
+
+  static bool _businessOfferingSamplesFromEnvironment({
+    required bool defaultValue,
+  }) {
+    const raw = String.fromEnvironment(
+      AppConfigDefines.enableBusinessOfferingSamples,
+    );
+    return parseBoolDefineValue(raw, defaultValue: defaultValue);
   }
 
   final AppEnvironment environment;
