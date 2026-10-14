@@ -30,6 +30,13 @@ void main() {
     expect(find.text('Groceries'), findsOneWidget);
     expect(find.text('Near you'), findsOneWidget);
     expect(find.text('Open map'), findsOneWidget);
+    expect(find.text('Nearby chains & essentials'), findsOneWidget);
+    expect(
+      find.text(
+        'Demo map preview — live location and places will connect later.',
+      ),
+      findsOneWidget,
+    );
   });
 
   testWidgets('Theme and language controls remain available', (tester) async {

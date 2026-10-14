@@ -51,6 +51,24 @@ class Settings(BaseSettings):
         default=False,
         description="SQLAlchemy SQL echo for local debugging only; keep disabled in production.",
     )
+    auth_otp_ttl_seconds: int = Field(default=300, ge=60, le=900)
+    auth_otp_max_attempts: int = Field(default=5, ge=1, le=10)
+    auth_otp_code_length: int = Field(default=6, ge=4, le=8)
+    auth_access_token_ttl_seconds: int = Field(default=900, ge=60, le=3600)
+    auth_refresh_token_ttl_seconds: int = Field(
+        default=30 * 24 * 3600,
+        ge=3600,
+        le=90 * 24 * 3600,
+    )
+    auth_otp_request_max_per_window: int = Field(default=5, ge=1, le=20)
+    auth_otp_request_window_seconds: int = Field(default=900, ge=60, le=86400)
+    auth_secret_digest_key: SecretStr | None = Field(
+        default=None,
+        description=(
+            "Server-only HMAC key for OTP and refresh-token digests. Required "
+            "before authentication endpoints are enabled; never ship to clients."
+        ),
+    )
 
     model_config = SettingsConfigDict(
         env_file=_ENV_FILE,

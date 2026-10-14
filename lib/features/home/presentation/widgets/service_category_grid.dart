@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qoshni/core/responsive/breakpoints.dart';
+import 'package:qoshni/core/theme/app_tokens.dart';
+import 'package:qoshni/core/widgets/category_icon_badge.dart';
 import 'package:qoshni/features/home/presentation/data/home_mock_data.dart';
 import 'package:qoshni/features/home/presentation/data/service_category_id.dart';
 
@@ -37,8 +39,8 @@ class ServiceCategoryGrid extends StatelessWidget {
           itemCount: categories.length,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: crossAxisCount,
-            mainAxisSpacing: 12,
-            crossAxisSpacing: 12,
+            mainAxisSpacing: AppSpacing.sm,
+            crossAxisSpacing: AppSpacing.sm,
             childAspectRatio: serviceCategoryChildAspectRatio(crossAxisCount),
           ),
           itemBuilder: (context, index) {
@@ -71,36 +73,33 @@ class _CategoryCard extends StatelessWidget {
 
     return Material(
       color: colorScheme.surface,
-      borderRadius: BorderRadius.circular(16),
+      borderRadius: AppRadius.mdAll,
       child: InkWell(
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: AppRadius.mdAll,
         onTap: onTap,
         child: Ink(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: AppRadius.mdAll,
             border: Border.all(
               color: colorScheme.outlineVariant.withValues(alpha: 0.65),
             ),
           ),
           child: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: isCompactPhone ? 12 : 14,
-              vertical: 12,
+              horizontal: isCompactPhone ? AppSpacing.sm : AppSpacing.md,
+              vertical: AppSpacing.sm,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  width: 36,
-                  height: 36,
-                  decoration: BoxDecoration(
-                    color: colorScheme.primaryContainer.withValues(alpha: 0.55),
-                    borderRadius: BorderRadius.circular(11),
-                  ),
-                  child: Icon(category.icon, size: 20, color: colorScheme.primary),
+                CategoryIconBadge(
+                  icon: category.icon,
+                  accent: colorScheme.primary,
+                  size: 36,
+                  iconSize: AppIconSize.sm,
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: AppSpacing.xs),
                 Text(
                   category.label,
                   style: textTheme.titleSmall?.copyWith(

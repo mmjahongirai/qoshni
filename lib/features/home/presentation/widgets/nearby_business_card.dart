@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:qoshni/core/theme/app_tokens.dart';
+import 'package:qoshni/core/widgets/app_image_placeholder.dart';
+import 'package:qoshni/core/widgets/app_surface_card.dart';
 import 'package:qoshni/features/home/presentation/data/home_mock_data.dart';
 import 'package:qoshni/features/home/presentation/navigation/business_navigation.dart';
 import 'package:qoshni/features/home/presentation/widgets/business_favorite_button.dart';
@@ -17,51 +20,68 @@ class NearbyBusinessCard extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
 
     return SizedBox(
-      width: 240,
-      child: Card(
-        clipBehavior: Clip.antiAlias,
-        child: Row(
+      width: 248,
+      child: AppSurfaceCard(
+        padding: EdgeInsets.zero,
+        onTap: () => openMockBusinessDetail(context, business.id),
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
-              child: InkWell(
-                onTap: () => openMockBusinessDetail(context, business.id),
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 16, 4, 16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        width: 44,
-                        height: 44,
-                        decoration: BoxDecoration(
-                          color: business.accent.withValues(alpha: 0.14),
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                        child: Icon(business.icon, color: business.accent),
-                      ),
-                      const SizedBox(height: 12),
-                      Text(
-                        business.name,
-                        style: textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.w600,
-                        ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      const SizedBox(height: 4),
-                      Text(
-                        business.subtitle,
-                        style: textTheme.bodySmall?.copyWith(
-                          color: colorScheme.onSurfaceVariant,
-                        ),
-                      ),
-                    ],
+            Stack(
+              children: [
+                AppImagePlaceholder(
+                  icon: business.icon,
+                  accent: business.accent,
+                  height: 96,
+                  borderRadius: const BorderRadius.vertical(
+                    top: Radius.circular(AppRadius.lg),
                   ),
                 ),
+                Positioned(
+                  top: AppSpacing.xs,
+                  right: AppSpacing.xs,
+                  child: Material(
+                    color: colorScheme.surface.withValues(alpha: 0.92),
+                    borderRadius: AppRadius.smAll,
+                    child: BusinessFavoriteButton(businessId: business.id),
+                  ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(
+                AppSpacing.md,
+                AppSpacing.sm,
+                AppSpacing.md,
+                AppSpacing.md,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    business.name,
+                    style: textTheme.titleMedium,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  const SizedBox(height: AppSpacing.xxs),
+                  Text(
+                    business.subtitle,
+                    style: textTheme.bodySmall,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  const SizedBox(height: AppSpacing.xs),
+                  Text(
+                    business.distanceLabel,
+                    style: textTheme.labelSmall?.copyWith(
+                      color: colorScheme.primary,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
               ),
             ),
-            BusinessFavoriteButton(businessId: business.id),
           ],
         ),
       ),

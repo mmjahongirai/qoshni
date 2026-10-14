@@ -50,5 +50,5 @@ def test_revision_history_has_single_linear_head() -> None:
 
     heads = [module.revision for module in modules if module.revision not in referenced_down_revisions]
 
-    assert heads == ["b0a1f0020001"]
+    assert heads == ["b0a1f0070001"]
     assert sum(module.down_revision is None for module in modules) == 1

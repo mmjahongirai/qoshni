@@ -43,6 +43,44 @@ class AppLocalizationsUz extends AppLocalizations {
   String get openMap => 'Xaritani ochish';
 
   @override
+  String get homeMapPreviewStatus =>
+      'Demo xarita ko‘rinishi — jonli joylashuv keyinroq ulanadi.';
+
+  @override
+  String get homeNearbyChainsTitle => 'Yaqin atrofdagi tarmoqlar';
+
+  @override
+  String get homeNearbyChainsSubtitle =>
+      'Filiallar va kerakli joylarni tez toping.';
+
+  @override
+  String get homeEssentialSupermarkets => 'Supermarketlar';
+
+  @override
+  String get homeEssentialPharmacies => 'Dorixonalar';
+
+  @override
+  String get homeEssentialHospitals => 'Shifoxonalar va klinikalar';
+
+  @override
+  String get homeEssentialRestaurants => 'Kafelar va restoranlar';
+
+  @override
+  String get homeEssentialPlaceTypeHint => 'Demo kategoriya yorliği';
+
+  @override
+  String get homeMapLegendMarkets => 'Bozorlar';
+
+  @override
+  String get homeMapLegendPharmacy => 'Dorixona';
+
+  @override
+  String get homeMapLegendHealth => 'Sog‘liq';
+
+  @override
+  String get homeMapLegendFood => 'Ovqat';
+
+  @override
   String get mapPlaceholderTitle => 'Xarita';
 
   @override
@@ -254,6 +292,12 @@ class AppLocalizationsUz extends AppLocalizations {
   String get languageTooltip => 'Til';
 
   @override
+  String get navHome => 'Bosh sahifa';
+
+  @override
+  String get demoContentBadge => 'Demo';
+
+  @override
   String get searchTitle => 'Qidiruv';
 
   @override
@@ -348,4 +392,812 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get profileAboutGuestNote =>
       'Mehmon rejimi — shaxsiy ma’lumotlar joriy seansdan tashqari saqlanmaydi.';
+
+  @override
+  String get businessDetailSectionCatalog => 'Mahsulotlar va xizmatlar';
+
+  @override
+  String get businessDetailCatalogEmptyTitle =>
+      'Hozircha namuna takliflar yo‘q';
+
+  @override
+  String get businessDetailCatalogEmptyBody =>
+      'Bu biznes uchun demo mahsulot va xizmatlar keyinroq shu yerda ko‘rsatiladi.';
+
+  @override
+  String get catalogItemTypeProduct => 'Mahsulot';
+
+  @override
+  String get catalogItemTypeService => 'Xizmat';
+
+  @override
+  String catalogSamplePriceDemo(int amount) {
+    return 'Namuna narxi: $amount so‘m';
+  }
+
+  @override
+  String get catalogItemDetailSectionDescription => 'Tavsif';
+
+  @override
+  String get catalogItemDetailParentBusiness => 'Biznes';
+
+  @override
+  String get catalogItemDetailNotFoundTitle => 'Taklif topilmadi';
+
+  @override
+  String get catalogItemDetailNotFoundBody =>
+      'Bu demo element mavjud emas yoki tanlangan biznesga tegishli emas.';
+
+  @override
+  String get catalogBarakaFreshBreadName => 'Namuna — qishloq noni';
+
+  @override
+  String get catalogBarakaFreshBreadDesc =>
+      'Demo do‘kon uchun o‘ylashma non pozitsiyasi.';
+
+  @override
+  String get catalogBarakaDailyBasketName => 'Namuna — kundalik savat';
+
+  @override
+  String get catalogBarakaDailyBasketDesc =>
+      'Asosiy oziq-ovqat to‘plami (faqat demo).';
+
+  @override
+  String get catalogSamarkandPlovName => 'Namuna — uy palovi';
+
+  @override
+  String get catalogSamarkandPlovDesc =>
+      'Demo kafe uchun o‘ylashma bir porsiya palov.';
+
+  @override
+  String get catalogSamarkandGreenTeaName => 'Namuna — yashil choy';
+
+  @override
+  String get catalogSamarkandGreenTeaDesc =>
+      'Demo kafe uchun o‘ylashma choynak.';
+
+  @override
+  String get catalogShifoVitaminCName => 'Namuna — C vitamini';
+
+  @override
+  String get catalogShifoVitaminCDesc =>
+      'O‘ylashma dorixona mahsuloti; haqiqiy dori emas.';
+
+  @override
+  String get catalogShifoFirstAidKitName => 'Namuna — dori qutisi';
+
+  @override
+  String get catalogShifoFirstAidKitDesc =>
+      'Ko‘rsatish uchun o‘ylashma to‘plam.';
+
+  @override
+  String get catalogTechUsbHubName => 'Namuna — USB hub';
+
+  @override
+  String get catalogTechUsbHubDesc => 'Demo elektronika do‘koni aksessuari.';
+
+  @override
+  String get catalogTechPhoneCaseName => 'Namuna — telefon g\'ilofi';
+
+  @override
+  String get catalogTechPhoneCaseDesc => 'O‘ylashma universal g\'ilof.';
+
+  @override
+  String get catalogStyleCottonTeeName => 'Namuna — paxta futbolka';
+
+  @override
+  String get catalogStyleCottonTeeDesc => 'Demo butik uchun o‘ylashma kiyim.';
+
+  @override
+  String get catalogPipeLeakVisitName => 'Namuna — oqish tekshiruvi';
+
+  @override
+  String get catalogPipeLeakVisitDesc => 'Demo chaqiruv santexnika xizmati.';
+
+  @override
+  String get catalogPipeTapInstallName => 'Namuna — krani o‘rnatish';
+
+  @override
+  String get catalogPipeTapInstallDesc =>
+      'Demo narx bilan o‘ylashma o‘rnatish xizmati.';
+
+  @override
+  String get catalogElectricSocketCheckName => 'Namuna — rozetka tekshiruvi';
+
+  @override
+  String get catalogElectricSocketCheckDesc =>
+      'Demo katalog uchun o‘ylashma elektrik tashrifi.';
+
+  @override
+  String get catalogRentStudioNightName => 'Namuna — studiya (1 tun)';
+
+  @override
+  String get catalogRentStudioNightDesc =>
+      'O‘ylashma qisqa muddatli ijara; haqiqiy emas.';
+
+  @override
+  String get catalogRentSedanDayName => 'Namuna — sedan (1 kun)';
+
+  @override
+  String get catalogRentSedanDayDesc =>
+      'Demo avto ijarasi uchun o‘ylashma e’lon.';
+
+  @override
+  String get cartTitle => 'Savat';
+
+  @override
+  String get cartOpenTooltip => 'Savat';
+
+  @override
+  String get cartAddToCart => 'Savatga qo‘shish';
+
+  @override
+  String cartAddedSnackBar(String itemName) {
+    return '$itemName savatga qo‘shildi (demo)';
+  }
+
+  @override
+  String get cartCannotAddNoPrice =>
+      'Bu demo elementda namuna narx yo‘q — jami hisobga qo‘shib bo‘lmaydi.';
+
+  @override
+  String get cartEmptyTitle => 'Savat bo‘sh';
+
+  @override
+  String get cartEmptyBody =>
+      'Bizneslarni ko‘ring va taklif sahifasidan demo mahsulot yoki xizmat qo‘shing.';
+
+  @override
+  String get cartBrowseHome => 'Bosh sahifaga qaytish';
+
+  @override
+  String get cartQuantityIncrease => 'Miqdorni oshirish';
+
+  @override
+  String get cartQuantityDecrease => 'Miqdorni kamaytirish';
+
+  @override
+  String get cartRemoveItem => 'Savatdan olib tashlash';
+
+  @override
+  String get cartClearAction => 'Tozalash';
+
+  @override
+  String get cartClearConfirmTitle => 'Savat tozalansinmi?';
+
+  @override
+  String get cartClearConfirmBody =>
+      'Barcha demo mahsulotlar savatdan olib tashlansinmi?';
+
+  @override
+  String get cartClearConfirmYes => 'Savatni tozalash';
+
+  @override
+  String get cartClearConfirmCancel => 'Bekor qilish';
+
+  @override
+  String cartDemoAmountUzs(String amount) {
+    return '$amount so‘m (namuna demo narx)';
+  }
+
+  @override
+  String cartLineSubtotal(String amount) {
+    return 'Qator bo‘yicha (demo): $amount';
+  }
+
+  @override
+  String cartEstimatedTotalLabel(String amount) {
+    return 'Taxminiy demo jami: $amount';
+  }
+
+  @override
+  String get cartDemoEstimateDisclaimer =>
+      'Bu faqat mahalliy demo taxmin — haqiqiy hisob-faktura yoki to‘lov emas.';
+
+  @override
+  String get cartProceedCheckout => 'Buyurtmani rasmiylashtirish';
+
+  @override
+  String get checkoutTitle => 'Buyurtma';
+
+  @override
+  String get checkoutReviewNotice =>
+      'Demo savatingizni tekshiring. Ushbu ko‘rinishda to‘lov yoki shaxsiy ma’lumot so‘ralmaydi.';
+
+  @override
+  String get checkoutConfirmDemoOrder => 'Demo buyurtmani tasdiqlash';
+
+  @override
+  String checkoutQuantityLabel(int quantity) {
+    return 'Miqdor: $quantity';
+  }
+
+  @override
+  String get checkoutEmptyTitle => 'Buyurtma uchun hech narsa yo‘q';
+
+  @override
+  String get checkoutEmptyBody => 'Savat bo‘sh. Avval demo mahsulot qo‘shing.';
+
+  @override
+  String get demoOrderConfirmationTitle => 'Demo tasdiq';
+
+  @override
+  String get demoOrderPreparedHeading => 'Demo buyurtma tayyorlandi';
+
+  @override
+  String demoOrderReferenceLabel(String referenceId) {
+    return 'Demo raqam: $referenceId';
+  }
+
+  @override
+  String get demoOrderNoRealSubmissionNotice =>
+      'Hech qanday biznesga haqiqiy buyurtma yuborilmadi. To‘lov olinmadi va yetkazib berish yoki bron rejalashtirilmadi.';
+
+  @override
+  String get demoOrderReturnHome => 'Bosh sahifaga qaytish';
+
+  @override
+  String get demoOrderInvalidTitle => 'Tasdiq mavjud emas';
+
+  @override
+  String get demoOrderInvalidBody =>
+      'Bu demo tasdiq topilmadi yoki muddati tugagan. Savatdan qayta boshlang.';
+
+  @override
+  String get demoOrdersTitle => 'Buyurtmalar';
+
+  @override
+  String get demoOrdersEmptyTitle => 'Hali demo buyurtmalar yo‘q';
+
+  @override
+  String get demoOrdersEmptyBody =>
+      'Mahalliy buyurtma ko‘rinishi uchun demo rasmiylashtirishni tasdiqlang. Bizneslarga hech narsa yuborilmaydi.';
+
+  @override
+  String demoOrdersListSummary(int lineCount, int unitCount) {
+    String _temp0 = intl.Intl.pluralLogic(
+      lineCount,
+      locale: localeName,
+      other: '$lineCount qator · $unitCount dona',
+      one: '1 qator · $unitCount dona',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get demoOrderDetailTitle => 'Demo buyurtma';
+
+  @override
+  String get demoOrderDetailNotFoundTitle => 'Buyurtma topilmadi';
+
+  @override
+  String get demoOrderDetailNotFoundBody =>
+      'Bu demo buyurtma joriy seans tarixida yo‘q. Yangi demo buyurtma tasdiqlang yoki bosh sahifaga qayting.';
+
+  @override
+  String get demoOrderStatusPreparedNotSent => 'Demo tayyor — yuborilmagan';
+
+  @override
+  String get demoOrderStatusLocalOnlyNote =>
+      'Holat faqat ushbu qurilmada demo uchun saqlanadi. Biznes tasdiqi, to‘lov, yetkazish yoki bron jarayoni yo‘q.';
+
+  @override
+  String get demoOrderViewHistory => 'Buyurtmalar tarixini ko‘rish';
+
+  @override
+  String profileDemoOrdersSavedCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Bu seansda $count ta demo buyurtma',
+      one: 'Bu seansda 1 ta demo buyurtma',
+      zero: 'Bu seansda demo buyurtma yo‘q',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get businessCenterTitle => 'Biznesni boshqarish';
+
+  @override
+  String get profileBusinessCenterSubtitle =>
+      'Mahalliy biznes profil qoralamalari (demo)';
+
+  @override
+  String get businessCenterIntroTitle => 'Biznesingizni boshqarish (ko‘rinish)';
+
+  @override
+  String get businessCenterIntroBody =>
+      'Bu MVP biznes egasi profil tayyorlash jarayonini ko‘rsatadi. Hech narsa ochiq e’lon qilinmaydi va serverga saqlanmaydi.';
+
+  @override
+  String get businessCenterSessionNotice =>
+      'Qoralamalar faqat joriy brauzer seansida saqlanadi — yangilash yoki qayta ishga tushirishdan keyin yo‘qoladi.';
+
+  @override
+  String get businessCenterYourProfilesTitle => 'Seans qoralamalaringiz';
+
+  @override
+  String get businessCenterEmptyDraftsTitle => 'Hali qoralama yo‘q';
+
+  @override
+  String get businessCenterEmptyDraftsBody =>
+      'Biznes profilingiz qanday ko‘rinishini ko‘rish uchun profil yarating. Faqat shu qurilmada qoladi.';
+
+  @override
+  String get businessCenterCreateProfile => 'Profil yaratish';
+
+  @override
+  String get businessCenterSampleSectionTitle => 'Namuna profil';
+
+  @override
+  String get businessCenterSampleSectionBody =>
+      'Faqat o‘qish uchun o‘yindagi namuna — tasdiqlangan biznes emas va Qidiruv yoki Bosh sahifada ko‘rsatilmaydi.';
+
+  @override
+  String get businessProfileSampleBadge => 'Namuna demo';
+
+  @override
+  String get businessPlannedSectionTitle => 'Keyingi bosqichlarda';
+
+  @override
+  String get businessPlannedSectionBody =>
+      'Rejalashtirilgan imkoniyatlar (ushbu MVPda yo‘q):';
+
+  @override
+  String get businessPlannedProducts => 'Mahsulot va xizmatlarni boshqarish';
+
+  @override
+  String get businessPlannedAvailability => 'Mavjudlik va ombor';
+
+  @override
+  String get businessPlannedOrders => 'Buyurtmalar va bronlar';
+
+  @override
+  String get businessPlannedRental => 'Ijara jadvali va depozitlar';
+
+  @override
+  String get businessPlannedStaff => 'Xodimlar va ruxsatlar';
+
+  @override
+  String get businessPlannedAnalytics => 'Biznes analitikasi';
+
+  @override
+  String get businessSampleRentalName =>
+      'Namuna — Perforator va asbob-uskunalar ijarasi';
+
+  @override
+  String get businessSampleRentalDescription =>
+      'Biznes markazi demosidagi o‘yindagi ijaraga berish do‘koni namunasi. Haqiqiy ombor, narx yoki bron yo‘q.';
+
+  @override
+  String get businessSampleRentalAddress =>
+      'Demo tumani, Namuna ustaxonasi ko‘chasi 3 (haqiqiy manzil emas)';
+
+  @override
+  String get businessSampleRentalHours => 'Dush–Shan, 9:00–18:00 (demo vaqt)';
+
+  @override
+  String get businessSampleRentalPhone => '+998 00 000 00 00 (namuna)';
+
+  @override
+  String get businessProfileDetailTitle => 'Biznes profili';
+
+  @override
+  String get businessProfileEditAction => 'Tahrirlash';
+
+  @override
+  String get businessProfileSampleReadOnlyNotice =>
+      'Bu faqat namuna profil — ko‘rsatish uchun. E’lon qilinmaydi va to‘g‘ridan-to‘g‘ri tahrirlab bo‘lmaydi.';
+
+  @override
+  String get businessProfileDraftLocalNotice =>
+      'Bu mahalliy qoralama. Saqlash biznesingizni e’lon qilmaydi va mijozlar bilan bog‘lanmaydi.';
+
+  @override
+  String get businessProfileCopySampleToDraft =>
+      'Namunani yangi qoralamaga nusxalash';
+
+  @override
+  String get businessProfileNotFoundTitle => 'Profil topilmadi';
+
+  @override
+  String get businessProfileNotFoundBody =>
+      'Bu profil joriy seansda mavjud emas. Biznes markaziga qayting va qayta urinib ko‘ring.';
+
+  @override
+  String get businessProfileFormCreateTitle => 'Yangi biznes profili';
+
+  @override
+  String get businessProfileFormEditTitle => 'Biznes profilini tahrirlash';
+
+  @override
+  String get businessProfileFormLocalSaveNotice =>
+      'O‘zgarishlar faqat shu seans uchun mahalliy saqlanadi — onlayn e’lon qilinmaydi.';
+
+  @override
+  String get businessProfileFieldName => 'Biznes nomi';
+
+  @override
+  String get businessProfileFieldCategory => 'Kategoriya';
+
+  @override
+  String get businessProfileFieldDescription => 'Tavsif';
+
+  @override
+  String get businessProfileFieldAddress => 'Manzil yoki joy';
+
+  @override
+  String get businessProfileFieldHours => 'Ish vaqti';
+
+  @override
+  String get businessProfileFieldPhone => 'Aloqa telefoni';
+
+  @override
+  String get businessProfileFieldPhoneOptional => 'Aloqa telefoni (ixtiyoriy)';
+
+  @override
+  String get businessProfileValidationNameRequired => 'Biznes nomini kiriting';
+
+  @override
+  String get businessProfileValidationDescriptionRequired => 'Tavsif kiriting';
+
+  @override
+  String get businessProfileValidationAddressRequired =>
+      'Manzil yoki joy kiriting';
+
+  @override
+  String get businessProfileValidationHoursRequired => 'Ish vaqtini kiriting';
+
+  @override
+  String get businessProfileSaveAction => 'Qoralamani saqlash';
+
+  @override
+  String get businessProfileCancelAction => 'Bekor qilish';
+
+  @override
+  String get businessOfferingsSectionTitle => 'Mahsulotlar va xizmatlar';
+
+  @override
+  String get businessOfferingAddAction => 'Qo\'shish';
+
+  @override
+  String get businessOfferingsOwnerNotice =>
+      'Faqat qoralama uchun mahalliy demo katalog — Qidiruv yoki Bosh sahifada ko‘rinmaydi.';
+
+  @override
+  String get businessOfferingsSampleNotice =>
+      'Faqat namuna — tahrirlab bo‘lmaydi va e’lon qilinmaydi.';
+
+  @override
+  String get businessOfferingsEmptyOwner =>
+      'Hali taklif yo‘q. Katalog ko‘rinishi uchun mahsulot, xizmat yoki ijaraga qo‘shing.';
+
+  @override
+  String get businessOfferingsEmptySample =>
+      'Namuna profilda namuna o‘chirilgan bo‘lsa, ko‘rsatiladigan bandlar yo‘q.';
+
+  @override
+  String get businessOfferingKindProduct => 'Mahsulot';
+
+  @override
+  String get businessOfferingKindService => 'Xizmat';
+
+  @override
+  String get businessOfferingKindRental => 'Ijara buyumi';
+
+  @override
+  String get businessPricingUnitPerItem => 'dona bo‘yicha';
+
+  @override
+  String get businessPricingUnitPerHour => 'soat bo‘yicha';
+
+  @override
+  String get businessPricingUnitPerDay => 'kun bo‘yicha';
+
+  @override
+  String get businessOfferingNoDemoPrice => 'Demo namuna narxi yo‘q';
+
+  @override
+  String businessOfferingDemoPriceLine(String amount, String unit) {
+    return 'Demo namuna: $amount ($unit)';
+  }
+
+  @override
+  String businessOfferingDemoDepositLine(String amount) {
+    return 'Demo depozit (yechilmaydi): $amount';
+  }
+
+  @override
+  String get businessOfferingEditAction => 'Tahrirlash';
+
+  @override
+  String get businessOfferingDeleteAction => 'O‘chirish';
+
+  @override
+  String get businessOfferingDeleteConfirmTitle => 'Taklifni o‘chirasizmi?';
+
+  @override
+  String get businessOfferingDeleteConfirmBody =>
+      'Bu taklif mahalliy qoralamadan o‘chiriladi. Yangilashdan keyin tiklab bo‘lmaydi.';
+
+  @override
+  String get businessOfferingDeleteConfirmYes => 'O‘chirish';
+
+  @override
+  String get businessOfferingFormCreateTitle => 'Yangi taklif';
+
+  @override
+  String get businessOfferingFormEditTitle => 'Taklifni tahrirlash';
+
+  @override
+  String get businessOfferingFormLocalNotice =>
+      'Takliflar faqat shu seans uchun ushbu qurilmada — mijozlarga e’lon qilinmaydi.';
+
+  @override
+  String get businessOfferingFieldName => 'Taklif nomi';
+
+  @override
+  String get businessOfferingFieldKind => 'Turi';
+
+  @override
+  String get businessOfferingFieldDescription => 'Qisqa tavsif';
+
+  @override
+  String get businessOfferingFieldPricingUnit => 'Narx birligi';
+
+  @override
+  String get businessOfferingFieldDemoPriceOptional =>
+      'Demo namuna narxi (so‘m, ixtiyoriy)';
+
+  @override
+  String get businessOfferingFieldDemoDepositOptional =>
+      'Demo depozit (so‘m, ixtiyoriy)';
+
+  @override
+  String get businessOfferingValidationNameRequired => 'Taklif nomini kiriting';
+
+  @override
+  String get businessOfferingValidationDescriptionRequired => 'Tavsif kiriting';
+
+  @override
+  String get businessOfferingValidationUzsInvalid =>
+      'So‘mda musbat butun son kiriting';
+
+  @override
+  String get businessOfferingSaveAction => 'Taklifni saqlash';
+
+  @override
+  String get businessOfferingProfileNotEditable =>
+      'Takliflar faqat o‘z seans qoralamalaringiz uchun boshqariladi.';
+
+  @override
+  String get businessOfferingNotFoundBody =>
+      'Taklif topilmadi yoki bu profilga tegishli emas.';
+
+  @override
+  String get businessSampleOfferingPerforatorName =>
+      'Namuna — perforator (ijara demo)';
+
+  @override
+  String get businessSampleOfferingPerforatorDesc =>
+      'Ko‘rsatish uchun o‘yindagi asbob ijarasi. Jadval, mavjudlik yoki haqiqiy depozit yo‘q.';
+
+  @override
+  String get businessInventorySummaryTitle => 'Ombor va mavjudlik';
+
+  @override
+  String businessInventorySummaryCounts(
+    int configured,
+    int total,
+    int active,
+    int paused,
+  ) {
+    return 'Sozlangan $configured / $total · Faol $active · Pauza $paused';
+  }
+
+  @override
+  String get businessInventorySummaryNotice =>
+      'Demo miqdorlar va pauza faqat mahalliy — mijozlar yoki bronlar bilan bog‘lanmagan.';
+
+  @override
+  String get businessInventoryManageAction => 'Ombor va mavjudlikni boshqarish';
+
+  @override
+  String get businessInventoryPageTitle => 'Ombor va mavjudlik';
+
+  @override
+  String get businessInventoryPageIntro =>
+      'Seans takliflari uchun demo zaxira yoki pauza belgilang. Bu jonli bron tizimi emas.';
+
+  @override
+  String get businessInventoryProfileNotEditable =>
+      'Omborni faqat o‘z seans qoralamalaringiz uchun boshqarish mumkin.';
+
+  @override
+  String get businessInventoryNoOfferingsTitle => 'Hali taklif yo‘q';
+
+  @override
+  String get businessInventoryNoOfferingsBody =>
+      'Omborni sozlashdan oldin profilga mahsulot, xizmat yoki ijaraga qo‘shing.';
+
+  @override
+  String get businessInventoryBackToProfile => 'Profilga qaytish';
+
+  @override
+  String get businessInventoryNotConfigured => 'Sozlanmagan';
+
+  @override
+  String get businessInventoryStateActive => 'Faol';
+
+  @override
+  String get businessInventoryStatePaused => 'Pauza';
+
+  @override
+  String businessInventoryServiceStatus(String state) {
+    return 'Holat: $state (demo — jadval yo‘q)';
+  }
+
+  @override
+  String businessInventoryProductStock(int available, int total, String state) {
+    return '$available mavjud / $total · $state';
+  }
+
+  @override
+  String businessInventoryRentalUnits(int available, int total, String state) {
+    return '$available mavjud / $total dona · $state (qo‘lda demo)';
+  }
+
+  @override
+  String get businessInventoryConfigureAction => 'Sozlash';
+
+  @override
+  String get businessInventoryEditAction => 'Omborni tahrirlash';
+
+  @override
+  String get businessInventoryEditTitle => 'Omborni tahrirlash';
+
+  @override
+  String get businessInventoryLocalNotice =>
+      'Faqat mahalliy demo — iste’molchi ilovasiga e’lon qilinmaydi.';
+
+  @override
+  String get businessInventoryRentalManualNotice =>
+      'Mavjud donalar demo uchun qo‘lda kiritiladi. Bron yoki qaytarish avtomatik yangilamaydi.';
+
+  @override
+  String get businessInventoryAvailabilityToggle => 'Taklif faol';
+
+  @override
+  String get businessInventoryFieldStockTotal => 'Umumiy zaxira (dona)';
+
+  @override
+  String get businessInventoryFieldStockAvailable => 'Mavjud zaxira (dona)';
+
+  @override
+  String get businessInventoryFieldTotalUnits => 'Jami uskunalar';
+
+  @override
+  String get businessInventoryFieldAvailableUnits => 'Hozir mavjud dona';
+
+  @override
+  String get businessInventoryValidationQuantityRequired => 'Miqdor kiriting';
+
+  @override
+  String get businessInventoryValidationQuantityInvalid =>
+      'Musbat butun son kiriting';
+
+  @override
+  String get businessInventoryValidationAvailableExceedsTotal =>
+      'Mavjud miqdor umumiydan oshmasligi kerak';
+
+  @override
+  String get businessInventorySaveAction => 'Omborni saqlash';
+
+  @override
+  String get authSignInAction => 'Kirish';
+
+  @override
+  String get authSignInTitle => 'Kirish';
+
+  @override
+  String get authSignOutAction => 'Chiqish';
+
+  @override
+  String get authPhonePrompt =>
+      'Telefon raqamingizni xalqaro formatda kiriting. Xizmat yoqilganda bir martalik kod yuboriladi.';
+
+  @override
+  String get authPhoneFieldLabel => 'Telefon raqami';
+
+  @override
+  String get authPhoneHint => '+998901234567';
+
+  @override
+  String get authPhoneInvalid =>
+      'To‘g‘ri xalqaro raqam kiriting, masalan +998901234567.';
+
+  @override
+  String get authRequestOtpAction => 'Kod yuborish';
+
+  @override
+  String get authOtpPrompt =>
+      'Yetkazib berish sozlangan bo‘lsa, telefoningizga kelgan kodni kiriting.';
+
+  @override
+  String get authOtpFieldLabel => 'Tasdiqlash kodi';
+
+  @override
+  String get authVerifyAction => 'Tasdiqlash';
+
+  @override
+  String get authChangePhoneAction => 'Boshqa raqam';
+
+  @override
+  String get authContinueAsGuest => 'Mehmon sifatida davom etish';
+
+  @override
+  String get authApiNotConfigured =>
+      'Ushbu build uchun kirish serveri sozlanmagan. QOSHNI_API_BASE_URL ni compile vaqtida bering.';
+
+  @override
+  String get authErrorServiceUnavailable =>
+      'Kirish vaqtincha mavjud emas. SMS yetkazish hali sozlanmagan bo‘lishi mumkin.';
+
+  @override
+  String get authErrorRateLimited =>
+      'Juda ko‘p urinish. Biroz kutib qayta urinib ko‘ring.';
+
+  @override
+  String get authErrorCodeIncorrect => 'Noto‘g‘ri tasdiqlash kodi.';
+
+  @override
+  String get authErrorChallengeExpired =>
+      'Kod muddati tugagan. Yangi kod so‘rang.';
+
+  @override
+  String get authErrorChallengeLocked =>
+      'Juda ko‘p noto‘g‘ri urinish. Yangi kod so‘rang.';
+
+  @override
+  String get authErrorNetwork =>
+      'Tarmoq xatosi. Ulanishni tekshirib qayta urinib ko‘ring.';
+
+  @override
+  String get authErrorGeneric => 'Kirish amalga oshmadi. Qayta urinib ko‘ring.';
+
+  @override
+  String get authSignedInTitle => 'Tizimga kirdingiz';
+
+  @override
+  String get authSignedInBody =>
+      'Telefon identifikatsiyasi ushbu seans uchun tasdiqlangan.';
+
+  @override
+  String get authSessionsAction => 'Seanslarni boshqarish';
+
+  @override
+  String get authSessionsTitle => 'Seanslar';
+
+  @override
+  String get authSessionsEmpty => 'Ko‘rsatish uchun seans yo‘q.';
+
+  @override
+  String get authSessionUnknownDevice => 'Noma’lum qurilma';
+
+  @override
+  String get authSessionStateActive => 'Faol';
+
+  @override
+  String get authSessionStateExpired => 'Muddati tugagan';
+
+  @override
+  String get authSessionStateRevoked => 'Bekor qilingan';
+
+  @override
+  String get authSessionCurrentBadge => 'Joriy';
+
+  @override
+  String get authSessionExpiredNotice =>
+      'Seans tugadi. Xizmat mavjud bo‘lganda qayta kirishingiz mumkin.';
 }

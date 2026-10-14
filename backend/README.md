@@ -12,8 +12,13 @@ Minimal FastAPI foundation for the QO'SHNI platform.
 - Lazy SQLAlchemy engine and request-scoped session dependency (no connection until used)
 - Health endpoint tests
 
-Alembic migration scaffolding (baseline revision only), authentication, business
-features, Docker, and deployment workflows are intentionally outside later phases.
+- Identity schema (users, OTP challenges, sessions, auth audit) in revision
+  `b0a1f0050001`, plus typed `/api/v1/auth` contracts in `app/api/schemas/auth.py`.
+  Auth endpoints are **not** mounted yet; see
+  `docs/architecture/adr-identity-auth-foundation.md`.
+
+OTP delivery, working auth endpoints, business features, Docker, and deployment
+workflows are intentionally left to later phases.
 
 ## Local setup
 
