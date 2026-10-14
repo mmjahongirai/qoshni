@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qoshni/core/localization/generated/app_localizations.dart';
+import 'package:qoshni/core/theme/app_tokens.dart';
 import 'package:qoshni/features/home/presentation/orders/demo_order_local_status.dart';
 
 class DemoOrderStatusChip extends StatelessWidget {
@@ -18,10 +19,16 @@ class DemoOrderStatusChip extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
 
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.sm,
+        vertical: AppSpacing.xxs,
+      ),
       decoration: BoxDecoration(
         color: colorScheme.secondaryContainer.withValues(alpha: 0.65),
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(AppRadius.pill),
+        border: Border.all(
+          color: colorScheme.outlineVariant.withValues(alpha: 0.4),
+        ),
       ),
       child: Text(
         status.label(l10n),

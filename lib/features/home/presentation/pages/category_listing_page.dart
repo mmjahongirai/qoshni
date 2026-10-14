@@ -4,6 +4,7 @@ import 'package:qoshni/core/localization/generated/app_localizations.dart';
 import 'package:qoshni/core/responsive/responsive_layout.dart';
 import 'package:qoshni/features/home/presentation/data/home_mock_data.dart';
 import 'package:qoshni/features/home/presentation/data/service_category_id.dart';
+import 'package:qoshni/core/widgets/app_empty_state.dart';
 import 'package:qoshni/features/home/presentation/widgets/search_result_tile.dart';
 
 class CategoryListingPage extends StatelessWidget {
@@ -113,37 +114,11 @@ class _CategoryListingEmptyState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-    final textTheme = Theme.of(context).textTheme;
-
     return Center(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.storefront_outlined,
-              size: 48,
-              color: colorScheme.primary,
-            ),
-            const SizedBox(height: 14),
-            Text(
-              title,
-              style: textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 8),
-            Text(
-              body,
-              style: textTheme.bodyMedium?.copyWith(
-                color: colorScheme.onSurfaceVariant,
-                height: 1.35,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
+      child: AppEmptyState(
+        icon: Icons.storefront_outlined,
+        title: title,
+        message: body,
       ),
     );
   }

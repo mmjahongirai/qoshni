@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:qoshni/core/theme/app_tokens.dart';
+import 'package:qoshni/core/widgets/app_surface_card.dart';
 
 class MapPreviewCard extends StatelessWidget {
   const MapPreviewCard({
@@ -19,20 +21,18 @@ class MapPreviewCard extends StatelessWidget {
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
-    return Card(
+    return AppSurfaceCard(
       clipBehavior: Clip.antiAlias,
-      child: InkWell(
-        onTap: onOpenMap,
-        child: Padding(
-          padding: const EdgeInsets.all(18),
-          child: Column(
+      onTap: onOpenMap,
+      padding: const EdgeInsets.all(AppSpacing.lg),
+      child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 height: 132,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
+                  borderRadius: AppRadius.mdAll,
                   gradient: LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
@@ -86,7 +86,7 @@ class MapPreviewCard extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: AppSpacing.md),
               Text(
                 title,
                 style: textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600),
@@ -98,15 +98,13 @@ class MapPreviewCard extends StatelessWidget {
                   color: colorScheme.onSurfaceVariant,
                 ),
               ),
-              const SizedBox(height: 14),
+              const SizedBox(height: AppSpacing.md),
               FilledButton.icon(
                 onPressed: onOpenMap,
                 icon: const Icon(Icons.arrow_forward_rounded, size: 18),
                 label: Text(buttonLabel),
               ),
             ],
-          ),
-        ),
       ),
     );
   }

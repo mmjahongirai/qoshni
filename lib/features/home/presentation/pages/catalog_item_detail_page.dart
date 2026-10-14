@@ -2,6 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:qoshni/core/localization/generated/app_localizations.dart';
 import 'package:qoshni/core/responsive/responsive_layout.dart';
+import 'package:qoshni/core/theme/app_tokens.dart';
+import 'package:qoshni/core/widgets/app_empty_state.dart';
+import 'package:qoshni/core/widgets/app_price_text.dart';
+import 'package:qoshni/core/widgets/app_surface_card.dart';
+import 'package:qoshni/core/widgets/category_icon_badge.dart';
+import 'package:qoshni/core/widgets/demo_content_badge.dart';
 import 'package:qoshni/features/home/presentation/data/business_catalog_mock_data.dart';
 import 'package:qoshni/features/home/presentation/data/home_mock_data.dart';
 import 'package:qoshni/features/home/presentation/data/mock_business_id.dart';
@@ -38,13 +44,11 @@ class CatalogItemDetailPage extends StatelessWidget {
           )
         : null;
 
-    final isValid = business != null && catalogItem != null;
-
     return Scaffold(
       appBar: AppBar(
         leading: BackButton(onPressed: () => context.pop()),
         title: Text(
-          isValid ? catalogItem!.name : l10n.catalogItemDetailNotFoundTitle,
+          catalogItem?.name ?? l10n.catalogItemDetailNotFoundTitle,
         ),
       ),
       body: SafeArea(
@@ -91,6 +95,7 @@ class _CatalogItemDetailBody extends StatelessWidget {
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
     final typeLabel = catalogItemKindLabel(item.kind, l10n);
+    final samplePriceUzs = item.samplePriceUzs;
 
     return Align(
       alignment: Alignment.topCenter,
@@ -101,125 +106,105 @@ class _CatalogItemDetailBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Card(
-                margin: EdgeInsets.zero,
-                child: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        width: 56,
-                        height: 56,
-                        decoration: BoxDecoration(
-                          color: colorScheme.primaryContainer
-                              .withValues(alpha: 0.5),
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        child: Icon(
-                          item.icon,
+              AppSurfaceCard(
+                padding: const EdgeInsets.all(AppSpacing.lg),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const DemoContentBadge(),
+                    const SizedBox(height: AppSpacing.sm),
+                    CategoryIconBadge(
+                      icon: item.icon,
+                      accent: colorScheme.primary,
+                      size: 64,
+                    ),
+                    const SizedBox(height: AppSpacing.md),
+                    Text(
+                      item.name,
+                      style: textTheme.headlineSmall,
+                    ),
+                    const SizedBox(height: AppSpacing.xs),
+                    Text(
+                      typeLabel,
+                      style: textTheme.titleSmall?.copyWith(
+                        color: colorScheme.primary,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    if (samplePriceUzs != null) ...[
+                      const SizedBox(height: AppSpacing.sm),
+                      AppPriceText(
+                        label: formatCatalogSamplePrice(samplePriceUzs, l10n),
+                        emphasis: PriceEmphasis.total,
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+              const SizedBox(height: AppSpacing.sm),
+              AppSurfaceCard(
+                padding: const EdgeInsets.all(AppSpacing.md),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.storefront_outlined,
+                          size: 20,
                           color: colorScheme.primary,
-                          size: 28,
                         ),
-                      ),
-                      const SizedBox(height: 16),
-                      Text(
-                        item.name,
-                        style: textTheme.headlineSmall?.copyWith(
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        typeLabel,
-                        style: textTheme.titleSmall?.copyWith(
-                          color: colorScheme.primary,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      if (item.samplePriceUzs != null) ...[
-                        const SizedBox(height: 12),
+                        const SizedBox(width: AppSpacing.xs),
                         Text(
-                          formatCatalogSamplePrice(item.samplePriceUzs!, l10n),
-                          style: textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.w700,
+                          l10n.catalogItemDetailParentBusiness,
+                          style: textTheme.titleSmall?.copyWith(
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                       ],
-                    ],
-                  ),
+                    ),
+                    const SizedBox(height: AppSpacing.xs),
+                    Text(
+                      parent.name,
+                      style: textTheme.bodyMedium?.copyWith(
+                        color: colorScheme.onSurfaceVariant,
+                        height: 1.35,
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              const SizedBox(height: 12),
-              Card(
-                margin: EdgeInsets.zero,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 14, 16, 16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.storefront_outlined,
-                            size: 20,
-                            color: colorScheme.primary,
-                          ),
-                          const SizedBox(width: 8),
-                          Text(
-                            l10n.catalogItemDetailParentBusiness,
-                            style: textTheme.titleSmall?.copyWith(
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        parent.name,
-                        style: textTheme.bodyMedium?.copyWith(
-                          color: colorScheme.onSurfaceVariant,
-                          height: 1.35,
+              const SizedBox(height: AppSpacing.sm),
+              AppSurfaceCard(
+                padding: const EdgeInsets.all(AppSpacing.md),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.description_outlined,
+                          size: 20,
+                          color: colorScheme.primary,
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              const SizedBox(height: 12),
-              Card(
-                margin: EdgeInsets.zero,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 14, 16, 16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.description_outlined,
-                            size: 20,
-                            color: colorScheme.primary,
+                        const SizedBox(width: AppSpacing.xs),
+                        Text(
+                          l10n.catalogItemDetailSectionDescription,
+                          style: textTheme.titleSmall?.copyWith(
+                            fontWeight: FontWeight.w600,
                           ),
-                          const SizedBox(width: 8),
-                          Text(
-                            l10n.catalogItemDetailSectionDescription,
-                            style: textTheme.titleSmall?.copyWith(
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 10),
-                      Text(
-                        item.description,
-                        style: textTheme.bodyMedium?.copyWith(
-                          color: colorScheme.onSurfaceVariant,
-                          height: 1.4,
                         ),
+                      ],
+                    ),
+                    const SizedBox(height: AppSpacing.xs),
+                    Text(
+                      item.description,
+                      style: textTheme.bodyMedium?.copyWith(
+                        color: colorScheme.onSurfaceVariant,
+                        height: 1.4,
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
               const SizedBox(height: 12),
@@ -259,16 +244,13 @@ class _CatalogAddToCartSection extends StatelessWidget {
     final hasPrice = catalogItem.samplePriceUzs != null;
 
     if (!hasPrice) {
-      return Card(
-        margin: EdgeInsets.zero,
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Text(
-            l10n.cartCannotAddNoPrice,
-            style: textTheme.bodyMedium?.copyWith(
-              color: colorScheme.onSurfaceVariant,
-              height: 1.35,
-            ),
+      return AppSurfaceCard(
+        padding: const EdgeInsets.all(AppSpacing.md),
+        child: Text(
+          l10n.cartCannotAddNoPrice,
+          style: textTheme.bodyMedium?.copyWith(
+            color: colorScheme.onSurfaceVariant,
+            height: 1.35,
           ),
         ),
       );
@@ -305,33 +287,11 @@ class _CatalogItemNotFoundState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-    final textTheme = Theme.of(context).textTheme;
-
     return Center(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.inventory_2_outlined, size: 48, color: colorScheme.primary),
-            const SizedBox(height: 14),
-            Text(
-              l10n.catalogItemDetailNotFoundTitle,
-              style: textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 8),
-            Text(
-              l10n.catalogItemDetailNotFoundBody,
-              style: textTheme.bodyMedium?.copyWith(
-                color: colorScheme.onSurfaceVariant,
-                height: 1.35,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
+      child: AppEmptyState(
+        icon: Icons.inventory_2_outlined,
+        title: l10n.catalogItemDetailNotFoundTitle,
+        message: l10n.catalogItemDetailNotFoundBody,
       ),
     );
   }

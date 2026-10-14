@@ -5,8 +5,14 @@ import 'package:qoshni/core/localization/locale_controller.dart';
 import 'package:qoshni/core/responsive/responsive_layout.dart';
 import 'package:qoshni/core/theme/theme_controller.dart';
 import 'package:qoshni/di/injection.dart';
+import 'package:qoshni/features/auth/presentation/auth_controller.dart';
 import 'package:qoshni/features/home/presentation/favorites/favorites_controller.dart';
 import 'package:qoshni/features/home/presentation/orders/demo_order_controller.dart';
+import 'package:qoshni/core/theme/app_tokens.dart';
+import 'package:qoshni/core/widgets/app_message_banner.dart';
+import 'package:qoshni/core/widgets/app_surface_card.dart';
+import 'package:qoshni/core/widgets/primary_navigation_shell.dart';
+import 'package:qoshni/core/widgets/profile_avatar_fallback.dart';
 import 'package:qoshni/routing/route_paths.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -19,40 +25,47 @@ class ProfilePage extends StatelessWidget {
     final localeController = getIt<LocaleController>();
     final favoritesController = getIt<FavoritesController>();
     final demoOrderController = getIt<DemoOrderController>();
+    final authController = getIt<AuthController>();
 
-    return Scaffold(
-      appBar: AppBar(
-        leading: BackButton(onPressed: () => context.pop()),
-        title: Text(l10n.profileTitle),
-      ),
-      body: SafeArea(
-        child: ListenableBuilder(
-          listenable: Listenable.merge([
-            themeController,
-            localeController,
-            favoritesController,
-            demoOrderController,
-          ]),
-          builder: (context, _) {
-            return ResponsiveLayout(
-              phone: _ProfileBody(
-                maxWidth: 520,
-                l10n: l10n,
-                themeController: themeController,
-                localeController: localeController,
-                favoritesController: favoritesController,
-                demoOrderController: demoOrderController,
-              ),
-              tablet: _ProfileBody(
-                maxWidth: 760,
-                l10n: l10n,
-                themeController: themeController,
-                localeController: localeController,
-                favoritesController: favoritesController,
-                demoOrderController: demoOrderController,
-              ),
-            );
-          },
+    return PrimaryNavigationShell(
+      destination: PrimaryNavDestination.profile,
+      body: Scaffold(
+        appBar: AppBar(
+          leading: primaryTabLeading(context),
+          title: Text(l10n.profileTitle),
+        ),
+        body: SafeArea(
+          child: ListenableBuilder(
+            listenable: Listenable.merge([
+              themeController,
+              localeController,
+              favoritesController,
+              demoOrderController,
+              authController,
+            ]),
+            builder: (context, _) {
+              return ResponsiveLayout(
+                phone: _ProfileBody(
+                  maxWidth: 520,
+                  l10n: l10n,
+                  themeController: themeController,
+                  localeController: localeController,
+                  favoritesController: favoritesController,
+                  demoOrderController: demoOrderController,
+                  authController: authController,
+                ),
+                tablet: _ProfileBody(
+                  maxWidth: 760,
+                  l10n: l10n,
+                  themeController: themeController,
+                  localeController: localeController,
+                  favoritesController: favoritesController,
+                  demoOrderController: demoOrderController,
+                  authController: authController,
+                ),
+              );
+            },
+          ),
         ),
       ),
     );
@@ -67,6 +80,7 @@ class _ProfileBody extends StatelessWidget {
     required this.localeController,
     required this.favoritesController,
     required this.demoOrderController,
+    required this.authController,
   });
 
   final double maxWidth;
@@ -75,6 +89,7 @@ class _ProfileBody extends StatelessWidget {
   final LocaleController localeController;
   final FavoritesController favoritesController;
   final DemoOrderController demoOrderController;
+  final AuthController authController;
 
   @override
   Widget build(BuildContext context) {
@@ -92,45 +107,40 @@ class _ProfileBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Card(
-                margin: EdgeInsets.zero,
-                child: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    children: [
-                      Container(
-                        width: 72,
-                        height: 72,
-                        decoration: BoxDecoration(
-                          color: colorScheme.primaryContainer
-                              .withValues(alpha: 0.55),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          Icons.person_outline_rounded,
-                          size: 36,
-                          color: colorScheme.primary,
-                        ),
+              AppSurfaceCard(
+                child: Column(
+                  children: [
+                    ProfileAvatarFallback(
+                      signedIn: authController.isSignedIn,
+                    ),
+                    const SizedBox(height: AppSpacing.md),
+                    Text(
+                      authController.isSignedIn
+                          ? l10n.authSignedInTitle
+                          : l10n.profileGuestTitle,
+                      style: textTheme.titleLarge,
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: AppSpacing.xs),
+                    Text(
+                      authController.isSignedIn
+                          ? l10n.authSignedInBody
+                          : l10n.profileGuestBody,
+                      style: textTheme.bodyMedium?.copyWith(
+                        color: colorScheme.onSurfaceVariant,
+                        height: 1.4,
                       ),
-                      const SizedBox(height: 14),
-                      Text(
-                        l10n.profileGuestTitle,
-                        style: textTheme.titleLarge?.copyWith(
-                          fontWeight: FontWeight.w700,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        l10n.profileGuestBody,
-                        style: textTheme.bodyMedium?.copyWith(
-                          color: colorScheme.onSurfaceVariant,
-                          height: 1.4,
-                        ),
-                        textAlign: TextAlign.center,
+                      textAlign: TextAlign.center,
+                    ),
+                    if (authController.status == AuthStatus.sessionExpired) ...[
+                      const SizedBox(height: AppSpacing.sm),
+                      AppMessageBanner(
+                        message: l10n.authSessionExpiredNotice,
+                        icon: Icons.lock_clock_outlined,
+                        tone: AppMessageTone.warning,
                       ),
                     ],
-                  ),
+                  ],
                 ),
               ),
               const SizedBox(height: 16),
@@ -138,6 +148,40 @@ class _ProfileBody extends StatelessWidget {
                 title: l10n.profileSectionShortcuts,
                 child: Column(
                   children: [
+                    if (authController.isSignedIn) ...[
+                      ListTile(
+                        contentPadding:
+                            const EdgeInsets.symmetric(horizontal: 8),
+                        leading: Icon(
+                          Icons.devices_other_outlined,
+                          color: colorScheme.primary,
+                        ),
+                        title: Text(l10n.authSessionsAction),
+                        trailing: const Icon(Icons.chevron_right_rounded),
+                        onTap: () => context.pushNamed(RouteNames.authSessions),
+                      ),
+                      ListTile(
+                        contentPadding:
+                            const EdgeInsets.symmetric(horizontal: 8),
+                        leading: Icon(
+                          Icons.logout_rounded,
+                          color: colorScheme.primary,
+                        ),
+                        title: Text(l10n.authSignOutAction),
+                        onTap: authController.busy ? null : authController.signOut,
+                      ),
+                    ] else
+                      ListTile(
+                        contentPadding:
+                            const EdgeInsets.symmetric(horizontal: 8),
+                        leading: Icon(
+                          Icons.login_rounded,
+                          color: colorScheme.primary,
+                        ),
+                        title: Text(l10n.authSignInAction),
+                        trailing: const Icon(Icons.chevron_right_rounded),
+                        onTap: () => context.pushNamed(RouteNames.authSignIn),
+                      ),
                     ListTile(
                       contentPadding:
                           const EdgeInsets.symmetric(horizontal: 8),
@@ -165,6 +209,18 @@ class _ProfileBody extends StatelessWidget {
                       ),
                       trailing: const Icon(Icons.chevron_right_rounded),
                       onTap: () => context.pushNamed(RouteNames.demoOrders),
+                    ),
+                    ListTile(
+                      contentPadding:
+                          const EdgeInsets.symmetric(horizontal: 8),
+                      leading: Icon(
+                        Icons.storefront_outlined,
+                        color: colorScheme.primary,
+                      ),
+                      title: Text(l10n.businessCenterTitle),
+                      subtitle: Text(l10n.profileBusinessCenterSubtitle),
+                      trailing: const Icon(Icons.chevron_right_rounded),
+                      onTap: () => context.pushNamed(RouteNames.businessCenter),
                     ),
                   ],
                 ),
@@ -283,26 +339,28 @@ class _ProfileSettingsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
 
-    return Card(
-      margin: EdgeInsets.zero,
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(12, 12, 12, 8),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 4),
-              child: Text(
-                title,
-                style: textTheme.titleSmall?.copyWith(
-                  fontWeight: FontWeight.w600,
-                ),
+    return AppSurfaceCard(
+      padding: const EdgeInsets.fromLTRB(
+        AppSpacing.sm,
+        AppSpacing.sm,
+        AppSpacing.sm,
+        AppSpacing.xs,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: AppSpacing.xxs),
+            child: Text(
+              title,
+              style: textTheme.titleSmall?.copyWith(
+                fontWeight: FontWeight.w600,
               ),
             ),
-            const SizedBox(height: 4),
-            child,
-          ],
-        ),
+          ),
+          const SizedBox(height: AppSpacing.xxs),
+          child,
+        ],
       ),
     );
   }

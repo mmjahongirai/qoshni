@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:qoshni/core/localization/generated/app_localizations.dart';
 import 'package:qoshni/core/responsive/responsive_layout.dart';
+import 'package:qoshni/core/theme/app_tokens.dart';
+import 'package:qoshni/core/widgets/app_empty_state.dart';
+import 'package:qoshni/core/widgets/app_message_banner.dart';
+import 'package:qoshni/core/widgets/app_surface_card.dart';
 import 'package:qoshni/di/injection.dart';
 import 'package:qoshni/features/home/presentation/cart/demo_order_snapshot.dart';
 import 'package:qoshni/features/home/presentation/orders/demo_order_controller.dart';
@@ -89,39 +93,40 @@ class _DemoOrderConfirmationBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Icon(Icons.check_circle_outline,
-                  size: 56, color: colorScheme.primary),
-              const SizedBox(height: 12),
-              Text(
-                l10n.demoOrderPreparedHeading,
-                style: textTheme.headlineSmall?.copyWith(
-                  fontWeight: FontWeight.w700,
+              AppSurfaceCard(
+                padding: const EdgeInsets.all(AppSpacing.lg),
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.check_circle_outline,
+                      size: 56,
+                      color: colorScheme.primary,
+                    ),
+                    const SizedBox(height: AppSpacing.sm),
+                    Text(
+                      l10n.demoOrderPreparedHeading,
+                      style: textTheme.headlineSmall,
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: AppSpacing.xs),
+                    Text(
+                      l10n.demoOrderReferenceLabel(snapshot.referenceId),
+                      style: textTheme.titleSmall?.copyWith(
+                        color: colorScheme.onSurfaceVariant,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: AppSpacing.sm),
+                    DemoOrderStatusChip(l10n: l10n, status: status),
+                  ],
                 ),
-                textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 8),
-              Text(
-                l10n.demoOrderReferenceLabel(snapshot.referenceId),
-                style: textTheme.titleSmall?.copyWith(
-                  color: colorScheme.onSurfaceVariant,
-                ),
-                textAlign: TextAlign.center,
+              const SizedBox(height: AppSpacing.sm),
+              AppMessageBanner(
+                message: l10n.demoOrderNoRealSubmissionNotice,
+                icon: Icons.info_outline,
               ),
-              const SizedBox(height: 12),
-              Align(
-                alignment: Alignment.center,
-                child: DemoOrderStatusChip(l10n: l10n, status: status),
-              ),
-              const SizedBox(height: 16),
-              Text(
-                l10n.demoOrderNoRealSubmissionNotice,
-                style: textTheme.bodyMedium?.copyWith(
-                  color: colorScheme.onSurfaceVariant,
-                  height: 1.4,
-                ),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 20),
+              const SizedBox(height: AppSpacing.lg),
               for (var i = 0; i < snapshot.lines.length; i++) ...[
                 if (i > 0) const SizedBox(height: 10),
                 DemoOrderLineCard(l10n: l10n, line: snapshot.lines[i]),
@@ -156,37 +161,14 @@ class _DemoOrderInvalidState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-    final textTheme = Theme.of(context).textTheme;
-
     return Center(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.error_outline, size: 48, color: colorScheme.primary),
-            const SizedBox(height: 14),
-            Text(
-              l10n.demoOrderInvalidTitle,
-              style: textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 8),
-            Text(
-              l10n.demoOrderInvalidBody,
-              style: textTheme.bodyMedium?.copyWith(
-                color: colorScheme.onSurfaceVariant,
-                height: 1.35,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 20),
-            FilledButton(
-              onPressed: () => context.go(RoutePaths.home),
-              child: Text(l10n.demoOrderReturnHome),
-            ),
-          ],
+      child: AppEmptyState(
+        icon: Icons.error_outline,
+        title: l10n.demoOrderInvalidTitle,
+        message: l10n.demoOrderInvalidBody,
+        action: FilledButton(
+          onPressed: () => context.go(RoutePaths.home),
+          child: Text(l10n.demoOrderReturnHome),
         ),
       ),
     );

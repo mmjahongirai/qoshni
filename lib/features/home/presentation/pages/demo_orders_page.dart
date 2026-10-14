@@ -7,6 +7,10 @@ import 'package:qoshni/features/home/presentation/cart/cart_currency_format.dart
 import 'package:qoshni/features/home/presentation/orders/demo_order_controller.dart';
 import 'package:qoshni/features/home/presentation/orders/demo_order_date_format.dart';
 import 'package:qoshni/features/home/presentation/orders/demo_order_record.dart';
+import 'package:qoshni/core/theme/app_tokens.dart';
+import 'package:qoshni/core/widgets/app_empty_state.dart';
+import 'package:qoshni/core/widgets/app_price_text.dart';
+import 'package:qoshni/core/widgets/app_surface_card.dart';
 import 'package:qoshni/features/home/presentation/widgets/demo_order_status_chip.dart';
 import 'package:qoshni/routing/route_paths.dart';
 
@@ -102,62 +106,46 @@ class _DemoOrderListTile extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     final snapshot = record.snapshot;
 
-    return Card(
-      margin: EdgeInsets.zero,
-      clipBehavior: Clip.antiAlias,
-      child: InkWell(
-        onTap: () => context.pushNamed(
-          RouteNames.demoOrderDetail,
-          pathParameters: {'referenceId': snapshot.referenceId},
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(14),
-          child: Column(
+    return AppSurfaceCard(
+      onTap: () => context.pushNamed(
+        RouteNames.demoOrderDetail,
+        pathParameters: {'referenceId': snapshot.referenceId},
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Text(
-                      l10n.demoOrderReferenceLabel(snapshot.referenceId),
-                      style: textTheme.titleSmall?.copyWith(
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                  const Icon(Icons.chevron_right_rounded),
-                ],
-              ),
-              const SizedBox(height: 6),
-              Text(
-                formatDemoOrderDateTime(context, snapshot.confirmedAt),
-                style: textTheme.bodySmall?.copyWith(
-                  color: colorScheme.onSurfaceVariant,
+              Expanded(
+                child: Text(
+                  l10n.demoOrderReferenceLabel(snapshot.referenceId),
+                  style: textTheme.titleSmall,
                 ),
               ),
-              const SizedBox(height: 8),
-              Text(
-                l10n.demoOrdersListSummary(
-                  snapshot.lineCount,
-                  snapshot.totalUnits,
-                ),
-                style: textTheme.bodyMedium,
-              ),
-              const SizedBox(height: 4),
-              Text(
-                l10n.cartEstimatedTotalLabel(
-                  formatCartDemoMoney(l10n, snapshot.totalUzs),
-                ),
-                style: textTheme.bodyMedium?.copyWith(
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              const SizedBox(height: 10),
-              DemoOrderStatusChip(l10n: l10n, status: record.status),
+              Icon(Icons.chevron_right_rounded, color: colorScheme.onSurfaceVariant),
             ],
           ),
-        ),
+          const SizedBox(height: AppSpacing.xs),
+          Text(
+            formatDemoOrderDateTime(context, snapshot.confirmedAt),
+            style: textTheme.bodySmall,
+          ),
+          const SizedBox(height: AppSpacing.xs),
+          Text(
+            l10n.demoOrdersListSummary(snapshot.lineCount, snapshot.totalUnits),
+            style: textTheme.bodyMedium,
+          ),
+          const SizedBox(height: AppSpacing.xxs),
+          AppPriceText(
+            label: l10n.cartEstimatedTotalLabel(
+              formatCartDemoMoney(l10n, snapshot.totalUzs),
+            ),
+            emphasis: PriceEmphasis.primary,
+          ),
+          const SizedBox(height: AppSpacing.sm),
+          DemoOrderStatusChip(l10n: l10n, status: record.status),
+        ],
       ),
     );
   }
@@ -170,38 +158,14 @@ class _DemoOrdersEmptyState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-    final textTheme = Theme.of(context).textTheme;
-
     return Center(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.receipt_long_outlined,
-                size: 48, color: colorScheme.primary),
-            const SizedBox(height: 14),
-            Text(
-              l10n.demoOrdersEmptyTitle,
-              style: textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 8),
-            Text(
-              l10n.demoOrdersEmptyBody,
-              style: textTheme.bodyMedium?.copyWith(
-                color: colorScheme.onSurfaceVariant,
-                height: 1.35,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 20),
-            FilledButton(
-              onPressed: () => context.go(RoutePaths.home),
-              child: Text(l10n.cartBrowseHome),
-            ),
-          ],
+      child: AppEmptyState(
+        icon: Icons.receipt_long_outlined,
+        title: l10n.demoOrdersEmptyTitle,
+        message: l10n.demoOrdersEmptyBody,
+        action: FilledButton(
+          onPressed: () => context.go(RoutePaths.home),
+          child: Text(l10n.cartBrowseHome),
         ),
       ),
     );

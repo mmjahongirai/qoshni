@@ -9,11 +9,27 @@ abstract final class RoutePaths {
       '/business/:businessId/catalog/:catalogItemId';
   static const String favorites = '/favorites';
   static const String profile = '/profile';
+  static const String authSignIn = '/profile/sign-in';
+  static const String authSessions = '/profile/sessions';
   static const String cart = '/cart';
   static const String checkout = '/checkout';
   static const String demoOrderConfirmation = '/order/demo-confirmation';
   static const String demoOrders = '/orders';
   static const String demoOrderDetail = '/orders/:referenceId';
+  static const String businessCenter = '/business-center';
+  static const String businessProfileCreate = '/business-center/profile/new';
+  static const String businessProfileDetail =
+      '/business-center/profile/:profileId';
+  static const String businessProfileEdit =
+      '/business-center/profile/:profileId/edit';
+  static const String businessOfferingCreate =
+      '/business-center/profile/:profileId/offerings/new';
+  static const String businessOfferingEdit =
+      '/business-center/profile/:profileId/offerings/:offeringId/edit';
+  static const String businessInventory =
+      '/business-center/profile/:profileId/inventory';
+  static const String businessInventoryEdit =
+      '/business-center/profile/:profileId/inventory/:offeringId/edit';
 }
 
 abstract final class RouteNames {
@@ -25,9 +41,19 @@ abstract final class RouteNames {
   static const String catalogItemDetail = 'catalogItemDetail';
   static const String favorites = 'favorites';
   static const String profile = 'profile';
+  static const String authSignIn = 'authSignIn';
+  static const String authSessions = 'authSessions';
   static const String cart = 'cart';
   static const String checkout = 'checkout';
   static const String demoOrderConfirmation = 'demoOrderConfirmation';
   static const String demoOrders = 'demoOrders';
   static const String demoOrderDetail = 'demoOrderDetail';
+  static const String businessCenter = 'businessCenter';
+  static const String businessProfileCreate = 'businessProfileCreate';
+  static const String businessProfileDetail = 'businessProfileDetail';
+  static const String businessProfileEdit = 'businessProfileEdit';
+  static const String businessOfferingCreate = 'businessOfferingCreate';
+  static const String businessOfferingEdit = 'businessOfferingEdit';
+  static const String businessInventory = 'businessInventory';
+  static const String businessInventoryEdit = 'businessInventoryEdit';
 }

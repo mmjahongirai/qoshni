@@ -12,6 +12,7 @@ import 'package:qoshni/features/home/presentation/widgets/home_section_title.dar
 import 'package:qoshni/features/home/presentation/widgets/map_preview_card.dart';
 import 'package:qoshni/features/home/presentation/widgets/nearby_business_section.dart';
 import 'package:qoshni/features/home/presentation/widgets/service_category_grid.dart';
+import 'package:qoshni/core/widgets/primary_navigation_shell.dart';
 import 'package:qoshni/routing/route_paths.dart';
 
 class HomePage extends StatelessWidget {
@@ -26,7 +27,8 @@ class HomePage extends StatelessWidget {
     final categories = buildServiceCategories(l10n);
     final nearbyBusinesses = buildNearbyBusinesses(l10n, colorScheme);
 
-    return Scaffold(
+    return PrimaryNavigationShell(
+      destination: PrimaryNavDestination.home,
       body: SafeArea(
         child: ResponsiveLayout(
           phone: _HomeScrollContent(

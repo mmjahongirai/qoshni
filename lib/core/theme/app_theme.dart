@@ -1,12 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:qoshni/core/theme/app_colors.dart';
+import 'package:qoshni/core/theme/app_tokens.dart';
 
 abstract final class AppTheme {
   static ThemeData light() {
-    final scheme = ColorScheme.fromSeed(
+    final branded = ColorScheme.fromSeed(
       seedColor: AppColors.seed,
       brightness: Brightness.light,
-      surface: AppColors.surfaceLight,
+    );
+    final scheme = branded.copyWith(
+      surface: AppColors.lightSurface,
+      onSurface: AppColors.lightTextPrimary,
+      onSurfaceVariant: AppColors.lightTextSecondary,
+      outline: AppColors.lightBorder,
+      outlineVariant: AppColors.lightBorder,
+      surfaceContainerHighest: AppColors.lightSurfaceRaised,
+      surfaceContainerHigh: AppColors.lightSurfaceRaised,
+      surfaceContainer: AppColors.lightSurface,
+      surfaceContainerLow: AppColors.lightScaffold,
+      surfaceContainerLowest: AppColors.lightScaffold,
+      surfaceDim: AppColors.lightScaffold,
+      surfaceBright: AppColors.lightSurface,
     );
 
     return _buildTheme(scheme);
@@ -43,8 +57,9 @@ abstract final class AppTheme {
     ColorScheme scheme, {
     bool usePremiumDarkSurfaces = false,
   }) {
-    final scaffoldColor =
-        usePremiumDarkSurfaces ? AppColors.darkScaffold : scheme.surface;
+    final scaffoldColor = usePremiumDarkSurfaces
+        ? AppColors.darkScaffold
+        : AppColors.lightScaffold;
     final appBarColor =
         usePremiumDarkSurfaces ? AppColors.darkScaffold : scheme.surface;
     final cardSurfaceTint =
@@ -74,12 +89,34 @@ abstract final class AppTheme {
         color: scheme.surface,
         surfaceTintColor: cardSurfaceTint,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(18),
+          borderRadius: AppRadius.lgAll,
           side: BorderSide(
             color: scheme.outlineVariant.withValues(alpha: 0.65),
           ),
         ),
       ),
+      navigationBarTheme: NavigationBarThemeData(
+        height: 64,
+        elevation: 0,
+        backgroundColor: scheme.surface,
+        indicatorColor: scheme.primary.withValues(alpha: 0.14),
+        labelTextStyle: WidgetStateProperty.resolveWith((states) {
+          final selected = states.contains(WidgetState.selected);
+          return TextStyle(
+            fontSize: 12,
+            fontWeight: selected ? FontWeight.w600 : FontWeight.w500,
+            color: selected ? scheme.primary : scheme.onSurfaceVariant,
+          );
+        }),
+        iconTheme: WidgetStateProperty.resolveWith((states) {
+          final selected = states.contains(WidgetState.selected);
+          return IconThemeData(
+            size: AppIconSize.md,
+            color: selected ? scheme.primary : scheme.onSurfaceVariant,
+          );
+        }),
+      ),
+      textTheme: _textTheme(scheme),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: scheme.surfaceContainerHighest.withValues(alpha: 0.72),
@@ -182,6 +219,41 @@ abstract final class AppTheme {
           color: scheme.outlineVariant.withValues(alpha: 0.55),
         ),
       ),
+      navigationBarTheme: theme.navigationBarTheme.copyWith(
+        backgroundColor: scheme.surface,
+      ),
+    );
+  }
+
+  static TextTheme _textTheme(ColorScheme scheme) {
+    final base = Typography.material2021().black;
+    return base.copyWith(
+      headlineLarge: base.headlineLarge?.copyWith(
+        fontWeight: FontWeight.w700,
+        letterSpacing: -0.8,
+        color: scheme.onSurface,
+      ),
+      titleLarge: base.titleLarge?.copyWith(
+        fontWeight: FontWeight.w600,
+        letterSpacing: -0.3,
+        color: scheme.onSurface,
+      ),
+      titleMedium: base.titleMedium?.copyWith(
+        fontWeight: FontWeight.w600,
+        color: scheme.onSurface,
+      ),
+      bodyLarge: base.bodyLarge?.copyWith(
+        height: 1.4,
+        color: scheme.onSurface,
+      ),
+      bodyMedium: base.bodyMedium?.copyWith(
+        height: 1.35,
+        color: scheme.onSurface,
+      ),
+      bodySmall: base.bodySmall?.copyWith(
+        color: scheme.onSurfaceVariant,
+      ),
+      labelLarge: base.labelLarge?.copyWith(fontWeight: FontWeight.w600),
     );
   }
 }

@@ -7,6 +7,12 @@ import 'package:qoshni/features/home/presentation/cart/cart_controller.dart';
 import 'package:qoshni/features/home/presentation/cart/demo_order_snapshot.dart';
 import 'package:qoshni/features/home/presentation/orders/demo_order_controller.dart';
 import 'package:qoshni/features/home/presentation/cart/cart_currency_format.dart';
+import 'package:qoshni/core/theme/app_tokens.dart';
+import 'package:qoshni/core/widgets/app_empty_state.dart';
+import 'package:qoshni/core/widgets/app_price_text.dart';
+import 'package:qoshni/core/widgets/app_surface_card.dart';
+import 'package:qoshni/core/widgets/category_icon_badge.dart';
+import 'package:qoshni/core/widgets/demo_content_badge.dart';
 import 'package:qoshni/features/home/presentation/widgets/cart_demo_total_footer.dart';
 import 'package:qoshni/routing/route_paths.dart';
 
@@ -143,14 +149,24 @@ class _CheckoutBody extends StatelessWidget {
             child: ListView(
               padding: responsivePagePadding(context),
               children: [
-                Text(
-                  l10n.checkoutReviewNotice,
-                  style: textTheme.bodyMedium?.copyWith(
-                    color: colorScheme.onSurfaceVariant,
-                    height: 1.35,
+                AppSurfaceCard(
+                  child: Row(
+                    children: [
+                      const DemoContentBadge(),
+                      const SizedBox(width: AppSpacing.sm),
+                      Expanded(
+                        child: Text(
+                          l10n.checkoutReviewNotice,
+                          style: textTheme.bodyMedium?.copyWith(
+                            color: colorScheme.onSurfaceVariant,
+                            height: 1.35,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                const SizedBox(height: 14),
+                const SizedBox(height: AppSpacing.md),
                 for (var i = 0; i < lines.length; i++) ...[
                   if (i > 0) const SizedBox(height: 10),
                   _CheckoutLineCard(l10n: l10n, line: lines[i]),
@@ -202,47 +218,44 @@ class _CheckoutLineCard extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     final item = line.catalogItem;
 
-    return Card(
-      margin: EdgeInsets.zero,
-      child: Padding(
-        padding: const EdgeInsets.all(14),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              item.name,
-              style: textTheme.titleSmall?.copyWith(
-                fontWeight: FontWeight.w600,
-              ),
+    return AppSurfaceCard(
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          CategoryIconBadge(
+            icon: item.icon,
+            accent: colorScheme.primary,
+            size: 48,
+          ),
+          const SizedBox(width: AppSpacing.sm),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(item.name, style: textTheme.titleSmall),
+                const SizedBox(height: AppSpacing.xxs),
+                Text(line.businessName, style: textTheme.bodySmall),
+                const SizedBox(height: AppSpacing.xs),
+                Text(
+                  l10n.checkoutQuantityLabel(line.quantity),
+                  style: textTheme.bodySmall,
+                ),
+                const SizedBox(height: AppSpacing.xxs),
+                AppPriceText(
+                  label: formatCartDemoMoney(l10n, line.unitPriceUzs),
+                  emphasis: PriceEmphasis.secondary,
+                ),
+                const SizedBox(height: AppSpacing.xxs),
+                AppPriceText(
+                  label: l10n.cartLineSubtotal(
+                    formatCartDemoMoney(l10n, line.subtotalUzs),
+                  ),
+                  emphasis: PriceEmphasis.primary,
+                ),
+              ],
             ),
-            const SizedBox(height: 4),
-            Text(
-              line.businessName,
-              style: textTheme.bodySmall?.copyWith(
-                color: colorScheme.onSurfaceVariant,
-              ),
-            ),
-            const SizedBox(height: 6),
-            Text(
-              l10n.checkoutQuantityLabel(line.quantity),
-              style: textTheme.bodySmall,
-            ),
-            const SizedBox(height: 4),
-            Text(
-              formatCartDemoMoney(l10n, line.unitPriceUzs),
-              style: textTheme.labelLarge,
-            ),
-            const SizedBox(height: 6),
-            Text(
-              l10n.cartLineSubtotal(
-                formatCartDemoMoney(l10n, line.subtotalUzs),
-              ),
-              style: textTheme.bodyMedium?.copyWith(
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -255,38 +268,14 @@ class _CheckoutEmptyState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-    final textTheme = Theme.of(context).textTheme;
-
     return Center(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.receipt_long_outlined,
-                size: 48, color: colorScheme.primary),
-            const SizedBox(height: 14),
-            Text(
-              l10n.checkoutEmptyTitle,
-              style: textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 8),
-            Text(
-              l10n.checkoutEmptyBody,
-              style: textTheme.bodyMedium?.copyWith(
-                color: colorScheme.onSurfaceVariant,
-                height: 1.35,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 20),
-            FilledButton(
-              onPressed: () => context.go(RoutePaths.home),
-              child: Text(l10n.cartBrowseHome),
-            ),
-          ],
+      child: AppEmptyState(
+        icon: Icons.receipt_long_outlined,
+        title: l10n.checkoutEmptyTitle,
+        message: l10n.checkoutEmptyBody,
+        action: FilledButton(
+          onPressed: () => context.go(RoutePaths.home),
+          child: Text(l10n.cartBrowseHome),
         ),
       ),
     );

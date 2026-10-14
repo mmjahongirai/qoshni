@@ -21,7 +21,7 @@ class NearbyBusinessSection extends StatelessWidget {
         HomeSectionTitle(title: title),
         const SizedBox(height: 14),
         SizedBox(
-          height: 168,
+          height: 220,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             itemCount: businesses.length,

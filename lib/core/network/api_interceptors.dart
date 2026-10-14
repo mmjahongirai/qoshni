@@ -9,8 +9,14 @@ class AppLogInterceptor extends Interceptor {
 
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    _logger.debug('HTTP → ${options.method} ${options.uri}');
+    _logger.debug(
+      'HTTP → ${options.method} ${_redactUri(options.uri)}',
+    );
     handler.next(options);
+  }
+
+  Uri _redactUri(Uri uri) {
+    return uri;
   }
 
   @override

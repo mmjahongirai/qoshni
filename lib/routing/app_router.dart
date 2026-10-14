@@ -18,6 +18,15 @@ import 'package:qoshni/features/home/presentation/pages/favorites_page.dart';
 import 'package:qoshni/features/home/presentation/pages/profile_page.dart';
 import 'package:qoshni/features/home/presentation/pages/category_listing_page.dart';
 import 'package:qoshni/features/home/presentation/pages/search_page.dart';
+import 'package:qoshni/features/business_platform/domain/business_profile_draft.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_center_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_profile_detail_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_inventory_edit_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_inventory_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_offering_form_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_profile_form_page.dart';
+import 'package:qoshni/features/auth/presentation/pages/auth_sessions_page.dart';
+import 'package:qoshni/features/auth/presentation/pages/auth_sign_in_page.dart';
 import 'package:qoshni/routing/route_paths.dart';
 
 /// Application router. Add feature routes here as modules are introduced.
@@ -93,6 +102,18 @@ class AppRouter {
         path: RoutePaths.profile,
         name: RouteNames.profile,
         builder: (context, state) => const ProfilePage(),
+        routes: [
+          GoRoute(
+            path: 'sign-in',
+            name: RouteNames.authSignIn,
+            builder: (context, state) => const AuthSignInPage(),
+          ),
+          GoRoute(
+            path: 'sessions',
+            name: RouteNames.authSessions,
+            builder: (context, state) => const AuthSessionsPage(),
+          ),
+        ],
       ),
       GoRoute(
         path: RoutePaths.cart,
@@ -127,6 +148,83 @@ class AppRouter {
                 referenceId: state.pathParameters['referenceId'],
               );
             },
+          ),
+        ],
+      ),
+      GoRoute(
+        path: RoutePaths.businessCenter,
+        name: RouteNames.businessCenter,
+        builder: (context, state) => const BusinessCenterPage(),
+        routes: [
+          GoRoute(
+            path: 'profile/new',
+            name: RouteNames.businessProfileCreate,
+            builder: (context, state) {
+              final extra = state.extra;
+              return BusinessProfileFormPage(
+                seed: extra is BusinessProfileFormSeed ? extra : null,
+              );
+            },
+          ),
+          GoRoute(
+            path: 'profile/:profileId',
+            name: RouteNames.businessProfileDetail,
+            builder: (context, state) {
+              return BusinessProfileDetailPage(
+                profileId: state.pathParameters['profileId'],
+              );
+            },
+            routes: [
+              GoRoute(
+                path: 'edit',
+                name: RouteNames.businessProfileEdit,
+                builder: (context, state) {
+                  return BusinessProfileFormPage(
+                    draftId: state.pathParameters['profileId'],
+                  );
+                },
+              ),
+              GoRoute(
+                path: 'offerings/new',
+                name: RouteNames.businessOfferingCreate,
+                builder: (context, state) {
+                  return BusinessOfferingFormPage(
+                    profileId: state.pathParameters['profileId'],
+                  );
+                },
+              ),
+              GoRoute(
+                path: 'offerings/:offeringId/edit',
+                name: RouteNames.businessOfferingEdit,
+                builder: (context, state) {
+                  return BusinessOfferingFormPage(
+                    profileId: state.pathParameters['profileId'],
+                    offeringId: state.pathParameters['offeringId'],
+                  );
+                },
+              ),
+              GoRoute(
+                path: 'inventory',
+                name: RouteNames.businessInventory,
+                builder: (context, state) {
+                  return BusinessInventoryPage(
+                    profileId: state.pathParameters['profileId'],
+                  );
+                },
+                routes: [
+                  GoRoute(
+                    path: ':offeringId/edit',
+                    name: RouteNames.businessInventoryEdit,
+                    builder: (context, state) {
+                      return BusinessInventoryEditPage(
+                        profileId: state.pathParameters['profileId'],
+                        offeringId: state.pathParameters['offeringId'],
+                      );
+                    },
+                  ),
+                ],
+              ),
+            ],
           ),
         ],
       ),

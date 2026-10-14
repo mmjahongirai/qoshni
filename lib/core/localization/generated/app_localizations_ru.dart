@@ -250,6 +250,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get languageTooltip => 'Язык';
 
   @override
+  String get navHome => 'Главная';
+
+  @override
+  String get demoContentBadge => 'Демо';
+
+  @override
   String get searchTitle => 'Поиск';
 
   @override
@@ -643,4 +649,512 @@ class AppLocalizationsRu extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get businessCenterTitle => 'Бизнес-центр';
+
+  @override
+  String get profileBusinessCenterSubtitle =>
+      'Локальные черновики профиля (демо)';
+
+  @override
+  String get businessCenterIntroTitle => 'Управление бизнесом (превью)';
+
+  @override
+  String get businessCenterIntroBody =>
+      'Этот MVP показывает, как владелец может подготовить профиль. Ничего не публикуется и не сохраняется на сервере.';
+
+  @override
+  String get businessCenterSessionNotice =>
+      'Черновики существуют только в этой сессии браузера и исчезают после обновления или перезапуска.';
+
+  @override
+  String get businessCenterYourProfilesTitle => 'Черновики сессии';
+
+  @override
+  String get businessCenterEmptyDraftsTitle => 'Черновиков пока нет';
+
+  @override
+  String get businessCenterEmptyDraftsBody =>
+      'Создайте профиль, чтобы увидеть, как может выглядеть ваше объявление. Только на этом устройстве.';
+
+  @override
+  String get businessCenterCreateProfile => 'Создать профиль';
+
+  @override
+  String get businessCenterSampleSectionTitle => 'Пример профиля';
+
+  @override
+  String get businessCenterSampleSectionBody =>
+      'Вымышленный демо-профиль только для чтения — не проверенный бизнес и не показывается в Поиске или на Главной.';
+
+  @override
+  String get businessProfileSampleBadge => 'Демо-пример';
+
+  @override
+  String get businessPlannedSectionTitle => 'В следующих фазах';
+
+  @override
+  String get businessPlannedSectionBody =>
+      'Запланированные возможности (недоступны в этом MVP):';
+
+  @override
+  String get businessPlannedProducts => 'Управление товарами и услугами';
+
+  @override
+  String get businessPlannedAvailability => 'Наличие и склад';
+
+  @override
+  String get businessPlannedOrders => 'Заказы и бронирования';
+
+  @override
+  String get businessPlannedRental => 'Аренда, расписание и депозиты';
+
+  @override
+  String get businessPlannedStaff => 'Сотрудники и права доступа';
+
+  @override
+  String get businessPlannedAnalytics => 'Бизнес-аналитика';
+
+  @override
+  String get businessSampleRentalName =>
+      'Пример — аренда перфораторов и инструментов';
+
+  @override
+  String get businessSampleRentalDescription =>
+      'Вымышленный пример проката для демо бизнес-центра. Нет реального склада, цен или бронирования.';
+
+  @override
+  String get businessSampleRentalAddress =>
+      'Демо-район, ул. Примерная мастерская 3 (не реальный адрес)';
+
+  @override
+  String get businessSampleRentalHours => 'Пн–Сб, 9:00–18:00 (демо-часы)';
+
+  @override
+  String get businessSampleRentalPhone => '+998 00 000 00 00 (пример)';
+
+  @override
+  String get businessProfileDetailTitle => 'Профиль бизнеса';
+
+  @override
+  String get businessProfileEditAction => 'Изменить';
+
+  @override
+  String get businessProfileSampleReadOnlyNotice =>
+      'Это демо-профиль только для просмотра. Не публикуется и не редактируется напрямую.';
+
+  @override
+  String get businessProfileDraftLocalNotice =>
+      'Это локальный черновик. Сохранение не публикует бизнес и не связывает с клиентами.';
+
+  @override
+  String get businessProfileCopySampleToDraft =>
+      'Скопировать пример в новый черновик';
+
+  @override
+  String get businessProfileNotFoundTitle => 'Профиль не найден';
+
+  @override
+  String get businessProfileNotFoundBody =>
+      'Этот профиль недоступен в текущей сессии. Вернитесь в бизнес-центр и попробуйте снова.';
+
+  @override
+  String get businessProfileFormCreateTitle => 'Новый профиль бизнеса';
+
+  @override
+  String get businessProfileFormEditTitle => 'Редактировать профиль';
+
+  @override
+  String get businessProfileFormLocalSaveNotice =>
+      'Изменения сохраняются локально только для этой сессии — без публикации в сети.';
+
+  @override
+  String get businessProfileFieldName => 'Название бизнеса';
+
+  @override
+  String get businessProfileFieldCategory => 'Категория';
+
+  @override
+  String get businessProfileFieldDescription => 'Описание';
+
+  @override
+  String get businessProfileFieldAddress => 'Адрес или местоположение';
+
+  @override
+  String get businessProfileFieldHours => 'Часы работы';
+
+  @override
+  String get businessProfileFieldPhone => 'Контактный телефон';
+
+  @override
+  String get businessProfileFieldPhoneOptional =>
+      'Контактный телефон (необязательно)';
+
+  @override
+  String get businessProfileValidationNameRequired =>
+      'Введите название бизнеса';
+
+  @override
+  String get businessProfileValidationDescriptionRequired => 'Введите описание';
+
+  @override
+  String get businessProfileValidationAddressRequired =>
+      'Введите адрес или местоположение';
+
+  @override
+  String get businessProfileValidationHoursRequired => 'Укажите часы работы';
+
+  @override
+  String get businessProfileSaveAction => 'Сохранить черновик';
+
+  @override
+  String get businessProfileCancelAction => 'Отмена';
+
+  @override
+  String get businessOfferingsSectionTitle => 'Товары и услуги';
+
+  @override
+  String get businessOfferingAddAction => 'Добавить';
+
+  @override
+  String get businessOfferingsOwnerNotice =>
+      'Локальный демо-каталог только для черновика — не виден клиентам в Поиске или на Главной.';
+
+  @override
+  String get businessOfferingsSampleNotice =>
+      'Только демонстрация — не редактируется и не публикуется.';
+
+  @override
+  String get businessOfferingsEmptyOwner =>
+      'Пока нет предложений. Добавьте товар, услугу или аренду для предпросмотра.';
+
+  @override
+  String get businessOfferingsEmptySample =>
+      'У примера профиля нет демо-позиций, если образцы отключены.';
+
+  @override
+  String get businessOfferingKindProduct => 'Товар';
+
+  @override
+  String get businessOfferingKindService => 'Услуга';
+
+  @override
+  String get businessOfferingKindRental => 'Аренда';
+
+  @override
+  String get businessPricingUnitPerItem => 'за штуку';
+
+  @override
+  String get businessPricingUnitPerHour => 'за час';
+
+  @override
+  String get businessPricingUnitPerDay => 'за сутки';
+
+  @override
+  String get businessOfferingNoDemoPrice => 'Нет демо-цены';
+
+  @override
+  String businessOfferingDemoPriceLine(String amount, String unit) {
+    return 'Демо-цена: $amount ($unit)';
+  }
+
+  @override
+  String businessOfferingDemoDepositLine(String amount) {
+    return 'Демо-депозит (не списывается): $amount';
+  }
+
+  @override
+  String get businessOfferingEditAction => 'Изменить';
+
+  @override
+  String get businessOfferingDeleteAction => 'Удалить';
+
+  @override
+  String get businessOfferingDeleteConfirmTitle => 'Удалить предложение?';
+
+  @override
+  String get businessOfferingDeleteConfirmBody =>
+      'Удалить из локального черновика? После обновления страницы восстановить нельзя.';
+
+  @override
+  String get businessOfferingDeleteConfirmYes => 'Удалить';
+
+  @override
+  String get businessOfferingFormCreateTitle => 'Новое предложение';
+
+  @override
+  String get businessOfferingFormEditTitle => 'Редактировать предложение';
+
+  @override
+  String get businessOfferingFormLocalNotice =>
+      'Предложения только на этом устройстве в текущей сессии — клиентам не публикуются.';
+
+  @override
+  String get businessOfferingFieldName => 'Название';
+
+  @override
+  String get businessOfferingFieldKind => 'Тип';
+
+  @override
+  String get businessOfferingFieldDescription => 'Краткое описание';
+
+  @override
+  String get businessOfferingFieldPricingUnit => 'Единица цены';
+
+  @override
+  String get businessOfferingFieldDemoPriceOptional =>
+      'Демо-цена (сум, необязательно)';
+
+  @override
+  String get businessOfferingFieldDemoDepositOptional =>
+      'Демо-депозит (сум, необязательно)';
+
+  @override
+  String get businessOfferingValidationNameRequired => 'Введите название';
+
+  @override
+  String get businessOfferingValidationDescriptionRequired =>
+      'Введите описание';
+
+  @override
+  String get businessOfferingValidationUzsInvalid =>
+      'Введите неотрицательное целое число в сумах';
+
+  @override
+  String get businessOfferingSaveAction => 'Сохранить';
+
+  @override
+  String get businessOfferingProfileNotEditable =>
+      'Предложения можно управлять только для своих черновиков сессии.';
+
+  @override
+  String get businessOfferingNotFoundBody =>
+      'Предложение не найдено или не принадлежит этому профилю.';
+
+  @override
+  String get businessSampleOfferingPerforatorName =>
+      'Пример — перфоратор (демо аренды)';
+
+  @override
+  String get businessSampleOfferingPerforatorDesc =>
+      'Вымышленная аренда инструмента для демо. Нет календаря, наличия или реального депозита.';
+
+  @override
+  String get businessInventorySummaryTitle => 'Склад и доступность';
+
+  @override
+  String businessInventorySummaryCounts(
+    int configured,
+    int total,
+    int active,
+    int paused,
+  ) {
+    return 'Настроено $configured из $total · Активно $active · Пауза $paused';
+  }
+
+  @override
+  String get businessInventorySummaryNotice =>
+      'Демо-остатки и пауза только локально — не синхронизируются с клиентами или бронями.';
+
+  @override
+  String get businessInventoryManageAction =>
+      'Управление складом и доступностью';
+
+  @override
+  String get businessInventoryPageTitle => 'Склад и доступность';
+
+  @override
+  String get businessInventoryPageIntro =>
+      'Задайте демо-остатки или паузу для предложений сессии. Это не система бронирования.';
+
+  @override
+  String get businessInventoryProfileNotEditable =>
+      'Склад доступен только для ваших черновиков сессии.';
+
+  @override
+  String get businessInventoryNoOfferingsTitle => 'Пока нет предложений';
+
+  @override
+  String get businessInventoryNoOfferingsBody =>
+      'Добавьте товары, услуги или аренду в профиле, затем настройте склад.';
+
+  @override
+  String get businessInventoryBackToProfile => 'К профилю';
+
+  @override
+  String get businessInventoryNotConfigured => 'Не настроено';
+
+  @override
+  String get businessInventoryStateActive => 'Активно';
+
+  @override
+  String get businessInventoryStatePaused => 'Пауза';
+
+  @override
+  String businessInventoryServiceStatus(String state) {
+    return 'Статус: $state (демо — без расписания)';
+  }
+
+  @override
+  String businessInventoryProductStock(int available, int total, String state) {
+    return '$available доступно из $total · $state';
+  }
+
+  @override
+  String businessInventoryRentalUnits(int available, int total, String state) {
+    return '$available доступно из $total шт. · $state (ручной демо-счёт)';
+  }
+
+  @override
+  String get businessInventoryConfigureAction => 'Настроить';
+
+  @override
+  String get businessInventoryEditAction => 'Изменить склад';
+
+  @override
+  String get businessInventoryEditTitle => 'Редактировать склад';
+
+  @override
+  String get businessInventoryLocalNotice =>
+      'Только локальное демо — не публикуется в клиентском приложении.';
+
+  @override
+  String get businessInventoryRentalManualNotice =>
+      'Доступные единицы вводятся вручную для демо. Брони и возвраты не обновляют счёт автоматически.';
+
+  @override
+  String get businessInventoryAvailabilityToggle => 'Предложение активно';
+
+  @override
+  String get businessInventoryFieldStockTotal => 'Всего на складе (шт.)';
+
+  @override
+  String get businessInventoryFieldStockAvailable => 'Доступно (шт.)';
+
+  @override
+  String get businessInventoryFieldTotalUnits => 'Всего единиц оборудования';
+
+  @override
+  String get businessInventoryFieldAvailableUnits => 'Сейчас доступно';
+
+  @override
+  String get businessInventoryValidationQuantityRequired =>
+      'Введите количество';
+
+  @override
+  String get businessInventoryValidationQuantityInvalid =>
+      'Введите неотрицательное целое число';
+
+  @override
+  String get businessInventoryValidationAvailableExceedsTotal =>
+      'Доступное не может превышать общее';
+
+  @override
+  String get businessInventorySaveAction => 'Сохранить склад';
+
+  @override
+  String get authSignInAction => 'Войти';
+
+  @override
+  String get authSignInTitle => 'Вход';
+
+  @override
+  String get authSignOutAction => 'Выйти';
+
+  @override
+  String get authPhonePrompt =>
+      'Введите номер телефона в международном формате. Когда сервис будет доступен, мы отправим одноразовый код.';
+
+  @override
+  String get authPhoneFieldLabel => 'Номер телефона';
+
+  @override
+  String get authPhoneHint => '+998901234567';
+
+  @override
+  String get authPhoneInvalid =>
+      'Введите корректный международный номер, например +998901234567.';
+
+  @override
+  String get authRequestOtpAction => 'Отправить код';
+
+  @override
+  String get authOtpPrompt => 'Введите код из SMS, когда доставка настроена.';
+
+  @override
+  String get authOtpFieldLabel => 'Код подтверждения';
+
+  @override
+  String get authVerifyAction => 'Подтвердить';
+
+  @override
+  String get authChangePhoneAction => 'Другой номер';
+
+  @override
+  String get authContinueAsGuest => 'Продолжить как гость';
+
+  @override
+  String get authApiNotConfigured =>
+      'Для этой сборки сервер входа не настроен. Укажите QOSHNI_API_BASE_URL при сборке.';
+
+  @override
+  String get authErrorServiceUnavailable =>
+      'Вход временно недоступен. SMS-шлюз может быть ещё не настроен.';
+
+  @override
+  String get authErrorRateLimited =>
+      'Слишком много попыток. Подождите и попробуйте снова.';
+
+  @override
+  String get authErrorCodeIncorrect => 'Неверный код подтверждения.';
+
+  @override
+  String get authErrorChallengeExpired =>
+      'Срок действия кода истёк. Запросите новый.';
+
+  @override
+  String get authErrorChallengeLocked =>
+      'Слишком много неверных попыток. Запросите новый код.';
+
+  @override
+  String get authErrorNetwork =>
+      'Ошибка сети. Проверьте подключение и повторите.';
+
+  @override
+  String get authErrorGeneric => 'Не удалось выполнить вход. Попробуйте снова.';
+
+  @override
+  String get authSignedInTitle => 'Вы вошли';
+
+  @override
+  String get authSignedInBody => 'Телефон подтверждён для текущей сессии.';
+
+  @override
+  String get authSessionsAction => 'Управление сессиями';
+
+  @override
+  String get authSessionsTitle => 'Ваши сессии';
+
+  @override
+  String get authSessionsEmpty => 'Нет сессий для отображения.';
+
+  @override
+  String get authSessionUnknownDevice => 'Неизвестное устройство';
+
+  @override
+  String get authSessionStateActive => 'Активна';
+
+  @override
+  String get authSessionStateExpired => 'Истекла';
+
+  @override
+  String get authSessionStateRevoked => 'Отозвана';
+
+  @override
+  String get authSessionCurrentBadge => 'Текущая';
+
+  @override
+  String get authSessionExpiredNotice =>
+      'Сессия завершена. Вы сможете войти снова, когда сервис будет доступен.';
 }

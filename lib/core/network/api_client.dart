@@ -12,7 +12,7 @@ class ApiClient {
   }) : _dio = dio ??
             Dio(
               BaseOptions(
-                baseUrl: config.apiBaseUrl,
+                baseUrl: config.apiConfigured ? config.apiBaseUrl : 'http://invalid.local',
                 connectTimeout: const Duration(seconds: 20),
                 receiveTimeout: const Duration(seconds: 20),
                 sendTimeout: const Duration(seconds: 20),

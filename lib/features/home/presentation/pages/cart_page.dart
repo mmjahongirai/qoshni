@@ -5,6 +5,11 @@ import 'package:qoshni/core/responsive/responsive_layout.dart';
 import 'package:qoshni/di/injection.dart';
 import 'package:qoshni/features/home/presentation/cart/cart_controller.dart';
 import 'package:qoshni/features/home/presentation/cart/cart_currency_format.dart';
+import 'package:qoshni/core/theme/app_tokens.dart';
+import 'package:qoshni/core/widgets/app_empty_state.dart';
+import 'package:qoshni/core/widgets/app_price_text.dart';
+import 'package:qoshni/core/widgets/app_surface_card.dart';
+import 'package:qoshni/core/widgets/category_icon_badge.dart';
 import 'package:qoshni/features/home/presentation/widgets/cart_demo_total_footer.dart';
 import 'package:qoshni/routing/route_paths.dart';
 
@@ -176,70 +181,62 @@ class _CartLineCard extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     final item = line.catalogItem;
 
-    return Card(
-      margin: EdgeInsets.zero,
-      child: Padding(
-        padding: const EdgeInsets.all(14),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              item.name,
-              style: textTheme.titleSmall?.copyWith(
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            const SizedBox(height: 4),
-            Text(
-              line.businessName,
-              style: textTheme.bodySmall?.copyWith(
-                color: colorScheme.onSurfaceVariant,
-              ),
-            ),
-            const SizedBox(height: 6),
-            Text(
-              formatCartDemoMoney(l10n, line.unitPriceUzs),
-              style: textTheme.labelLarge,
-            ),
-            const SizedBox(height: 10),
-            Row(
+    return AppSurfaceCard(
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          CategoryIconBadge(
+            icon: item.icon,
+            accent: colorScheme.primary,
+            size: 52,
+          ),
+          const SizedBox(width: AppSpacing.sm),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                IconButton(
-                  visualDensity: VisualDensity.compact,
-                  tooltip: l10n.cartQuantityDecrease,
-                  onPressed: onDecrement,
-                  icon: const Icon(Icons.remove_circle_outline),
+                Text(item.name, style: textTheme.titleSmall),
+                const SizedBox(height: AppSpacing.xxs),
+                Text(line.businessName, style: textTheme.bodySmall),
+                const SizedBox(height: AppSpacing.xs),
+                AppPriceText(
+                  label: formatCartDemoMoney(l10n, line.unitPriceUzs),
+                  emphasis: PriceEmphasis.secondary,
                 ),
-                Text(
-                  '${line.quantity}',
-                  style: textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.w600,
+                const SizedBox(height: AppSpacing.sm),
+                Row(
+                  children: [
+                    IconButton(
+                      visualDensity: VisualDensity.compact,
+                      tooltip: l10n.cartQuantityDecrease,
+                      onPressed: onDecrement,
+                      icon: const Icon(Icons.remove_circle_outline),
+                    ),
+                    Text('${line.quantity}', style: textTheme.titleMedium),
+                    IconButton(
+                      visualDensity: VisualDensity.compact,
+                      tooltip: l10n.cartQuantityIncrease,
+                      onPressed: onIncrement,
+                      icon: const Icon(Icons.add_circle_outline),
+                    ),
+                    const Spacer(),
+                    IconButton(
+                      tooltip: l10n.cartRemoveItem,
+                      onPressed: onRemove,
+                      icon: Icon(Icons.delete_outline, color: colorScheme.error),
+                    ),
+                  ],
+                ),
+                AppPriceText(
+                  label: l10n.cartLineSubtotal(
+                    formatCartDemoMoney(l10n, line.subtotalUzs),
                   ),
-                ),
-                IconButton(
-                  visualDensity: VisualDensity.compact,
-                  tooltip: l10n.cartQuantityIncrease,
-                  onPressed: onIncrement,
-                  icon: const Icon(Icons.add_circle_outline),
-                ),
-                const Spacer(),
-                IconButton(
-                  tooltip: l10n.cartRemoveItem,
-                  onPressed: onRemove,
-                  icon: Icon(Icons.delete_outline, color: colorScheme.error),
+                  emphasis: PriceEmphasis.primary,
                 ),
               ],
             ),
-            Text(
-              l10n.cartLineSubtotal(
-                formatCartDemoMoney(l10n, line.subtotalUzs),
-              ),
-              style: textTheme.bodyMedium?.copyWith(
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -252,38 +249,14 @@ class _CartEmptyState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-    final textTheme = Theme.of(context).textTheme;
-
     return Center(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.shopping_cart_outlined,
-                size: 48, color: colorScheme.primary),
-            const SizedBox(height: 14),
-            Text(
-              l10n.cartEmptyTitle,
-              style: textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 8),
-            Text(
-              l10n.cartEmptyBody,
-              style: textTheme.bodyMedium?.copyWith(
-                color: colorScheme.onSurfaceVariant,
-                height: 1.35,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 20),
-            FilledButton(
-              onPressed: () => context.go(RoutePaths.home),
-              child: Text(l10n.cartBrowseHome),
-            ),
-          ],
+      child: AppEmptyState(
+        icon: Icons.shopping_cart_outlined,
+        title: l10n.cartEmptyTitle,
+        message: l10n.cartEmptyBody,
+        action: FilledButton(
+          onPressed: () => context.go(RoutePaths.home),
+          child: Text(l10n.cartBrowseHome),
         ),
       ),
     );

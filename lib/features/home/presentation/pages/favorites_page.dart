@@ -6,6 +6,8 @@ import 'package:qoshni/di/injection.dart';
 import 'package:qoshni/features/home/presentation/data/home_mock_data.dart';
 import 'package:qoshni/features/home/presentation/favorites/favorites_controller.dart';
 import 'package:qoshni/features/home/presentation/widgets/search_result_tile.dart';
+import 'package:qoshni/core/widgets/app_empty_state.dart';
+import 'package:qoshni/core/widgets/primary_navigation_shell.dart';
 import 'package:qoshni/routing/route_paths.dart';
 
 class FavoritesPage extends StatelessWidget {
@@ -16,28 +18,31 @@ class FavoritesPage extends StatelessWidget {
     final l10n = AppLocalizations.of(context);
     final favoritesController = getIt<FavoritesController>();
 
-    return Scaffold(
-      appBar: AppBar(
-        leading: BackButton(onPressed: () => context.pop()),
-        title: Text(l10n.favoritesTitle),
-      ),
-      body: SafeArea(
-        child: ListenableBuilder(
-          listenable: favoritesController,
-          builder: (context, _) {
-            return ResponsiveLayout(
-              phone: _FavoritesBody(
-                maxWidth: 520,
-                l10n: l10n,
-                favoritesController: favoritesController,
-              ),
-              tablet: _FavoritesBody(
-                maxWidth: 760,
-                l10n: l10n,
-                favoritesController: favoritesController,
-              ),
-            );
-          },
+    return PrimaryNavigationShell(
+      destination: PrimaryNavDestination.favorites,
+      body: Scaffold(
+        appBar: AppBar(
+          leading: primaryTabLeading(context),
+          title: Text(l10n.favoritesTitle),
+        ),
+        body: SafeArea(
+          child: ListenableBuilder(
+            listenable: favoritesController,
+            builder: (context, _) {
+              return ResponsiveLayout(
+                phone: _FavoritesBody(
+                  maxWidth: 520,
+                  l10n: l10n,
+                  favoritesController: favoritesController,
+                ),
+                tablet: _FavoritesBody(
+                  maxWidth: 760,
+                  l10n: l10n,
+                  favoritesController: favoritesController,
+                ),
+              );
+            },
+          ),
         ),
       ),
     );
@@ -95,41 +100,14 @@ class _FavoritesEmptyState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-    final textTheme = Theme.of(context).textTheme;
-
     return Center(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.favorite_border_rounded,
-              size: 48,
-              color: colorScheme.primary,
-            ),
-            const SizedBox(height: 14),
-            Text(
-              l10n.favoritesEmptyTitle,
-              style: textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 8),
-            Text(
-              l10n.favoritesEmptyBody,
-              style: textTheme.bodyMedium?.copyWith(
-                color: colorScheme.onSurfaceVariant,
-                height: 1.35,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 20),
-            FilledButton(
-              onPressed: () => context.go(RoutePaths.home),
-              child: Text(l10n.favoritesGoHome),
-            ),
-          ],
+      child: AppEmptyState(
+        icon: Icons.favorite_border_rounded,
+        title: l10n.favoritesEmptyTitle,
+        message: l10n.favoritesEmptyBody,
+        action: FilledButton(
+          onPressed: () => context.go(RoutePaths.home),
+          child: Text(l10n.favoritesGoHome),
         ),
       ),
     );
