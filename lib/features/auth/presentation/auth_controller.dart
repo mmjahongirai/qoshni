@@ -196,6 +196,10 @@ class AuthController extends ChangeNotifier {
     await _credentialStore.clear();
   }
 
+  /// Invoked when another feature receives an auth-related API failure.
+  Future<void> reportAuthenticatedRequestFailure(AuthFailure failure) =>
+      _handleSessionFailure(failure);
+
   Future<void> _handleSessionFailure(AuthFailure failure) async {
     lastFailure = failure;
     if (failure.code == AuthErrorCode.authenticationRequired ||

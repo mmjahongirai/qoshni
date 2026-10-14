@@ -1199,4 +1199,75 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get authSessionExpiredNotice =>
       'Your session ended. You can sign in again when the service is available.';
+
+  @override
+  String get userProfileDisplayNameHint => 'Display name';
+
+  @override
+  String get userProfileDisplayNameEmpty => 'No display name yet';
+
+  @override
+  String get userProfileEditDisplayNameAction => 'Edit display name';
+
+  @override
+  String get userProfileClearDisplayNameAction => 'Clear display name';
+
+  @override
+  String get userProfileSaveAction => 'Save';
+
+  @override
+  String get userProfileCancelAction => 'Cancel';
+
+  @override
+  String get userProfileRetryAction => 'Try again';
+
+  @override
+  String get userProfileLoadError => 'Could not load your profile.';
+
+  @override
+  String get userProfileSaveSuccess => 'Profile updated.';
+
+  @override
+  String get userProfilePreferencesSaveSuccess => 'Preferences saved.';
+
+  @override
+  String get userProfileApiNotConfigured =>
+      'Account server is not configured for this build. Set QOSHNI_API_BASE_URL at compile time.';
+
+  @override
+  String get userProfileErrorNetwork =>
+      'Network connection failed. Check your connection and try again.';
+
+  @override
+  String get userProfileErrorServiceUnavailable =>
+      'Profile service is temporarily unavailable.';
+
+  @override
+  String get userProfileNotFound =>
+      'Your profile is not available yet. Try again or sign in again.';
+
+  @override
+  String get userProfilePreferencesNotFound =>
+      'Your preferences are not available yet. Try again or sign in again.';
+
+  @override
+  String get userProfileErrorValidation =>
+      'That value is not allowed. Check the display name or language and try again.';
+
+  @override
+  String get userProfileErrorGeneric =>
+      'Something went wrong. Please try again.';
+
+  @override
+  String get userProfileSectionPersonalization => 'Personalization';
+
+  @override
+  String get userProfilePersonalizationTitle => 'Personalized suggestions';
+
+  @override
+  String get userProfilePersonalizationBody =>
+      'When enabled, QO‘SHNI may use your explicit preferences to tailor suggestions. This stays off until you turn it on.';
+
+  @override
+  String get userProfileSaving => 'Saving…';
 }

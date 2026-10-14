@@ -1200,4 +1200,74 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get authSessionExpiredNotice =>
       'Seans tugadi. Xizmat mavjud bo‘lganda qayta kirishingiz mumkin.';
+
+  @override
+  String get userProfileDisplayNameHint => 'Ko‘rinadigan ism';
+
+  @override
+  String get userProfileDisplayNameEmpty => 'Ism hali yo‘q';
+
+  @override
+  String get userProfileEditDisplayNameAction => 'Ismni tahrirlash';
+
+  @override
+  String get userProfileClearDisplayNameAction => 'Ismni o‘chirish';
+
+  @override
+  String get userProfileSaveAction => 'Saqlash';
+
+  @override
+  String get userProfileCancelAction => 'Bekor qilish';
+
+  @override
+  String get userProfileRetryAction => 'Qayta urinish';
+
+  @override
+  String get userProfileLoadError => 'Profilni yuklab bo‘lmadi.';
+
+  @override
+  String get userProfileSaveSuccess => 'Profil yangilandi.';
+
+  @override
+  String get userProfilePreferencesSaveSuccess => 'Sozlamalar saqlandi.';
+
+  @override
+  String get userProfileApiNotConfigured =>
+      'Hisob serveri bu yig‘ilmada sozlanmagan. Yig‘ishda QOSHNI_API_BASE_URL ni belgilang.';
+
+  @override
+  String get userProfileErrorNetwork =>
+      'Tarmoq xatosi. Ulanishni tekshirib qayta urining.';
+
+  @override
+  String get userProfileErrorServiceUnavailable =>
+      'Profil xizmati vaqtincha ishlamayapti.';
+
+  @override
+  String get userProfileNotFound =>
+      'Profilingiz hali mavjud emas. Qayta urining yoki qayta kiring.';
+
+  @override
+  String get userProfilePreferencesNotFound =>
+      'Sozlamalar hali mavjud emas. Qayta urining yoki qayta kiring.';
+
+  @override
+  String get userProfileErrorValidation =>
+      'Qiymat qabul qilinmadi. Ism yoki tilni tekshiring.';
+
+  @override
+  String get userProfileErrorGeneric => 'Xatolik yuz berdi. Qayta urining.';
+
+  @override
+  String get userProfileSectionPersonalization => 'Shaxsiylashtirish';
+
+  @override
+  String get userProfilePersonalizationTitle => 'Shaxsiy tavsiyalar';
+
+  @override
+  String get userProfilePersonalizationBody =>
+      'Yoqilganda QO‘SHNI aniq sozlamalaringiz asosida tavsiyalar berishi mumkin. Standart holatda o‘chiq.';
+
+  @override
+  String get userProfileSaving => 'Saqlanmoqda…';
 }
