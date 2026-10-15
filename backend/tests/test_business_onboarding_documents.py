@@ -172,9 +172,13 @@ def test_profile_view_unrelated_to_documents() -> None:
     assert "document_type" not in fields
 
 
-def test_document_contracts_remain_unimplemented() -> None:
+def test_privileged_document_contracts_remain_unimplemented() -> None:
     assert DOCUMENT_ENDPOINT_CONTRACTS
-    assert all(not contract.implemented for contract in DOCUMENT_ENDPOINT_CONTRACTS)
+    internal = [c for c in DOCUMENT_ENDPOINT_CONTRACTS if "/internal/" in c.path]
+    assert internal
+    assert all(not contract.implemented for contract in internal)
+    upload_init = next(c for c in DOCUMENT_ENDPOINT_CONTRACTS if c.path.endswith("/upload-init"))
+    assert upload_init.implemented is False
 
 
 def test_reviewer_document_routes_are_not_owner_accessible() -> None:
@@ -183,15 +187,16 @@ def test_reviewer_document_routes_are_not_owner_accessible() -> None:
     assert all(not c.owner_accessible for c in internal)
 
 
-def test_document_and_internal_onboarding_routes_not_mounted() -> None:
-    from app.main import app
+def test_owner_document_routes_mounted_internal_document_routes_not_mounted() -> None:
+    from app.main import create_app
 
-    mounted_paths = [getattr(route, "path", "") for route in app.routes if getattr(route, "path", "")]
-    assert not any(
-        "/internal/business/onboarding" in path and "/documents" in path for path in mounted_paths
+    application = create_app()
+    mounted_paths = set(application.openapi()["paths"].keys())
+    assert any(
+        "/business/onboarding/applications" in path and "/documents" in path for path in mounted_paths
     )
     assert not any(
-        "/business/onboarding/applications" in path and "/documents" in path for path in mounted_paths
+        "/internal/business/onboarding" in path and "/documents" in path for path in mounted_paths
     )
 
 

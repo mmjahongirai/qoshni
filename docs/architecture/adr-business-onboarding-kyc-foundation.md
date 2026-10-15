@@ -1,6 +1,6 @@
 # ADR: Business onboarding, verification va KYC foundation (Phase 07)
 
-**Status:** Accepted (schema Part 1; owner HTTP APIs Part 2; document metadata Part 3; **reviewer authorization foundation Part 4**)
+**Status:** Accepted (schema Part 1; owner HTTP APIs Part 2; document metadata Part 3; **reviewer authorization foundation Part 4**; **owner document upload Part 6B.2**)
 **Date:** 2026-10-14 (updated Part 4)
 **Scope:** `backend/` — onboarding + role assignments through Alembic **`b0a1f0110001`**, owner routes under `/api/v1/business/onboarding`
 
@@ -182,7 +182,23 @@ Barcha route'lar `/api/v1/internal/business/onboarding/applications` ostida; **`
 
 **Reject idempotency:** bir xil `rejection_reason_code` bilan qayta `reject` → 200, yangi audit yo‘q; boshqa reason bilan qayta `reject` → **409** `invalid_status_transition`, saqlangan reason o‘zgarmaydi.
 
-**Hali deferred:** document upload/download, `rejected` → `draft` rework HTTP, private reviewer notes API/storage, `suspended` → `verified` to‘g‘ridan-to‘g‘ri reinstate (faqat `under_review` default).
+**Hali deferred:** `rejected` → `draft` rework HTTP, private reviewer notes API/storage, `suspended` → `verified` to‘g‘ridan-to‘g‘ri reinstate (faqat `under_review` default).
+
+### Owner private document upload (Part 6B.2 — implemented)
+
+**Mounted owner routes** (`app/api/routes/business_onboarding_documents.py`):
+
+| Method | Path | Harakat |
+|--------|------|---------|
+| POST | `/api/v1/business/onboarding/applications/{id}/documents` | Metadata slot (`awaiting_upload`); **server** `storage_object_key` |
+| GET | `/api/v1/business/onboarding/applications/{id}/documents` | Owner-visible metadata (key/checksum yo‘q) |
+| POST | `/api/v1/business/onboarding/applications/{id}/documents/{document_id}/upload` | Multipart bytes → `StoragePort`; lifecycle **`uploaded_pending_validation`** |
+
+**Cheklovlar:** faqat application **`draft`**; owner scope + 404 siyosati; max hajm `QOSHNI_ONBOARDING_DOCUMENT_MAX_BYTES`; PDF/JPEG/PNG magic bytes (header MIME isbot emas); SHA-256 + `byte_size` server hisoblaydi; malware scan **yo‘q** — `accepted_for_review` avtomatik emas.
+
+**Presigned upload:** `POST .../upload-init` kontrakti **`implemented=False`** (kelajak increment; hozir backend multipart upload).
+
+**Storage:** `StoragePort` (local dev adapter Part 6B.1); `s3` provider hali yo‘q. Format/hajm → **422**; storage/konfiguratsiya yoki yozish xatosi → **503** (`storage_unavailable`).
 
 ### Document privileged API (deferred)
 
@@ -198,13 +214,13 @@ Verified onboarding yozuvi keyinchalik **Business Profile**, filiallar va staff/
 - Owner onboarding HTTP handlerlari `app/api/routes/business_onboarding.py` da.
 - Reviewer routes: `app/api/routes/business_onboarding_review.py` + `review_service.py`.
 - Reviewer auth: `app/api/deps/reviewer.py`.
-- Document metadata: contracts only; upload/storage deferred.
-- Flutter onboarding UI, document upload, OCR — keyingi incrementlar.
+- Owner document register/list/multipart upload (Part 6B.2); reviewer document routes deferred.
+- Flutter onboarding UI, OCR — keyingi incrementlar.
 
 ## Keyingi ish
 
 - Operator/role-admin grant-revoke API va audit.
-- Owner document register/list/upload-init route'lar + private storage provider.
-- Server validation, malware scan, OCR, privileged download.
+- Presigned `upload-init` (ixtiyoriy) yoki production S3 adapter.
+- Malware scan, OCR, privileged download.
 - Audit enum kengaytirish (document lifecycle events).
 - Rejected → draft rework flow (privileged yoki owner qoidasi).

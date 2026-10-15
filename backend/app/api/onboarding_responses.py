@@ -19,6 +19,7 @@ _ONBOARDING_HTTP_STATUS: dict[OnboardingServiceErrorCode, int] = {
     OnboardingServiceErrorCode.FORBIDDEN: 403,
     OnboardingServiceErrorCode.INVALID_STATUS_TRANSITION: 409,
     OnboardingServiceErrorCode.VALIDATION_FAILED: 422,
+    OnboardingServiceErrorCode.STORAGE_UNAVAILABLE: 503,
     OnboardingServiceErrorCode.SUSPENDED: 403,
 }
 
@@ -27,6 +28,7 @@ _SERVICE_TO_API: dict[OnboardingServiceErrorCode, OnboardingErrorCode] = {
     OnboardingServiceErrorCode.FORBIDDEN: OnboardingErrorCode.FORBIDDEN,
     OnboardingServiceErrorCode.INVALID_STATUS_TRANSITION: OnboardingErrorCode.INVALID_STATUS_TRANSITION,
     OnboardingServiceErrorCode.VALIDATION_FAILED: OnboardingErrorCode.VALIDATION_FAILED,
+    OnboardingServiceErrorCode.STORAGE_UNAVAILABLE: OnboardingErrorCode.STORAGE_UNAVAILABLE,
     OnboardingServiceErrorCode.SUSPENDED: OnboardingErrorCode.SUSPENDED,
 }
 

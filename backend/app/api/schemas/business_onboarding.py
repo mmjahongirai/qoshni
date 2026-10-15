@@ -155,6 +155,7 @@ class OnboardingErrorCode(StrEnum):
     FORBIDDEN = "forbidden"
     INVALID_STATUS_TRANSITION = "invalid_status_transition"
     VALIDATION_FAILED = "validation_failed"
+    STORAGE_UNAVAILABLE = "storage_unavailable"
     SUSPENDED = "suspended"
 
 

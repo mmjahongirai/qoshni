@@ -4,6 +4,9 @@ from fastapi import APIRouter
 
 from app.api.routes.auth import router as auth_router
 from app.api.routes.business_onboarding import router as business_onboarding_router
+from app.api.routes.business_onboarding_documents import (
+    router as business_onboarding_documents_router,
+)
 from app.api.routes.business_onboarding_review import router as business_onboarding_review_router
 from app.api.routes.health import router as health_router
 from app.api.routes.me import router as me_router
@@ -14,4 +17,5 @@ api_router.include_router(health_router)
 api_router.include_router(auth_router)
 api_router.include_router(me_router)
 api_router.include_router(business_onboarding_router)
+api_router.include_router(business_onboarding_documents_router)
 api_router.include_router(business_onboarding_review_router)

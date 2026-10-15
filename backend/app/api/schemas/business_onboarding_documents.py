@@ -1,7 +1,7 @@
-"""Private onboarding document API contracts (Phase 07 Part 3 — not mounted).
+"""Private onboarding document API contracts (Phase 07 Part 6B.2 owner routes mounted).
 
-Owner and privileged document routes remain ``implemented=False`` until upload,
-authorization and storage integrations exist.
+Owner multipart upload uses ``POST .../upload`` (not presigned ``upload-init``).
+Privileged reviewer document routes remain unmounted.
 """
 
 from __future__ import annotations
@@ -67,13 +67,13 @@ DOCUMENT_ENDPOINT_CONTRACTS: tuple[OnboardingEndpointContract, ...] = (
     OnboardingEndpointContract(
         "POST",
         f"{OWNER_APPLICATION_PREFIX}/{{application_id}}/documents",
-        "Register a private document metadata slot for owner upload (future).",
+        "Register a private document metadata slot for owner upload.",
         RegisterOnboardingDocumentRequest,
         OwnerOnboardingDocumentView,
         201,
         requires_access_token=True,
         owner_accessible=True,
-        implemented=False,
+        implemented=True,
     ),
     OnboardingEndpointContract(
         "GET",
@@ -84,12 +84,23 @@ DOCUMENT_ENDPOINT_CONTRACTS: tuple[OnboardingEndpointContract, ...] = (
         200,
         requires_access_token=True,
         owner_accessible=True,
-        implemented=False,
+        implemented=True,
+    ),
+    OnboardingEndpointContract(
+        "POST",
+        f"{OWNER_APPLICATION_PREFIX}/{{application_id}}/documents/{{document_id}}/upload",
+        "Upload private document bytes via multipart (server-validated).",
+        None,
+        OwnerOnboardingDocumentView,
+        200,
+        requires_access_token=True,
+        owner_accessible=True,
+        implemented=True,
     ),
     OnboardingEndpointContract(
         "POST",
         f"{OWNER_APPLICATION_PREFIX}/{{application_id}}/documents/{{document_id}}/upload-init",
-        "Begin owner-authorized private upload (future object storage).",
+        "Deferred presigned direct-to-storage upload (not implemented).",
         None,
         OwnerOnboardingDocumentView,
         200,
