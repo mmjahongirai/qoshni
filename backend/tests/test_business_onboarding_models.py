@@ -149,32 +149,33 @@ def test_application_requires_existing_owner(session: Session) -> None:
         session.commit()
 
 
-def test_duplicate_registration_identifier_allowed_across_owners(session: Session) -> None:
+def test_active_registration_identifier_unique_across_owners(session: Session) -> None:
     owner_a = _user("+998901111111")
     owner_b = _user("+998902222222")
     session.add_all([owner_a, owner_b])
     session.flush()
-    session.add_all(
-        [
-            BusinessOnboardingApplication(
-                owner_user_id=owner_a.id,
-                legal_business_name="Shop A",
-                registration_identifier="12345",
-                submitted_at=datetime.now(UTC),
-                verification_status=VerificationStatus.SUBMITTED.value,
-            ),
-            BusinessOnboardingApplication(
-                owner_user_id=owner_b.id,
-                legal_business_name="Shop B",
-                registration_identifier="12345",
-                submitted_at=datetime.now(UTC),
-                verification_status=VerificationStatus.SUBMITTED.value,
-            ),
-        ],
+    session.add(
+        BusinessOnboardingApplication(
+            owner_user_id=owner_a.id,
+            legal_business_name="Shop A",
+            registration_identifier="12345",
+            submitted_at=datetime.now(UTC),
+            verification_status=VerificationStatus.SUBMITTED.value,
+        ),
     )
     session.commit()
 
-    assert len(session.scalars(select(BusinessOnboardingApplication)).all()) == 2
+    session.add(
+        BusinessOnboardingApplication(
+            owner_user_id=owner_b.id,
+            legal_business_name="Shop B",
+            registration_identifier="12345",
+            submitted_at=datetime.now(UTC),
+            verification_status=VerificationStatus.SUBMITTED.value,
+        ),
+    )
+    with pytest.raises(IntegrityError):
+        session.commit()
 
 
 def test_audit_event_links_to_application(session: Session) -> None:

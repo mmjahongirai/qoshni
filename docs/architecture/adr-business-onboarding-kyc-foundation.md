@@ -71,12 +71,17 @@ Bearer token talab qilinadi (`get_current_principal`). `owner_user_id` faqat tok
 - Create: audit `application_created`. PATCH: audit `draft_updated` (minimal, PII/details siz).
 - Audit `actor_user_id` — authenticated principal; `actor_role` server tomonidan `owner` qo‘yiladi (client forge qila olmaydi).
 
-### Duplicate business policy (Part 2)
+### Duplicate business policy (Part 2 + Part 2.1)
 
-- **Migration o‘zgarmadi.** Global UNIQUE qo‘shilmadi.
-- **Submit vaqtida:** agar bir xil `registration_jurisdiction` + `registration_identifier` (trim qilingan, bo‘sh emas) bilan boshqa ariza `submitted` | `under_review` | `verified` | `suspended` holatda bo‘lsa, submit **422** `validation_failed` (boshqa egasining ma’lumotlari oshkor qilinmaydi).
-- **Tax ID** duplicate tekshiruvi yo‘q (har biznesda bo‘lmasligi mumkin).
-- **Race limitation:** ikki parallel submit bir xil identifikator bilan ikkala transaction o‘tkazishi mumkin; to‘liq race-safe enforcement uchun kelajakda DB partial unique index yoki aniq biznes qarori kerak.
+- **Submit vaqtida** application-level tekshiruv + **DB partial unique index** `uq_business_onboarding_active_registration` (Alembic **`b0a1f0090001`**).
+- **Kalit:** `(registration_jurisdiction, registration_identifier)` faqat **active** statuslar uchun: `submitted`, `under_review`, `verified`, `suspended`.
+- **Draft** va **rejected** arizalar indeksga kirmaydi — bir xil identifikator bilan ko‘p draft yoki rejected + yangi submit ruxsat etiladi (indeks predicate bo‘yicha).
+- **NULL** yoki faqat bo‘shliq identifikator indeksdan chiqariladi; saqlashda `registration_identifier = trim(...)` CHECK (`registration_identifier_trimmed`).
+- **Tax ID** duplicate qoidasi yo‘q.
+- **API xato:** `422` `validation_failed`, xabar: *An application with this registration identifier is already in review.* — boshqa egasining ID/nomi/tax ma’lumotlari yo‘q.
+- **Race:** `IntegrityError` (faqat shu indeks) → `session.rollback()` → xuddi shu generic javob; muvaffaqiyatsiz submit audit qoldirmaydi.
+- **Migration preflight:** mavjud active duplicate bo‘lsa, upgrade **xato** bilan to‘xtaydi (ma’lumot o‘chirilmaydi).
+- **Test cheklovi:** SQLite deterministik unique + alohida session testlari; **PostgreSQL parallel concurrency testi CI da ishlamagan** — production PostgreSQL da indeks race-safe deb dizaynlangan.
 
 ### Sensitive data va hujjatlar
 
@@ -94,7 +99,7 @@ Verified onboarding yozuvi keyinchalik **Business Profile**, filiallar va staff/
 
 ## Oqibatlar (Consequences)
 
-- Alembic head: **`b0a1f0080001`** (o‘zgarmadi Part 2 da).
+- Alembic head: **`b0a1f0090001`** (active registration partial unique index).
 - Owner onboarding HTTP handlerlari `app/api/routes/business_onboarding.py` da.
 - Flutter onboarding UI, hujjat upload, OCR, reviewer login — keyingi incrementlar.
 
@@ -102,5 +107,4 @@ Verified onboarding yozuvi keyinchalik **Business Profile**, filiallar va staff/
 
 - Reviewer/admin principal va `/internal/*` implementatsiyasi.
 - Document storage, OCR, malware scan.
-- Race-safe duplicate enforcement (agar biznes qarori qabul qilinsa).
 - Rejected → draft rework flow (privileged yoki owner qoidasi).

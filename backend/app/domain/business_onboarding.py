@@ -67,6 +67,32 @@ BUSINESS_CONTACT_EMAIL_MAX_LENGTH = 320
 # ISO 3166-1 alpha-2; Phase 07 Part 1 focuses on Uzbekistan registrations.
 DEFAULT_REGISTRATION_JURISDICTION = "UZ"
 
+ACTIVE_REGISTRATION_UNIQUE_INDEX = "uq_business_onboarding_active_registration"
+
+ACTIVE_REGISTRATION_DUPLICATE_STATUSES: tuple[VerificationStatus, ...] = (
+    VerificationStatus.SUBMITTED,
+    VerificationStatus.UNDER_REVIEW,
+    VerificationStatus.VERIFIED,
+    VerificationStatus.SUSPENDED,
+)
+
+ACTIVE_REGISTRATION_DUPLICATE_STATUS_VALUES: tuple[str, ...] = tuple(
+    status.value for status in ACTIVE_REGISTRATION_DUPLICATE_STATUSES
+)
+
+DUPLICATE_REGISTRATION_MESSAGE = (
+    "An application with this registration identifier is already in review."
+)
+
+
+def normalize_registration_identifier(raw: str | None) -> str | None:
+    """Persist registration identifiers without leading/trailing whitespace."""
+
+    if raw is None:
+        return None
+    stripped = raw.strip()
+    return stripped if stripped else None
+
 
 _OWNER_TRANSITIONS: frozenset[tuple[VerificationStatus, VerificationStatus]] = frozenset(
     {

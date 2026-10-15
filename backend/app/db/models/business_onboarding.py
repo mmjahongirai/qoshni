@@ -18,16 +18,26 @@ from sqlalchemy import (
     String,
     Uuid,
     func,
+    text,
 )
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db.base import Base
 from app.domain.business_onboarding import (
+    ACTIVE_REGISTRATION_DUPLICATE_STATUS_VALUES,
+    ACTIVE_REGISTRATION_UNIQUE_INDEX,
     BusinessServiceCategory,
     OnboardingAuditActorRole,
     OnboardingAuditEventType,
     OnboardingRejectionReasonCode,
     VerificationStatus,
+)
+
+_ACTIVE_REGISTRATION_INDEX_WHERE = (
+    "verification_status IN "
+    f"({', '.join(repr(value) for value in ACTIVE_REGISTRATION_DUPLICATE_STATUS_VALUES)}) "
+    "AND registration_identifier IS NOT NULL "
+    "AND length(trim(registration_identifier)) > 0"
 )
 
 
@@ -70,6 +80,10 @@ class BusinessOnboardingApplication(Base):
             name="registration_identifier_not_blank",
         ),
         CheckConstraint(
+            "registration_identifier IS NULL OR registration_identifier = trim(registration_identifier)",
+            name="registration_identifier_trimmed",
+        ),
+        CheckConstraint(
             "tax_identifier IS NULL OR length(trim(tax_identifier)) > 0",
             name="tax_identifier_not_blank",
         ),
@@ -103,6 +117,14 @@ class BusinessOnboardingApplication(Base):
             "ix_business_onboarding_applications_registration_jurisdiction_registration_identifier",
             "registration_jurisdiction",
             "registration_identifier",
+        ),
+        Index(
+            ACTIVE_REGISTRATION_UNIQUE_INDEX,
+            "registration_jurisdiction",
+            "registration_identifier",
+            unique=True,
+            sqlite_where=text(_ACTIVE_REGISTRATION_INDEX_WHERE),
+            postgresql_where=text(_ACTIVE_REGISTRATION_INDEX_WHERE),
         ),
     )
 

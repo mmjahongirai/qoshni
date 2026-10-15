@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from enum import StrEnum
 
 from sqlalchemy import select
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
 from app.api.schemas.business_onboarding import (
@@ -18,21 +19,18 @@ from app.db.models.business_onboarding import (
     BusinessOnboardingAuditEvent,
 )
 from app.domain.business_onboarding import (
+    ACTIVE_REGISTRATION_DUPLICATE_STATUS_VALUES,
+    ACTIVE_REGISTRATION_UNIQUE_INDEX,
     DEFAULT_REGISTRATION_JURISDICTION,
+    DUPLICATE_REGISTRATION_MESSAGE,
     OnboardingAuditActorRole,
     OnboardingAuditEventType,
     VerificationStatus,
     is_status_transition_permitted,
+    normalize_registration_identifier,
     owner_may_edit_draft_fields,
 )
 from app.services.auth.time_utils import utc_now
-
-_ACTIVE_DUPLICATE_STATUSES: tuple[str, ...] = (
-    VerificationStatus.SUBMITTED.value,
-    VerificationStatus.UNDER_REVIEW.value,
-    VerificationStatus.VERIFIED.value,
-    VerificationStatus.SUSPENDED.value,
-)
 
 
 class OnboardingServiceErrorCode(StrEnum):
@@ -98,6 +96,24 @@ def _get_owned_application(
     return application
 
 
+def _is_active_registration_unique_violation(error: IntegrityError) -> bool:
+    message = str(error.orig).lower()
+    if ACTIVE_REGISTRATION_UNIQUE_INDEX.lower() in message:
+        return True
+    if "unique constraint failed" in message and "registration_identifier" in message:
+        return True
+    if "duplicate key" in message and "registration_identifier" in message:
+        return True
+    return False
+
+
+def _duplicate_registration_error() -> OnboardingServiceError:
+    return OnboardingServiceError(
+        code=OnboardingServiceErrorCode.VALIDATION_FAILED,
+        message=DUPLICATE_REGISTRATION_MESSAGE,
+    )
+
+
 def _find_registration_conflict(
     session: Session,
     *,
@@ -105,14 +121,16 @@ def _find_registration_conflict(
     registration_identifier: str | None,
     exclude_application_id: uuid.UUID,
 ) -> bool:
-    if registration_identifier is None or not registration_identifier.strip():
+    normalized = normalize_registration_identifier(registration_identifier)
+    if normalized is None:
         return False
-    normalized = registration_identifier.strip()
     existing = session.scalar(
         select(BusinessOnboardingApplication.id).where(
             BusinessOnboardingApplication.registration_jurisdiction == jurisdiction,
             BusinessOnboardingApplication.registration_identifier == normalized,
-            BusinessOnboardingApplication.verification_status.in_(_ACTIVE_DUPLICATE_STATUSES),
+            BusinessOnboardingApplication.verification_status.in_(
+                ACTIVE_REGISTRATION_DUPLICATE_STATUS_VALUES,
+            ),
             BusinessOnboardingApplication.id != exclude_application_id,
         ),
     )
@@ -228,7 +246,9 @@ def update_draft_application(
     if payload.clear_registration_identifier:
         application.registration_identifier = None
     elif "registration_identifier" in fields_set:
-        application.registration_identifier = payload.registration_identifier
+        application.registration_identifier = normalize_registration_identifier(
+            payload.registration_identifier,
+        )
 
     if payload.clear_tax_identifier:
         application.tax_identifier = None
@@ -307,16 +327,17 @@ def submit_application(
     if validation_error is not None:
         return validation_error
 
+    application.registration_identifier = normalize_registration_identifier(
+        application.registration_identifier,
+    )
+
     if _find_registration_conflict(
         session,
         jurisdiction=application.registration_jurisdiction,
         registration_identifier=application.registration_identifier,
         exclude_application_id=application.id,
     ):
-        return OnboardingServiceError(
-            code=OnboardingServiceErrorCode.VALIDATION_FAILED,
-            message="An application with this registration identifier is already in review.",
-        )
+        return _duplicate_registration_error()
 
     now = utc_now()
     application.verification_status = VerificationStatus.SUBMITTED.value
@@ -331,5 +352,11 @@ def submit_application(
         from_status=current,
         to_status=VerificationStatus.SUBMITTED,
     )
-    session.flush()
+    try:
+        session.flush()
+    except IntegrityError as error:
+        session.rollback()
+        if _is_active_registration_unique_violation(error):
+            return _duplicate_registration_error()
+        raise
     return application
