@@ -13,7 +13,7 @@ from app.services.object_storage.errors import (
     StorageOperationError,
 )
 from app.services.object_storage.keys import validate_storage_object_key
-from app.services.object_storage.port import ObjectHead
+from app.services.object_storage.port import ListPrefixPage, ObjectHead
 
 
 class LocalFilesystemStorage:
@@ -165,3 +165,51 @@ class LocalFilesystemStorage:
         meta = self._meta_path(destination)
         if meta.is_symlink() or meta.is_file():
             meta.unlink(missing_ok=True)
+
+    def list_prefix(
+        self,
+        prefix: str,
+        *,
+        limit: int = 500,
+        cursor: str | None = None,
+    ) -> ListPrefixPage:
+        safe_prefix = validate_storage_object_key(prefix.rstrip("/"))
+        prefix_segments = [segment for segment in safe_prefix.split("/") if segment]
+        current = self._root
+        for segment in prefix_segments:
+            current = current / segment
+            if current.is_symlink():
+                raise StorageKeyInvalidError("Storage object path must not include a symbolic link.")
+            if not current.is_dir():
+                return ListPrefixPage(keys=(), next_cursor=None)
+
+        discovered: list[str] = []
+        for dirpath, dirnames, filenames in os.walk(current, topdown=True, followlinks=False):
+            dirnames[:] = [name for name in dirnames if name != self._SCRATCH_DIR_NAME]
+            relative_dir = Path(dirpath).relative_to(self._root)
+            for filename in filenames:
+                if filename.endswith(".meta"):
+                    continue
+                if filename.startswith(".") and ".tmp-" in filename:
+                    continue
+                object_path = self._root / relative_dir / filename
+                if object_path.is_symlink() or not object_path.is_file():
+                    continue
+                key_segments = (*relative_dir.parts, filename)
+                key = "/".join(key_segments)
+                try:
+                    validate_storage_object_key(key)
+                except StorageKeyInvalidError:
+                    continue
+                discovered.append(key)
+
+        discovered.sort()
+        start_index = 0
+        if cursor:
+            while start_index < len(discovered) and discovered[start_index] <= cursor:
+                start_index += 1
+        page = discovered[start_index : start_index + limit]
+        next_cursor = None
+        if page and start_index + limit < len(discovered):
+            next_cursor = page[-1]
+        return ListPrefixPage(keys=tuple(page), next_cursor=next_cursor)

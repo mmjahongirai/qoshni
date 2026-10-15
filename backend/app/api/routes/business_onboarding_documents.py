@@ -25,7 +25,15 @@ from app.domain.business_onboarding_documents import (
     BusinessOnboardingDocumentType,
 )
 from app.services.auth.principal import AuthenticatedPrincipal
+from app.services.business_onboarding.document_audit import (
+    document_upload_completed_exists,
+    lifecycle_detail,
+    record_document_audit,
+    try_record_document_upload_failed,
+)
+from app.domain.business_onboarding import OnboardingAuditActorRole, OnboardingAuditEventType
 from app.services.business_onboarding.document_service import (
+    DocumentUploadResult,
     list_owner_documents,
     read_bounded_upload,
     register_owner_document,
@@ -154,6 +162,7 @@ def upload_document(
     if isinstance(bounded, OnboardingServiceError):
         return onboarding_error_response(bounded)
 
+    upload_correlation_id = str(uuid.uuid4())
     result = upload_owner_document_bytes(
         db,
         owner_user_id=principal.user_id,
@@ -165,14 +174,55 @@ def upload_document(
     )
     if isinstance(result, OnboardingServiceError):
         db.rollback()
+        try_record_document_upload_failed(
+            db,
+            application_id=application_id,
+            document_id=document_id,
+            actor_user_id=principal.user_id,
+            failure_code="storage_or_upload_rejected",
+            correlation_id=upload_correlation_id,
+        )
         return onboarding_error_response(result)
+
+    upload_result: DocumentUploadResult = result
+    document = upload_result.document
+    if upload_result.newly_completed and not document_upload_completed_exists(
+        db,
+        application_id=application_id,
+        document_id=document.id,
+    ):
+        record_document_audit(
+            db,
+            application_id=application_id,
+            event_type=OnboardingAuditEventType.DOCUMENT_UPLOAD_COMPLETED,
+            actor_role=OnboardingAuditActorRole.OWNER,
+            actor_user_id=principal.user_id,
+            correlation_id=upload_correlation_id,
+            details={
+                "document_id": str(document.id),
+                "from_document_lifecycle": lifecycle_detail(
+                    BusinessOnboardingDocumentLifecycle.AWAITING_UPLOAD,
+                ),
+                "to_document_lifecycle": lifecycle_detail(
+                    BusinessOnboardingDocumentLifecycle.UPLOADED_PENDING_VALIDATION,
+                ),
+            },
+        )
 
     commit_error = _commit_document_upload(
         db,
         storage,
-        storage_key=result.storage_object_key,
+        storage_key=document.storage_object_key,
     )
     if commit_error is not None:
+        try_record_document_upload_failed(
+            db,
+            application_id=application_id,
+            document_id=document.id,
+            actor_user_id=principal.user_id,
+            failure_code="db_commit_failed",
+            correlation_id=upload_correlation_id,
+        )
         return onboarding_error_response(commit_error)
 
-    return _owner_document_view(result)
+    return _owner_document_view(document)

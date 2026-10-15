@@ -7,7 +7,7 @@ from app.services.object_storage.errors import (
     StorageObjectNotFoundError,
     StorageOperationError,
 )
-from app.services.object_storage.port import ObjectHead
+from app.services.object_storage.port import ListPrefixPage, ObjectHead
 
 
 class MemoryObjectStorage:
@@ -49,3 +49,24 @@ class MemoryObjectStorage:
     def delete(self, key: str) -> None:
         self._objects.pop(key, None)
         self._content_types.pop(key, None)
+
+    def list_prefix(
+        self,
+        prefix: str,
+        *,
+        limit: int = 500,
+        cursor: str | None = None,
+    ) -> ListPrefixPage:
+        normalized = prefix.rstrip("/")
+        keys = sorted(
+            key
+            for key in self._objects
+            if key.startswith(f"{normalized}/") or key == normalized
+        )
+        start = 0
+        if cursor:
+            while start < len(keys) and keys[start] <= cursor:
+                start += 1
+        page = keys[start : start + limit]
+        next_cursor = page[-1] if start + limit < len(keys) else None
+        return ListPrefixPage(keys=tuple(page), next_cursor=next_cursor)

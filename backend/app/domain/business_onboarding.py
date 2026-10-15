@@ -47,6 +47,12 @@ class OnboardingAuditEventType(StrEnum):
     SUBMITTED = "submitted"
     STATUS_CHANGED = "status_changed"
     REINSTATEMENT_REQUESTED = "reinstatement_requested"
+    DOCUMENT_REGISTERED = "document_registered"
+    DOCUMENT_UPLOAD_COMPLETED = "document_upload_completed"
+    DOCUMENT_UPLOAD_FAILED = "document_upload_failed"
+    DOCUMENT_DELETED = "document_deleted"
+    DOCUMENT_RECONCILIATION_DETECTED = "document_reconciliation_detected"
+    DOCUMENT_RECONCILIATION_RESOLVED = "document_reconciliation_resolved"
 
 
 class OnboardingAuditActorRole(StrEnum):

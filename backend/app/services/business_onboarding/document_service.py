@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import uuid
+from dataclasses import dataclass
 from typing import BinaryIO
 
 from sqlalchemy import select
@@ -11,8 +12,16 @@ from sqlalchemy.orm import Session
 
 from app.api.schemas.business_onboarding_documents import RegisterOnboardingDocumentRequest
 from app.db.models.business_onboarding import BusinessOnboardingDocument
-from app.domain.business_onboarding import VerificationStatus
+from app.domain.business_onboarding import (
+    OnboardingAuditActorRole,
+    OnboardingAuditEventType,
+    VerificationStatus,
+)
 from app.domain.business_onboarding_documents import BusinessOnboardingDocumentLifecycle
+from app.services.business_onboarding.document_audit import (
+    lifecycle_detail,
+    record_document_audit,
+)
 from app.services.business_onboarding.document_content_validation import (
     detect_onboarding_document_format,
 )
@@ -23,6 +32,12 @@ from app.services.business_onboarding.onboarding_service import (
 )
 from app.services.object_storage.errors import StorageError, StorageObjectNotFoundError
 from app.services.object_storage.port import StoragePort
+
+
+@dataclass(frozen=True, slots=True)
+class DocumentUploadResult:
+    document: BusinessOnboardingDocument
+    newly_completed: bool
 
 
 def build_storage_object_key(application_id: uuid.UUID, document_id: uuid.UUID) -> str:
@@ -104,6 +119,19 @@ def register_owner_document(
     )
     session.add(document)
     session.flush()
+    record_document_audit(
+        session,
+        application_id=application.id,
+        event_type=OnboardingAuditEventType.DOCUMENT_REGISTERED,
+        actor_role=OnboardingAuditActorRole.OWNER,
+        actor_user_id=owner_user_id,
+        details={
+            "document_id": str(document.id),
+            "to_document_lifecycle": lifecycle_detail(
+                BusinessOnboardingDocumentLifecycle.AWAITING_UPLOAD,
+            ),
+        },
+    )
     return document
 
 
@@ -138,7 +166,7 @@ def upload_owner_document_bytes(
     payload: bytes,
     storage: StoragePort,
     max_bytes: int,
-) -> BusinessOnboardingDocument | OnboardingServiceError:
+) -> DocumentUploadResult | OnboardingServiceError:
     if len(payload) > max_bytes:
         return OnboardingServiceError(
             code=OnboardingServiceErrorCode.VALIDATION_FAILED,
@@ -195,11 +223,11 @@ def upload_owner_document_bytes(
                 )
             except StorageError:
                 return _storage_unavailable()
-            return document
+            return DocumentUploadResult(document, newly_completed=False)
         except StorageError:
             return _storage_unavailable()
         if head.byte_size == len(payload):
-            return document
+            return DocumentUploadResult(document, newly_completed=False)
         return _storage_unavailable()
 
     if lifecycle != BusinessOnboardingDocumentLifecycle.AWAITING_UPLOAD:
@@ -244,4 +272,4 @@ def upload_owner_document_bytes(
             pass
         return _storage_unavailable()
 
-    return document
+    return DocumentUploadResult(document, newly_completed=True)

@@ -23,7 +23,7 @@ from app.db.models.business_onboarding import (
     BusinessOnboardingAuditEvent,
     BusinessOnboardingDocument,
 )
-from app.domain.business_onboarding import VerificationStatus
+from app.domain.business_onboarding import OnboardingAuditEventType, VerificationStatus
 from app.domain.business_onboarding_documents import BusinessOnboardingDocumentLifecycle
 from app.main import create_app
 from app.services.business_onboarding.document_service import build_storage_object_key
@@ -286,8 +286,57 @@ def test_duplicate_upload_is_idempotent(
 
     with Session(document_engine) as session:
         audit_events = session.scalars(select(BusinessOnboardingAuditEvent)).all()
-        assert len(audit_events) == 1
-        assert audit_events[0].event_type == "application_created"
+        completed = [
+            event
+            for event in audit_events
+            if event.event_type == OnboardingAuditEventType.DOCUMENT_UPLOAD_COMPLETED.value
+        ]
+        assert len(completed) == 1
+
+
+def test_register_creates_document_registered_audit(
+    document_client: tuple[TestClient, FakeOtpProvider, MemoryObjectStorage],
+    document_engine: Engine,
+) -> None:
+    client, provider, _storage = document_client
+    headers = _auth_headers(_sign_in(client, provider))
+    application_id = _create_application(client, headers)
+    _register_document(client, headers, application_id)
+
+    with Session(document_engine) as session:
+        events = session.scalars(select(BusinessOnboardingAuditEvent)).all()
+        registered = [
+            event
+            for event in events
+            if event.event_type == OnboardingAuditEventType.DOCUMENT_REGISTERED.value
+        ]
+        assert len(registered) == 1
+
+
+def test_storage_failure_records_upload_failed_audit(
+    document_client: tuple[TestClient, FakeOtpProvider, MemoryObjectStorage],
+    document_engine: Engine,
+) -> None:
+    client, provider, storage = document_client
+    storage.fail_puts = True
+    headers = _auth_headers(_sign_in(client, provider))
+    application_id = _create_application(client, headers)
+    document_id = _register_document(client, headers, application_id)
+
+    failed = client.post(
+        f"{_APP_PREFIX}/{application_id}/documents/{document_id}/upload",
+        headers=headers,
+        files={"file": ("cert.pdf", _MINIMAL_PDF, "application/pdf")},
+    )
+    assert failed.status_code == 503
+
+    with Session(document_engine) as session:
+        failed_events = [
+            event
+            for event in session.scalars(select(BusinessOnboardingAuditEvent)).all()
+            if event.event_type == OnboardingAuditEventType.DOCUMENT_UPLOAD_FAILED.value
+        ]
+        assert len(failed_events) == 1
 
 
 def test_storage_failure_returns_safe_error_and_keeps_awaiting_upload(

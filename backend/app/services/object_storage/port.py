@@ -14,6 +14,14 @@ class ObjectHead:
     content_type: str | None = None
 
 
+@dataclass(frozen=True, slots=True)
+class ListPrefixPage:
+    """One page of opaque object keys under a prefix (server-side listing only)."""
+
+    keys: tuple[str, ...]
+    next_cursor: str | None = None
+
+
 class StoragePort(Protocol):
     """Provider-neutral private object storage."""
 
@@ -35,3 +43,12 @@ class StoragePort(Protocol):
 
     def delete(self, key: str) -> None:
         """Delete object if present; idempotent when already absent."""
+
+    def list_prefix(
+        self,
+        prefix: str,
+        *,
+        limit: int = 500,
+        cursor: str | None = None,
+    ) -> ListPrefixPage:
+        """List regular object keys under ``prefix`` (excludes scratch/meta sidecars)."""

@@ -200,6 +200,12 @@ Barcha route'lar `/api/v1/internal/business/onboarding/applications` ostida; **`
 
 **Storage:** `StoragePort` (local dev adapter Part 6B.1); `s3` provider hali yo‘q. Format/hajm → **422**; storage/konfiguratsiya yoki yozish xatosi → **503** (`storage_unavailable`).
 
+### Document audit and dry-run reconciliation (Part 6B.4 — implemented)
+
+**Audit:** `business_onboarding_audit_events` kengaytirildi (Alembic **`b0a1f0120001`**) — `document_registered`, `document_upload_completed`, `document_upload_failed`, … Document lifecycle faqat `details` orqali (`document_id`, lifecycle o‘tishlari); storage key/checksum auditga kirmaydi. Register/upload muvaffaqiyati bilan bir transaction; upload failed — alohida best-effort commit.
+
+**Reconciliation:** `reconcile_onboarding_documents_dry_run` + CLI `python -m app.jobs.reconcile_onboarding_documents` — default **read-only** (DB/storage/audit o‘zgarmaydi); `--apply` yo‘q. `StoragePort.list_prefix` orqali orphan/size mismatch aniqlash; hisobotda faqat `document_id` va statistika.
+
 ### Document privileged API (deferred)
 
 `GET/POST .../internal/.../documents`, `.../content` — **`implemented=False`**, mount yo‘q.
