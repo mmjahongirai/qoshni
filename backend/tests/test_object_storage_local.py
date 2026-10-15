@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import os
+import tempfile
 from pathlib import Path
 
 import pytest
@@ -60,6 +62,30 @@ def test_rejects_path_traversal_keys(storage: LocalFilesystemStorage) -> None:
         storage.put("private/../escape", b"x")
     with pytest.raises(StorageKeyInvalidError):
         validate_storage_object_key("/absolute/key")
+    with pytest.raises(StorageKeyInvalidError):
+        validate_storage_object_key("private/./nested")
+    with pytest.raises(StorageKeyInvalidError):
+        validate_storage_object_key("")
+
+
+def _symlinks_supported() -> bool:
+    with tempfile.TemporaryDirectory() as directory:
+        probe_root = Path(directory)
+        target = probe_root / "target.txt"
+        link = probe_root / "link.txt"
+        target.write_text("probe", encoding="utf-8")
+        try:
+            os.symlink(target, link)
+            link.unlink()
+            return True
+        except OSError:
+            return False
+
+
+symlink_required = pytest.mark.skipif(
+    not _symlinks_supported(),
+    reason="Platform cannot create symbolic links (common on Windows without Developer Mode).",
+)
 
 
 def test_atomic_write_leaves_no_partial_file_on_failure(
@@ -76,6 +102,74 @@ def test_atomic_write_leaves_no_partial_file_on_failure(
         storage.put(key, b"payload")
     with pytest.raises(StorageObjectNotFoundError):
         storage.head(key)
+
+
+@symlink_required
+def test_rejects_directory_symlink_escaping_root(tmp_path: Path) -> None:
+    external_dir = tmp_path / "outside"
+    external_dir.mkdir()
+    secret = external_dir / "secret.txt"
+    secret.write_bytes(b"OUTSIDE-SECRET")
+
+    store = LocalFilesystemStorage(root_directory=tmp_path / "store", bucket="private")
+    trap = store._root / "trap"
+    trap.parent.mkdir(parents=True, exist_ok=True)
+    os.symlink(external_dir, trap, target_is_directory=True)
+
+    with pytest.raises(StorageKeyInvalidError):
+        store.put("trap/secret.txt", b"evil")
+    with pytest.raises(StorageKeyInvalidError):
+        store.read("trap/secret.txt")
+    assert secret.read_bytes() == b"OUTSIDE-SECRET"
+
+
+@symlink_required
+def test_rejects_file_symlink_to_outside_path(tmp_path: Path) -> None:
+    external = tmp_path / "outside.txt"
+    external.write_bytes(b"OUTSIDE-SECRET")
+
+    store = LocalFilesystemStorage(root_directory=tmp_path / "store", bucket="private")
+    link_path = store._root / "linked-object"
+    os.symlink(external, link_path)
+
+    with pytest.raises(StorageKeyInvalidError):
+        store.read("linked-object")
+    with pytest.raises(StorageKeyInvalidError):
+        store.put("linked-object", b"overwrite", overwrite=True)
+    assert external.read_bytes() == b"OUTSIDE-SECRET"
+
+
+@symlink_required
+def test_meta_symlink_does_not_expose_external_content(tmp_path: Path) -> None:
+    external = tmp_path / "outside-meta.txt"
+    external.write_text("text/secret-outside", encoding="utf-8")
+
+    store = LocalFilesystemStorage(root_directory=tmp_path / "store", bucket="private")
+    key = "private/onboarding/doc.pdf"
+    store.put(key, b"%PDF", content_type="application/pdf")
+
+    object_path = store._root / Path(*key.split("/"))
+    meta_path = store._meta_path(object_path)
+    meta_path.unlink()
+    os.symlink(external, meta_path)
+
+    head = store.head(key)
+    assert head.byte_size == 4
+    assert head.content_type is None
+    assert external.read_text(encoding="utf-8") == "text/secret-outside"
+
+
+@symlink_required
+def test_put_rejects_writing_through_symlink_leaf(tmp_path: Path) -> None:
+    external = tmp_path / "outside.bin"
+    external.write_bytes(b"ORIGINAL")
+
+    store = LocalFilesystemStorage(root_directory=tmp_path / "store", bucket="private")
+    os.symlink(external, store._root / "payload")
+
+    with pytest.raises(StorageKeyInvalidError):
+        store.put("payload", b"NEW", overwrite=True)
+    assert external.read_bytes() == b"ORIGINAL"
 
 
 def test_storage_root_is_outside_web_static(tmp_path: Path) -> None:

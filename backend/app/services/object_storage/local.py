@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import os
+import secrets
 from pathlib import Path
 
 from app.services.object_storage.errors import (
@@ -18,23 +19,83 @@ from app.services.object_storage.port import ObjectHead
 class LocalFilesystemStorage:
     """Store objects under a private root directory (never web-served)."""
 
+    _SCRATCH_DIR_NAME = ".part-uploads"
+
     def __init__(self, *, root_directory: Path, bucket: str | None = None) -> None:
         bucket_part = (bucket or "default").strip().strip("/")
         if not bucket_part or ".." in bucket_part.split("/"):
             raise StorageKeyInvalidError("Local storage bucket name is invalid.")
         self._root = (root_directory / bucket_part).resolve()
         self._root.mkdir(parents=True, exist_ok=True)
+        self._scratch_dir = self._root / self._SCRATCH_DIR_NAME
+        self._scratch_dir.mkdir(exist_ok=True)
 
     def _object_path(self, key: str) -> Path:
         safe_key = validate_storage_object_key(key)
-        candidate = (self._root / Path(*safe_key.split("/"))).resolve()
-        root = self._root.resolve()
-        if os.path.commonpath([str(root), str(candidate)]) != str(root):
-            raise StorageKeyInvalidError("Storage object key escapes the private root.")
-        return candidate
+        root = self._root
+        segments = [segment for segment in safe_key.split("/") if segment]
+        if not segments:
+            raise StorageKeyInvalidError("Storage object key must be non-empty and trimmed.")
+
+        current = root
+        last_index = len(segments) - 1
+        for index, segment in enumerate(segments):
+            if segment in (".", ".."):
+                raise StorageKeyInvalidError("Storage object key must not contain parent segments.")
+            current = current / segment
+            if current.is_symlink():
+                raise StorageKeyInvalidError("Storage object path must not include a symbolic link.")
+            if current.exists() and not current.is_dir() and index != last_index:
+                raise StorageKeyInvalidError("Storage object key is not a valid path.")
+
+        try:
+            current.relative_to(root)
+        except ValueError as error:
+            raise StorageKeyInvalidError("Storage object key escapes the private root.") from error
+        return current
 
     def _meta_path(self, object_path: Path) -> Path:
         return object_path.with_suffix(object_path.suffix + ".meta")
+
+    def _ensure_parent_directories(self, destination: Path) -> None:
+        root = self._root
+        if destination.parent == root:
+            return
+        relative_parent = destination.parent.relative_to(root)
+        current = root
+        for segment in relative_parent.parts:
+            current = current / segment
+            if current.is_symlink():
+                raise StorageKeyInvalidError("Storage object path must not include a symbolic link.")
+            if not current.exists():
+                current.mkdir(mode=0o700, exist_ok=False)
+
+    def _assert_regular_object_file(self, path: Path) -> None:
+        if path.is_symlink():
+            raise StorageObjectNotFoundError("Storage object not found.")
+        if not path.is_file():
+            raise StorageObjectNotFoundError("Storage object not found.")
+
+    def _read_meta_content_type(self, object_path: Path) -> str | None:
+        meta = self._meta_path(object_path)
+        if meta.is_symlink() or not meta.is_file():
+            return None
+        try:
+            return meta.read_text(encoding="utf-8").strip() or None
+        except OSError as error:
+            raise StorageOperationError("Failed to read object metadata.") from error
+
+    def _write_meta_content_type(self, object_path: Path, content_type: str | None) -> None:
+        meta = self._meta_path(object_path)
+        if meta.is_symlink():
+            raise StorageOperationError("Failed to store object metadata.")
+        try:
+            if content_type:
+                meta.write_text(content_type.strip(), encoding="utf-8")
+            elif meta.exists():
+                meta.unlink(missing_ok=True)
+        except OSError as error:
+            raise StorageOperationError("Failed to store object metadata.") from error
 
     def put(
         self,
@@ -45,42 +106,49 @@ class LocalFilesystemStorage:
         overwrite: bool = False,
     ) -> None:
         destination = self._object_path(key)
-        if destination.exists() and not overwrite:
-            raise StorageObjectAlreadyExistsError("Storage object already exists.")
+        if destination.exists():
+            if destination.is_symlink():
+                raise StorageKeyInvalidError("Storage object path must not include a symbolic link.")
+            if not overwrite:
+                raise StorageObjectAlreadyExistsError("Storage object already exists.")
 
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        temp_path = destination.with_name(f".{destination.name}.tmp-{os.getpid()}")
+        self._ensure_parent_directories(destination)
+        temp_path = self._scratch_dir / f".{os.getpid()}.{secrets.token_hex(16)}.part"
         try:
-            with open(temp_path, "wb") as handle:
+            with open(temp_path, "xb") as handle:
                 handle.write(data)
                 handle.flush()
                 os.fsync(handle.fileno())
+            destination = self._object_path(key)
+            if destination.exists() and destination.is_symlink():
+                raise StorageKeyInvalidError("Storage object path must not include a symbolic link.")
+            if destination.exists() and not overwrite:
+                raise StorageObjectAlreadyExistsError("Storage object already exists.")
             os.replace(temp_path, destination)
-            meta = self._meta_path(destination)
-            if content_type:
-                meta.write_text(content_type.strip(), encoding="utf-8")
-            elif meta.exists():
-                meta.unlink(missing_ok=True)
+            self._write_meta_content_type(destination, content_type)
+        except FileExistsError as error:
+            temp_path.unlink(missing_ok=True)
+            raise StorageObjectAlreadyExistsError("Storage object already exists.") from error
         except OSError as error:
             temp_path.unlink(missing_ok=True)
             raise StorageOperationError("Failed to store object.") from error
 
     def head(self, key: str) -> ObjectHead:
         destination = self._object_path(key)
-        if not destination.is_file():
-            raise StorageObjectNotFoundError("Storage object not found.")
-        content_type = None
-        meta = self._meta_path(destination)
-        if meta.is_file():
-            content_type = meta.read_text(encoding="utf-8").strip() or None
-        return ObjectHead(byte_size=destination.stat().st_size, content_type=content_type)
+        self._assert_regular_object_file(destination)
+        content_type = self._read_meta_content_type(destination)
+        try:
+            byte_size = destination.stat().st_size
+        except OSError as error:
+            raise StorageOperationError("Failed to read object metadata.") from error
+        return ObjectHead(byte_size=byte_size, content_type=content_type)
 
     def read(self, key: str) -> bytes:
         destination = self._object_path(key)
-        if not destination.is_file():
-            raise StorageObjectNotFoundError("Storage object not found.")
+        self._assert_regular_object_file(destination)
         try:
-            return destination.read_bytes()
+            with open(destination, "rb") as handle:
+                return handle.read()
         except OSError as error:
             raise StorageOperationError("Failed to read object.") from error
 
@@ -89,7 +157,11 @@ class LocalFilesystemStorage:
             destination = self._object_path(key)
         except StorageKeyInvalidError:
             return
+        if destination.is_symlink():
+            destination.unlink(missing_ok=True)
+            return
         if destination.is_file():
             destination.unlink(missing_ok=True)
         meta = self._meta_path(destination)
-        meta.unlink(missing_ok=True)
+        if meta.is_symlink() or meta.is_file():
+            meta.unlink(missing_ok=True)

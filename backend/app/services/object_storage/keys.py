@@ -21,7 +21,8 @@ def validate_storage_object_key(key: str) -> str:
         raise StorageKeyInvalidError("Storage object key must be relative and opaque.")
     if "\\" in trimmed or "\0" in trimmed:
         raise StorageKeyInvalidError("Storage object key contains forbidden characters.")
-    if ".." in trimmed.split("/"):
+    segments = trimmed.split("/")
+    if ".." in segments or "." in segments:
         raise StorageKeyInvalidError("Storage object key must not contain parent segments.")
     if not _KEY_PATTERN.fullmatch(trimmed):
         raise StorageKeyInvalidError("Storage object key has an invalid format.")
