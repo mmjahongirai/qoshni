@@ -6,6 +6,7 @@ from app.db.models.business_onboarding import (
     BusinessOnboardingDocument,
 )
 from app.db.models.identity import AuthAuditEvent, AuthSession, OtpChallenge, User
+from app.db.models.platform_roles import UserPlatformRoleAssignment
 from app.db.models.profile import UserPreferences, UserProfile
 
 __all__ = [
@@ -16,6 +17,7 @@ __all__ = [
     "BusinessOnboardingDocument",
     "OtpChallenge",
     "User",
+    "UserPlatformRoleAssignment",
     "UserPreferences",
     "UserProfile",
 ]

@@ -12,3 +12,12 @@ class AuthenticatedPrincipal:
 
     user_id: uuid.UUID
     session_id: uuid.UUID
+
+
+@dataclass(frozen=True, slots=True)
+class BusinessOnboardingReviewerPrincipal:
+    """Authenticated caller with an active ``business_onboarding_reviewer`` grant."""
+
+    user_id: uuid.UUID
+    session_id: uuid.UUID
+    role_assignment_id: uuid.UUID

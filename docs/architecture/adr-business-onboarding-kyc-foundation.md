@@ -1,8 +1,8 @@
 # ADR: Business onboarding, verification va KYC foundation (Phase 07)
 
-**Status:** Accepted (schema Part 1; owner HTTP APIs Part 2; **private document metadata Part 3**)
-**Date:** 2026-10-14 (updated Part 3)
-**Scope:** `backend/` — onboarding models/migrations through Alembic **`b0a1f0100001`**, owner routes under `/api/v1/business/onboarding`
+**Status:** Accepted (schema Part 1; owner HTTP APIs Part 2; document metadata Part 3; **reviewer authorization foundation Part 4**)
+**Date:** 2026-10-14 (updated Part 4)
+**Scope:** `backend/` — onboarding + role assignments through Alembic **`b0a1f0110001`**, owner routes under `/api/v1/business/onboarding`
 
 ## Kontekst (Context)
 
@@ -45,7 +45,8 @@ QO‘SHNI da haqiqiy biznes ro‘yxatdan o‘tkazish (onboarding) autentifikatsi
 
 - Owner o‘zini **verified** qila olmaydi (domain guard + PATCH da status maydoni yo‘q).
 - Cross-owner o‘qish **404** `application_not_found` (enumeration oldini olish).
-- Privileged `/internal/...` route'lar **mount qilinmagan** — reviewer principal mavjud emas.
+- Privileged `/internal/...` route'lar **mount qilinmagan** — review workflow hali yo‘q.
+- **Part 4:** `business_onboarding_reviewer` roli faqat `user_platform_role_assignments` jadvalidan; token/profile orqali berilmaydi.
 
 ### Implemented owner APIs (Part 2)
 
@@ -121,15 +122,35 @@ Bearer token talab qilinadi (`get_current_principal`). `owner_user_id` faqat tok
 - Boshqa owner uchun 404 (enumeration yo‘q).
 - Bir user bir nechta business ochishi mumkin; hujjat boshqa owner arizasiga biriktirilmasligi service qatlamida tekshiriladi (endpointlar kelganda).
 
-**Reviewer / admin authorization (deferred):**
+### Server-side reviewer authorization (Part 4 — foundation only)
 
-Loyihada alohida role/permission subsystem **yo‘q**. Shuning uchun:
+**Implemented:**
 
-- `/internal/business/onboarding/...` review va document route'lar **mount qilinmagan**.
-- Hard-coded admin, secret role yoki oddiy signed-in user ga reviewer huquqi **berilmaydi**.
-- Kelajak model talablari: server-owned reviewer permission scopes, owner/reviewer ajratish, least privilege, har privileged action uchun audit (`actor_role=reviewer`, `actor_user_id`), owner self-approval taqiqi, permission revoke da qayta auth, yetarli bo‘lmagan huquq → 403/404, reviewer notes/evidence faqat privileged kanallarda.
+- Jadval `user_platform_role_assignments` (Alembic **`b0a1f0110001`**).
+- Yagona hozirgi rol: **`business_onboarding_reviewer`** (`PlatformRole`).
+- Faol grant: `revoked_at IS NULL` va (`expires_at IS NULL` yoki `expires_at > now()`).
+- Partial unique index `uq_user_platform_role_assignment_active` — bir user uchun bir vaqtning o‘zida bitta faol `(user_id, role)`.
+- Revoke + yangi qator orqali **re-grant** (tarix o‘chirilmaydi).
+- FastAPI dependency `require_business_onboarding_reviewer`: avval `get_current_principal`, keyin DB dan grant; yo‘q/muddati o‘tgan/revoke → **403** `authorization_denied`; sessiya yo‘q → **401**; `suspended`/`disabled` → mavjud **403** `account_unavailable`.
+- Permission mapping: `app/domain/reviewer_permissions.py` — faqat onboarding read/decision scope'lari; platform admin, payment, user management **yo‘q**.
+- Self-review guard: `assert_reviewer_not_application_owner` — reviewer `user_id` == `owner_user_id` bo‘lsa generic **403/forbidden** (review ma’lumotlari oshkor etilmaydi).
 
-Document contract'lar: `DOCUMENT_ENDPOINT_CONTRACTS` — barchasi **`implemented=False`**.
+**Grant maydonlari (qisqa):** `granted_at`, ixtiyoriy `expires_at`, `revoked_at` + `revocation_reason`, ixtiyoriy `granted_by_user_id`, `grant_source` (`operator_control_plane` | kelajak `role_admin_api`), ixtiyoriy `grant_reference` (audit ticket ID, secret emas).
+
+**Bootstrap cheklovi (hali):**
+
+- Migration **hech qanday** reviewer grant seed qilmaydi.
+- Public grant/revoke API, admin UI, hard-coded admin, email allowlist, bootstrap token **yo‘q**.
+- Operator grant/revoke alohida nazorat ostidagi protsedura (control plane / DB ops) — `grant_source=operator_control_plane`; bu increment inson identifikatsiyasini tasdiqlamaydi; mustaqil operator audit keyinchalik talab qilinadi.
+- Profile/onboarding API orqali rol **yozib bo‘lmaydi** (`extra=forbid`).
+
+**Hali implement emas:**
+
+- `/internal/business/onboarding/...` review decision route'lar (`begin-review`, `verify`, `reject`, …) — contract **`implemented=False`**, mount yo‘q.
+- Document internal route'lar — **`implemented=False`**.
+- KYC approval workflow, reviewer notes UI, role-admin HTTP API.
+
+**Kelajak audit (role management):** grant/revoke operator actionlari alohida audit jadvali yoki auth audit kengaytmasi orqali yoziladi — Part 4 da jadval qo‘shilmadi.
 
 ### Sensitive data va audit
 
@@ -150,14 +171,16 @@ Verified onboarding yozuvi keyinchalik **Business Profile**, filiallar va staff/
 
 ## Oqibatlar (Consequences)
 
-- Alembic head: **`b0a1f0100001`** (`business_onboarding_documents`).
+- Alembic head: **`b0a1f0110001`** (`user_platform_role_assignments`).
 - Owner onboarding HTTP handlerlari `app/api/routes/business_onboarding.py` da.
-- Document metadata: `app/domain/business_onboarding_documents.py`, `app/api/schemas/business_onboarding_documents.py` (contracts only).
-- Flutter onboarding UI, real upload, OCR, reviewer login — keyingi incrementlar.
+- Reviewer auth dependency: `app/api/deps/reviewer.py` (hali production route'larga ulanmagan).
+- Document metadata: `app/domain/business_onboarding_documents.py`, contracts only.
+- Flutter onboarding UI, real upload, OCR, privileged review HTTP — keyingi incrementlar.
 
 ## Keyingi ish
 
-- Reviewer/admin principal (explicit permissions) va `/internal/*` implementatsiyasi.
+- `/internal/*` review workflow (mount + service + audit) — `require_business_onboarding_reviewer` ga ulanadi.
+- Operator/role-admin grant-revoke API va audit.
 - Owner document register/list/upload-init route'lar + private storage provider.
 - Server validation, malware scan, OCR, privileged download.
 - Audit enum kengaytirish (document lifecycle events).
