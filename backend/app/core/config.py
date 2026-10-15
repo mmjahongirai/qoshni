@@ -4,7 +4,7 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Literal
 
-from pydantic import AliasChoices, Field, SecretStr, field_validator
+from pydantic import AliasChoices, Field, SecretStr, field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic_core import PydanticCustomError
 from sqlalchemy.engine import make_url
@@ -69,6 +69,15 @@ class Settings(BaseSettings):
             "before authentication endpoints are enabled; never ship to clients."
         ),
     )
+    object_storage_provider: Literal["local", "s3"] | None = None
+    object_storage_bucket: str | None = None
+    object_storage_region: str | None = None
+    object_storage_endpoint: str | None = None
+    object_storage_access_key_id: SecretStr | None = None
+    object_storage_secret_access_key: SecretStr | None = None
+    onboarding_document_max_bytes: int = Field(default=10 * 1024 * 1024, ge=1)
+    onboarding_document_upload_url_ttl_seconds: int = Field(default=900, ge=60)
+    object_storage_local_root: Path | None = None
 
     model_config = SettingsConfigDict(
         env_file=_ENV_FILE,
@@ -98,6 +107,18 @@ class Settings(BaseSettings):
             )
 
         return SecretStr(raw)
+
+    @model_validator(mode="after")
+    def validate_object_storage_policy(self) -> "Settings":
+        if self.object_storage_provider == "local" and self.environment == "production":
+            raise ValueError(
+                "Local object storage cannot be enabled when QOSHNI_ENVIRONMENT is production.",
+            )
+        if self.object_storage_provider == "s3":
+            raise ValueError(
+                "S3 object storage provider is configured but no adapter is available yet.",
+            )
+        return self
 
     @property
     def database_configured(self) -> bool:
