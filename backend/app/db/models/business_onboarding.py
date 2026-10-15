@@ -15,6 +15,7 @@ from sqlalchemy import (
     DateTime,
     ForeignKey,
     Index,
+    Integer,
     String,
     Uuid,
     func,
@@ -31,6 +32,13 @@ from app.domain.business_onboarding import (
     OnboardingAuditEventType,
     OnboardingRejectionReasonCode,
     VerificationStatus,
+)
+from app.domain.business_onboarding_documents import (
+    BusinessOnboardingDocumentLifecycle,
+    BusinessOnboardingDocumentType,
+    CHECKSUM_SHA256_HEX_LENGTH,
+    DECLARED_CONTENT_TYPE_MAX_LENGTH,
+    STORAGE_OBJECT_KEY_MAX_LENGTH,
 )
 
 _ACTIVE_REGISTRATION_INDEX_WHERE = (
@@ -233,3 +241,99 @@ class BusinessOnboardingAuditEvent(Base):
 
     def __repr__(self) -> str:
         return f"BusinessOnboardingAuditEvent(id={self.id!r}, event_type={self.event_type!r})"
+
+
+class BusinessOnboardingDocument(Base):
+    """Private document metadata for one onboarding application.
+
+    Binary contents are stored outside the database using ``storage_object_key``.
+    """
+
+    __tablename__ = "business_onboarding_documents"
+    __table_args__ = (
+        CheckConstraint(
+            _in_values("document_type", BusinessOnboardingDocumentType),
+            name="document_type_valid",
+        ),
+        CheckConstraint(
+            _in_values("lifecycle_state", BusinessOnboardingDocumentLifecycle),
+            name="lifecycle_state_valid",
+        ),
+        CheckConstraint(
+            "length(trim(storage_object_key)) > 0",
+            name="storage_object_key_not_blank",
+        ),
+        CheckConstraint(
+            "storage_object_key = trim(storage_object_key)",
+            name="storage_object_key_trimmed",
+        ),
+        CheckConstraint(
+            "byte_size IS NULL OR byte_size >= 0",
+            name="byte_size_non_negative",
+        ),
+        CheckConstraint(
+            "checksum_sha256 IS NULL OR length(checksum_sha256) = "
+            f"{CHECKSUM_SHA256_HEX_LENGTH}",
+            name="checksum_sha256_length",
+        ),
+        Index(
+            "ix_business_onboarding_documents_application_id_created_at",
+            "application_id",
+            "created_at",
+        ),
+        Index(
+            "ix_business_onboarding_documents_uploaded_by_user_id",
+            "uploaded_by_user_id",
+        ),
+    )
+
+    id: Mapped[uuid.UUID] = mapped_column(Uuid, primary_key=True, default=uuid.uuid4)
+    application_id: Mapped[uuid.UUID] = mapped_column(
+        Uuid,
+        ForeignKey("business_onboarding_applications.id", ondelete="CASCADE"),
+        nullable=False,
+    )
+    uploaded_by_user_id: Mapped[uuid.UUID] = mapped_column(
+        Uuid,
+        ForeignKey("users.id", ondelete="CASCADE"),
+        nullable=False,
+    )
+    document_type: Mapped[str] = mapped_column(String(48), nullable=False)
+    storage_object_key: Mapped[str] = mapped_column(
+        String(STORAGE_OBJECT_KEY_MAX_LENGTH),
+        nullable=False,
+        unique=True,
+    )
+    lifecycle_state: Mapped[str] = mapped_column(
+        String(48),
+        nullable=False,
+        default=BusinessOnboardingDocumentLifecycle.AWAITING_UPLOAD.value,
+        server_default=BusinessOnboardingDocumentLifecycle.AWAITING_UPLOAD.value,
+    )
+    declared_content_type: Mapped[str | None] = mapped_column(
+        String(DECLARED_CONTENT_TYPE_MAX_LENGTH),
+        nullable=True,
+    )
+    byte_size: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    checksum_sha256: Mapped[str | None] = mapped_column(
+        String(CHECKSUM_SHA256_HEX_LENGTH),
+        nullable=True,
+    )
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True),
+        nullable=False,
+        server_default=func.now(),
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True),
+        nullable=False,
+        server_default=func.now(),
+        onupdate=func.now(),
+    )
+
+    def __repr__(self) -> str:
+        return (
+            f"BusinessOnboardingDocument(id={self.id!r}, "
+            f"application_id={self.application_id!r}, "
+            f"lifecycle_state={self.lifecycle_state!r})"
+        )

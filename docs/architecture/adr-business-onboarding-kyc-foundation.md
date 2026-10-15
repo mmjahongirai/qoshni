@@ -1,8 +1,8 @@
 # ADR: Business onboarding, verification va KYC foundation (Phase 07)
 
-**Status:** Accepted (schema Part 1; **owner HTTP APIs Part 2**)
-**Date:** 2026-10-14 (updated Part 2)
-**Scope:** `backend/` — models, Alembic `b0a1f0080001`, owner routes under `/api/v1/business/onboarding`
+**Status:** Accepted (schema Part 1; owner HTTP APIs Part 2; **private document metadata Part 3**)
+**Date:** 2026-10-14 (updated Part 3)
+**Scope:** `backend/` — onboarding models/migrations through Alembic **`b0a1f0100001`**, owner routes under `/api/v1/business/onboarding`
 
 ## Kontekst (Context)
 
@@ -83,15 +83,66 @@ Bearer token talab qilinadi (`get_current_principal`). `owner_user_id` faqat tok
 - **Migration preflight:** mavjud active duplicate bo‘lsa, upgrade **xato** bilan to‘xtaydi (ma’lumot o‘chirilmaydi).
 - **Test cheklovi:** SQLite deterministik unique + alohida session testlari; **PostgreSQL parallel concurrency testi CI da ishlamagan** — production PostgreSQL da indeks race-safe deb dizaynlangan.
 
-### Sensitive data va hujjatlar
+### Private business documents (Part 3 — metadata only)
 
-- `tax_identifier` faqat owner API ko‘rinishida; verification-status endpointida yo‘q.
-- Hujjatlar DB blob sifatida saqlanmaydi; kelajakda private `business_document_refs`.
-- Audit jadvalida tax, hujjat, token, OTP yo‘q.
+**Implemented:** SQLAlchemy model `BusinessOnboardingDocument`, jadval `business_onboarding_documents` (Alembic **`b0a1f0100001`**).
+
+| Maydon | Ma’nosi |
+|--------|---------|
+| `id` | Barqaror document UUID |
+| `application_id` | FK → `business_onboarding_applications` (CASCADE) |
+| `uploaded_by_user_id` | FK → `users.id` — uploader/owner reference (server yozadi) |
+| `document_type` | `BusinessOnboardingDocumentType` enum (CHECK) |
+| `storage_object_key` | **Opaque** private object key (unique, trimmed, non-blank) — **public URL emas** |
+| `lifecycle_state` | `BusinessOnboardingDocumentLifecycle` (default **`awaiting_upload`**) |
+| `declared_content_type`, `byte_size`, `checksum_sha256` | Faqat kelajakdagi server-side tekshiruv uchun e’lon; client isboti emas |
+| `created_at`, `updated_at` | Audit va UI metadata |
+
+**Qilinmaydi (Part 3):** binary upload, object storage integratsiyasi, MIME/size/checksum server validation, malware scan, OCR, owner/reviewer HTTP route mount.
+
+**Storage key vs public URL:** `storage_object_key` faqat backend/private storage layer uchun. Owner DTO (`OwnerOnboardingDocumentView`) storage key, checksum va fayl baytlarini **o‘z ichiga olmaydi**. Public business profile (Phase 08) va verification-status javoblari hujjat metadata qo‘shmaydi.
+
+**Kelajakdagi ish oqimi (hali implement emas):**
+
+1. Owner-authorized upload initiation (metadata slot + signed private upload).
+2. Private storage ga yuklash.
+3. Server-side haqiqiy content type, hajm va checksum tekshiruvi (`uploaded_pending_validation`).
+4. Malware scan / quarantine (`quarantined`) — skaner ishlaguncha “verified/safe” holat yo‘q.
+5. Ixtiyoriy OCR yoki manual review.
+6. Reviewer acceptance/rejection (`accepted_for_review` / `rejected`) — faqat real privileged auth bilan.
+7. Strictly authorized download (`/internal/.../content` contract, hali mount emas).
+
+**Lifecycle holatlari:** enum kelajak o‘tishlar uchun to‘liq; Part 3 da faqat **`awaiting_upload`** default va haqiqiy yaratilgan qatorlar uchun ishlatiladi. “Verified”, “safe” yoki “approved” document holati **yo‘q** — skan/review jarayoni bo‘lmaguncha.
+
+**Owner access boundary (design):**
+
+- Faqat onboarding arizasining **authenticated owner**i o‘z arizasiga bog‘langan owner-visible document metadata ko‘radi.
+- Egalik `get_current_principal` + `application.owner_user_id` orqali; client `owner_user_id` yubormaydi.
+- Boshqa owner uchun 404 (enumeration yo‘q).
+- Bir user bir nechta business ochishi mumkin; hujjat boshqa owner arizasiga biriktirilmasligi service qatlamida tekshiriladi (endpointlar kelganda).
+
+**Reviewer / admin authorization (deferred):**
+
+Loyihada alohida role/permission subsystem **yo‘q**. Shuning uchun:
+
+- `/internal/business/onboarding/...` review va document route'lar **mount qilinmagan**.
+- Hard-coded admin, secret role yoki oddiy signed-in user ga reviewer huquqi **berilmaydi**.
+- Kelajak model talablari: server-owned reviewer permission scopes, owner/reviewer ajratish, least privilege, har privileged action uchun audit (`actor_role=reviewer`, `actor_user_id`), owner self-approval taqiqi, permission revoke da qayta auth, yetarli bo‘lmagan huquq → 403/404, reviewer notes/evidence faqat privileged kanallarda.
+
+Document contract'lar: `DOCUMENT_ENDPOINT_CONTRACTS` — barchasi **`implemented=False`**.
+
+### Sensitive data va audit
+
+- `tax_identifier` faqat owner application ko‘rinishida; verification-status endpointida yo‘q.
+- Hujjat binary DB da saqlanmaydi; audit `details` da hujjat kontenti, tax ID, storage key, token, OTP **yo‘q**.
+- Mavjud `BusinessOnboardingAuditEvent` kelajak document eventlari uchun ishlatiladi (masalan `document_registered`, `document_quarantined` — enum kengaytirish keyingi increment). Part 3 da yangi audit jadvali yo‘q.
+- Owner `actor_role=reviewer` forge qila olmaydi (mavjud owner audit qoidalari).
 
 ### Privileged API (deferred)
 
-`/internal/business/onboarding/applications/{id}/begin-review|verify|reject|suspend|reinstate` — contract metadata `implemented=False`, **router mount yo‘q**. Reviewer/admin autentifikatsiyasi loyihalanguncha fake approval yo‘q.
+`/internal/business/onboarding/applications/{id}/begin-review|verify|reject|suspend|reinstate` — contract metadata `implemented=False`, **router mount yo‘q**.
+
+Shuningdek document: `GET/POST .../internal/.../documents`, `.../content` — **`implemented=False`**, mount yo‘q.
 
 ### Phase 08 integratsiyasi
 
@@ -99,12 +150,15 @@ Verified onboarding yozuvi keyinchalik **Business Profile**, filiallar va staff/
 
 ## Oqibatlar (Consequences)
 
-- Alembic head: **`b0a1f0090001`** (active registration partial unique index).
+- Alembic head: **`b0a1f0100001`** (`business_onboarding_documents`).
 - Owner onboarding HTTP handlerlari `app/api/routes/business_onboarding.py` da.
-- Flutter onboarding UI, hujjat upload, OCR, reviewer login — keyingi incrementlar.
+- Document metadata: `app/domain/business_onboarding_documents.py`, `app/api/schemas/business_onboarding_documents.py` (contracts only).
+- Flutter onboarding UI, real upload, OCR, reviewer login — keyingi incrementlar.
 
 ## Keyingi ish
 
-- Reviewer/admin principal va `/internal/*` implementatsiyasi.
-- Document storage, OCR, malware scan.
+- Reviewer/admin principal (explicit permissions) va `/internal/*` implementatsiyasi.
+- Owner document register/list/upload-init route'lar + private storage provider.
+- Server validation, malware scan, OCR, privileged download.
+- Audit enum kengaytirish (document lifecycle events).
 - Rejected → draft rework flow (privileged yoki owner qoidasi).
