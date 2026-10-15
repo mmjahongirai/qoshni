@@ -1,6 +1,6 @@
 """Business onboarding API contracts (Phase 07).
 
-Owner routes are implemented in Part 2; privileged review routes remain documented only.
+Owner routes (Part 2) and privileged review routes (Part 5) are implemented.
 """
 
 from __future__ import annotations
@@ -58,8 +58,8 @@ class OwnerOnboardingApplicationListResponse(_Response):
     applications: list["OwnerOnboardingApplicationView"]
 
 
-class OwnerOnboardingApplicationView(_Response):
-    """Owner-visible application. Excludes internal reviewer notes."""
+class _OnboardingApplicationVerificationFields(_Response):
+    """Shared verification fields for owner and reviewer application views."""
 
     application_id: uuid.UUID
     legal_business_name: str | None = None
@@ -75,6 +75,23 @@ class OwnerOnboardingApplicationView(_Response):
     reviewed_at: datetime | None = None
     created_at: datetime
     updated_at: datetime
+
+
+class OwnerOnboardingApplicationView(_OnboardingApplicationVerificationFields):
+    """Owner-visible application. Excludes owner_user_id, audit rows and document keys."""
+
+
+class ReviewerOnboardingApplicationView(_OnboardingApplicationVerificationFields):
+    """Privileged reviewer verification metadata.
+
+    Includes registration and tax identifiers required for KYC review.
+    Excludes ``owner_user_id``, audit event payloads, private reviewer notes,
+    and document storage keys (document APIs remain unimplemented).
+    """
+
+
+class ReviewerOnboardingApplicationListResponse(_Response):
+    applications: list[ReviewerOnboardingApplicationView]
 
 
 class OnboardingApplicationCreateRequest(_Request):
@@ -119,14 +136,18 @@ class OnboardingVerificationStatusView(_Response):
 
 
 class PrivilegedReviewDecisionRequest(_Request):
-    """Reviewer-only (Part 2). Owners must not call these routes."""
+    """Empty reviewer decision body for ``begin-review``, ``verify``, ``suspend``, and ``reinstate``.
 
-    internal_note: Annotated[str, StringConstraints(max_length=2000)] | None = None
+    Clients must send ``Content-Type: application/json`` with body ``{}``.
+    A missing body is rejected with HTTP 422 (consistent with owner ``submit``).
+    Private notes are not accepted until a storage policy exists.
+    """
+
+    pass
 
 
 class PrivilegedRejectRequest(_Request):
     rejection_reason_code: OnboardingRejectionReasonCode
-    internal_note: Annotated[str, StringConstraints(max_length=2000)] | None = None
 
 
 class OnboardingErrorCode(StrEnum):
@@ -231,58 +252,80 @@ ONBOARDING_ENDPOINT_CONTRACTS: tuple[OnboardingEndpointContract, ...] = (
         implemented=True,
     ),
     OnboardingEndpointContract(
+        "GET",
+        REVIEW_PREFIX,
+        "List applications in the reviewer queue (privileged).",
+        None,
+        ReviewerOnboardingApplicationListResponse,
+        200,
+        requires_access_token=True,
+        owner_accessible=False,
+        implemented=True,
+    ),
+    OnboardingEndpointContract(
+        "GET",
+        f"{REVIEW_PREFIX}/{{application_id}}",
+        "Read one application for review (privileged).",
+        None,
+        ReviewerOnboardingApplicationView,
+        200,
+        requires_access_token=True,
+        owner_accessible=False,
+        implemented=True,
+    ),
+    OnboardingEndpointContract(
         "POST",
         f"{REVIEW_PREFIX}/{{application_id}}/begin-review",
         "Move submitted application to under_review (privileged).",
         PrivilegedReviewDecisionRequest,
-        OwnerOnboardingApplicationView,
+        ReviewerOnboardingApplicationView,
         200,
         requires_access_token=True,
         owner_accessible=False,
-        implemented=False,
+        implemented=True,
     ),
     OnboardingEndpointContract(
         "POST",
         f"{REVIEW_PREFIX}/{{application_id}}/verify",
         "Mark application verified after review procedure (privileged).",
         PrivilegedReviewDecisionRequest,
-        OwnerOnboardingApplicationView,
+        ReviewerOnboardingApplicationView,
         200,
         requires_access_token=True,
         owner_accessible=False,
-        implemented=False,
+        implemented=True,
     ),
     OnboardingEndpointContract(
         "POST",
         f"{REVIEW_PREFIX}/{{application_id}}/reject",
         "Reject application with a controlled client-safe reason (privileged).",
         PrivilegedRejectRequest,
-        OwnerOnboardingApplicationView,
+        ReviewerOnboardingApplicationView,
         200,
         requires_access_token=True,
         owner_accessible=False,
-        implemented=False,
+        implemented=True,
     ),
     OnboardingEndpointContract(
         "POST",
         f"{REVIEW_PREFIX}/{{application_id}}/suspend",
         "Suspend a verified business (privileged).",
         PrivilegedReviewDecisionRequest,
-        OwnerOnboardingApplicationView,
+        ReviewerOnboardingApplicationView,
         200,
         requires_access_token=True,
         owner_accessible=False,
-        implemented=False,
+        implemented=True,
     ),
     OnboardingEndpointContract(
         "POST",
         f"{REVIEW_PREFIX}/{{application_id}}/reinstate",
-        "Reinstate a suspended business after authorized review (privileged).",
+        "Reinstate a suspended business to under_review (privileged).",
         PrivilegedReviewDecisionRequest,
-        OwnerOnboardingApplicationView,
+        ReviewerOnboardingApplicationView,
         200,
         requires_access_token=True,
         owner_accessible=False,
-        implemented=False,
+        implemented=True,
     ),
 )

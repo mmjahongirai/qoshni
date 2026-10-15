@@ -18,6 +18,7 @@ from app.api.schemas.business_onboarding import (
     OnboardingVerificationStatusView,
     OwnerOnboardingApplicationListResponse,
     OwnerOnboardingApplicationView,
+    ReviewerOnboardingApplicationView,
 )
 from app.core.database import get_db
 from app.db.models.business_onboarding import BusinessOnboardingApplication
@@ -39,7 +40,9 @@ from app.services.business_onboarding.onboarding_service import (
 router = APIRouter(prefix="/business/onboarding", tags=["business-onboarding"])
 
 
-def _owner_view(row: BusinessOnboardingApplication) -> OwnerOnboardingApplicationView:
+def _verification_application_fields(
+    row: BusinessOnboardingApplication,
+) -> dict[str, object]:
     category = (
         BusinessServiceCategory(row.service_category)
         if row.service_category is not None
@@ -50,22 +53,30 @@ def _owner_view(row: BusinessOnboardingApplication) -> OwnerOnboardingApplicatio
         if row.rejection_reason_code is not None
         else None
     )
-    return OwnerOnboardingApplicationView(
-        application_id=row.id,
-        legal_business_name=row.legal_business_name,
-        trade_display_name=row.trade_display_name,
-        service_category=category,
-        registration_jurisdiction=row.registration_jurisdiction,
-        registration_identifier=row.registration_identifier,
-        tax_identifier=row.tax_identifier,
-        business_contact_email=row.business_contact_email,
-        verification_status=VerificationStatus(row.verification_status),
-        rejection_reason_code=rejection,
-        submitted_at=row.submitted_at,
-        reviewed_at=row.reviewed_at,
-        created_at=row.created_at,
-        updated_at=row.updated_at,
-    )
+    return {
+        "application_id": row.id,
+        "legal_business_name": row.legal_business_name,
+        "trade_display_name": row.trade_display_name,
+        "service_category": category,
+        "registration_jurisdiction": row.registration_jurisdiction,
+        "registration_identifier": row.registration_identifier,
+        "tax_identifier": row.tax_identifier,
+        "business_contact_email": row.business_contact_email,
+        "verification_status": VerificationStatus(row.verification_status),
+        "rejection_reason_code": rejection,
+        "submitted_at": row.submitted_at,
+        "reviewed_at": row.reviewed_at,
+        "created_at": row.created_at,
+        "updated_at": row.updated_at,
+    }
+
+
+def _owner_view(row: BusinessOnboardingApplication) -> OwnerOnboardingApplicationView:
+    return OwnerOnboardingApplicationView(**_verification_application_fields(row))
+
+
+def _reviewer_view(row: BusinessOnboardingApplication) -> ReviewerOnboardingApplicationView:
+    return ReviewerOnboardingApplicationView(**_verification_application_fields(row))
 
 
 def _status_view(row: BusinessOnboardingApplication) -> OnboardingVerificationStatusView:

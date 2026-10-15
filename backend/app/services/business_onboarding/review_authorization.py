@@ -1,4 +1,4 @@
-"""Reviewer authorization guards for onboarding (decision routes deferred)."""
+"""Reviewer authorization guards for onboarding review actions."""
 
 from __future__ import annotations
 

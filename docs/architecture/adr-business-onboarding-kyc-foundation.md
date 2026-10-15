@@ -39,13 +39,13 @@ QO‘SHNI da haqiqiy biznes ro‘yxatdan o‘tkazish (onboarding) autentifikatsi
 **Ruxsat etilgan o‘tishlar** (`app/domain/business_onboarding.py` + `onboarding_service.py`):
 
 - **Owner (implemented):** faqat `draft` → `submitted`.
-- **Reviewer / system (deferred):** `submitted` → `under_review` → `verified` | `rejected`; `verified` → `suspended`; `suspended` → `under_review` | `verified`; `rejected` → `draft`.
+- **Reviewer (Part 5):** `submitted` → `under_review` → `verified` | `rejected`; `verified` → `suspended`; `suspended` → `under_review` (reinstate default); `rejected` → `draft` hali HTTP orqali emas.
 
 **Xavfsizlik:**
 
 - Owner o‘zini **verified** qila olmaydi (domain guard + PATCH da status maydoni yo‘q).
 - Cross-owner o‘qish **404** `application_not_found` (enumeration oldini olish).
-- Privileged `/internal/...` route'lar **mount qilinmagan** — review workflow hali yo‘q.
+- Privileged **review** route'lar Part 5 da mount qilindi (`require_business_onboarding_reviewer` bilan).
 - **Part 4:** `business_onboarding_reviewer` roli faqat `user_platform_role_assignments` jadvalidan; token/profile orqali berilmaydi.
 
 ### Implemented owner APIs (Part 2)
@@ -144,11 +144,10 @@ Bearer token talab qilinadi (`get_current_principal`). `owner_user_id` faqat tok
 - Operator grant/revoke alohida nazorat ostidagi protsedura (control plane / DB ops) — `grant_source=operator_control_plane`; bu increment inson identifikatsiyasini tasdiqlamaydi; mustaqil operator audit keyinchalik talab qilinadi.
 - Profile/onboarding API orqali rol **yozib bo‘lmaydi** (`extra=forbid`).
 
-**Hali implement emas:**
+**Hali implement emas (Part 4/5 chegarasi):**
 
-- `/internal/business/onboarding/...` review decision route'lar (`begin-review`, `verify`, `reject`, …) — contract **`implemented=False`**, mount yo‘q.
 - Document internal route'lar — **`implemented=False`**.
-- KYC approval workflow, reviewer notes UI, role-admin HTTP API.
+- Role-admin HTTP API, reviewer notes persistence, operator audit jadvali.
 
 **Kelajak audit (role management):** grant/revoke operator actionlari alohida audit jadvali yoki auth audit kengaytmasi orqali yoziladi — Part 4 da jadval qo‘shilmadi.
 
@@ -159,11 +158,35 @@ Bearer token talab qilinadi (`get_current_principal`). `owner_user_id` faqat tok
 - Mavjud `BusinessOnboardingAuditEvent` kelajak document eventlari uchun ishlatiladi (masalan `document_registered`, `document_quarantined` — enum kengaytirish keyingi increment). Part 3 da yangi audit jadvali yo‘q.
 - Owner `actor_role=reviewer` forge qila olmaydi (mavjud owner audit qoidalari).
 
-### Privileged API (deferred)
+### Reviewer review workflow (Part 5 — implemented)
 
-`/internal/business/onboarding/applications/{id}/begin-review|verify|reject|suspend|reinstate` — contract metadata `implemented=False`, **router mount yo‘q**.
+Barcha route'lar `/api/v1/internal/business/onboarding/applications` ostida; **`require_business_onboarding_reviewer`** majburiy. Reviewer javoblari **`ReviewerOnboardingApplicationView`** (registration/tax metadata review uchun; `owner_user_id`, audit va document key yo‘q). **`internal_note` qabul qilinmaydi** — private notes policy va storage keyingi increment.
 
-Shuningdek document: `GET/POST .../internal/.../documents`, `.../content` — **`implemented=False`**, mount yo‘q.
+| Method | Path | Harakat |
+|--------|------|---------|
+| GET | `.../applications` | Navbat: `submitted`, `under_review`, `verified`, `suspended` |
+| GET | `.../applications/{id}` | Review metadata (`draft` → 404); self-review → 403 |
+| POST | `.../applications/{id}/begin-review` | `submitted` → `under_review` (idempotent) |
+| POST | `.../applications/{id}/verify` | `under_review` → `verified` (idempotent) |
+| POST | `.../applications/{id}/reject` | `under_review` → `rejected` + `rejection_reason_code` |
+| POST | `.../applications/{id}/suspend` | `verified` → `suspended` (idempotent) |
+| POST | `.../applications/{id}/reinstate` | `suspended` → `under_review` |
+
+**Decision POST body:** `begin-review`, `verify`, `suspend`, `reinstate` — faqat bo‘sh JSON obyekt ``{}`` (``Content-Type: application/json``). Body yuborilmasa **422** (owner ``submit`` bilan bir xil).
+
+**Audit:** har muvaffaqiyatli reviewer o‘tish `status_changed`, `actor_role=reviewer`, `actor_user_id` tokendan. Bir xil idempotent qayta chaqiruv **yangi** audit yozmaydi.
+
+**Transaction:** service `FOR UPDATE` + flush; route `commit()`. `IntegrityError` faqat active registration indeksi uchun generic duplicate xabar.
+
+**Role grant:** API orqali reviewer berilmaydi — operator control plane (Part 4).
+
+**Reject idempotency:** bir xil `rejection_reason_code` bilan qayta `reject` → 200, yangi audit yo‘q; boshqa reason bilan qayta `reject` → **409** `invalid_status_transition`, saqlangan reason o‘zgarmaydi.
+
+**Hali deferred:** document upload/download, `rejected` → `draft` rework HTTP, private reviewer notes API/storage, `suspended` → `verified` to‘g‘ridan-to‘g‘ri reinstate (faqat `under_review` default).
+
+### Document privileged API (deferred)
+
+`GET/POST .../internal/.../documents`, `.../content` — **`implemented=False`**, mount yo‘q.
 
 ### Phase 08 integratsiyasi
 
@@ -173,13 +196,13 @@ Verified onboarding yozuvi keyinchalik **Business Profile**, filiallar va staff/
 
 - Alembic head: **`b0a1f0110001`** (`user_platform_role_assignments`).
 - Owner onboarding HTTP handlerlari `app/api/routes/business_onboarding.py` da.
-- Reviewer auth dependency: `app/api/deps/reviewer.py` (hali production route'larga ulanmagan).
-- Document metadata: `app/domain/business_onboarding_documents.py`, contracts only.
-- Flutter onboarding UI, real upload, OCR, privileged review HTTP — keyingi incrementlar.
+- Reviewer routes: `app/api/routes/business_onboarding_review.py` + `review_service.py`.
+- Reviewer auth: `app/api/deps/reviewer.py`.
+- Document metadata: contracts only; upload/storage deferred.
+- Flutter onboarding UI, document upload, OCR — keyingi incrementlar.
 
 ## Keyingi ish
 
-- `/internal/*` review workflow (mount + service + audit) — `require_business_onboarding_reviewer` ga ulanadi.
 - Operator/role-admin grant-revoke API va audit.
 - Owner document register/list/upload-init route'lar + private storage provider.
 - Server validation, malware scan, OCR, privileged download.

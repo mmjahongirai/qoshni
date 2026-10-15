@@ -187,7 +187,9 @@ def test_document_and_internal_onboarding_routes_not_mounted() -> None:
     from app.main import app
 
     mounted_paths = [getattr(route, "path", "") for route in app.routes if getattr(route, "path", "")]
-    assert not any("/internal/business/onboarding" in path for path in mounted_paths)
+    assert not any(
+        "/internal/business/onboarding" in path and "/documents" in path for path in mounted_paths
+    )
     assert not any(
         "/business/onboarding/applications" in path and "/documents" in path for path in mounted_paths
     )

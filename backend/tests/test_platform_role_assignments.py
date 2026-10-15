@@ -351,21 +351,16 @@ def test_expired_grant_denied(reviewer_auth_client) -> None:
     assert response.json()["error"]["code"] == "authorization_denied"
 
 
-def test_internal_review_routes_remain_unmounted() -> None:
+def test_document_internal_routes_remain_unmounted() -> None:
     from app.main import app
 
     paths = [getattr(route, "path", "") for route in app.routes]
-    assert not any("/internal/business/onboarding" in path for path in paths)
+    assert not any(
+        "/internal/business/onboarding" in path and "/documents" in path for path in paths
+    )
 
 
-def test_privileged_contracts_remain_unimplemented() -> None:
-    review_internal = [
-        c
-        for c in ONBOARDING_ENDPOINT_CONTRACTS
-        if not c.owner_accessible and "/internal/" in c.path
-    ]
-    assert review_internal
-    assert all(not c.implemented for c in review_internal)
+def test_document_contracts_remain_unimplemented() -> None:
     assert all(not c.implemented for c in DOCUMENT_ENDPOINT_CONTRACTS if "/internal/" in c.path)
 
 
