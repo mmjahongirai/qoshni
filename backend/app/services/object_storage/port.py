@@ -51,4 +51,9 @@ class StoragePort(Protocol):
         limit: int = 500,
         cursor: str | None = None,
     ) -> ListPrefixPage:
-        """List regular object keys under ``prefix`` (excludes scratch/meta sidecars)."""
+        """List regular object keys under ``prefix`` (excludes scratch/meta sidecars).
+
+        ``next_cursor`` is an opaque, provider-specific token. For the local adapter it
+        is valid only for the same ``StoragePort`` instance and prefix until the listing
+        completes or expires.
+        """
