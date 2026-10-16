@@ -101,6 +101,41 @@ class _BusinessCenterBody extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: AppSpacing.lg),
+              AppSurfaceCard(
+                onTap: () => context.pushNamed(RouteNames.businessOnboardingHub),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.verified_user_outlined,
+                      color: colorScheme.primary,
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            l10n.businessCenterOnboardingTitle,
+                            style: textTheme.titleSmall?.copyWith(
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            l10n.businessCenterOnboardingBody,
+                            style: textTheme.bodySmall?.copyWith(
+                              color: colorScheme.onSurfaceVariant,
+                              height: 1.35,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Icon(Icons.chevron_right),
+                  ],
+                ),
+              ),
+              const SizedBox(height: AppSpacing.lg),
               Text(
                 l10n.businessCenterYourProfilesTitle,
                 style: textTheme.titleSmall?.copyWith(

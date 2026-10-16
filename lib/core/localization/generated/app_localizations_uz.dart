@@ -1270,4 +1270,302 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get userProfileSaving => 'Saqlanmoqda…';
+
+  @override
+  String get businessCenterOnboardingTitle => 'Biznesni ro‘yxatdan o‘tkazish';
+
+  @override
+  String get businessCenterOnboardingBody =>
+      'Tasdiqlash arizasi yuboring, hujjatlarni yuklang va holatni akkauntingiz bilan kuzating.';
+
+  @override
+  String get businessCenterOnboardingAction => 'Ro‘yxatdan o‘tish';
+
+  @override
+  String get onboardingHubTitle => 'Biznesni ro‘yxatdan o‘tkazish';
+
+  @override
+  String get onboardingHubIntroTitle => 'Biznesingizni ro‘yxatdan o‘tkazing';
+
+  @override
+  String get onboardingHubIntroBody =>
+      'Ariza yarating, shaklni to‘ldiring, hujjatlarni yuklang va tekshiruvga yuboring. Holat serverdan keladi.';
+
+  @override
+  String get onboardingHubEmptyTitle => 'Hali arizalar yo‘q';
+
+  @override
+  String get onboardingHubEmptyBody =>
+      'Biznesingizni tasdiqlash uchun yangi ariza boshlang.';
+
+  @override
+  String get onboardingCreateApplication => 'Yangi ariza';
+
+  @override
+  String get onboardingUntitledApplication => 'Nomsiz ariza';
+
+  @override
+  String get onboardingSignInPrompt =>
+      'Ro‘yxatdan o‘tish arizalarini ko‘rish va boshqarish uchun tizimga kiring.';
+
+  @override
+  String get onboardingApplicationTitle => 'Ariza';
+
+  @override
+  String get onboardingTabForm => 'Ma’lumotlar';
+
+  @override
+  String get onboardingTabDocuments => 'Hujjatlar';
+
+  @override
+  String get onboardingTabStatus => 'Holat';
+
+  @override
+  String get onboardingFormReadOnlyNotice =>
+      'Bu ariza endi qoralama emas. Tekshiruv davomida maydonlar faqat o‘qish uchun.';
+
+  @override
+  String get onboardingFieldLegalName => 'Yuridik biznes nomi';
+
+  @override
+  String get onboardingFieldTradeName =>
+      'Savdo / ko‘rsatiladigan nom (ixtiyoriy)';
+
+  @override
+  String get onboardingFieldServiceCategory => 'Xizmat kategoriyasi';
+
+  @override
+  String get onboardingFieldJurisdiction =>
+      'Ro‘yxatdan o‘tish yurisdiksiyasi (ISO kodi)';
+
+  @override
+  String get onboardingFieldRegistrationId =>
+      'Ro‘yxat identifikatori (ixtiyoriy)';
+
+  @override
+  String get onboardingFieldTaxIdOptional => 'Soliq identifikatori (ixtiyoriy)';
+
+  @override
+  String get onboardingFieldContactEmailOptional =>
+      'Biznes aloqa emaili (ixtiyoriy)';
+
+  @override
+  String get onboardingValidationLegalNameRequired =>
+      'Yuridik biznes nomini kiriting';
+
+  @override
+  String get onboardingValidationCategoryRequired =>
+      'Xizmat kategoriyasini tanlang';
+
+  @override
+  String get onboardingValidationJurisdictionInvalid =>
+      'Ikki harfli yurisdiksiya kodini kiriting (masalan, UZ)';
+
+  @override
+  String get onboardingValidationEmailInvalid =>
+      'To‘g‘ri email manzilini kiriting';
+
+  @override
+  String get onboardingSaveDraftAction => 'Qoralamani saqlash';
+
+  @override
+  String get onboardingSubmitAction => 'Tekshiruvga yuborish';
+
+  @override
+  String get onboardingDraftSaved => 'Qoralama saqlandi.';
+
+  @override
+  String get onboardingSubmitSuccess => 'Ariza tekshiruvga yuborildi.';
+
+  @override
+  String get onboardingCategoryGroceries => 'Oziq-ovqat';
+
+  @override
+  String get onboardingCategoryRestaurants => 'Restoranlar';
+
+  @override
+  String get onboardingCategoryPharmacy => 'Dorixona';
+
+  @override
+  String get onboardingCategoryShops => 'Do‘konlar';
+
+  @override
+  String get onboardingCategoryMasters => 'Ustalar va xizmatlar';
+
+  @override
+  String get onboardingCategoryRent => 'Ijaraga berish';
+
+  @override
+  String get onboardingDocumentsIntro =>
+      'Har bir hujjat turini ro‘yxatdan o‘tkazing, so‘ng 10 MiB gacha PDF, JPEG yoki PNG yuklang.';
+
+  @override
+  String get onboardingDocumentsEmpty =>
+      'Hali hujjatlar yo‘q. Quyida tur qo‘shing.';
+
+  @override
+  String get onboardingRegisterDocumentTitle => 'Hujjat qo‘shish';
+
+  @override
+  String get onboardingUploadAction => 'Fayl tanlash va yuklash';
+
+  @override
+  String get onboardingUploadTooLarge =>
+      'Fayl 10 MiB dan katta. Kichikroq fayl tanlang.';
+
+  @override
+  String get onboardingUploadReadFailed => 'Tanlangan faylni o‘qib bo‘lmadi.';
+
+  @override
+  String get onboardingUploadSuccess => 'Yuklash yakunlandi.';
+
+  @override
+  String get onboardingDocTypeRegistrationCertificate =>
+      'Ro‘yxatdan o‘tish guvohnomasi';
+
+  @override
+  String get onboardingDocTypeTaxRegistration => 'Soliq ro‘yxati';
+
+  @override
+  String get onboardingDocTypeRepresentativeId => 'Vakil identifikatsiyasi';
+
+  @override
+  String get onboardingDocTypeOtherSupporting =>
+      'Boshqa qo‘llab-quvvatlovchi hujjat';
+
+  @override
+  String get onboardingVerificationCurrentStatus => 'Joriy holat';
+
+  @override
+  String get onboardingVerificationSubmittedAt => 'Yuborilgan';
+
+  @override
+  String get onboardingVerificationReviewedAt => 'Ko‘rib chiqilgan';
+
+  @override
+  String get onboardingVerificationRejectionTitle => 'Rad etish sababi';
+
+  @override
+  String get onboardingNextStepsDraft =>
+      'Shaklni to‘ldiring, hujjatlarni yuklang va tayyor bo‘lganda yuboring.';
+
+  @override
+  String get onboardingNextStepsSubmitted =>
+      'Arizangiz yuborildi. Tekshiruv boshlanganda xabar olasiz.';
+
+  @override
+  String get onboardingNextStepsUnderReview =>
+      'Jamoa arizangizni ko‘rib chiqmoqda. Qo‘shimcha hujjat so‘ralishi mumkin.';
+
+  @override
+  String get onboardingNextStepsVerified =>
+      'Biznesingiz tasdiqlandi. Keyingi funksiyalar keyingi bosqichlarda.';
+
+  @override
+  String get onboardingNextStepsRejected =>
+      'Ariza rad etildi. Sababni ko‘ring va mumkin bo‘lsa yangilang.';
+
+  @override
+  String get onboardingNextStepsSuspended =>
+      'Ariza to‘xtatilgan. Keyingi qadamlar uchun qo‘llab-quvvatlashga murojaat qiling.';
+
+  @override
+  String get onboardingNextStepsGeneric =>
+      'Yangilanishlar uchun keyinroq qaytib keling.';
+
+  @override
+  String get onboardingErrorNotFound => 'Ariza topilmadi.';
+
+  @override
+  String get onboardingErrorForbidden => 'Bu arizaga ruxsatingiz yo‘q.';
+
+  @override
+  String get onboardingErrorInvalidTransition =>
+      'Joriy holat uchun bu amal ruxsat etilmaydi.';
+
+  @override
+  String get onboardingErrorValidation =>
+      'Ba’zi maydonlar noto‘g‘ri. Shaklni tekshiring.';
+
+  @override
+  String get onboardingErrorUnavailable =>
+      'Xizmat vaqtincha mavjud emas. Keyinroq urinib ko‘ring.';
+
+  @override
+  String get onboardingErrorScanUnavailable =>
+      'Hujjat skaneri vaqtincha ishlamayapti.';
+
+  @override
+  String get onboardingErrorDocumentRejected =>
+      'Hujjat rad etildi. Yangi hujjat ro‘yxatdan o‘tkazing va qayta yuklang.';
+
+  @override
+  String get onboardingErrorSuspended => 'Bu ariza to‘xtatilgan.';
+
+  @override
+  String get onboardingErrorSignInRequired =>
+      'Davom etish uchun tizimga kiring.';
+
+  @override
+  String get onboardingErrorApiNotConfigured =>
+      'Ro‘yxatdan o‘tish serveri sozlanmagan. QOSHNI_API_BASE_URL ni compile vaqtida bering.';
+
+  @override
+  String get onboardingErrorNetwork =>
+      'Tarmoq xatosi. Ulanishni tekshirib qayta urining.';
+
+  @override
+  String get onboardingErrorUnexpected => 'Xatolik yuz berdi. Qayta urining.';
+
+  @override
+  String get onboardingStatusDraft => 'Qoralama';
+
+  @override
+  String get onboardingStatusSubmitted => 'Yuborilgan';
+
+  @override
+  String get onboardingStatusUnderReview => 'Ko‘rib chiqilmoqda';
+
+  @override
+  String get onboardingStatusVerified => 'Tasdiqlangan';
+
+  @override
+  String get onboardingStatusRejected => 'Rad etilgan';
+
+  @override
+  String get onboardingStatusSuspended => 'To‘xtatilgan';
+
+  @override
+  String get onboardingDocAwaitingUpload => 'Yuklash kutilmoqda';
+
+  @override
+  String get onboardingDocUploadedPending => 'Yuklandi — tekshiruv kutilmoqda';
+
+  @override
+  String get onboardingDocQuarantined => 'Karantinda';
+
+  @override
+  String get onboardingDocRejected => 'Rad etilgan';
+
+  @override
+  String get onboardingDocAcceptedForReview => 'Tekshiruvga qabul qilindi';
+
+  @override
+  String get onboardingDocDeleted => 'O‘chirilgan';
+
+  @override
+  String get onboardingRejectionIncomplete => 'To‘liq emas';
+
+  @override
+  String get onboardingRejectionMismatch => 'Ro‘yxat mos kelmaydi';
+
+  @override
+  String get onboardingRejectionJurisdiction =>
+      'Yurisdiksiya qo‘llab-quvvatlanmaydi';
+
+  @override
+  String get onboardingRejectionPolicy => 'Siyosat buzilishi';
+
+  @override
+  String get onboardingRejectionOther => 'Boshqa';
 }

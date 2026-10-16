@@ -1266,4 +1266,293 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get userProfileSaving => 'Сохранение…';
+
+  @override
+  String get businessCenterOnboardingTitle => 'Регистрация бизнеса';
+
+  @override
+  String get businessCenterOnboardingBody =>
+      'Подайте заявку на проверку, загрузите документы и отслеживайте статус под своим аккаунтом.';
+
+  @override
+  String get businessCenterOnboardingAction => 'Открыть регистрацию';
+
+  @override
+  String get onboardingHubTitle => 'Регистрация бизнеса';
+
+  @override
+  String get onboardingHubIntroTitle => 'Зарегистрируйте бизнес';
+
+  @override
+  String get onboardingHubIntroBody =>
+      'Создайте заявку, заполните форму, загрузите документы и отправьте на проверку. Статус приходит с сервера.';
+
+  @override
+  String get onboardingHubEmptyTitle => 'Заявок пока нет';
+
+  @override
+  String get onboardingHubEmptyBody =>
+      'Начните новую заявку для проверки вашего бизнеса.';
+
+  @override
+  String get onboardingCreateApplication => 'Новая заявка';
+
+  @override
+  String get onboardingUntitledApplication => 'Без названия';
+
+  @override
+  String get onboardingSignInPrompt =>
+      'Войдите, чтобы просматривать и управлять заявками на регистрацию.';
+
+  @override
+  String get onboardingApplicationTitle => 'Заявка';
+
+  @override
+  String get onboardingTabForm => 'Данные';
+
+  @override
+  String get onboardingTabDocuments => 'Документы';
+
+  @override
+  String get onboardingTabStatus => 'Статус';
+
+  @override
+  String get onboardingFormReadOnlyNotice =>
+      'Заявка больше не черновик. Поля доступны только для чтения во время проверки.';
+
+  @override
+  String get onboardingFieldLegalName => 'Юридическое название';
+
+  @override
+  String get onboardingFieldTradeName =>
+      'Торговое / отображаемое имя (необяз.)';
+
+  @override
+  String get onboardingFieldServiceCategory => 'Категория услуг';
+
+  @override
+  String get onboardingFieldJurisdiction => 'Юрисдикция регистрации (ISO)';
+
+  @override
+  String get onboardingFieldRegistrationId => 'Регистрационный номер (необяз.)';
+
+  @override
+  String get onboardingFieldTaxIdOptional => 'ИНН / налоговый ID (необяз.)';
+
+  @override
+  String get onboardingFieldContactEmailOptional =>
+      'Контактный email (необяз.)';
+
+  @override
+  String get onboardingValidationLegalNameRequired =>
+      'Введите юридическое название';
+
+  @override
+  String get onboardingValidationCategoryRequired => 'Выберите категорию';
+
+  @override
+  String get onboardingValidationJurisdictionInvalid =>
+      'Введите двухбуквенный код (например, UZ)';
+
+  @override
+  String get onboardingValidationEmailInvalid => 'Введите корректный email';
+
+  @override
+  String get onboardingSaveDraftAction => 'Сохранить черновик';
+
+  @override
+  String get onboardingSubmitAction => 'Отправить на проверку';
+
+  @override
+  String get onboardingDraftSaved => 'Черновик сохранён.';
+
+  @override
+  String get onboardingSubmitSuccess => 'Заявка отправлена на проверку.';
+
+  @override
+  String get onboardingCategoryGroceries => 'Продукты';
+
+  @override
+  String get onboardingCategoryRestaurants => 'Рестораны';
+
+  @override
+  String get onboardingCategoryPharmacy => 'Аптека';
+
+  @override
+  String get onboardingCategoryShops => 'Магазины';
+
+  @override
+  String get onboardingCategoryMasters => 'Мастера и услуги';
+
+  @override
+  String get onboardingCategoryRent => 'Аренда';
+
+  @override
+  String get onboardingDocumentsIntro =>
+      'Зарегистрируйте тип документа, затем загрузите PDF, JPEG или PNG до 10 МиБ.';
+
+  @override
+  String get onboardingDocumentsEmpty =>
+      'Документов пока нет. Добавьте тип ниже.';
+
+  @override
+  String get onboardingRegisterDocumentTitle => 'Добавить документ';
+
+  @override
+  String get onboardingUploadAction => 'Выбрать файл и загрузить';
+
+  @override
+  String get onboardingUploadTooLarge =>
+      'Файл больше 10 МиБ. Выберите меньший файл.';
+
+  @override
+  String get onboardingUploadReadFailed => 'Не удалось прочитать файл.';
+
+  @override
+  String get onboardingUploadSuccess => 'Загрузка завершена.';
+
+  @override
+  String get onboardingDocTypeRegistrationCertificate =>
+      'Свидетельство о регистрации';
+
+  @override
+  String get onboardingDocTypeTaxRegistration => 'Налоговая регистрация';
+
+  @override
+  String get onboardingDocTypeRepresentativeId => 'ID представителя';
+
+  @override
+  String get onboardingDocTypeOtherSupporting => 'Другой документ';
+
+  @override
+  String get onboardingVerificationCurrentStatus => 'Текущий статус';
+
+  @override
+  String get onboardingVerificationSubmittedAt => 'Отправлено';
+
+  @override
+  String get onboardingVerificationReviewedAt => 'Проверено';
+
+  @override
+  String get onboardingVerificationRejectionTitle => 'Причина отказа';
+
+  @override
+  String get onboardingNextStepsDraft =>
+      'Заполните форму, загрузите документы и отправьте, когда будете готовы.';
+
+  @override
+  String get onboardingNextStepsSubmitted =>
+      'Заявка отправлена. Мы сообщим, когда начнётся проверка.';
+
+  @override
+  String get onboardingNextStepsUnderReview =>
+      'Команда проверяет заявку. Могут запросить дополнительные документы.';
+
+  @override
+  String get onboardingNextStepsVerified =>
+      'Бизнес подтверждён. Дальнейшие функции появятся позже.';
+
+  @override
+  String get onboardingNextStepsRejected =>
+      'Заявка отклонена. Изучите причину и обновите данные, если возможно.';
+
+  @override
+  String get onboardingNextStepsSuspended =>
+      'Заявка приостановлена. Обратитесь в поддержку.';
+
+  @override
+  String get onboardingNextStepsGeneric => 'Загляните позже за обновлениями.';
+
+  @override
+  String get onboardingErrorNotFound => 'Заявка не найдена.';
+
+  @override
+  String get onboardingErrorForbidden => 'Нет доступа к этой заявке.';
+
+  @override
+  String get onboardingErrorInvalidTransition =>
+      'Действие недоступно для текущего статуса.';
+
+  @override
+  String get onboardingErrorValidation =>
+      'Некоторые поля неверны. Проверьте форму.';
+
+  @override
+  String get onboardingErrorUnavailable => 'Сервис временно недоступен.';
+
+  @override
+  String get onboardingErrorScanUnavailable =>
+      'Сканирование документов временно недоступно.';
+
+  @override
+  String get onboardingErrorDocumentRejected =>
+      'Документ отклонён. Зарегистрируйте новый и загрузите снова.';
+
+  @override
+  String get onboardingErrorSuspended => 'Заявка приостановлена.';
+
+  @override
+  String get onboardingErrorSignInRequired => 'Войдите, чтобы продолжить.';
+
+  @override
+  String get onboardingErrorApiNotConfigured =>
+      'Сервер регистрации не настроен. Укажите QOSHNI_API_BASE_URL при сборке.';
+
+  @override
+  String get onboardingErrorNetwork => 'Ошибка сети. Проверьте подключение.';
+
+  @override
+  String get onboardingErrorUnexpected =>
+      'Что-то пошло не так. Попробуйте снова.';
+
+  @override
+  String get onboardingStatusDraft => 'Черновик';
+
+  @override
+  String get onboardingStatusSubmitted => 'Отправлена';
+
+  @override
+  String get onboardingStatusUnderReview => 'На проверке';
+
+  @override
+  String get onboardingStatusVerified => 'Подтверждена';
+
+  @override
+  String get onboardingStatusRejected => 'Отклонена';
+
+  @override
+  String get onboardingStatusSuspended => 'Приостановлена';
+
+  @override
+  String get onboardingDocAwaitingUpload => 'Ожидает загрузки';
+
+  @override
+  String get onboardingDocUploadedPending => 'Загружен — проверка';
+
+  @override
+  String get onboardingDocQuarantined => 'Карантин';
+
+  @override
+  String get onboardingDocRejected => 'Отклонён';
+
+  @override
+  String get onboardingDocAcceptedForReview => 'Принят к проверке';
+
+  @override
+  String get onboardingDocDeleted => 'Удалён';
+
+  @override
+  String get onboardingRejectionIncomplete => 'Неполные данные';
+
+  @override
+  String get onboardingRejectionMismatch => 'Несоответствие регистрации';
+
+  @override
+  String get onboardingRejectionJurisdiction => 'Неподдерживаемая юрисдикция';
+
+  @override
+  String get onboardingRejectionPolicy => 'Нарушение правил';
+
+  @override
+  String get onboardingRejectionOther => 'Другое';
 }

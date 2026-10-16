@@ -1270,4 +1270,299 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get userProfileSaving => 'Saving…';
+
+  @override
+  String get businessCenterOnboardingTitle => 'Business registration';
+
+  @override
+  String get businessCenterOnboardingBody =>
+      'Submit a verification application, upload documents, and track review status with your signed-in account.';
+
+  @override
+  String get businessCenterOnboardingAction => 'Open registration';
+
+  @override
+  String get onboardingHubTitle => 'Business registration';
+
+  @override
+  String get onboardingHubIntroTitle => 'Register your business';
+
+  @override
+  String get onboardingHubIntroBody =>
+      'Create an application, complete the form, upload required documents, and submit for review. Status updates come from the server.';
+
+  @override
+  String get onboardingHubEmptyTitle => 'No applications yet';
+
+  @override
+  String get onboardingHubEmptyBody =>
+      'Start a new application to register your business for verification.';
+
+  @override
+  String get onboardingCreateApplication => 'New application';
+
+  @override
+  String get onboardingUntitledApplication => 'Untitled application';
+
+  @override
+  String get onboardingSignInPrompt =>
+      'Sign in to view and manage your business registration applications.';
+
+  @override
+  String get onboardingApplicationTitle => 'Application';
+
+  @override
+  String get onboardingTabForm => 'Details';
+
+  @override
+  String get onboardingTabDocuments => 'Documents';
+
+  @override
+  String get onboardingTabStatus => 'Status';
+
+  @override
+  String get onboardingFormReadOnlyNotice =>
+      'This application is no longer a draft. Details are read-only while review is in progress or complete.';
+
+  @override
+  String get onboardingFieldLegalName => 'Legal business name';
+
+  @override
+  String get onboardingFieldTradeName => 'Trade / display name (optional)';
+
+  @override
+  String get onboardingFieldServiceCategory => 'Service category';
+
+  @override
+  String get onboardingFieldJurisdiction =>
+      'Registration jurisdiction (ISO code)';
+
+  @override
+  String get onboardingFieldRegistrationId =>
+      'Registration identifier (optional)';
+
+  @override
+  String get onboardingFieldTaxIdOptional => 'Tax identifier (optional)';
+
+  @override
+  String get onboardingFieldContactEmailOptional =>
+      'Business contact email (optional)';
+
+  @override
+  String get onboardingValidationLegalNameRequired =>
+      'Enter the legal business name';
+
+  @override
+  String get onboardingValidationCategoryRequired =>
+      'Select a service category';
+
+  @override
+  String get onboardingValidationJurisdictionInvalid =>
+      'Enter a two-letter jurisdiction code (e.g. UZ)';
+
+  @override
+  String get onboardingValidationEmailInvalid => 'Enter a valid email address';
+
+  @override
+  String get onboardingSaveDraftAction => 'Save draft';
+
+  @override
+  String get onboardingSubmitAction => 'Submit for review';
+
+  @override
+  String get onboardingDraftSaved => 'Draft saved.';
+
+  @override
+  String get onboardingSubmitSuccess => 'Application submitted for review.';
+
+  @override
+  String get onboardingCategoryGroceries => 'Groceries';
+
+  @override
+  String get onboardingCategoryRestaurants => 'Restaurants';
+
+  @override
+  String get onboardingCategoryPharmacy => 'Pharmacy';
+
+  @override
+  String get onboardingCategoryShops => 'Shops';
+
+  @override
+  String get onboardingCategoryMasters => 'Masters & services';
+
+  @override
+  String get onboardingCategoryRent => 'Rent';
+
+  @override
+  String get onboardingDocumentsIntro =>
+      'Register each document type, then upload PDF, JPEG, or PNG files up to 10 MiB.';
+
+  @override
+  String get onboardingDocumentsEmpty =>
+      'No documents registered yet. Add a document type below.';
+
+  @override
+  String get onboardingRegisterDocumentTitle => 'Add document';
+
+  @override
+  String get onboardingUploadAction => 'Choose file & upload';
+
+  @override
+  String get onboardingUploadTooLarge =>
+      'File is larger than 10 MiB. Choose a smaller file.';
+
+  @override
+  String get onboardingUploadReadFailed => 'Could not read the selected file.';
+
+  @override
+  String get onboardingUploadSuccess => 'Upload completed.';
+
+  @override
+  String get onboardingDocTypeRegistrationCertificate =>
+      'Registration certificate';
+
+  @override
+  String get onboardingDocTypeTaxRegistration => 'Tax registration';
+
+  @override
+  String get onboardingDocTypeRepresentativeId =>
+      'Authorized representative ID';
+
+  @override
+  String get onboardingDocTypeOtherSupporting => 'Other supporting document';
+
+  @override
+  String get onboardingVerificationCurrentStatus => 'Current status';
+
+  @override
+  String get onboardingVerificationSubmittedAt => 'Submitted';
+
+  @override
+  String get onboardingVerificationReviewedAt => 'Reviewed';
+
+  @override
+  String get onboardingVerificationRejectionTitle => 'Rejection reason';
+
+  @override
+  String get onboardingNextStepsDraft =>
+      'Complete the form, upload documents, then submit when ready.';
+
+  @override
+  String get onboardingNextStepsSubmitted =>
+      'Your application was submitted. You will be notified when review starts.';
+
+  @override
+  String get onboardingNextStepsUnderReview =>
+      'Our team is reviewing your application. You may be asked for additional documents.';
+
+  @override
+  String get onboardingNextStepsVerified =>
+      'Your business is verified. Further product features will arrive in later phases.';
+
+  @override
+  String get onboardingNextStepsRejected =>
+      'Your application was rejected. Review the reason, update your draft if allowed, or contact support.';
+
+  @override
+  String get onboardingNextStepsSuspended =>
+      'Your application is suspended. Contact support for next steps.';
+
+  @override
+  String get onboardingNextStepsGeneric => 'Check back later for updates.';
+
+  @override
+  String get onboardingErrorNotFound => 'Application not found.';
+
+  @override
+  String get onboardingErrorForbidden =>
+      'You do not have access to this application.';
+
+  @override
+  String get onboardingErrorInvalidTransition =>
+      'This action is not allowed for the current status.';
+
+  @override
+  String get onboardingErrorValidation =>
+      'Some fields are invalid. Check the form and try again.';
+
+  @override
+  String get onboardingErrorUnavailable =>
+      'Service temporarily unavailable. Try again later.';
+
+  @override
+  String get onboardingErrorScanUnavailable =>
+      'Document scanning is temporarily unavailable.';
+
+  @override
+  String get onboardingErrorDocumentRejected =>
+      'The document was rejected. Register a new document and upload again.';
+
+  @override
+  String get onboardingErrorSuspended => 'This application is suspended.';
+
+  @override
+  String get onboardingErrorSignInRequired => 'Sign in to continue.';
+
+  @override
+  String get onboardingErrorApiNotConfigured =>
+      'Registration server is not configured for this build. Set QOSHNI_API_BASE_URL at compile time.';
+
+  @override
+  String get onboardingErrorNetwork =>
+      'Network connection failed. Check your connection and try again.';
+
+  @override
+  String get onboardingErrorUnexpected =>
+      'Something went wrong. Please try again.';
+
+  @override
+  String get onboardingStatusDraft => 'Draft';
+
+  @override
+  String get onboardingStatusSubmitted => 'Submitted';
+
+  @override
+  String get onboardingStatusUnderReview => 'Under review';
+
+  @override
+  String get onboardingStatusVerified => 'Verified';
+
+  @override
+  String get onboardingStatusRejected => 'Rejected';
+
+  @override
+  String get onboardingStatusSuspended => 'Suspended';
+
+  @override
+  String get onboardingDocAwaitingUpload => 'Awaiting upload';
+
+  @override
+  String get onboardingDocUploadedPending => 'Uploaded — pending validation';
+
+  @override
+  String get onboardingDocQuarantined => 'Quarantined';
+
+  @override
+  String get onboardingDocRejected => 'Rejected';
+
+  @override
+  String get onboardingDocAcceptedForReview => 'Accepted for review';
+
+  @override
+  String get onboardingDocDeleted => 'Deleted';
+
+  @override
+  String get onboardingRejectionIncomplete => 'Incomplete information';
+
+  @override
+  String get onboardingRejectionMismatch => 'Registration mismatch';
+
+  @override
+  String get onboardingRejectionJurisdiction => 'Unsupported jurisdiction';
+
+  @override
+  String get onboardingRejectionPolicy => 'Policy violation';
+
+  @override
+  String get onboardingRejectionOther => 'Other';
 }
