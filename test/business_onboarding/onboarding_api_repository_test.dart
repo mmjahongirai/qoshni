@@ -244,6 +244,45 @@ void main() {
     );
   });
 
+  test('maps 409 invalid_status_transition', () async {
+    final dio = Dio(BaseOptions(baseUrl: 'https://api.example.test'));
+    dio.interceptors.add(
+      InterceptorsWrapper(
+        onRequest: (options, handler) {
+          handler.reject(
+            DioException(
+              requestOptions: options,
+              response: Response<Map<String, dynamic>>(
+                requestOptions: options,
+                statusCode: 409,
+                data: {
+                  'error': {
+                    'code': 'invalid_status_transition',
+                    'message': 'Cannot submit in current status.',
+                  },
+                },
+              ),
+            ),
+          );
+        },
+      ),
+    );
+
+    expect(
+      _repository(dio).submitApplication(
+        accessToken: 'tok',
+        applicationId: 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
+      ),
+      throwsA(
+        isA<OnboardingFailure>().having(
+          (e) => e.code,
+          'code',
+          OnboardingErrorCode.invalidStatusTransition,
+        ),
+      ),
+    );
+  });
+
   test('maps connection timeout to network', () async {
     final dio = Dio(BaseOptions(baseUrl: 'https://api.example.test'));
     dio.interceptors.add(
