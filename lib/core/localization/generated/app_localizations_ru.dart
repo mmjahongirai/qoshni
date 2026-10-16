@@ -1555,4 +1555,284 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get onboardingRejectionOther => 'Другое';
+
+  @override
+  String get businessCenterOwnerProfileTitle => 'Профиль бизнеса';
+
+  @override
+  String get businessCenterOwnerProfileBody =>
+      'Предпросмотр профиля на уровне бизнеса. Сохраняется только в этой сессии до подключения backend.';
+
+  @override
+  String get ownerProfileOverviewTitle => 'Профиль бизнеса';
+
+  @override
+  String get ownerProfilePreviewNotice =>
+      'Предпросмотр — сохраняется только в этой сессии. Не опубликован и не верифицирован.';
+
+  @override
+  String get ownerProfileStatusLabel => 'Статус профиля';
+
+  @override
+  String get ownerProfileStatusPreview => 'Черновик предпросмотра';
+
+  @override
+  String get ownerProfileCompletenessLabel => 'Заполненность профиля';
+
+  @override
+  String get ownerProfileEditAction => 'Редактировать профиль';
+
+  @override
+  String get ownerProfileViewAction => 'Просмотр профиля';
+
+  @override
+  String get ownerProfileSectionBasics => 'Основная информация';
+
+  @override
+  String get ownerProfileSectionContact => 'Контакты';
+
+  @override
+  String get ownerProfileSectionSettings => 'Настройки предпросмотра';
+
+  @override
+  String get ownerProfileLegalName => 'Юридическое название';
+
+  @override
+  String get ownerProfileDisplayName => 'Отображаемое название';
+
+  @override
+  String get ownerProfileDescription => 'Описание бизнеса';
+
+  @override
+  String get ownerProfileCategory => 'Категория услуг';
+
+  @override
+  String get ownerProfileContactPhone => 'Контактный телефон';
+
+  @override
+  String get ownerProfileContactEmail => 'Контактный email';
+
+  @override
+  String get ownerProfileWebsite => 'Сайт (предпросмотр)';
+
+  @override
+  String get ownerProfileVisibility => 'Видимость профиля (предпросмотр)';
+
+  @override
+  String get ownerProfileVisibilityHidden => 'Скрыт в предпросмотре';
+
+  @override
+  String get ownerProfileVisibilityVisible => 'Виден только в UI предпросмотра';
+
+  @override
+  String get ownerProfileEditorTitle => 'Редактирование профиля';
+
+  @override
+  String get ownerProfileSaveAction => 'Сохранить';
+
+  @override
+  String get ownerProfileCancelAction => 'Отмена';
+
+  @override
+  String get ownerProfileSaveSuccess => 'Профиль сохранён для этой сессии.';
+
+  @override
+  String get ownerProfileSaveFailed =>
+      'Не удалось сохранить. Изменения остались в форме.';
+
+  @override
+  String get ownerProfileDiscardConfirmTitle => 'Отменить изменения?';
+
+  @override
+  String get ownerProfileDiscardConfirmBody =>
+      'Несохранённые правки будут потеряны.';
+
+  @override
+  String get ownerProfileDiscardConfirmAction => 'Отменить';
+
+  @override
+  String get ownerProfileValidationLegalName => 'Введите юридическое название';
+
+  @override
+  String get ownerProfileValidationDisplayName =>
+      'Введите отображаемое название';
+
+  @override
+  String get ownerProfileValidationDescription => 'Введите описание бизнеса';
+
+  @override
+  String get ownerProfileValidationEmail => 'Введите корректный email';
+
+  @override
+  String get ownerProfileValidationWebsite => 'Введите корректный URL сайта';
+
+  @override
+  String get businessCenterBranchesTitle => 'Филиалы';
+
+  @override
+  String get businessCenterBranchesBody =>
+      'Адреса, часы работы и контакты филиалов в режиме предпросмотра.';
+
+  @override
+  String get branchListTitle => 'Филиалы';
+
+  @override
+  String get branchPreviewNotice =>
+      'Предпросмотр — филиалы сохраняются только в этой сессии. Не публикуются в поиске и на карте.';
+
+  @override
+  String get branchProfileIncompleteNotice =>
+      'Заполните профиль бизнеса в предпросмотре, прежде чем филиалы смогут синхронизироваться с реальным бизнесом.';
+
+  @override
+  String get branchOpenBusinessProfileAction => 'Открыть профиль бизнеса';
+
+  @override
+  String get branchAddAction => 'Добавить филиал';
+
+  @override
+  String get branchEmptyTitle => 'Филиалов пока нет';
+
+  @override
+  String get branchEmptyBody =>
+      'Добавьте филиал для планирования адреса и часов работы.';
+
+  @override
+  String get branchStatusActive => 'Активен';
+
+  @override
+  String get branchStatusInactive => 'Неактивен';
+
+  @override
+  String get branchScheduleClosedAllWeek => 'Закрыто всю неделю';
+
+  @override
+  String get branchDetailTitle => 'Детали филиала';
+
+  @override
+  String get branchEditAction => 'Редактировать';
+
+  @override
+  String get branchNotFoundTitle => 'Филиал не найден';
+
+  @override
+  String get branchNotFoundBody => 'Этого филиала нет в предпросмотре сессии.';
+
+  @override
+  String get branchBackToListAction => 'К списку филиалов';
+
+  @override
+  String get branchSectionBasics => 'Основная информация';
+
+  @override
+  String get branchSectionHours => 'Часы работы';
+
+  @override
+  String get branchSectionLocation => 'Местоположение (предпросмотр)';
+
+  @override
+  String get branchFieldName => 'Название филиала';
+
+  @override
+  String get branchFieldCity => 'Город';
+
+  @override
+  String get branchFieldAddress => 'Адрес';
+
+  @override
+  String get branchFieldPhone => 'Контактный телефон';
+
+  @override
+  String get branchFieldStatus => 'Статус филиала';
+
+  @override
+  String get branchFieldOpenTime => 'Открытие';
+
+  @override
+  String get branchFieldCloseTime => 'Закрытие';
+
+  @override
+  String get branchFieldLatitude => 'Широта (demo)';
+
+  @override
+  String get branchFieldLongitude => 'Долгота (demo)';
+
+  @override
+  String get branchDayClosed => 'Выходной';
+
+  @override
+  String get branchLocationDemoHint =>
+      'Только demo-координаты — без карты и геокодинга на этом этапе.';
+
+  @override
+  String get branchEditorCreateTitle => 'Новый филиал';
+
+  @override
+  String get branchEditorEditTitle => 'Редактирование филиала';
+
+  @override
+  String get branchSaveAction => 'Сохранить филиал';
+
+  @override
+  String get branchCancelAction => 'Отмена';
+
+  @override
+  String get branchSaveSuccess => 'Филиал сохранён для этой сессии.';
+
+  @override
+  String get branchSaveFailed =>
+      'Не удалось сохранить. Изменения остались в форме.';
+
+  @override
+  String get branchDiscardConfirmTitle => 'Отменить изменения?';
+
+  @override
+  String get branchDiscardConfirmBody =>
+      'Несохранённые правки филиала будут потеряны.';
+
+  @override
+  String get branchDiscardConfirmAction => 'Отменить';
+
+  @override
+  String get branchValidationName => 'Введите название филиала';
+
+  @override
+  String get branchValidationCity => 'Введите город';
+
+  @override
+  String get branchValidationAddress => 'Введите адрес';
+
+  @override
+  String get branchValidationPhone => 'Введите корректный телефон';
+
+  @override
+  String get branchValidationTime => 'Используйте формат ЧЧ:ММ';
+
+  @override
+  String get branchValidationTimeOrder =>
+      'Время закрытия должно быть позже открытия';
+
+  @override
+  String get branchValidationCoordinates => 'Введите корректные координаты';
+
+  @override
+  String get branchWeekdayMonday => 'Понедельник';
+
+  @override
+  String get branchWeekdayTuesday => 'Вторник';
+
+  @override
+  String get branchWeekdayWednesday => 'Среда';
+
+  @override
+  String get branchWeekdayThursday => 'Четверг';
+
+  @override
+  String get branchWeekdayFriday => 'Пятница';
+
+  @override
+  String get branchWeekdaySaturday => 'Суббота';
+
+  @override
+  String get branchWeekdaySunday => 'Воскресенье';
 }

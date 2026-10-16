@@ -1568,4 +1568,286 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get onboardingRejectionOther => 'Boshqa';
+
+  @override
+  String get businessCenterOwnerProfileTitle => 'Biznes profili';
+
+  @override
+  String get businessCenterOwnerProfileBody =>
+      'Biznes darajasidagi profilni ko‘rib chiqing. Backend ulanmaguncha faqat shu sessiyada saqlanadi.';
+
+  @override
+  String get ownerProfileOverviewTitle => 'Biznes profili';
+
+  @override
+  String get ownerProfilePreviewNotice =>
+      'Ko‘rinish — faqat shu sessiyada saqlanadi. Nashr etilmagan va tasdiqlanmagan.';
+
+  @override
+  String get ownerProfileStatusLabel => 'Profil holati';
+
+  @override
+  String get ownerProfileStatusPreview => 'Ko‘rinish qoralamasi';
+
+  @override
+  String get ownerProfileCompletenessLabel => 'Profil to‘liqligi';
+
+  @override
+  String get ownerProfileEditAction => 'Profilni tahrirlash';
+
+  @override
+  String get ownerProfileViewAction => 'Profilni ko‘rish';
+
+  @override
+  String get ownerProfileSectionBasics => 'Asosiy ma’lumotlar';
+
+  @override
+  String get ownerProfileSectionContact => 'Aloqa';
+
+  @override
+  String get ownerProfileSectionSettings => 'Ko‘rinish sozlamalari';
+
+  @override
+  String get ownerProfileLegalName => 'Yuridik biznes nomi';
+
+  @override
+  String get ownerProfileDisplayName => 'Ko‘rinadigan nom';
+
+  @override
+  String get ownerProfileDescription => 'Biznes tavsifi';
+
+  @override
+  String get ownerProfileCategory => 'Xizmat kategoriyasi';
+
+  @override
+  String get ownerProfileContactPhone => 'Aloqa telefoni';
+
+  @override
+  String get ownerProfileContactEmail => 'Aloqa email';
+
+  @override
+  String get ownerProfileWebsite => 'Veb-sayt (ko‘rinish)';
+
+  @override
+  String get ownerProfileVisibility => 'Profil ko‘rinishi (preview)';
+
+  @override
+  String get ownerProfileVisibilityHidden => 'Ko‘rinishda yashirin';
+
+  @override
+  String get ownerProfileVisibilityVisible => 'Faqat preview UI’da ko‘rinadi';
+
+  @override
+  String get ownerProfileEditorTitle => 'Biznes profilini tahrirlash';
+
+  @override
+  String get ownerProfileSaveAction => 'Saqlash';
+
+  @override
+  String get ownerProfileCancelAction => 'Bekor qilish';
+
+  @override
+  String get ownerProfileSaveSuccess => 'Profil shu sessiya uchun saqlandi.';
+
+  @override
+  String get ownerProfileSaveFailed =>
+      'Saqlab bo‘lmadi. Tahrirlar formada qoldi.';
+
+  @override
+  String get ownerProfileDiscardConfirmTitle =>
+      'O‘zgarishlar bekor qilinsinmi?';
+
+  @override
+  String get ownerProfileDiscardConfirmBody =>
+      'Saqlanmagan tahrirlar yo‘qoladi.';
+
+  @override
+  String get ownerProfileDiscardConfirmAction => 'Bekor qilish';
+
+  @override
+  String get ownerProfileValidationLegalName =>
+      'Yuridik biznes nomini kiriting';
+
+  @override
+  String get ownerProfileValidationDisplayName => 'Ko‘rinadigan nomni kiriting';
+
+  @override
+  String get ownerProfileValidationDescription => 'Biznes tavsifini kiriting';
+
+  @override
+  String get ownerProfileValidationEmail => 'To‘g‘ri email kiriting';
+
+  @override
+  String get ownerProfileValidationWebsite =>
+      'To‘g‘ri veb-sayt manzilini kiriting';
+
+  @override
+  String get businessCenterBranchesTitle => 'Filiallar';
+
+  @override
+  String get businessCenterBranchesBody =>
+      'Filial manzili, ish vaqti va kontaktlarni preview rejimida boshqaring.';
+
+  @override
+  String get branchListTitle => 'Filiallar';
+
+  @override
+  String get branchPreviewNotice =>
+      'Ko‘rinish — filiallar faqat shu sessiyada saqlanadi. Qidiruv va xaritada ko‘rinmaydi.';
+
+  @override
+  String get branchProfileIncompleteNotice =>
+      'Haqiqiy biznes bilan sinxronlashdan oldin biznes profil preview’ini to‘ldiring.';
+
+  @override
+  String get branchOpenBusinessProfileAction => 'Biznes profilini ochish';
+
+  @override
+  String get branchAddAction => 'Filial qo‘shish';
+
+  @override
+  String get branchEmptyTitle => 'Hali filiallar yo‘q';
+
+  @override
+  String get branchEmptyBody =>
+      'Manzil va ish vaqtini rejalash uchun preview filial qo‘shing.';
+
+  @override
+  String get branchStatusActive => 'Faol';
+
+  @override
+  String get branchStatusInactive => 'Nofaol';
+
+  @override
+  String get branchScheduleClosedAllWeek => 'Butun hafta yopiq';
+
+  @override
+  String get branchDetailTitle => 'Filial tafsilotlari';
+
+  @override
+  String get branchEditAction => 'Filialni tahrirlash';
+
+  @override
+  String get branchNotFoundTitle => 'Filial topilmadi';
+
+  @override
+  String get branchNotFoundBody => 'Bu filial sessiya preview’ida yo‘q.';
+
+  @override
+  String get branchBackToListAction => 'Filiallar ro‘yxatiga';
+
+  @override
+  String get branchSectionBasics => 'Asosiy ma’lumotlar';
+
+  @override
+  String get branchSectionHours => 'Ish vaqti';
+
+  @override
+  String get branchSectionLocation => 'Joylashuv (preview)';
+
+  @override
+  String get branchFieldName => 'Filial nomi';
+
+  @override
+  String get branchFieldCity => 'Shahar';
+
+  @override
+  String get branchFieldAddress => 'Manzil';
+
+  @override
+  String get branchFieldPhone => 'Aloqa telefoni';
+
+  @override
+  String get branchFieldStatus => 'Filial holati';
+
+  @override
+  String get branchFieldOpenTime => 'Ochilish';
+
+  @override
+  String get branchFieldCloseTime => 'Yopilish';
+
+  @override
+  String get branchFieldLatitude => 'Kenglik (demo)';
+
+  @override
+  String get branchFieldLongitude => 'Uzunlik (demo)';
+
+  @override
+  String get branchDayClosed => 'Dam olish';
+
+  @override
+  String get branchLocationDemoHint =>
+      'Faqat demo koordinatalar — bu bosqichda xarita va geocoding yo‘q.';
+
+  @override
+  String get branchEditorCreateTitle => 'Yangi filial';
+
+  @override
+  String get branchEditorEditTitle => 'Filialni tahrirlash';
+
+  @override
+  String get branchSaveAction => 'Filialni saqlash';
+
+  @override
+  String get branchCancelAction => 'Bekor qilish';
+
+  @override
+  String get branchSaveSuccess => 'Filial shu sessiya uchun saqlandi.';
+
+  @override
+  String get branchSaveFailed => 'Saqlab bo‘lmadi. Tahrirlar formada qoldi.';
+
+  @override
+  String get branchDiscardConfirmTitle => 'O‘zgarishlar bekor qilinsinmi?';
+
+  @override
+  String get branchDiscardConfirmBody =>
+      'Saqlanmagan filial tahrirlari yo‘qoladi.';
+
+  @override
+  String get branchDiscardConfirmAction => 'Bekor qilish';
+
+  @override
+  String get branchValidationName => 'Filial nomini kiriting';
+
+  @override
+  String get branchValidationCity => 'Shaharni kiriting';
+
+  @override
+  String get branchValidationAddress => 'Manzilni kiriting';
+
+  @override
+  String get branchValidationPhone => 'To‘g‘ri telefon raqamini kiriting';
+
+  @override
+  String get branchValidationTime =>
+      'Ish vaqti uchun SS:DD formatidan foydalaning';
+
+  @override
+  String get branchValidationTimeOrder =>
+      'Yopilish vaqti ochilishdan keyin bo‘lishi kerak';
+
+  @override
+  String get branchValidationCoordinates => 'To‘g‘ri koordinatalarni kiriting';
+
+  @override
+  String get branchWeekdayMonday => 'Dushanba';
+
+  @override
+  String get branchWeekdayTuesday => 'Seshanba';
+
+  @override
+  String get branchWeekdayWednesday => 'Chorshanba';
+
+  @override
+  String get branchWeekdayThursday => 'Payshanba';
+
+  @override
+  String get branchWeekdayFriday => 'Juma';
+
+  @override
+  String get branchWeekdaySaturday => 'Shanba';
+
+  @override
+  String get branchWeekdaySunday => 'Yakshanba';
 }

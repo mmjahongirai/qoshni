@@ -12,15 +12,21 @@ import 'package:qoshni/features/auth/domain/auth_repository.dart';
 import 'package:qoshni/features/auth/presentation/auth_controller.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_inventory_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_offering_repository.dart';
+import 'package:qoshni/features/business_platform/data/in_memory_business_branch_repository.dart';
+import 'package:qoshni/features/business_platform/data/in_memory_business_owner_profile_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_profile_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_inventory_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_offering_repository.dart';
+import 'package:qoshni/features/business_platform/domain/repositories/business_branch_repository.dart';
+import 'package:qoshni/features/business_platform/domain/repositories/business_owner_profile_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_profile_repository.dart';
 import 'package:qoshni/features/business_platform/presentation/business_inventory_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_offerings_controller.dart';
 import 'package:qoshni/features/business_onboarding/data/onboarding_api_repository.dart';
 import 'package:qoshni/features/business_onboarding/domain/onboarding_repository.dart';
 import 'package:qoshni/features/business_onboarding/presentation/onboarding_controller.dart';
+import 'package:qoshni/features/business_platform/presentation/business_branch_controller.dart';
+import 'package:qoshni/features/business_platform/presentation/business_owner_profile_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_profile_controller.dart';
 import 'package:qoshni/features/home/presentation/cart/cart_controller.dart';
 import 'package:qoshni/features/home/presentation/favorites/favorites_controller.dart';
@@ -52,6 +58,14 @@ Future<void> configureDependencies(AppConfig config) async {
     ..registerLazySingleton<BusinessProfileRepository>(
       InMemoryBusinessProfileRepository.new,
     )
+    ..registerLazySingleton<BusinessOwnerProfileRepository>(
+      InMemoryBusinessOwnerProfileRepository.new,
+    )
+    ..registerLazySingleton<BusinessBranchRepository>(
+      () => InMemoryBusinessBranchRepository(
+        getIt<BusinessOwnerProfileRepository>(),
+      ),
+    )
     ..registerLazySingleton<BusinessOfferingRepository>(
       InMemoryBusinessOfferingRepository.new,
     )
@@ -65,6 +79,14 @@ Future<void> configureDependencies(AppConfig config) async {
         getIt<BusinessProfileRepository>(),
         getIt<AppConfig>(),
       ),
+    )
+    ..registerLazySingleton<BusinessOwnerProfileController>(
+      () => BusinessOwnerProfileController(
+        getIt<BusinessOwnerProfileRepository>(),
+      ),
+    )
+    ..registerLazySingleton<BusinessBranchController>(
+      () => BusinessBranchController(getIt<BusinessBranchRepository>()),
     )
     ..registerLazySingleton<BusinessOfferingsController>(
       () => BusinessOfferingsController(

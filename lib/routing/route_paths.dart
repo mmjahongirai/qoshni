@@ -33,6 +33,22 @@ abstract final class RoutePaths {
   static const String businessOnboardingHub = '/business-center/onboarding';
   static const String businessOnboardingApplication =
       '/business-center/onboarding/:applicationId';
+  static const String businessOwnerProfile =
+      '/business-center/business-profile';
+  static const String businessOwnerProfileEdit =
+      '/business-center/business-profile/edit';
+  static const String businessBranches = '/business-center/branches';
+  static const String businessBranchCreate = '/business-center/branches/new';
+  static const String businessBranchDetail =
+      '/business-center/branches/:branchId';
+  static const String businessBranchEdit =
+      '/business-center/branches/:branchId/edit';
+
+  static String businessBranchDetailPath(String branchId) =>
+      '/business-center/branches/$branchId';
+
+  static String businessBranchEditPath(String branchId) =>
+      '/business-center/branches/$branchId/edit';
 }
 
 abstract final class RouteNames {
@@ -62,4 +78,10 @@ abstract final class RouteNames {
   static const String businessOnboardingHub = 'businessOnboardingHub';
   static const String businessOnboardingApplication =
       'businessOnboardingApplication';
+  static const String businessOwnerProfile = 'businessOwnerProfile';
+  static const String businessOwnerProfileEdit = 'businessOwnerProfileEdit';
+  static const String businessBranches = 'businessBranches';
+  static const String businessBranchCreate = 'businessBranchCreate';
+  static const String businessBranchDetail = 'businessBranchDetail';
+  static const String businessBranchEdit = 'businessBranchEdit';
 }
