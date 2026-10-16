@@ -31,6 +31,9 @@ import 'package:qoshni/features/business_onboarding/presentation/pages/onboardin
 import 'package:qoshni/features/business_onboarding/presentation/pages/onboarding_hub_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_owner_profile_editor_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_owner_profile_overview_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_branch_list_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_branch_detail_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_branch_editor_page.dart';
 import 'package:qoshni/routing/route_paths.dart';
 
 /// Application router. Add feature routes here as modules are introduced.
@@ -187,6 +190,39 @@ class AppRouter {
                 name: RouteNames.businessOwnerProfileEdit,
                 builder: (context, state) =>
                     const BusinessOwnerProfileEditorPage(),
+              ),
+            ],
+          ),
+          GoRoute(
+            path: 'branches',
+            name: RouteNames.businessBranches,
+            builder: (context, state) => const BusinessBranchListPage(),
+            routes: [
+              GoRoute(
+                path: 'new',
+                name: RouteNames.businessBranchCreate,
+                builder: (context, state) =>
+                    const BusinessBranchEditorPage(),
+              ),
+              GoRoute(
+                path: ':branchId',
+                name: RouteNames.businessBranchDetail,
+                builder: (context, state) {
+                  return BusinessBranchDetailPage(
+                    branchId: state.pathParameters['branchId'],
+                  );
+                },
+                routes: [
+                  GoRoute(
+                    path: 'edit',
+                    name: RouteNames.businessBranchEdit,
+                    builder: (context, state) {
+                      return BusinessBranchEditorPage(
+                        branchId: state.pathParameters['branchId'],
+                      );
+                    },
+                  ),
+                ],
               ),
             ],
           ),

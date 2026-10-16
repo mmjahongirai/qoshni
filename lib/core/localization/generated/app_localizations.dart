@@ -3062,6 +3062,330 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Enter a valid website URL'**
   String get ownerProfileValidationWebsite;
+
+  /// No description provided for @businessCenterBranchesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Branches'**
+  String get businessCenterBranchesTitle;
+
+  /// No description provided for @businessCenterBranchesBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage branch locations, hours, and contacts in preview mode.'**
+  String get businessCenterBranchesBody;
+
+  /// No description provided for @branchListTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Branches'**
+  String get branchListTitle;
+
+  /// No description provided for @branchPreviewNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview — branches are saved only in this session. Not published to search or maps.'**
+  String get branchPreviewNotice;
+
+  /// No description provided for @branchProfileIncompleteNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete your business profile preview before branches can sync to a real business later.'**
+  String get branchProfileIncompleteNotice;
+
+  /// No description provided for @branchOpenBusinessProfileAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Open business profile'**
+  String get branchOpenBusinessProfileAction;
+
+  /// No description provided for @branchAddAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add branch'**
+  String get branchAddAction;
+
+  /// No description provided for @branchEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No branches yet'**
+  String get branchEmptyTitle;
+
+  /// No description provided for @branchEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a preview branch to plan locations and opening hours.'**
+  String get branchEmptyBody;
+
+  /// No description provided for @branchStatusActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get branchStatusActive;
+
+  /// No description provided for @branchStatusInactive.
+  ///
+  /// In en, this message translates to:
+  /// **'Inactive'**
+  String get branchStatusInactive;
+
+  /// No description provided for @branchScheduleClosedAllWeek.
+  ///
+  /// In en, this message translates to:
+  /// **'Closed all week'**
+  String get branchScheduleClosedAllWeek;
+
+  /// No description provided for @branchDetailTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch details'**
+  String get branchDetailTitle;
+
+  /// No description provided for @branchEditAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit branch'**
+  String get branchEditAction;
+
+  /// No description provided for @branchNotFoundTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch not found'**
+  String get branchNotFoundTitle;
+
+  /// No description provided for @branchNotFoundBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This branch is not in your session preview.'**
+  String get branchNotFoundBody;
+
+  /// No description provided for @branchBackToListAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to branches'**
+  String get branchBackToListAction;
+
+  /// No description provided for @branchSectionBasics.
+  ///
+  /// In en, this message translates to:
+  /// **'Basic information'**
+  String get branchSectionBasics;
+
+  /// No description provided for @branchSectionHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Opening hours'**
+  String get branchSectionHours;
+
+  /// No description provided for @branchSectionLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Location (preview)'**
+  String get branchSectionLocation;
+
+  /// No description provided for @branchFieldName.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch name'**
+  String get branchFieldName;
+
+  /// No description provided for @branchFieldCity.
+  ///
+  /// In en, this message translates to:
+  /// **'City'**
+  String get branchFieldCity;
+
+  /// No description provided for @branchFieldAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Address'**
+  String get branchFieldAddress;
+
+  /// No description provided for @branchFieldPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact phone'**
+  String get branchFieldPhone;
+
+  /// No description provided for @branchFieldStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch status'**
+  String get branchFieldStatus;
+
+  /// No description provided for @branchFieldOpenTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Opens'**
+  String get branchFieldOpenTime;
+
+  /// No description provided for @branchFieldCloseTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Closes'**
+  String get branchFieldCloseTime;
+
+  /// No description provided for @branchFieldLatitude.
+  ///
+  /// In en, this message translates to:
+  /// **'Latitude (demo)'**
+  String get branchFieldLatitude;
+
+  /// No description provided for @branchFieldLongitude.
+  ///
+  /// In en, this message translates to:
+  /// **'Longitude (demo)'**
+  String get branchFieldLongitude;
+
+  /// No description provided for @branchDayClosed.
+  ///
+  /// In en, this message translates to:
+  /// **'Closed'**
+  String get branchDayClosed;
+
+  /// No description provided for @branchLocationDemoHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo coordinates only — no map or geocoding in this phase.'**
+  String get branchLocationDemoHint;
+
+  /// No description provided for @branchEditorCreateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New branch'**
+  String get branchEditorCreateTitle;
+
+  /// No description provided for @branchEditorEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit branch'**
+  String get branchEditorEditTitle;
+
+  /// No description provided for @branchSaveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Save branch'**
+  String get branchSaveAction;
+
+  /// No description provided for @branchCancelAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get branchCancelAction;
+
+  /// No description provided for @branchSaveSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch saved for this session.'**
+  String get branchSaveSuccess;
+
+  /// No description provided for @branchSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save. Your edits are still in the form.'**
+  String get branchSaveFailed;
+
+  /// No description provided for @branchDiscardConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard changes?'**
+  String get branchDiscardConfirmTitle;
+
+  /// No description provided for @branchDiscardConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Unsaved branch edits will be lost.'**
+  String get branchDiscardConfirmBody;
+
+  /// No description provided for @branchDiscardConfirmAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard'**
+  String get branchDiscardConfirmAction;
+
+  /// No description provided for @branchValidationName.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a branch name'**
+  String get branchValidationName;
+
+  /// No description provided for @branchValidationCity.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a city'**
+  String get branchValidationCity;
+
+  /// No description provided for @branchValidationAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter an address'**
+  String get branchValidationAddress;
+
+  /// No description provided for @branchValidationPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid phone number'**
+  String get branchValidationPhone;
+
+  /// No description provided for @branchValidationTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Use HH:MM format for opening hours'**
+  String get branchValidationTime;
+
+  /// No description provided for @branchValidationTimeOrder.
+  ///
+  /// In en, this message translates to:
+  /// **'Closing time must be after opening time'**
+  String get branchValidationTimeOrder;
+
+  /// No description provided for @branchValidationCoordinates.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter valid coordinates'**
+  String get branchValidationCoordinates;
+
+  /// No description provided for @branchWeekdayMonday.
+  ///
+  /// In en, this message translates to:
+  /// **'Monday'**
+  String get branchWeekdayMonday;
+
+  /// No description provided for @branchWeekdayTuesday.
+  ///
+  /// In en, this message translates to:
+  /// **'Tuesday'**
+  String get branchWeekdayTuesday;
+
+  /// No description provided for @branchWeekdayWednesday.
+  ///
+  /// In en, this message translates to:
+  /// **'Wednesday'**
+  String get branchWeekdayWednesday;
+
+  /// No description provided for @branchWeekdayThursday.
+  ///
+  /// In en, this message translates to:
+  /// **'Thursday'**
+  String get branchWeekdayThursday;
+
+  /// No description provided for @branchWeekdayFriday.
+  ///
+  /// In en, this message translates to:
+  /// **'Friday'**
+  String get branchWeekdayFriday;
+
+  /// No description provided for @branchWeekdaySaturday.
+  ///
+  /// In en, this message translates to:
+  /// **'Saturday'**
+  String get branchWeekdaySaturday;
+
+  /// No description provided for @branchWeekdaySunday.
+  ///
+  /// In en, this message translates to:
+  /// **'Sunday'**
+  String get branchWeekdaySunday;
 }
 
 class _AppLocalizationsDelegate

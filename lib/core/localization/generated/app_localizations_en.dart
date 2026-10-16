@@ -1674,4 +1674,174 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get ownerProfileValidationWebsite => 'Enter a valid website URL';
+
+  @override
+  String get businessCenterBranchesTitle => 'Branches';
+
+  @override
+  String get businessCenterBranchesBody =>
+      'Manage branch locations, hours, and contacts in preview mode.';
+
+  @override
+  String get branchListTitle => 'Branches';
+
+  @override
+  String get branchPreviewNotice =>
+      'Preview — branches are saved only in this session. Not published to search or maps.';
+
+  @override
+  String get branchProfileIncompleteNotice =>
+      'Complete your business profile preview before branches can sync to a real business later.';
+
+  @override
+  String get branchOpenBusinessProfileAction => 'Open business profile';
+
+  @override
+  String get branchAddAction => 'Add branch';
+
+  @override
+  String get branchEmptyTitle => 'No branches yet';
+
+  @override
+  String get branchEmptyBody =>
+      'Add a preview branch to plan locations and opening hours.';
+
+  @override
+  String get branchStatusActive => 'Active';
+
+  @override
+  String get branchStatusInactive => 'Inactive';
+
+  @override
+  String get branchScheduleClosedAllWeek => 'Closed all week';
+
+  @override
+  String get branchDetailTitle => 'Branch details';
+
+  @override
+  String get branchEditAction => 'Edit branch';
+
+  @override
+  String get branchNotFoundTitle => 'Branch not found';
+
+  @override
+  String get branchNotFoundBody =>
+      'This branch is not in your session preview.';
+
+  @override
+  String get branchBackToListAction => 'Back to branches';
+
+  @override
+  String get branchSectionBasics => 'Basic information';
+
+  @override
+  String get branchSectionHours => 'Opening hours';
+
+  @override
+  String get branchSectionLocation => 'Location (preview)';
+
+  @override
+  String get branchFieldName => 'Branch name';
+
+  @override
+  String get branchFieldCity => 'City';
+
+  @override
+  String get branchFieldAddress => 'Address';
+
+  @override
+  String get branchFieldPhone => 'Contact phone';
+
+  @override
+  String get branchFieldStatus => 'Branch status';
+
+  @override
+  String get branchFieldOpenTime => 'Opens';
+
+  @override
+  String get branchFieldCloseTime => 'Closes';
+
+  @override
+  String get branchFieldLatitude => 'Latitude (demo)';
+
+  @override
+  String get branchFieldLongitude => 'Longitude (demo)';
+
+  @override
+  String get branchDayClosed => 'Closed';
+
+  @override
+  String get branchLocationDemoHint =>
+      'Demo coordinates only — no map or geocoding in this phase.';
+
+  @override
+  String get branchEditorCreateTitle => 'New branch';
+
+  @override
+  String get branchEditorEditTitle => 'Edit branch';
+
+  @override
+  String get branchSaveAction => 'Save branch';
+
+  @override
+  String get branchCancelAction => 'Cancel';
+
+  @override
+  String get branchSaveSuccess => 'Branch saved for this session.';
+
+  @override
+  String get branchSaveFailed =>
+      'Could not save. Your edits are still in the form.';
+
+  @override
+  String get branchDiscardConfirmTitle => 'Discard changes?';
+
+  @override
+  String get branchDiscardConfirmBody => 'Unsaved branch edits will be lost.';
+
+  @override
+  String get branchDiscardConfirmAction => 'Discard';
+
+  @override
+  String get branchValidationName => 'Enter a branch name';
+
+  @override
+  String get branchValidationCity => 'Enter a city';
+
+  @override
+  String get branchValidationAddress => 'Enter an address';
+
+  @override
+  String get branchValidationPhone => 'Enter a valid phone number';
+
+  @override
+  String get branchValidationTime => 'Use HH:MM format for opening hours';
+
+  @override
+  String get branchValidationTimeOrder =>
+      'Closing time must be after opening time';
+
+  @override
+  String get branchValidationCoordinates => 'Enter valid coordinates';
+
+  @override
+  String get branchWeekdayMonday => 'Monday';
+
+  @override
+  String get branchWeekdayTuesday => 'Tuesday';
+
+  @override
+  String get branchWeekdayWednesday => 'Wednesday';
+
+  @override
+  String get branchWeekdayThursday => 'Thursday';
+
+  @override
+  String get branchWeekdayFriday => 'Friday';
+
+  @override
+  String get branchWeekdaySaturday => 'Saturday';
+
+  @override
+  String get branchWeekdaySunday => 'Sunday';
 }
