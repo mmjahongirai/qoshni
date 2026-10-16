@@ -53,6 +53,9 @@ class OnboardingAuditEventType(StrEnum):
     DOCUMENT_DELETED = "document_deleted"
     DOCUMENT_RECONCILIATION_DETECTED = "document_reconciliation_detected"
     DOCUMENT_RECONCILIATION_RESOLVED = "document_reconciliation_resolved"
+    # Server prepared and began sending a reviewer download response; does not
+    # prove the client received or stored the file bytes.
+    DOCUMENT_DOWNLOAD_SERVED = "document_download_served"
 
 
 class OnboardingAuditActorRole(StrEnum):

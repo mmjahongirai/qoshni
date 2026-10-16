@@ -1,4 +1,10 @@
-"""Append-only audit helpers for private onboarding documents."""
+"""Append-only audit helpers for private onboarding documents.
+
+``document_download_served`` means the server validated reviewer access,
+loaded the object from storage, and committed an audit row before returning
+the download HTTP response. It does not attest that the client finished
+receiving or persisting the file.
+"""
 
 from __future__ import annotations
 

@@ -74,3 +74,44 @@ def test_document_audit_event_types_migration_upgrade_and_downgrade(
         session.commit()
 
     command.downgrade(alembic_config, "b0a1f0110001")
+
+
+def test_document_download_served_downgrade_without_rows(
+    alembic_config: Config,
+    engine: Engine,
+) -> None:
+    command.upgrade(alembic_config, "head")
+    command.downgrade(alembic_config, "b0a1f0130001")
+    command.upgrade(alembic_config, "head")
+
+
+def test_document_download_served_downgrade_blocked_when_rows_exist(
+    alembic_config: Config,
+    engine: Engine,
+) -> None:
+    command.upgrade(alembic_config, "head")
+    with Session(engine) as session:
+        owner = User(phone_e164="+998901230099")
+        session.add(owner)
+        session.flush()
+        application = BusinessOnboardingApplication(owner_user_id=owner.id)
+        session.add(application)
+        session.flush()
+        session.add(
+            BusinessOnboardingAuditEvent(
+                application_id=application.id,
+                event_type=OnboardingAuditEventType.DOCUMENT_DOWNLOAD_SERVED.value,
+                actor_role=OnboardingAuditActorRole.REVIEWER.value,
+                actor_user_id=owner.id,
+                details={"document_id": str(uuid.uuid4())},
+            ),
+        )
+        session.commit()
+
+    with pytest.raises(RuntimeError, match="document_download_served"):
+        command.downgrade(alembic_config, "b0a1f0130001")
+
+    with Session(engine) as session:
+        events = session.scalars(select(BusinessOnboardingAuditEvent)).all()
+        assert len(events) == 1
+        assert events[0].event_type == OnboardingAuditEventType.DOCUMENT_DOWNLOAD_SERVED.value

@@ -31,7 +31,12 @@ from app.api.schemas.business_onboarding import (
 )
 from app.core.database import get_db
 from app.services.auth.principal import BusinessOnboardingReviewerPrincipal
-from app.services.business_onboarding.onboarding_service import OnboardingServiceError
+from app.domain.business_onboarding import OnboardingAuditActorRole, OnboardingAuditEventType
+from app.services.business_onboarding.document_audit import record_document_audit
+from app.services.business_onboarding.onboarding_service import (
+    OnboardingServiceError,
+    OnboardingServiceErrorCode,
+)
 from app.services.business_onboarding.reviewer_document_service import (
     download_reviewer_document,
     list_reviewer_application_documents,
@@ -87,6 +92,18 @@ def list_reviewer_documents(
     )
 
 
+def _commit_reviewer_download_audit(db: Session) -> OnboardingServiceError | None:
+    try:
+        db.commit()
+    except Exception:
+        db.rollback()
+        return OnboardingServiceError(
+            code=OnboardingServiceErrorCode.STORAGE_UNAVAILABLE,
+            message="Document could not be retrieved.",
+        )
+    return None
+
+
 @router.get(
     "/applications/{application_id}/documents/{document_id}/download",
     response_model=None,
@@ -114,6 +131,19 @@ def download_reviewer_document_bytes(
     )
     if isinstance(result, OnboardingServiceError):
         return onboarding_error_response(result)
+
+    record_document_audit(
+        db,
+        application_id=application_id,
+        event_type=OnboardingAuditEventType.DOCUMENT_DOWNLOAD_SERVED,
+        actor_role=OnboardingAuditActorRole.REVIEWER,
+        actor_user_id=reviewer.user_id,
+        details={"document_id": str(document_id)},
+    )
+    commit_error = _commit_reviewer_download_audit(db)
+    if commit_error is not None:
+        return onboarding_error_response(commit_error)
+
     return Response(
         content=result.data,
         media_type=result.content_type,
