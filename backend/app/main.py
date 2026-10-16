@@ -5,7 +5,9 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, Request
 
 from app.api.auth_responses import auth_error_response
+from app.api.authorization_responses import authorization_error_response
 from app.api.deps.access import AuthenticationRequired
+from app.services.authorization.errors import AuthorizationDenied
 from app.api.router import api_router
 from app.api.routes.health import router as health_router
 from app.core.config import get_settings
@@ -36,6 +38,13 @@ def create_app() -> FastAPI:
         exc: AuthenticationRequired,
     ):
         return auth_error_response(exc.error)
+
+    @application.exception_handler(AuthorizationDenied)
+    async def authorization_denied_handler(
+        _request: Request,
+        exc: AuthorizationDenied,
+    ):
+        return authorization_error_response(exc.error)
 
     application.include_router(health_router)
     application.include_router(api_router, prefix=settings.api_v1_prefix)

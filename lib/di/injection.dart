@@ -18,6 +18,9 @@ import 'package:qoshni/features/business_platform/domain/repositories/business_o
 import 'package:qoshni/features/business_platform/domain/repositories/business_profile_repository.dart';
 import 'package:qoshni/features/business_platform/presentation/business_inventory_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_offerings_controller.dart';
+import 'package:qoshni/features/business_onboarding/data/onboarding_api_repository.dart';
+import 'package:qoshni/features/business_onboarding/domain/onboarding_repository.dart';
+import 'package:qoshni/features/business_onboarding/presentation/onboarding_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_profile_controller.dart';
 import 'package:qoshni/features/home/presentation/cart/cart_controller.dart';
 import 'package:qoshni/features/home/presentation/favorites/favorites_controller.dart';
@@ -110,6 +113,19 @@ Future<void> configureDependencies(AppConfig config) async {
         repository: getIt<UserProfileRepository>(),
         authController: getIt<AuthController>(),
         localeController: getIt<LocaleController>(),
+        config: getIt<AppConfig>(),
+      ),
+    )
+    ..registerLazySingleton<OnboardingRepository>(
+      () => OnboardingApiRepository(
+        apiClient: getIt<ApiClient>(),
+        config: getIt<AppConfig>(),
+      ),
+    )
+    ..registerLazySingleton<OnboardingController>(
+      () => OnboardingController(
+        repository: getIt<OnboardingRepository>(),
+        authController: getIt<AuthController>(),
         config: getIt<AppConfig>(),
       ),
     )

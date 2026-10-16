@@ -32,7 +32,7 @@ class AppSurfaceCard extends StatelessWidget {
       duration: appAnimationDuration(context, AppDurations.fast),
       margin: margin,
       decoration: BoxDecoration(
-        color: scheme.surface,
+        color: isDark ? scheme.surfaceContainerHigh : scheme.surface,
         borderRadius: AppRadius.lgAll,
         border: Border.all(
           color: scheme.outlineVariant.withValues(alpha: isDark ? 0.65 : 0.55),

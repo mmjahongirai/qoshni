@@ -1321,7 +1321,7 @@ abstract class AppLocalizations {
   /// No description provided for @profileBusinessCenterSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Local business profile drafts (demo)'**
+  /// **'Business registration and application tracking'**
   String get profileBusinessCenterSubtitle;
 
   /// No description provided for @businessCenterIntroTitle.
@@ -2324,6 +2324,534 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Saving…'**
   String get userProfileSaving;
+
+  /// No description provided for @businessCenterOnboardingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Business registration'**
+  String get businessCenterOnboardingTitle;
+
+  /// No description provided for @businessCenterOnboardingBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit a verification application, upload documents, and track review status with your signed-in account.'**
+  String get businessCenterOnboardingBody;
+
+  /// No description provided for @businessCenterOnboardingAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Open registration'**
+  String get businessCenterOnboardingAction;
+
+  /// No description provided for @onboardingHubTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Business registration'**
+  String get onboardingHubTitle;
+
+  /// No description provided for @onboardingHubIntroTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Register your business'**
+  String get onboardingHubIntroTitle;
+
+  /// No description provided for @onboardingHubIntroBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Create an application, complete the form, upload required documents, and submit for review. Status updates come from the server.'**
+  String get onboardingHubIntroBody;
+
+  /// No description provided for @onboardingHubEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No applications yet'**
+  String get onboardingHubEmptyTitle;
+
+  /// No description provided for @onboardingHubEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Start a new application to register your business for verification.'**
+  String get onboardingHubEmptyBody;
+
+  /// No description provided for @onboardingCreateApplication.
+  ///
+  /// In en, this message translates to:
+  /// **'New application'**
+  String get onboardingCreateApplication;
+
+  /// No description provided for @onboardingUntitledApplication.
+  ///
+  /// In en, this message translates to:
+  /// **'Untitled application'**
+  String get onboardingUntitledApplication;
+
+  /// No description provided for @onboardingSignInPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to view and manage your business registration applications.'**
+  String get onboardingSignInPrompt;
+
+  /// No description provided for @onboardingApplicationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Application'**
+  String get onboardingApplicationTitle;
+
+  /// No description provided for @onboardingTabForm.
+  ///
+  /// In en, this message translates to:
+  /// **'Details'**
+  String get onboardingTabForm;
+
+  /// No description provided for @onboardingTabDocuments.
+  ///
+  /// In en, this message translates to:
+  /// **'Documents'**
+  String get onboardingTabDocuments;
+
+  /// No description provided for @onboardingTabStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get onboardingTabStatus;
+
+  /// No description provided for @onboardingFormReadOnlyNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'This application is no longer a draft. Details are read-only while review is in progress or complete.'**
+  String get onboardingFormReadOnlyNotice;
+
+  /// No description provided for @onboardingFieldLegalName.
+  ///
+  /// In en, this message translates to:
+  /// **'Legal business name'**
+  String get onboardingFieldLegalName;
+
+  /// No description provided for @onboardingFieldTradeName.
+  ///
+  /// In en, this message translates to:
+  /// **'Trade / display name (optional)'**
+  String get onboardingFieldTradeName;
+
+  /// No description provided for @onboardingFieldServiceCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Service category'**
+  String get onboardingFieldServiceCategory;
+
+  /// No description provided for @onboardingFieldJurisdiction.
+  ///
+  /// In en, this message translates to:
+  /// **'Registration jurisdiction (ISO code)'**
+  String get onboardingFieldJurisdiction;
+
+  /// No description provided for @onboardingFieldRegistrationId.
+  ///
+  /// In en, this message translates to:
+  /// **'Registration identifier (optional)'**
+  String get onboardingFieldRegistrationId;
+
+  /// No description provided for @onboardingFieldTaxIdOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Tax identifier (optional)'**
+  String get onboardingFieldTaxIdOptional;
+
+  /// No description provided for @onboardingFieldContactEmailOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Business contact email (optional)'**
+  String get onboardingFieldContactEmailOptional;
+
+  /// No description provided for @onboardingValidationLegalNameRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the legal business name'**
+  String get onboardingValidationLegalNameRequired;
+
+  /// No description provided for @onboardingValidationCategoryRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a service category'**
+  String get onboardingValidationCategoryRequired;
+
+  /// No description provided for @onboardingValidationJurisdictionInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a two-letter jurisdiction code (e.g. UZ)'**
+  String get onboardingValidationJurisdictionInvalid;
+
+  /// No description provided for @onboardingValidationEmailInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid email address'**
+  String get onboardingValidationEmailInvalid;
+
+  /// No description provided for @onboardingSaveDraftAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Save draft'**
+  String get onboardingSaveDraftAction;
+
+  /// No description provided for @onboardingSubmitAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit for review'**
+  String get onboardingSubmitAction;
+
+  /// No description provided for @onboardingDraftSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Draft saved.'**
+  String get onboardingDraftSaved;
+
+  /// No description provided for @onboardingSubmitSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Application submitted for review.'**
+  String get onboardingSubmitSuccess;
+
+  /// No description provided for @onboardingCategoryGroceries.
+  ///
+  /// In en, this message translates to:
+  /// **'Groceries'**
+  String get onboardingCategoryGroceries;
+
+  /// No description provided for @onboardingCategoryRestaurants.
+  ///
+  /// In en, this message translates to:
+  /// **'Restaurants'**
+  String get onboardingCategoryRestaurants;
+
+  /// No description provided for @onboardingCategoryPharmacy.
+  ///
+  /// In en, this message translates to:
+  /// **'Pharmacy'**
+  String get onboardingCategoryPharmacy;
+
+  /// No description provided for @onboardingCategoryShops.
+  ///
+  /// In en, this message translates to:
+  /// **'Shops'**
+  String get onboardingCategoryShops;
+
+  /// No description provided for @onboardingCategoryMasters.
+  ///
+  /// In en, this message translates to:
+  /// **'Masters & services'**
+  String get onboardingCategoryMasters;
+
+  /// No description provided for @onboardingCategoryRent.
+  ///
+  /// In en, this message translates to:
+  /// **'Rent'**
+  String get onboardingCategoryRent;
+
+  /// No description provided for @onboardingDocumentsIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Register each document type, then upload PDF, JPEG, or PNG files up to 10 MiB.'**
+  String get onboardingDocumentsIntro;
+
+  /// No description provided for @onboardingDocumentsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No documents registered yet. Add a document type below.'**
+  String get onboardingDocumentsEmpty;
+
+  /// No description provided for @onboardingRegisterDocumentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Add document'**
+  String get onboardingRegisterDocumentTitle;
+
+  /// No description provided for @onboardingUploadAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose file & upload'**
+  String get onboardingUploadAction;
+
+  /// No description provided for @onboardingUploadTooLarge.
+  ///
+  /// In en, this message translates to:
+  /// **'File is larger than 10 MiB. Choose a smaller file.'**
+  String get onboardingUploadTooLarge;
+
+  /// No description provided for @onboardingUploadReadFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not read the selected file.'**
+  String get onboardingUploadReadFailed;
+
+  /// No description provided for @onboardingUploadSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload completed.'**
+  String get onboardingUploadSuccess;
+
+  /// No description provided for @onboardingDocTypeRegistrationCertificate.
+  ///
+  /// In en, this message translates to:
+  /// **'Registration certificate'**
+  String get onboardingDocTypeRegistrationCertificate;
+
+  /// No description provided for @onboardingDocTypeTaxRegistration.
+  ///
+  /// In en, this message translates to:
+  /// **'Tax registration'**
+  String get onboardingDocTypeTaxRegistration;
+
+  /// No description provided for @onboardingDocTypeRepresentativeId.
+  ///
+  /// In en, this message translates to:
+  /// **'Authorized representative ID'**
+  String get onboardingDocTypeRepresentativeId;
+
+  /// No description provided for @onboardingDocTypeOtherSupporting.
+  ///
+  /// In en, this message translates to:
+  /// **'Other supporting document'**
+  String get onboardingDocTypeOtherSupporting;
+
+  /// No description provided for @onboardingVerificationCurrentStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Current status'**
+  String get onboardingVerificationCurrentStatus;
+
+  /// No description provided for @onboardingVerificationSubmittedAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Submitted'**
+  String get onboardingVerificationSubmittedAt;
+
+  /// No description provided for @onboardingVerificationReviewedAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Reviewed'**
+  String get onboardingVerificationReviewedAt;
+
+  /// No description provided for @onboardingVerificationRejectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Rejection reason'**
+  String get onboardingVerificationRejectionTitle;
+
+  /// No description provided for @onboardingNextStepsDraft.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete the form, upload documents, then submit when ready.'**
+  String get onboardingNextStepsDraft;
+
+  /// No description provided for @onboardingNextStepsSubmitted.
+  ///
+  /// In en, this message translates to:
+  /// **'Your application was submitted. You will be notified when review starts.'**
+  String get onboardingNextStepsSubmitted;
+
+  /// No description provided for @onboardingNextStepsUnderReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Our team is reviewing your application. You may be asked for additional documents.'**
+  String get onboardingNextStepsUnderReview;
+
+  /// No description provided for @onboardingNextStepsVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Your business is verified. Further product features will arrive in later phases.'**
+  String get onboardingNextStepsVerified;
+
+  /// No description provided for @onboardingNextStepsRejected.
+  ///
+  /// In en, this message translates to:
+  /// **'Your application was rejected. Review the reason, update your draft if allowed, or contact support.'**
+  String get onboardingNextStepsRejected;
+
+  /// No description provided for @onboardingNextStepsSuspended.
+  ///
+  /// In en, this message translates to:
+  /// **'Your application is suspended. Contact support for next steps.'**
+  String get onboardingNextStepsSuspended;
+
+  /// No description provided for @onboardingNextStepsGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'Check back later for updates.'**
+  String get onboardingNextStepsGeneric;
+
+  /// No description provided for @onboardingErrorNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Application not found.'**
+  String get onboardingErrorNotFound;
+
+  /// No description provided for @onboardingErrorForbidden.
+  ///
+  /// In en, this message translates to:
+  /// **'You do not have access to this application.'**
+  String get onboardingErrorForbidden;
+
+  /// No description provided for @onboardingErrorInvalidTransition.
+  ///
+  /// In en, this message translates to:
+  /// **'This action is not allowed for the current status.'**
+  String get onboardingErrorInvalidTransition;
+
+  /// No description provided for @onboardingErrorValidation.
+  ///
+  /// In en, this message translates to:
+  /// **'Some fields are invalid. Check the form and try again.'**
+  String get onboardingErrorValidation;
+
+  /// No description provided for @onboardingErrorUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Service temporarily unavailable. Try again later.'**
+  String get onboardingErrorUnavailable;
+
+  /// No description provided for @onboardingErrorScanUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Document scanning is temporarily unavailable.'**
+  String get onboardingErrorScanUnavailable;
+
+  /// No description provided for @onboardingErrorDocumentRejected.
+  ///
+  /// In en, this message translates to:
+  /// **'The document was rejected. Register a new document and upload again.'**
+  String get onboardingErrorDocumentRejected;
+
+  /// No description provided for @onboardingErrorSuspended.
+  ///
+  /// In en, this message translates to:
+  /// **'This application is suspended.'**
+  String get onboardingErrorSuspended;
+
+  /// No description provided for @onboardingErrorSignInRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to continue.'**
+  String get onboardingErrorSignInRequired;
+
+  /// No description provided for @onboardingErrorApiNotConfigured.
+  ///
+  /// In en, this message translates to:
+  /// **'Registration server is not configured for this build. Set QOSHNI_API_BASE_URL at compile time.'**
+  String get onboardingErrorApiNotConfigured;
+
+  /// No description provided for @onboardingErrorNetwork.
+  ///
+  /// In en, this message translates to:
+  /// **'Network connection failed. Check your connection and try again.'**
+  String get onboardingErrorNetwork;
+
+  /// No description provided for @onboardingErrorUnexpected.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong. Please try again.'**
+  String get onboardingErrorUnexpected;
+
+  /// No description provided for @onboardingStatusDraft.
+  ///
+  /// In en, this message translates to:
+  /// **'Draft'**
+  String get onboardingStatusDraft;
+
+  /// No description provided for @onboardingStatusSubmitted.
+  ///
+  /// In en, this message translates to:
+  /// **'Submitted'**
+  String get onboardingStatusSubmitted;
+
+  /// No description provided for @onboardingStatusUnderReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Under review'**
+  String get onboardingStatusUnderReview;
+
+  /// No description provided for @onboardingStatusVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified'**
+  String get onboardingStatusVerified;
+
+  /// No description provided for @onboardingStatusRejected.
+  ///
+  /// In en, this message translates to:
+  /// **'Rejected'**
+  String get onboardingStatusRejected;
+
+  /// No description provided for @onboardingStatusSuspended.
+  ///
+  /// In en, this message translates to:
+  /// **'Suspended'**
+  String get onboardingStatusSuspended;
+
+  /// No description provided for @onboardingDocAwaitingUpload.
+  ///
+  /// In en, this message translates to:
+  /// **'Awaiting upload'**
+  String get onboardingDocAwaitingUpload;
+
+  /// No description provided for @onboardingDocUploadedPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Uploaded — pending validation'**
+  String get onboardingDocUploadedPending;
+
+  /// No description provided for @onboardingDocQuarantined.
+  ///
+  /// In en, this message translates to:
+  /// **'Quarantined'**
+  String get onboardingDocQuarantined;
+
+  /// No description provided for @onboardingDocRejected.
+  ///
+  /// In en, this message translates to:
+  /// **'Rejected'**
+  String get onboardingDocRejected;
+
+  /// No description provided for @onboardingDocAcceptedForReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Accepted for review'**
+  String get onboardingDocAcceptedForReview;
+
+  /// No description provided for @onboardingDocDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Deleted'**
+  String get onboardingDocDeleted;
+
+  /// No description provided for @onboardingRejectionIncomplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Incomplete information'**
+  String get onboardingRejectionIncomplete;
+
+  /// No description provided for @onboardingRejectionMismatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Registration mismatch'**
+  String get onboardingRejectionMismatch;
+
+  /// No description provided for @onboardingRejectionJurisdiction.
+  ///
+  /// In en, this message translates to:
+  /// **'Unsupported jurisdiction'**
+  String get onboardingRejectionJurisdiction;
+
+  /// No description provided for @onboardingRejectionPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Policy violation'**
+  String get onboardingRejectionPolicy;
+
+  /// No description provided for @onboardingRejectionOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get onboardingRejectionOther;
 }
 
 class _AppLocalizationsDelegate

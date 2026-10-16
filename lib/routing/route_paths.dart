@@ -30,6 +30,9 @@ abstract final class RoutePaths {
       '/business-center/profile/:profileId/inventory';
   static const String businessInventoryEdit =
       '/business-center/profile/:profileId/inventory/:offeringId/edit';
+  static const String businessOnboardingHub = '/business-center/onboarding';
+  static const String businessOnboardingApplication =
+      '/business-center/onboarding/:applicationId';
 }
 
 abstract final class RouteNames {
@@ -56,4 +59,7 @@ abstract final class RouteNames {
   static const String businessOfferingEdit = 'businessOfferingEdit';
   static const String businessInventory = 'businessInventory';
   static const String businessInventoryEdit = 'businessInventoryEdit';
+  static const String businessOnboardingHub = 'businessOnboardingHub';
+  static const String businessOnboardingApplication =
+      'businessOnboardingApplication';
 }

@@ -226,7 +226,12 @@ abstract final class AppTheme {
   }
 
   static TextTheme _textTheme(ColorScheme scheme) {
-    final base = Typography.material2021().black;
+    final isDark = scheme.brightness == Brightness.dark;
+    final base = (isDark ? Typography.material2021().white : Typography.material2021().black)
+        .apply(
+          bodyColor: scheme.onSurface,
+          displayColor: scheme.onSurface,
+        );
     return base.copyWith(
       headlineLarge: base.headlineLarge?.copyWith(
         fontWeight: FontWeight.w700,
@@ -240,6 +245,18 @@ abstract final class AppTheme {
       ),
       titleMedium: base.titleMedium?.copyWith(
         fontWeight: FontWeight.w600,
+        color: scheme.onSurface,
+      ),
+      titleSmall: base.titleSmall?.copyWith(
+        fontWeight: FontWeight.w600,
+        color: scheme.onSurface,
+      ),
+      headlineSmall: base.headlineSmall?.copyWith(
+        fontWeight: FontWeight.w600,
+        color: scheme.onSurface,
+      ),
+      headlineMedium: base.headlineMedium?.copyWith(
+        fontWeight: FontWeight.w700,
         color: scheme.onSurface,
       ),
       bodyLarge: base.bodyLarge?.copyWith(

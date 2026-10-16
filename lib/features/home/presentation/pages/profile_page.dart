@@ -560,6 +560,7 @@ class _ProfileSettingsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
     return AppSurfaceCard(
@@ -578,6 +579,7 @@ class _ProfileSettingsCard extends StatelessWidget {
               title,
               style: textTheme.titleSmall?.copyWith(
                 fontWeight: FontWeight.w600,
+                color: colorScheme.onSurface,
               ),
             ),
           ),

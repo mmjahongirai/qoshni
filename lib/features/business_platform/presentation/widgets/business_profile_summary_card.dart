@@ -39,6 +39,7 @@ class BusinessProfileSummaryCard extends StatelessWidget {
                   profile.businessName,
                   style: textTheme.titleSmall?.copyWith(
                     fontWeight: FontWeight.w600,
+                    color: colorScheme.onSurface,
                   ),
                 ),
               ),
