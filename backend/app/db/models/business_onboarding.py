@@ -40,6 +40,7 @@ from app.domain.business_onboarding_documents import (
     DECLARED_CONTENT_TYPE_MAX_LENGTH,
     STORAGE_OBJECT_KEY_MAX_LENGTH,
 )
+from app.domain.malware_scanning import MalwareScanStatus
 
 _ACTIVE_REGISTRATION_INDEX_WHERE = (
     "verification_status IN "
@@ -276,6 +277,10 @@ class BusinessOnboardingDocument(Base):
             f"{CHECKSUM_SHA256_HEX_LENGTH}",
             name="checksum_sha256_length",
         ),
+        CheckConstraint(
+            f"malware_scan_status IS NULL OR {_in_values('malware_scan_status', MalwareScanStatus)}",
+            name="malware_scan_status_valid",
+        ),
         Index(
             "ix_business_onboarding_documents_application_id_created_at",
             "application_id",
@@ -319,6 +324,7 @@ class BusinessOnboardingDocument(Base):
         String(CHECKSUM_SHA256_HEX_LENGTH),
         nullable=True,
     )
+    malware_scan_status: Mapped[str | None] = mapped_column(String(32), nullable=True)
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
         nullable=False,

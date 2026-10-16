@@ -23,6 +23,7 @@ from app.main import create_app
 from app.services.business_onboarding.onboarding_service import OnboardingServiceErrorCode
 from app.services.object_storage.errors import StorageOperationError
 from tests.support.fake_otp_provider import FakeOtpProvider
+from app.services.malware_scanning.fake import FakeMalwareScanner
 from tests.support.memory_object_storage import MemoryObjectStorage
 
 _DIGEST_KEY = "p" * 32
@@ -162,6 +163,7 @@ def test_service_maps_storage_put_failure_to_storage_unavailable() -> None:
             document_id=document.id,
             payload=_MINIMAL_PDF,
             storage=storage,
+            scanner=FakeMalwareScanner(),
             max_bytes=1024 * 1024,
         )
         assert isinstance(result, OnboardingServiceError)

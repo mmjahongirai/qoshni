@@ -13,6 +13,7 @@ from sqlalchemy.engine import Engine
 from sqlalchemy.orm import Session, sessionmaker
 
 from app.api.deps.auth import get_otp_delivery_provider
+from app.api.deps.malware_scanner import get_malware_scanner
 from app.api.deps.object_storage import get_object_storage
 from app.api.schemas.business_onboarding_documents import DOCUMENT_ENDPOINT_CONTRACTS
 from app.core.config import get_settings
@@ -28,6 +29,7 @@ from app.domain.business_onboarding_documents import BusinessOnboardingDocumentL
 from app.main import create_app
 from app.services.business_onboarding.document_service import build_storage_object_key
 from tests.support.fake_otp_provider import FakeOtpProvider
+from app.services.malware_scanning.fake import FakeMalwareScanner
 from tests.support.memory_object_storage import MemoryObjectStorage
 
 _DIGEST_KEY = "p" * 32
@@ -65,6 +67,7 @@ def document_client(
 ) -> Generator[tuple[TestClient, FakeOtpProvider, MemoryObjectStorage], None, None]:
     provider = FakeOtpProvider()
     storage = MemoryObjectStorage()
+    scanner = FakeMalwareScanner()
     session_factory = sessionmaker(bind=document_engine, autoflush=False, autocommit=False)
 
     def override_db() -> Generator[Session, None, None]:
@@ -78,6 +81,7 @@ def document_client(
     application.dependency_overrides[get_db] = override_db
     application.dependency_overrides[get_otp_delivery_provider] = lambda: provider
     application.dependency_overrides[get_object_storage] = lambda: storage
+    application.dependency_overrides[get_malware_scanner] = lambda: scanner
 
     with TestClient(application) as client:
         yield client, provider, storage

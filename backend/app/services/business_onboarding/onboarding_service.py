@@ -39,6 +39,8 @@ class OnboardingServiceErrorCode(StrEnum):
     INVALID_STATUS_TRANSITION = "invalid_status_transition"
     VALIDATION_FAILED = "validation_failed"
     STORAGE_UNAVAILABLE = "storage_unavailable"
+    MALWARE_SCAN_UNAVAILABLE = "malware_scan_unavailable"
+    DOCUMENT_REJECTED = "document_rejected"
     SUSPENDED = "suspended"
 
 

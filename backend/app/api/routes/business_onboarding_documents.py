@@ -9,6 +9,7 @@ from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
 
 from app.api.deps.access import get_current_principal
+from app.api.deps.malware_scanner import get_malware_scanner
 from app.api.deps.object_storage import get_object_storage
 from app.api.onboarding_responses import onboarding_error_response
 from app.api.schemas.business_onboarding import OnboardingErrorResponse
@@ -43,10 +44,19 @@ from app.services.business_onboarding.onboarding_service import (
     OnboardingServiceError,
     OnboardingServiceErrorCode,
 )
+from app.services.malware_scanning.port import MalwareScannerPort
 from app.services.object_storage.errors import StorageError
 from app.services.object_storage.port import StoragePort
 
 router = APIRouter(prefix="/business/onboarding", tags=["business-onboarding-documents"])
+
+
+def _upload_failure_code(error: OnboardingServiceError) -> str:
+    if error.code == OnboardingServiceErrorCode.DOCUMENT_REJECTED:
+        return "malware_infected"
+    if error.code == OnboardingServiceErrorCode.MALWARE_SCAN_UNAVAILABLE:
+        return "malware_scan_unavailable"
+    return "storage_or_upload_rejected"
 
 
 def _commit_document_upload(
@@ -150,6 +160,7 @@ def upload_document(
     db: Session = Depends(get_db),
     principal: AuthenticatedPrincipal = Depends(get_current_principal),
     storage: StoragePort = Depends(get_object_storage),
+    scanner: MalwareScannerPort = Depends(get_malware_scanner),
     settings: Settings = Depends(get_settings),
 ) -> OwnerOnboardingDocumentView | JSONResponse:
     try:
@@ -170,6 +181,7 @@ def upload_document(
         document_id=document_id,
         payload=bounded,
         storage=storage,
+        scanner=scanner,
         max_bytes=settings.onboarding_document_max_bytes,
     )
     if isinstance(result, OnboardingServiceError):
@@ -179,7 +191,7 @@ def upload_document(
             application_id=application_id,
             document_id=document_id,
             actor_user_id=principal.user_id,
-            failure_code="storage_or_upload_rejected",
+            failure_code=_upload_failure_code(result),
             correlation_id=upload_correlation_id,
         )
         return onboarding_error_response(result)

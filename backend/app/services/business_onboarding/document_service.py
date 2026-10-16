@@ -30,6 +30,8 @@ from app.services.business_onboarding.onboarding_service import (
     OnboardingServiceErrorCode,
     get_owner_application,
 )
+from app.domain.malware_scanning import MalwareScanStatus, MalwareScanVerdict
+from app.services.malware_scanning.port import MalwareScannerPort
 from app.services.object_storage.errors import StorageError, StorageObjectNotFoundError
 from app.services.object_storage.port import StoragePort
 
@@ -58,6 +60,32 @@ def _storage_unavailable() -> OnboardingServiceError:
         code=OnboardingServiceErrorCode.STORAGE_UNAVAILABLE,
         message="Document upload could not be completed.",
     )
+
+
+def _malware_scan_unavailable() -> OnboardingServiceError:
+    return OnboardingServiceError(
+        code=OnboardingServiceErrorCode.MALWARE_SCAN_UNAVAILABLE,
+        message="Document upload could not be completed.",
+    )
+
+
+def _document_rejected() -> OnboardingServiceError:
+    return OnboardingServiceError(
+        code=OnboardingServiceErrorCode.DOCUMENT_REJECTED,
+        message="Document could not be accepted.",
+    )
+
+
+def _scan_payload(
+    scanner: MalwareScannerPort,
+    payload: bytes,
+) -> MalwareScanVerdict | OnboardingServiceError:
+    result = scanner.scan(payload)
+    if result.verdict == MalwareScanVerdict.CLEAN:
+        return MalwareScanVerdict.CLEAN
+    if result.verdict == MalwareScanVerdict.INFECTED:
+        return _document_rejected()
+    return _malware_scan_unavailable()
 
 
 def _require_draft_application(application) -> OnboardingServiceError | None:
@@ -165,6 +193,7 @@ def upload_owner_document_bytes(
     document_id: uuid.UUID,
     payload: bytes,
     storage: StoragePort,
+    scanner: MalwareScannerPort,
     max_bytes: int,
 ) -> DocumentUploadResult | OnboardingServiceError:
     if len(payload) > max_bytes:
@@ -210,6 +239,12 @@ def upload_owner_document_bytes(
                 code=OnboardingServiceErrorCode.INVALID_STATUS_TRANSITION,
                 message="Document upload is not permitted in the current lifecycle state.",
             )
+        if document.malware_scan_status != MalwareScanStatus.CLEAN.value:
+            scan_outcome = _scan_payload(scanner, payload)
+            if isinstance(scan_outcome, OnboardingServiceError):
+                return scan_outcome
+            document.malware_scan_status = MalwareScanStatus.CLEAN.value
+            session.flush()
         try:
             head = storage.head(document.storage_object_key)
         except StorageObjectNotFoundError:
@@ -236,6 +271,10 @@ def upload_owner_document_bytes(
             message="Document upload is not permitted in the current lifecycle state.",
         )
 
+    scan_outcome = _scan_payload(scanner, payload)
+    if isinstance(scan_outcome, OnboardingServiceError):
+        return scan_outcome
+
     content_type = detected.value
     storage_key = document.storage_object_key
     try:
@@ -245,6 +284,7 @@ def upload_owner_document_bytes(
 
     document.byte_size = len(payload)
     document.checksum_sha256 = checksum
+    document.malware_scan_status = MalwareScanStatus.CLEAN.value
     document.lifecycle_state = BusinessOnboardingDocumentLifecycle.UPLOADED_PENDING_VALIDATION.value
     session.flush()
 
@@ -254,6 +294,7 @@ def upload_owner_document_bytes(
         document.lifecycle_state = BusinessOnboardingDocumentLifecycle.AWAITING_UPLOAD.value
         document.byte_size = None
         document.checksum_sha256 = None
+        document.malware_scan_status = None
         session.flush()
         try:
             storage.delete(storage_key)
@@ -265,6 +306,7 @@ def upload_owner_document_bytes(
         document.lifecycle_state = BusinessOnboardingDocumentLifecycle.AWAITING_UPLOAD.value
         document.byte_size = None
         document.checksum_sha256 = None
+        document.malware_scan_status = None
         session.flush()
         try:
             storage.delete(storage_key)

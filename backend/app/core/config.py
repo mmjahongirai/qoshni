@@ -78,6 +78,10 @@ class Settings(BaseSettings):
     onboarding_document_max_bytes: int = Field(default=10 * 1024 * 1024, ge=1)
     onboarding_document_upload_url_ttl_seconds: int = Field(default=900, ge=60)
     object_storage_local_root: Path | None = None
+    malware_scanner_provider: Literal["clamav", "fake"] | None = None
+    malware_scanner_host: str = Field(default="127.0.0.1")
+    malware_scanner_port: int = Field(default=3310, ge=1, le=65535)
+    malware_scanner_timeout_seconds: float = Field(default=30.0, ge=1.0, le=300.0)
 
     model_config = SettingsConfigDict(
         env_file=_ENV_FILE,
@@ -115,8 +119,17 @@ class Settings(BaseSettings):
                 "Local object storage cannot be enabled when QOSHNI_ENVIRONMENT is production.",
             )
         if self.object_storage_provider == "s3":
+            if not self.object_storage_bucket or not str(self.object_storage_bucket).strip():
+                raise ValueError("S3 object storage requires QOSHNI_OBJECT_STORAGE_BUCKET.")
+            if self.object_storage_access_key_id is None or self.object_storage_secret_access_key is None:
+                raise ValueError("S3 object storage requires credential settings.")
+            if not self.object_storage_region or not str(self.object_storage_region).strip():
+                raise ValueError("S3 object storage requires QOSHNI_OBJECT_STORAGE_REGION.")
+        if self.malware_scanner_provider == "fake" and self.environment == "production":
+            raise ValueError("Fake malware scanner cannot be enabled in production.")
+        if self.environment == "production" and self.malware_scanner_provider != "clamav":
             raise ValueError(
-                "S3 object storage provider is configured but no adapter is available yet.",
+                "Production requires QOSHNI_MALWARE_SCANNER_PROVIDER=clamav when uploads are enabled.",
             )
         return self
 

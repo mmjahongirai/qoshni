@@ -206,6 +206,20 @@ Barcha route'lar `/api/v1/internal/business/onboarding/applications` ostida; **`
 
 **Reconciliation:** `reconcile_onboarding_documents_dry_run` + CLI `python -m app.jobs.reconcile_onboarding_documents` — default **read-only** (DB/storage/audit o‘zgarmaydi); `--apply` yo‘q. `StoragePort.list_prefix` orqali orphan/size mismatch aniqlash; hisobotda faqat `document_id` va statistika.
 
+### Private S3 storage and malware scanning (Part 6B.6 — code ready, not deployed)
+
+**Storage:** `S3ObjectStorage` implements `StoragePort` via `boto3` against a **private** bucket (no public ACLs/URLs). `QOSHNI_OBJECT_STORAGE_PROVIDER=s3` requires bucket, region, and credentials; optional `QOSHNI_OBJECT_STORAGE_ENDPOINT` for S3-compatible providers. **No silent fallback** to local filesystem in production. Block-public-access and bucket policy are **operator responsibilities at deploy time** (not verified by this codebase).
+
+**Listing:** `list_prefix` uses native `ListObjectsV2` pagination with opaque cursors bound to the prefix (not full-bucket memory loads).
+
+**Malware scanning:** `MalwareScannerPort` with self-hosted **ClamAV/clamd** (`INSTREAM` over TCP — no shell, no VirusTotal/third-party upload). Verdicts: `clean`, `infected`, `unavailable`. **Fail-closed:** unavailable/timeout/unknown never treated as clean. Production settings require `QOSHNI_MALWARE_SCANNER_PROVIDER=clamav`; `fake` is test/non-production only.
+
+**Upload order:** auth → size → format/signature → **scan** → private storage → DB metadata + audit (same compensation rules; storage and DB are **not** one atomic transaction).
+
+**Lifecycle vs scan:** `malware_scan_status=clean` (Alembic **`b0a1f0130001`**) records a successful scan; `uploaded_pending_validation` does **not** mean business/KYC acceptance and does **not** auto-transition to `accepted_for_review`.
+
+**Not live until ops provides:** real bucket/credentials, private bucket policy, and a reachable `clamd` instance. `upload-init`/presigned URL remains **not implemented**.
+
 ### Document privileged API (deferred)
 
 `GET/POST .../internal/.../documents`, `.../content` — **`implemented=False`**, mount yo‘q.
