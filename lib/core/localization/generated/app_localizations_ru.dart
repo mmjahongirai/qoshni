@@ -1835,4 +1835,225 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get branchWeekdaySunday => 'Воскресенье';
+
+  @override
+  String get businessCenterStaffTitle => 'Сотрудники и роли';
+
+  @override
+  String get businessCenterStaffBody =>
+      'Предпросмотр команды, ролей и доступа к филиалам только в этой сессии.';
+
+  @override
+  String get staffListTitle => 'Сотрудники и роли';
+
+  @override
+  String get staffPreviewNotice =>
+      'Предпросмотр — без SMS, email и реальных приглашений. Сохраняется только в сессии.';
+
+  @override
+  String get staffAddAction => 'Добавить сотрудника';
+
+  @override
+  String get staffEmptyTitle => 'Сотрудников пока нет';
+
+  @override
+  String get staffEmptyBody =>
+      'Добавьте сотрудника предпросмотра и назначьте филиалы.';
+
+  @override
+  String get staffEditAction => 'Редактировать';
+
+  @override
+  String get staffDetailTitle => 'Сотрудник';
+
+  @override
+  String get staffNotFoundTitle => 'Сотрудник не найден';
+
+  @override
+  String get staffNotFoundBody =>
+      'Этого сотрудника нет в предпросмотре сессии.';
+
+  @override
+  String get staffBackToListAction => 'К списку сотрудников';
+
+  @override
+  String get staffSectionBasics => 'Основная информация';
+
+  @override
+  String get staffSectionRole => 'Роль в бизнесе';
+
+  @override
+  String get staffSectionBranches => 'Назначенные филиалы';
+
+  @override
+  String get staffFieldFirstName => 'Имя';
+
+  @override
+  String get staffFieldLastName => 'Фамилия';
+
+  @override
+  String get staffFieldPhone => 'Телефон';
+
+  @override
+  String get staffFieldEmail => 'Email';
+
+  @override
+  String get staffFieldEmailOptional => 'Email (необязательно)';
+
+  @override
+  String get staffFieldRole => 'Роль';
+
+  @override
+  String get staffFieldActive => 'Активен в предпросмотре';
+
+  @override
+  String get staffFieldActiveHint =>
+      'Неактивный статус помечает сотрудника как удалённого только в предпросмотре.';
+
+  @override
+  String get staffBranchSelectionHint =>
+      'Выберите хотя бы один филиал. Права действуют только для назначенных филиалов.';
+
+  @override
+  String get staffNoBranchesAvailable =>
+      'Сначала добавьте филиал предпросмотра.';
+
+  @override
+  String get staffEditorCreateTitle => 'Новый сотрудник';
+
+  @override
+  String get staffEditorEditTitle => 'Редактирование сотрудника';
+
+  @override
+  String get staffSaveAction => 'Сохранить сотрудника';
+
+  @override
+  String get staffCancelAction => 'Отмена';
+
+  @override
+  String get staffSaveSuccess => 'Сотрудник сохранён для этой сессии.';
+
+  @override
+  String get staffSaveFailed =>
+      'Не удалось сохранить. Изменения остались в форме.';
+
+  @override
+  String get staffDiscardConfirmTitle => 'Отменить изменения?';
+
+  @override
+  String get staffDiscardConfirmBody =>
+      'Несохранённые правки сотрудника будут потеряны.';
+
+  @override
+  String get staffDiscardConfirmAction => 'Отменить';
+
+  @override
+  String get staffValidationFirstName => 'Введите имя';
+
+  @override
+  String get staffValidationPhone => 'Введите корректный телефон';
+
+  @override
+  String get staffValidationEmail => 'Введите корректный email';
+
+  @override
+  String get staffValidationRoleNotAssignable =>
+      'Эту роль нельзя назначить здесь.';
+
+  @override
+  String get staffValidationBranchRequired => 'Выберите хотя бы один филиал.';
+
+  @override
+  String get staffInvalidScopeMessage =>
+      'Один или несколько филиалов недоступны в этом предпросмотре.';
+
+  @override
+  String get staffOwnerNotEditableMessage =>
+      'Владельца бизнеса предпросмотра нельзя редактировать в этой форме.';
+
+  @override
+  String get staffRoleBusinessOwner => 'Владелец бизнеса';
+
+  @override
+  String get staffRoleBusinessAdmin => 'Администратор бизнеса';
+
+  @override
+  String get staffRoleBranchManager => 'Менеджер филиала';
+
+  @override
+  String get staffRoleStaff => 'Сотрудник';
+
+  @override
+  String get staffRoleReadOnly => 'Только просмотр';
+
+  @override
+  String get staffStatusActivePreview => 'Активен (предпросмотр)';
+
+  @override
+  String get staffStatusInvitePendingPreview =>
+      'Приглашение ожидается (только предпросмотр)';
+
+  @override
+  String get staffStatusRemovedPreview => 'Удалён (предпросмотр)';
+
+  @override
+  String staffBranchesLabel(String names) {
+    return 'Филиалы: $names';
+  }
+
+  @override
+  String get staffPermissionPreviewTitle => 'Предпросмотр прав';
+
+  @override
+  String get staffPermissionPreviewDisclaimer =>
+      'Только demo UI — backend авторизация ещё не подключена.';
+
+  @override
+  String get staffPermSummaryOwner =>
+      'Полный контроль в предпросмотре (нельзя назначить новому сотруднику).';
+
+  @override
+  String get staffPermSummaryAdmin =>
+      'Управление филиалами и сотрудниками в предпросмотре бизнеса.';
+
+  @override
+  String get staffPermSummaryBranchManager =>
+      'Работа только в назначенных филиалах.';
+
+  @override
+  String get staffPermSummaryStaff =>
+      'Ежедневные задачи в назначенных филиалах.';
+
+  @override
+  String get staffPermSummaryReadOnly =>
+      'Просмотр данных предпросмотра без редактирования.';
+
+  @override
+  String get staffPermManageBusiness => 'Настройки предпросмотра бизнеса';
+
+  @override
+  String get staffPermManageBranches => 'Записи филиалов предпросмотра';
+
+  @override
+  String get staffPermManageStaff => 'Записи сотрудников предпросмотра';
+
+  @override
+  String get staffPermViewReports => 'Отчёты предпросмотра';
+
+  @override
+  String get staffPermManageAssignedBranches => 'Данные назначенных филиалов';
+
+  @override
+  String get staffPermViewBranchReports => 'Отчёты назначенных филиалов';
+
+  @override
+  String get staffPermExecuteAssignedTasks => 'Задачи в назначенных филиалах';
+
+  @override
+  String get staffPermViewAssignedBranch =>
+      'Просмотр данных назначенных филиалов';
+
+  @override
+  String get staffPermViewBusinessPreview =>
+      'Просмотр данных бизнеса (read-only)';
 }

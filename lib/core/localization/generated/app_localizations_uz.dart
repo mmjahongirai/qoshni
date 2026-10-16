@@ -1850,4 +1850,223 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get branchWeekdaySunday => 'Yakshanba';
+
+  @override
+  String get businessCenterStaffTitle => 'Xodimlar va rollar';
+
+  @override
+  String get businessCenterStaffBody =>
+      'Jamoa, rollar va filial kirishini faqat shu sessiyada ko‘rib chiqing.';
+
+  @override
+  String get staffListTitle => 'Xodimlar va rollar';
+
+  @override
+  String get staffPreviewNotice =>
+      'Ko‘rinish — SMS, email yoki haqiqiy taklif yo‘q. Faqat shu sessiyada saqlanadi.';
+
+  @override
+  String get staffAddAction => 'Xodim qo‘shish';
+
+  @override
+  String get staffEmptyTitle => 'Hali xodimlar yo‘q';
+
+  @override
+  String get staffEmptyBody =>
+      'Preview xodim qo‘shing va filiallarni biriktiring.';
+
+  @override
+  String get staffEditAction => 'Tahrirlash';
+
+  @override
+  String get staffDetailTitle => 'Xodim';
+
+  @override
+  String get staffNotFoundTitle => 'Xodim topilmadi';
+
+  @override
+  String get staffNotFoundBody => 'Bu preview xodim sessiyada yo‘q.';
+
+  @override
+  String get staffBackToListAction => 'Xodimlar ro‘yxatiga';
+
+  @override
+  String get staffSectionBasics => 'Asosiy ma’lumotlar';
+
+  @override
+  String get staffSectionRole => 'Biznes roli';
+
+  @override
+  String get staffSectionBranches => 'Biriktirilgan filiallar';
+
+  @override
+  String get staffFieldFirstName => 'Ism';
+
+  @override
+  String get staffFieldLastName => 'Familiya';
+
+  @override
+  String get staffFieldPhone => 'Telefon';
+
+  @override
+  String get staffFieldEmail => 'Email';
+
+  @override
+  String get staffFieldEmailOptional => 'Email (ixtiyoriy)';
+
+  @override
+  String get staffFieldRole => 'Rol';
+
+  @override
+  String get staffFieldActive => 'Preview’da faol';
+
+  @override
+  String get staffFieldActiveHint =>
+      'Nofaol holat xodimni preview’da o‘chirilgan deb belgilaydi.';
+
+  @override
+  String get staffBranchSelectionHint =>
+      'Kamida bitta filial tanlang. Ruxsatlar faqat biriktirilgan filiallarga taalluqlidir.';
+
+  @override
+  String get staffNoBranchesAvailable => 'Avval preview filial qo‘shing.';
+
+  @override
+  String get staffEditorCreateTitle => 'Yangi xodim';
+
+  @override
+  String get staffEditorEditTitle => 'Xodimni tahrirlash';
+
+  @override
+  String get staffSaveAction => 'Xodimni saqlash';
+
+  @override
+  String get staffCancelAction => 'Bekor qilish';
+
+  @override
+  String get staffSaveSuccess => 'Xodim shu sessiya uchun saqlandi.';
+
+  @override
+  String get staffSaveFailed => 'Saqlab bo‘lmadi. Tahrirlar formada qoldi.';
+
+  @override
+  String get staffDiscardConfirmTitle => 'O‘zgarishlar bekor qilinsinmi?';
+
+  @override
+  String get staffDiscardConfirmBody =>
+      'Saqlanmagan xodim tahrirlari yo‘qoladi.';
+
+  @override
+  String get staffDiscardConfirmAction => 'Bekor qilish';
+
+  @override
+  String get staffValidationFirstName => 'Ismni kiriting';
+
+  @override
+  String get staffValidationPhone => 'To‘g‘ri telefon kiriting';
+
+  @override
+  String get staffValidationEmail => 'To‘g‘ri email kiriting';
+
+  @override
+  String get staffValidationRoleNotAssignable => 'Bu rol bu yerda berilmaydi.';
+
+  @override
+  String get staffValidationBranchRequired => 'Kamida bitta filial tanlang.';
+
+  @override
+  String get staffInvalidScopeMessage =>
+      'Bir yoki bir nechta filial preview doirasida mavjud emas.';
+
+  @override
+  String get staffOwnerNotEditableMessage =>
+      'Preview biznes egasini bu formadan tahrirlab bo‘lmaydi.';
+
+  @override
+  String get staffRoleBusinessOwner => 'Biznes egasi';
+
+  @override
+  String get staffRoleBusinessAdmin => 'Biznes admini';
+
+  @override
+  String get staffRoleBranchManager => 'Filial menejeri';
+
+  @override
+  String get staffRoleStaff => 'Xodim';
+
+  @override
+  String get staffRoleReadOnly => 'Faqat ko‘rish';
+
+  @override
+  String get staffStatusActivePreview => 'Faol (preview)';
+
+  @override
+  String get staffStatusInvitePendingPreview =>
+      'Taklif kutilmoqda (faqat preview)';
+
+  @override
+  String get staffStatusRemovedPreview => 'O‘chirilgan (preview)';
+
+  @override
+  String staffBranchesLabel(String names) {
+    return 'Filiallar: $names';
+  }
+
+  @override
+  String get staffPermissionPreviewTitle => 'Ruxsatlar ko‘rinishi';
+
+  @override
+  String get staffPermissionPreviewDisclaimer =>
+      'Faqat demo UI — backend authorization hali ulanmagan.';
+
+  @override
+  String get staffPermSummaryOwner =>
+      'Preview’da to‘liq nazorat (yangi xodimga berilmaydi).';
+
+  @override
+  String get staffPermSummaryAdmin =>
+      'Biznes preview’ida filial va xodimlarni boshqarish.';
+
+  @override
+  String get staffPermSummaryBranchManager =>
+      'Faqat biriktirilgan filiallar doirasida.';
+
+  @override
+  String get staffPermSummaryStaff =>
+      'Biriktirilgan filiallardagi kundalik vazifalar.';
+
+  @override
+  String get staffPermSummaryReadOnly =>
+      'Tahrirsiz preview ma’lumotini ko‘rish.';
+
+  @override
+  String get staffPermManageBusiness => 'Biznes preview sozlamalari';
+
+  @override
+  String get staffPermManageBranches => 'Filial preview yozuvlari';
+
+  @override
+  String get staffPermManageStaff => 'Xodim preview yozuvlari';
+
+  @override
+  String get staffPermViewReports => 'Preview hisobotlar';
+
+  @override
+  String get staffPermManageAssignedBranches =>
+      'Biriktirilgan filial ma’lumotlari';
+
+  @override
+  String get staffPermViewBranchReports => 'Biriktirilgan filial hisobotlari';
+
+  @override
+  String get staffPermExecuteAssignedTasks =>
+      'Biriktirilgan filiallarda vazifalar';
+
+  @override
+  String get staffPermViewAssignedBranch =>
+      'Biriktirilgan filial ma’lumotini ko‘rish';
+
+  @override
+  String get staffPermViewBusinessPreview =>
+      'Biznes preview ma’lumoti (read-only)';
 }

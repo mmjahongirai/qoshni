@@ -3386,6 +3386,402 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sunday'**
   String get branchWeekdaySunday;
+
+  /// No description provided for @businessCenterStaffTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Staff & roles'**
+  String get businessCenterStaffTitle;
+
+  /// No description provided for @businessCenterStaffBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview team members, roles, and branch access for this session only.'**
+  String get businessCenterStaffBody;
+
+  /// No description provided for @staffListTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Staff & roles'**
+  String get staffListTitle;
+
+  /// No description provided for @staffPreviewNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview — no SMS, email, or real invites. Saved only in this session.'**
+  String get staffPreviewNotice;
+
+  /// No description provided for @staffAddAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add staff member'**
+  String get staffAddAction;
+
+  /// No description provided for @staffEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No staff yet'**
+  String get staffEmptyTitle;
+
+  /// No description provided for @staffEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a preview team member and assign branches.'**
+  String get staffEmptyBody;
+
+  /// No description provided for @staffEditAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get staffEditAction;
+
+  /// No description provided for @staffDetailTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Staff member'**
+  String get staffDetailTitle;
+
+  /// No description provided for @staffNotFoundTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Staff member not found'**
+  String get staffNotFoundTitle;
+
+  /// No description provided for @staffNotFoundBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This preview staff member is not in your session.'**
+  String get staffNotFoundBody;
+
+  /// No description provided for @staffBackToListAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to staff list'**
+  String get staffBackToListAction;
+
+  /// No description provided for @staffSectionBasics.
+  ///
+  /// In en, this message translates to:
+  /// **'Basic information'**
+  String get staffSectionBasics;
+
+  /// No description provided for @staffSectionRole.
+  ///
+  /// In en, this message translates to:
+  /// **'Business role'**
+  String get staffSectionRole;
+
+  /// No description provided for @staffSectionBranches.
+  ///
+  /// In en, this message translates to:
+  /// **'Assigned branches'**
+  String get staffSectionBranches;
+
+  /// No description provided for @staffFieldFirstName.
+  ///
+  /// In en, this message translates to:
+  /// **'First name'**
+  String get staffFieldFirstName;
+
+  /// No description provided for @staffFieldLastName.
+  ///
+  /// In en, this message translates to:
+  /// **'Last name'**
+  String get staffFieldLastName;
+
+  /// No description provided for @staffFieldPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone'**
+  String get staffFieldPhone;
+
+  /// No description provided for @staffFieldEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get staffFieldEmail;
+
+  /// No description provided for @staffFieldEmailOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Email (optional)'**
+  String get staffFieldEmailOptional;
+
+  /// No description provided for @staffFieldRole.
+  ///
+  /// In en, this message translates to:
+  /// **'Role'**
+  String get staffFieldRole;
+
+  /// No description provided for @staffFieldActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active in preview'**
+  String get staffFieldActive;
+
+  /// No description provided for @staffFieldActiveHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Inactive marks the member as removed in preview only.'**
+  String get staffFieldActiveHint;
+
+  /// No description provided for @staffBranchSelectionHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Select at least one branch. Permissions apply only to assigned branches.'**
+  String get staffBranchSelectionHint;
+
+  /// No description provided for @staffNoBranchesAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a preview branch before assigning staff.'**
+  String get staffNoBranchesAvailable;
+
+  /// No description provided for @staffEditorCreateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New staff member'**
+  String get staffEditorCreateTitle;
+
+  /// No description provided for @staffEditorEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit staff member'**
+  String get staffEditorEditTitle;
+
+  /// No description provided for @staffSaveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Save staff member'**
+  String get staffSaveAction;
+
+  /// No description provided for @staffCancelAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get staffCancelAction;
+
+  /// No description provided for @staffSaveSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Staff member saved for this session.'**
+  String get staffSaveSuccess;
+
+  /// No description provided for @staffSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save. Your edits are still in the form.'**
+  String get staffSaveFailed;
+
+  /// No description provided for @staffDiscardConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard changes?'**
+  String get staffDiscardConfirmTitle;
+
+  /// No description provided for @staffDiscardConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Unsaved staff edits will be lost.'**
+  String get staffDiscardConfirmBody;
+
+  /// No description provided for @staffDiscardConfirmAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard'**
+  String get staffDiscardConfirmAction;
+
+  /// No description provided for @staffValidationFirstName.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a first name'**
+  String get staffValidationFirstName;
+
+  /// No description provided for @staffValidationPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid phone number'**
+  String get staffValidationPhone;
+
+  /// No description provided for @staffValidationEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid email address'**
+  String get staffValidationEmail;
+
+  /// No description provided for @staffValidationRoleNotAssignable.
+  ///
+  /// In en, this message translates to:
+  /// **'This role cannot be assigned here.'**
+  String get staffValidationRoleNotAssignable;
+
+  /// No description provided for @staffValidationBranchRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Select at least one branch.'**
+  String get staffValidationBranchRequired;
+
+  /// No description provided for @staffInvalidScopeMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'One or more branches are not available in this preview scope.'**
+  String get staffInvalidScopeMessage;
+
+  /// No description provided for @staffOwnerNotEditableMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'The preview business owner cannot be edited from this form.'**
+  String get staffOwnerNotEditableMessage;
+
+  /// No description provided for @staffRoleBusinessOwner.
+  ///
+  /// In en, this message translates to:
+  /// **'Business owner'**
+  String get staffRoleBusinessOwner;
+
+  /// No description provided for @staffRoleBusinessAdmin.
+  ///
+  /// In en, this message translates to:
+  /// **'Business admin'**
+  String get staffRoleBusinessAdmin;
+
+  /// No description provided for @staffRoleBranchManager.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch manager'**
+  String get staffRoleBranchManager;
+
+  /// No description provided for @staffRoleStaff.
+  ///
+  /// In en, this message translates to:
+  /// **'Staff'**
+  String get staffRoleStaff;
+
+  /// No description provided for @staffRoleReadOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Read-only'**
+  String get staffRoleReadOnly;
+
+  /// No description provided for @staffStatusActivePreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Active (preview)'**
+  String get staffStatusActivePreview;
+
+  /// No description provided for @staffStatusInvitePendingPreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Invite pending (preview only)'**
+  String get staffStatusInvitePendingPreview;
+
+  /// No description provided for @staffStatusRemovedPreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Removed (preview)'**
+  String get staffStatusRemovedPreview;
+
+  /// No description provided for @staffBranchesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Branches: {names}'**
+  String staffBranchesLabel(String names);
+
+  /// No description provided for @staffPermissionPreviewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Permission preview'**
+  String get staffPermissionPreviewTitle;
+
+  /// No description provided for @staffPermissionPreviewDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo UI only — backend authorization is not connected yet.'**
+  String get staffPermissionPreviewDisclaimer;
+
+  /// No description provided for @staffPermSummaryOwner.
+  ///
+  /// In en, this message translates to:
+  /// **'Full business control in preview (not assignable to new staff).'**
+  String get staffPermSummaryOwner;
+
+  /// No description provided for @staffPermSummaryAdmin.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage branches and staff across the business preview.'**
+  String get staffPermSummaryAdmin;
+
+  /// No description provided for @staffPermSummaryBranchManager.
+  ///
+  /// In en, this message translates to:
+  /// **'Operate within assigned branches only.'**
+  String get staffPermSummaryBranchManager;
+
+  /// No description provided for @staffPermSummaryStaff.
+  ///
+  /// In en, this message translates to:
+  /// **'Day-to-day tasks within assigned branches.'**
+  String get staffPermSummaryStaff;
+
+  /// No description provided for @staffPermSummaryReadOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'View preview data without editing.'**
+  String get staffPermSummaryReadOnly;
+
+  /// No description provided for @staffPermManageBusiness.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage business preview settings'**
+  String get staffPermManageBusiness;
+
+  /// No description provided for @staffPermManageBranches.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage branch preview records'**
+  String get staffPermManageBranches;
+
+  /// No description provided for @staffPermManageStaff.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage staff preview records'**
+  String get staffPermManageStaff;
+
+  /// No description provided for @staffPermViewReports.
+  ///
+  /// In en, this message translates to:
+  /// **'View preview reports'**
+  String get staffPermViewReports;
+
+  /// No description provided for @staffPermManageAssignedBranches.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage assigned branch preview data'**
+  String get staffPermManageAssignedBranches;
+
+  /// No description provided for @staffPermViewBranchReports.
+  ///
+  /// In en, this message translates to:
+  /// **'View assigned branch preview reports'**
+  String get staffPermViewBranchReports;
+
+  /// No description provided for @staffPermExecuteAssignedTasks.
+  ///
+  /// In en, this message translates to:
+  /// **'Execute tasks in assigned branches'**
+  String get staffPermExecuteAssignedTasks;
+
+  /// No description provided for @staffPermViewAssignedBranch.
+  ///
+  /// In en, this message translates to:
+  /// **'View assigned branch preview data'**
+  String get staffPermViewAssignedBranch;
+
+  /// No description provided for @staffPermViewBusinessPreview.
+  ///
+  /// In en, this message translates to:
+  /// **'View business preview data (read-only)'**
+  String get staffPermViewBusinessPreview;
 }
 
 class _AppLocalizationsDelegate
