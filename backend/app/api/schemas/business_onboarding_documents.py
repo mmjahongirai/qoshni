@@ -1,7 +1,7 @@
 """Private onboarding document API contracts (Phase 07 Part 6B.2 owner routes mounted).
 
 Owner multipart upload uses ``POST .../upload`` (not presigned ``upload-init``).
-Privileged reviewer document routes remain unmounted.
+Reviewer list/download routes are mounted on the internal review router.
 """
 
 from __future__ import annotations
@@ -46,19 +46,35 @@ class OwnerOnboardingDocumentListResponse(_Response):
     documents: list[OwnerOnboardingDocumentView]
 
 
-class RegisterOnboardingDocumentRequest(_Request):
-    document_type: BusinessOnboardingDocumentType
-    declared_content_type: Annotated[str, StringConstraints(max_length=128)] | None = None
-
-
-class PrivilegedOnboardingDocumentView(_Response):
-    """Privileged metadata including storage key — never exposed to owners/public."""
+class ReviewerOnboardingDocumentView(_Response):
+    """Reviewer-visible metadata (no storage keys, checksums, or paths)."""
 
     document_id: uuid.UUID
     application_id: uuid.UUID
     document_type: BusinessOnboardingDocumentType
     lifecycle_state: BusinessOnboardingDocumentLifecycle
-    storage_object_key: Annotated[str, StringConstraints(min_length=1, max_length=512)]
+    byte_size: int | None
+    created_at: datetime
+    updated_at: datetime
+
+
+class ReviewerOnboardingDocumentListResponse(_Response):
+    documents: list[ReviewerOnboardingDocumentView]
+
+
+class RegisterOnboardingDocumentRequest(_Request):
+    document_type: BusinessOnboardingDocumentType
+    declared_content_type: Annotated[str, StringConstraints(max_length=128)] | None = None
+
+
+class PrivilegedOnboardingDocumentContentView(_Response):
+    """Future metadata-only ``/content`` contract (not a binary download)."""
+
+    document_id: uuid.UUID
+    application_id: uuid.UUID
+    document_type: BusinessOnboardingDocumentType
+    lifecycle_state: BusinessOnboardingDocumentLifecycle
+    byte_size: int | None
     created_at: datetime
     updated_at: datetime
 
@@ -111,20 +127,31 @@ DOCUMENT_ENDPOINT_CONTRACTS: tuple[OnboardingEndpointContract, ...] = (
     OnboardingEndpointContract(
         "GET",
         f"{INTERNAL_APPLICATION_PREFIX}/{{application_id}}/documents",
-        "Privileged document metadata for reviewers (future authorization).",
+        "Reviewer document metadata for one application.",
         None,
-        OwnerOnboardingDocumentListResponse,
+        ReviewerOnboardingDocumentListResponse,
         200,
         requires_access_token=True,
         owner_accessible=False,
-        implemented=False,
+        implemented=True,
+    ),
+    OnboardingEndpointContract(
+        "GET",
+        f"{INTERNAL_APPLICATION_PREFIX}/{{application_id}}/documents/{{document_id}}/download",
+        "Reviewer download of malware-scanned private document bytes.",
+        None,
+        None,
+        200,
+        requires_access_token=True,
+        owner_accessible=False,
+        implemented=True,
     ),
     OnboardingEndpointContract(
         "GET",
         f"{INTERNAL_APPLICATION_PREFIX}/{{application_id}}/documents/{{document_id}}/content",
-        "Strictly authorized download of private document bytes (future).",
+        "Privileged document content metadata (not a binary download).",
         None,
-        PrivilegedOnboardingDocumentView,
+        PrivilegedOnboardingDocumentContentView,
         200,
         requires_access_token=True,
         owner_accessible=False,

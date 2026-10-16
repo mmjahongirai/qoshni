@@ -351,17 +351,20 @@ def test_expired_grant_denied(reviewer_auth_client) -> None:
     assert response.json()["error"]["code"] == "authorization_denied"
 
 
-def test_document_internal_routes_remain_unmounted() -> None:
-    from app.main import app
+def test_document_internal_routes_are_mounted_on_review_router() -> None:
+    from app.main import create_app
 
-    paths = [getattr(route, "path", "") for route in app.routes]
-    assert not any(
-        "/internal/business/onboarding" in path and "/documents" in path for path in paths
+    application = create_app()
+    mounted_paths = set(application.openapi()["paths"].keys())
+    assert any(
+        "/internal/business/onboarding" in path and "/documents" in path for path in mounted_paths
     )
 
 
-def test_document_contracts_remain_unimplemented() -> None:
-    assert all(not c.implemented for c in DOCUMENT_ENDPOINT_CONTRACTS if "/internal/" in c.path)
+def test_document_content_contract_remains_unimplemented() -> None:
+    internal = [c for c in DOCUMENT_ENDPOINT_CONTRACTS if "/internal/" in c.path]
+    content = next(c for c in internal if c.path.endswith("/content"))
+    assert content.implemented is False
 
 
 def test_owner_application_still_requires_owner_scope(reviewer_auth_client) -> None:

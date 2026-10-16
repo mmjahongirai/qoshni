@@ -388,7 +388,9 @@ def test_document_endpoint_contracts_implementation_flags() -> None:
     )
     assert upload_init.implemented is False
     internal = [c for c in DOCUMENT_ENDPOINT_CONTRACTS if "/internal/" in c.path]
-    assert all(not c.implemented for c in internal)
+    content = next(c for c in internal if c.path.endswith("/content"))
+    assert content.implemented is False
+    assert all(c.implemented for c in internal if c.path.endswith(("/documents", "/download")))
 
 
 def test_register_rejects_client_storage_key_in_body(
