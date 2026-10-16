@@ -693,7 +693,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get profileBusinessCenterSubtitle =>
-      'Локальные черновики профиля (демо)';
+      'Регистрация бизнеса и отслеживание заявок';
 
   @override
   String get businessCenterIntroTitle => 'Управление бизнесом (превью)';

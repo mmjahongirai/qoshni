@@ -203,7 +203,7 @@
   "demoOrderViewHistory": "Buyurtmalar tarixini ko‘rish",
   "profileDemoOrdersSavedCount": "{count, plural, =0{Bu seansda demo buyurtma yo‘q} =1{Bu seansda 1 ta demo buyurtma} other{Bu seansda {count} ta demo buyurtma}}",
   "businessCenterTitle": "Biznesni boshqarish",
-  "profileBusinessCenterSubtitle": "Mahalliy biznes profil qoralamalari (demo)",
+  "profileBusinessCenterSubtitle": "Biznesni ro‘yxatdan o‘tkazish va arizalarni kuzatish",
   "businessCenterIntroTitle": "Biznesingizni boshqarish (ko‘rinish)",
   "businessCenterIntroBody": "Bu MVP biznes egasi profil tayyorlash jarayonini ko‘rsatadi. Hech narsa ochiq e’lon qilinmaydi va serverga saqlanmaydi.",
   "businessCenterSessionNotice": "Qoralamalar faqat joriy brauzer seansida saqlanadi — yangilash yoki qayta ishga tushirishdan keyin yo‘qoladi.",

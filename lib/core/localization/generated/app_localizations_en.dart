@@ -700,7 +700,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get profileBusinessCenterSubtitle =>
-      'Local business profile drafts (demo)';
+      'Business registration and application tracking';
 
   @override
   String get businessCenterIntroTitle => 'Manage your business (preview)';

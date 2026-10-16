@@ -31,6 +31,7 @@ class BusinessPlannedCapabilitiesSection extends StatelessWidget {
               l10n.businessPlannedSectionTitle,
               style: textTheme.titleSmall?.copyWith(
                 fontWeight: FontWeight.w600,
+                color: colorScheme.onSurface,
               ),
             ),
             const SizedBox(height: 6),

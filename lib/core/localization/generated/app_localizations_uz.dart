@@ -701,7 +701,7 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get profileBusinessCenterSubtitle =>
-      'Mahalliy biznes profil qoralamalari (demo)';
+      'Biznesni ro‘yxatdan o‘tkazish va arizalarni kuzatish';
 
   @override
   String get businessCenterIntroTitle => 'Biznesingizni boshqarish (ko‘rinish)';

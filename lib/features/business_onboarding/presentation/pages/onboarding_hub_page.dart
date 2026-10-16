@@ -35,9 +35,11 @@ class _OnboardingHubPageState extends State<OnboardingHubPage> {
     if (!mounted || created == null) {
       return;
     }
-    context.pushNamed(
-      RouteNames.businessOnboardingApplication,
-      pathParameters: {'applicationId': created.applicationId},
+    context.push(
+      RoutePaths.businessOnboardingApplication.replaceFirst(
+        ':applicationId',
+        created.applicationId,
+      ),
     );
   }
 
@@ -63,9 +65,11 @@ class _OnboardingHubPageState extends State<OnboardingHubPage> {
                   maxWidth: 520,
                   l10n: l10n,
                   controller: controller,
-                  onOpen: (id) => context.pushNamed(
-                    RouteNames.businessOnboardingApplication,
-                    pathParameters: {'applicationId': id},
+                  onOpen: (id) => context.push(
+                    RoutePaths.businessOnboardingApplication.replaceFirst(
+                      ':applicationId',
+                      id,
+                    ),
                   ),
                   onRetry: controller.refreshApplications,
                 ),
@@ -73,9 +77,11 @@ class _OnboardingHubPageState extends State<OnboardingHubPage> {
                   maxWidth: 760,
                   l10n: l10n,
                   controller: controller,
-                  onOpen: (id) => context.pushNamed(
-                    RouteNames.businessOnboardingApplication,
-                    pathParameters: {'applicationId': id},
+                  onOpen: (id) => context.push(
+                    RoutePaths.businessOnboardingApplication.replaceFirst(
+                      ':applicationId',
+                      id,
+                    ),
                   ),
                   onRetry: controller.refreshApplications,
                 ),

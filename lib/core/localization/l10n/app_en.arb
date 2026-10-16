@@ -293,7 +293,7 @@
     }
   },
   "businessCenterTitle": "Business Center",
-  "profileBusinessCenterSubtitle": "Local business profile drafts (demo)",
+  "profileBusinessCenterSubtitle": "Business registration and application tracking",
   "businessCenterIntroTitle": "Manage your business (preview)",
   "businessCenterIntroBody": "This MVP demonstrates how a business owner might prepare a profile. Nothing here is published publicly or saved to a server.",
   "businessCenterSessionNotice": "Drafts exist only in this browser session and disappear after a refresh or restart.",

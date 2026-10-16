@@ -1321,7 +1321,7 @@ abstract class AppLocalizations {
   /// No description provided for @profileBusinessCenterSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Local business profile drafts (demo)'**
+  /// **'Business registration and application tracking'**
   String get profileBusinessCenterSubtitle;
 
   /// No description provided for @businessCenterIntroTitle.

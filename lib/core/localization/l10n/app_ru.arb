@@ -203,7 +203,7 @@
   "demoOrderViewHistory": "История заказов",
   "profileDemoOrdersSavedCount": "{count, plural, =0{Нет демо-заказов в этой сессии} =1{1 демо-заказ в этой сессии} other{{count} демо-заказов в этой сессии}}",
   "businessCenterTitle": "Бизнес-центр",
-  "profileBusinessCenterSubtitle": "Локальные черновики профиля (демо)",
+  "profileBusinessCenterSubtitle": "Регистрация бизнеса и отслеживание заявок",
   "businessCenterIntroTitle": "Управление бизнесом (превью)",
   "businessCenterIntroBody": "Этот MVP показывает, как владелец может подготовить профиль. Ничего не публикуется и не сохраняется на сервере.",
   "businessCenterSessionNotice": "Черновики существуют только в этой сессии браузера и исчезают после обновления или перезапуска.",
