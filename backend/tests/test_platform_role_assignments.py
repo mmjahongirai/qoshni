@@ -80,12 +80,20 @@ def _assignment(
     revoked_at: datetime | None = None,
     revocation_reason: RoleAssignmentRevocationReason | None = None,
 ) -> UserPlatformRoleAssignment:
+    effective_granted_at = granted_at
+    if effective_granted_at is None:
+        # Align grant time with revocation when tests revoke in the same instant,
+        # so revoked_at is never before granted_at (DB CHECK constraint).
+        effective_granted_at = revoked_at or datetime.now(UTC)
+    elif revoked_at is not None and revoked_at < effective_granted_at:
+        effective_granted_at = revoked_at
+
     row = UserPlatformRoleAssignment(
         user_id=user.id,
         role=PlatformRole.BUSINESS_ONBOARDING_REVIEWER.value,
         grant_source=RoleAssignmentGrantSource.OPERATOR_CONTROL_PLANE.value,
         grant_reference="ticket-ops-001",
-        granted_at=granted_at or datetime.now(UTC),
+        granted_at=effective_granted_at,
         expires_at=expires_at,
         revoked_at=revoked_at,
         revocation_reason=revocation_reason.value if revocation_reason else None,
