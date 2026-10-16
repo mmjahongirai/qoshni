@@ -1555,4 +1555,114 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get onboardingRejectionOther => 'Другое';
+
+  @override
+  String get businessCenterOwnerProfileTitle => 'Профиль бизнеса';
+
+  @override
+  String get businessCenterOwnerProfileBody =>
+      'Предпросмотр профиля на уровне бизнеса. Сохраняется только в этой сессии до подключения backend.';
+
+  @override
+  String get ownerProfileOverviewTitle => 'Профиль бизнеса';
+
+  @override
+  String get ownerProfilePreviewNotice =>
+      'Предпросмотр — сохраняется только в этой сессии. Не опубликован и не верифицирован.';
+
+  @override
+  String get ownerProfileStatusLabel => 'Статус профиля';
+
+  @override
+  String get ownerProfileStatusPreview => 'Черновик предпросмотра';
+
+  @override
+  String get ownerProfileCompletenessLabel => 'Заполненность профиля';
+
+  @override
+  String get ownerProfileEditAction => 'Редактировать профиль';
+
+  @override
+  String get ownerProfileViewAction => 'Просмотр профиля';
+
+  @override
+  String get ownerProfileSectionBasics => 'Основная информация';
+
+  @override
+  String get ownerProfileSectionContact => 'Контакты';
+
+  @override
+  String get ownerProfileSectionSettings => 'Настройки предпросмотра';
+
+  @override
+  String get ownerProfileLegalName => 'Юридическое название';
+
+  @override
+  String get ownerProfileDisplayName => 'Отображаемое название';
+
+  @override
+  String get ownerProfileDescription => 'Описание бизнеса';
+
+  @override
+  String get ownerProfileCategory => 'Категория услуг';
+
+  @override
+  String get ownerProfileContactPhone => 'Контактный телефон';
+
+  @override
+  String get ownerProfileContactEmail => 'Контактный email';
+
+  @override
+  String get ownerProfileWebsite => 'Сайт (предпросмотр)';
+
+  @override
+  String get ownerProfileVisibility => 'Видимость профиля (предпросмотр)';
+
+  @override
+  String get ownerProfileVisibilityHidden => 'Скрыт в предпросмотре';
+
+  @override
+  String get ownerProfileVisibilityVisible => 'Виден только в UI предпросмотра';
+
+  @override
+  String get ownerProfileEditorTitle => 'Редактирование профиля';
+
+  @override
+  String get ownerProfileSaveAction => 'Сохранить';
+
+  @override
+  String get ownerProfileCancelAction => 'Отмена';
+
+  @override
+  String get ownerProfileSaveSuccess => 'Профиль сохранён для этой сессии.';
+
+  @override
+  String get ownerProfileSaveFailed =>
+      'Не удалось сохранить. Изменения остались в форме.';
+
+  @override
+  String get ownerProfileDiscardConfirmTitle => 'Отменить изменения?';
+
+  @override
+  String get ownerProfileDiscardConfirmBody =>
+      'Несохранённые правки будут потеряны.';
+
+  @override
+  String get ownerProfileDiscardConfirmAction => 'Отменить';
+
+  @override
+  String get ownerProfileValidationLegalName => 'Введите юридическое название';
+
+  @override
+  String get ownerProfileValidationDisplayName =>
+      'Введите отображаемое название';
+
+  @override
+  String get ownerProfileValidationDescription => 'Введите описание бизнеса';
+
+  @override
+  String get ownerProfileValidationEmail => 'Введите корректный email';
+
+  @override
+  String get ownerProfileValidationWebsite => 'Введите корректный URL сайта';
 }

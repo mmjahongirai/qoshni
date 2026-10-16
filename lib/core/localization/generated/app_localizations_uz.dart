@@ -1568,4 +1568,116 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get onboardingRejectionOther => 'Boshqa';
+
+  @override
+  String get businessCenterOwnerProfileTitle => 'Biznes profili';
+
+  @override
+  String get businessCenterOwnerProfileBody =>
+      'Biznes darajasidagi profilni ko‘rib chiqing. Backend ulanmaguncha faqat shu sessiyada saqlanadi.';
+
+  @override
+  String get ownerProfileOverviewTitle => 'Biznes profili';
+
+  @override
+  String get ownerProfilePreviewNotice =>
+      'Ko‘rinish — faqat shu sessiyada saqlanadi. Nashr etilmagan va tasdiqlanmagan.';
+
+  @override
+  String get ownerProfileStatusLabel => 'Profil holati';
+
+  @override
+  String get ownerProfileStatusPreview => 'Ko‘rinish qoralamasi';
+
+  @override
+  String get ownerProfileCompletenessLabel => 'Profil to‘liqligi';
+
+  @override
+  String get ownerProfileEditAction => 'Profilni tahrirlash';
+
+  @override
+  String get ownerProfileViewAction => 'Profilni ko‘rish';
+
+  @override
+  String get ownerProfileSectionBasics => 'Asosiy ma’lumotlar';
+
+  @override
+  String get ownerProfileSectionContact => 'Aloqa';
+
+  @override
+  String get ownerProfileSectionSettings => 'Ko‘rinish sozlamalari';
+
+  @override
+  String get ownerProfileLegalName => 'Yuridik biznes nomi';
+
+  @override
+  String get ownerProfileDisplayName => 'Ko‘rinadigan nom';
+
+  @override
+  String get ownerProfileDescription => 'Biznes tavsifi';
+
+  @override
+  String get ownerProfileCategory => 'Xizmat kategoriyasi';
+
+  @override
+  String get ownerProfileContactPhone => 'Aloqa telefoni';
+
+  @override
+  String get ownerProfileContactEmail => 'Aloqa email';
+
+  @override
+  String get ownerProfileWebsite => 'Veb-sayt (ko‘rinish)';
+
+  @override
+  String get ownerProfileVisibility => 'Profil ko‘rinishi (preview)';
+
+  @override
+  String get ownerProfileVisibilityHidden => 'Ko‘rinishda yashirin';
+
+  @override
+  String get ownerProfileVisibilityVisible => 'Faqat preview UI’da ko‘rinadi';
+
+  @override
+  String get ownerProfileEditorTitle => 'Biznes profilini tahrirlash';
+
+  @override
+  String get ownerProfileSaveAction => 'Saqlash';
+
+  @override
+  String get ownerProfileCancelAction => 'Bekor qilish';
+
+  @override
+  String get ownerProfileSaveSuccess => 'Profil shu sessiya uchun saqlandi.';
+
+  @override
+  String get ownerProfileSaveFailed =>
+      'Saqlab bo‘lmadi. Tahrirlar formada qoldi.';
+
+  @override
+  String get ownerProfileDiscardConfirmTitle =>
+      'O‘zgarishlar bekor qilinsinmi?';
+
+  @override
+  String get ownerProfileDiscardConfirmBody =>
+      'Saqlanmagan tahrirlar yo‘qoladi.';
+
+  @override
+  String get ownerProfileDiscardConfirmAction => 'Bekor qilish';
+
+  @override
+  String get ownerProfileValidationLegalName =>
+      'Yuridik biznes nomini kiriting';
+
+  @override
+  String get ownerProfileValidationDisplayName => 'Ko‘rinadigan nomni kiriting';
+
+  @override
+  String get ownerProfileValidationDescription => 'Biznes tavsifini kiriting';
+
+  @override
+  String get ownerProfileValidationEmail => 'To‘g‘ri email kiriting';
+
+  @override
+  String get ownerProfileValidationWebsite =>
+      'To‘g‘ri veb-sayt manzilini kiriting';
 }

@@ -2852,6 +2852,216 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Other'**
   String get onboardingRejectionOther;
+
+  /// No description provided for @businessCenterOwnerProfileTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Business profile'**
+  String get businessCenterOwnerProfileTitle;
+
+  /// No description provided for @businessCenterOwnerProfileBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview your business-level profile. Saved only in this session until backend sync arrives.'**
+  String get businessCenterOwnerProfileBody;
+
+  /// No description provided for @ownerProfileOverviewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Business profile'**
+  String get ownerProfileOverviewTitle;
+
+  /// No description provided for @ownerProfilePreviewNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview — saved only in this session. Not published or verified.'**
+  String get ownerProfilePreviewNotice;
+
+  /// No description provided for @ownerProfileStatusLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile status'**
+  String get ownerProfileStatusLabel;
+
+  /// No description provided for @ownerProfileStatusPreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview draft'**
+  String get ownerProfileStatusPreview;
+
+  /// No description provided for @ownerProfileCompletenessLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile completeness'**
+  String get ownerProfileCompletenessLabel;
+
+  /// No description provided for @ownerProfileEditAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit profile'**
+  String get ownerProfileEditAction;
+
+  /// No description provided for @ownerProfileViewAction.
+  ///
+  /// In en, this message translates to:
+  /// **'View profile'**
+  String get ownerProfileViewAction;
+
+  /// No description provided for @ownerProfileSectionBasics.
+  ///
+  /// In en, this message translates to:
+  /// **'Basic information'**
+  String get ownerProfileSectionBasics;
+
+  /// No description provided for @ownerProfileSectionContact.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact'**
+  String get ownerProfileSectionContact;
+
+  /// No description provided for @ownerProfileSectionSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview settings'**
+  String get ownerProfileSectionSettings;
+
+  /// No description provided for @ownerProfileLegalName.
+  ///
+  /// In en, this message translates to:
+  /// **'Legal business name'**
+  String get ownerProfileLegalName;
+
+  /// No description provided for @ownerProfileDisplayName.
+  ///
+  /// In en, this message translates to:
+  /// **'Display name'**
+  String get ownerProfileDisplayName;
+
+  /// No description provided for @ownerProfileDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Business description'**
+  String get ownerProfileDescription;
+
+  /// No description provided for @ownerProfileCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Service category'**
+  String get ownerProfileCategory;
+
+  /// No description provided for @ownerProfileContactPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact phone'**
+  String get ownerProfileContactPhone;
+
+  /// No description provided for @ownerProfileContactEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact email'**
+  String get ownerProfileContactEmail;
+
+  /// No description provided for @ownerProfileWebsite.
+  ///
+  /// In en, this message translates to:
+  /// **'Website (preview)'**
+  String get ownerProfileWebsite;
+
+  /// No description provided for @ownerProfileVisibility.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile visibility (preview)'**
+  String get ownerProfileVisibility;
+
+  /// No description provided for @ownerProfileVisibilityHidden.
+  ///
+  /// In en, this message translates to:
+  /// **'Hidden in preview'**
+  String get ownerProfileVisibilityHidden;
+
+  /// No description provided for @ownerProfileVisibilityVisible.
+  ///
+  /// In en, this message translates to:
+  /// **'Visible in preview UI only'**
+  String get ownerProfileVisibilityVisible;
+
+  /// No description provided for @ownerProfileEditorTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit business profile'**
+  String get ownerProfileEditorTitle;
+
+  /// No description provided for @ownerProfileSaveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Save changes'**
+  String get ownerProfileSaveAction;
+
+  /// No description provided for @ownerProfileCancelAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get ownerProfileCancelAction;
+
+  /// No description provided for @ownerProfileSaveSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile saved for this session.'**
+  String get ownerProfileSaveSuccess;
+
+  /// No description provided for @ownerProfileSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save. Your edits are still in the form.'**
+  String get ownerProfileSaveFailed;
+
+  /// No description provided for @ownerProfileDiscardConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard changes?'**
+  String get ownerProfileDiscardConfirmTitle;
+
+  /// No description provided for @ownerProfileDiscardConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Unsaved edits will be lost.'**
+  String get ownerProfileDiscardConfirmBody;
+
+  /// No description provided for @ownerProfileDiscardConfirmAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard'**
+  String get ownerProfileDiscardConfirmAction;
+
+  /// No description provided for @ownerProfileValidationLegalName.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the legal business name'**
+  String get ownerProfileValidationLegalName;
+
+  /// No description provided for @ownerProfileValidationDisplayName.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a display name'**
+  String get ownerProfileValidationDisplayName;
+
+  /// No description provided for @ownerProfileValidationDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a business description'**
+  String get ownerProfileValidationDescription;
+
+  /// No description provided for @ownerProfileValidationEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid email address'**
+  String get ownerProfileValidationEmail;
+
+  /// No description provided for @ownerProfileValidationWebsite.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid website URL'**
+  String get ownerProfileValidationWebsite;
 }
 
 class _AppLocalizationsDelegate

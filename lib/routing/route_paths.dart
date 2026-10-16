@@ -33,6 +33,10 @@ abstract final class RoutePaths {
   static const String businessOnboardingHub = '/business-center/onboarding';
   static const String businessOnboardingApplication =
       '/business-center/onboarding/:applicationId';
+  static const String businessOwnerProfile =
+      '/business-center/business-profile';
+  static const String businessOwnerProfileEdit =
+      '/business-center/business-profile/edit';
 }
 
 abstract final class RouteNames {
@@ -62,4 +66,6 @@ abstract final class RouteNames {
   static const String businessOnboardingHub = 'businessOnboardingHub';
   static const String businessOnboardingApplication =
       'businessOnboardingApplication';
+  static const String businessOwnerProfile = 'businessOwnerProfile';
+  static const String businessOwnerProfileEdit = 'businessOwnerProfileEdit';
 }

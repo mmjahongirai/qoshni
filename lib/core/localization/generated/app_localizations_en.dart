@@ -1565,4 +1565,113 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get onboardingRejectionOther => 'Other';
+
+  @override
+  String get businessCenterOwnerProfileTitle => 'Business profile';
+
+  @override
+  String get businessCenterOwnerProfileBody =>
+      'Preview your business-level profile. Saved only in this session until backend sync arrives.';
+
+  @override
+  String get ownerProfileOverviewTitle => 'Business profile';
+
+  @override
+  String get ownerProfilePreviewNotice =>
+      'Preview — saved only in this session. Not published or verified.';
+
+  @override
+  String get ownerProfileStatusLabel => 'Profile status';
+
+  @override
+  String get ownerProfileStatusPreview => 'Preview draft';
+
+  @override
+  String get ownerProfileCompletenessLabel => 'Profile completeness';
+
+  @override
+  String get ownerProfileEditAction => 'Edit profile';
+
+  @override
+  String get ownerProfileViewAction => 'View profile';
+
+  @override
+  String get ownerProfileSectionBasics => 'Basic information';
+
+  @override
+  String get ownerProfileSectionContact => 'Contact';
+
+  @override
+  String get ownerProfileSectionSettings => 'Preview settings';
+
+  @override
+  String get ownerProfileLegalName => 'Legal business name';
+
+  @override
+  String get ownerProfileDisplayName => 'Display name';
+
+  @override
+  String get ownerProfileDescription => 'Business description';
+
+  @override
+  String get ownerProfileCategory => 'Service category';
+
+  @override
+  String get ownerProfileContactPhone => 'Contact phone';
+
+  @override
+  String get ownerProfileContactEmail => 'Contact email';
+
+  @override
+  String get ownerProfileWebsite => 'Website (preview)';
+
+  @override
+  String get ownerProfileVisibility => 'Profile visibility (preview)';
+
+  @override
+  String get ownerProfileVisibilityHidden => 'Hidden in preview';
+
+  @override
+  String get ownerProfileVisibilityVisible => 'Visible in preview UI only';
+
+  @override
+  String get ownerProfileEditorTitle => 'Edit business profile';
+
+  @override
+  String get ownerProfileSaveAction => 'Save changes';
+
+  @override
+  String get ownerProfileCancelAction => 'Cancel';
+
+  @override
+  String get ownerProfileSaveSuccess => 'Profile saved for this session.';
+
+  @override
+  String get ownerProfileSaveFailed =>
+      'Could not save. Your edits are still in the form.';
+
+  @override
+  String get ownerProfileDiscardConfirmTitle => 'Discard changes?';
+
+  @override
+  String get ownerProfileDiscardConfirmBody => 'Unsaved edits will be lost.';
+
+  @override
+  String get ownerProfileDiscardConfirmAction => 'Discard';
+
+  @override
+  String get ownerProfileValidationLegalName => 'Enter the legal business name';
+
+  @override
+  String get ownerProfileValidationDisplayName => 'Enter a display name';
+
+  @override
+  String get ownerProfileValidationDescription =>
+      'Enter a business description';
+
+  @override
+  String get ownerProfileValidationEmail => 'Enter a valid email address';
+
+  @override
+  String get ownerProfileValidationWebsite => 'Enter a valid website URL';
 }

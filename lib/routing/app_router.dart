@@ -29,6 +29,8 @@ import 'package:qoshni/features/auth/presentation/pages/auth_sessions_page.dart'
 import 'package:qoshni/features/auth/presentation/pages/auth_sign_in_page.dart';
 import 'package:qoshni/features/business_onboarding/presentation/pages/onboarding_application_page.dart';
 import 'package:qoshni/features/business_onboarding/presentation/pages/onboarding_hub_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_owner_profile_editor_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_owner_profile_overview_page.dart';
 import 'package:qoshni/routing/route_paths.dart';
 
 /// Application router. Add feature routes here as modules are introduced.
@@ -171,6 +173,20 @@ class AppRouter {
                     applicationId: state.pathParameters['applicationId']!,
                   );
                 },
+              ),
+            ],
+          ),
+          GoRoute(
+            path: 'business-profile',
+            name: RouteNames.businessOwnerProfile,
+            builder: (context, state) =>
+                const BusinessOwnerProfileOverviewPage(),
+            routes: [
+              GoRoute(
+                path: 'edit',
+                name: RouteNames.businessOwnerProfileEdit,
+                builder: (context, state) =>
+                    const BusinessOwnerProfileEditorPage(),
               ),
             ],
           ),
