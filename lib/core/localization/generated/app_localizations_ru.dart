@@ -2761,4 +2761,158 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get catalogListingAttributeDeleteFailed =>
       'Не удалось удалить атрибут.';
+
+  @override
+  String get catalogInventorySectionTitle => 'Остатки товаров (preview)';
+
+  @override
+  String get catalogInventorySectionBody =>
+      'Учёт on-hand и reserved по филиалам для товаров каталога. Только demo — не связано с live-складом.';
+
+  @override
+  String get catalogInventoryListTitle => 'Остатки';
+
+  @override
+  String get catalogInventoryDemoDisclaimer =>
+      'Demo-данные — не связаны с live-складом. Изменения только в preview-сессии.';
+
+  @override
+  String get catalogInventoryBranchFilter => 'Филиал';
+
+  @override
+  String get catalogInventoryAllBranches => 'Все филиалы';
+
+  @override
+  String get catalogInventoryAvailabilityFilter => 'Доступность';
+
+  @override
+  String get catalogInventoryAllAvailability => 'Все состояния';
+
+  @override
+  String get catalogInventoryEmptyBody => 'Нет строк по выбранным фильтрам.';
+
+  @override
+  String get catalogInventoryLoadFailed =>
+      'Не удалось загрузить остатки для preview-сессии.';
+
+  @override
+  String get catalogInventoryRetryAction => 'Повторить';
+
+  @override
+  String catalogInventoryVariantLabel(String name) {
+    return 'Вариант: $name';
+  }
+
+  @override
+  String catalogInventoryBranchLabel(String name) {
+    return 'Филиал: $name';
+  }
+
+  @override
+  String catalogInventoryOnHandLabel(int qty) {
+    return 'На складе: $qty';
+  }
+
+  @override
+  String catalogInventoryReservedLabel(int qty) {
+    return 'Зарезервировано: $qty';
+  }
+
+  @override
+  String catalogInventoryAvailableLabel(int qty) {
+    return 'Доступно: $qty';
+  }
+
+  @override
+  String catalogInventoryLowStockThresholdLabel(int qty) {
+    return 'Низкий остаток от: $qty';
+  }
+
+  @override
+  String get catalogInventoryAvailabilityInStock => 'В наличии';
+
+  @override
+  String get catalogInventoryAvailabilityLowStock => 'Мало на складе';
+
+  @override
+  String get catalogInventoryAvailabilityOutOfStock => 'Нет в наличии';
+
+  @override
+  String get catalogInventoryAvailabilityUnavailable => 'Недоступно';
+
+  @override
+  String get catalogInventoryAdjustAction => 'Корректировка';
+
+  @override
+  String get catalogInventoryMarkUnavailableAction => 'Сделать недоступным';
+
+  @override
+  String get catalogInventoryMarkAvailableAction => 'Сделать доступным';
+
+  @override
+  String get catalogInventoryShowHistoryAction => 'История';
+
+  @override
+  String get catalogInventoryHideHistoryAction => 'Скрыть историю';
+
+  @override
+  String get catalogInventoryHistoryEmpty =>
+      'В этой preview-сессии корректировок пока нет.';
+
+  @override
+  String catalogInventoryHistoryLine(
+    int delta,
+    int before,
+    int after,
+    String reason,
+  ) {
+    return 'Δ $delta · на складе $before → $after · $reason';
+  }
+
+  @override
+  String get catalogInventoryAdjustTitle => 'Корректировка остатка';
+
+  @override
+  String get catalogInventoryAdjustKindLabel => 'Тип';
+
+  @override
+  String get catalogInventoryAdjustKindOnHand => 'On-hand';
+
+  @override
+  String get catalogInventoryAdjustKindReserved => 'Reserved';
+
+  @override
+  String get catalogInventoryAdjustDeltaLabel => 'Изменение (+/−)';
+
+  @override
+  String get catalogInventoryAdjustDeltaHint =>
+      'Отрицательное число уменьшает.';
+
+  @override
+  String get catalogInventoryAdjustReasonLabel => 'Причина';
+
+  @override
+  String get catalogInventoryAdjustConfirmAction => 'Применить';
+
+  @override
+  String get catalogInventoryAdjustReasonRequired =>
+      'Укажите короткую причину.';
+
+  @override
+  String get catalogInventoryAdjustDeltaZero => 'Введите ненулевое изменение.';
+
+  @override
+  String get catalogInventoryAdjustDeltaInvalid => 'Введите целое число.';
+
+  @override
+  String get catalogInventoryAdjustInvalidQuantities =>
+      'Изменение сделает количества недопустимыми.';
+
+  @override
+  String get catalogInventoryAdjustSaveFailed =>
+      'Не удалось применить корректировку.';
+
+  @override
+  String get catalogInventoryAdjustSuccess =>
+      'Остаток обновлён в preview-сессии.';
 }

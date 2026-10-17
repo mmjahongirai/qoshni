@@ -995,5 +995,85 @@
   "catalogListingAttributeDeleteTitle": "Remove attribute?",
   "catalogListingAttributeDeleteBody": "This removes the attribute from the session preview.",
   "catalogListingAttributeDeleteConfirm": "Remove",
-  "catalogListingAttributeDeleteFailed": "Could not remove attribute."
+  "catalogListingAttributeDeleteFailed": "Could not remove attribute.",
+  "catalogInventorySectionTitle": "Product inventory (preview)",
+  "catalogInventorySectionBody": "Track on-hand and reserved quantities per branch for catalog products. Demo data only — not connected to live inventory.",
+  "catalogInventoryListTitle": "Inventory",
+  "catalogInventoryDemoDisclaimer": "Demo data — not connected to live inventory. Adjustments stay in this session preview only.",
+  "catalogInventoryBranchFilter": "Branch",
+  "catalogInventoryAllBranches": "All branches",
+  "catalogInventoryAvailabilityFilter": "Availability",
+  "catalogInventoryAllAvailability": "All availability states",
+  "catalogInventoryEmptyBody": "No inventory rows match your filters.",
+  "catalogInventoryLoadFailed": "Could not load inventory for this preview session.",
+  "catalogInventoryRetryAction": "Try again",
+  "catalogInventoryVariantLabel": "Variant: {name}",
+  "@catalogInventoryVariantLabel": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "catalogInventoryBranchLabel": "Branch: {name}",
+  "@catalogInventoryBranchLabel": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "catalogInventoryOnHandLabel": "On hand: {qty}",
+  "@catalogInventoryOnHandLabel": {
+    "placeholders": {
+      "qty": {"type": "int"}
+    }
+  },
+  "catalogInventoryReservedLabel": "Reserved: {qty}",
+  "@catalogInventoryReservedLabel": {
+    "placeholders": {
+      "qty": {"type": "int"}
+    }
+  },
+  "catalogInventoryAvailableLabel": "Available: {qty}",
+  "@catalogInventoryAvailableLabel": {
+    "placeholders": {
+      "qty": {"type": "int"}
+    }
+  },
+  "catalogInventoryLowStockThresholdLabel": "Low stock at: {qty}",
+  "@catalogInventoryLowStockThresholdLabel": {
+    "placeholders": {
+      "qty": {"type": "int"}
+    }
+  },
+  "catalogInventoryAvailabilityInStock": "In stock",
+  "catalogInventoryAvailabilityLowStock": "Low stock",
+  "catalogInventoryAvailabilityOutOfStock": "Out of stock",
+  "catalogInventoryAvailabilityUnavailable": "Unavailable",
+  "catalogInventoryAdjustAction": "Adjust stock",
+  "catalogInventoryMarkUnavailableAction": "Mark unavailable",
+  "catalogInventoryMarkAvailableAction": "Mark available",
+  "catalogInventoryShowHistoryAction": "Show history",
+  "catalogInventoryHideHistoryAction": "Hide history",
+  "catalogInventoryHistoryEmpty": "No adjustments recorded in this preview session yet.",
+  "catalogInventoryHistoryLine": "Δ {delta} · on-hand {before} → {after} · {reason}",
+  "@catalogInventoryHistoryLine": {
+    "placeholders": {
+      "delta": {"type": "int"},
+      "before": {"type": "int"},
+      "after": {"type": "int"},
+      "reason": {"type": "String"}
+    }
+  },
+  "catalogInventoryAdjustTitle": "Stock adjustment",
+  "catalogInventoryAdjustKindLabel": "Adjustment type",
+  "catalogInventoryAdjustKindOnHand": "On-hand quantity",
+  "catalogInventoryAdjustKindReserved": "Reserved quantity",
+  "catalogInventoryAdjustDeltaLabel": "Change (+/−)",
+  "catalogInventoryAdjustDeltaHint": "Use negative numbers to decrease.",
+  "catalogInventoryAdjustReasonLabel": "Reason",
+  "catalogInventoryAdjustConfirmAction": "Apply",
+  "catalogInventoryAdjustReasonRequired": "Enter a short reason.",
+  "catalogInventoryAdjustDeltaZero": "Enter a non-zero change.",
+  "catalogInventoryAdjustDeltaInvalid": "Enter a whole number.",
+  "catalogInventoryAdjustInvalidQuantities": "This change would make quantities invalid.",
+  "catalogInventoryAdjustSaveFailed": "Could not apply adjustment. Try again.",
+  "catalogInventoryAdjustSuccess": "Stock updated for this preview session."
 }

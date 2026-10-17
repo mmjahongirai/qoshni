@@ -125,6 +125,9 @@ abstract final class RoutePaths {
 
   static String businessCatalogServiceEditPath(String serviceId) =>
       '/business-center/catalog/services/$serviceId/edit';
+
+  static const String businessCatalogInventory =
+      '/business-center/catalog/inventory';
 }
 
 abstract final class RouteNames {
@@ -193,4 +196,5 @@ abstract final class RouteNames {
       'businessCatalogServiceDetail';
   static const String businessCatalogServiceEdit =
       'businessCatalogServiceEdit';
+  static const String businessCatalogInventory = 'businessCatalogInventory';
 }

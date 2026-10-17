@@ -5054,6 +5054,263 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Could not remove attribute.'**
   String get catalogListingAttributeDeleteFailed;
+
+  /// No description provided for @catalogInventorySectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Product inventory (preview)'**
+  String get catalogInventorySectionTitle;
+
+  /// No description provided for @catalogInventorySectionBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Track on-hand and reserved quantities per branch for catalog products. Demo data only — not connected to live inventory.'**
+  String get catalogInventorySectionBody;
+
+  /// No description provided for @catalogInventoryListTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Inventory'**
+  String get catalogInventoryListTitle;
+
+  /// No description provided for @catalogInventoryDemoDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo data — not connected to live inventory. Adjustments stay in this session preview only.'**
+  String get catalogInventoryDemoDisclaimer;
+
+  /// No description provided for @catalogInventoryBranchFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch'**
+  String get catalogInventoryBranchFilter;
+
+  /// No description provided for @catalogInventoryAllBranches.
+  ///
+  /// In en, this message translates to:
+  /// **'All branches'**
+  String get catalogInventoryAllBranches;
+
+  /// No description provided for @catalogInventoryAvailabilityFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Availability'**
+  String get catalogInventoryAvailabilityFilter;
+
+  /// No description provided for @catalogInventoryAllAvailability.
+  ///
+  /// In en, this message translates to:
+  /// **'All availability states'**
+  String get catalogInventoryAllAvailability;
+
+  /// No description provided for @catalogInventoryEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'No inventory rows match your filters.'**
+  String get catalogInventoryEmptyBody;
+
+  /// No description provided for @catalogInventoryLoadFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load inventory for this preview session.'**
+  String get catalogInventoryLoadFailed;
+
+  /// No description provided for @catalogInventoryRetryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get catalogInventoryRetryAction;
+
+  /// No description provided for @catalogInventoryVariantLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Variant: {name}'**
+  String catalogInventoryVariantLabel(String name);
+
+  /// No description provided for @catalogInventoryBranchLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch: {name}'**
+  String catalogInventoryBranchLabel(String name);
+
+  /// No description provided for @catalogInventoryOnHandLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'On hand: {qty}'**
+  String catalogInventoryOnHandLabel(int qty);
+
+  /// No description provided for @catalogInventoryReservedLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Reserved: {qty}'**
+  String catalogInventoryReservedLabel(int qty);
+
+  /// No description provided for @catalogInventoryAvailableLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Available: {qty}'**
+  String catalogInventoryAvailableLabel(int qty);
+
+  /// No description provided for @catalogInventoryLowStockThresholdLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Low stock at: {qty}'**
+  String catalogInventoryLowStockThresholdLabel(int qty);
+
+  /// No description provided for @catalogInventoryAvailabilityInStock.
+  ///
+  /// In en, this message translates to:
+  /// **'In stock'**
+  String get catalogInventoryAvailabilityInStock;
+
+  /// No description provided for @catalogInventoryAvailabilityLowStock.
+  ///
+  /// In en, this message translates to:
+  /// **'Low stock'**
+  String get catalogInventoryAvailabilityLowStock;
+
+  /// No description provided for @catalogInventoryAvailabilityOutOfStock.
+  ///
+  /// In en, this message translates to:
+  /// **'Out of stock'**
+  String get catalogInventoryAvailabilityOutOfStock;
+
+  /// No description provided for @catalogInventoryAvailabilityUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Unavailable'**
+  String get catalogInventoryAvailabilityUnavailable;
+
+  /// No description provided for @catalogInventoryAdjustAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Adjust stock'**
+  String get catalogInventoryAdjustAction;
+
+  /// No description provided for @catalogInventoryMarkUnavailableAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark unavailable'**
+  String get catalogInventoryMarkUnavailableAction;
+
+  /// No description provided for @catalogInventoryMarkAvailableAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark available'**
+  String get catalogInventoryMarkAvailableAction;
+
+  /// No description provided for @catalogInventoryShowHistoryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Show history'**
+  String get catalogInventoryShowHistoryAction;
+
+  /// No description provided for @catalogInventoryHideHistoryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide history'**
+  String get catalogInventoryHideHistoryAction;
+
+  /// No description provided for @catalogInventoryHistoryEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No adjustments recorded in this preview session yet.'**
+  String get catalogInventoryHistoryEmpty;
+
+  /// No description provided for @catalogInventoryHistoryLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Δ {delta} · on-hand {before} → {after} · {reason}'**
+  String catalogInventoryHistoryLine(
+    int delta,
+    int before,
+    int after,
+    String reason,
+  );
+
+  /// No description provided for @catalogInventoryAdjustTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Stock adjustment'**
+  String get catalogInventoryAdjustTitle;
+
+  /// No description provided for @catalogInventoryAdjustKindLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Adjustment type'**
+  String get catalogInventoryAdjustKindLabel;
+
+  /// No description provided for @catalogInventoryAdjustKindOnHand.
+  ///
+  /// In en, this message translates to:
+  /// **'On-hand quantity'**
+  String get catalogInventoryAdjustKindOnHand;
+
+  /// No description provided for @catalogInventoryAdjustKindReserved.
+  ///
+  /// In en, this message translates to:
+  /// **'Reserved quantity'**
+  String get catalogInventoryAdjustKindReserved;
+
+  /// No description provided for @catalogInventoryAdjustDeltaLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Change (+/−)'**
+  String get catalogInventoryAdjustDeltaLabel;
+
+  /// No description provided for @catalogInventoryAdjustDeltaHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Use negative numbers to decrease.'**
+  String get catalogInventoryAdjustDeltaHint;
+
+  /// No description provided for @catalogInventoryAdjustReasonLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Reason'**
+  String get catalogInventoryAdjustReasonLabel;
+
+  /// No description provided for @catalogInventoryAdjustConfirmAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply'**
+  String get catalogInventoryAdjustConfirmAction;
+
+  /// No description provided for @catalogInventoryAdjustReasonRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a short reason.'**
+  String get catalogInventoryAdjustReasonRequired;
+
+  /// No description provided for @catalogInventoryAdjustDeltaZero.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a non-zero change.'**
+  String get catalogInventoryAdjustDeltaZero;
+
+  /// No description provided for @catalogInventoryAdjustDeltaInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a whole number.'**
+  String get catalogInventoryAdjustDeltaInvalid;
+
+  /// No description provided for @catalogInventoryAdjustInvalidQuantities.
+  ///
+  /// In en, this message translates to:
+  /// **'This change would make quantities invalid.'**
+  String get catalogInventoryAdjustInvalidQuantities;
+
+  /// No description provided for @catalogInventoryAdjustSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not apply adjustment. Try again.'**
+  String get catalogInventoryAdjustSaveFailed;
+
+  /// No description provided for @catalogInventoryAdjustSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Stock updated for this preview session.'**
+  String get catalogInventoryAdjustSuccess;
 }
 
 class _AppLocalizationsDelegate

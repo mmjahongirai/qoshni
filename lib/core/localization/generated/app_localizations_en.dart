@@ -2771,4 +2771,158 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get catalogListingAttributeDeleteFailed =>
       'Could not remove attribute.';
+
+  @override
+  String get catalogInventorySectionTitle => 'Product inventory (preview)';
+
+  @override
+  String get catalogInventorySectionBody =>
+      'Track on-hand and reserved quantities per branch for catalog products. Demo data only — not connected to live inventory.';
+
+  @override
+  String get catalogInventoryListTitle => 'Inventory';
+
+  @override
+  String get catalogInventoryDemoDisclaimer =>
+      'Demo data — not connected to live inventory. Adjustments stay in this session preview only.';
+
+  @override
+  String get catalogInventoryBranchFilter => 'Branch';
+
+  @override
+  String get catalogInventoryAllBranches => 'All branches';
+
+  @override
+  String get catalogInventoryAvailabilityFilter => 'Availability';
+
+  @override
+  String get catalogInventoryAllAvailability => 'All availability states';
+
+  @override
+  String get catalogInventoryEmptyBody =>
+      'No inventory rows match your filters.';
+
+  @override
+  String get catalogInventoryLoadFailed =>
+      'Could not load inventory for this preview session.';
+
+  @override
+  String get catalogInventoryRetryAction => 'Try again';
+
+  @override
+  String catalogInventoryVariantLabel(String name) {
+    return 'Variant: $name';
+  }
+
+  @override
+  String catalogInventoryBranchLabel(String name) {
+    return 'Branch: $name';
+  }
+
+  @override
+  String catalogInventoryOnHandLabel(int qty) {
+    return 'On hand: $qty';
+  }
+
+  @override
+  String catalogInventoryReservedLabel(int qty) {
+    return 'Reserved: $qty';
+  }
+
+  @override
+  String catalogInventoryAvailableLabel(int qty) {
+    return 'Available: $qty';
+  }
+
+  @override
+  String catalogInventoryLowStockThresholdLabel(int qty) {
+    return 'Low stock at: $qty';
+  }
+
+  @override
+  String get catalogInventoryAvailabilityInStock => 'In stock';
+
+  @override
+  String get catalogInventoryAvailabilityLowStock => 'Low stock';
+
+  @override
+  String get catalogInventoryAvailabilityOutOfStock => 'Out of stock';
+
+  @override
+  String get catalogInventoryAvailabilityUnavailable => 'Unavailable';
+
+  @override
+  String get catalogInventoryAdjustAction => 'Adjust stock';
+
+  @override
+  String get catalogInventoryMarkUnavailableAction => 'Mark unavailable';
+
+  @override
+  String get catalogInventoryMarkAvailableAction => 'Mark available';
+
+  @override
+  String get catalogInventoryShowHistoryAction => 'Show history';
+
+  @override
+  String get catalogInventoryHideHistoryAction => 'Hide history';
+
+  @override
+  String get catalogInventoryHistoryEmpty =>
+      'No adjustments recorded in this preview session yet.';
+
+  @override
+  String catalogInventoryHistoryLine(
+    int delta,
+    int before,
+    int after,
+    String reason,
+  ) {
+    return 'Δ $delta · on-hand $before → $after · $reason';
+  }
+
+  @override
+  String get catalogInventoryAdjustTitle => 'Stock adjustment';
+
+  @override
+  String get catalogInventoryAdjustKindLabel => 'Adjustment type';
+
+  @override
+  String get catalogInventoryAdjustKindOnHand => 'On-hand quantity';
+
+  @override
+  String get catalogInventoryAdjustKindReserved => 'Reserved quantity';
+
+  @override
+  String get catalogInventoryAdjustDeltaLabel => 'Change (+/−)';
+
+  @override
+  String get catalogInventoryAdjustDeltaHint =>
+      'Use negative numbers to decrease.';
+
+  @override
+  String get catalogInventoryAdjustReasonLabel => 'Reason';
+
+  @override
+  String get catalogInventoryAdjustConfirmAction => 'Apply';
+
+  @override
+  String get catalogInventoryAdjustReasonRequired => 'Enter a short reason.';
+
+  @override
+  String get catalogInventoryAdjustDeltaZero => 'Enter a non-zero change.';
+
+  @override
+  String get catalogInventoryAdjustDeltaInvalid => 'Enter a whole number.';
+
+  @override
+  String get catalogInventoryAdjustInvalidQuantities =>
+      'This change would make quantities invalid.';
+
+  @override
+  String get catalogInventoryAdjustSaveFailed =>
+      'Could not apply adjustment. Try again.';
+
+  @override
+  String get catalogInventoryAdjustSuccess =>
+      'Stock updated for this preview session.';
 }

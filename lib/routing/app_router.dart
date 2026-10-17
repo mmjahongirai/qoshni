@@ -48,6 +48,7 @@ import 'package:qoshni/features/business_platform/presentation/pages/business_ca
 import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_product_variants_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_product_variant_editor_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_service_list_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_inventory_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_service_detail_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_service_editor_page.dart';
 import 'package:qoshni/routing/route_paths.dart';
@@ -396,6 +397,12 @@ class AppRouter {
                     ],
                   ),
                 ],
+              ),
+              GoRoute(
+                path: 'inventory',
+                name: RouteNames.businessCatalogInventory,
+                builder: (context, state) =>
+                    const BusinessCatalogInventoryPage(),
               ),
             ],
           ),

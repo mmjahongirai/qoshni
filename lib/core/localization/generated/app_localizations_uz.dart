@@ -2779,4 +2779,159 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get catalogListingAttributeDeleteFailed =>
       'Atributni olib tashlab bo‘lmadi.';
+
+  @override
+  String get catalogInventorySectionTitle => 'Mahsulot ombori (preview)';
+
+  @override
+  String get catalogInventorySectionBody =>
+      'Katalog mahsulotlari uchun filial bo‘yicha on-hand va reserved miqdorlar. Faqat demo — jonli omborga ulanmagan.';
+
+  @override
+  String get catalogInventoryListTitle => 'Ombor';
+
+  @override
+  String get catalogInventoryDemoDisclaimer =>
+      'Demo ma’lumot — jonli omborga ulanmagan. O‘zgarishlar faqat sessiya preview’ida qoladi.';
+
+  @override
+  String get catalogInventoryBranchFilter => 'Filial';
+
+  @override
+  String get catalogInventoryAllBranches => 'Barcha filiallar';
+
+  @override
+  String get catalogInventoryAvailabilityFilter => 'Mavjudlik';
+
+  @override
+  String get catalogInventoryAllAvailability => 'Barcha holatlar';
+
+  @override
+  String get catalogInventoryEmptyBody =>
+      'Filtrlarga mos ombor qatorlari yo‘q.';
+
+  @override
+  String get catalogInventoryLoadFailed =>
+      'Preview sessiyasi uchun omborni yuklab bo‘lmadi.';
+
+  @override
+  String get catalogInventoryRetryAction => 'Qayta urinish';
+
+  @override
+  String catalogInventoryVariantLabel(String name) {
+    return 'Variant: $name';
+  }
+
+  @override
+  String catalogInventoryBranchLabel(String name) {
+    return 'Filial: $name';
+  }
+
+  @override
+  String catalogInventoryOnHandLabel(int qty) {
+    return 'Qo‘lda: $qty';
+  }
+
+  @override
+  String catalogInventoryReservedLabel(int qty) {
+    return 'Band: $qty';
+  }
+
+  @override
+  String catalogInventoryAvailableLabel(int qty) {
+    return 'Mavjud: $qty';
+  }
+
+  @override
+  String catalogInventoryLowStockThresholdLabel(int qty) {
+    return 'Kam qoldiq: $qty';
+  }
+
+  @override
+  String get catalogInventoryAvailabilityInStock => 'Yetarli';
+
+  @override
+  String get catalogInventoryAvailabilityLowStock => 'Kam qoldiq';
+
+  @override
+  String get catalogInventoryAvailabilityOutOfStock => 'Tugagan';
+
+  @override
+  String get catalogInventoryAvailabilityUnavailable => 'Mavjud emas';
+
+  @override
+  String get catalogInventoryAdjustAction => 'Miqdorni o‘zgartirish';
+
+  @override
+  String get catalogInventoryMarkUnavailableAction =>
+      'Mavjud emas deb belgilash';
+
+  @override
+  String get catalogInventoryMarkAvailableAction => 'Mavjud deb belgilash';
+
+  @override
+  String get catalogInventoryShowHistoryAction => 'Tarixni ko‘rsatish';
+
+  @override
+  String get catalogInventoryHideHistoryAction => 'Tarixni yashirish';
+
+  @override
+  String get catalogInventoryHistoryEmpty =>
+      'Bu preview sessiyada hali o‘zgarishlar yo‘q.';
+
+  @override
+  String catalogInventoryHistoryLine(
+    int delta,
+    int before,
+    int after,
+    String reason,
+  ) {
+    return 'Δ $delta · qo‘lda $before → $after · $reason';
+  }
+
+  @override
+  String get catalogInventoryAdjustTitle => 'Ombor tuzatishi';
+
+  @override
+  String get catalogInventoryAdjustKindLabel => 'Tuzatish turi';
+
+  @override
+  String get catalogInventoryAdjustKindOnHand => 'On-hand miqdori';
+
+  @override
+  String get catalogInventoryAdjustKindReserved => 'Band miqdori';
+
+  @override
+  String get catalogInventoryAdjustDeltaLabel => 'O‘zgarish (+/−)';
+
+  @override
+  String get catalogInventoryAdjustDeltaHint =>
+      'Kamaytirish uchun manfiy son kiriting.';
+
+  @override
+  String get catalogInventoryAdjustReasonLabel => 'Sabab';
+
+  @override
+  String get catalogInventoryAdjustConfirmAction => 'Qo‘llash';
+
+  @override
+  String get catalogInventoryAdjustReasonRequired => 'Qisqa sabab kiriting.';
+
+  @override
+  String get catalogInventoryAdjustDeltaZero =>
+      'Noldan farqli o‘zgarish kiriting.';
+
+  @override
+  String get catalogInventoryAdjustDeltaInvalid => 'Butun son kiriting.';
+
+  @override
+  String get catalogInventoryAdjustInvalidQuantities =>
+      'Bu o‘zgarish miqdorlarni noto‘g‘ri qiladi.';
+
+  @override
+  String get catalogInventoryAdjustSaveFailed => 'Tuzatishni qo‘llab bo‘lmadi.';
+
+  @override
+  String get catalogInventoryAdjustSuccess =>
+      'Ombor preview sessiyasida yangilandi.';
 }
