@@ -37,6 +37,7 @@ import 'package:qoshni/features/business_platform/presentation/pages/business_br
 import 'package:qoshni/features/business_platform/presentation/pages/business_staff_list_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_staff_detail_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_staff_editor_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_branch_permissions_page.dart';
 import 'package:qoshni/routing/route_paths.dart';
 
 /// Application router. Add feature routes here as modules are introduced.
@@ -228,6 +229,16 @@ class AppRouter {
                 ],
               ),
             ],
+          ),
+          GoRoute(
+            path: 'branch-permissions',
+            name: RouteNames.businessBranchPermissions,
+            builder: (context, state) {
+              return BusinessBranchPermissionsPage(
+                initialStaffId: state.uri.queryParameters['staffId'],
+                initialBranchId: state.uri.queryParameters['branchId'],
+              );
+            },
           ),
           GoRoute(
             path: 'staff',

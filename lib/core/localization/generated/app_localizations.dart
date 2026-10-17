@@ -3782,6 +3782,222 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'View business preview data (read-only)'**
   String get staffPermViewBusinessPreview;
+
+  /// No description provided for @businessCenterBranchPermissionsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch permissions'**
+  String get businessCenterBranchPermissionsTitle;
+
+  /// No description provided for @businessCenterBranchPermissionsBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview staff access and actions per branch for this session only.'**
+  String get businessCenterBranchPermissionsBody;
+
+  /// No description provided for @branchPermPageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch permissions'**
+  String get branchPermPageTitle;
+
+  /// No description provided for @branchPermPreviewNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview — permissions are saved only in this session. Real server permissions are not connected yet.'**
+  String get branchPermPreviewNotice;
+
+  /// No description provided for @branchPermSelectStaff.
+  ///
+  /// In en, this message translates to:
+  /// **'Staff member'**
+  String get branchPermSelectStaff;
+
+  /// No description provided for @branchPermSelectBranch.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch'**
+  String get branchPermSelectBranch;
+
+  /// No description provided for @branchPermAccessStatusTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch access'**
+  String get branchPermAccessStatusTitle;
+
+  /// No description provided for @branchPermAccessGrantedPreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Assigned to this branch (preview)'**
+  String get branchPermAccessGrantedPreview;
+
+  /// No description provided for @branchPermAccessNonePreview.
+  ///
+  /// In en, this message translates to:
+  /// **'No access — staff is not assigned to this branch'**
+  String get branchPermAccessNonePreview;
+
+  /// No description provided for @branchPermUnassignedBranchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Assign the staff member to this branch in Staff & roles before granting branch permissions.'**
+  String get branchPermUnassignedBranchHint;
+
+  /// No description provided for @branchPermOwnerNotEditable.
+  ///
+  /// In en, this message translates to:
+  /// **'The preview business owner permissions cannot be changed here.'**
+  String get branchPermOwnerNotEditable;
+
+  /// No description provided for @branchPermRoleSuggestedHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Role suggestions differ from explicit branch permissions you set below.'**
+  String get branchPermRoleSuggestedHint;
+
+  /// No description provided for @branchPermSuggestedVsExplicitNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Suggested role capabilities are guidance only — toggles below are explicit preview permissions for this branch.'**
+  String get branchPermSuggestedVsExplicitNotice;
+
+  /// No description provided for @branchPermGroupView.
+  ///
+  /// In en, this message translates to:
+  /// **'View'**
+  String get branchPermGroupView;
+
+  /// No description provided for @branchPermGroupEdit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get branchPermGroupEdit;
+
+  /// No description provided for @branchPermGroupStaff.
+  ///
+  /// In en, this message translates to:
+  /// **'Staff management'**
+  String get branchPermGroupStaff;
+
+  /// No description provided for @branchPermViewBranch.
+  ///
+  /// In en, this message translates to:
+  /// **'View branch'**
+  String get branchPermViewBranch;
+
+  /// No description provided for @branchPermEditBranchProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit branch profile'**
+  String get branchPermEditBranchProfile;
+
+  /// No description provided for @branchPermManageBranchHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage branch hours'**
+  String get branchPermManageBranchHours;
+
+  /// No description provided for @branchPermViewStaff.
+  ///
+  /// In en, this message translates to:
+  /// **'View staff'**
+  String get branchPermViewStaff;
+
+  /// No description provided for @branchPermManageBranchStaff.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage branch staff'**
+  String get branchPermManageBranchStaff;
+
+  /// No description provided for @branchPermViewBusinessProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'View business profile'**
+  String get branchPermViewBusinessProfile;
+
+  /// No description provided for @branchPermDescViewBranch.
+  ///
+  /// In en, this message translates to:
+  /// **'See branch details in preview.'**
+  String get branchPermDescViewBranch;
+
+  /// No description provided for @branchPermDescEditBranchProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit branch name, address, and contacts in preview.'**
+  String get branchPermDescEditBranchProfile;
+
+  /// No description provided for @branchPermDescManageBranchHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit opening hours in preview.'**
+  String get branchPermDescManageBranchHours;
+
+  /// No description provided for @branchPermDescViewStaff.
+  ///
+  /// In en, this message translates to:
+  /// **'See staff linked to this branch in preview.'**
+  String get branchPermDescViewStaff;
+
+  /// No description provided for @branchPermDescManageBranchStaff.
+  ///
+  /// In en, this message translates to:
+  /// **'Assign or remove staff for this branch in preview.'**
+  String get branchPermDescManageBranchStaff;
+
+  /// No description provided for @branchPermDescViewBusinessProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'See business-level profile in preview.'**
+  String get branchPermDescViewBusinessProfile;
+
+  /// No description provided for @branchPermSaveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Save permissions'**
+  String get branchPermSaveAction;
+
+  /// No description provided for @branchPermCancelAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get branchPermCancelAction;
+
+  /// No description provided for @branchPermSaveSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch permissions saved for this session.'**
+  String get branchPermSaveSuccess;
+
+  /// No description provided for @branchPermSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save. Your changes are still on screen.'**
+  String get branchPermSaveFailed;
+
+  /// No description provided for @branchPermInvalidScopeMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid staff or branch for this business preview scope.'**
+  String get branchPermInvalidScopeMessage;
+
+  /// No description provided for @branchPermDiscardConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard changes?'**
+  String get branchPermDiscardConfirmTitle;
+
+  /// No description provided for @branchPermDiscardConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Unsaved permission changes will be lost.'**
+  String get branchPermDiscardConfirmBody;
+
+  /// No description provided for @branchPermDiscardConfirmAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard'**
+  String get branchPermDiscardConfirmAction;
 }
 
 class _AppLocalizationsDelegate

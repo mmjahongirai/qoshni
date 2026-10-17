@@ -60,6 +60,8 @@ abstract final class RoutePaths {
 
   static String businessStaffEditPath(String staffId) =>
       '/business-center/staff/$staffId/edit';
+  static const String businessBranchPermissions =
+      '/business-center/branch-permissions';
 }
 
 abstract final class RouteNames {
@@ -99,4 +101,5 @@ abstract final class RouteNames {
   static const String businessStaffCreate = 'businessStaffCreate';
   static const String businessStaffDetail = 'businessStaffDetail';
   static const String businessStaffEdit = 'businessStaffEdit';
+  static const String businessBranchPermissions = 'businessBranchPermissions';
 }

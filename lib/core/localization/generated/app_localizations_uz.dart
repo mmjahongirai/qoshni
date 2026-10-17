@@ -2069,4 +2069,130 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get staffPermViewBusinessPreview =>
       'Biznes preview ma’lumoti (read-only)';
+
+  @override
+  String get businessCenterBranchPermissionsTitle => 'Filial ruxsatlari';
+
+  @override
+  String get businessCenterBranchPermissionsBody =>
+      'Xodimlarning filial bo‘yicha kirishi va amallarini faqat shu sessiyada ko‘rib chiqing.';
+
+  @override
+  String get branchPermPageTitle => 'Filial ruxsatlari';
+
+  @override
+  String get branchPermPreviewNotice =>
+      'Ko‘rinish — ruxsatlar faqat shu sessiyada saqlanadi. Haqiqiy server ruxsatlari hali ulanmagan.';
+
+  @override
+  String get branchPermSelectStaff => 'Xodim';
+
+  @override
+  String get branchPermSelectBranch => 'Filial';
+
+  @override
+  String get branchPermAccessStatusTitle => 'Filialga kirish';
+
+  @override
+  String get branchPermAccessGrantedPreview =>
+      'Ushbu filialga biriktirilgan (preview)';
+
+  @override
+  String get branchPermAccessNonePreview =>
+      'Ruxsat yo‘q — xodim bu filialga biriktirilmagan';
+
+  @override
+  String get branchPermUnassignedBranchHint =>
+      'Avval Xodimlar va rollar bo‘limida xodimni filialga biriktiring.';
+
+  @override
+  String get branchPermOwnerNotEditable =>
+      'Preview biznes egasi ruxsatlari bu yerda o‘zgartirilmaydi.';
+
+  @override
+  String get branchPermRoleSuggestedHint =>
+      'Rol tavsiyalari pastdagi aniq filial ruxsatlaridan farq qiladi.';
+
+  @override
+  String get branchPermSuggestedVsExplicitNotice =>
+      'Rol imkoniyatlari faqat yo‘riqnoma — pastdagi toggle’lar filial uchun aniq preview ruxsatlarini belgilaydi.';
+
+  @override
+  String get branchPermGroupView => 'Ko‘rish';
+
+  @override
+  String get branchPermGroupEdit => 'Tahrirlash';
+
+  @override
+  String get branchPermGroupStaff => 'Xodimlarni boshqarish';
+
+  @override
+  String get branchPermViewBranch => 'Filialni ko‘rish';
+
+  @override
+  String get branchPermEditBranchProfile => 'Filial profilini tahrirlash';
+
+  @override
+  String get branchPermManageBranchHours => 'Ish vaqtini boshqarish';
+
+  @override
+  String get branchPermViewStaff => 'Xodimlarni ko‘rish';
+
+  @override
+  String get branchPermManageBranchStaff => 'Filial xodimlarini boshqarish';
+
+  @override
+  String get branchPermViewBusinessProfile => 'Biznes profilini ko‘rish';
+
+  @override
+  String get branchPermDescViewBranch =>
+      'Preview’da filial tafsilotlarini ko‘rish.';
+
+  @override
+  String get branchPermDescEditBranchProfile =>
+      'Preview’da nom, manzil va kontaktlarni tahrirlash.';
+
+  @override
+  String get branchPermDescManageBranchHours =>
+      'Preview’da ish vaqtini tahrirlash.';
+
+  @override
+  String get branchPermDescViewStaff =>
+      'Filial bilan bog‘liq xodimlarni ko‘rish.';
+
+  @override
+  String get branchPermDescManageBranchStaff =>
+      'Preview’da filial xodimlarini biriktirish yoki olib tashlash.';
+
+  @override
+  String get branchPermDescViewBusinessProfile =>
+      'Preview’da biznes profilini ko‘rish.';
+
+  @override
+  String get branchPermSaveAction => 'Ruxsatlarni saqlash';
+
+  @override
+  String get branchPermCancelAction => 'Bekor qilish';
+
+  @override
+  String get branchPermSaveSuccess =>
+      'Filial ruxsatlari shu sessiya uchun saqlandi.';
+
+  @override
+  String get branchPermSaveFailed =>
+      'Saqlab bo‘lmadi. O‘zgarishlar ekranda qoldi.';
+
+  @override
+  String get branchPermInvalidScopeMessage =>
+      'Bu biznes preview doirasida noto‘g‘ri xodim yoki filial.';
+
+  @override
+  String get branchPermDiscardConfirmTitle => 'O‘zgarishlar bekor qilinsinmi?';
+
+  @override
+  String get branchPermDiscardConfirmBody =>
+      'Saqlanmagan ruxsat o‘zgarishlari yo‘qoladi.';
+
+  @override
+  String get branchPermDiscardConfirmAction => 'Bekor qilish';
 }

@@ -2056,4 +2056,130 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get staffPermViewBusinessPreview =>
       'Просмотр данных бизнеса (read-only)';
+
+  @override
+  String get businessCenterBranchPermissionsTitle => 'Права филиалов';
+
+  @override
+  String get businessCenterBranchPermissionsBody =>
+      'Предпросмотр доступа сотрудников и действий по филиалам только в этой сессии.';
+
+  @override
+  String get branchPermPageTitle => 'Права филиалов';
+
+  @override
+  String get branchPermPreviewNotice =>
+      'Предпросмотр — права сохраняются только в этой сессии. Реальные серверные права ещё не подключены.';
+
+  @override
+  String get branchPermSelectStaff => 'Сотрудник';
+
+  @override
+  String get branchPermSelectBranch => 'Филиал';
+
+  @override
+  String get branchPermAccessStatusTitle => 'Доступ к филиалу';
+
+  @override
+  String get branchPermAccessGrantedPreview =>
+      'Назначен на этот филиал (предпросмотр)';
+
+  @override
+  String get branchPermAccessNonePreview =>
+      'Нет доступа — сотрудник не назначен на этот филиал';
+
+  @override
+  String get branchPermUnassignedBranchHint =>
+      'Сначала назначьте сотрудника на филиал в разделе «Сотрудники и роли».';
+
+  @override
+  String get branchPermOwnerNotEditable =>
+      'Права владельца предпросмотра нельзя изменить здесь.';
+
+  @override
+  String get branchPermRoleSuggestedHint =>
+      'Рекомендации роли отличаются от явных прав филиала ниже.';
+
+  @override
+  String get branchPermSuggestedVsExplicitNotice =>
+      'Возможности роли — только подсказка; переключатели ниже задают явные права предпросмотра для филиала.';
+
+  @override
+  String get branchPermGroupView => 'Просмотр';
+
+  @override
+  String get branchPermGroupEdit => 'Редактирование';
+
+  @override
+  String get branchPermGroupStaff => 'Управление персоналом';
+
+  @override
+  String get branchPermViewBranch => 'Просмотр филиала';
+
+  @override
+  String get branchPermEditBranchProfile => 'Редактирование профиля филиала';
+
+  @override
+  String get branchPermManageBranchHours => 'Управление часами работы';
+
+  @override
+  String get branchPermViewStaff => 'Просмотр сотрудников';
+
+  @override
+  String get branchPermManageBranchStaff => 'Управление staff филиала';
+
+  @override
+  String get branchPermViewBusinessProfile => 'Просмотр профиля бизнеса';
+
+  @override
+  String get branchPermDescViewBranch =>
+      'Просмотр данных филиала в предпросмотре.';
+
+  @override
+  String get branchPermDescEditBranchProfile =>
+      'Редактирование названия, адреса и контактов филиала.';
+
+  @override
+  String get branchPermDescManageBranchHours =>
+      'Редактирование часов работы в предпросмотре.';
+
+  @override
+  String get branchPermDescViewStaff =>
+      'Просмотр staff, связанного с филиалом.';
+
+  @override
+  String get branchPermDescManageBranchStaff =>
+      'Назначение или удаление staff филиала в предпросмотре.';
+
+  @override
+  String get branchPermDescViewBusinessProfile =>
+      'Просмотр профиля бизнеса в предпросмотре.';
+
+  @override
+  String get branchPermSaveAction => 'Сохранить права';
+
+  @override
+  String get branchPermCancelAction => 'Отмена';
+
+  @override
+  String get branchPermSaveSuccess =>
+      'Права филиала сохранены для этой сессии.';
+
+  @override
+  String get branchPermSaveFailed =>
+      'Не удалось сохранить. Изменения остались на экране.';
+
+  @override
+  String get branchPermInvalidScopeMessage =>
+      'Недопустимый сотрудник или филиал для этого предпросмотра.';
+
+  @override
+  String get branchPermDiscardConfirmTitle => 'Отменить изменения?';
+
+  @override
+  String get branchPermDiscardConfirmBody =>
+      'Несохранённые изменения прав будут потеряны.';
+
+  @override
+  String get branchPermDiscardConfirmAction => 'Отменить';
 }
