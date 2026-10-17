@@ -2555,4 +2555,210 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get catalogVariantDuplicateSku => 'Такой SKU уже есть в preview.';
+
+  @override
+  String get catalogOptionSelectionSingle => 'Один вариант';
+
+  @override
+  String get catalogOptionSelectionMultiple => 'Несколько';
+
+  @override
+  String get catalogProductOptionsSectionTitle => 'Опции и дополнения';
+
+  @override
+  String get catalogProductOptionsEmptyBody => 'Групп опций пока нет.';
+
+  @override
+  String get catalogProductOptionsRequiresSaveHint =>
+      'Сначала сохраните товар, чтобы управлять опциями и медиа.';
+
+  @override
+  String get catalogProductOptionGroupAddAction => 'Добавить группу';
+
+  @override
+  String get catalogProductOptionGroupCreateTitle => 'Новая группа опций';
+
+  @override
+  String get catalogProductOptionGroupEditTitle => 'Редактировать группу';
+
+  @override
+  String get catalogProductOptionGroupRequired => 'Обязательно';
+
+  @override
+  String get catalogProductOptionGroupOptional => 'Необязательно';
+
+  @override
+  String get catalogProductOptionSelectionModeLabel => 'Режим выбора';
+
+  @override
+  String get catalogProductOptionMinSelectionsLabel => 'Минимум выборов';
+
+  @override
+  String get catalogProductOptionMaxSelectionsLabel => 'Максимум выборов';
+
+  @override
+  String catalogProductOptionSelectionLimits(int min, int max) {
+    return 'Выбор $min–$max';
+  }
+
+  @override
+  String get catalogProductOptionGroupSaveSuccess =>
+      'Группа сохранена для сессии.';
+
+  @override
+  String get catalogProductOptionGroupSaveFailed =>
+      'Не удалось сохранить группу.';
+
+  @override
+  String get catalogProductOptionGroupInvalidInput =>
+      'Проверьте лимиты и названия.';
+
+  @override
+  String get catalogProductOptionGroupArchiveTitle => 'Архивировать группу?';
+
+  @override
+  String get catalogProductOptionGroupArchiveBody =>
+      'Группа скроется из активных списков preview.';
+
+  @override
+  String get catalogProductOptionGroupArchiveConfirm => 'Архивировать';
+
+  @override
+  String get catalogProductOptionGroupArchiveSuccess => 'Группа архивирована.';
+
+  @override
+  String get catalogProductOptionAddAction => 'Добавить опцию';
+
+  @override
+  String get catalogProductOptionCreateTitle => 'Новая опция';
+
+  @override
+  String get catalogProductOptionEditTitle => 'Редактировать опцию';
+
+  @override
+  String get catalogProductOptionActiveLabel => 'Активна';
+
+  @override
+  String get catalogProductOptionInactiveLabel => 'Неактивна';
+
+  @override
+  String get catalogProductOptionSaveSuccess => 'Опция сохранена для сессии.';
+
+  @override
+  String get catalogProductOptionSaveFailed => 'Не удалось сохранить опцию.';
+
+  @override
+  String get catalogProductOptionInvalidInput =>
+      'Введите название хотя бы на одном языке.';
+
+  @override
+  String get catalogProductMediaGalleryTitle => 'Галерея';
+
+  @override
+  String get catalogProductMediaPreviewOnlyNotice =>
+      'Только preview — загрузка позже. Изображения остаются в сессии и не отправляются на сервер.';
+
+  @override
+  String get catalogProductMediaEmptyBody => 'Изображений пока нет.';
+
+  @override
+  String get catalogProductMediaNoPrimary => 'Основное изображение не выбранo';
+
+  @override
+  String get catalogProductMediaPrimaryBadge => 'Основное';
+
+  @override
+  String get catalogProductMediaAddAction => 'Добавить изображение';
+
+  @override
+  String get catalogProductMediaMakePrimaryAction => 'Сделать основным';
+
+  @override
+  String get catalogProductMediaPickFailed =>
+      'Не удалось прочитать изображение.';
+
+  @override
+  String get catalogProductMediaPreviewAdded => 'Preview добавлен для сессии.';
+
+  @override
+  String get catalogProductMediaSaveFailed => 'Не удалось обновить preview.';
+
+  @override
+  String get catalogAttributeValueKindText => 'Текст';
+
+  @override
+  String get catalogAttributeValueKindNumber => 'Число';
+
+  @override
+  String get catalogAttributeValueKindChoice => 'Выбор';
+
+  @override
+  String get catalogListingAttributesSectionTitle => 'Атрибуты';
+
+  @override
+  String get catalogListingAttributesEmptyBody => 'Атрибутов пока нет.';
+
+  @override
+  String get catalogListingAttributeAddAction => 'Добавить атрибут';
+
+  @override
+  String get catalogListingAttributeCreateTitle => 'Новый атрибут';
+
+  @override
+  String get catalogListingAttributeEditTitle => 'Редактировать атрибут';
+
+  @override
+  String get catalogListingAttributeKeyLabel => 'Ключ атрибута';
+
+  @override
+  String get catalogListingAttributeKeyHint =>
+      'Строчные буквы, цифры и подчёркивания.';
+
+  @override
+  String get catalogListingAttributeKeyRequired => 'Введите ключ.';
+
+  @override
+  String get catalogListingAttributeKeyInvalid => 'Недопустимый формат ключа.';
+
+  @override
+  String get catalogListingAttributeValueKindLabel => 'Тип значения';
+
+  @override
+  String get catalogListingAttributeTextValueLabel => 'Текстовое значение';
+
+  @override
+  String get catalogListingAttributeNumberValueLabel => 'Числовое значение';
+
+  @override
+  String get catalogListingAttributeChoiceValueLabel => 'Значение выбора';
+
+  @override
+  String get catalogListingAttributeSaveSuccess =>
+      'Атрибут сохранён для сессии.';
+
+  @override
+  String get catalogListingAttributeSaveFailed =>
+      'Не удалось сохранить атрибут.';
+
+  @override
+  String get catalogListingAttributeInvalidInput =>
+      'Проверьте ключ, название и значение.';
+
+  @override
+  String get catalogListingAttributeDuplicateKey =>
+      'Такой ключ уже есть у этой позиции.';
+
+  @override
+  String get catalogListingAttributeDeleteTitle => 'Удалить атрибут?';
+
+  @override
+  String get catalogListingAttributeDeleteBody =>
+      'Атрибут будет удалён из preview сессии.';
+
+  @override
+  String get catalogListingAttributeDeleteConfirm => 'Удалить';
+
+  @override
+  String get catalogListingAttributeDeleteFailed =>
+      'Не удалось удалить атрибут.';
 }

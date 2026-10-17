@@ -2559,4 +2559,216 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get catalogVariantDuplicateSku =>
       'This SKU already exists in the preview scope.';
+
+  @override
+  String get catalogOptionSelectionSingle => 'Single choice';
+
+  @override
+  String get catalogOptionSelectionMultiple => 'Multiple choice';
+
+  @override
+  String get catalogProductOptionsSectionTitle => 'Options & add-ons';
+
+  @override
+  String get catalogProductOptionsEmptyBody =>
+      'No option groups yet for this product.';
+
+  @override
+  String get catalogProductOptionsRequiresSaveHint =>
+      'Save the product first to manage options and media in this session.';
+
+  @override
+  String get catalogProductOptionGroupAddAction => 'Add option group';
+
+  @override
+  String get catalogProductOptionGroupCreateTitle => 'New option group';
+
+  @override
+  String get catalogProductOptionGroupEditTitle => 'Edit option group';
+
+  @override
+  String get catalogProductOptionGroupRequired => 'Required';
+
+  @override
+  String get catalogProductOptionGroupOptional => 'Optional';
+
+  @override
+  String get catalogProductOptionSelectionModeLabel => 'Selection mode';
+
+  @override
+  String get catalogProductOptionMinSelectionsLabel => 'Minimum selections';
+
+  @override
+  String get catalogProductOptionMaxSelectionsLabel => 'Maximum selections';
+
+  @override
+  String catalogProductOptionSelectionLimits(int min, int max) {
+    return 'Select $min–$max';
+  }
+
+  @override
+  String get catalogProductOptionGroupSaveSuccess =>
+      'Option group saved for this session.';
+
+  @override
+  String get catalogProductOptionGroupSaveFailed =>
+      'Could not save option group.';
+
+  @override
+  String get catalogProductOptionGroupInvalidInput =>
+      'Check selection limits and names.';
+
+  @override
+  String get catalogProductOptionGroupArchiveTitle => 'Archive option group?';
+
+  @override
+  String get catalogProductOptionGroupArchiveBody =>
+      'The group will be hidden from active preview lists. Existing options stay attached.';
+
+  @override
+  String get catalogProductOptionGroupArchiveConfirm => 'Archive';
+
+  @override
+  String get catalogProductOptionGroupArchiveSuccess =>
+      'Option group archived.';
+
+  @override
+  String get catalogProductOptionAddAction => 'Add option';
+
+  @override
+  String get catalogProductOptionCreateTitle => 'New option';
+
+  @override
+  String get catalogProductOptionEditTitle => 'Edit option';
+
+  @override
+  String get catalogProductOptionActiveLabel => 'Active';
+
+  @override
+  String get catalogProductOptionInactiveLabel => 'Inactive';
+
+  @override
+  String get catalogProductOptionSaveSuccess =>
+      'Option saved for this session.';
+
+  @override
+  String get catalogProductOptionSaveFailed => 'Could not save option.';
+
+  @override
+  String get catalogProductOptionInvalidInput =>
+      'Enter a name in at least one language.';
+
+  @override
+  String get catalogProductMediaGalleryTitle => 'Media gallery';
+
+  @override
+  String get catalogProductMediaPreviewOnlyNotice =>
+      'Preview only — upload comes in a later phase. Images stay in this session and are not sent to a server.';
+
+  @override
+  String get catalogProductMediaEmptyBody =>
+      'No images yet. Add a local preview image for this session.';
+
+  @override
+  String get catalogProductMediaNoPrimary => 'No primary image selected';
+
+  @override
+  String get catalogProductMediaPrimaryBadge => 'Primary';
+
+  @override
+  String get catalogProductMediaAddAction => 'Add image';
+
+  @override
+  String get catalogProductMediaMakePrimaryAction => 'Make primary';
+
+  @override
+  String get catalogProductMediaPickFailed =>
+      'Could not read the selected image for preview.';
+
+  @override
+  String get catalogProductMediaPreviewAdded =>
+      'Preview image added for this session.';
+
+  @override
+  String get catalogProductMediaSaveFailed => 'Could not update media preview.';
+
+  @override
+  String get catalogAttributeValueKindText => 'Text';
+
+  @override
+  String get catalogAttributeValueKindNumber => 'Number';
+
+  @override
+  String get catalogAttributeValueKindChoice => 'Choice';
+
+  @override
+  String get catalogListingAttributesSectionTitle => 'Attributes';
+
+  @override
+  String get catalogListingAttributesEmptyBody =>
+      'No attributes yet for this listing.';
+
+  @override
+  String get catalogListingAttributeAddAction => 'Add attribute';
+
+  @override
+  String get catalogListingAttributeCreateTitle => 'New attribute';
+
+  @override
+  String get catalogListingAttributeEditTitle => 'Edit attribute';
+
+  @override
+  String get catalogListingAttributeKeyLabel => 'Attribute key';
+
+  @override
+  String get catalogListingAttributeKeyHint =>
+      'Lowercase letters, numbers, and underscores (e.g. unit).';
+
+  @override
+  String get catalogListingAttributeKeyRequired => 'Enter an attribute key.';
+
+  @override
+  String get catalogListingAttributeKeyInvalid =>
+      'Use lowercase letters, numbers, and underscores only.';
+
+  @override
+  String get catalogListingAttributeValueKindLabel => 'Value type';
+
+  @override
+  String get catalogListingAttributeTextValueLabel => 'Text value';
+
+  @override
+  String get catalogListingAttributeNumberValueLabel => 'Number value';
+
+  @override
+  String get catalogListingAttributeChoiceValueLabel => 'Choice value';
+
+  @override
+  String get catalogListingAttributeSaveSuccess =>
+      'Attribute saved for this session.';
+
+  @override
+  String get catalogListingAttributeSaveFailed => 'Could not save attribute.';
+
+  @override
+  String get catalogListingAttributeInvalidInput =>
+      'Check the key, label, and value.';
+
+  @override
+  String get catalogListingAttributeDuplicateKey =>
+      'This key already exists on this listing.';
+
+  @override
+  String get catalogListingAttributeDeleteTitle => 'Remove attribute?';
+
+  @override
+  String get catalogListingAttributeDeleteBody =>
+      'This removes the attribute from the session preview.';
+
+  @override
+  String get catalogListingAttributeDeleteConfirm => 'Remove';
+
+  @override
+  String get catalogListingAttributeDeleteFailed =>
+      'Could not remove attribute.';
 }

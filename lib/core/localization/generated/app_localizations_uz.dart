@@ -2569,4 +2569,214 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get catalogVariantDuplicateSku =>
       'Bu SKU preview doirasida allaqachon mavjud.';
+
+  @override
+  String get catalogOptionSelectionSingle => 'Bitta tanlov';
+
+  @override
+  String get catalogOptionSelectionMultiple => 'Ko‘p tanlov';
+
+  @override
+  String get catalogProductOptionsSectionTitle => 'Opsiyalar va qo‘shimchalar';
+
+  @override
+  String get catalogProductOptionsEmptyBody => 'Hali opsiya guruhi yo‘q.';
+
+  @override
+  String get catalogProductOptionsRequiresSaveHint =>
+      'Opsiya va media boshqarish uchun avval mahsulotni saqlang.';
+
+  @override
+  String get catalogProductOptionGroupAddAction => 'Opsiya guruhi qo‘shish';
+
+  @override
+  String get catalogProductOptionGroupCreateTitle => 'Yangi opsiya guruhi';
+
+  @override
+  String get catalogProductOptionGroupEditTitle => 'Opsiya guruhini tahrirlash';
+
+  @override
+  String get catalogProductOptionGroupRequired => 'Majburiy';
+
+  @override
+  String get catalogProductOptionGroupOptional => 'Ixtiyoriy';
+
+  @override
+  String get catalogProductOptionSelectionModeLabel => 'Tanlov rejimi';
+
+  @override
+  String get catalogProductOptionMinSelectionsLabel => 'Minimal tanlov';
+
+  @override
+  String get catalogProductOptionMaxSelectionsLabel => 'Maksimal tanlov';
+
+  @override
+  String catalogProductOptionSelectionLimits(int min, int max) {
+    return 'Tanlov $min–$max';
+  }
+
+  @override
+  String get catalogProductOptionGroupSaveSuccess =>
+      'Opsiya guruhi sessiya uchun saqlandi.';
+
+  @override
+  String get catalogProductOptionGroupSaveFailed =>
+      'Opsiya guruhini saqlab bo‘lmadi.';
+
+  @override
+  String get catalogProductOptionGroupInvalidInput =>
+      'Tanlov chegaralari va nomlarni tekshiring.';
+
+  @override
+  String get catalogProductOptionGroupArchiveTitle =>
+      'Opsiya guruhini arxivlash?';
+
+  @override
+  String get catalogProductOptionGroupArchiveBody =>
+      'Guruhi faol preview ro‘yxatlaridan yashiriladi.';
+
+  @override
+  String get catalogProductOptionGroupArchiveConfirm => 'Arxivlash';
+
+  @override
+  String get catalogProductOptionGroupArchiveSuccess =>
+      'Opsiya guruhi arxivlandi.';
+
+  @override
+  String get catalogProductOptionAddAction => 'Opsiya qo‘shish';
+
+  @override
+  String get catalogProductOptionCreateTitle => 'Yangi opsiya';
+
+  @override
+  String get catalogProductOptionEditTitle => 'Opsiyani tahrirlash';
+
+  @override
+  String get catalogProductOptionActiveLabel => 'Faol';
+
+  @override
+  String get catalogProductOptionInactiveLabel => 'Nofaol';
+
+  @override
+  String get catalogProductOptionSaveSuccess =>
+      'Opsiya sessiya uchun saqlandi.';
+
+  @override
+  String get catalogProductOptionSaveFailed => 'Opsiyani saqlab bo‘lmadi.';
+
+  @override
+  String get catalogProductOptionInvalidInput =>
+      'Kamida bitta til uchun nom kiriting.';
+
+  @override
+  String get catalogProductMediaGalleryTitle => 'Media galereya';
+
+  @override
+  String get catalogProductMediaPreviewOnlyNotice =>
+      'Faqat preview — yuklash keyingi bosqichda. Rasmlar sessiyada qoladi va serverga yuborilmaydi.';
+
+  @override
+  String get catalogProductMediaEmptyBody => 'Hali rasm yo‘q.';
+
+  @override
+  String get catalogProductMediaNoPrimary => 'Asosiy rasm tanlanmagan';
+
+  @override
+  String get catalogProductMediaPrimaryBadge => 'Asosiy';
+
+  @override
+  String get catalogProductMediaAddAction => 'Rasm qo‘shish';
+
+  @override
+  String get catalogProductMediaMakePrimaryAction => 'Asosiy qilish';
+
+  @override
+  String get catalogProductMediaPickFailed =>
+      'Tanlangan rasmni o‘qib bo‘lmadi.';
+
+  @override
+  String get catalogProductMediaPreviewAdded =>
+      'Preview rasm sessiyaga qo‘shildi.';
+
+  @override
+  String get catalogProductMediaSaveFailed =>
+      'Media preview yangilab bo‘lmadi.';
+
+  @override
+  String get catalogAttributeValueKindText => 'Matn';
+
+  @override
+  String get catalogAttributeValueKindNumber => 'Raqam';
+
+  @override
+  String get catalogAttributeValueKindChoice => 'Tanlov';
+
+  @override
+  String get catalogListingAttributesSectionTitle => 'Atributlar';
+
+  @override
+  String get catalogListingAttributesEmptyBody => 'Hali atribut yo‘q.';
+
+  @override
+  String get catalogListingAttributeAddAction => 'Atribut qo‘shish';
+
+  @override
+  String get catalogListingAttributeCreateTitle => 'Yangi atribut';
+
+  @override
+  String get catalogListingAttributeEditTitle => 'Atributni tahrirlash';
+
+  @override
+  String get catalogListingAttributeKeyLabel => 'Atribut kaliti';
+
+  @override
+  String get catalogListingAttributeKeyHint =>
+      'Kichik harflar, raqamlar va pastki chiziq.';
+
+  @override
+  String get catalogListingAttributeKeyRequired => 'Atribut kalitini kiriting.';
+
+  @override
+  String get catalogListingAttributeKeyInvalid => 'Kalit formati noto‘g‘ri.';
+
+  @override
+  String get catalogListingAttributeValueKindLabel => 'Qiymat turi';
+
+  @override
+  String get catalogListingAttributeTextValueLabel => 'Matn qiymati';
+
+  @override
+  String get catalogListingAttributeNumberValueLabel => 'Raqam qiymati';
+
+  @override
+  String get catalogListingAttributeChoiceValueLabel => 'Tanlov qiymati';
+
+  @override
+  String get catalogListingAttributeSaveSuccess =>
+      'Atribut sessiya uchun saqlandi.';
+
+  @override
+  String get catalogListingAttributeSaveFailed => 'Atributni saqlab bo‘lmadi.';
+
+  @override
+  String get catalogListingAttributeInvalidInput =>
+      'Kalit, nom va qiymatni tekshiring.';
+
+  @override
+  String get catalogListingAttributeDuplicateKey =>
+      'Bu kalit ushbu pozitsiyada allaqachon mavjud.';
+
+  @override
+  String get catalogListingAttributeDeleteTitle => 'Atributni olib tashlash?';
+
+  @override
+  String get catalogListingAttributeDeleteBody =>
+      'Atribut sessiya preview’dan olib tashlanadi.';
+
+  @override
+  String get catalogListingAttributeDeleteConfirm => 'Olib tashlash';
+
+  @override
+  String get catalogListingAttributeDeleteFailed =>
+      'Atributni olib tashlab bo‘lmadi.';
 }

@@ -27,9 +27,7 @@ List<BusinessCatalogProduct> buildDemoCatalogProducts({
         descriptionRu: 'Ежедневно свежий хлеб (preview).',
         descriptionEn: 'Daily baked bread (preview).',
       ),
-      attributes: const [
-        CatalogProductAttribute(key: 'unit', value: 'loaf'),
-      ],
+      attributes: const [],
       createdAt: now,
       updatedAt: now,
     ),

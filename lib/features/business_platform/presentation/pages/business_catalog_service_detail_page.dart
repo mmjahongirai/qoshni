@@ -8,6 +8,8 @@ import 'package:qoshni/di/injection.dart';
 import 'package:qoshni/features/business_platform/domain/business_catalog_listing_status.dart';
 import 'package:qoshni/features/business_platform/presentation/business_catalog_category_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_catalog_service_controller.dart';
+import 'package:qoshni/features/business_platform/domain/business_catalog_listing_kind.dart';
+import 'package:qoshni/features/business_platform/presentation/widgets/catalog_listing_attributes_section.dart';
 import 'package:qoshni/features/business_platform/presentation/widgets/catalog_listing_placeholder.dart';
 import 'package:qoshni/routing/route_paths.dart';
 
@@ -74,6 +76,12 @@ class BusinessCatalogServiceDetailPage extends StatelessWidget {
                       Text(l10n.catalogServiceDurationLabel(service.durationMinutes!)),
                   ],
                 ),
+              ),
+              const SizedBox(height: AppSpacing.md),
+              CatalogListingAttributesSection(
+                listingKind: BusinessCatalogListingKind.service,
+                listingId: service.serviceId,
+                readOnly: true,
               ),
             ],
           ),

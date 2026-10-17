@@ -4676,6 +4676,384 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This SKU already exists in the preview scope.'**
   String get catalogVariantDuplicateSku;
+
+  /// No description provided for @catalogOptionSelectionSingle.
+  ///
+  /// In en, this message translates to:
+  /// **'Single choice'**
+  String get catalogOptionSelectionSingle;
+
+  /// No description provided for @catalogOptionSelectionMultiple.
+  ///
+  /// In en, this message translates to:
+  /// **'Multiple choice'**
+  String get catalogOptionSelectionMultiple;
+
+  /// No description provided for @catalogProductOptionsSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Options & add-ons'**
+  String get catalogProductOptionsSectionTitle;
+
+  /// No description provided for @catalogProductOptionsEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'No option groups yet for this product.'**
+  String get catalogProductOptionsEmptyBody;
+
+  /// No description provided for @catalogProductOptionsRequiresSaveHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Save the product first to manage options and media in this session.'**
+  String get catalogProductOptionsRequiresSaveHint;
+
+  /// No description provided for @catalogProductOptionGroupAddAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add option group'**
+  String get catalogProductOptionGroupAddAction;
+
+  /// No description provided for @catalogProductOptionGroupCreateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New option group'**
+  String get catalogProductOptionGroupCreateTitle;
+
+  /// No description provided for @catalogProductOptionGroupEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit option group'**
+  String get catalogProductOptionGroupEditTitle;
+
+  /// No description provided for @catalogProductOptionGroupRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Required'**
+  String get catalogProductOptionGroupRequired;
+
+  /// No description provided for @catalogProductOptionGroupOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Optional'**
+  String get catalogProductOptionGroupOptional;
+
+  /// No description provided for @catalogProductOptionSelectionModeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Selection mode'**
+  String get catalogProductOptionSelectionModeLabel;
+
+  /// No description provided for @catalogProductOptionMinSelectionsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Minimum selections'**
+  String get catalogProductOptionMinSelectionsLabel;
+
+  /// No description provided for @catalogProductOptionMaxSelectionsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Maximum selections'**
+  String get catalogProductOptionMaxSelectionsLabel;
+
+  /// No description provided for @catalogProductOptionSelectionLimits.
+  ///
+  /// In en, this message translates to:
+  /// **'Select {min}–{max}'**
+  String catalogProductOptionSelectionLimits(int min, int max);
+
+  /// No description provided for @catalogProductOptionGroupSaveSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Option group saved for this session.'**
+  String get catalogProductOptionGroupSaveSuccess;
+
+  /// No description provided for @catalogProductOptionGroupSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save option group.'**
+  String get catalogProductOptionGroupSaveFailed;
+
+  /// No description provided for @catalogProductOptionGroupInvalidInput.
+  ///
+  /// In en, this message translates to:
+  /// **'Check selection limits and names.'**
+  String get catalogProductOptionGroupInvalidInput;
+
+  /// No description provided for @catalogProductOptionGroupArchiveTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Archive option group?'**
+  String get catalogProductOptionGroupArchiveTitle;
+
+  /// No description provided for @catalogProductOptionGroupArchiveBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The group will be hidden from active preview lists. Existing options stay attached.'**
+  String get catalogProductOptionGroupArchiveBody;
+
+  /// No description provided for @catalogProductOptionGroupArchiveConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Archive'**
+  String get catalogProductOptionGroupArchiveConfirm;
+
+  /// No description provided for @catalogProductOptionGroupArchiveSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Option group archived.'**
+  String get catalogProductOptionGroupArchiveSuccess;
+
+  /// No description provided for @catalogProductOptionAddAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add option'**
+  String get catalogProductOptionAddAction;
+
+  /// No description provided for @catalogProductOptionCreateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New option'**
+  String get catalogProductOptionCreateTitle;
+
+  /// No description provided for @catalogProductOptionEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit option'**
+  String get catalogProductOptionEditTitle;
+
+  /// No description provided for @catalogProductOptionActiveLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get catalogProductOptionActiveLabel;
+
+  /// No description provided for @catalogProductOptionInactiveLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Inactive'**
+  String get catalogProductOptionInactiveLabel;
+
+  /// No description provided for @catalogProductOptionSaveSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Option saved for this session.'**
+  String get catalogProductOptionSaveSuccess;
+
+  /// No description provided for @catalogProductOptionSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save option.'**
+  String get catalogProductOptionSaveFailed;
+
+  /// No description provided for @catalogProductOptionInvalidInput.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a name in at least one language.'**
+  String get catalogProductOptionInvalidInput;
+
+  /// No description provided for @catalogProductMediaGalleryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Media gallery'**
+  String get catalogProductMediaGalleryTitle;
+
+  /// No description provided for @catalogProductMediaPreviewOnlyNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview only — upload comes in a later phase. Images stay in this session and are not sent to a server.'**
+  String get catalogProductMediaPreviewOnlyNotice;
+
+  /// No description provided for @catalogProductMediaEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'No images yet. Add a local preview image for this session.'**
+  String get catalogProductMediaEmptyBody;
+
+  /// No description provided for @catalogProductMediaNoPrimary.
+  ///
+  /// In en, this message translates to:
+  /// **'No primary image selected'**
+  String get catalogProductMediaNoPrimary;
+
+  /// No description provided for @catalogProductMediaPrimaryBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Primary'**
+  String get catalogProductMediaPrimaryBadge;
+
+  /// No description provided for @catalogProductMediaAddAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add image'**
+  String get catalogProductMediaAddAction;
+
+  /// No description provided for @catalogProductMediaMakePrimaryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Make primary'**
+  String get catalogProductMediaMakePrimaryAction;
+
+  /// No description provided for @catalogProductMediaPickFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not read the selected image for preview.'**
+  String get catalogProductMediaPickFailed;
+
+  /// No description provided for @catalogProductMediaPreviewAdded.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview image added for this session.'**
+  String get catalogProductMediaPreviewAdded;
+
+  /// No description provided for @catalogProductMediaSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not update media preview.'**
+  String get catalogProductMediaSaveFailed;
+
+  /// No description provided for @catalogAttributeValueKindText.
+  ///
+  /// In en, this message translates to:
+  /// **'Text'**
+  String get catalogAttributeValueKindText;
+
+  /// No description provided for @catalogAttributeValueKindNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Number'**
+  String get catalogAttributeValueKindNumber;
+
+  /// No description provided for @catalogAttributeValueKindChoice.
+  ///
+  /// In en, this message translates to:
+  /// **'Choice'**
+  String get catalogAttributeValueKindChoice;
+
+  /// No description provided for @catalogListingAttributesSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Attributes'**
+  String get catalogListingAttributesSectionTitle;
+
+  /// No description provided for @catalogListingAttributesEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'No attributes yet for this listing.'**
+  String get catalogListingAttributesEmptyBody;
+
+  /// No description provided for @catalogListingAttributeAddAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add attribute'**
+  String get catalogListingAttributeAddAction;
+
+  /// No description provided for @catalogListingAttributeCreateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New attribute'**
+  String get catalogListingAttributeCreateTitle;
+
+  /// No description provided for @catalogListingAttributeEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit attribute'**
+  String get catalogListingAttributeEditTitle;
+
+  /// No description provided for @catalogListingAttributeKeyLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Attribute key'**
+  String get catalogListingAttributeKeyLabel;
+
+  /// No description provided for @catalogListingAttributeKeyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Lowercase letters, numbers, and underscores (e.g. unit).'**
+  String get catalogListingAttributeKeyHint;
+
+  /// No description provided for @catalogListingAttributeKeyRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter an attribute key.'**
+  String get catalogListingAttributeKeyRequired;
+
+  /// No description provided for @catalogListingAttributeKeyInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Use lowercase letters, numbers, and underscores only.'**
+  String get catalogListingAttributeKeyInvalid;
+
+  /// No description provided for @catalogListingAttributeValueKindLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Value type'**
+  String get catalogListingAttributeValueKindLabel;
+
+  /// No description provided for @catalogListingAttributeTextValueLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Text value'**
+  String get catalogListingAttributeTextValueLabel;
+
+  /// No description provided for @catalogListingAttributeNumberValueLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Number value'**
+  String get catalogListingAttributeNumberValueLabel;
+
+  /// No description provided for @catalogListingAttributeChoiceValueLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Choice value'**
+  String get catalogListingAttributeChoiceValueLabel;
+
+  /// No description provided for @catalogListingAttributeSaveSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Attribute saved for this session.'**
+  String get catalogListingAttributeSaveSuccess;
+
+  /// No description provided for @catalogListingAttributeSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save attribute.'**
+  String get catalogListingAttributeSaveFailed;
+
+  /// No description provided for @catalogListingAttributeInvalidInput.
+  ///
+  /// In en, this message translates to:
+  /// **'Check the key, label, and value.'**
+  String get catalogListingAttributeInvalidInput;
+
+  /// No description provided for @catalogListingAttributeDuplicateKey.
+  ///
+  /// In en, this message translates to:
+  /// **'This key already exists on this listing.'**
+  String get catalogListingAttributeDuplicateKey;
+
+  /// No description provided for @catalogListingAttributeDeleteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove attribute?'**
+  String get catalogListingAttributeDeleteTitle;
+
+  /// No description provided for @catalogListingAttributeDeleteBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This removes the attribute from the session preview.'**
+  String get catalogListingAttributeDeleteBody;
+
+  /// No description provided for @catalogListingAttributeDeleteConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove'**
+  String get catalogListingAttributeDeleteConfirm;
+
+  /// No description provided for @catalogListingAttributeDeleteFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not remove attribute.'**
+  String get catalogListingAttributeDeleteFailed;
 }
 
 class _AppLocalizationsDelegate
