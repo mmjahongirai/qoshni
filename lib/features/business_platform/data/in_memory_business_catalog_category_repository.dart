@@ -1,19 +1,26 @@
 import 'package:qoshni/features/business_platform/data/business_catalog_category_demo_seed.dart';
 import 'package:qoshni/features/business_platform/domain/business_catalog_category.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_catalog_category_repository.dart';
-import 'package:qoshni/features/business_platform/domain/repositories/business_catalog_demo_item_repository.dart';
+import 'package:qoshni/features/business_platform/domain/repositories/business_catalog_product_repository.dart';
+import 'package:qoshni/features/business_platform/domain/repositories/business_catalog_service_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_owner_profile_repository.dart';
 import 'package:qoshni/features/business_platform/presentation/business_catalog_category_validation.dart';
 
 class InMemoryBusinessCatalogCategoryRepository
     implements BusinessCatalogCategoryRepository {
-  InMemoryBusinessCatalogCategoryRepository(
-    this._ownerProfileRepository,
-    this._itemRepository,
-  );
+  InMemoryBusinessCatalogCategoryRepository(this._ownerProfileRepository);
 
   final BusinessOwnerProfileRepository _ownerProfileRepository;
-  final BusinessCatalogDemoItemRepository _itemRepository;
+  BusinessCatalogProductRepository? _productRepository;
+  BusinessCatalogServiceRepository? _serviceRepository;
+
+  void attachListingRepositories({
+    required BusinessCatalogProductRepository productRepository,
+    required BusinessCatalogServiceRepository serviceRepository,
+  }) {
+    _productRepository = productRepository;
+    _serviceRepository = serviceRepository;
+  }
 
   final Map<String, List<BusinessCatalogCategory>> _categoriesByScope = {};
   int _userCategoryCounter = 0;
@@ -125,7 +132,7 @@ class InMemoryBusinessCatalogCategoryRepository
     if (index < 0) {
       return BusinessCatalogCategoryDeleteResult.notFound;
     }
-    if (_itemRepository.countItemsReferencingCategory(categoryId) > 0) {
+    if (_countItemsReferencingCategory(categoryId) > 0) {
       return BusinessCatalogCategoryDeleteResult.inUse;
     }
     list.removeAt(index);
@@ -144,6 +151,14 @@ class InMemoryBusinessCatalogCategoryRepository
       scope,
       () => buildDemoCatalogCategories(businessScopeId: scope),
     );
+  }
+
+  int _countItemsReferencingCategory(String categoryId) {
+    final products =
+        _productRepository?.countReferencingCategory(categoryId) ?? 0;
+    final services =
+        _serviceRepository?.countReferencingCategory(categoryId) ?? 0;
+    return products + services;
   }
 
   String? _normalizeParent(String? raw) {

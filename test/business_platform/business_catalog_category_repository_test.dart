@@ -1,6 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:qoshni/features/business_platform/data/business_catalog_category_demo_seed.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_catalog_category_repository.dart';
+import 'package:qoshni/features/business_platform/data/in_memory_business_catalog_product_repository.dart';
+import 'package:qoshni/features/business_platform/data/in_memory_business_catalog_service_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_catalog_demo_item_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_owner_profile_repository.dart';
 import 'package:qoshni/features/business_platform/domain/business_catalog_category.dart';
@@ -10,15 +12,24 @@ import 'package:qoshni/features/business_platform/domain/repositories/business_c
 
 void main() {
   late InMemoryBusinessOwnerProfileRepository ownerRepo;
-  late InMemoryBusinessCatalogDemoItemRepository itemRepo;
+  late InMemoryBusinessCatalogProductRepository productRepo;
+  late InMemoryBusinessCatalogServiceRepository serviceRepo;
   late InMemoryBusinessCatalogCategoryRepository categoryRepo;
 
   setUp(() {
     ownerRepo = InMemoryBusinessOwnerProfileRepository();
-    itemRepo = InMemoryBusinessCatalogDemoItemRepository(ownerRepo);
-    categoryRepo = InMemoryBusinessCatalogCategoryRepository(
+    categoryRepo = InMemoryBusinessCatalogCategoryRepository(ownerRepo);
+    productRepo = InMemoryBusinessCatalogProductRepository(
       ownerRepo,
-      itemRepo,
+      categoryRepo,
+    );
+    serviceRepo = InMemoryBusinessCatalogServiceRepository(
+      ownerRepo,
+      categoryRepo,
+    );
+    categoryRepo.attachListingRepositories(
+      productRepository: productRepo,
+      serviceRepository: serviceRepo,
     );
     ownerRepo.ensureSessionProfile();
   });
@@ -31,7 +42,11 @@ void main() {
   });
 
   test('overview stats match demo items', () {
-    final stats = itemRepo.overviewStatsForScope(
+    final overview = InMemoryBusinessCatalogOverviewRepository(
+      productRepo,
+      serviceRepo,
+    );
+    final stats = overview.overviewStatsForScope(
       categoryCount: categoryRepo.listForCurrentScope().length,
     );
     expect(stats.categoryCount, 3);

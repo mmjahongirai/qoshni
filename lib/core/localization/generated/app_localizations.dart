@@ -4080,7 +4080,7 @@ abstract class AppLocalizations {
   /// No description provided for @catalogProductsSectionBody.
   ///
   /// In en, this message translates to:
-  /// **'Full product management arrives in Phase 09.2.'**
+  /// **'Manage preview products for this business session.'**
   String get catalogProductsSectionBody;
 
   /// No description provided for @catalogServicesSectionTitle.
@@ -4092,7 +4092,7 @@ abstract class AppLocalizations {
   /// No description provided for @catalogServicesSectionBody.
   ///
   /// In en, this message translates to:
-  /// **'Full service management arrives in Phase 09.2.'**
+  /// **'Manage preview services for this business session.'**
   String get catalogServicesSectionBody;
 
   /// No description provided for @catalogComingSoonLabel.
@@ -4358,6 +4358,324 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Discard'**
   String get catalogCategoryDiscardConfirmAction;
+
+  /// No description provided for @catalogListingStatusActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get catalogListingStatusActive;
+
+  /// No description provided for @catalogListingStatusDraft.
+  ///
+  /// In en, this message translates to:
+  /// **'Draft'**
+  String get catalogListingStatusDraft;
+
+  /// No description provided for @catalogListingStatusArchived.
+  ///
+  /// In en, this message translates to:
+  /// **'Archived'**
+  String get catalogListingStatusArchived;
+
+  /// No description provided for @catalogStatArchivedItems.
+  ///
+  /// In en, this message translates to:
+  /// **'Archived items'**
+  String get catalogStatArchivedItems;
+
+  /// No description provided for @catalogListingSearchLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Search by name'**
+  String get catalogListingSearchLabel;
+
+  /// No description provided for @catalogListingCategoryFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Category filter'**
+  String get catalogListingCategoryFilter;
+
+  /// No description provided for @catalogListingStatusFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Status filter'**
+  String get catalogListingStatusFilter;
+
+  /// No description provided for @catalogListingAllCategories.
+  ///
+  /// In en, this message translates to:
+  /// **'All categories'**
+  String get catalogListingAllCategories;
+
+  /// No description provided for @catalogListingAllStatuses.
+  ///
+  /// In en, this message translates to:
+  /// **'All statuses'**
+  String get catalogListingAllStatuses;
+
+  /// No description provided for @catalogListingClearFilters.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear filters'**
+  String get catalogListingClearFilters;
+
+  /// No description provided for @catalogListingFilteredCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Showing {filtered} of {total}'**
+  String catalogListingFilteredCount(int filtered, int total);
+
+  /// No description provided for @catalogListingCategoryField.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get catalogListingCategoryField;
+
+  /// No description provided for @catalogListingCategoryRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a category.'**
+  String get catalogListingCategoryRequired;
+
+  /// No description provided for @catalogListingInvalidCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Category is not in this business preview scope.'**
+  String get catalogListingInvalidCategory;
+
+  /// No description provided for @catalogListingCategoryLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Category: {name}'**
+  String catalogListingCategoryLabel(String name);
+
+  /// No description provided for @catalogHomeFilteredCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Showing {filtered} of {total} in preview'**
+  String catalogHomeFilteredCount(int filtered, int total);
+
+  /// No description provided for @catalogProductListTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Products'**
+  String get catalogProductListTitle;
+
+  /// No description provided for @catalogProductAddAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add product'**
+  String get catalogProductAddAction;
+
+  /// No description provided for @catalogProductEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'No products match your filters.'**
+  String get catalogProductEmptyBody;
+
+  /// No description provided for @catalogProductDetailTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Product'**
+  String get catalogProductDetailTitle;
+
+  /// No description provided for @catalogProductCreateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New product'**
+  String get catalogProductCreateTitle;
+
+  /// No description provided for @catalogProductEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit product'**
+  String get catalogProductEditTitle;
+
+  /// No description provided for @catalogProductNotFoundTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Product not found'**
+  String get catalogProductNotFoundTitle;
+
+  /// No description provided for @catalogProductBackToListAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to products'**
+  String get catalogProductBackToListAction;
+
+  /// No description provided for @catalogProductSaveSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Product saved for this session.'**
+  String get catalogProductSaveSuccess;
+
+  /// No description provided for @catalogProductSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save. Your entries are still on screen.'**
+  String get catalogProductSaveFailed;
+
+  /// No description provided for @catalogProductAttributeKeyLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Attribute key (optional)'**
+  String get catalogProductAttributeKeyLabel;
+
+  /// No description provided for @catalogProductAttributeValueLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Attribute value (optional)'**
+  String get catalogProductAttributeValueLabel;
+
+  /// No description provided for @catalogProductVariantsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Variants ({count})'**
+  String catalogProductVariantsTitle(int count);
+
+  /// No description provided for @catalogProductVariantsManageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Product variants'**
+  String get catalogProductVariantsManageTitle;
+
+  /// No description provided for @catalogServiceListTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Services'**
+  String get catalogServiceListTitle;
+
+  /// No description provided for @catalogServiceAddAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add service'**
+  String get catalogServiceAddAction;
+
+  /// No description provided for @catalogServiceEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'No services match your filters.'**
+  String get catalogServiceEmptyBody;
+
+  /// No description provided for @catalogServiceDetailTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Service'**
+  String get catalogServiceDetailTitle;
+
+  /// No description provided for @catalogServiceCreateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New service'**
+  String get catalogServiceCreateTitle;
+
+  /// No description provided for @catalogServiceEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit service'**
+  String get catalogServiceEditTitle;
+
+  /// No description provided for @catalogServiceBackToListAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to services'**
+  String get catalogServiceBackToListAction;
+
+  /// No description provided for @catalogServiceSaveSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Service saved for this session.'**
+  String get catalogServiceSaveSuccess;
+
+  /// No description provided for @catalogServiceSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save. Your entries are still on screen.'**
+  String get catalogServiceSaveFailed;
+
+  /// No description provided for @catalogServiceInvalidDuration.
+  ///
+  /// In en, this message translates to:
+  /// **'Duration must be a positive number of minutes.'**
+  String get catalogServiceInvalidDuration;
+
+  /// No description provided for @catalogServiceDurationFieldOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Duration (minutes, optional)'**
+  String get catalogServiceDurationFieldOptional;
+
+  /// No description provided for @catalogServiceDurationLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Duration: {minutes} min'**
+  String catalogServiceDurationLabel(int minutes);
+
+  /// No description provided for @catalogVariantAddAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add variant'**
+  String get catalogVariantAddAction;
+
+  /// No description provided for @catalogVariantEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'No variants yet for this product.'**
+  String get catalogVariantEmptyBody;
+
+  /// No description provided for @catalogVariantCreateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New variant'**
+  String get catalogVariantCreateTitle;
+
+  /// No description provided for @catalogVariantEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit variant'**
+  String get catalogVariantEditTitle;
+
+  /// No description provided for @catalogVariantLabelField.
+  ///
+  /// In en, this message translates to:
+  /// **'Variant label'**
+  String get catalogVariantLabelField;
+
+  /// No description provided for @catalogVariantSkuField.
+  ///
+  /// In en, this message translates to:
+  /// **'SKU'**
+  String get catalogVariantSkuField;
+
+  /// No description provided for @catalogVariantLabelRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a variant label.'**
+  String get catalogVariantLabelRequired;
+
+  /// No description provided for @catalogVariantSkuRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a SKU.'**
+  String get catalogVariantSkuRequired;
+
+  /// No description provided for @catalogVariantSaveSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Variant saved for this session.'**
+  String get catalogVariantSaveSuccess;
+
+  /// No description provided for @catalogVariantSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save variant.'**
+  String get catalogVariantSaveFailed;
+
+  /// No description provided for @catalogVariantDuplicateSku.
+  ///
+  /// In en, this message translates to:
+  /// **'This SKU already exists in the preview scope.'**
+  String get catalogVariantDuplicateSku;
 }
 
 class _AppLocalizationsDelegate

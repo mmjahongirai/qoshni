@@ -2382,4 +2382,177 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get catalogCategoryDiscardConfirmAction => 'Отменить';
+
+  @override
+  String get catalogListingStatusActive => 'Активен';
+
+  @override
+  String get catalogListingStatusDraft => 'Черновик';
+
+  @override
+  String get catalogListingStatusArchived => 'В архиве';
+
+  @override
+  String get catalogStatArchivedItems => 'В архиве';
+
+  @override
+  String get catalogListingSearchLabel => 'Поиск по названию';
+
+  @override
+  String get catalogListingCategoryFilter => 'Фильтр категории';
+
+  @override
+  String get catalogListingStatusFilter => 'Фильтр статуса';
+
+  @override
+  String get catalogListingAllCategories => 'Все категории';
+
+  @override
+  String get catalogListingAllStatuses => 'Все статусы';
+
+  @override
+  String get catalogListingClearFilters => 'Сбросить фильтры';
+
+  @override
+  String catalogListingFilteredCount(int filtered, int total) {
+    return 'Показано $filtered из $total';
+  }
+
+  @override
+  String get catalogListingCategoryField => 'Категория';
+
+  @override
+  String get catalogListingCategoryRequired => 'Выберите категорию.';
+
+  @override
+  String get catalogListingInvalidCategory =>
+      'Категория не в предпросмотре этого бизнеса.';
+
+  @override
+  String catalogListingCategoryLabel(String name) {
+    return 'Категория: $name';
+  }
+
+  @override
+  String catalogHomeFilteredCount(int filtered, int total) {
+    return 'Показано $filtered из $total в preview';
+  }
+
+  @override
+  String get catalogProductListTitle => 'Товары';
+
+  @override
+  String get catalogProductAddAction => 'Добавить товар';
+
+  @override
+  String get catalogProductEmptyBody => 'Нет товаров по фильтрам.';
+
+  @override
+  String get catalogProductDetailTitle => 'Товар';
+
+  @override
+  String get catalogProductCreateTitle => 'Новый товар';
+
+  @override
+  String get catalogProductEditTitle => 'Редактировать товар';
+
+  @override
+  String get catalogProductNotFoundTitle => 'Товар не найден';
+
+  @override
+  String get catalogProductBackToListAction => 'К списку товаров';
+
+  @override
+  String get catalogProductSaveSuccess => 'Товар сохранён для этой сессии.';
+
+  @override
+  String get catalogProductSaveFailed =>
+      'Не удалось сохранить. Данные на экране.';
+
+  @override
+  String get catalogProductAttributeKeyLabel => 'Ключ атрибута (необяз.)';
+
+  @override
+  String get catalogProductAttributeValueLabel => 'Значение атрибута (необяз.)';
+
+  @override
+  String catalogProductVariantsTitle(int count) {
+    return 'Варианты ($count)';
+  }
+
+  @override
+  String get catalogProductVariantsManageTitle => 'Варианты товара';
+
+  @override
+  String get catalogServiceListTitle => 'Услуги';
+
+  @override
+  String get catalogServiceAddAction => 'Добавить услугу';
+
+  @override
+  String get catalogServiceEmptyBody => 'Нет услуг по фильтрам.';
+
+  @override
+  String get catalogServiceDetailTitle => 'Услуга';
+
+  @override
+  String get catalogServiceCreateTitle => 'Новая услуга';
+
+  @override
+  String get catalogServiceEditTitle => 'Редактировать услугу';
+
+  @override
+  String get catalogServiceBackToListAction => 'К списку услуг';
+
+  @override
+  String get catalogServiceSaveSuccess => 'Услуга сохранена для этой сессии.';
+
+  @override
+  String get catalogServiceSaveFailed => 'Не удалось сохранить.';
+
+  @override
+  String get catalogServiceInvalidDuration =>
+      'Длительность — положительное число минут.';
+
+  @override
+  String get catalogServiceDurationFieldOptional =>
+      'Длительность (мин., необяз.)';
+
+  @override
+  String catalogServiceDurationLabel(int minutes) {
+    return 'Длительность: $minutes мин';
+  }
+
+  @override
+  String get catalogVariantAddAction => 'Добавить вариант';
+
+  @override
+  String get catalogVariantEmptyBody => 'Вариантов пока нет.';
+
+  @override
+  String get catalogVariantCreateTitle => 'Новый вариант';
+
+  @override
+  String get catalogVariantEditTitle => 'Редактировать вариант';
+
+  @override
+  String get catalogVariantLabelField => 'Название варианта';
+
+  @override
+  String get catalogVariantSkuField => 'SKU';
+
+  @override
+  String get catalogVariantLabelRequired => 'Введите название варианта.';
+
+  @override
+  String get catalogVariantSkuRequired => 'Введите SKU.';
+
+  @override
+  String get catalogVariantSaveSuccess => 'Вариант сохранён для этой сессии.';
+
+  @override
+  String get catalogVariantSaveFailed => 'Не удалось сохранить вариант.';
+
+  @override
+  String get catalogVariantDuplicateSku => 'Такой SKU уже есть в preview.';
 }

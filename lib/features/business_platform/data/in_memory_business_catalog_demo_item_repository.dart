@@ -1,67 +1,63 @@
-import 'package:qoshni/features/business_platform/data/business_catalog_demo_item_seed.dart';
 import 'package:qoshni/features/business_platform/domain/business_catalog_demo_item.dart';
+import 'package:qoshni/features/business_platform/domain/business_catalog_listing_status.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_catalog_demo_item_repository.dart';
-import 'package:qoshni/features/business_platform/domain/repositories/business_owner_profile_repository.dart';
+import 'package:qoshni/features/business_platform/domain/repositories/business_catalog_product_repository.dart';
+import 'package:qoshni/features/business_platform/domain/repositories/business_catalog_service_repository.dart';
 
-class InMemoryBusinessCatalogDemoItemRepository
+/// Aggregates product/service preview data for stats and category delete guards.
+class InMemoryBusinessCatalogOverviewRepository
     implements BusinessCatalogDemoItemRepository {
-  InMemoryBusinessCatalogDemoItemRepository(this._ownerProfileRepository);
+  InMemoryBusinessCatalogOverviewRepository(
+    this._productRepository,
+    this._serviceRepository,
+  );
 
-  final BusinessOwnerProfileRepository _ownerProfileRepository;
-
-  final Map<String, List<BusinessCatalogDemoItem>> _itemsByScope = {};
-
-  @override
-  String get businessScopeId =>
-      _ownerProfileRepository.ensureSessionProfile().sessionProfileId;
+  final BusinessCatalogProductRepository _productRepository;
+  final BusinessCatalogServiceRepository _serviceRepository;
 
   @override
-  List<BusinessCatalogDemoItem> listForCurrentScope() {
-    return List.unmodifiable(_ensureScopeList());
-  }
+  String get businessScopeId => _productRepository.businessScopeId;
 
   @override
   int countItemsReferencingCategory(String categoryId) {
-    return _ensureScopeList()
-        .where((item) => item.categoryId == categoryId)
-        .length;
+    return _productRepository.countReferencingCategory(categoryId) +
+        _serviceRepository.countReferencingCategory(categoryId);
   }
 
   @override
   BusinessCatalogOverviewStats overviewStatsForScope({
     required int categoryCount,
   }) {
-    final items = _ensureScopeList();
-    var products = 0;
-    var services = 0;
     var active = 0;
     var draft = 0;
-    for (final item in items) {
-      if (item.isProduct) {
-        products++;
-      } else if (item.isService) {
-        services++;
+    var archived = 0;
+    for (final product in _productRepository.listForCurrentScope()) {
+      switch (product.status) {
+        case BusinessCatalogListingStatus.active:
+          active++;
+        case BusinessCatalogListingStatus.draft:
+          draft++;
+        case BusinessCatalogListingStatus.archived:
+          archived++;
       }
-      if (item.status == BusinessCatalogDemoItemStatus.active) {
-        active++;
-      } else {
-        draft++;
+    }
+    for (final service in _serviceRepository.listForCurrentScope()) {
+      switch (service.status) {
+        case BusinessCatalogListingStatus.active:
+          active++;
+        case BusinessCatalogListingStatus.draft:
+          draft++;
+        case BusinessCatalogListingStatus.archived:
+          archived++;
       }
     }
     return BusinessCatalogOverviewStats(
       categoryCount: categoryCount,
-      productCount: products,
-      serviceCount: services,
+      productCount: _productRepository.listForCurrentScope().length,
+      serviceCount: _serviceRepository.listForCurrentScope().length,
       activeItemCount: active,
       draftItemCount: draft,
-    );
-  }
-
-  List<BusinessCatalogDemoItem> _ensureScopeList() {
-    final scope = businessScopeId;
-    return _itemsByScope.putIfAbsent(
-      scope,
-      () => buildDemoCatalogItems(businessScopeId: scope),
+      archivedItemCount: archived,
     );
   }
 }
