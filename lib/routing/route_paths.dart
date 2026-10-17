@@ -62,6 +62,21 @@ abstract final class RoutePaths {
       '/business-center/staff/$staffId/edit';
   static const String businessBranchPermissions =
       '/business-center/branch-permissions';
+  static const String businessCatalog = '/business-center/catalog';
+  static const String businessCatalogCategories =
+      '/business-center/catalog/categories';
+  static const String businessCatalogCategoryCreate =
+      '/business-center/catalog/categories/new';
+  static const String businessCatalogCategoryDetail =
+      '/business-center/catalog/categories/:categoryId';
+  static const String businessCatalogCategoryEdit =
+      '/business-center/catalog/categories/:categoryId/edit';
+
+  static String businessCatalogCategoryDetailPath(String categoryId) =>
+      '/business-center/catalog/categories/$categoryId';
+
+  static String businessCatalogCategoryEditPath(String categoryId) =>
+      '/business-center/catalog/categories/$categoryId/edit';
 }
 
 abstract final class RouteNames {
@@ -102,4 +117,12 @@ abstract final class RouteNames {
   static const String businessStaffDetail = 'businessStaffDetail';
   static const String businessStaffEdit = 'businessStaffEdit';
   static const String businessBranchPermissions = 'businessBranchPermissions';
+  static const String businessCatalog = 'businessCatalog';
+  static const String businessCatalogCategories = 'businessCatalogCategories';
+  static const String businessCatalogCategoryCreate =
+      'businessCatalogCategoryCreate';
+  static const String businessCatalogCategoryDetail =
+      'businessCatalogCategoryDetail';
+  static const String businessCatalogCategoryEdit =
+      'businessCatalogCategoryEdit';
 }

@@ -2182,4 +2182,204 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get branchPermDiscardConfirmAction => 'Отменить';
+
+  @override
+  String get businessCenterCatalogTitle => 'Каталог';
+
+  @override
+  String get businessCenterCatalogBody =>
+      'Предпросмотр категорий и статистики каталога только для этой сессии.';
+
+  @override
+  String get catalogHomeTitle => 'Каталог';
+
+  @override
+  String get catalogPreviewNotice =>
+      'Предпросмотр — данные каталога сохраняются только в этой сессии. Не связаны с публичным поиском и заказами.';
+
+  @override
+  String get catalogHomeIntro =>
+      'Организуйте товары и услуги для предпросмотра бизнеса. Синхронизация с клиентским каталогом — в следующей фазе.';
+
+  @override
+  String get catalogStatCategories => 'Категории';
+
+  @override
+  String get catalogStatProducts => 'Товары';
+
+  @override
+  String get catalogStatServices => 'Услуги';
+
+  @override
+  String get catalogStatActiveItems => 'Активные позиции';
+
+  @override
+  String get catalogStatDraftItems => 'Черновики';
+
+  @override
+  String get catalogManageCategoriesTitle => 'Управление категориями';
+
+  @override
+  String get catalogManageCategoriesBody =>
+      'Создавайте и редактируйте многоязычные категории для предпросмотра.';
+
+  @override
+  String get catalogProductsSectionTitle => 'Товары';
+
+  @override
+  String get catalogProductsSectionBody =>
+      'Полное управление товарами — в Phase 09.2.';
+
+  @override
+  String get catalogServicesSectionTitle => 'Услуги';
+
+  @override
+  String get catalogServicesSectionBody =>
+      'Полное управление услугами — в Phase 09.2.';
+
+  @override
+  String get catalogComingSoonLabel => 'Следующая фаза';
+
+  @override
+  String get catalogCategoryListTitle => 'Категории';
+
+  @override
+  String get catalogCategoryAddAction => 'Добавить категорию';
+
+  @override
+  String get catalogCategorySearchLabel => 'Поиск категорий';
+
+  @override
+  String get catalogCategoryEmptyTitle => 'Категорий пока нет';
+
+  @override
+  String get catalogCategoryEmptyBody =>
+      'Добавьте категорию для организации предпросмотра каталога.';
+
+  @override
+  String get catalogCategoryDetailTitle => 'Категория';
+
+  @override
+  String get catalogCategoryEditAction => 'Редактировать';
+
+  @override
+  String get catalogCategoryCreateTitle => 'Новая категория';
+
+  @override
+  String get catalogCategoryEditTitle => 'Редактировать категорию';
+
+  @override
+  String get catalogCategoryNotFoundTitle => 'Категория не найдена';
+
+  @override
+  String get catalogCategoryNotFoundBody =>
+      'Эта категория не входит в текущий предпросмотр бизнеса.';
+
+  @override
+  String get catalogCategoryBackToListAction => 'К списку категорий';
+
+  @override
+  String get catalogCategoryNamesSection => 'Названия';
+
+  @override
+  String get catalogCategoryDescriptionsSection => 'Описания';
+
+  @override
+  String get catalogCategoryFieldEmpty => '—';
+
+  @override
+  String get catalogLanguageUz => 'Узбекский';
+
+  @override
+  String get catalogLanguageRu => 'Русский';
+
+  @override
+  String get catalogLanguageEn => 'Английский';
+
+  @override
+  String catalogCategoryParentLabel(String name) {
+    return 'Родитель: $name';
+  }
+
+  @override
+  String get catalogCategoryStatusActive => 'Активна';
+
+  @override
+  String get catalogCategoryStatusDraft => 'Черновик';
+
+  @override
+  String get catalogCategoryStatusArchived => 'В архиве';
+
+  @override
+  String get catalogCategoryFormNameHint =>
+      'Укажите название хотя бы на одном языке (узбекский, русский или английский).';
+
+  @override
+  String get catalogCategoryNameRequiredHint =>
+      'Введите название категории хотя бы на одном языке.';
+
+  @override
+  String get catalogCategoryNameUzLabel => 'Название (узбекский)';
+
+  @override
+  String get catalogCategoryNameRuLabel => 'Название (русский)';
+
+  @override
+  String get catalogCategoryNameEnLabel => 'Название (английский)';
+
+  @override
+  String get catalogCategoryDescUzLabel =>
+      'Описание (узбекский, необязательно)';
+
+  @override
+  String get catalogCategoryDescRuLabel => 'Описание (русский, необязательно)';
+
+  @override
+  String get catalogCategoryDescEnLabel =>
+      'Описание (английский, необязательно)';
+
+  @override
+  String get catalogCategoryStatusLabel => 'Статус';
+
+  @override
+  String get catalogCategoryParentFieldLabel =>
+      'Родительская категория (необязательно)';
+
+  @override
+  String get catalogCategoryNoParent => 'Без родителя';
+
+  @override
+  String get catalogCategorySaveAction => 'Сохранить';
+
+  @override
+  String get catalogCategoryCancelAction => 'Отмена';
+
+  @override
+  String get catalogCategorySaveSuccess =>
+      'Категория сохранена для этой сессии.';
+
+  @override
+  String get catalogCategorySaveFailed =>
+      'Не удалось сохранить. Данные остались на экране.';
+
+  @override
+  String get catalogCategoryDuplicateNameError =>
+      'Категория с таким названием уже есть в этом предпросмотре.';
+
+  @override
+  String get catalogCategoryInvalidParentError =>
+      'Выберите корректную родительскую категорию без циклической иерархии.';
+
+  @override
+  String get catalogCategoryDiscardConfirmTitle => 'Отменить изменения?';
+
+  @override
+  String get catalogCategoryDiscardConfirmBody =>
+      'Несохранённые изменения категории будут потеряны.';
+
+  @override
+  String get catalogCategoryDiscardCancelAction => 'Продолжить редактирование';
+
+  @override
+  String get catalogCategoryDiscardConfirmAction => 'Отменить';
 }

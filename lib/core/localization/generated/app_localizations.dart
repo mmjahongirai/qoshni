@@ -3998,6 +3998,366 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Discard'**
   String get branchPermDiscardConfirmAction;
+
+  /// No description provided for @businessCenterCatalogTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Catalog'**
+  String get businessCenterCatalogTitle;
+
+  /// No description provided for @businessCenterCatalogBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview categories and catalog stats for this business session only.'**
+  String get businessCenterCatalogBody;
+
+  /// No description provided for @catalogHomeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Catalog'**
+  String get catalogHomeTitle;
+
+  /// No description provided for @catalogPreviewNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview — catalog data is saved only in this session. Not connected to public search or customer orders.'**
+  String get catalogPreviewNotice;
+
+  /// No description provided for @catalogHomeIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Organize products and services for your business preview. Customer-facing catalog sync arrives in a later phase.'**
+  String get catalogHomeIntro;
+
+  /// No description provided for @catalogStatCategories.
+  ///
+  /// In en, this message translates to:
+  /// **'Categories'**
+  String get catalogStatCategories;
+
+  /// No description provided for @catalogStatProducts.
+  ///
+  /// In en, this message translates to:
+  /// **'Products'**
+  String get catalogStatProducts;
+
+  /// No description provided for @catalogStatServices.
+  ///
+  /// In en, this message translates to:
+  /// **'Services'**
+  String get catalogStatServices;
+
+  /// No description provided for @catalogStatActiveItems.
+  ///
+  /// In en, this message translates to:
+  /// **'Active items'**
+  String get catalogStatActiveItems;
+
+  /// No description provided for @catalogStatDraftItems.
+  ///
+  /// In en, this message translates to:
+  /// **'Draft items'**
+  String get catalogStatDraftItems;
+
+  /// No description provided for @catalogManageCategoriesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage categories'**
+  String get catalogManageCategoriesTitle;
+
+  /// No description provided for @catalogManageCategoriesBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Create and edit multilingual categories for this business preview.'**
+  String get catalogManageCategoriesBody;
+
+  /// No description provided for @catalogProductsSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Products'**
+  String get catalogProductsSectionTitle;
+
+  /// No description provided for @catalogProductsSectionBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Full product management arrives in Phase 09.2.'**
+  String get catalogProductsSectionBody;
+
+  /// No description provided for @catalogServicesSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Services'**
+  String get catalogServicesSectionTitle;
+
+  /// No description provided for @catalogServicesSectionBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Full service management arrives in Phase 09.2.'**
+  String get catalogServicesSectionBody;
+
+  /// No description provided for @catalogComingSoonLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Next phase'**
+  String get catalogComingSoonLabel;
+
+  /// No description provided for @catalogCategoryListTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Categories'**
+  String get catalogCategoryListTitle;
+
+  /// No description provided for @catalogCategoryAddAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add category'**
+  String get catalogCategoryAddAction;
+
+  /// No description provided for @catalogCategorySearchLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Search categories'**
+  String get catalogCategorySearchLabel;
+
+  /// No description provided for @catalogCategoryEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No categories yet'**
+  String get catalogCategoryEmptyTitle;
+
+  /// No description provided for @catalogCategoryEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a category to organize your business catalog preview.'**
+  String get catalogCategoryEmptyBody;
+
+  /// No description provided for @catalogCategoryDetailTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get catalogCategoryDetailTitle;
+
+  /// No description provided for @catalogCategoryEditAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get catalogCategoryEditAction;
+
+  /// No description provided for @catalogCategoryCreateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New category'**
+  String get catalogCategoryCreateTitle;
+
+  /// No description provided for @catalogCategoryEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit category'**
+  String get catalogCategoryEditTitle;
+
+  /// No description provided for @catalogCategoryNotFoundTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Category not found'**
+  String get catalogCategoryNotFoundTitle;
+
+  /// No description provided for @catalogCategoryNotFoundBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This category is not in the current business preview scope.'**
+  String get catalogCategoryNotFoundBody;
+
+  /// No description provided for @catalogCategoryBackToListAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to categories'**
+  String get catalogCategoryBackToListAction;
+
+  /// No description provided for @catalogCategoryNamesSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Names'**
+  String get catalogCategoryNamesSection;
+
+  /// No description provided for @catalogCategoryDescriptionsSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Descriptions'**
+  String get catalogCategoryDescriptionsSection;
+
+  /// No description provided for @catalogCategoryFieldEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'—'**
+  String get catalogCategoryFieldEmpty;
+
+  /// No description provided for @catalogLanguageUz.
+  ///
+  /// In en, this message translates to:
+  /// **'Uzbek'**
+  String get catalogLanguageUz;
+
+  /// No description provided for @catalogLanguageRu.
+  ///
+  /// In en, this message translates to:
+  /// **'Russian'**
+  String get catalogLanguageRu;
+
+  /// No description provided for @catalogLanguageEn.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get catalogLanguageEn;
+
+  /// No description provided for @catalogCategoryParentLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Parent: {name}'**
+  String catalogCategoryParentLabel(String name);
+
+  /// No description provided for @catalogCategoryStatusActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get catalogCategoryStatusActive;
+
+  /// No description provided for @catalogCategoryStatusDraft.
+  ///
+  /// In en, this message translates to:
+  /// **'Draft'**
+  String get catalogCategoryStatusDraft;
+
+  /// No description provided for @catalogCategoryStatusArchived.
+  ///
+  /// In en, this message translates to:
+  /// **'Archived'**
+  String get catalogCategoryStatusArchived;
+
+  /// No description provided for @catalogCategoryFormNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Provide a name in at least one language (Uzbek, Russian, or English).'**
+  String get catalogCategoryFormNameHint;
+
+  /// No description provided for @catalogCategoryNameRequiredHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a category name in at least one language.'**
+  String get catalogCategoryNameRequiredHint;
+
+  /// No description provided for @catalogCategoryNameUzLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Name (Uzbek)'**
+  String get catalogCategoryNameUzLabel;
+
+  /// No description provided for @catalogCategoryNameRuLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Name (Russian)'**
+  String get catalogCategoryNameRuLabel;
+
+  /// No description provided for @catalogCategoryNameEnLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Name (English)'**
+  String get catalogCategoryNameEnLabel;
+
+  /// No description provided for @catalogCategoryDescUzLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Description (Uzbek, optional)'**
+  String get catalogCategoryDescUzLabel;
+
+  /// No description provided for @catalogCategoryDescRuLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Description (Russian, optional)'**
+  String get catalogCategoryDescRuLabel;
+
+  /// No description provided for @catalogCategoryDescEnLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Description (English, optional)'**
+  String get catalogCategoryDescEnLabel;
+
+  /// No description provided for @catalogCategoryStatusLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get catalogCategoryStatusLabel;
+
+  /// No description provided for @catalogCategoryParentFieldLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Parent category (optional)'**
+  String get catalogCategoryParentFieldLabel;
+
+  /// No description provided for @catalogCategoryNoParent.
+  ///
+  /// In en, this message translates to:
+  /// **'No parent'**
+  String get catalogCategoryNoParent;
+
+  /// No description provided for @catalogCategorySaveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get catalogCategorySaveAction;
+
+  /// No description provided for @catalogCategoryCancelAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get catalogCategoryCancelAction;
+
+  /// No description provided for @catalogCategorySaveSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Category saved for this session.'**
+  String get catalogCategorySaveSuccess;
+
+  /// No description provided for @catalogCategorySaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save. Your entries are still on screen.'**
+  String get catalogCategorySaveFailed;
+
+  /// No description provided for @catalogCategoryDuplicateNameError.
+  ///
+  /// In en, this message translates to:
+  /// **'A category with this name already exists in this preview scope.'**
+  String get catalogCategoryDuplicateNameError;
+
+  /// No description provided for @catalogCategoryInvalidParentError.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a valid parent category without circular hierarchy.'**
+  String get catalogCategoryInvalidParentError;
+
+  /// No description provided for @catalogCategoryDiscardConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard changes?'**
+  String get catalogCategoryDiscardConfirmTitle;
+
+  /// No description provided for @catalogCategoryDiscardConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Unsaved category changes will be lost.'**
+  String get catalogCategoryDiscardConfirmBody;
+
+  /// No description provided for @catalogCategoryDiscardCancelAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep editing'**
+  String get catalogCategoryDiscardCancelAction;
+
+  /// No description provided for @catalogCategoryDiscardConfirmAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard'**
+  String get catalogCategoryDiscardConfirmAction;
 }
 
 class _AppLocalizationsDelegate

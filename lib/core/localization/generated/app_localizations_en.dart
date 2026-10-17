@@ -2188,4 +2188,200 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get branchPermDiscardConfirmAction => 'Discard';
+
+  @override
+  String get businessCenterCatalogTitle => 'Catalog';
+
+  @override
+  String get businessCenterCatalogBody =>
+      'Preview categories and catalog stats for this business session only.';
+
+  @override
+  String get catalogHomeTitle => 'Catalog';
+
+  @override
+  String get catalogPreviewNotice =>
+      'Preview — catalog data is saved only in this session. Not connected to public search or customer orders.';
+
+  @override
+  String get catalogHomeIntro =>
+      'Organize products and services for your business preview. Customer-facing catalog sync arrives in a later phase.';
+
+  @override
+  String get catalogStatCategories => 'Categories';
+
+  @override
+  String get catalogStatProducts => 'Products';
+
+  @override
+  String get catalogStatServices => 'Services';
+
+  @override
+  String get catalogStatActiveItems => 'Active items';
+
+  @override
+  String get catalogStatDraftItems => 'Draft items';
+
+  @override
+  String get catalogManageCategoriesTitle => 'Manage categories';
+
+  @override
+  String get catalogManageCategoriesBody =>
+      'Create and edit multilingual categories for this business preview.';
+
+  @override
+  String get catalogProductsSectionTitle => 'Products';
+
+  @override
+  String get catalogProductsSectionBody =>
+      'Full product management arrives in Phase 09.2.';
+
+  @override
+  String get catalogServicesSectionTitle => 'Services';
+
+  @override
+  String get catalogServicesSectionBody =>
+      'Full service management arrives in Phase 09.2.';
+
+  @override
+  String get catalogComingSoonLabel => 'Next phase';
+
+  @override
+  String get catalogCategoryListTitle => 'Categories';
+
+  @override
+  String get catalogCategoryAddAction => 'Add category';
+
+  @override
+  String get catalogCategorySearchLabel => 'Search categories';
+
+  @override
+  String get catalogCategoryEmptyTitle => 'No categories yet';
+
+  @override
+  String get catalogCategoryEmptyBody =>
+      'Add a category to organize your business catalog preview.';
+
+  @override
+  String get catalogCategoryDetailTitle => 'Category';
+
+  @override
+  String get catalogCategoryEditAction => 'Edit';
+
+  @override
+  String get catalogCategoryCreateTitle => 'New category';
+
+  @override
+  String get catalogCategoryEditTitle => 'Edit category';
+
+  @override
+  String get catalogCategoryNotFoundTitle => 'Category not found';
+
+  @override
+  String get catalogCategoryNotFoundBody =>
+      'This category is not in the current business preview scope.';
+
+  @override
+  String get catalogCategoryBackToListAction => 'Back to categories';
+
+  @override
+  String get catalogCategoryNamesSection => 'Names';
+
+  @override
+  String get catalogCategoryDescriptionsSection => 'Descriptions';
+
+  @override
+  String get catalogCategoryFieldEmpty => '—';
+
+  @override
+  String get catalogLanguageUz => 'Uzbek';
+
+  @override
+  String get catalogLanguageRu => 'Russian';
+
+  @override
+  String get catalogLanguageEn => 'English';
+
+  @override
+  String catalogCategoryParentLabel(String name) {
+    return 'Parent: $name';
+  }
+
+  @override
+  String get catalogCategoryStatusActive => 'Active';
+
+  @override
+  String get catalogCategoryStatusDraft => 'Draft';
+
+  @override
+  String get catalogCategoryStatusArchived => 'Archived';
+
+  @override
+  String get catalogCategoryFormNameHint =>
+      'Provide a name in at least one language (Uzbek, Russian, or English).';
+
+  @override
+  String get catalogCategoryNameRequiredHint =>
+      'Enter a category name in at least one language.';
+
+  @override
+  String get catalogCategoryNameUzLabel => 'Name (Uzbek)';
+
+  @override
+  String get catalogCategoryNameRuLabel => 'Name (Russian)';
+
+  @override
+  String get catalogCategoryNameEnLabel => 'Name (English)';
+
+  @override
+  String get catalogCategoryDescUzLabel => 'Description (Uzbek, optional)';
+
+  @override
+  String get catalogCategoryDescRuLabel => 'Description (Russian, optional)';
+
+  @override
+  String get catalogCategoryDescEnLabel => 'Description (English, optional)';
+
+  @override
+  String get catalogCategoryStatusLabel => 'Status';
+
+  @override
+  String get catalogCategoryParentFieldLabel => 'Parent category (optional)';
+
+  @override
+  String get catalogCategoryNoParent => 'No parent';
+
+  @override
+  String get catalogCategorySaveAction => 'Save';
+
+  @override
+  String get catalogCategoryCancelAction => 'Cancel';
+
+  @override
+  String get catalogCategorySaveSuccess => 'Category saved for this session.';
+
+  @override
+  String get catalogCategorySaveFailed =>
+      'Could not save. Your entries are still on screen.';
+
+  @override
+  String get catalogCategoryDuplicateNameError =>
+      'A category with this name already exists in this preview scope.';
+
+  @override
+  String get catalogCategoryInvalidParentError =>
+      'Choose a valid parent category without circular hierarchy.';
+
+  @override
+  String get catalogCategoryDiscardConfirmTitle => 'Discard changes?';
+
+  @override
+  String get catalogCategoryDiscardConfirmBody =>
+      'Unsaved category changes will be lost.';
+
+  @override
+  String get catalogCategoryDiscardCancelAction => 'Keep editing';
+
+  @override
+  String get catalogCategoryDiscardConfirmAction => 'Discard';
 }

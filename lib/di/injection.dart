@@ -14,6 +14,8 @@ import 'package:qoshni/features/business_platform/data/in_memory_business_invent
 import 'package:qoshni/features/business_platform/data/in_memory_business_offering_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_branch_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_branch_permission_repository.dart';
+import 'package:qoshni/features/business_platform/data/in_memory_business_catalog_category_repository.dart';
+import 'package:qoshni/features/business_platform/data/in_memory_business_catalog_demo_item_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_staff_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_owner_profile_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_profile_repository.dart';
@@ -21,6 +23,8 @@ import 'package:qoshni/features/business_platform/domain/repositories/business_i
 import 'package:qoshni/features/business_platform/domain/repositories/business_offering_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_branch_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_branch_permission_repository.dart';
+import 'package:qoshni/features/business_platform/domain/repositories/business_catalog_category_repository.dart';
+import 'package:qoshni/features/business_platform/domain/repositories/business_catalog_demo_item_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_staff_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_owner_profile_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_profile_repository.dart';
@@ -31,6 +35,8 @@ import 'package:qoshni/features/business_onboarding/domain/onboarding_repository
 import 'package:qoshni/features/business_onboarding/presentation/onboarding_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_branch_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_branch_permission_controller.dart';
+import 'package:qoshni/features/business_platform/presentation/business_catalog_controller.dart';
+import 'package:qoshni/features/business_platform/presentation/business_catalog_category_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_staff_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_owner_profile_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_profile_controller.dart';
@@ -112,6 +118,28 @@ Future<void> configureDependencies(AppConfig config) async {
     ..registerLazySingleton<BusinessBranchPermissionController>(
       () => BusinessBranchPermissionController(
         getIt<BusinessBranchPermissionRepository>(),
+      ),
+    )
+    ..registerLazySingleton<BusinessCatalogDemoItemRepository>(
+      () => InMemoryBusinessCatalogDemoItemRepository(
+        getIt<BusinessOwnerProfileRepository>(),
+      ),
+    )
+    ..registerLazySingleton<BusinessCatalogCategoryRepository>(
+      () => InMemoryBusinessCatalogCategoryRepository(
+        getIt<BusinessOwnerProfileRepository>(),
+        getIt<BusinessCatalogDemoItemRepository>(),
+      ),
+    )
+    ..registerLazySingleton<BusinessCatalogCategoryController>(
+      () => BusinessCatalogCategoryController(
+        getIt<BusinessCatalogCategoryRepository>(),
+      ),
+    )
+    ..registerLazySingleton<BusinessCatalogController>(
+      () => BusinessCatalogController(
+        getIt<BusinessCatalogCategoryRepository>(),
+        getIt<BusinessCatalogDemoItemRepository>(),
       ),
     )
     ..registerLazySingleton<BusinessOfferingsController>(

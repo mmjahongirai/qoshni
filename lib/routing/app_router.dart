@@ -38,6 +38,10 @@ import 'package:qoshni/features/business_platform/presentation/pages/business_st
 import 'package:qoshni/features/business_platform/presentation/pages/business_staff_detail_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_staff_editor_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_branch_permissions_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_home_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_category_list_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_category_detail_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_category_editor_page.dart';
 import 'package:qoshni/routing/route_paths.dart';
 
 /// Application router. Add feature routes here as modules are introduced.
@@ -239,6 +243,47 @@ class AppRouter {
                 initialBranchId: state.uri.queryParameters['branchId'],
               );
             },
+          ),
+          GoRoute(
+            path: 'catalog',
+            name: RouteNames.businessCatalog,
+            builder: (context, state) => const BusinessCatalogHomePage(),
+            routes: [
+              GoRoute(
+                path: 'categories',
+                name: RouteNames.businessCatalogCategories,
+                builder: (context, state) =>
+                    const BusinessCatalogCategoryListPage(),
+                routes: [
+                  GoRoute(
+                    path: 'new',
+                    name: RouteNames.businessCatalogCategoryCreate,
+                    builder: (context, state) =>
+                        const BusinessCatalogCategoryEditorPage(),
+                  ),
+                  GoRoute(
+                    path: ':categoryId',
+                    name: RouteNames.businessCatalogCategoryDetail,
+                    builder: (context, state) {
+                      return BusinessCatalogCategoryDetailPage(
+                        categoryId: state.pathParameters['categoryId'],
+                      );
+                    },
+                    routes: [
+                      GoRoute(
+                        path: 'edit',
+                        name: RouteNames.businessCatalogCategoryEdit,
+                        builder: (context, state) {
+                          return BusinessCatalogCategoryEditorPage(
+                            categoryId: state.pathParameters['categoryId'],
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
           ),
           GoRoute(
             path: 'staff',

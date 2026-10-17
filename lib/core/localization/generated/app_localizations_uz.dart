@@ -2195,4 +2195,203 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get branchPermDiscardConfirmAction => 'Bekor qilish';
+
+  @override
+  String get businessCenterCatalogTitle => 'Katalog';
+
+  @override
+  String get businessCenterCatalogBody =>
+      'Faqat shu sessiya uchun kategoriyalar va katalog statistikasi preview.';
+
+  @override
+  String get catalogHomeTitle => 'Katalog';
+
+  @override
+  String get catalogPreviewNotice =>
+      'Preview — katalog ma’lumotlari faqat shu sessiyada saqlanadi. Ommaviy qidiruv va buyurtmalarga ulanmagan.';
+
+  @override
+  String get catalogHomeIntro =>
+      'Biznes preview uchun mahsulot va xizmatlarni tartibga soling. Mijoz katalogi bilan sinxron keyingi bosqichda.';
+
+  @override
+  String get catalogStatCategories => 'Kategoriyalar';
+
+  @override
+  String get catalogStatProducts => 'Mahsulotlar';
+
+  @override
+  String get catalogStatServices => 'Xizmatlar';
+
+  @override
+  String get catalogStatActiveItems => 'Faol elementlar';
+
+  @override
+  String get catalogStatDraftItems => 'Qoralama elementlar';
+
+  @override
+  String get catalogManageCategoriesTitle => 'Kategoriyalarni boshqarish';
+
+  @override
+  String get catalogManageCategoriesBody =>
+      'Biznes preview uchun ko‘p tilli kategoriyalarni yarating va tahrirlang.';
+
+  @override
+  String get catalogProductsSectionTitle => 'Mahsulotlar';
+
+  @override
+  String get catalogProductsSectionBody =>
+      'To‘liq mahsulot boshqaruvi Phase 09.2 da.';
+
+  @override
+  String get catalogServicesSectionTitle => 'Xizmatlar';
+
+  @override
+  String get catalogServicesSectionBody =>
+      'To‘liq xizmat boshqaruvi Phase 09.2 da.';
+
+  @override
+  String get catalogComingSoonLabel => 'Keyingi bosqich';
+
+  @override
+  String get catalogCategoryListTitle => 'Kategoriyalar';
+
+  @override
+  String get catalogCategoryAddAction => 'Kategoriya qo‘shish';
+
+  @override
+  String get catalogCategorySearchLabel => 'Kategoriyalarni qidirish';
+
+  @override
+  String get catalogCategoryEmptyTitle => 'Hali kategoriya yo‘q';
+
+  @override
+  String get catalogCategoryEmptyBody =>
+      'Biznes katalog preview’ini tartibga solish uchun kategoriya qo‘shing.';
+
+  @override
+  String get catalogCategoryDetailTitle => 'Kategoriya';
+
+  @override
+  String get catalogCategoryEditAction => 'Tahrirlash';
+
+  @override
+  String get catalogCategoryCreateTitle => 'Yangi kategoriya';
+
+  @override
+  String get catalogCategoryEditTitle => 'Kategoriyani tahrirlash';
+
+  @override
+  String get catalogCategoryNotFoundTitle => 'Kategoriya topilmadi';
+
+  @override
+  String get catalogCategoryNotFoundBody =>
+      'Bu kategoriya joriy biznes preview doirasida yo‘q.';
+
+  @override
+  String get catalogCategoryBackToListAction => 'Kategoriyalar ro‘yxatiga';
+
+  @override
+  String get catalogCategoryNamesSection => 'Nomlar';
+
+  @override
+  String get catalogCategoryDescriptionsSection => 'Tavsiflar';
+
+  @override
+  String get catalogCategoryFieldEmpty => '—';
+
+  @override
+  String get catalogLanguageUz => 'O‘zbek';
+
+  @override
+  String get catalogLanguageRu => 'Rus';
+
+  @override
+  String get catalogLanguageEn => 'Ingliz';
+
+  @override
+  String catalogCategoryParentLabel(String name) {
+    return 'Ota kategoriya: $name';
+  }
+
+  @override
+  String get catalogCategoryStatusActive => 'Faol';
+
+  @override
+  String get catalogCategoryStatusDraft => 'Qoralama';
+
+  @override
+  String get catalogCategoryStatusArchived => 'Arxiv';
+
+  @override
+  String get catalogCategoryFormNameHint =>
+      'Kamida bitta til (o‘zbek, rus yoki ingliz) uchun nom kiriting.';
+
+  @override
+  String get catalogCategoryNameRequiredHint =>
+      'Kamida bitta til uchun kategoriya nomini kiriting.';
+
+  @override
+  String get catalogCategoryNameUzLabel => 'Nom (o‘zbekcha)';
+
+  @override
+  String get catalogCategoryNameRuLabel => 'Nom (ruscha)';
+
+  @override
+  String get catalogCategoryNameEnLabel => 'Nom (inglizcha)';
+
+  @override
+  String get catalogCategoryDescUzLabel => 'Tavsif (o‘zbekcha, ixtiyoriy)';
+
+  @override
+  String get catalogCategoryDescRuLabel => 'Tavsif (ruscha, ixtiyoriy)';
+
+  @override
+  String get catalogCategoryDescEnLabel => 'Tavsif (inglizcha, ixtiyoriy)';
+
+  @override
+  String get catalogCategoryStatusLabel => 'Holat';
+
+  @override
+  String get catalogCategoryParentFieldLabel => 'Ota kategoriya (ixtiyoriy)';
+
+  @override
+  String get catalogCategoryNoParent => 'Ota kategoriya yo‘q';
+
+  @override
+  String get catalogCategorySaveAction => 'Saqlash';
+
+  @override
+  String get catalogCategoryCancelAction => 'Bekor qilish';
+
+  @override
+  String get catalogCategorySaveSuccess =>
+      'Kategoriya shu sessiya uchun saqlandi.';
+
+  @override
+  String get catalogCategorySaveFailed =>
+      'Saqlab bo‘lmadi. Kiritilgan ma’lumotlar ekranda qoldi.';
+
+  @override
+  String get catalogCategoryDuplicateNameError =>
+      'Bu nomdagi kategoriya preview doirasida allaqachon mavjud.';
+
+  @override
+  String get catalogCategoryInvalidParentError =>
+      'Aylana ierarxiyasiz to‘g‘ri ota kategoriyani tanlang.';
+
+  @override
+  String get catalogCategoryDiscardConfirmTitle =>
+      'O‘zgarishlar bekor qilinsinmi?';
+
+  @override
+  String get catalogCategoryDiscardConfirmBody =>
+      'Saqlanmagan kategoriya o‘zgarishlari yo‘qoladi.';
+
+  @override
+  String get catalogCategoryDiscardCancelAction =>
+      'Tahrirlashni davom ettirish';
+
+  @override
+  String get catalogCategoryDiscardConfirmAction => 'Bekor qilish';
 }
