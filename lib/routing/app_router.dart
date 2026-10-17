@@ -34,6 +34,10 @@ import 'package:qoshni/features/business_platform/presentation/pages/business_ow
 import 'package:qoshni/features/business_platform/presentation/pages/business_branch_list_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_branch_detail_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_branch_editor_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_staff_list_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_staff_detail_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_staff_editor_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_branch_permissions_page.dart';
 import 'package:qoshni/routing/route_paths.dart';
 
 /// Application router. Add feature routes here as modules are introduced.
@@ -219,6 +223,48 @@ class AppRouter {
                     builder: (context, state) {
                       return BusinessBranchEditorPage(
                         branchId: state.pathParameters['branchId'],
+                      );
+                    },
+                  ),
+                ],
+              ),
+            ],
+          ),
+          GoRoute(
+            path: 'branch-permissions',
+            name: RouteNames.businessBranchPermissions,
+            builder: (context, state) {
+              return BusinessBranchPermissionsPage(
+                initialStaffId: state.uri.queryParameters['staffId'],
+                initialBranchId: state.uri.queryParameters['branchId'],
+              );
+            },
+          ),
+          GoRoute(
+            path: 'staff',
+            name: RouteNames.businessStaff,
+            builder: (context, state) => const BusinessStaffListPage(),
+            routes: [
+              GoRoute(
+                path: 'new',
+                name: RouteNames.businessStaffCreate,
+                builder: (context, state) => const BusinessStaffEditorPage(),
+              ),
+              GoRoute(
+                path: ':staffId',
+                name: RouteNames.businessStaffDetail,
+                builder: (context, state) {
+                  return BusinessStaffDetailPage(
+                    staffId: state.pathParameters['staffId'],
+                  );
+                },
+                routes: [
+                  GoRoute(
+                    path: 'edit',
+                    name: RouteNames.businessStaffEdit,
+                    builder: (context, state) {
+                      return BusinessStaffEditorPage(
+                        staffId: state.pathParameters['staffId'],
                       );
                     },
                   ),

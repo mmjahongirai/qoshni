@@ -49,6 +49,19 @@ abstract final class RoutePaths {
 
   static String businessBranchEditPath(String branchId) =>
       '/business-center/branches/$branchId/edit';
+  static const String businessStaff = '/business-center/staff';
+  static const String businessStaffCreate = '/business-center/staff/new';
+  static const String businessStaffDetail = '/business-center/staff/:staffId';
+  static const String businessStaffEdit =
+      '/business-center/staff/:staffId/edit';
+
+  static String businessStaffDetailPath(String staffId) =>
+      '/business-center/staff/$staffId';
+
+  static String businessStaffEditPath(String staffId) =>
+      '/business-center/staff/$staffId/edit';
+  static const String businessBranchPermissions =
+      '/business-center/branch-permissions';
 }
 
 abstract final class RouteNames {
@@ -84,4 +97,9 @@ abstract final class RouteNames {
   static const String businessBranchCreate = 'businessBranchCreate';
   static const String businessBranchDetail = 'businessBranchDetail';
   static const String businessBranchEdit = 'businessBranchEdit';
+  static const String businessStaff = 'businessStaff';
+  static const String businessStaffCreate = 'businessStaffCreate';
+  static const String businessStaffDetail = 'businessStaffDetail';
+  static const String businessStaffEdit = 'businessStaffEdit';
+  static const String businessBranchPermissions = 'businessBranchPermissions';
 }

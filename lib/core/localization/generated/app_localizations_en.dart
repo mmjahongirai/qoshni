@@ -1844,4 +1844,348 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get branchWeekdaySunday => 'Sunday';
+
+  @override
+  String get businessCenterStaffTitle => 'Staff & roles';
+
+  @override
+  String get businessCenterStaffBody =>
+      'Preview team members, roles, and branch access for this session only.';
+
+  @override
+  String get staffListTitle => 'Staff & roles';
+
+  @override
+  String get staffPreviewNotice =>
+      'Preview — no SMS, email, or real invites. Saved only in this session.';
+
+  @override
+  String get staffAddAction => 'Add staff member';
+
+  @override
+  String get staffEmptyTitle => 'No staff yet';
+
+  @override
+  String get staffEmptyBody => 'Add a preview team member and assign branches.';
+
+  @override
+  String get staffEditAction => 'Edit';
+
+  @override
+  String get staffDetailTitle => 'Staff member';
+
+  @override
+  String get staffNotFoundTitle => 'Staff member not found';
+
+  @override
+  String get staffNotFoundBody =>
+      'This preview staff member is not in your session.';
+
+  @override
+  String get staffBackToListAction => 'Back to staff list';
+
+  @override
+  String get staffSectionBasics => 'Basic information';
+
+  @override
+  String get staffSectionRole => 'Business role';
+
+  @override
+  String get staffSectionBranches => 'Assigned branches';
+
+  @override
+  String get staffFieldFirstName => 'First name';
+
+  @override
+  String get staffFieldLastName => 'Last name';
+
+  @override
+  String get staffFieldPhone => 'Phone';
+
+  @override
+  String get staffFieldEmail => 'Email';
+
+  @override
+  String get staffFieldEmailOptional => 'Email (optional)';
+
+  @override
+  String get staffFieldRole => 'Role';
+
+  @override
+  String get staffFieldActive => 'Active in preview';
+
+  @override
+  String get staffFieldActiveHint =>
+      'Inactive marks the member as removed in preview only.';
+
+  @override
+  String get staffBranchSelectionHint =>
+      'Select at least one branch. Permissions apply only to assigned branches.';
+
+  @override
+  String get staffNoBranchesAvailable =>
+      'Add a preview branch before assigning staff.';
+
+  @override
+  String get staffEditorCreateTitle => 'New staff member';
+
+  @override
+  String get staffEditorEditTitle => 'Edit staff member';
+
+  @override
+  String get staffSaveAction => 'Save staff member';
+
+  @override
+  String get staffCancelAction => 'Cancel';
+
+  @override
+  String get staffSaveSuccess => 'Staff member saved for this session.';
+
+  @override
+  String get staffSaveFailed =>
+      'Could not save. Your edits are still in the form.';
+
+  @override
+  String get staffDiscardConfirmTitle => 'Discard changes?';
+
+  @override
+  String get staffDiscardConfirmBody => 'Unsaved staff edits will be lost.';
+
+  @override
+  String get staffDiscardConfirmAction => 'Discard';
+
+  @override
+  String get staffValidationFirstName => 'Enter a first name';
+
+  @override
+  String get staffValidationPhone => 'Enter a valid phone number';
+
+  @override
+  String get staffValidationEmail => 'Enter a valid email address';
+
+  @override
+  String get staffValidationRoleNotAssignable =>
+      'This role cannot be assigned here.';
+
+  @override
+  String get staffValidationBranchRequired => 'Select at least one branch.';
+
+  @override
+  String get staffInvalidScopeMessage =>
+      'One or more branches are not available in this preview scope.';
+
+  @override
+  String get staffOwnerNotEditableMessage =>
+      'The preview business owner cannot be edited from this form.';
+
+  @override
+  String get staffRoleBusinessOwner => 'Business owner';
+
+  @override
+  String get staffRoleBusinessAdmin => 'Business admin';
+
+  @override
+  String get staffRoleBranchManager => 'Branch manager';
+
+  @override
+  String get staffRoleStaff => 'Staff';
+
+  @override
+  String get staffRoleReadOnly => 'Read-only';
+
+  @override
+  String get staffStatusActivePreview => 'Active (preview)';
+
+  @override
+  String get staffStatusInvitePendingPreview => 'Invite pending (preview only)';
+
+  @override
+  String get staffStatusRemovedPreview => 'Removed (preview)';
+
+  @override
+  String staffBranchesLabel(String names) {
+    return 'Branches: $names';
+  }
+
+  @override
+  String get staffPermissionPreviewTitle => 'Permission preview';
+
+  @override
+  String get staffPermissionPreviewDisclaimer =>
+      'Demo UI only — backend authorization is not connected yet.';
+
+  @override
+  String get staffPermSummaryOwner =>
+      'Full business control in preview (not assignable to new staff).';
+
+  @override
+  String get staffPermSummaryAdmin =>
+      'Manage branches and staff across the business preview.';
+
+  @override
+  String get staffPermSummaryBranchManager =>
+      'Operate within assigned branches only.';
+
+  @override
+  String get staffPermSummaryStaff =>
+      'Day-to-day tasks within assigned branches.';
+
+  @override
+  String get staffPermSummaryReadOnly => 'View preview data without editing.';
+
+  @override
+  String get staffPermManageBusiness => 'Manage business preview settings';
+
+  @override
+  String get staffPermManageBranches => 'Manage branch preview records';
+
+  @override
+  String get staffPermManageStaff => 'Manage staff preview records';
+
+  @override
+  String get staffPermViewReports => 'View preview reports';
+
+  @override
+  String get staffPermManageAssignedBranches =>
+      'Manage assigned branch preview data';
+
+  @override
+  String get staffPermViewBranchReports =>
+      'View assigned branch preview reports';
+
+  @override
+  String get staffPermExecuteAssignedTasks =>
+      'Execute tasks in assigned branches';
+
+  @override
+  String get staffPermViewAssignedBranch => 'View assigned branch preview data';
+
+  @override
+  String get staffPermViewBusinessPreview =>
+      'View business preview data (read-only)';
+
+  @override
+  String get businessCenterBranchPermissionsTitle => 'Branch permissions';
+
+  @override
+  String get businessCenterBranchPermissionsBody =>
+      'Preview staff access and actions per branch for this session only.';
+
+  @override
+  String get branchPermPageTitle => 'Branch permissions';
+
+  @override
+  String get branchPermPreviewNotice =>
+      'Preview — permissions are saved only in this session. Real server permissions are not connected yet.';
+
+  @override
+  String get branchPermSelectStaff => 'Staff member';
+
+  @override
+  String get branchPermSelectBranch => 'Branch';
+
+  @override
+  String get branchPermAccessStatusTitle => 'Branch access';
+
+  @override
+  String get branchPermAccessGrantedPreview =>
+      'Assigned to this branch (preview)';
+
+  @override
+  String get branchPermAccessNonePreview =>
+      'No access — staff is not assigned to this branch';
+
+  @override
+  String get branchPermUnassignedBranchHint =>
+      'Assign the staff member to this branch in Staff & roles before granting branch permissions.';
+
+  @override
+  String get branchPermOwnerNotEditable =>
+      'The preview business owner permissions cannot be changed here.';
+
+  @override
+  String get branchPermRoleSuggestedHint =>
+      'Role suggestions differ from explicit branch permissions you set below.';
+
+  @override
+  String get branchPermSuggestedVsExplicitNotice =>
+      'Suggested role capabilities are guidance only — toggles below are explicit preview permissions for this branch.';
+
+  @override
+  String get branchPermGroupView => 'View';
+
+  @override
+  String get branchPermGroupEdit => 'Edit';
+
+  @override
+  String get branchPermGroupStaff => 'Staff management';
+
+  @override
+  String get branchPermViewBranch => 'View branch';
+
+  @override
+  String get branchPermEditBranchProfile => 'Edit branch profile';
+
+  @override
+  String get branchPermManageBranchHours => 'Manage branch hours';
+
+  @override
+  String get branchPermViewStaff => 'View staff';
+
+  @override
+  String get branchPermManageBranchStaff => 'Manage branch staff';
+
+  @override
+  String get branchPermViewBusinessProfile => 'View business profile';
+
+  @override
+  String get branchPermDescViewBranch => 'See branch details in preview.';
+
+  @override
+  String get branchPermDescEditBranchProfile =>
+      'Edit branch name, address, and contacts in preview.';
+
+  @override
+  String get branchPermDescManageBranchHours =>
+      'Edit opening hours in preview.';
+
+  @override
+  String get branchPermDescViewStaff =>
+      'See staff linked to this branch in preview.';
+
+  @override
+  String get branchPermDescManageBranchStaff =>
+      'Assign or remove staff for this branch in preview.';
+
+  @override
+  String get branchPermDescViewBusinessProfile =>
+      'See business-level profile in preview.';
+
+  @override
+  String get branchPermSaveAction => 'Save permissions';
+
+  @override
+  String get branchPermCancelAction => 'Cancel';
+
+  @override
+  String get branchPermSaveSuccess =>
+      'Branch permissions saved for this session.';
+
+  @override
+  String get branchPermSaveFailed =>
+      'Could not save. Your changes are still on screen.';
+
+  @override
+  String get branchPermInvalidScopeMessage =>
+      'Invalid staff or branch for this business preview scope.';
+
+  @override
+  String get branchPermDiscardConfirmTitle => 'Discard changes?';
+
+  @override
+  String get branchPermDiscardConfirmBody =>
+      'Unsaved permission changes will be lost.';
+
+  @override
+  String get branchPermDiscardConfirmAction => 'Discard';
 }
