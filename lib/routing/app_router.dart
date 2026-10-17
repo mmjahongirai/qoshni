@@ -38,6 +38,18 @@ import 'package:qoshni/features/business_platform/presentation/pages/business_st
 import 'package:qoshni/features/business_platform/presentation/pages/business_staff_detail_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_staff_editor_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_branch_permissions_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_home_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_category_list_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_category_detail_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_category_editor_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_product_list_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_product_detail_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_product_editor_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_product_variants_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_product_variant_editor_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_service_list_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_service_detail_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_service_editor_page.dart';
 import 'package:qoshni/routing/route_paths.dart';
 
 /// Application router. Add feature routes here as modules are introduced.
@@ -239,6 +251,153 @@ class AppRouter {
                 initialBranchId: state.uri.queryParameters['branchId'],
               );
             },
+          ),
+          GoRoute(
+            path: 'catalog',
+            name: RouteNames.businessCatalog,
+            builder: (context, state) => const BusinessCatalogHomePage(),
+            routes: [
+              GoRoute(
+                path: 'categories',
+                name: RouteNames.businessCatalogCategories,
+                builder: (context, state) =>
+                    const BusinessCatalogCategoryListPage(),
+                routes: [
+                  GoRoute(
+                    path: 'new',
+                    name: RouteNames.businessCatalogCategoryCreate,
+                    builder: (context, state) =>
+                        const BusinessCatalogCategoryEditorPage(),
+                  ),
+                  GoRoute(
+                    path: ':categoryId',
+                    name: RouteNames.businessCatalogCategoryDetail,
+                    builder: (context, state) {
+                      return BusinessCatalogCategoryDetailPage(
+                        categoryId: state.pathParameters['categoryId'],
+                      );
+                    },
+                    routes: [
+                      GoRoute(
+                        path: 'edit',
+                        name: RouteNames.businessCatalogCategoryEdit,
+                        builder: (context, state) {
+                          return BusinessCatalogCategoryEditorPage(
+                            categoryId: state.pathParameters['categoryId'],
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              GoRoute(
+                path: 'products',
+                name: RouteNames.businessCatalogProducts,
+                builder: (context, state) {
+                  return BusinessCatalogProductListPage(
+                    initialCategoryId: state.uri.queryParameters['categoryId'],
+                    initialStatus: state.uri.queryParameters['status'],
+                  );
+                },
+                routes: [
+                  GoRoute(
+                    path: 'new',
+                    name: RouteNames.businessCatalogProductCreate,
+                    builder: (context, state) =>
+                        const BusinessCatalogProductEditorPage(),
+                  ),
+                  GoRoute(
+                    path: ':productId',
+                    name: RouteNames.businessCatalogProductDetail,
+                    builder: (context, state) {
+                      return BusinessCatalogProductDetailPage(
+                        productId: state.pathParameters['productId'],
+                      );
+                    },
+                    routes: [
+                      GoRoute(
+                        path: 'edit',
+                        name: RouteNames.businessCatalogProductEdit,
+                        builder: (context, state) {
+                          return BusinessCatalogProductEditorPage(
+                            productId: state.pathParameters['productId'],
+                          );
+                        },
+                      ),
+                      GoRoute(
+                        path: 'variants',
+                        name: RouteNames.businessCatalogProductVariants,
+                        builder: (context, state) {
+                          return BusinessCatalogProductVariantsPage(
+                            productId: state.pathParameters['productId'],
+                          );
+                        },
+                        routes: [
+                          GoRoute(
+                            path: 'new',
+                            name: RouteNames.businessCatalogProductVariantCreate,
+                            builder: (context, state) {
+                              return BusinessCatalogProductVariantEditorPage(
+                                productId: state.pathParameters['productId'],
+                              );
+                            },
+                          ),
+                          GoRoute(
+                            path: ':variantId/edit',
+                            name: RouteNames.businessCatalogProductVariantEdit,
+                            builder: (context, state) {
+                              return BusinessCatalogProductVariantEditorPage(
+                                productId: state.pathParameters['productId'],
+                                variantId: state.pathParameters['variantId'],
+                              );
+                            },
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              GoRoute(
+                path: 'services',
+                name: RouteNames.businessCatalogServices,
+                builder: (context, state) {
+                  return BusinessCatalogServiceListPage(
+                    initialCategoryId: state.uri.queryParameters['categoryId'],
+                    initialStatus: state.uri.queryParameters['status'],
+                  );
+                },
+                routes: [
+                  GoRoute(
+                    path: 'new',
+                    name: RouteNames.businessCatalogServiceCreate,
+                    builder: (context, state) =>
+                        const BusinessCatalogServiceEditorPage(),
+                  ),
+                  GoRoute(
+                    path: ':serviceId',
+                    name: RouteNames.businessCatalogServiceDetail,
+                    builder: (context, state) {
+                      return BusinessCatalogServiceDetailPage(
+                        serviceId: state.pathParameters['serviceId'],
+                      );
+                    },
+                    routes: [
+                      GoRoute(
+                        path: 'edit',
+                        name: RouteNames.businessCatalogServiceEdit,
+                        builder: (context, state) {
+                          return BusinessCatalogServiceEditorPage(
+                            serviceId: state.pathParameters['serviceId'],
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
           ),
           GoRoute(
             path: 'staff',

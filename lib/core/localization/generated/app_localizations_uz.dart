@@ -2195,4 +2195,378 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get branchPermDiscardConfirmAction => 'Bekor qilish';
+
+  @override
+  String get businessCenterCatalogTitle => 'Katalog';
+
+  @override
+  String get businessCenterCatalogBody =>
+      'Faqat shu sessiya uchun kategoriyalar va katalog statistikasi preview.';
+
+  @override
+  String get catalogHomeTitle => 'Katalog';
+
+  @override
+  String get catalogPreviewNotice =>
+      'Preview — katalog ma’lumotlari faqat shu sessiyada saqlanadi. Ommaviy qidiruv va buyurtmalarga ulanmagan.';
+
+  @override
+  String get catalogHomeIntro =>
+      'Biznes preview uchun mahsulot va xizmatlarni tartibga soling. Mijoz katalogi bilan sinxron keyingi bosqichda.';
+
+  @override
+  String get catalogStatCategories => 'Kategoriyalar';
+
+  @override
+  String get catalogStatProducts => 'Mahsulotlar';
+
+  @override
+  String get catalogStatServices => 'Xizmatlar';
+
+  @override
+  String get catalogStatActiveItems => 'Faol elementlar';
+
+  @override
+  String get catalogStatDraftItems => 'Qoralama elementlar';
+
+  @override
+  String get catalogManageCategoriesTitle => 'Kategoriyalarni boshqarish';
+
+  @override
+  String get catalogManageCategoriesBody =>
+      'Biznes preview uchun ko‘p tilli kategoriyalarni yarating va tahrirlang.';
+
+  @override
+  String get catalogProductsSectionTitle => 'Mahsulotlar';
+
+  @override
+  String get catalogProductsSectionBody =>
+      'To‘liq mahsulot boshqaruvi Phase 09.2 da.';
+
+  @override
+  String get catalogServicesSectionTitle => 'Xizmatlar';
+
+  @override
+  String get catalogServicesSectionBody =>
+      'To‘liq xizmat boshqaruvi Phase 09.2 da.';
+
+  @override
+  String get catalogComingSoonLabel => 'Keyingi bosqich';
+
+  @override
+  String get catalogCategoryListTitle => 'Kategoriyalar';
+
+  @override
+  String get catalogCategoryAddAction => 'Kategoriya qo‘shish';
+
+  @override
+  String get catalogCategorySearchLabel => 'Kategoriyalarni qidirish';
+
+  @override
+  String get catalogCategoryEmptyTitle => 'Hali kategoriya yo‘q';
+
+  @override
+  String get catalogCategoryEmptyBody =>
+      'Biznes katalog preview’ini tartibga solish uchun kategoriya qo‘shing.';
+
+  @override
+  String get catalogCategoryDetailTitle => 'Kategoriya';
+
+  @override
+  String get catalogCategoryEditAction => 'Tahrirlash';
+
+  @override
+  String get catalogCategoryCreateTitle => 'Yangi kategoriya';
+
+  @override
+  String get catalogCategoryEditTitle => 'Kategoriyani tahrirlash';
+
+  @override
+  String get catalogCategoryNotFoundTitle => 'Kategoriya topilmadi';
+
+  @override
+  String get catalogCategoryNotFoundBody =>
+      'Bu kategoriya joriy biznes preview doirasida yo‘q.';
+
+  @override
+  String get catalogCategoryBackToListAction => 'Kategoriyalar ro‘yxatiga';
+
+  @override
+  String get catalogCategoryNamesSection => 'Nomlar';
+
+  @override
+  String get catalogCategoryDescriptionsSection => 'Tavsiflar';
+
+  @override
+  String get catalogCategoryFieldEmpty => '—';
+
+  @override
+  String get catalogLanguageUz => 'O‘zbek';
+
+  @override
+  String get catalogLanguageRu => 'Rus';
+
+  @override
+  String get catalogLanguageEn => 'Ingliz';
+
+  @override
+  String catalogCategoryParentLabel(String name) {
+    return 'Ota kategoriya: $name';
+  }
+
+  @override
+  String get catalogCategoryStatusActive => 'Faol';
+
+  @override
+  String get catalogCategoryStatusDraft => 'Qoralama';
+
+  @override
+  String get catalogCategoryStatusArchived => 'Arxiv';
+
+  @override
+  String get catalogCategoryFormNameHint =>
+      'Kamida bitta til (o‘zbek, rus yoki ingliz) uchun nom kiriting.';
+
+  @override
+  String get catalogCategoryNameRequiredHint =>
+      'Kamida bitta til uchun kategoriya nomini kiriting.';
+
+  @override
+  String get catalogCategoryNameUzLabel => 'Nom (o‘zbekcha)';
+
+  @override
+  String get catalogCategoryNameRuLabel => 'Nom (ruscha)';
+
+  @override
+  String get catalogCategoryNameEnLabel => 'Nom (inglizcha)';
+
+  @override
+  String get catalogCategoryDescUzLabel => 'Tavsif (o‘zbekcha, ixtiyoriy)';
+
+  @override
+  String get catalogCategoryDescRuLabel => 'Tavsif (ruscha, ixtiyoriy)';
+
+  @override
+  String get catalogCategoryDescEnLabel => 'Tavsif (inglizcha, ixtiyoriy)';
+
+  @override
+  String get catalogCategoryStatusLabel => 'Holat';
+
+  @override
+  String get catalogCategoryParentFieldLabel => 'Ota kategoriya (ixtiyoriy)';
+
+  @override
+  String get catalogCategoryNoParent => 'Ota kategoriya yo‘q';
+
+  @override
+  String get catalogCategorySaveAction => 'Saqlash';
+
+  @override
+  String get catalogCategoryCancelAction => 'Bekor qilish';
+
+  @override
+  String get catalogCategorySaveSuccess =>
+      'Kategoriya shu sessiya uchun saqlandi.';
+
+  @override
+  String get catalogCategorySaveFailed =>
+      'Saqlab bo‘lmadi. Kiritilgan ma’lumotlar ekranda qoldi.';
+
+  @override
+  String get catalogCategoryDuplicateNameError =>
+      'Bu nomdagi kategoriya preview doirasida allaqachon mavjud.';
+
+  @override
+  String get catalogCategoryInvalidParentError =>
+      'Aylana ierarxiyasiz to‘g‘ri ota kategoriyani tanlang.';
+
+  @override
+  String get catalogCategoryDiscardConfirmTitle =>
+      'O‘zgarishlar bekor qilinsinmi?';
+
+  @override
+  String get catalogCategoryDiscardConfirmBody =>
+      'Saqlanmagan kategoriya o‘zgarishlari yo‘qoladi.';
+
+  @override
+  String get catalogCategoryDiscardCancelAction =>
+      'Tahrirlashni davom ettirish';
+
+  @override
+  String get catalogCategoryDiscardConfirmAction => 'Bekor qilish';
+
+  @override
+  String get catalogListingStatusActive => 'Faol';
+
+  @override
+  String get catalogListingStatusDraft => 'Qoralama';
+
+  @override
+  String get catalogListingStatusArchived => 'Arxiv';
+
+  @override
+  String get catalogStatArchivedItems => 'Arxiv elementlar';
+
+  @override
+  String get catalogListingSearchLabel => 'Nom bo‘yicha qidirish';
+
+  @override
+  String get catalogListingCategoryFilter => 'Kategoriya filtri';
+
+  @override
+  String get catalogListingStatusFilter => 'Holat filtri';
+
+  @override
+  String get catalogListingAllCategories => 'Barcha kategoriyalar';
+
+  @override
+  String get catalogListingAllStatuses => 'Barcha holatlar';
+
+  @override
+  String get catalogListingClearFilters => 'Filtrlarni tozalash';
+
+  @override
+  String catalogListingFilteredCount(int filtered, int total) {
+    return 'Ko‘rsatilmoqda: $filtered / $total';
+  }
+
+  @override
+  String get catalogListingCategoryField => 'Kategoriya';
+
+  @override
+  String get catalogListingCategoryRequired => 'Kategoriyani tanlang.';
+
+  @override
+  String get catalogListingInvalidCategory =>
+      'Kategoriya bu biznes preview doirasida emas.';
+
+  @override
+  String catalogListingCategoryLabel(String name) {
+    return 'Kategoriya: $name';
+  }
+
+  @override
+  String catalogHomeFilteredCount(int filtered, int total) {
+    return 'Preview’da $filtered / $total ko‘rsatilmoqda';
+  }
+
+  @override
+  String get catalogProductListTitle => 'Mahsulotlar';
+
+  @override
+  String get catalogProductAddAction => 'Mahsulot qo‘shish';
+
+  @override
+  String get catalogProductEmptyBody => 'Filtrga mos mahsulot yo‘q.';
+
+  @override
+  String get catalogProductDetailTitle => 'Mahsulot';
+
+  @override
+  String get catalogProductCreateTitle => 'Yangi mahsulot';
+
+  @override
+  String get catalogProductEditTitle => 'Mahsulotni tahrirlash';
+
+  @override
+  String get catalogProductNotFoundTitle => 'Mahsulot topilmadi';
+
+  @override
+  String get catalogProductBackToListAction => 'Mahsulotlar ro‘yxatiga';
+
+  @override
+  String get catalogProductSaveSuccess =>
+      'Mahsulot shu sessiya uchun saqlandi.';
+
+  @override
+  String get catalogProductSaveFailed =>
+      'Saqlab bo‘lmadi. Ma’lumotlar ekranda qoldi.';
+
+  @override
+  String get catalogProductAttributeKeyLabel => 'Atribut kaliti (ixtiyoriy)';
+
+  @override
+  String get catalogProductAttributeValueLabel => 'Atribut qiymati (ixtiyoriy)';
+
+  @override
+  String catalogProductVariantsTitle(int count) {
+    return 'Variantlar ($count)';
+  }
+
+  @override
+  String get catalogProductVariantsManageTitle => 'Mahsulot variantlari';
+
+  @override
+  String get catalogServiceListTitle => 'Xizmatlar';
+
+  @override
+  String get catalogServiceAddAction => 'Xizmat qo‘shish';
+
+  @override
+  String get catalogServiceEmptyBody => 'Filtrga mos xizmat yo‘q.';
+
+  @override
+  String get catalogServiceDetailTitle => 'Xizmat';
+
+  @override
+  String get catalogServiceCreateTitle => 'Yangi xizmat';
+
+  @override
+  String get catalogServiceEditTitle => 'Xizmatni tahrirlash';
+
+  @override
+  String get catalogServiceBackToListAction => 'Xizmatlar ro‘yxatiga';
+
+  @override
+  String get catalogServiceSaveSuccess => 'Xizmat shu sessiya uchun saqlandi.';
+
+  @override
+  String get catalogServiceSaveFailed => 'Saqlab bo‘lmadi.';
+
+  @override
+  String get catalogServiceInvalidDuration =>
+      'Davomiylik musbat daqiqa soni bo‘lishi kerak.';
+
+  @override
+  String get catalogServiceDurationFieldOptional =>
+      'Davomiylik (daqiqa, ixtiyoriy)';
+
+  @override
+  String catalogServiceDurationLabel(int minutes) {
+    return 'Davomiylik: $minutes daq';
+  }
+
+  @override
+  String get catalogVariantAddAction => 'Variant qo‘shish';
+
+  @override
+  String get catalogVariantEmptyBody => 'Hali variant yo‘q.';
+
+  @override
+  String get catalogVariantCreateTitle => 'Yangi variant';
+
+  @override
+  String get catalogVariantEditTitle => 'Variantni tahrirlash';
+
+  @override
+  String get catalogVariantLabelField => 'Variant nomi';
+
+  @override
+  String get catalogVariantSkuField => 'SKU';
+
+  @override
+  String get catalogVariantLabelRequired => 'Variant nomini kiriting.';
+
+  @override
+  String get catalogVariantSkuRequired => 'SKU kiriting.';
+
+  @override
+  String get catalogVariantSaveSuccess => 'Variant shu sessiya uchun saqlandi.';
+
+  @override
+  String get catalogVariantSaveFailed => 'Variantni saqlab bo‘lmadi.';
+
+  @override
+  String get catalogVariantDuplicateSku =>
+      'Bu SKU preview doirasida allaqachon mavjud.';
 }

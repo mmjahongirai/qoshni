@@ -62,6 +62,69 @@ abstract final class RoutePaths {
       '/business-center/staff/$staffId/edit';
   static const String businessBranchPermissions =
       '/business-center/branch-permissions';
+  static const String businessCatalog = '/business-center/catalog';
+  static const String businessCatalogCategories =
+      '/business-center/catalog/categories';
+  static const String businessCatalogCategoryCreate =
+      '/business-center/catalog/categories/new';
+  static const String businessCatalogCategoryDetail =
+      '/business-center/catalog/categories/:categoryId';
+  static const String businessCatalogCategoryEdit =
+      '/business-center/catalog/categories/:categoryId/edit';
+
+  static String businessCatalogCategoryDetailPath(String categoryId) =>
+      '/business-center/catalog/categories/$categoryId';
+
+  static String businessCatalogCategoryEditPath(String categoryId) =>
+      '/business-center/catalog/categories/$categoryId/edit';
+
+  static const String businessCatalogProducts =
+      '/business-center/catalog/products';
+  static const String businessCatalogProductCreate =
+      '/business-center/catalog/products/new';
+  static const String businessCatalogProductDetail =
+      '/business-center/catalog/products/:productId';
+  static const String businessCatalogProductEdit =
+      '/business-center/catalog/products/:productId/edit';
+  static const String businessCatalogProductVariants =
+      '/business-center/catalog/products/:productId/variants';
+  static const String businessCatalogProductVariantCreate =
+      '/business-center/catalog/products/:productId/variants/new';
+  static const String businessCatalogProductVariantEdit =
+      '/business-center/catalog/products/:productId/variants/:variantId/edit';
+
+  static String businessCatalogProductDetailPath(String productId) =>
+      '/business-center/catalog/products/$productId';
+
+  static String businessCatalogProductEditPath(String productId) =>
+      '/business-center/catalog/products/$productId/edit';
+
+  static String businessCatalogProductVariantsPath(String productId) =>
+      '/business-center/catalog/products/$productId/variants';
+
+  static String businessCatalogProductVariantCreatePath(String productId) =>
+      '/business-center/catalog/products/$productId/variants/new';
+
+  static String businessCatalogProductVariantEditPath(
+    String productId,
+    String variantId,
+  ) =>
+      '/business-center/catalog/products/$productId/variants/$variantId/edit';
+
+  static const String businessCatalogServices =
+      '/business-center/catalog/services';
+  static const String businessCatalogServiceCreate =
+      '/business-center/catalog/services/new';
+  static const String businessCatalogServiceDetail =
+      '/business-center/catalog/services/:serviceId';
+  static const String businessCatalogServiceEdit =
+      '/business-center/catalog/services/:serviceId/edit';
+
+  static String businessCatalogServiceDetailPath(String serviceId) =>
+      '/business-center/catalog/services/$serviceId';
+
+  static String businessCatalogServiceEditPath(String serviceId) =>
+      '/business-center/catalog/services/$serviceId/edit';
 }
 
 abstract final class RouteNames {
@@ -102,4 +165,32 @@ abstract final class RouteNames {
   static const String businessStaffDetail = 'businessStaffDetail';
   static const String businessStaffEdit = 'businessStaffEdit';
   static const String businessBranchPermissions = 'businessBranchPermissions';
+  static const String businessCatalog = 'businessCatalog';
+  static const String businessCatalogCategories = 'businessCatalogCategories';
+  static const String businessCatalogCategoryCreate =
+      'businessCatalogCategoryCreate';
+  static const String businessCatalogCategoryDetail =
+      'businessCatalogCategoryDetail';
+  static const String businessCatalogCategoryEdit =
+      'businessCatalogCategoryEdit';
+  static const String businessCatalogProducts = 'businessCatalogProducts';
+  static const String businessCatalogProductCreate =
+      'businessCatalogProductCreate';
+  static const String businessCatalogProductDetail =
+      'businessCatalogProductDetail';
+  static const String businessCatalogProductEdit =
+      'businessCatalogProductEdit';
+  static const String businessCatalogProductVariants =
+      'businessCatalogProductVariants';
+  static const String businessCatalogProductVariantCreate =
+      'businessCatalogProductVariantCreate';
+  static const String businessCatalogProductVariantEdit =
+      'businessCatalogProductVariantEdit';
+  static const String businessCatalogServices = 'businessCatalogServices';
+  static const String businessCatalogServiceCreate =
+      'businessCatalogServiceCreate';
+  static const String businessCatalogServiceDetail =
+      'businessCatalogServiceDetail';
+  static const String businessCatalogServiceEdit =
+      'businessCatalogServiceEdit';
 }

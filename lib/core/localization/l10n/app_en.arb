@@ -779,5 +779,152 @@
   "branchPermInvalidScopeMessage": "Invalid staff or branch for this business preview scope.",
   "branchPermDiscardConfirmTitle": "Discard changes?",
   "branchPermDiscardConfirmBody": "Unsaved permission changes will be lost.",
-  "branchPermDiscardConfirmAction": "Discard"
+  "branchPermDiscardConfirmAction": "Discard",
+  "businessCenterCatalogTitle": "Catalog",
+  "businessCenterCatalogBody": "Preview categories and catalog stats for this business session only.",
+  "catalogHomeTitle": "Catalog",
+  "catalogPreviewNotice": "Preview — catalog data is saved only in this session. Not connected to public search or customer orders.",
+  "catalogHomeIntro": "Organize products and services for your business preview. Customer-facing catalog sync arrives in a later phase.",
+  "catalogStatCategories": "Categories",
+  "catalogStatProducts": "Products",
+  "catalogStatServices": "Services",
+  "catalogStatActiveItems": "Active items",
+  "catalogStatDraftItems": "Draft items",
+  "catalogManageCategoriesTitle": "Manage categories",
+  "catalogManageCategoriesBody": "Create and edit multilingual categories for this business preview.",
+  "catalogProductsSectionTitle": "Products",
+  "catalogProductsSectionBody": "Manage preview products for this business session.",
+  "catalogServicesSectionTitle": "Services",
+  "catalogServicesSectionBody": "Manage preview services for this business session.",
+  "catalogComingSoonLabel": "Next phase",
+  "catalogCategoryListTitle": "Categories",
+  "catalogCategoryAddAction": "Add category",
+  "catalogCategorySearchLabel": "Search categories",
+  "catalogCategoryEmptyTitle": "No categories yet",
+  "catalogCategoryEmptyBody": "Add a category to organize your business catalog preview.",
+  "catalogCategoryDetailTitle": "Category",
+  "catalogCategoryEditAction": "Edit",
+  "catalogCategoryCreateTitle": "New category",
+  "catalogCategoryEditTitle": "Edit category",
+  "catalogCategoryNotFoundTitle": "Category not found",
+  "catalogCategoryNotFoundBody": "This category is not in the current business preview scope.",
+  "catalogCategoryBackToListAction": "Back to categories",
+  "catalogCategoryNamesSection": "Names",
+  "catalogCategoryDescriptionsSection": "Descriptions",
+  "catalogCategoryFieldEmpty": "—",
+  "catalogLanguageUz": "Uzbek",
+  "catalogLanguageRu": "Russian",
+  "catalogLanguageEn": "English",
+  "catalogCategoryParentLabel": "Parent: {name}",
+  "@catalogCategoryParentLabel": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogCategoryStatusActive": "Active",
+  "catalogCategoryStatusDraft": "Draft",
+  "catalogCategoryStatusArchived": "Archived",
+  "catalogCategoryFormNameHint": "Provide a name in at least one language (Uzbek, Russian, or English).",
+  "catalogCategoryNameRequiredHint": "Enter a category name in at least one language.",
+  "catalogCategoryNameUzLabel": "Name (Uzbek)",
+  "catalogCategoryNameRuLabel": "Name (Russian)",
+  "catalogCategoryNameEnLabel": "Name (English)",
+  "catalogCategoryDescUzLabel": "Description (Uzbek, optional)",
+  "catalogCategoryDescRuLabel": "Description (Russian, optional)",
+  "catalogCategoryDescEnLabel": "Description (English, optional)",
+  "catalogCategoryStatusLabel": "Status",
+  "catalogCategoryParentFieldLabel": "Parent category (optional)",
+  "catalogCategoryNoParent": "No parent",
+  "catalogCategorySaveAction": "Save",
+  "catalogCategoryCancelAction": "Cancel",
+  "catalogCategorySaveSuccess": "Category saved for this session.",
+  "catalogCategorySaveFailed": "Could not save. Your entries are still on screen.",
+  "catalogCategoryDuplicateNameError": "A category with this name already exists in this preview scope.",
+  "catalogCategoryInvalidParentError": "Choose a valid parent category without circular hierarchy.",
+  "catalogCategoryDiscardConfirmTitle": "Discard changes?",
+  "catalogCategoryDiscardConfirmBody": "Unsaved category changes will be lost.",
+  "catalogCategoryDiscardCancelAction": "Keep editing",
+  "catalogCategoryDiscardConfirmAction": "Discard",
+  "catalogListingStatusActive": "Active",
+  "catalogListingStatusDraft": "Draft",
+  "catalogListingStatusArchived": "Archived",
+  "catalogStatArchivedItems": "Archived items",
+  "catalogListingSearchLabel": "Search by name",
+  "catalogListingCategoryFilter": "Category filter",
+  "catalogListingStatusFilter": "Status filter",
+  "catalogListingAllCategories": "All categories",
+  "catalogListingAllStatuses": "All statuses",
+  "catalogListingClearFilters": "Clear filters",
+  "catalogListingFilteredCount": "Showing {filtered} of {total}",
+  "@catalogListingFilteredCount": {
+    "placeholders": {
+      "filtered": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "catalogListingCategoryField": "Category",
+  "catalogListingCategoryRequired": "Select a category.",
+  "catalogListingInvalidCategory": "Category is not in this business preview scope.",
+  "catalogListingCategoryLabel": "Category: {name}",
+  "@catalogListingCategoryLabel": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "catalogHomeFilteredCount": "Showing {filtered} of {total} in preview",
+  "@catalogHomeFilteredCount": {
+    "placeholders": {
+      "filtered": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "catalogProductListTitle": "Products",
+  "catalogProductAddAction": "Add product",
+  "catalogProductEmptyBody": "No products match your filters.",
+  "catalogProductDetailTitle": "Product",
+  "catalogProductCreateTitle": "New product",
+  "catalogProductEditTitle": "Edit product",
+  "catalogProductNotFoundTitle": "Product not found",
+  "catalogProductBackToListAction": "Back to products",
+  "catalogProductSaveSuccess": "Product saved for this session.",
+  "catalogProductSaveFailed": "Could not save. Your entries are still on screen.",
+  "catalogProductAttributeKeyLabel": "Attribute key (optional)",
+  "catalogProductAttributeValueLabel": "Attribute value (optional)",
+  "catalogProductVariantsTitle": "Variants ({count})",
+  "@catalogProductVariantsTitle": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "catalogProductVariantsManageTitle": "Product variants",
+  "catalogServiceListTitle": "Services",
+  "catalogServiceAddAction": "Add service",
+  "catalogServiceEmptyBody": "No services match your filters.",
+  "catalogServiceDetailTitle": "Service",
+  "catalogServiceCreateTitle": "New service",
+  "catalogServiceEditTitle": "Edit service",
+  "catalogServiceBackToListAction": "Back to services",
+  "catalogServiceSaveSuccess": "Service saved for this session.",
+  "catalogServiceSaveFailed": "Could not save. Your entries are still on screen.",
+  "catalogServiceInvalidDuration": "Duration must be a positive number of minutes.",
+  "catalogServiceDurationFieldOptional": "Duration (minutes, optional)",
+  "catalogServiceDurationLabel": "Duration: {minutes} min",
+  "@catalogServiceDurationLabel": {
+    "placeholders": {
+      "minutes": {"type": "int"}
+    }
+  },
+  "catalogVariantAddAction": "Add variant",
+  "catalogVariantEmptyBody": "No variants yet for this product.",
+  "catalogVariantCreateTitle": "New variant",
+  "catalogVariantEditTitle": "Edit variant",
+  "catalogVariantLabelField": "Variant label",
+  "catalogVariantSkuField": "SKU",
+  "catalogVariantLabelRequired": "Enter a variant label.",
+  "catalogVariantSkuRequired": "Enter a SKU.",
+  "catalogVariantSaveSuccess": "Variant saved for this session.",
+  "catalogVariantSaveFailed": "Could not save variant.",
+  "catalogVariantDuplicateSku": "This SKU already exists in the preview scope."
 }
