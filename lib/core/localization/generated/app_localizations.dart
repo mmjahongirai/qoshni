@@ -6744,6 +6744,299 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Base price is required for preview.'**
   String get catalogPromoEligibilityBasePriceRequired;
+
+  /// No description provided for @catalogCommercialFeeSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Commercial fees (preview)'**
+  String get catalogCommercialFeeSectionTitle;
+
+  /// No description provided for @catalogCommercialFeeSectionBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Illustrative platform, service, delivery and commission rules — not settlement.'**
+  String get catalogCommercialFeeSectionBody;
+
+  /// No description provided for @catalogCommercialFeeListTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Commercial fees'**
+  String get catalogCommercialFeeListTitle;
+
+  /// No description provided for @catalogCommercialFeeDemoDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Illustrative commercial fees only — not connected to live checkout or settlement.'**
+  String get catalogCommercialFeeDemoDisclaimer;
+
+  /// No description provided for @catalogCommercialFeeAddAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add fee rule'**
+  String get catalogCommercialFeeAddAction;
+
+  /// No description provided for @catalogCommercialFeeEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'No fee rules match your filters.'**
+  String get catalogCommercialFeeEmptyBody;
+
+  /// No description provided for @catalogCommercialFeeTypeFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Fee type'**
+  String get catalogCommercialFeeTypeFilter;
+
+  /// No description provided for @catalogCommercialFeeAllTypes.
+  ///
+  /// In en, this message translates to:
+  /// **'All fee types'**
+  String get catalogCommercialFeeAllTypes;
+
+  /// No description provided for @catalogCommercialFeeStatusFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get catalogCommercialFeeStatusFilter;
+
+  /// No description provided for @catalogCommercialFeeAllStatuses.
+  ///
+  /// In en, this message translates to:
+  /// **'All statuses'**
+  String get catalogCommercialFeeAllStatuses;
+
+  /// No description provided for @catalogCommercialFeeBranchFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch'**
+  String get catalogCommercialFeeBranchFilter;
+
+  /// No description provided for @catalogCommercialFeeAllBranches.
+  ///
+  /// In en, this message translates to:
+  /// **'All branches'**
+  String get catalogCommercialFeeAllBranches;
+
+  /// No description provided for @catalogCommercialFeeTypePlatform.
+  ///
+  /// In en, this message translates to:
+  /// **'Platform fee'**
+  String get catalogCommercialFeeTypePlatform;
+
+  /// No description provided for @catalogCommercialFeeTypeService.
+  ///
+  /// In en, this message translates to:
+  /// **'Service fee'**
+  String get catalogCommercialFeeTypeService;
+
+  /// No description provided for @catalogCommercialFeeTypeDelivery.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery fee'**
+  String get catalogCommercialFeeTypeDelivery;
+
+  /// No description provided for @catalogCommercialFeeTypeCommission.
+  ///
+  /// In en, this message translates to:
+  /// **'Commission'**
+  String get catalogCommercialFeeTypeCommission;
+
+  /// No description provided for @catalogCommercialFeeBearerCustomer.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer'**
+  String get catalogCommercialFeeBearerCustomer;
+
+  /// No description provided for @catalogCommercialFeeBearerBusiness.
+  ///
+  /// In en, this message translates to:
+  /// **'Business'**
+  String get catalogCommercialFeeBearerBusiness;
+
+  /// No description provided for @catalogCommercialFeeBearerPlatform.
+  ///
+  /// In en, this message translates to:
+  /// **'Platform accounting'**
+  String get catalogCommercialFeeBearerPlatform;
+
+  /// No description provided for @catalogCommercialFeeCalcFixed.
+  ///
+  /// In en, this message translates to:
+  /// **'Fixed amount (UZS)'**
+  String get catalogCommercialFeeCalcFixed;
+
+  /// No description provided for @catalogCommercialFeeCalcPercent.
+  ///
+  /// In en, this message translates to:
+  /// **'Percentage'**
+  String get catalogCommercialFeeCalcPercent;
+
+  /// No description provided for @catalogCommercialFeeBasisListing.
+  ///
+  /// In en, this message translates to:
+  /// **'Listing base'**
+  String get catalogCommercialFeeBasisListing;
+
+  /// No description provided for @catalogCommercialFeeBasisService.
+  ///
+  /// In en, this message translates to:
+  /// **'Service amount'**
+  String get catalogCommercialFeeBasisService;
+
+  /// No description provided for @catalogCommercialFeeBasisDelivery.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery basis'**
+  String get catalogCommercialFeeBasisDelivery;
+
+  /// No description provided for @catalogCommercialFeeBasisCommission.
+  ///
+  /// In en, this message translates to:
+  /// **'Commission basis'**
+  String get catalogCommercialFeeBasisCommission;
+
+  /// No description provided for @catalogCommercialFeePriorityLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Priority: {priority}'**
+  String catalogCommercialFeePriorityLabel(int priority);
+
+  /// No description provided for @catalogCommercialFeeEditAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit draft'**
+  String get catalogCommercialFeeEditAction;
+
+  /// No description provided for @catalogCommercialFeeActivateAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Activate'**
+  String get catalogCommercialFeeActivateAction;
+
+  /// No description provided for @catalogCommercialFeeArchiveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Archive'**
+  String get catalogCommercialFeeArchiveAction;
+
+  /// No description provided for @catalogCommercialFeeShowHistoryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Show history'**
+  String get catalogCommercialFeeShowHistoryAction;
+
+  /// No description provided for @catalogCommercialFeeHideHistoryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide history'**
+  String get catalogCommercialFeeHideHistoryAction;
+
+  /// No description provided for @catalogCommercialFeePreviewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Fee preview'**
+  String get catalogCommercialFeePreviewTitle;
+
+  /// No description provided for @catalogCommercialFeePreviewListingBase.
+  ///
+  /// In en, this message translates to:
+  /// **'Listing base (UZS)'**
+  String get catalogCommercialFeePreviewListingBase;
+
+  /// No description provided for @catalogCommercialFeePreviewService.
+  ///
+  /// In en, this message translates to:
+  /// **'Service amount (UZS)'**
+  String get catalogCommercialFeePreviewService;
+
+  /// No description provided for @catalogCommercialFeePreviewDelivery.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery basis (UZS)'**
+  String get catalogCommercialFeePreviewDelivery;
+
+  /// No description provided for @catalogCommercialFeePreviewCommission.
+  ///
+  /// In en, this message translates to:
+  /// **'Commission basis (UZS)'**
+  String get catalogCommercialFeePreviewCommission;
+
+  /// No description provided for @catalogCommercialFeePreviewLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{type} · {bearer} · basis {basis} · fee {fee}'**
+  String catalogCommercialFeePreviewLine(
+    String type,
+    String bearer,
+    String basis,
+    String fee,
+  );
+
+  /// No description provided for @catalogCommercialFeePreviewBasisMissing.
+  ///
+  /// In en, this message translates to:
+  /// **'{type} ({bearer}): basis not provided.'**
+  String catalogCommercialFeePreviewBasisMissing(String type, String bearer);
+
+  /// No description provided for @catalogCommercialFeePreviewAmbiguous.
+  ///
+  /// In en, this message translates to:
+  /// **'Ambiguous fee selection for: {types}'**
+  String catalogCommercialFeePreviewAmbiguous(String types);
+
+  /// No description provided for @catalogCommercialFeePreviewTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Illustrative fee total: {amount}'**
+  String catalogCommercialFeePreviewTotal(String amount);
+
+  /// No description provided for @catalogCommercialFeeCreateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New fee rule'**
+  String get catalogCommercialFeeCreateTitle;
+
+  /// No description provided for @catalogCommercialFeeEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit draft fee rule'**
+  String get catalogCommercialFeeEditTitle;
+
+  /// No description provided for @catalogCommercialFeeFixedField.
+  ///
+  /// In en, this message translates to:
+  /// **'Fixed amount (UZS)'**
+  String get catalogCommercialFeeFixedField;
+
+  /// No description provided for @catalogCommercialFeeBasisPointsField.
+  ///
+  /// In en, this message translates to:
+  /// **'Basis points (500 = 5%)'**
+  String get catalogCommercialFeeBasisPointsField;
+
+  /// No description provided for @catalogCommercialFeePriorityField.
+  ///
+  /// In en, this message translates to:
+  /// **'Priority'**
+  String get catalogCommercialFeePriorityField;
+
+  /// No description provided for @catalogCommercialFeeSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save. Check your entries.'**
+  String get catalogCommercialFeeSaveFailed;
+
+  /// No description provided for @catalogCommercialFeeActiveImmutable.
+  ///
+  /// In en, this message translates to:
+  /// **'Active fee rules cannot be edited silently.'**
+  String get catalogCommercialFeeActiveImmutable;
+
+  /// No description provided for @catalogCommercialFeeActivateOverlapError.
+  ///
+  /// In en, this message translates to:
+  /// **'Cannot activate: another active rule overlaps this interval for the same scope.'**
+  String get catalogCommercialFeeActivateOverlapError;
 }
 
 class _AppLocalizationsDelegate

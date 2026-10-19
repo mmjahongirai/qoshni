@@ -3744,4 +3744,166 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get catalogPromoEligibilityBasePriceRequired => 'Base price required.';
+
+  @override
+  String get catalogCommercialFeeSectionTitle => 'Commercial fees (preview)';
+
+  @override
+  String get catalogCommercialFeeSectionBody =>
+      'Illustrative fee rules — not settlement.';
+
+  @override
+  String get catalogCommercialFeeListTitle => 'Commercial fees';
+
+  @override
+  String get catalogCommercialFeeDemoDisclaimer =>
+      'Illustrative commercial fees only — not connected to live checkout or settlement.';
+
+  @override
+  String get catalogCommercialFeeAddAction => 'Add fee rule';
+
+  @override
+  String get catalogCommercialFeeEmptyBody => 'No fee rules.';
+
+  @override
+  String get catalogCommercialFeeTypeFilter => 'Fee type';
+
+  @override
+  String get catalogCommercialFeeAllTypes => 'All types';
+
+  @override
+  String get catalogCommercialFeeStatusFilter => 'Status';
+
+  @override
+  String get catalogCommercialFeeAllStatuses => 'All statuses';
+
+  @override
+  String get catalogCommercialFeeBranchFilter => 'Branch';
+
+  @override
+  String get catalogCommercialFeeAllBranches => 'All branches';
+
+  @override
+  String get catalogCommercialFeeTypePlatform => 'Platform fee';
+
+  @override
+  String get catalogCommercialFeeTypeService => 'Service fee';
+
+  @override
+  String get catalogCommercialFeeTypeDelivery => 'Delivery fee';
+
+  @override
+  String get catalogCommercialFeeTypeCommission => 'Commission';
+
+  @override
+  String get catalogCommercialFeeBearerCustomer => 'Customer';
+
+  @override
+  String get catalogCommercialFeeBearerBusiness => 'Business';
+
+  @override
+  String get catalogCommercialFeeBearerPlatform => 'Platform accounting';
+
+  @override
+  String get catalogCommercialFeeCalcFixed => 'Fixed UZS';
+
+  @override
+  String get catalogCommercialFeeCalcPercent => 'Percentage';
+
+  @override
+  String get catalogCommercialFeeBasisListing => 'Listing base';
+
+  @override
+  String get catalogCommercialFeeBasisService => 'Service amount';
+
+  @override
+  String get catalogCommercialFeeBasisDelivery => 'Delivery basis';
+
+  @override
+  String get catalogCommercialFeeBasisCommission => 'Commission basis';
+
+  @override
+  String catalogCommercialFeePriorityLabel(int priority) {
+    return 'Priority: $priority';
+  }
+
+  @override
+  String get catalogCommercialFeeEditAction => 'Edit draft';
+
+  @override
+  String get catalogCommercialFeeActivateAction => 'Activate';
+
+  @override
+  String get catalogCommercialFeeArchiveAction => 'Archive';
+
+  @override
+  String get catalogCommercialFeeShowHistoryAction => 'History';
+
+  @override
+  String get catalogCommercialFeeHideHistoryAction => 'Hide history';
+
+  @override
+  String get catalogCommercialFeePreviewTitle => 'Fee preview';
+
+  @override
+  String get catalogCommercialFeePreviewListingBase => 'Listing base';
+
+  @override
+  String get catalogCommercialFeePreviewService => 'Service amount';
+
+  @override
+  String get catalogCommercialFeePreviewDelivery => 'Delivery basis';
+
+  @override
+  String get catalogCommercialFeePreviewCommission => 'Commission basis';
+
+  @override
+  String catalogCommercialFeePreviewLine(
+    String type,
+    String bearer,
+    String basis,
+    String fee,
+  ) {
+    return '$type · $bearer · $basis · $fee';
+  }
+
+  @override
+  String catalogCommercialFeePreviewBasisMissing(String type, String bearer) {
+    return '$type ($bearer): basis missing';
+  }
+
+  @override
+  String catalogCommercialFeePreviewAmbiguous(String types) {
+    return 'Ambiguous: $types';
+  }
+
+  @override
+  String catalogCommercialFeePreviewTotal(String amount) {
+    return 'Total: $amount';
+  }
+
+  @override
+  String get catalogCommercialFeeCreateTitle => 'New fee';
+
+  @override
+  String get catalogCommercialFeeEditTitle => 'Edit draft';
+
+  @override
+  String get catalogCommercialFeeFixedField => 'Fixed UZS';
+
+  @override
+  String get catalogCommercialFeeBasisPointsField => 'Basis points';
+
+  @override
+  String get catalogCommercialFeePriorityField => 'Priority';
+
+  @override
+  String get catalogCommercialFeeSaveFailed => 'Save failed.';
+
+  @override
+  String get catalogCommercialFeeActiveImmutable => 'Active immutable.';
+
+  @override
+  String get catalogCommercialFeeActivateOverlapError =>
+      'Active interval overlap.';
 }

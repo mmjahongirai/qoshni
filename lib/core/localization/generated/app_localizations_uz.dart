@@ -3769,4 +3769,167 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get catalogPromoEligibilityBasePriceRequired => 'Base narx kerak.';
+
+  @override
+  String get catalogCommercialFeeSectionTitle => 'Commercial fee (preview)';
+
+  @override
+  String get catalogCommercialFeeSectionBody =>
+      'Illustrative fee qoidalari — settlement emas.';
+
+  @override
+  String get catalogCommercialFeeListTitle => 'Commercial fee';
+
+  @override
+  String get catalogCommercialFeeDemoDisclaimer =>
+      'Illustrative commercial fees only — not connected to live checkout or settlement.';
+
+  @override
+  String get catalogCommercialFeeAddAction => 'Fee qoidasi';
+
+  @override
+  String get catalogCommercialFeeEmptyBody => 'Qoida yo‘q.';
+
+  @override
+  String get catalogCommercialFeeTypeFilter => 'Fee turi';
+
+  @override
+  String get catalogCommercialFeeAllTypes => 'Barcha turlar';
+
+  @override
+  String get catalogCommercialFeeStatusFilter => 'Holat';
+
+  @override
+  String get catalogCommercialFeeAllStatuses => 'Barcha holatlar';
+
+  @override
+  String get catalogCommercialFeeBranchFilter => 'Filial';
+
+  @override
+  String get catalogCommercialFeeAllBranches => 'Barcha filiallar';
+
+  @override
+  String get catalogCommercialFeeTypePlatform => 'Platform fee';
+
+  @override
+  String get catalogCommercialFeeTypeService => 'Service fee';
+
+  @override
+  String get catalogCommercialFeeTypeDelivery => 'Delivery fee';
+
+  @override
+  String get catalogCommercialFeeTypeCommission => 'Commission';
+
+  @override
+  String get catalogCommercialFeeBearerCustomer => 'Mijoz';
+
+  @override
+  String get catalogCommercialFeeBearerBusiness => 'Business';
+
+  @override
+  String get catalogCommercialFeeBearerPlatform => 'Platform accounting';
+
+  @override
+  String get catalogCommercialFeeCalcFixed => 'Fixed UZS';
+
+  @override
+  String get catalogCommercialFeeCalcPercent => 'Foiz';
+
+  @override
+  String get catalogCommercialFeeBasisListing => 'Listing base';
+
+  @override
+  String get catalogCommercialFeeBasisService => 'Service amount';
+
+  @override
+  String get catalogCommercialFeeBasisDelivery => 'Delivery basis';
+
+  @override
+  String get catalogCommercialFeeBasisCommission => 'Commission basis';
+
+  @override
+  String catalogCommercialFeePriorityLabel(int priority) {
+    return 'Priority: $priority';
+  }
+
+  @override
+  String get catalogCommercialFeeEditAction => 'Qoralama';
+
+  @override
+  String get catalogCommercialFeeActivateAction => 'Faollashtirish';
+
+  @override
+  String get catalogCommercialFeeArchiveAction => 'Arxiv';
+
+  @override
+  String get catalogCommercialFeeShowHistoryAction => 'Tarix';
+
+  @override
+  String get catalogCommercialFeeHideHistoryAction => 'Yopish';
+
+  @override
+  String get catalogCommercialFeePreviewTitle => 'Fee preview';
+
+  @override
+  String get catalogCommercialFeePreviewListingBase => 'Listing base';
+
+  @override
+  String get catalogCommercialFeePreviewService => 'Service amount';
+
+  @override
+  String get catalogCommercialFeePreviewDelivery => 'Delivery basis';
+
+  @override
+  String get catalogCommercialFeePreviewCommission => 'Commission basis';
+
+  @override
+  String catalogCommercialFeePreviewLine(
+    String type,
+    String bearer,
+    String basis,
+    String fee,
+  ) {
+    return '$type · $bearer · $basis · $fee';
+  }
+
+  @override
+  String catalogCommercialFeePreviewBasisMissing(String type, String bearer) {
+    return '$type ($bearer): basis yo‘q';
+  }
+
+  @override
+  String catalogCommercialFeePreviewAmbiguous(String types) {
+    return 'Noaniq: $types';
+  }
+
+  @override
+  String catalogCommercialFeePreviewTotal(String amount) {
+    return 'Jami: $amount';
+  }
+
+  @override
+  String get catalogCommercialFeeCreateTitle => 'Yangi fee';
+
+  @override
+  String get catalogCommercialFeeEditTitle => 'Qoralama';
+
+  @override
+  String get catalogCommercialFeeFixedField => 'Fixed UZS';
+
+  @override
+  String get catalogCommercialFeeBasisPointsField => 'Basis points';
+
+  @override
+  String get catalogCommercialFeePriorityField => 'Priority';
+
+  @override
+  String get catalogCommercialFeeSaveFailed => 'Saqlab bo‘lmadi.';
+
+  @override
+  String get catalogCommercialFeeActiveImmutable =>
+      'Faol qoida jimgina o‘zgarmaydi.';
+
+  @override
+  String get catalogCommercialFeeActivateOverlapError =>
+      'Faol interval to‘qnashadi.';
 }

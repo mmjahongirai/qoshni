@@ -1456,5 +1456,76 @@
   "catalogPromoEligibilityTotalLimit": "Total usage limit reached.",
   "catalogPromoEligibilityCustomerLimit": "Customer usage limit reached.",
   "catalogPromoEligibilityNoApplicableDiscount": "Linked discount does not apply to this listing.",
-  "catalogPromoEligibilityBasePriceRequired": "Base price is required for preview."
+  "catalogPromoEligibilityBasePriceRequired": "Base price is required for preview.",
+  "catalogCommercialFeeSectionTitle": "Commercial fees (preview)",
+  "catalogCommercialFeeSectionBody": "Illustrative platform, service, delivery and commission rules — not settlement.",
+  "catalogCommercialFeeListTitle": "Commercial fees",
+  "catalogCommercialFeeDemoDisclaimer": "Illustrative commercial fees only — not connected to live checkout or settlement.",
+  "catalogCommercialFeeAddAction": "Add fee rule",
+  "catalogCommercialFeeEmptyBody": "No fee rules match your filters.",
+  "catalogCommercialFeeTypeFilter": "Fee type",
+  "catalogCommercialFeeAllTypes": "All fee types",
+  "catalogCommercialFeeStatusFilter": "Status",
+  "catalogCommercialFeeAllStatuses": "All statuses",
+  "catalogCommercialFeeBranchFilter": "Branch",
+  "catalogCommercialFeeAllBranches": "All branches",
+  "catalogCommercialFeeTypePlatform": "Platform fee",
+  "catalogCommercialFeeTypeService": "Service fee",
+  "catalogCommercialFeeTypeDelivery": "Delivery fee",
+  "catalogCommercialFeeTypeCommission": "Commission",
+  "catalogCommercialFeeBearerCustomer": "Customer",
+  "catalogCommercialFeeBearerBusiness": "Business",
+  "catalogCommercialFeeBearerPlatform": "Platform accounting",
+  "catalogCommercialFeeCalcFixed": "Fixed amount (UZS)",
+  "catalogCommercialFeeCalcPercent": "Percentage",
+  "catalogCommercialFeeBasisListing": "Listing base",
+  "catalogCommercialFeeBasisService": "Service amount",
+  "catalogCommercialFeeBasisDelivery": "Delivery basis",
+  "catalogCommercialFeeBasisCommission": "Commission basis",
+  "catalogCommercialFeePriorityLabel": "Priority: {priority}",
+  "@catalogCommercialFeePriorityLabel": {
+    "placeholders": {"priority": {"type": "int"}}
+  },
+  "catalogCommercialFeeEditAction": "Edit draft",
+  "catalogCommercialFeeActivateAction": "Activate",
+  "catalogCommercialFeeArchiveAction": "Archive",
+  "catalogCommercialFeeShowHistoryAction": "Show history",
+  "catalogCommercialFeeHideHistoryAction": "Hide history",
+  "catalogCommercialFeePreviewTitle": "Fee preview",
+  "catalogCommercialFeePreviewListingBase": "Listing base (UZS)",
+  "catalogCommercialFeePreviewService": "Service amount (UZS)",
+  "catalogCommercialFeePreviewDelivery": "Delivery basis (UZS)",
+  "catalogCommercialFeePreviewCommission": "Commission basis (UZS)",
+  "catalogCommercialFeePreviewLine": "{type} · {bearer} · basis {basis} · fee {fee}",
+  "@catalogCommercialFeePreviewLine": {
+    "placeholders": {
+      "type": {"type": "String"},
+      "bearer": {"type": "String"},
+      "basis": {"type": "String"},
+      "fee": {"type": "String"}
+    }
+  },
+  "catalogCommercialFeePreviewBasisMissing": "{type} ({bearer}): basis not provided.",
+  "@catalogCommercialFeePreviewBasisMissing": {
+    "placeholders": {
+      "type": {"type": "String"},
+      "bearer": {"type": "String"}
+    }
+  },
+  "catalogCommercialFeePreviewAmbiguous": "Ambiguous fee selection for: {types}",
+  "@catalogCommercialFeePreviewAmbiguous": {
+    "placeholders": {"types": {"type": "String"}}
+  },
+  "catalogCommercialFeePreviewTotal": "Illustrative fee total: {amount}",
+  "@catalogCommercialFeePreviewTotal": {
+    "placeholders": {"amount": {"type": "String"}}
+  },
+  "catalogCommercialFeeCreateTitle": "New fee rule",
+  "catalogCommercialFeeEditTitle": "Edit draft fee rule",
+  "catalogCommercialFeeFixedField": "Fixed amount (UZS)",
+  "catalogCommercialFeeBasisPointsField": "Basis points (500 = 5%)",
+  "catalogCommercialFeePriorityField": "Priority",
+  "catalogCommercialFeeSaveFailed": "Could not save. Check your entries.",
+  "catalogCommercialFeeActiveImmutable": "Active fee rules cannot be edited silently.",
+  "catalogCommercialFeeActivateOverlapError": "Cannot activate: another active rule overlaps this interval for the same scope."
 }
