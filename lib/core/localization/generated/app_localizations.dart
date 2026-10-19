@@ -6172,6 +6172,304 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cannot activate: another active price overlaps this interval for the same target.'**
   String get catalogPricingActivateOverlapError;
+
+  /// No description provided for @catalogDiscountSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Discount rules (preview)'**
+  String get catalogDiscountSectionTitle;
+
+  /// No description provided for @catalogDiscountSectionBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Illustrative discount rules on top of catalog base prices — not connected to live checkout.'**
+  String get catalogDiscountSectionBody;
+
+  /// No description provided for @catalogDiscountListTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Discounts'**
+  String get catalogDiscountListTitle;
+
+  /// No description provided for @catalogDiscountDemoDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Illustrative discounts only — not connected to live checkout.'**
+  String get catalogDiscountDemoDisclaimer;
+
+  /// No description provided for @catalogDiscountAddAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add discount rule'**
+  String get catalogDiscountAddAction;
+
+  /// No description provided for @catalogDiscountEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'No discount rules match your filters.'**
+  String get catalogDiscountEmptyBody;
+
+  /// No description provided for @catalogDiscountBranchFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch'**
+  String get catalogDiscountBranchFilter;
+
+  /// No description provided for @catalogDiscountAllBranches.
+  ///
+  /// In en, this message translates to:
+  /// **'All branches'**
+  String get catalogDiscountAllBranches;
+
+  /// No description provided for @catalogDiscountScopeFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Target scope'**
+  String get catalogDiscountScopeFilter;
+
+  /// No description provided for @catalogDiscountAllScopes.
+  ///
+  /// In en, this message translates to:
+  /// **'All scopes'**
+  String get catalogDiscountAllScopes;
+
+  /// No description provided for @catalogDiscountScopeBusinessWide.
+  ///
+  /// In en, this message translates to:
+  /// **'Business-wide'**
+  String get catalogDiscountScopeBusinessWide;
+
+  /// No description provided for @catalogDiscountScopeProduct.
+  ///
+  /// In en, this message translates to:
+  /// **'Product'**
+  String get catalogDiscountScopeProduct;
+
+  /// No description provided for @catalogDiscountScopeService.
+  ///
+  /// In en, this message translates to:
+  /// **'Service'**
+  String get catalogDiscountScopeService;
+
+  /// No description provided for @catalogDiscountStatusFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get catalogDiscountStatusFilter;
+
+  /// No description provided for @catalogDiscountAllStatuses.
+  ///
+  /// In en, this message translates to:
+  /// **'All statuses'**
+  String get catalogDiscountAllStatuses;
+
+  /// No description provided for @catalogDiscountTypeFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Discount type'**
+  String get catalogDiscountTypeFilter;
+
+  /// No description provided for @catalogDiscountTypePercentage.
+  ///
+  /// In en, this message translates to:
+  /// **'Percentage'**
+  String get catalogDiscountTypePercentage;
+
+  /// No description provided for @catalogDiscountTypeFixed.
+  ///
+  /// In en, this message translates to:
+  /// **'Fixed amount (UZS)'**
+  String get catalogDiscountTypeFixed;
+
+  /// No description provided for @catalogDiscountPercentLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}% off'**
+  String catalogDiscountPercentLabel(int percent);
+
+  /// No description provided for @catalogDiscountFixedLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} off'**
+  String catalogDiscountFixedLabel(String amount);
+
+  /// No description provided for @catalogDiscountMinBasketLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Minimum basket: {amount}'**
+  String catalogDiscountMinBasketLabel(String amount);
+
+  /// No description provided for @catalogDiscountPriorityLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Priority: {priority}'**
+  String catalogDiscountPriorityLabel(int priority);
+
+  /// No description provided for @catalogDiscountEditAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit draft'**
+  String get catalogDiscountEditAction;
+
+  /// No description provided for @catalogDiscountActivateAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Activate'**
+  String get catalogDiscountActivateAction;
+
+  /// No description provided for @catalogDiscountArchiveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Archive'**
+  String get catalogDiscountArchiveAction;
+
+  /// No description provided for @catalogDiscountShowHistoryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Show history'**
+  String get catalogDiscountShowHistoryAction;
+
+  /// No description provided for @catalogDiscountHideHistoryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide history'**
+  String get catalogDiscountHideHistoryAction;
+
+  /// No description provided for @catalogDiscountHistoryEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No discount history in this preview session yet.'**
+  String get catalogDiscountHistoryEmpty;
+
+  /// No description provided for @catalogDiscountHistoryLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{action}: rev {before} → {after}'**
+  String catalogDiscountHistoryLine(String action, String before, String after);
+
+  /// No description provided for @catalogDiscountPreviewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Illustrative price after discount'**
+  String get catalogDiscountPreviewTitle;
+
+  /// No description provided for @catalogDiscountPreviewListingKind.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview listing type'**
+  String get catalogDiscountPreviewListingKind;
+
+  /// No description provided for @catalogDiscountPreviewListing.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview listing'**
+  String get catalogDiscountPreviewListing;
+
+  /// No description provided for @catalogDiscountPreviewSubtotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Qualifying subtotal (optional, UZS)'**
+  String get catalogDiscountPreviewSubtotal;
+
+  /// No description provided for @catalogDiscountPreviewNoBasePrice.
+  ///
+  /// In en, this message translates to:
+  /// **'No active base price for this preview target.'**
+  String get catalogDiscountPreviewNoBasePrice;
+
+  /// No description provided for @catalogDiscountPreviewNoDiscount.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not compute discount preview.'**
+  String get catalogDiscountPreviewNoDiscount;
+
+  /// No description provided for @catalogDiscountPreviewApplied.
+  ///
+  /// In en, this message translates to:
+  /// **'Base {base} · discount −{discount} · final {finalAmount}'**
+  String catalogDiscountPreviewApplied(
+    String base,
+    String discount,
+    String finalAmount,
+  );
+
+  /// No description provided for @catalogDiscountPreviewNotApplied.
+  ///
+  /// In en, this message translates to:
+  /// **'No eligible discount rule applies.'**
+  String get catalogDiscountPreviewNotApplied;
+
+  /// No description provided for @catalogDiscountPreviewAmbiguous.
+  ///
+  /// In en, this message translates to:
+  /// **'Ambiguous — multiple rules share top priority.'**
+  String get catalogDiscountPreviewAmbiguous;
+
+  /// No description provided for @catalogDiscountCreateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New discount rule'**
+  String get catalogDiscountCreateTitle;
+
+  /// No description provided for @catalogDiscountEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit draft discount'**
+  String get catalogDiscountEditTitle;
+
+  /// No description provided for @catalogDiscountBasisPointsField.
+  ///
+  /// In en, this message translates to:
+  /// **'Basis points (1000 = 10%)'**
+  String get catalogDiscountBasisPointsField;
+
+  /// No description provided for @catalogDiscountFixedAmountField.
+  ///
+  /// In en, this message translates to:
+  /// **'Fixed discount (whole UZS)'**
+  String get catalogDiscountFixedAmountField;
+
+  /// No description provided for @catalogDiscountMinBasketField.
+  ///
+  /// In en, this message translates to:
+  /// **'Minimum basket (optional, UZS)'**
+  String get catalogDiscountMinBasketField;
+
+  /// No description provided for @catalogDiscountPriorityField.
+  ///
+  /// In en, this message translates to:
+  /// **'Priority (higher wins)'**
+  String get catalogDiscountPriorityField;
+
+  /// No description provided for @catalogDiscountScopeRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Select branch and target.'**
+  String get catalogDiscountScopeRequired;
+
+  /// No description provided for @catalogDiscountValueInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid discount value and priority.'**
+  String get catalogDiscountValueInvalid;
+
+  /// No description provided for @catalogDiscountActiveImmutable.
+  ///
+  /// In en, this message translates to:
+  /// **'Active rules cannot be edited silently. Create a revision draft instead.'**
+  String get catalogDiscountActiveImmutable;
+
+  /// No description provided for @catalogDiscountSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save. Check your entries.'**
+  String get catalogDiscountSaveFailed;
+
+  /// No description provided for @catalogDiscountActivateOverlapError.
+  ///
+  /// In en, this message translates to:
+  /// **'Cannot activate: another active rule overlaps this interval for the same target.'**
+  String get catalogDiscountActivateOverlapError;
 }
 
 class _AppLocalizationsDelegate

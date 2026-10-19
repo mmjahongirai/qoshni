@@ -3419,4 +3419,174 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get catalogPricingActivateOverlapError =>
       'Пересечение с другим active интервалом.';
+
+  @override
+  String get catalogDiscountSectionTitle => 'Скидки (preview)';
+
+  @override
+  String get catalogDiscountSectionBody =>
+      'Illustrative discount rules — not checkout.';
+
+  @override
+  String get catalogDiscountListTitle => 'Скидки';
+
+  @override
+  String get catalogDiscountDemoDisclaimer =>
+      'Illustrative discounts only — not connected to live checkout.';
+
+  @override
+  String get catalogDiscountAddAction => 'Добавить скидку';
+
+  @override
+  String get catalogDiscountEmptyBody => 'Нет правил по фильтрам.';
+
+  @override
+  String get catalogDiscountBranchFilter => 'Филиал';
+
+  @override
+  String get catalogDiscountAllBranches => 'Все филиалы';
+
+  @override
+  String get catalogDiscountScopeFilter => 'Scope';
+
+  @override
+  String get catalogDiscountAllScopes => 'Все scopes';
+
+  @override
+  String get catalogDiscountScopeBusinessWide => 'Business-wide';
+
+  @override
+  String get catalogDiscountScopeProduct => 'Product';
+
+  @override
+  String get catalogDiscountScopeService => 'Service';
+
+  @override
+  String get catalogDiscountStatusFilter => 'Статус';
+
+  @override
+  String get catalogDiscountAllStatuses => 'Все статусы';
+
+  @override
+  String get catalogDiscountTypeFilter => 'Тип скидки';
+
+  @override
+  String get catalogDiscountTypePercentage => 'Процент';
+
+  @override
+  String get catalogDiscountTypeFixed => 'Fixed UZS';
+
+  @override
+  String catalogDiscountPercentLabel(int percent) {
+    return '$percent% off';
+  }
+
+  @override
+  String catalogDiscountFixedLabel(String amount) {
+    return '$amount off';
+  }
+
+  @override
+  String catalogDiscountMinBasketLabel(String amount) {
+    return 'Min basket: $amount';
+  }
+
+  @override
+  String catalogDiscountPriorityLabel(int priority) {
+    return 'Priority: $priority';
+  }
+
+  @override
+  String get catalogDiscountEditAction => 'Edit draft';
+
+  @override
+  String get catalogDiscountActivateAction => 'Activate';
+
+  @override
+  String get catalogDiscountArchiveAction => 'Archive';
+
+  @override
+  String get catalogDiscountShowHistoryAction => 'History';
+
+  @override
+  String get catalogDiscountHideHistoryAction => 'Hide history';
+
+  @override
+  String get catalogDiscountHistoryEmpty => 'History empty.';
+
+  @override
+  String catalogDiscountHistoryLine(
+    String action,
+    String before,
+    String after,
+  ) {
+    return '$action: rev $before → $after';
+  }
+
+  @override
+  String get catalogDiscountPreviewTitle => 'Preview after discount';
+
+  @override
+  String get catalogDiscountPreviewListingKind => 'Listing type';
+
+  @override
+  String get catalogDiscountPreviewListing => 'Listing';
+
+  @override
+  String get catalogDiscountPreviewSubtotal => 'Subtotal (optional)';
+
+  @override
+  String get catalogDiscountPreviewNoBasePrice => 'No base price.';
+
+  @override
+  String get catalogDiscountPreviewNoDiscount => 'No discount preview.';
+
+  @override
+  String catalogDiscountPreviewApplied(
+    String base,
+    String discount,
+    String finalAmount,
+  ) {
+    return 'Base $base · −$discount · final $finalAmount';
+  }
+
+  @override
+  String get catalogDiscountPreviewNotApplied => 'No eligible discount.';
+
+  @override
+  String get catalogDiscountPreviewAmbiguous => 'Ambiguous top priority.';
+
+  @override
+  String get catalogDiscountCreateTitle => 'New discount';
+
+  @override
+  String get catalogDiscountEditTitle => 'Edit draft';
+
+  @override
+  String get catalogDiscountBasisPointsField => 'Basis points';
+
+  @override
+  String get catalogDiscountFixedAmountField => 'Fixed UZS';
+
+  @override
+  String get catalogDiscountMinBasketField => 'Min basket';
+
+  @override
+  String get catalogDiscountPriorityField => 'Priority';
+
+  @override
+  String get catalogDiscountScopeRequired => 'Select branch/target.';
+
+  @override
+  String get catalogDiscountValueInvalid => 'Invalid value.';
+
+  @override
+  String get catalogDiscountActiveImmutable =>
+      'Active immutable — use revision.';
+
+  @override
+  String get catalogDiscountSaveFailed => 'Save failed.';
+
+  @override
+  String get catalogDiscountActivateOverlapError => 'Active interval overlap.';
 }

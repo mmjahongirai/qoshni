@@ -3442,4 +3442,175 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get catalogPricingActivateOverlapError =>
       'Boshqa faol interval bilan to‘qnashadi.';
+
+  @override
+  String get catalogDiscountSectionTitle => 'Chegirmalar (preview)';
+
+  @override
+  String get catalogDiscountSectionBody =>
+      'Illustrative discount rules — checkout emas.';
+
+  @override
+  String get catalogDiscountListTitle => 'Chegirmalar';
+
+  @override
+  String get catalogDiscountDemoDisclaimer =>
+      'Illustrative discounts only — not connected to live checkout.';
+
+  @override
+  String get catalogDiscountAddAction => 'Chegirma qoidasi';
+
+  @override
+  String get catalogDiscountEmptyBody => 'Filtrlarga mos qoida yo‘q.';
+
+  @override
+  String get catalogDiscountBranchFilter => 'Filial';
+
+  @override
+  String get catalogDiscountAllBranches => 'Barcha filiallar';
+
+  @override
+  String get catalogDiscountScopeFilter => 'Target scope';
+
+  @override
+  String get catalogDiscountAllScopes => 'Barcha scope';
+
+  @override
+  String get catalogDiscountScopeBusinessWide => 'Business-wide';
+
+  @override
+  String get catalogDiscountScopeProduct => 'Mahsulot';
+
+  @override
+  String get catalogDiscountScopeService => 'Xizmat';
+
+  @override
+  String get catalogDiscountStatusFilter => 'Holat';
+
+  @override
+  String get catalogDiscountAllStatuses => 'Barcha holatlar';
+
+  @override
+  String get catalogDiscountTypeFilter => 'Chegirma turi';
+
+  @override
+  String get catalogDiscountTypePercentage => 'Foiz';
+
+  @override
+  String get catalogDiscountTypeFixed => 'Fixed UZS';
+
+  @override
+  String catalogDiscountPercentLabel(int percent) {
+    return '$percent% off';
+  }
+
+  @override
+  String catalogDiscountFixedLabel(String amount) {
+    return '$amount off';
+  }
+
+  @override
+  String catalogDiscountMinBasketLabel(String amount) {
+    return 'Min savat: $amount';
+  }
+
+  @override
+  String catalogDiscountPriorityLabel(int priority) {
+    return 'Priority: $priority';
+  }
+
+  @override
+  String get catalogDiscountEditAction => 'Qoralama';
+
+  @override
+  String get catalogDiscountActivateAction => 'Faollashtirish';
+
+  @override
+  String get catalogDiscountArchiveAction => 'Arxiv';
+
+  @override
+  String get catalogDiscountShowHistoryAction => 'Tarix';
+
+  @override
+  String get catalogDiscountHideHistoryAction => 'Yopish';
+
+  @override
+  String get catalogDiscountHistoryEmpty => 'Tarix yo‘q.';
+
+  @override
+  String catalogDiscountHistoryLine(
+    String action,
+    String before,
+    String after,
+  ) {
+    return '$action: rev $before → $after';
+  }
+
+  @override
+  String get catalogDiscountPreviewTitle => 'Chegirmadan keyin preview';
+
+  @override
+  String get catalogDiscountPreviewListingKind => 'Listing turi';
+
+  @override
+  String get catalogDiscountPreviewListing => 'Listing';
+
+  @override
+  String get catalogDiscountPreviewSubtotal => 'Subtotal (ixtiyoriy)';
+
+  @override
+  String get catalogDiscountPreviewNoBasePrice => 'Base narx yo‘q.';
+
+  @override
+  String get catalogDiscountPreviewNoDiscount => 'Preview hisoblanmadi.';
+
+  @override
+  String catalogDiscountPreviewApplied(
+    String base,
+    String discount,
+    String finalAmount,
+  ) {
+    return 'Base $base · −$discount · final $finalAmount';
+  }
+
+  @override
+  String get catalogDiscountPreviewNotApplied => 'Mos chegirma yo‘q.';
+
+  @override
+  String get catalogDiscountPreviewAmbiguous => 'Priority noaniq.';
+
+  @override
+  String get catalogDiscountCreateTitle => 'Yangi chegirma';
+
+  @override
+  String get catalogDiscountEditTitle => 'Qoralama';
+
+  @override
+  String get catalogDiscountBasisPointsField => 'Basis points';
+
+  @override
+  String get catalogDiscountFixedAmountField => 'Fixed UZS';
+
+  @override
+  String get catalogDiscountMinBasketField => 'Min savat';
+
+  @override
+  String get catalogDiscountPriorityField => 'Priority';
+
+  @override
+  String get catalogDiscountScopeRequired => 'Filial/target tanlang.';
+
+  @override
+  String get catalogDiscountValueInvalid => 'Noto‘g‘ri qiymat.';
+
+  @override
+  String get catalogDiscountActiveImmutable =>
+      'Faol qoida jimgina o‘zgarmaydi.';
+
+  @override
+  String get catalogDiscountSaveFailed => 'Saqlab bo‘lmadi.';
+
+  @override
+  String get catalogDiscountActivateOverlapError =>
+      'Faol interval to‘qnashadi.';
 }

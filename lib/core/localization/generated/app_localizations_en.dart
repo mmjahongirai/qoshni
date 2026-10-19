@@ -3440,4 +3440,183 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get catalogPricingActivateOverlapError =>
       'Cannot activate: another active price overlaps this interval for the same target.';
+
+  @override
+  String get catalogDiscountSectionTitle => 'Discount rules (preview)';
+
+  @override
+  String get catalogDiscountSectionBody =>
+      'Illustrative discount rules on top of catalog base prices — not connected to live checkout.';
+
+  @override
+  String get catalogDiscountListTitle => 'Discounts';
+
+  @override
+  String get catalogDiscountDemoDisclaimer =>
+      'Illustrative discounts only — not connected to live checkout.';
+
+  @override
+  String get catalogDiscountAddAction => 'Add discount rule';
+
+  @override
+  String get catalogDiscountEmptyBody =>
+      'No discount rules match your filters.';
+
+  @override
+  String get catalogDiscountBranchFilter => 'Branch';
+
+  @override
+  String get catalogDiscountAllBranches => 'All branches';
+
+  @override
+  String get catalogDiscountScopeFilter => 'Target scope';
+
+  @override
+  String get catalogDiscountAllScopes => 'All scopes';
+
+  @override
+  String get catalogDiscountScopeBusinessWide => 'Business-wide';
+
+  @override
+  String get catalogDiscountScopeProduct => 'Product';
+
+  @override
+  String get catalogDiscountScopeService => 'Service';
+
+  @override
+  String get catalogDiscountStatusFilter => 'Status';
+
+  @override
+  String get catalogDiscountAllStatuses => 'All statuses';
+
+  @override
+  String get catalogDiscountTypeFilter => 'Discount type';
+
+  @override
+  String get catalogDiscountTypePercentage => 'Percentage';
+
+  @override
+  String get catalogDiscountTypeFixed => 'Fixed amount (UZS)';
+
+  @override
+  String catalogDiscountPercentLabel(int percent) {
+    return '$percent% off';
+  }
+
+  @override
+  String catalogDiscountFixedLabel(String amount) {
+    return '$amount off';
+  }
+
+  @override
+  String catalogDiscountMinBasketLabel(String amount) {
+    return 'Minimum basket: $amount';
+  }
+
+  @override
+  String catalogDiscountPriorityLabel(int priority) {
+    return 'Priority: $priority';
+  }
+
+  @override
+  String get catalogDiscountEditAction => 'Edit draft';
+
+  @override
+  String get catalogDiscountActivateAction => 'Activate';
+
+  @override
+  String get catalogDiscountArchiveAction => 'Archive';
+
+  @override
+  String get catalogDiscountShowHistoryAction => 'Show history';
+
+  @override
+  String get catalogDiscountHideHistoryAction => 'Hide history';
+
+  @override
+  String get catalogDiscountHistoryEmpty =>
+      'No discount history in this preview session yet.';
+
+  @override
+  String catalogDiscountHistoryLine(
+    String action,
+    String before,
+    String after,
+  ) {
+    return '$action: rev $before → $after';
+  }
+
+  @override
+  String get catalogDiscountPreviewTitle => 'Illustrative price after discount';
+
+  @override
+  String get catalogDiscountPreviewListingKind => 'Preview listing type';
+
+  @override
+  String get catalogDiscountPreviewListing => 'Preview listing';
+
+  @override
+  String get catalogDiscountPreviewSubtotal =>
+      'Qualifying subtotal (optional, UZS)';
+
+  @override
+  String get catalogDiscountPreviewNoBasePrice =>
+      'No active base price for this preview target.';
+
+  @override
+  String get catalogDiscountPreviewNoDiscount =>
+      'Could not compute discount preview.';
+
+  @override
+  String catalogDiscountPreviewApplied(
+    String base,
+    String discount,
+    String finalAmount,
+  ) {
+    return 'Base $base · discount −$discount · final $finalAmount';
+  }
+
+  @override
+  String get catalogDiscountPreviewNotApplied =>
+      'No eligible discount rule applies.';
+
+  @override
+  String get catalogDiscountPreviewAmbiguous =>
+      'Ambiguous — multiple rules share top priority.';
+
+  @override
+  String get catalogDiscountCreateTitle => 'New discount rule';
+
+  @override
+  String get catalogDiscountEditTitle => 'Edit draft discount';
+
+  @override
+  String get catalogDiscountBasisPointsField => 'Basis points (1000 = 10%)';
+
+  @override
+  String get catalogDiscountFixedAmountField => 'Fixed discount (whole UZS)';
+
+  @override
+  String get catalogDiscountMinBasketField => 'Minimum basket (optional, UZS)';
+
+  @override
+  String get catalogDiscountPriorityField => 'Priority (higher wins)';
+
+  @override
+  String get catalogDiscountScopeRequired => 'Select branch and target.';
+
+  @override
+  String get catalogDiscountValueInvalid =>
+      'Enter a valid discount value and priority.';
+
+  @override
+  String get catalogDiscountActiveImmutable =>
+      'Active rules cannot be edited silently. Create a revision draft instead.';
+
+  @override
+  String get catalogDiscountSaveFailed => 'Could not save. Check your entries.';
+
+  @override
+  String get catalogDiscountActivateOverlapError =>
+      'Cannot activate: another active rule overlaps this interval for the same target.';
 }

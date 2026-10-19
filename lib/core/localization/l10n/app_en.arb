@@ -1308,5 +1308,80 @@
   "catalogPricingActiveImmutable": "Active prices cannot be edited silently. Create a new revision draft instead.",
   "catalogPricingSaveFailed": "Could not save. Check your entries.",
   "catalogPricingEffectiveRangeInvalid": "Effective until must be after effective from.",
-  "catalogPricingActivateOverlapError": "Cannot activate: another active price overlaps this interval for the same target."
+  "catalogPricingActivateOverlapError": "Cannot activate: another active price overlaps this interval for the same target.",
+  "catalogDiscountSectionTitle": "Discount rules (preview)",
+  "catalogDiscountSectionBody": "Illustrative discount rules on top of catalog base prices — not connected to live checkout.",
+  "catalogDiscountListTitle": "Discounts",
+  "catalogDiscountDemoDisclaimer": "Illustrative discounts only — not connected to live checkout.",
+  "catalogDiscountAddAction": "Add discount rule",
+  "catalogDiscountEmptyBody": "No discount rules match your filters.",
+  "catalogDiscountBranchFilter": "Branch",
+  "catalogDiscountAllBranches": "All branches",
+  "catalogDiscountScopeFilter": "Target scope",
+  "catalogDiscountAllScopes": "All scopes",
+  "catalogDiscountScopeBusinessWide": "Business-wide",
+  "catalogDiscountScopeProduct": "Product",
+  "catalogDiscountScopeService": "Service",
+  "catalogDiscountStatusFilter": "Status",
+  "catalogDiscountAllStatuses": "All statuses",
+  "catalogDiscountTypeFilter": "Discount type",
+  "catalogDiscountTypePercentage": "Percentage",
+  "catalogDiscountTypeFixed": "Fixed amount (UZS)",
+  "catalogDiscountPercentLabel": "{percent}% off",
+  "@catalogDiscountPercentLabel": {
+    "placeholders": {"percent": {"type": "int"}}
+  },
+  "catalogDiscountFixedLabel": "{amount} off",
+  "@catalogDiscountFixedLabel": {
+    "placeholders": {"amount": {"type": "String"}}
+  },
+  "catalogDiscountMinBasketLabel": "Minimum basket: {amount}",
+  "@catalogDiscountMinBasketLabel": {
+    "placeholders": {"amount": {"type": "String"}}
+  },
+  "catalogDiscountPriorityLabel": "Priority: {priority}",
+  "@catalogDiscountPriorityLabel": {
+    "placeholders": {"priority": {"type": "int"}}
+  },
+  "catalogDiscountEditAction": "Edit draft",
+  "catalogDiscountActivateAction": "Activate",
+  "catalogDiscountArchiveAction": "Archive",
+  "catalogDiscountShowHistoryAction": "Show history",
+  "catalogDiscountHideHistoryAction": "Hide history",
+  "catalogDiscountHistoryEmpty": "No discount history in this preview session yet.",
+  "catalogDiscountHistoryLine": "{action}: rev {before} → {after}",
+  "@catalogDiscountHistoryLine": {
+    "placeholders": {
+      "action": {"type": "String"},
+      "before": {"type": "String"},
+      "after": {"type": "String"}
+    }
+  },
+  "catalogDiscountPreviewTitle": "Illustrative price after discount",
+  "catalogDiscountPreviewListingKind": "Preview listing type",
+  "catalogDiscountPreviewListing": "Preview listing",
+  "catalogDiscountPreviewSubtotal": "Qualifying subtotal (optional, UZS)",
+  "catalogDiscountPreviewNoBasePrice": "No active base price for this preview target.",
+  "catalogDiscountPreviewNoDiscount": "Could not compute discount preview.",
+  "catalogDiscountPreviewApplied": "Base {base} · discount −{discount} · final {finalAmount}",
+  "@catalogDiscountPreviewApplied": {
+    "placeholders": {
+      "base": {"type": "String"},
+      "discount": {"type": "String"},
+      "finalAmount": {"type": "String"}
+    }
+  },
+  "catalogDiscountPreviewNotApplied": "No eligible discount rule applies.",
+  "catalogDiscountPreviewAmbiguous": "Ambiguous — multiple rules share top priority.",
+  "catalogDiscountCreateTitle": "New discount rule",
+  "catalogDiscountEditTitle": "Edit draft discount",
+  "catalogDiscountBasisPointsField": "Basis points (1000 = 10%)",
+  "catalogDiscountFixedAmountField": "Fixed discount (whole UZS)",
+  "catalogDiscountMinBasketField": "Minimum basket (optional, UZS)",
+  "catalogDiscountPriorityField": "Priority (higher wins)",
+  "catalogDiscountScopeRequired": "Select branch and target.",
+  "catalogDiscountValueInvalid": "Enter a valid discount value and priority.",
+  "catalogDiscountActiveImmutable": "Active rules cannot be edited silently. Create a revision draft instead.",
+  "catalogDiscountSaveFailed": "Could not save. Check your entries.",
+  "catalogDiscountActivateOverlapError": "Cannot activate: another active rule overlaps this interval for the same target."
 }
