@@ -3073,4 +3073,159 @@ class AppLocalizationsRu extends AppLocalizations {
   ) {
     return '$itemId: ожидалось $expected, факт $actual';
   }
+
+  @override
+  String get catalogResourceSectionTitle => 'Ресурсы и capacity (preview)';
+
+  @override
+  String get catalogResourceSectionBody =>
+      'Оборудование, персонал и service capacity по филиалам — отдельно от stock.';
+
+  @override
+  String get catalogResourceListTitle => 'Ресурсы';
+
+  @override
+  String get catalogResourceDemoDisclaimer =>
+      'Demo capacity — не связано с live-бронированием.';
+
+  @override
+  String get catalogResourceAddAction => 'Добавить ресурс';
+
+  @override
+  String get catalogResourceEmptyBody => 'Нет ресурсов по фильтрам.';
+
+  @override
+  String get catalogResourceBranchFilter => 'Филиал';
+
+  @override
+  String get catalogResourceAllBranches => 'Все филиалы';
+
+  @override
+  String get catalogResourceTypeFilter => 'Тип ресурса';
+
+  @override
+  String get catalogResourceAllTypes => 'Все типы';
+
+  @override
+  String get catalogResourceStatusFilter => 'Статус';
+
+  @override
+  String get catalogResourceAllStatuses => 'Все статусы';
+
+  @override
+  String get catalogResourceTypeEquipment => 'Оборудование';
+
+  @override
+  String get catalogResourceTypeStaff => 'Персонал';
+
+  @override
+  String get catalogResourceTypeServiceCapacity => 'Service capacity';
+
+  @override
+  String get catalogResourceStatusActive => 'Активен';
+
+  @override
+  String get catalogResourceStatusUnavailable => 'Недоступен';
+
+  @override
+  String get catalogResourceStatusArchived => 'Архив';
+
+  @override
+  String catalogResourceTotalLabel(int qty) {
+    return 'Всего: $qty';
+  }
+
+  @override
+  String catalogResourceAllocatedLabel(int qty) {
+    return 'Allocated (demo): $qty';
+  }
+
+  @override
+  String catalogResourceAvailableLabel(int qty) {
+    return 'Доступно: $qty';
+  }
+
+  @override
+  String catalogResourceUnitLabel(String unit) {
+    return 'Единица: $unit';
+  }
+
+  @override
+  String get catalogResourceEditAction => 'Изменить';
+
+  @override
+  String get catalogResourceChangeCapacityAction => 'Изменить capacity';
+
+  @override
+  String get catalogResourceMarkUnavailableAction => 'Сделать недоступным';
+
+  @override
+  String get catalogResourceMarkActiveAction => 'Сделать активным';
+
+  @override
+  String get catalogResourceArchiveAction => 'В архив';
+
+  @override
+  String get catalogResourceHistoryEmpty => 'Изменений capacity пока нет.';
+
+  @override
+  String catalogResourceHistoryLine(int before, int after, String reason) {
+    return 'Total $before → $after · $reason';
+  }
+
+  @override
+  String get catalogResourceCreateTitle => 'Новый ресурс';
+
+  @override
+  String get catalogResourceEditTitle => 'Редактировать ресурс';
+
+  @override
+  String get catalogResourceNameField => 'Название (EN preview)';
+
+  @override
+  String get catalogResourceUnitField => 'Единица capacity';
+
+  @override
+  String get catalogResourceTotalField => 'Total capacity';
+
+  @override
+  String get catalogResourceSaveAction => 'Сохранить';
+
+  @override
+  String get catalogResourceSaveSuccess => 'Ресурс сохранён в preview.';
+
+  @override
+  String get catalogResourceSaveFailed => 'Не удалось сохранить.';
+
+  @override
+  String get catalogResourceBranchRequired => 'Выберите филиал.';
+
+  @override
+  String get catalogResourceCapacityInvalid => 'Введите корректную capacity.';
+
+  @override
+  String get catalogResourceBelowAllocated =>
+      'Total не может быть ниже demo allocated.';
+
+  @override
+  String get catalogResourceChangeCapacityTitle => 'Изменить total capacity';
+
+  @override
+  String get catalogResourceReasonField => 'Причина';
+
+  @override
+  String get catalogResourceReasonRequired => 'Укажите причину.';
+
+  @override
+  String get catalogResourceNoCapacityChange =>
+      'Введите другое значение total.';
+
+  @override
+  String catalogResourceAllocatedHint(int qty) {
+    return 'Demo allocated: $qty (только чтение).';
+  }
+
+  @override
+  String get catalogResourceCapacityChangeSuccess =>
+      'Capacity обновлена в preview.';
 }

@@ -5566,6 +5566,282 @@ abstract class AppLocalizations {
     int expected,
     int actual,
   );
+
+  /// No description provided for @catalogResourceSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Resource capacity (preview)'**
+  String get catalogResourceSectionTitle;
+
+  /// No description provided for @catalogResourceSectionBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Equipment, staff, and service capacity per branch — separate from product stock.'**
+  String get catalogResourceSectionBody;
+
+  /// No description provided for @catalogResourceListTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Resources'**
+  String get catalogResourceListTitle;
+
+  /// No description provided for @catalogResourceDemoDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo resource capacity — not connected to live bookings.'**
+  String get catalogResourceDemoDisclaimer;
+
+  /// No description provided for @catalogResourceAddAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add resource'**
+  String get catalogResourceAddAction;
+
+  /// No description provided for @catalogResourceEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'No resources match your filters.'**
+  String get catalogResourceEmptyBody;
+
+  /// No description provided for @catalogResourceBranchFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch'**
+  String get catalogResourceBranchFilter;
+
+  /// No description provided for @catalogResourceAllBranches.
+  ///
+  /// In en, this message translates to:
+  /// **'All branches'**
+  String get catalogResourceAllBranches;
+
+  /// No description provided for @catalogResourceTypeFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Resource type'**
+  String get catalogResourceTypeFilter;
+
+  /// No description provided for @catalogResourceAllTypes.
+  ///
+  /// In en, this message translates to:
+  /// **'All types'**
+  String get catalogResourceAllTypes;
+
+  /// No description provided for @catalogResourceStatusFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get catalogResourceStatusFilter;
+
+  /// No description provided for @catalogResourceAllStatuses.
+  ///
+  /// In en, this message translates to:
+  /// **'All statuses'**
+  String get catalogResourceAllStatuses;
+
+  /// No description provided for @catalogResourceTypeEquipment.
+  ///
+  /// In en, this message translates to:
+  /// **'Equipment'**
+  String get catalogResourceTypeEquipment;
+
+  /// No description provided for @catalogResourceTypeStaff.
+  ///
+  /// In en, this message translates to:
+  /// **'Staff'**
+  String get catalogResourceTypeStaff;
+
+  /// No description provided for @catalogResourceTypeServiceCapacity.
+  ///
+  /// In en, this message translates to:
+  /// **'Service capacity'**
+  String get catalogResourceTypeServiceCapacity;
+
+  /// No description provided for @catalogResourceStatusActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get catalogResourceStatusActive;
+
+  /// No description provided for @catalogResourceStatusUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Unavailable'**
+  String get catalogResourceStatusUnavailable;
+
+  /// No description provided for @catalogResourceStatusArchived.
+  ///
+  /// In en, this message translates to:
+  /// **'Archived'**
+  String get catalogResourceStatusArchived;
+
+  /// No description provided for @catalogResourceTotalLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Total capacity: {qty}'**
+  String catalogResourceTotalLabel(int qty);
+
+  /// No description provided for @catalogResourceAllocatedLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Allocated (demo): {qty}'**
+  String catalogResourceAllocatedLabel(int qty);
+
+  /// No description provided for @catalogResourceAvailableLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Available: {qty}'**
+  String catalogResourceAvailableLabel(int qty);
+
+  /// No description provided for @catalogResourceUnitLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Unit: {unit}'**
+  String catalogResourceUnitLabel(String unit);
+
+  /// No description provided for @catalogResourceEditAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get catalogResourceEditAction;
+
+  /// No description provided for @catalogResourceChangeCapacityAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Change capacity'**
+  String get catalogResourceChangeCapacityAction;
+
+  /// No description provided for @catalogResourceMarkUnavailableAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark unavailable'**
+  String get catalogResourceMarkUnavailableAction;
+
+  /// No description provided for @catalogResourceMarkActiveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark active'**
+  String get catalogResourceMarkActiveAction;
+
+  /// No description provided for @catalogResourceArchiveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Archive'**
+  String get catalogResourceArchiveAction;
+
+  /// No description provided for @catalogResourceHistoryEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No capacity changes in this preview session yet.'**
+  String get catalogResourceHistoryEmpty;
+
+  /// No description provided for @catalogResourceHistoryLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Total {before} → {after} · {reason}'**
+  String catalogResourceHistoryLine(int before, int after, String reason);
+
+  /// No description provided for @catalogResourceCreateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New resource'**
+  String get catalogResourceCreateTitle;
+
+  /// No description provided for @catalogResourceEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit resource'**
+  String get catalogResourceEditTitle;
+
+  /// No description provided for @catalogResourceNameField.
+  ///
+  /// In en, this message translates to:
+  /// **'Name (English preview)'**
+  String get catalogResourceNameField;
+
+  /// No description provided for @catalogResourceUnitField.
+  ///
+  /// In en, this message translates to:
+  /// **'Capacity unit'**
+  String get catalogResourceUnitField;
+
+  /// No description provided for @catalogResourceTotalField.
+  ///
+  /// In en, this message translates to:
+  /// **'Total capacity'**
+  String get catalogResourceTotalField;
+
+  /// No description provided for @catalogResourceSaveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get catalogResourceSaveAction;
+
+  /// No description provided for @catalogResourceSaveSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Resource saved for this preview session.'**
+  String get catalogResourceSaveSuccess;
+
+  /// No description provided for @catalogResourceSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save. Check your entries.'**
+  String get catalogResourceSaveFailed;
+
+  /// No description provided for @catalogResourceBranchRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a branch.'**
+  String get catalogResourceBranchRequired;
+
+  /// No description provided for @catalogResourceCapacityInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid non-negative capacity.'**
+  String get catalogResourceCapacityInvalid;
+
+  /// No description provided for @catalogResourceBelowAllocated.
+  ///
+  /// In en, this message translates to:
+  /// **'Total capacity cannot be below demo allocated amount.'**
+  String get catalogResourceBelowAllocated;
+
+  /// No description provided for @catalogResourceChangeCapacityTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Change total capacity'**
+  String get catalogResourceChangeCapacityTitle;
+
+  /// No description provided for @catalogResourceReasonField.
+  ///
+  /// In en, this message translates to:
+  /// **'Reason'**
+  String get catalogResourceReasonField;
+
+  /// No description provided for @catalogResourceReasonRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a short reason.'**
+  String get catalogResourceReasonRequired;
+
+  /// No description provided for @catalogResourceNoCapacityChange.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a different total capacity.'**
+  String get catalogResourceNoCapacityChange;
+
+  /// No description provided for @catalogResourceAllocatedHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo allocated: {qty} (read-only in this phase).'**
+  String catalogResourceAllocatedHint(int qty);
+
+  /// No description provided for @catalogResourceCapacityChangeSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Capacity updated for this preview session.'**
+  String get catalogResourceCapacityChangeSuccess;
 }
 
 class _AppLocalizationsDelegate

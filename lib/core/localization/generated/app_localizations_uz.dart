@@ -3096,4 +3096,159 @@ class AppLocalizationsUz extends AppLocalizations {
   ) {
     return '$itemId: kutilgan $expected, haqiqiy $actual';
   }
+
+  @override
+  String get catalogResourceSectionTitle => 'Resurs sig‘imi (preview)';
+
+  @override
+  String get catalogResourceSectionBody =>
+      'Uskuna, xodim va xizmat sig‘imi — mahsulot stock’dan alohida.';
+
+  @override
+  String get catalogResourceListTitle => 'Resurslar';
+
+  @override
+  String get catalogResourceDemoDisclaimer =>
+      'Demo resurs sig‘imi — jonli bron bilan bog‘lanmagan.';
+
+  @override
+  String get catalogResourceAddAction => 'Resurs qo‘shish';
+
+  @override
+  String get catalogResourceEmptyBody => 'Filtrlarga mos resurs yo‘q.';
+
+  @override
+  String get catalogResourceBranchFilter => 'Filial';
+
+  @override
+  String get catalogResourceAllBranches => 'Barcha filiallar';
+
+  @override
+  String get catalogResourceTypeFilter => 'Resurs turi';
+
+  @override
+  String get catalogResourceAllTypes => 'Barcha turlar';
+
+  @override
+  String get catalogResourceStatusFilter => 'Holat';
+
+  @override
+  String get catalogResourceAllStatuses => 'Barcha holatlar';
+
+  @override
+  String get catalogResourceTypeEquipment => 'Uskuna';
+
+  @override
+  String get catalogResourceTypeStaff => 'Xodim';
+
+  @override
+  String get catalogResourceTypeServiceCapacity => 'Xizmat sig‘imi';
+
+  @override
+  String get catalogResourceStatusActive => 'Faol';
+
+  @override
+  String get catalogResourceStatusUnavailable => 'Mavjud emas';
+
+  @override
+  String get catalogResourceStatusArchived => 'Arxiv';
+
+  @override
+  String catalogResourceTotalLabel(int qty) {
+    return 'Jami sig‘im: $qty';
+  }
+
+  @override
+  String catalogResourceAllocatedLabel(int qty) {
+    return 'Allocated (demo): $qty';
+  }
+
+  @override
+  String catalogResourceAvailableLabel(int qty) {
+    return 'Mavjud: $qty';
+  }
+
+  @override
+  String catalogResourceUnitLabel(String unit) {
+    return 'Birlik: $unit';
+  }
+
+  @override
+  String get catalogResourceEditAction => 'Tahrirlash';
+
+  @override
+  String get catalogResourceChangeCapacityAction => 'Sig‘imni o‘zgartirish';
+
+  @override
+  String get catalogResourceMarkUnavailableAction => 'Mavjud emas';
+
+  @override
+  String get catalogResourceMarkActiveAction => 'Faol qilish';
+
+  @override
+  String get catalogResourceArchiveAction => 'Arxivlash';
+
+  @override
+  String get catalogResourceHistoryEmpty => 'Sig‘im o‘zgarishlari yo‘q.';
+
+  @override
+  String catalogResourceHistoryLine(int before, int after, String reason) {
+    return 'Jami $before → $after · $reason';
+  }
+
+  @override
+  String get catalogResourceCreateTitle => 'Yangi resurs';
+
+  @override
+  String get catalogResourceEditTitle => 'Resursni tahrirlash';
+
+  @override
+  String get catalogResourceNameField => 'Nom (EN preview)';
+
+  @override
+  String get catalogResourceUnitField => 'Sig‘im birligi';
+
+  @override
+  String get catalogResourceTotalField => 'Jami sig‘im';
+
+  @override
+  String get catalogResourceSaveAction => 'Saqlash';
+
+  @override
+  String get catalogResourceSaveSuccess =>
+      'Resurs preview sessiyasida saqlandi.';
+
+  @override
+  String get catalogResourceSaveFailed => 'Saqlab bo‘lmadi.';
+
+  @override
+  String get catalogResourceBranchRequired => 'Filialni tanlang.';
+
+  @override
+  String get catalogResourceCapacityInvalid => 'To‘g‘ri sig‘im kiriting.';
+
+  @override
+  String get catalogResourceBelowAllocated =>
+      'Jami sig‘im demo allocated dan kichik bo‘lmasin.';
+
+  @override
+  String get catalogResourceChangeCapacityTitle => 'Jami sig‘imni o‘zgartirish';
+
+  @override
+  String get catalogResourceReasonField => 'Sabab';
+
+  @override
+  String get catalogResourceReasonRequired => 'Sabab kiriting.';
+
+  @override
+  String get catalogResourceNoCapacityChange => 'Boshqa sig‘im kiriting.';
+
+  @override
+  String catalogResourceAllocatedHint(int qty) {
+    return 'Demo allocated: $qty (faqat o‘qish).';
+  }
+
+  @override
+  String get catalogResourceCapacityChangeSuccess =>
+      'Sig‘im preview sessiyasida yangilandi.';
 }

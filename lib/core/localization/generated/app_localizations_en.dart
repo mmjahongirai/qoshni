@@ -3086,4 +3086,162 @@ class AppLocalizationsEn extends AppLocalizations {
   ) {
     return '$itemId: expected $expected, actual $actual';
   }
+
+  @override
+  String get catalogResourceSectionTitle => 'Resource capacity (preview)';
+
+  @override
+  String get catalogResourceSectionBody =>
+      'Equipment, staff, and service capacity per branch — separate from product stock.';
+
+  @override
+  String get catalogResourceListTitle => 'Resources';
+
+  @override
+  String get catalogResourceDemoDisclaimer =>
+      'Demo resource capacity — not connected to live bookings.';
+
+  @override
+  String get catalogResourceAddAction => 'Add resource';
+
+  @override
+  String get catalogResourceEmptyBody => 'No resources match your filters.';
+
+  @override
+  String get catalogResourceBranchFilter => 'Branch';
+
+  @override
+  String get catalogResourceAllBranches => 'All branches';
+
+  @override
+  String get catalogResourceTypeFilter => 'Resource type';
+
+  @override
+  String get catalogResourceAllTypes => 'All types';
+
+  @override
+  String get catalogResourceStatusFilter => 'Status';
+
+  @override
+  String get catalogResourceAllStatuses => 'All statuses';
+
+  @override
+  String get catalogResourceTypeEquipment => 'Equipment';
+
+  @override
+  String get catalogResourceTypeStaff => 'Staff';
+
+  @override
+  String get catalogResourceTypeServiceCapacity => 'Service capacity';
+
+  @override
+  String get catalogResourceStatusActive => 'Active';
+
+  @override
+  String get catalogResourceStatusUnavailable => 'Unavailable';
+
+  @override
+  String get catalogResourceStatusArchived => 'Archived';
+
+  @override
+  String catalogResourceTotalLabel(int qty) {
+    return 'Total capacity: $qty';
+  }
+
+  @override
+  String catalogResourceAllocatedLabel(int qty) {
+    return 'Allocated (demo): $qty';
+  }
+
+  @override
+  String catalogResourceAvailableLabel(int qty) {
+    return 'Available: $qty';
+  }
+
+  @override
+  String catalogResourceUnitLabel(String unit) {
+    return 'Unit: $unit';
+  }
+
+  @override
+  String get catalogResourceEditAction => 'Edit';
+
+  @override
+  String get catalogResourceChangeCapacityAction => 'Change capacity';
+
+  @override
+  String get catalogResourceMarkUnavailableAction => 'Mark unavailable';
+
+  @override
+  String get catalogResourceMarkActiveAction => 'Mark active';
+
+  @override
+  String get catalogResourceArchiveAction => 'Archive';
+
+  @override
+  String get catalogResourceHistoryEmpty =>
+      'No capacity changes in this preview session yet.';
+
+  @override
+  String catalogResourceHistoryLine(int before, int after, String reason) {
+    return 'Total $before → $after · $reason';
+  }
+
+  @override
+  String get catalogResourceCreateTitle => 'New resource';
+
+  @override
+  String get catalogResourceEditTitle => 'Edit resource';
+
+  @override
+  String get catalogResourceNameField => 'Name (English preview)';
+
+  @override
+  String get catalogResourceUnitField => 'Capacity unit';
+
+  @override
+  String get catalogResourceTotalField => 'Total capacity';
+
+  @override
+  String get catalogResourceSaveAction => 'Save';
+
+  @override
+  String get catalogResourceSaveSuccess =>
+      'Resource saved for this preview session.';
+
+  @override
+  String get catalogResourceSaveFailed => 'Could not save. Check your entries.';
+
+  @override
+  String get catalogResourceBranchRequired => 'Select a branch.';
+
+  @override
+  String get catalogResourceCapacityInvalid =>
+      'Enter a valid non-negative capacity.';
+
+  @override
+  String get catalogResourceBelowAllocated =>
+      'Total capacity cannot be below demo allocated amount.';
+
+  @override
+  String get catalogResourceChangeCapacityTitle => 'Change total capacity';
+
+  @override
+  String get catalogResourceReasonField => 'Reason';
+
+  @override
+  String get catalogResourceReasonRequired => 'Enter a short reason.';
+
+  @override
+  String get catalogResourceNoCapacityChange =>
+      'Enter a different total capacity.';
+
+  @override
+  String catalogResourceAllocatedHint(int qty) {
+    return 'Demo allocated: $qty (read-only in this phase).';
+  }
+
+  @override
+  String get catalogResourceCapacityChangeSuccess =>
+      'Capacity updated for this preview session.';
 }

@@ -1151,5 +1151,73 @@
       "expected": {"type": "int"},
       "actual": {"type": "int"}
     }
-  }
+  },
+  "catalogResourceSectionTitle": "Resource capacity (preview)",
+  "catalogResourceSectionBody": "Equipment, staff, and service capacity per branch — separate from product stock.",
+  "catalogResourceListTitle": "Resources",
+  "catalogResourceDemoDisclaimer": "Demo resource capacity — not connected to live bookings.",
+  "catalogResourceAddAction": "Add resource",
+  "catalogResourceEmptyBody": "No resources match your filters.",
+  "catalogResourceBranchFilter": "Branch",
+  "catalogResourceAllBranches": "All branches",
+  "catalogResourceTypeFilter": "Resource type",
+  "catalogResourceAllTypes": "All types",
+  "catalogResourceStatusFilter": "Status",
+  "catalogResourceAllStatuses": "All statuses",
+  "catalogResourceTypeEquipment": "Equipment",
+  "catalogResourceTypeStaff": "Staff",
+  "catalogResourceTypeServiceCapacity": "Service capacity",
+  "catalogResourceStatusActive": "Active",
+  "catalogResourceStatusUnavailable": "Unavailable",
+  "catalogResourceStatusArchived": "Archived",
+  "catalogResourceTotalLabel": "Total capacity: {qty}",
+  "@catalogResourceTotalLabel": {
+    "placeholders": {"qty": {"type": "int"}}
+  },
+  "catalogResourceAllocatedLabel": "Allocated (demo): {qty}",
+  "@catalogResourceAllocatedLabel": {
+    "placeholders": {"qty": {"type": "int"}}
+  },
+  "catalogResourceAvailableLabel": "Available: {qty}",
+  "@catalogResourceAvailableLabel": {
+    "placeholders": {"qty": {"type": "int"}}
+  },
+  "catalogResourceUnitLabel": "Unit: {unit}",
+  "@catalogResourceUnitLabel": {
+    "placeholders": {"unit": {"type": "String"}}
+  },
+  "catalogResourceEditAction": "Edit",
+  "catalogResourceChangeCapacityAction": "Change capacity",
+  "catalogResourceMarkUnavailableAction": "Mark unavailable",
+  "catalogResourceMarkActiveAction": "Mark active",
+  "catalogResourceArchiveAction": "Archive",
+  "catalogResourceHistoryEmpty": "No capacity changes in this preview session yet.",
+  "catalogResourceHistoryLine": "Total {before} → {after} · {reason}",
+  "@catalogResourceHistoryLine": {
+    "placeholders": {
+      "before": {"type": "int"},
+      "after": {"type": "int"},
+      "reason": {"type": "String"}
+    }
+  },
+  "catalogResourceCreateTitle": "New resource",
+  "catalogResourceEditTitle": "Edit resource",
+  "catalogResourceNameField": "Name (English preview)",
+  "catalogResourceUnitField": "Capacity unit",
+  "catalogResourceTotalField": "Total capacity",
+  "catalogResourceSaveAction": "Save",
+  "catalogResourceSaveSuccess": "Resource saved for this preview session.",
+  "catalogResourceSaveFailed": "Could not save. Check your entries.",
+  "catalogResourceBranchRequired": "Select a branch.",
+  "catalogResourceCapacityInvalid": "Enter a valid non-negative capacity.",
+  "catalogResourceBelowAllocated": "Total capacity cannot be below demo allocated amount.",
+  "catalogResourceChangeCapacityTitle": "Change total capacity",
+  "catalogResourceReasonField": "Reason",
+  "catalogResourceReasonRequired": "Enter a short reason.",
+  "catalogResourceNoCapacityChange": "Enter a different total capacity.",
+  "catalogResourceAllocatedHint": "Demo allocated: {qty} (read-only in this phase).",
+  "@catalogResourceAllocatedHint": {
+    "placeholders": {"qty": {"type": "int"}}
+  },
+  "catalogResourceCapacityChangeSuccess": "Capacity updated for this preview session."
 }
