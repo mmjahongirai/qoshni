@@ -3244,4 +3244,200 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get catalogResourceCapacityChangeSuccess =>
       'Capacity updated for this preview session.';
+
+  @override
+  String get catalogPricingSectionTitle => 'Base pricing (preview)';
+
+  @override
+  String get catalogPricingSectionBody =>
+      'Manage catalog price rules per branch with effective dates. Illustrative demo prices — not connected to live checkout.';
+
+  @override
+  String get catalogPricingListTitle => 'Pricing';
+
+  @override
+  String get catalogPricingDemoDisclaimer =>
+      'Illustrative demo prices — not connected to live checkout.';
+
+  @override
+  String get catalogPricingAddAction => 'Add price rule';
+
+  @override
+  String get catalogPricingEmptyBody => 'No price rules match your filters.';
+
+  @override
+  String get catalogPricingBranchFilter => 'Branch';
+
+  @override
+  String get catalogPricingAllBranches => 'All branches';
+
+  @override
+  String get catalogPricingKindFilter => 'Listing type';
+
+  @override
+  String get catalogPricingAllKinds => 'All listing types';
+
+  @override
+  String get catalogPricingKindProduct => 'Product';
+
+  @override
+  String get catalogPricingKindService => 'Service';
+
+  @override
+  String get catalogPricingStatusFilter => 'Status';
+
+  @override
+  String get catalogPricingAllStatuses => 'All statuses';
+
+  @override
+  String get catalogPricingStatusDraft => 'Draft';
+
+  @override
+  String get catalogPricingStatusActive => 'Active';
+
+  @override
+  String get catalogPricingStatusArchived => 'Archived';
+
+  @override
+  String catalogPricingVariantLabel(String name) {
+    return 'Variant: $name';
+  }
+
+  @override
+  String catalogPricingBranchLabel(String name) {
+    return 'Branch: $name';
+  }
+
+  @override
+  String catalogPricingAmountLabel(String amount) {
+    return 'Amount: $amount';
+  }
+
+  @override
+  String catalogPricingEffectiveIntervalLabel(String from, String until) {
+    return 'Effective: $from → $until';
+  }
+
+  @override
+  String get catalogPricingOpenEnded => 'open-ended';
+
+  @override
+  String catalogPricingRevisionLabel(int revision) {
+    return 'Revision: $revision';
+  }
+
+  @override
+  String catalogPricingEffectivePreviewLine(String result) {
+    return 'Effective price at preview time: $result';
+  }
+
+  @override
+  String catalogPricingEffectiveFound(String amount) {
+    return '$amount';
+  }
+
+  @override
+  String get catalogPricingEffectiveNotFound => 'No matching active price';
+
+  @override
+  String get catalogPricingEffectiveAmbiguous =>
+      'Ambiguous — multiple active prices match';
+
+  @override
+  String get catalogPricingEditAction => 'Edit draft';
+
+  @override
+  String get catalogPricingActivateAction => 'Activate';
+
+  @override
+  String get catalogPricingArchiveAction => 'Archive';
+
+  @override
+  String get catalogPricingShowHistoryAction => 'Show history';
+
+  @override
+  String get catalogPricingHideHistoryAction => 'Hide history';
+
+  @override
+  String get catalogPricingHistoryEmpty =>
+      'No price history in this preview session yet.';
+
+  @override
+  String catalogPricingHistoryLine(String action, String before, String after) {
+    return '$action: $before → $after';
+  }
+
+  @override
+  String get catalogPricingPreviewTitle => 'Effective price preview';
+
+  @override
+  String get catalogPricingPreviewBody =>
+      'Pick a demo as-of date to evaluate which active rule applies.';
+
+  @override
+  String catalogPricingPreviewAsOfLabel(String date) {
+    return 'As of: $date';
+  }
+
+  @override
+  String get catalogPricingPreviewHint =>
+      'Resolver uses active rules only; variant-specific prices override base listing prices.';
+
+  @override
+  String get catalogPricingCreateTitle => 'New price rule';
+
+  @override
+  String get catalogPricingEditTitle => 'Edit draft price';
+
+  @override
+  String get catalogPricingVariantOptional => 'Variant (optional)';
+
+  @override
+  String get catalogPricingBaseListingPrice => 'Base listing (no variant)';
+
+  @override
+  String get catalogPricingAmountField => 'Amount (whole UZS som)';
+
+  @override
+  String get catalogPricingEffectiveFromField =>
+      'Effective from (YYYY-MM-DD UTC)';
+
+  @override
+  String get catalogPricingEffectiveUntilField =>
+      'Effective until (optional, YYYY-MM-DD UTC)';
+
+  @override
+  String get catalogPricingCurrencyHint =>
+      'Currency: UZS (whole som, no fractional conversion).';
+
+  @override
+  String get catalogPricingCancelAction => 'Cancel';
+
+  @override
+  String get catalogPricingSaveAction => 'Save';
+
+  @override
+  String get catalogPricingScopeRequired => 'Select branch and listing.';
+
+  @override
+  String get catalogPricingAmountInvalid =>
+      'Enter a valid non-negative whole amount.';
+
+  @override
+  String get catalogPricingDateInvalid => 'Enter dates as YYYY-MM-DD.';
+
+  @override
+  String get catalogPricingActiveImmutable =>
+      'Active prices cannot be edited silently. Create a new revision draft instead.';
+
+  @override
+  String get catalogPricingSaveFailed => 'Could not save. Check your entries.';
+
+  @override
+  String get catalogPricingEffectiveRangeInvalid =>
+      'Effective until must be after effective from.';
+
+  @override
+  String get catalogPricingActivateOverlapError =>
+      'Cannot activate: another active price overlaps this interval for the same target.';
 }

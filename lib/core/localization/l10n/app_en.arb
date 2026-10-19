@@ -1219,5 +1219,94 @@
   "@catalogResourceAllocatedHint": {
     "placeholders": {"qty": {"type": "int"}}
   },
-  "catalogResourceCapacityChangeSuccess": "Capacity updated for this preview session."
+  "catalogResourceCapacityChangeSuccess": "Capacity updated for this preview session.",
+  "catalogPricingSectionTitle": "Base pricing (preview)",
+  "catalogPricingSectionBody": "Manage catalog price rules per branch with effective dates. Illustrative demo prices — not connected to live checkout.",
+  "catalogPricingListTitle": "Pricing",
+  "catalogPricingDemoDisclaimer": "Illustrative demo prices — not connected to live checkout.",
+  "catalogPricingAddAction": "Add price rule",
+  "catalogPricingEmptyBody": "No price rules match your filters.",
+  "catalogPricingBranchFilter": "Branch",
+  "catalogPricingAllBranches": "All branches",
+  "catalogPricingKindFilter": "Listing type",
+  "catalogPricingAllKinds": "All listing types",
+  "catalogPricingKindProduct": "Product",
+  "catalogPricingKindService": "Service",
+  "catalogPricingStatusFilter": "Status",
+  "catalogPricingAllStatuses": "All statuses",
+  "catalogPricingStatusDraft": "Draft",
+  "catalogPricingStatusActive": "Active",
+  "catalogPricingStatusArchived": "Archived",
+  "catalogPricingVariantLabel": "Variant: {name}",
+  "@catalogPricingVariantLabel": {
+    "placeholders": {"name": {"type": "String"}}
+  },
+  "catalogPricingBranchLabel": "Branch: {name}",
+  "@catalogPricingBranchLabel": {
+    "placeholders": {"name": {"type": "String"}}
+  },
+  "catalogPricingAmountLabel": "Amount: {amount}",
+  "@catalogPricingAmountLabel": {
+    "placeholders": {"amount": {"type": "String"}}
+  },
+  "catalogPricingEffectiveIntervalLabel": "Effective: {from} → {until}",
+  "@catalogPricingEffectiveIntervalLabel": {
+    "placeholders": {
+      "from": {"type": "String"},
+      "until": {"type": "String"}
+    }
+  },
+  "catalogPricingOpenEnded": "open-ended",
+  "catalogPricingRevisionLabel": "Revision: {revision}",
+  "@catalogPricingRevisionLabel": {
+    "placeholders": {"revision": {"type": "int"}}
+  },
+  "catalogPricingEffectivePreviewLine": "Effective price at preview time: {result}",
+  "@catalogPricingEffectivePreviewLine": {
+    "placeholders": {"result": {"type": "String"}}
+  },
+  "catalogPricingEffectiveFound": "{amount}",
+  "@catalogPricingEffectiveFound": {
+    "placeholders": {"amount": {"type": "String"}}
+  },
+  "catalogPricingEffectiveNotFound": "No matching active price",
+  "catalogPricingEffectiveAmbiguous": "Ambiguous — multiple active prices match",
+  "catalogPricingEditAction": "Edit draft",
+  "catalogPricingActivateAction": "Activate",
+  "catalogPricingArchiveAction": "Archive",
+  "catalogPricingShowHistoryAction": "Show history",
+  "catalogPricingHideHistoryAction": "Hide history",
+  "catalogPricingHistoryEmpty": "No price history in this preview session yet.",
+  "catalogPricingHistoryLine": "{action}: {before} → {after}",
+  "@catalogPricingHistoryLine": {
+    "placeholders": {
+      "action": {"type": "String"},
+      "before": {"type": "String"},
+      "after": {"type": "String"}
+    }
+  },
+  "catalogPricingPreviewTitle": "Effective price preview",
+  "catalogPricingPreviewBody": "Pick a demo as-of date to evaluate which active rule applies.",
+  "catalogPricingPreviewAsOfLabel": "As of: {date}",
+  "@catalogPricingPreviewAsOfLabel": {
+    "placeholders": {"date": {"type": "String"}}
+  },
+  "catalogPricingPreviewHint": "Resolver uses active rules only; variant-specific prices override base listing prices.",
+  "catalogPricingCreateTitle": "New price rule",
+  "catalogPricingEditTitle": "Edit draft price",
+  "catalogPricingVariantOptional": "Variant (optional)",
+  "catalogPricingBaseListingPrice": "Base listing (no variant)",
+  "catalogPricingAmountField": "Amount (whole UZS som)",
+  "catalogPricingEffectiveFromField": "Effective from (YYYY-MM-DD UTC)",
+  "catalogPricingEffectiveUntilField": "Effective until (optional, YYYY-MM-DD UTC)",
+  "catalogPricingCurrencyHint": "Currency: UZS (whole som, no fractional conversion).",
+  "catalogPricingCancelAction": "Cancel",
+  "catalogPricingSaveAction": "Save",
+  "catalogPricingScopeRequired": "Select branch and listing.",
+  "catalogPricingAmountInvalid": "Enter a valid non-negative whole amount.",
+  "catalogPricingDateInvalid": "Enter dates as YYYY-MM-DD.",
+  "catalogPricingActiveImmutable": "Active prices cannot be edited silently. Create a new revision draft instead.",
+  "catalogPricingSaveFailed": "Could not save. Check your entries.",
+  "catalogPricingEffectiveRangeInvalid": "Effective until must be after effective from.",
+  "catalogPricingActivateOverlapError": "Cannot activate: another active price overlaps this interval for the same target."
 }

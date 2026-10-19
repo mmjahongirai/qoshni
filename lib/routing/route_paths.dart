@@ -134,6 +134,9 @@ abstract final class RoutePaths {
 
   static const String businessCatalogResources =
       '/business-center/catalog/resources';
+
+  static const String businessCatalogPricing =
+      '/business-center/catalog/pricing';
 }
 
 abstract final class RouteNames {
@@ -206,4 +209,5 @@ abstract final class RouteNames {
   static const String businessCatalogInventoryReservations =
       'businessCatalogInventoryReservations';
   static const String businessCatalogResources = 'businessCatalogResources';
+  static const String businessCatalogPricing = 'businessCatalogPricing';
 }

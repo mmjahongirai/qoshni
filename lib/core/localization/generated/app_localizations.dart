@@ -5842,6 +5842,336 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Capacity updated for this preview session.'**
   String get catalogResourceCapacityChangeSuccess;
+
+  /// No description provided for @catalogPricingSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Base pricing (preview)'**
+  String get catalogPricingSectionTitle;
+
+  /// No description provided for @catalogPricingSectionBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage catalog price rules per branch with effective dates. Illustrative demo prices — not connected to live checkout.'**
+  String get catalogPricingSectionBody;
+
+  /// No description provided for @catalogPricingListTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Pricing'**
+  String get catalogPricingListTitle;
+
+  /// No description provided for @catalogPricingDemoDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Illustrative demo prices — not connected to live checkout.'**
+  String get catalogPricingDemoDisclaimer;
+
+  /// No description provided for @catalogPricingAddAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add price rule'**
+  String get catalogPricingAddAction;
+
+  /// No description provided for @catalogPricingEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'No price rules match your filters.'**
+  String get catalogPricingEmptyBody;
+
+  /// No description provided for @catalogPricingBranchFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch'**
+  String get catalogPricingBranchFilter;
+
+  /// No description provided for @catalogPricingAllBranches.
+  ///
+  /// In en, this message translates to:
+  /// **'All branches'**
+  String get catalogPricingAllBranches;
+
+  /// No description provided for @catalogPricingKindFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Listing type'**
+  String get catalogPricingKindFilter;
+
+  /// No description provided for @catalogPricingAllKinds.
+  ///
+  /// In en, this message translates to:
+  /// **'All listing types'**
+  String get catalogPricingAllKinds;
+
+  /// No description provided for @catalogPricingKindProduct.
+  ///
+  /// In en, this message translates to:
+  /// **'Product'**
+  String get catalogPricingKindProduct;
+
+  /// No description provided for @catalogPricingKindService.
+  ///
+  /// In en, this message translates to:
+  /// **'Service'**
+  String get catalogPricingKindService;
+
+  /// No description provided for @catalogPricingStatusFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get catalogPricingStatusFilter;
+
+  /// No description provided for @catalogPricingAllStatuses.
+  ///
+  /// In en, this message translates to:
+  /// **'All statuses'**
+  String get catalogPricingAllStatuses;
+
+  /// No description provided for @catalogPricingStatusDraft.
+  ///
+  /// In en, this message translates to:
+  /// **'Draft'**
+  String get catalogPricingStatusDraft;
+
+  /// No description provided for @catalogPricingStatusActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get catalogPricingStatusActive;
+
+  /// No description provided for @catalogPricingStatusArchived.
+  ///
+  /// In en, this message translates to:
+  /// **'Archived'**
+  String get catalogPricingStatusArchived;
+
+  /// No description provided for @catalogPricingVariantLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Variant: {name}'**
+  String catalogPricingVariantLabel(String name);
+
+  /// No description provided for @catalogPricingBranchLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch: {name}'**
+  String catalogPricingBranchLabel(String name);
+
+  /// No description provided for @catalogPricingAmountLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Amount: {amount}'**
+  String catalogPricingAmountLabel(String amount);
+
+  /// No description provided for @catalogPricingEffectiveIntervalLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Effective: {from} → {until}'**
+  String catalogPricingEffectiveIntervalLabel(String from, String until);
+
+  /// No description provided for @catalogPricingOpenEnded.
+  ///
+  /// In en, this message translates to:
+  /// **'open-ended'**
+  String get catalogPricingOpenEnded;
+
+  /// No description provided for @catalogPricingRevisionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Revision: {revision}'**
+  String catalogPricingRevisionLabel(int revision);
+
+  /// No description provided for @catalogPricingEffectivePreviewLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Effective price at preview time: {result}'**
+  String catalogPricingEffectivePreviewLine(String result);
+
+  /// No description provided for @catalogPricingEffectiveFound.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount}'**
+  String catalogPricingEffectiveFound(String amount);
+
+  /// No description provided for @catalogPricingEffectiveNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No matching active price'**
+  String get catalogPricingEffectiveNotFound;
+
+  /// No description provided for @catalogPricingEffectiveAmbiguous.
+  ///
+  /// In en, this message translates to:
+  /// **'Ambiguous — multiple active prices match'**
+  String get catalogPricingEffectiveAmbiguous;
+
+  /// No description provided for @catalogPricingEditAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit draft'**
+  String get catalogPricingEditAction;
+
+  /// No description provided for @catalogPricingActivateAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Activate'**
+  String get catalogPricingActivateAction;
+
+  /// No description provided for @catalogPricingArchiveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Archive'**
+  String get catalogPricingArchiveAction;
+
+  /// No description provided for @catalogPricingShowHistoryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Show history'**
+  String get catalogPricingShowHistoryAction;
+
+  /// No description provided for @catalogPricingHideHistoryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide history'**
+  String get catalogPricingHideHistoryAction;
+
+  /// No description provided for @catalogPricingHistoryEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No price history in this preview session yet.'**
+  String get catalogPricingHistoryEmpty;
+
+  /// No description provided for @catalogPricingHistoryLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{action}: {before} → {after}'**
+  String catalogPricingHistoryLine(String action, String before, String after);
+
+  /// No description provided for @catalogPricingPreviewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Effective price preview'**
+  String get catalogPricingPreviewTitle;
+
+  /// No description provided for @catalogPricingPreviewBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick a demo as-of date to evaluate which active rule applies.'**
+  String get catalogPricingPreviewBody;
+
+  /// No description provided for @catalogPricingPreviewAsOfLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'As of: {date}'**
+  String catalogPricingPreviewAsOfLabel(String date);
+
+  /// No description provided for @catalogPricingPreviewHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolver uses active rules only; variant-specific prices override base listing prices.'**
+  String get catalogPricingPreviewHint;
+
+  /// No description provided for @catalogPricingCreateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New price rule'**
+  String get catalogPricingCreateTitle;
+
+  /// No description provided for @catalogPricingEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit draft price'**
+  String get catalogPricingEditTitle;
+
+  /// No description provided for @catalogPricingVariantOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Variant (optional)'**
+  String get catalogPricingVariantOptional;
+
+  /// No description provided for @catalogPricingBaseListingPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Base listing (no variant)'**
+  String get catalogPricingBaseListingPrice;
+
+  /// No description provided for @catalogPricingAmountField.
+  ///
+  /// In en, this message translates to:
+  /// **'Amount (whole UZS som)'**
+  String get catalogPricingAmountField;
+
+  /// No description provided for @catalogPricingEffectiveFromField.
+  ///
+  /// In en, this message translates to:
+  /// **'Effective from (YYYY-MM-DD UTC)'**
+  String get catalogPricingEffectiveFromField;
+
+  /// No description provided for @catalogPricingEffectiveUntilField.
+  ///
+  /// In en, this message translates to:
+  /// **'Effective until (optional, YYYY-MM-DD UTC)'**
+  String get catalogPricingEffectiveUntilField;
+
+  /// No description provided for @catalogPricingCurrencyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Currency: UZS (whole som, no fractional conversion).'**
+  String get catalogPricingCurrencyHint;
+
+  /// No description provided for @catalogPricingCancelAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get catalogPricingCancelAction;
+
+  /// No description provided for @catalogPricingSaveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get catalogPricingSaveAction;
+
+  /// No description provided for @catalogPricingScopeRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Select branch and listing.'**
+  String get catalogPricingScopeRequired;
+
+  /// No description provided for @catalogPricingAmountInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid non-negative whole amount.'**
+  String get catalogPricingAmountInvalid;
+
+  /// No description provided for @catalogPricingDateInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter dates as YYYY-MM-DD.'**
+  String get catalogPricingDateInvalid;
+
+  /// No description provided for @catalogPricingActiveImmutable.
+  ///
+  /// In en, this message translates to:
+  /// **'Active prices cannot be edited silently. Create a new revision draft instead.'**
+  String get catalogPricingActiveImmutable;
+
+  /// No description provided for @catalogPricingSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save. Check your entries.'**
+  String get catalogPricingSaveFailed;
+
+  /// No description provided for @catalogPricingEffectiveRangeInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Effective until must be after effective from.'**
+  String get catalogPricingEffectiveRangeInvalid;
+
+  /// No description provided for @catalogPricingActivateOverlapError.
+  ///
+  /// In en, this message translates to:
+  /// **'Cannot activate: another active price overlaps this interval for the same target.'**
+  String get catalogPricingActivateOverlapError;
 }
 
 class _AppLocalizationsDelegate

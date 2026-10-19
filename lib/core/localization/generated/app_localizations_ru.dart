@@ -3228,4 +3228,195 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get catalogResourceCapacityChangeSuccess =>
       'Capacity обновлена в preview.';
+
+  @override
+  String get catalogPricingSectionTitle => 'Базовые цены (preview)';
+
+  @override
+  String get catalogPricingSectionBody =>
+      'Правила цен по филиалам и датам. Illustrative demo — не checkout.';
+
+  @override
+  String get catalogPricingListTitle => 'Цены';
+
+  @override
+  String get catalogPricingDemoDisclaimer =>
+      'Illustrative demo prices — not connected to live checkout.';
+
+  @override
+  String get catalogPricingAddAction => 'Добавить правило';
+
+  @override
+  String get catalogPricingEmptyBody => 'Нет правил по фильтрам.';
+
+  @override
+  String get catalogPricingBranchFilter => 'Филиал';
+
+  @override
+  String get catalogPricingAllBranches => 'Все филиалы';
+
+  @override
+  String get catalogPricingKindFilter => 'Тип listing';
+
+  @override
+  String get catalogPricingAllKinds => 'Все типы';
+
+  @override
+  String get catalogPricingKindProduct => 'Product';
+
+  @override
+  String get catalogPricingKindService => 'Service';
+
+  @override
+  String get catalogPricingStatusFilter => 'Статус';
+
+  @override
+  String get catalogPricingAllStatuses => 'Все статусы';
+
+  @override
+  String get catalogPricingStatusDraft => 'Черновик';
+
+  @override
+  String get catalogPricingStatusActive => 'Активно';
+
+  @override
+  String get catalogPricingStatusArchived => 'Архив';
+
+  @override
+  String catalogPricingVariantLabel(String name) {
+    return 'Variant: $name';
+  }
+
+  @override
+  String catalogPricingBranchLabel(String name) {
+    return 'Филиал: $name';
+  }
+
+  @override
+  String catalogPricingAmountLabel(String amount) {
+    return 'Сумма: $amount';
+  }
+
+  @override
+  String catalogPricingEffectiveIntervalLabel(String from, String until) {
+    return 'Период: $from → $until';
+  }
+
+  @override
+  String get catalogPricingOpenEnded => 'без конца';
+
+  @override
+  String catalogPricingRevisionLabel(int revision) {
+    return 'Ревизия: $revision';
+  }
+
+  @override
+  String catalogPricingEffectivePreviewLine(String result) {
+    return 'Effective на preview: $result';
+  }
+
+  @override
+  String catalogPricingEffectiveFound(String amount) {
+    return '$amount';
+  }
+
+  @override
+  String get catalogPricingEffectiveNotFound => 'Нет активной цены';
+
+  @override
+  String get catalogPricingEffectiveAmbiguous =>
+      'Неоднозначно — несколько активных цен';
+
+  @override
+  String get catalogPricingEditAction => 'Редактировать draft';
+
+  @override
+  String get catalogPricingActivateAction => 'Активировать';
+
+  @override
+  String get catalogPricingArchiveAction => 'В архив';
+
+  @override
+  String get catalogPricingShowHistoryAction => 'История';
+
+  @override
+  String get catalogPricingHideHistoryAction => 'Скрыть историю';
+
+  @override
+  String get catalogPricingHistoryEmpty => 'История пуста.';
+
+  @override
+  String catalogPricingHistoryLine(String action, String before, String after) {
+    return '$action: $before → $after';
+  }
+
+  @override
+  String get catalogPricingPreviewTitle => 'Preview effective price';
+
+  @override
+  String get catalogPricingPreviewBody => 'Выберите demo as-of дату.';
+
+  @override
+  String catalogPricingPreviewAsOfLabel(String date) {
+    return 'As of: $date';
+  }
+
+  @override
+  String get catalogPricingPreviewHint =>
+      'Variant price имеет приоритет над base.';
+
+  @override
+  String get catalogPricingCreateTitle => 'Новое правило';
+
+  @override
+  String get catalogPricingEditTitle => 'Редактировать draft';
+
+  @override
+  String get catalogPricingVariantOptional => 'Variant (optional)';
+
+  @override
+  String get catalogPricingBaseListingPrice => 'Base listing';
+
+  @override
+  String get catalogPricingAmountField => 'Сумма (UZS, целые)';
+
+  @override
+  String get catalogPricingEffectiveFromField =>
+      'Effective from (YYYY-MM-DD UTC)';
+
+  @override
+  String get catalogPricingEffectiveUntilField => 'Effective until (optional)';
+
+  @override
+  String get catalogPricingCurrencyHint => 'Валюта: UZS (целые сумы).';
+
+  @override
+  String get catalogPricingCancelAction => 'Отмена';
+
+  @override
+  String get catalogPricingSaveAction => 'Сохранить';
+
+  @override
+  String get catalogPricingScopeRequired => 'Выберите филиал и listing.';
+
+  @override
+  String get catalogPricingAmountInvalid => 'Некорректная сумма.';
+
+  @override
+  String get catalogPricingDateInvalid => 'Дата: YYYY-MM-DD.';
+
+  @override
+  String get catalogPricingActiveImmutable =>
+      'Active нельзя менять молча — создайте revision.';
+
+  @override
+  String get catalogPricingSaveFailed => 'Не удалось сохранить.';
+
+  @override
+  String get catalogPricingEffectiveRangeInvalid =>
+      'Until должно быть после from.';
+
+  @override
+  String get catalogPricingActivateOverlapError =>
+      'Пересечение с другим active интервалом.';
 }

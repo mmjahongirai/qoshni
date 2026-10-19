@@ -3251,4 +3251,195 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get catalogResourceCapacityChangeSuccess =>
       'Sig‘im preview sessiyasida yangilandi.';
+
+  @override
+  String get catalogPricingSectionTitle => 'Asosiy narxlar (preview)';
+
+  @override
+  String get catalogPricingSectionBody =>
+      'Filial va muddat bo‘yicha narx qoidalari. Illustrative demo — checkout emas.';
+
+  @override
+  String get catalogPricingListTitle => 'Narxlar';
+
+  @override
+  String get catalogPricingDemoDisclaimer =>
+      'Illustrative demo prices — not connected to live checkout.';
+
+  @override
+  String get catalogPricingAddAction => 'Narx qoidasi qo‘shish';
+
+  @override
+  String get catalogPricingEmptyBody => 'Filtrlarga mos narx yo‘q.';
+
+  @override
+  String get catalogPricingBranchFilter => 'Filial';
+
+  @override
+  String get catalogPricingAllBranches => 'Barcha filiallar';
+
+  @override
+  String get catalogPricingKindFilter => 'Listing turi';
+
+  @override
+  String get catalogPricingAllKinds => 'Barcha turlar';
+
+  @override
+  String get catalogPricingKindProduct => 'Mahsulot';
+
+  @override
+  String get catalogPricingKindService => 'Xizmat';
+
+  @override
+  String get catalogPricingStatusFilter => 'Holat';
+
+  @override
+  String get catalogPricingAllStatuses => 'Barcha holatlar';
+
+  @override
+  String get catalogPricingStatusDraft => 'Qoralama';
+
+  @override
+  String get catalogPricingStatusActive => 'Faol';
+
+  @override
+  String get catalogPricingStatusArchived => 'Arxiv';
+
+  @override
+  String catalogPricingVariantLabel(String name) {
+    return 'Variant: $name';
+  }
+
+  @override
+  String catalogPricingBranchLabel(String name) {
+    return 'Filial: $name';
+  }
+
+  @override
+  String catalogPricingAmountLabel(String amount) {
+    return 'Miqdor: $amount';
+  }
+
+  @override
+  String catalogPricingEffectiveIntervalLabel(String from, String until) {
+    return 'Amal qilish: $from → $until';
+  }
+
+  @override
+  String get catalogPricingOpenEnded => 'cheksiz';
+
+  @override
+  String catalogPricingRevisionLabel(int revision) {
+    return 'Reviziya: $revision';
+  }
+
+  @override
+  String catalogPricingEffectivePreviewLine(String result) {
+    return 'Preview vaqtida effective: $result';
+  }
+
+  @override
+  String catalogPricingEffectiveFound(String amount) {
+    return '$amount';
+  }
+
+  @override
+  String get catalogPricingEffectiveNotFound => 'Mos faol narx yo‘q';
+
+  @override
+  String get catalogPricingEffectiveAmbiguous =>
+      'Noaniq — bir nechta faol narx';
+
+  @override
+  String get catalogPricingEditAction => 'Qoralamani tahrirlash';
+
+  @override
+  String get catalogPricingActivateAction => 'Faollashtirish';
+
+  @override
+  String get catalogPricingArchiveAction => 'Arxivlash';
+
+  @override
+  String get catalogPricingShowHistoryAction => 'Tarixni ko‘rish';
+
+  @override
+  String get catalogPricingHideHistoryAction => 'Tarixni yopish';
+
+  @override
+  String get catalogPricingHistoryEmpty => 'Tarix hali yo‘q.';
+
+  @override
+  String catalogPricingHistoryLine(String action, String before, String after) {
+    return '$action: $before → $after';
+  }
+
+  @override
+  String get catalogPricingPreviewTitle => 'Effective narx preview';
+
+  @override
+  String get catalogPricingPreviewBody => 'Demo as-of sanasini tanlang.';
+
+  @override
+  String catalogPricingPreviewAsOfLabel(String date) {
+    return 'As of: $date';
+  }
+
+  @override
+  String get catalogPricingPreviewHint => 'Variant narxi base listing ustun.';
+
+  @override
+  String get catalogPricingCreateTitle => 'Yangi narx qoidasi';
+
+  @override
+  String get catalogPricingEditTitle => 'Qoralama narx';
+
+  @override
+  String get catalogPricingVariantOptional => 'Variant (ixtiyoriy)';
+
+  @override
+  String get catalogPricingBaseListingPrice => 'Asosiy listing';
+
+  @override
+  String get catalogPricingAmountField => 'Miqdor (butun UZS so‘m)';
+
+  @override
+  String get catalogPricingEffectiveFromField =>
+      'Effective from (YYYY-MM-DD UTC)';
+
+  @override
+  String get catalogPricingEffectiveUntilField => 'Effective until (ixtiyoriy)';
+
+  @override
+  String get catalogPricingCurrencyHint =>
+      'Valyuta: UZS (butun so‘m, kasrsiz).';
+
+  @override
+  String get catalogPricingCancelAction => 'Bekor qilish';
+
+  @override
+  String get catalogPricingSaveAction => 'Saqlash';
+
+  @override
+  String get catalogPricingScopeRequired => 'Filial va listing tanlang.';
+
+  @override
+  String get catalogPricingAmountInvalid => 'Noto‘g‘ri miqdor.';
+
+  @override
+  String get catalogPricingDateInvalid => 'Sana: YYYY-MM-DD.';
+
+  @override
+  String get catalogPricingActiveImmutable =>
+      'Faol narxni jimgina o‘zgartirib bo‘lmaydi — revision yarating.';
+
+  @override
+  String get catalogPricingSaveFailed => 'Saqlab bo‘lmadi.';
+
+  @override
+  String get catalogPricingEffectiveRangeInvalid =>
+      'Until from dan keyin bo‘lishi kerak.';
+
+  @override
+  String get catalogPricingActivateOverlapError =>
+      'Boshqa faol interval bilan to‘qnashadi.';
 }

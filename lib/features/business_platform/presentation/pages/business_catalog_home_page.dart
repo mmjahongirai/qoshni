@@ -396,6 +396,27 @@ class _CatalogHomeBody extends StatelessWidget {
                   ],
                 ),
               ),
+              const SizedBox(height: AppSpacing.md),
+              AppSurfaceCard(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      l10n.catalogPricingSectionTitle,
+                      style: textTheme.titleSmall?.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(l10n.catalogPricingSectionBody),
+                    const SizedBox(height: AppSpacing.sm),
+                    FilledButton.tonal(
+                      onPressed: () =>
+                          context.push(RoutePaths.businessCatalogPricing),
+                      child: Text(l10n.catalogPricingListTitle),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
