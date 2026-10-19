@@ -2925,4 +2925,165 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get catalogInventoryAdjustSuccess =>
       'Stock updated for this preview session.';
+
+  @override
+  String get catalogInventoryReservationsNavAction => 'Reservations';
+
+  @override
+  String get catalogInventoryReservationsTitle => 'Inventory reservations';
+
+  @override
+  String get catalogInventoryReservationDemoDisclaimer =>
+      'Demo reservations only — not connected to live checkout or inventory.';
+
+  @override
+  String get catalogInventoryReservationCreateAction => 'Reserve stock';
+
+  @override
+  String get catalogInventoryReservationCreateTitle =>
+      'Create demo reservation';
+
+  @override
+  String get catalogInventoryReservationCreateConfirm => 'Reserve';
+
+  @override
+  String get catalogInventoryReservationCreateSuccess =>
+      'Reservation created for this preview session.';
+
+  @override
+  String get catalogInventoryReservationItemLabel => 'Inventory row';
+
+  @override
+  String get catalogInventoryReservationItemRequired =>
+      'Select an inventory row.';
+
+  @override
+  String get catalogInventoryReservationQuantityField => 'Quantity';
+
+  @override
+  String catalogInventoryReservationQuantityLabel(int qty) {
+    return 'Quantity: $qty';
+  }
+
+  @override
+  String get catalogInventoryReservationQuantityInvalid =>
+      'Enter a positive quantity.';
+
+  @override
+  String get catalogInventoryReservationExpiryMinutesField =>
+      'Expires in (minutes)';
+
+  @override
+  String get catalogInventoryReservationExpiryInvalid =>
+      'Expiry must be in the future.';
+
+  @override
+  String get catalogInventoryReservationInsufficientStock =>
+      'Not enough available stock for this preview row.';
+
+  @override
+  String get catalogInventoryReservationItemUnavailable =>
+      'This inventory row is marked unavailable.';
+
+  @override
+  String get catalogInventoryReservationSaveFailed =>
+      'Could not save reservation. Try again.';
+
+  @override
+  String get catalogInventoryReservationEmpty =>
+      'No reservations in this preview session yet.';
+
+  @override
+  String get catalogInventoryReservationStatusFilter => 'Status';
+
+  @override
+  String get catalogInventoryReservationAllStatuses => 'All statuses';
+
+  @override
+  String get catalogInventoryReservationStatusReserved => 'Reserved';
+
+  @override
+  String get catalogInventoryReservationStatusConfirmed => 'Confirmed';
+
+  @override
+  String get catalogInventoryReservationStatusReleased => 'Released';
+
+  @override
+  String get catalogInventoryReservationStatusExpired => 'Expired';
+
+  @override
+  String catalogInventoryReservationCreatedLabel(String date) {
+    return 'Created: $date';
+  }
+
+  @override
+  String catalogInventoryReservationExpiresLabel(String date) {
+    return 'Expires: $date';
+  }
+
+  @override
+  String get catalogInventoryReservationReleaseAction => 'Release';
+
+  @override
+  String get catalogInventoryReservationConfirmAction => 'Confirm sale';
+
+  @override
+  String get catalogInventoryReservationExpireAction => 'Expire';
+
+  @override
+  String get catalogInventoryReservationExpireAllDue => 'Expire due';
+
+  @override
+  String catalogInventoryReservationExpireAllResult(int count) {
+    return 'Expired $count due reservation(s) in preview.';
+  }
+
+  @override
+  String get catalogInventoryReservationReleaseSuccess =>
+      'Reservation released.';
+
+  @override
+  String get catalogInventoryReservationConfirmSuccess =>
+      'Reservation confirmed as demo sale.';
+
+  @override
+  String get catalogInventoryReservationExpireSuccess => 'Reservation expired.';
+
+  @override
+  String get catalogInventoryReservationHistoryEmpty =>
+      'No lifecycle events yet.';
+
+  @override
+  String catalogInventoryReservationHistoryLine(
+    String action,
+    String fromStatus,
+    String toStatus,
+    int quantity,
+  ) {
+    return '$action: $fromStatus → $toStatus · qty $quantity';
+  }
+
+  @override
+  String get catalogInventoryReservationReconcileAction => 'Run audit';
+
+  @override
+  String get catalogInventoryReservationReconcileTitle =>
+      'Reserved quantity audit (demo)';
+
+  @override
+  String get catalogInventoryReservationReconcileDemoNote =>
+      'This audit compares active reservations to inventory reserved totals. It does not change stock.';
+
+  @override
+  String get catalogInventoryReservationReconcileClean =>
+      'No discrepancies found.';
+
+  @override
+  String catalogInventoryReservationReconcileLine(
+    String itemId,
+    int expected,
+    int actual,
+  ) {
+    return '$itemId: expected $expected, actual $actual';
+  }
 }

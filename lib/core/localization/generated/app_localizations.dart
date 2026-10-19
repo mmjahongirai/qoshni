@@ -5311,6 +5311,261 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Stock updated for this preview session.'**
   String get catalogInventoryAdjustSuccess;
+
+  /// No description provided for @catalogInventoryReservationsNavAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Reservations'**
+  String get catalogInventoryReservationsNavAction;
+
+  /// No description provided for @catalogInventoryReservationsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Inventory reservations'**
+  String get catalogInventoryReservationsTitle;
+
+  /// No description provided for @catalogInventoryReservationDemoDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo reservations only — not connected to live checkout or inventory.'**
+  String get catalogInventoryReservationDemoDisclaimer;
+
+  /// No description provided for @catalogInventoryReservationCreateAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Reserve stock'**
+  String get catalogInventoryReservationCreateAction;
+
+  /// No description provided for @catalogInventoryReservationCreateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Create demo reservation'**
+  String get catalogInventoryReservationCreateTitle;
+
+  /// No description provided for @catalogInventoryReservationCreateConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Reserve'**
+  String get catalogInventoryReservationCreateConfirm;
+
+  /// No description provided for @catalogInventoryReservationCreateSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Reservation created for this preview session.'**
+  String get catalogInventoryReservationCreateSuccess;
+
+  /// No description provided for @catalogInventoryReservationItemLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Inventory row'**
+  String get catalogInventoryReservationItemLabel;
+
+  /// No description provided for @catalogInventoryReservationItemRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Select an inventory row.'**
+  String get catalogInventoryReservationItemRequired;
+
+  /// No description provided for @catalogInventoryReservationQuantityField.
+  ///
+  /// In en, this message translates to:
+  /// **'Quantity'**
+  String get catalogInventoryReservationQuantityField;
+
+  /// No description provided for @catalogInventoryReservationQuantityLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Quantity: {qty}'**
+  String catalogInventoryReservationQuantityLabel(int qty);
+
+  /// No description provided for @catalogInventoryReservationQuantityInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a positive quantity.'**
+  String get catalogInventoryReservationQuantityInvalid;
+
+  /// No description provided for @catalogInventoryReservationExpiryMinutesField.
+  ///
+  /// In en, this message translates to:
+  /// **'Expires in (minutes)'**
+  String get catalogInventoryReservationExpiryMinutesField;
+
+  /// No description provided for @catalogInventoryReservationExpiryInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Expiry must be in the future.'**
+  String get catalogInventoryReservationExpiryInvalid;
+
+  /// No description provided for @catalogInventoryReservationInsufficientStock.
+  ///
+  /// In en, this message translates to:
+  /// **'Not enough available stock for this preview row.'**
+  String get catalogInventoryReservationInsufficientStock;
+
+  /// No description provided for @catalogInventoryReservationItemUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'This inventory row is marked unavailable.'**
+  String get catalogInventoryReservationItemUnavailable;
+
+  /// No description provided for @catalogInventoryReservationSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save reservation. Try again.'**
+  String get catalogInventoryReservationSaveFailed;
+
+  /// No description provided for @catalogInventoryReservationEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No reservations in this preview session yet.'**
+  String get catalogInventoryReservationEmpty;
+
+  /// No description provided for @catalogInventoryReservationStatusFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get catalogInventoryReservationStatusFilter;
+
+  /// No description provided for @catalogInventoryReservationAllStatuses.
+  ///
+  /// In en, this message translates to:
+  /// **'All statuses'**
+  String get catalogInventoryReservationAllStatuses;
+
+  /// No description provided for @catalogInventoryReservationStatusReserved.
+  ///
+  /// In en, this message translates to:
+  /// **'Reserved'**
+  String get catalogInventoryReservationStatusReserved;
+
+  /// No description provided for @catalogInventoryReservationStatusConfirmed.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirmed'**
+  String get catalogInventoryReservationStatusConfirmed;
+
+  /// No description provided for @catalogInventoryReservationStatusReleased.
+  ///
+  /// In en, this message translates to:
+  /// **'Released'**
+  String get catalogInventoryReservationStatusReleased;
+
+  /// No description provided for @catalogInventoryReservationStatusExpired.
+  ///
+  /// In en, this message translates to:
+  /// **'Expired'**
+  String get catalogInventoryReservationStatusExpired;
+
+  /// No description provided for @catalogInventoryReservationCreatedLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Created: {date}'**
+  String catalogInventoryReservationCreatedLabel(String date);
+
+  /// No description provided for @catalogInventoryReservationExpiresLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Expires: {date}'**
+  String catalogInventoryReservationExpiresLabel(String date);
+
+  /// No description provided for @catalogInventoryReservationReleaseAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Release'**
+  String get catalogInventoryReservationReleaseAction;
+
+  /// No description provided for @catalogInventoryReservationConfirmAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm sale'**
+  String get catalogInventoryReservationConfirmAction;
+
+  /// No description provided for @catalogInventoryReservationExpireAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Expire'**
+  String get catalogInventoryReservationExpireAction;
+
+  /// No description provided for @catalogInventoryReservationExpireAllDue.
+  ///
+  /// In en, this message translates to:
+  /// **'Expire due'**
+  String get catalogInventoryReservationExpireAllDue;
+
+  /// No description provided for @catalogInventoryReservationExpireAllResult.
+  ///
+  /// In en, this message translates to:
+  /// **'Expired {count} due reservation(s) in preview.'**
+  String catalogInventoryReservationExpireAllResult(int count);
+
+  /// No description provided for @catalogInventoryReservationReleaseSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Reservation released.'**
+  String get catalogInventoryReservationReleaseSuccess;
+
+  /// No description provided for @catalogInventoryReservationConfirmSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Reservation confirmed as demo sale.'**
+  String get catalogInventoryReservationConfirmSuccess;
+
+  /// No description provided for @catalogInventoryReservationExpireSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Reservation expired.'**
+  String get catalogInventoryReservationExpireSuccess;
+
+  /// No description provided for @catalogInventoryReservationHistoryEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No lifecycle events yet.'**
+  String get catalogInventoryReservationHistoryEmpty;
+
+  /// No description provided for @catalogInventoryReservationHistoryLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{action}: {fromStatus} → {toStatus} · qty {quantity}'**
+  String catalogInventoryReservationHistoryLine(
+    String action,
+    String fromStatus,
+    String toStatus,
+    int quantity,
+  );
+
+  /// No description provided for @catalogInventoryReservationReconcileAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Run audit'**
+  String get catalogInventoryReservationReconcileAction;
+
+  /// No description provided for @catalogInventoryReservationReconcileTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Reserved quantity audit (demo)'**
+  String get catalogInventoryReservationReconcileTitle;
+
+  /// No description provided for @catalogInventoryReservationReconcileDemoNote.
+  ///
+  /// In en, this message translates to:
+  /// **'This audit compares active reservations to inventory reserved totals. It does not change stock.'**
+  String get catalogInventoryReservationReconcileDemoNote;
+
+  /// No description provided for @catalogInventoryReservationReconcileClean.
+  ///
+  /// In en, this message translates to:
+  /// **'No discrepancies found.'**
+  String get catalogInventoryReservationReconcileClean;
+
+  /// No description provided for @catalogInventoryReservationReconcileLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{itemId}: expected {expected}, actual {actual}'**
+  String catalogInventoryReservationReconcileLine(
+    String itemId,
+    int expected,
+    int actual,
+  );
 }
 
 class _AppLocalizationsDelegate

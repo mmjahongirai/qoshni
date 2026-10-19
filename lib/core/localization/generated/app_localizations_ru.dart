@@ -2915,4 +2915,162 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get catalogInventoryAdjustSuccess =>
       'Остаток обновлён в preview-сессии.';
+
+  @override
+  String get catalogInventoryReservationsNavAction => 'Резервы';
+
+  @override
+  String get catalogInventoryReservationsTitle => 'Резервирование остатков';
+
+  @override
+  String get catalogInventoryReservationDemoDisclaimer =>
+      'Demo-резервы — не связаны с live checkout или складом.';
+
+  @override
+  String get catalogInventoryReservationCreateAction => 'Зарезервировать';
+
+  @override
+  String get catalogInventoryReservationCreateTitle => 'Demo-резерв';
+
+  @override
+  String get catalogInventoryReservationCreateConfirm => 'Зарезервировать';
+
+  @override
+  String get catalogInventoryReservationCreateSuccess =>
+      'Резерв создан в preview-сессии.';
+
+  @override
+  String get catalogInventoryReservationItemLabel => 'Строка остатка';
+
+  @override
+  String get catalogInventoryReservationItemRequired =>
+      'Выберите строку остатка.';
+
+  @override
+  String get catalogInventoryReservationQuantityField => 'Количество';
+
+  @override
+  String catalogInventoryReservationQuantityLabel(int qty) {
+    return 'Количество: $qty';
+  }
+
+  @override
+  String get catalogInventoryReservationQuantityInvalid =>
+      'Введите положительное количество.';
+
+  @override
+  String get catalogInventoryReservationExpiryMinutesField =>
+      'Истекает через (минут)';
+
+  @override
+  String get catalogInventoryReservationExpiryInvalid =>
+      'Срок должен быть в будущем.';
+
+  @override
+  String get catalogInventoryReservationInsufficientStock =>
+      'Недостаточно доступного остатка.';
+
+  @override
+  String get catalogInventoryReservationItemUnavailable =>
+      'Строка помечена как недоступная.';
+
+  @override
+  String get catalogInventoryReservationSaveFailed =>
+      'Не удалось сохранить резерв.';
+
+  @override
+  String get catalogInventoryReservationEmpty =>
+      'Резервов в preview-сессии пока нет.';
+
+  @override
+  String get catalogInventoryReservationStatusFilter => 'Статус';
+
+  @override
+  String get catalogInventoryReservationAllStatuses => 'Все статусы';
+
+  @override
+  String get catalogInventoryReservationStatusReserved => 'Зарезервировано';
+
+  @override
+  String get catalogInventoryReservationStatusConfirmed => 'Подтверждено';
+
+  @override
+  String get catalogInventoryReservationStatusReleased => 'Освобождено';
+
+  @override
+  String get catalogInventoryReservationStatusExpired => 'Истекло';
+
+  @override
+  String catalogInventoryReservationCreatedLabel(String date) {
+    return 'Создано: $date';
+  }
+
+  @override
+  String catalogInventoryReservationExpiresLabel(String date) {
+    return 'Истекает: $date';
+  }
+
+  @override
+  String get catalogInventoryReservationReleaseAction => 'Освободить';
+
+  @override
+  String get catalogInventoryReservationConfirmAction => 'Подтвердить продажу';
+
+  @override
+  String get catalogInventoryReservationExpireAction => 'Истечь';
+
+  @override
+  String get catalogInventoryReservationExpireAllDue => 'Истечь просроченные';
+
+  @override
+  String catalogInventoryReservationExpireAllResult(int count) {
+    return 'Истекло резервов: $count.';
+  }
+
+  @override
+  String get catalogInventoryReservationReleaseSuccess => 'Резерв освобождён.';
+
+  @override
+  String get catalogInventoryReservationConfirmSuccess =>
+      'Резерв подтверждён (demo).';
+
+  @override
+  String get catalogInventoryReservationExpireSuccess => 'Резерв истёк.';
+
+  @override
+  String get catalogInventoryReservationHistoryEmpty =>
+      'Событий lifecycle пока нет.';
+
+  @override
+  String catalogInventoryReservationHistoryLine(
+    String action,
+    String fromStatus,
+    String toStatus,
+    int quantity,
+  ) {
+    return '$action: $fromStatus → $toStatus · qty $quantity';
+  }
+
+  @override
+  String get catalogInventoryReservationReconcileAction => 'Аудит';
+
+  @override
+  String get catalogInventoryReservationReconcileTitle =>
+      'Аудит reserved (demo)';
+
+  @override
+  String get catalogInventoryReservationReconcileDemoNote =>
+      'Сравнение активных резервов с inventory reserved. Stock не меняется.';
+
+  @override
+  String get catalogInventoryReservationReconcileClean => 'Расхождений нет.';
+
+  @override
+  String catalogInventoryReservationReconcileLine(
+    String itemId,
+    int expected,
+    int actual,
+  ) {
+    return '$itemId: ожидалось $expected, факт $actual';
+  }
 }

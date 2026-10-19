@@ -2934,4 +2934,166 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get catalogInventoryAdjustSuccess =>
       'Ombor preview sessiyasida yangilandi.';
+
+  @override
+  String get catalogInventoryReservationsNavAction => 'Band qilishlar';
+
+  @override
+  String get catalogInventoryReservationsTitle => 'Ombor band qilishlari';
+
+  @override
+  String get catalogInventoryReservationDemoDisclaimer =>
+      'Faqat demo band qilish — jonli checkout yoki omborga ulanmagan.';
+
+  @override
+  String get catalogInventoryReservationCreateAction => 'Band qilish';
+
+  @override
+  String get catalogInventoryReservationCreateTitle => 'Demo band qilish';
+
+  @override
+  String get catalogInventoryReservationCreateConfirm => 'Band qilish';
+
+  @override
+  String get catalogInventoryReservationCreateSuccess =>
+      'Band qilish preview sessiyasida yaratildi.';
+
+  @override
+  String get catalogInventoryReservationItemLabel => 'Ombor qatori';
+
+  @override
+  String get catalogInventoryReservationItemRequired =>
+      'Ombor qatorini tanlang.';
+
+  @override
+  String get catalogInventoryReservationQuantityField => 'Miqdor';
+
+  @override
+  String catalogInventoryReservationQuantityLabel(int qty) {
+    return 'Miqdor: $qty';
+  }
+
+  @override
+  String get catalogInventoryReservationQuantityInvalid =>
+      'Musbat miqdor kiriting.';
+
+  @override
+  String get catalogInventoryReservationExpiryMinutesField =>
+      'Muddati (daqiqa)';
+
+  @override
+  String get catalogInventoryReservationExpiryInvalid =>
+      'Muddat kelajakda bo‘lishi kerak.';
+
+  @override
+  String get catalogInventoryReservationInsufficientStock =>
+      'Mavjud zaxira yetarli emas.';
+
+  @override
+  String get catalogInventoryReservationItemUnavailable =>
+      'Bu qator mavjud emas deb belgilangan.';
+
+  @override
+  String get catalogInventoryReservationSaveFailed =>
+      'Band qilishni saqlab bo‘lmadi.';
+
+  @override
+  String get catalogInventoryReservationEmpty =>
+      'Preview sessiyada band qilishlar yo‘q.';
+
+  @override
+  String get catalogInventoryReservationStatusFilter => 'Holat';
+
+  @override
+  String get catalogInventoryReservationAllStatuses => 'Barcha holatlar';
+
+  @override
+  String get catalogInventoryReservationStatusReserved => 'Band';
+
+  @override
+  String get catalogInventoryReservationStatusConfirmed => 'Tasdiqlangan';
+
+  @override
+  String get catalogInventoryReservationStatusReleased => 'Bo‘shatilgan';
+
+  @override
+  String get catalogInventoryReservationStatusExpired => 'Muddati o‘tgan';
+
+  @override
+  String catalogInventoryReservationCreatedLabel(String date) {
+    return 'Yaratilgan: $date';
+  }
+
+  @override
+  String catalogInventoryReservationExpiresLabel(String date) {
+    return 'Tugaydi: $date';
+  }
+
+  @override
+  String get catalogInventoryReservationReleaseAction => 'Bo‘shatish';
+
+  @override
+  String get catalogInventoryReservationConfirmAction => 'Sotuvni tasdiqlash';
+
+  @override
+  String get catalogInventoryReservationExpireAction => 'Muddati o‘tish';
+
+  @override
+  String get catalogInventoryReservationExpireAllDue =>
+      'Muddati o‘tganlarni yopish';
+
+  @override
+  String catalogInventoryReservationExpireAllResult(int count) {
+    return 'Muddati o‘tgan band qilishlar: $count.';
+  }
+
+  @override
+  String get catalogInventoryReservationReleaseSuccess =>
+      'Band qilish bo‘shatildi.';
+
+  @override
+  String get catalogInventoryReservationConfirmSuccess =>
+      'Band qilish demo sotuv sifatida tasdiqlandi.';
+
+  @override
+  String get catalogInventoryReservationExpireSuccess =>
+      'Band qilish muddati o‘tdi.';
+
+  @override
+  String get catalogInventoryReservationHistoryEmpty =>
+      'Lifecycle hodisalari yo‘q.';
+
+  @override
+  String catalogInventoryReservationHistoryLine(
+    String action,
+    String fromStatus,
+    String toStatus,
+    int quantity,
+  ) {
+    return '$action: $fromStatus → $toStatus · miqdor $quantity';
+  }
+
+  @override
+  String get catalogInventoryReservationReconcileAction => 'Audit';
+
+  @override
+  String get catalogInventoryReservationReconcileTitle =>
+      'Reserved audit (demo)';
+
+  @override
+  String get catalogInventoryReservationReconcileDemoNote =>
+      'Faol band qilishlar inventory reserved bilan solishtiriladi. Stock o‘zgarmaydi.';
+
+  @override
+  String get catalogInventoryReservationReconcileClean =>
+      'Nomuvofiqlik topilmadi.';
+
+  @override
+  String catalogInventoryReservationReconcileLine(
+    String itemId,
+    int expected,
+    int actual,
+  ) {
+    return '$itemId: kutilgan $expected, haqiqiy $actual';
+  }
 }

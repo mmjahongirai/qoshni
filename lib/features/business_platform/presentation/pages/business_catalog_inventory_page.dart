@@ -19,6 +19,7 @@ import 'package:qoshni/features/business_platform/presentation/business_catalog_
 import 'package:qoshni/features/business_platform/presentation/business_catalog_inventory_validation.dart';
 import 'package:qoshni/features/business_platform/presentation/business_catalog_product_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_catalog_product_variant_controller.dart';
+import 'package:qoshni/routing/route_paths.dart';
 
 class BusinessCatalogInventoryPage extends StatefulWidget {
   const BusinessCatalogInventoryPage({super.key});
@@ -61,6 +62,13 @@ class _BusinessCatalogInventoryPageState
       appBar: AppBar(
         leading: BackButton(onPressed: () => context.pop()),
         title: Text(l10n.catalogInventoryListTitle),
+        actions: [
+          TextButton(
+            onPressed: () =>
+                context.push(RoutePaths.businessCatalogInventoryReservations),
+            child: Text(l10n.catalogInventoryReservationsNavAction),
+          ),
+        ],
       ),
       body: SafeArea(
         child: ListenableBuilder(

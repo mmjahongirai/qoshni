@@ -303,4 +303,37 @@ class InMemoryBusinessCatalogInventoryRepository
       _ensureScopeHistory() {
     return _historyByScope.putIfAbsent(businessScopeId, () => {});
   }
+
+  /// Demo reservation lifecycle only — does not append stock adjustment history.
+  CatalogInventoryLifecycleQuantityResult setQuantitiesForLifecycle({
+    required String inventoryItemId,
+    required int onHandQuantity,
+    required int reservedQuantity,
+  }) {
+    final list = _ensureScopeList();
+    final index = list.indexWhere((i) => i.inventoryItemId == inventoryItemId);
+    if (index < 0) {
+      return CatalogInventoryLifecycleQuantityResult.notFound;
+    }
+    final item = list[index];
+    if (!catalogInventoryQuantitiesValid(
+      onHandQuantity: onHandQuantity,
+      reservedQuantity: reservedQuantity,
+      lowStockThreshold: item.lowStockThreshold,
+    )) {
+      return CatalogInventoryLifecycleQuantityResult.invalidQuantities;
+    }
+    list[index] = item.copyWith(
+      onHandQuantity: onHandQuantity,
+      reservedQuantity: reservedQuantity,
+      updatedAt: DateTime.now(),
+    );
+    return CatalogInventoryLifecycleQuantityResult.success;
+  }
+}
+
+enum CatalogInventoryLifecycleQuantityResult {
+  success,
+  notFound,
+  invalidQuantities,
 }

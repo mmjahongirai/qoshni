@@ -1075,5 +1075,81 @@
   "catalogInventoryAdjustDeltaInvalid": "Enter a whole number.",
   "catalogInventoryAdjustInvalidQuantities": "This change would make quantities invalid.",
   "catalogInventoryAdjustSaveFailed": "Could not apply adjustment. Try again.",
-  "catalogInventoryAdjustSuccess": "Stock updated for this preview session."
+  "catalogInventoryAdjustSuccess": "Stock updated for this preview session.",
+  "catalogInventoryReservationsNavAction": "Reservations",
+  "catalogInventoryReservationsTitle": "Inventory reservations",
+  "catalogInventoryReservationDemoDisclaimer": "Demo reservations only — not connected to live checkout or inventory.",
+  "catalogInventoryReservationCreateAction": "Reserve stock",
+  "catalogInventoryReservationCreateTitle": "Create demo reservation",
+  "catalogInventoryReservationCreateConfirm": "Reserve",
+  "catalogInventoryReservationCreateSuccess": "Reservation created for this preview session.",
+  "catalogInventoryReservationItemLabel": "Inventory row",
+  "catalogInventoryReservationItemRequired": "Select an inventory row.",
+  "catalogInventoryReservationQuantityField": "Quantity",
+  "catalogInventoryReservationQuantityLabel": "Quantity: {qty}",
+  "@catalogInventoryReservationQuantityLabel": {
+    "placeholders": {
+      "qty": {"type": "int"}
+    }
+  },
+  "catalogInventoryReservationQuantityInvalid": "Enter a positive quantity.",
+  "catalogInventoryReservationExpiryMinutesField": "Expires in (minutes)",
+  "catalogInventoryReservationExpiryInvalid": "Expiry must be in the future.",
+  "catalogInventoryReservationInsufficientStock": "Not enough available stock for this preview row.",
+  "catalogInventoryReservationItemUnavailable": "This inventory row is marked unavailable.",
+  "catalogInventoryReservationSaveFailed": "Could not save reservation. Try again.",
+  "catalogInventoryReservationEmpty": "No reservations in this preview session yet.",
+  "catalogInventoryReservationStatusFilter": "Status",
+  "catalogInventoryReservationAllStatuses": "All statuses",
+  "catalogInventoryReservationStatusReserved": "Reserved",
+  "catalogInventoryReservationStatusConfirmed": "Confirmed",
+  "catalogInventoryReservationStatusReleased": "Released",
+  "catalogInventoryReservationStatusExpired": "Expired",
+  "catalogInventoryReservationCreatedLabel": "Created: {date}",
+  "@catalogInventoryReservationCreatedLabel": {
+    "placeholders": {
+      "date": {"type": "String"}
+    }
+  },
+  "catalogInventoryReservationExpiresLabel": "Expires: {date}",
+  "@catalogInventoryReservationExpiresLabel": {
+    "placeholders": {
+      "date": {"type": "String"}
+    }
+  },
+  "catalogInventoryReservationReleaseAction": "Release",
+  "catalogInventoryReservationConfirmAction": "Confirm sale",
+  "catalogInventoryReservationExpireAction": "Expire",
+  "catalogInventoryReservationExpireAllDue": "Expire due",
+  "catalogInventoryReservationExpireAllResult": "Expired {count} due reservation(s) in preview.",
+  "@catalogInventoryReservationExpireAllResult": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "catalogInventoryReservationReleaseSuccess": "Reservation released.",
+  "catalogInventoryReservationConfirmSuccess": "Reservation confirmed as demo sale.",
+  "catalogInventoryReservationExpireSuccess": "Reservation expired.",
+  "catalogInventoryReservationHistoryEmpty": "No lifecycle events yet.",
+  "catalogInventoryReservationHistoryLine": "{action}: {fromStatus} → {toStatus} · qty {quantity}",
+  "@catalogInventoryReservationHistoryLine": {
+    "placeholders": {
+      "action": {"type": "String"},
+      "fromStatus": {"type": "String"},
+      "toStatus": {"type": "String"},
+      "quantity": {"type": "int"}
+    }
+  },
+  "catalogInventoryReservationReconcileAction": "Run audit",
+  "catalogInventoryReservationReconcileTitle": "Reserved quantity audit (demo)",
+  "catalogInventoryReservationReconcileDemoNote": "This audit compares active reservations to inventory reserved totals. It does not change stock.",
+  "catalogInventoryReservationReconcileClean": "No discrepancies found.",
+  "catalogInventoryReservationReconcileLine": "{itemId}: expected {expected}, actual {actual}",
+  "@catalogInventoryReservationReconcileLine": {
+    "placeholders": {
+      "itemId": {"type": "String"},
+      "expected": {"type": "int"},
+      "actual": {"type": "int"}
+    }
+  }
 }
