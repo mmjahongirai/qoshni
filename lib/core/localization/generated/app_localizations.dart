@@ -6470,6 +6470,280 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cannot activate: another active rule overlaps this interval for the same target.'**
   String get catalogDiscountActivateOverlapError;
+
+  /// No description provided for @catalogPromoSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Promo codes (preview)'**
+  String get catalogPromoSectionTitle;
+
+  /// No description provided for @catalogPromoSectionBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Illustrative promo codes and eligibility preview — not connected to live checkout.'**
+  String get catalogPromoSectionBody;
+
+  /// No description provided for @catalogPromoListTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Promo codes'**
+  String get catalogPromoListTitle;
+
+  /// No description provided for @catalogPromoDemoDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Promo-code preview only — no live redemption or checkout.'**
+  String get catalogPromoDemoDisclaimer;
+
+  /// No description provided for @catalogPromoAddAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add promo code'**
+  String get catalogPromoAddAction;
+
+  /// No description provided for @catalogPromoEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'No promo codes match your filters.'**
+  String get catalogPromoEmptyBody;
+
+  /// No description provided for @catalogPromoBranchFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch'**
+  String get catalogPromoBranchFilter;
+
+  /// No description provided for @catalogPromoAllBranches.
+  ///
+  /// In en, this message translates to:
+  /// **'All branches'**
+  String get catalogPromoAllBranches;
+
+  /// No description provided for @catalogPromoStatusFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get catalogPromoStatusFilter;
+
+  /// No description provided for @catalogPromoAllStatuses.
+  ///
+  /// In en, this message translates to:
+  /// **'All statuses'**
+  String get catalogPromoAllStatuses;
+
+  /// No description provided for @catalogPromoPreviewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Promo eligibility preview'**
+  String get catalogPromoPreviewTitle;
+
+  /// No description provided for @catalogPromoPreviewCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter promo code'**
+  String get catalogPromoPreviewCode;
+
+  /// No description provided for @catalogPromoPreviewCustomer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo customer reference (optional)'**
+  String get catalogPromoPreviewCustomer;
+
+  /// No description provided for @catalogPromoPreviewApplied.
+  ///
+  /// In en, this message translates to:
+  /// **'Base {base} · discount −{discount} · final {finalAmount}'**
+  String catalogPromoPreviewApplied(
+    String base,
+    String discount,
+    String finalAmount,
+  );
+
+  /// No description provided for @catalogPromoUsageSnapshotLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Usage snapshot: {total} total · {customer} for this customer (preview only)'**
+  String catalogPromoUsageSnapshotLine(int total, int customer);
+
+  /// No description provided for @catalogPromoLinkedDiscountLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Linked discount: {id}'**
+  String catalogPromoLinkedDiscountLabel(String id);
+
+  /// No description provided for @catalogPromoMaxTotalUsesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Max total uses: {count}'**
+  String catalogPromoMaxTotalUsesLabel(int count);
+
+  /// No description provided for @catalogPromoMaxCustomerUsesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Max uses per customer: {count}'**
+  String catalogPromoMaxCustomerUsesLabel(int count);
+
+  /// No description provided for @catalogPromoEditAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit draft'**
+  String get catalogPromoEditAction;
+
+  /// No description provided for @catalogPromoActivateAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Activate'**
+  String get catalogPromoActivateAction;
+
+  /// No description provided for @catalogPromoArchiveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Archive'**
+  String get catalogPromoArchiveAction;
+
+  /// No description provided for @catalogPromoShowHistoryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Show history'**
+  String get catalogPromoShowHistoryAction;
+
+  /// No description provided for @catalogPromoShowUsageAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Show usage'**
+  String get catalogPromoShowUsageAction;
+
+  /// No description provided for @catalogPromoUsageLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer {customer} · redemption {redemption}'**
+  String catalogPromoUsageLine(String customer, String redemption);
+
+  /// No description provided for @catalogPromoCreateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New promo code'**
+  String get catalogPromoCreateTitle;
+
+  /// No description provided for @catalogPromoEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit draft promo'**
+  String get catalogPromoEditTitle;
+
+  /// No description provided for @catalogPromoCodeField.
+  ///
+  /// In en, this message translates to:
+  /// **'Promo code'**
+  String get catalogPromoCodeField;
+
+  /// No description provided for @catalogPromoMinBasketField.
+  ///
+  /// In en, this message translates to:
+  /// **'Minimum basket (optional, UZS)'**
+  String get catalogPromoMinBasketField;
+
+  /// No description provided for @catalogPromoMaxTotalUsesField.
+  ///
+  /// In en, this message translates to:
+  /// **'Max total uses (optional)'**
+  String get catalogPromoMaxTotalUsesField;
+
+  /// No description provided for @catalogPromoMaxCustomerUsesField.
+  ///
+  /// In en, this message translates to:
+  /// **'Max uses per customer (optional)'**
+  String get catalogPromoMaxCustomerUsesField;
+
+  /// No description provided for @catalogPromoActivateDiscountError.
+  ///
+  /// In en, this message translates to:
+  /// **'Cannot activate: linked discount is inactive or intervals do not overlap.'**
+  String get catalogPromoActivateDiscountError;
+
+  /// No description provided for @catalogPromoSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save. Check your entries.'**
+  String get catalogPromoSaveFailed;
+
+  /// No description provided for @catalogPromoActiveImmutable.
+  ///
+  /// In en, this message translates to:
+  /// **'Active promo codes cannot be edited silently.'**
+  String get catalogPromoActiveImmutable;
+
+  /// No description provided for @catalogPromoEligibilityEligible.
+  ///
+  /// In en, this message translates to:
+  /// **'Eligible — linked discount applies.'**
+  String get catalogPromoEligibilityEligible;
+
+  /// No description provided for @catalogPromoEligibilityInvalidCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid or unknown promo code.'**
+  String get catalogPromoEligibilityInvalidCode;
+
+  /// No description provided for @catalogPromoEligibilityInactive.
+  ///
+  /// In en, this message translates to:
+  /// **'Promo code is not active.'**
+  String get catalogPromoEligibilityInactive;
+
+  /// No description provided for @catalogPromoEligibilityNotYetValid.
+  ///
+  /// In en, this message translates to:
+  /// **'Promo code is not valid yet.'**
+  String get catalogPromoEligibilityNotYetValid;
+
+  /// No description provided for @catalogPromoEligibilityExpired.
+  ///
+  /// In en, this message translates to:
+  /// **'Promo code has expired.'**
+  String get catalogPromoEligibilityExpired;
+
+  /// No description provided for @catalogPromoEligibilityScopeMismatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Promo code does not apply to this branch or listing.'**
+  String get catalogPromoEligibilityScopeMismatch;
+
+  /// No description provided for @catalogPromoEligibilityDiscountUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Linked discount rule is unavailable.'**
+  String get catalogPromoEligibilityDiscountUnavailable;
+
+  /// No description provided for @catalogPromoEligibilityMinimumBasket.
+  ///
+  /// In en, this message translates to:
+  /// **'Minimum basket requirement not met.'**
+  String get catalogPromoEligibilityMinimumBasket;
+
+  /// No description provided for @catalogPromoEligibilityTotalLimit.
+  ///
+  /// In en, this message translates to:
+  /// **'Total usage limit reached.'**
+  String get catalogPromoEligibilityTotalLimit;
+
+  /// No description provided for @catalogPromoEligibilityCustomerLimit.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer usage limit reached.'**
+  String get catalogPromoEligibilityCustomerLimit;
+
+  /// No description provided for @catalogPromoEligibilityNoApplicableDiscount.
+  ///
+  /// In en, this message translates to:
+  /// **'Linked discount does not apply to this listing.'**
+  String get catalogPromoEligibilityNoApplicableDiscount;
+
+  /// No description provided for @catalogPromoEligibilityBasePriceRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Base price is required for preview.'**
+  String get catalogPromoEligibilityBasePriceRequired;
 }
 
 class _AppLocalizationsDelegate

@@ -1383,5 +1383,78 @@
   "catalogDiscountValueInvalid": "Enter a valid discount value and priority.",
   "catalogDiscountActiveImmutable": "Active rules cannot be edited silently. Create a revision draft instead.",
   "catalogDiscountSaveFailed": "Could not save. Check your entries.",
-  "catalogDiscountActivateOverlapError": "Cannot activate: another active rule overlaps this interval for the same target."
+  "catalogDiscountActivateOverlapError": "Cannot activate: another active rule overlaps this interval for the same target.",
+  "catalogPromoSectionTitle": "Promo codes (preview)",
+  "catalogPromoSectionBody": "Illustrative promo codes and eligibility preview — not connected to live checkout.",
+  "catalogPromoListTitle": "Promo codes",
+  "catalogPromoDemoDisclaimer": "Promo-code preview only — no live redemption or checkout.",
+  "catalogPromoAddAction": "Add promo code",
+  "catalogPromoEmptyBody": "No promo codes match your filters.",
+  "catalogPromoBranchFilter": "Branch",
+  "catalogPromoAllBranches": "All branches",
+  "catalogPromoStatusFilter": "Status",
+  "catalogPromoAllStatuses": "All statuses",
+  "catalogPromoPreviewTitle": "Promo eligibility preview",
+  "catalogPromoPreviewCode": "Enter promo code",
+  "catalogPromoPreviewCustomer": "Demo customer reference (optional)",
+  "catalogPromoPreviewApplied": "Base {base} · discount −{discount} · final {finalAmount}",
+  "@catalogPromoPreviewApplied": {
+    "placeholders": {
+      "base": {"type": "String"},
+      "discount": {"type": "String"},
+      "finalAmount": {"type": "String"}
+    }
+  },
+  "catalogPromoUsageSnapshotLine": "Usage snapshot: {total} total · {customer} for this customer (preview only)",
+  "@catalogPromoUsageSnapshotLine": {
+    "placeholders": {
+      "total": {"type": "int"},
+      "customer": {"type": "int"}
+    }
+  },
+  "catalogPromoLinkedDiscountLabel": "Linked discount: {id}",
+  "@catalogPromoLinkedDiscountLabel": {
+    "placeholders": {"id": {"type": "String"}}
+  },
+  "catalogPromoMaxTotalUsesLabel": "Max total uses: {count}",
+  "@catalogPromoMaxTotalUsesLabel": {
+    "placeholders": {"count": {"type": "int"}}
+  },
+  "catalogPromoMaxCustomerUsesLabel": "Max uses per customer: {count}",
+  "@catalogPromoMaxCustomerUsesLabel": {
+    "placeholders": {"count": {"type": "int"}}
+  },
+  "catalogPromoEditAction": "Edit draft",
+  "catalogPromoActivateAction": "Activate",
+  "catalogPromoArchiveAction": "Archive",
+  "catalogPromoShowHistoryAction": "Show history",
+  "catalogPromoShowUsageAction": "Show usage",
+  "catalogPromoUsageLine": "Customer {customer} · redemption {redemption}",
+  "@catalogPromoUsageLine": {
+    "placeholders": {
+      "customer": {"type": "String"},
+      "redemption": {"type": "String"}
+    }
+  },
+  "catalogPromoCreateTitle": "New promo code",
+  "catalogPromoEditTitle": "Edit draft promo",
+  "catalogPromoCodeField": "Promo code",
+  "catalogPromoMinBasketField": "Minimum basket (optional, UZS)",
+  "catalogPromoMaxTotalUsesField": "Max total uses (optional)",
+  "catalogPromoMaxCustomerUsesField": "Max uses per customer (optional)",
+  "catalogPromoActivateDiscountError": "Cannot activate: linked discount is inactive or intervals do not overlap.",
+  "catalogPromoSaveFailed": "Could not save. Check your entries.",
+  "catalogPromoActiveImmutable": "Active promo codes cannot be edited silently.",
+  "catalogPromoEligibilityEligible": "Eligible — linked discount applies.",
+  "catalogPromoEligibilityInvalidCode": "Invalid or unknown promo code.",
+  "catalogPromoEligibilityInactive": "Promo code is not active.",
+  "catalogPromoEligibilityNotYetValid": "Promo code is not valid yet.",
+  "catalogPromoEligibilityExpired": "Promo code has expired.",
+  "catalogPromoEligibilityScopeMismatch": "Promo code does not apply to this branch or listing.",
+  "catalogPromoEligibilityDiscountUnavailable": "Linked discount rule is unavailable.",
+  "catalogPromoEligibilityMinimumBasket": "Minimum basket requirement not met.",
+  "catalogPromoEligibilityTotalLimit": "Total usage limit reached.",
+  "catalogPromoEligibilityCustomerLimit": "Customer usage limit reached.",
+  "catalogPromoEligibilityNoApplicableDiscount": "Linked discount does not apply to this listing.",
+  "catalogPromoEligibilityBasePriceRequired": "Base price is required for preview."
 }

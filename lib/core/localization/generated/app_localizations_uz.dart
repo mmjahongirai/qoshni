@@ -3613,4 +3613,160 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get catalogDiscountActivateOverlapError =>
       'Faol interval to‘qnashadi.';
+
+  @override
+  String get catalogPromoSectionTitle => 'Promo-kodlar (preview)';
+
+  @override
+  String get catalogPromoSectionBody =>
+      'Illustrative promo-kodlar — checkout emas.';
+
+  @override
+  String get catalogPromoListTitle => 'Promo-kodlar';
+
+  @override
+  String get catalogPromoDemoDisclaimer =>
+      'Promo-code preview only — no live redemption or checkout.';
+
+  @override
+  String get catalogPromoAddAction => 'Promo-kod qo‘shish';
+
+  @override
+  String get catalogPromoEmptyBody => 'Filtrlarga mos promo-kod yo‘q.';
+
+  @override
+  String get catalogPromoBranchFilter => 'Filial';
+
+  @override
+  String get catalogPromoAllBranches => 'Barcha filiallar';
+
+  @override
+  String get catalogPromoStatusFilter => 'Holat';
+
+  @override
+  String get catalogPromoAllStatuses => 'Barcha holatlar';
+
+  @override
+  String get catalogPromoPreviewTitle => 'Eligibility preview';
+
+  @override
+  String get catalogPromoPreviewCode => 'Promo-kod';
+
+  @override
+  String get catalogPromoPreviewCustomer => 'Demo mijoz reference (ixtiyoriy)';
+
+  @override
+  String catalogPromoPreviewApplied(
+    String base,
+    String discount,
+    String finalAmount,
+  ) {
+    return 'Base $base · −$discount · final $finalAmount';
+  }
+
+  @override
+  String catalogPromoUsageSnapshotLine(int total, int customer) {
+    return 'Foydalanish: $total jami · $customer mijoz';
+  }
+
+  @override
+  String catalogPromoLinkedDiscountLabel(String id) {
+    return 'Chegirma: $id';
+  }
+
+  @override
+  String catalogPromoMaxTotalUsesLabel(int count) {
+    return 'Max jami: $count';
+  }
+
+  @override
+  String catalogPromoMaxCustomerUsesLabel(int count) {
+    return 'Max mijoz: $count';
+  }
+
+  @override
+  String get catalogPromoEditAction => 'Qoralama';
+
+  @override
+  String get catalogPromoActivateAction => 'Faollashtirish';
+
+  @override
+  String get catalogPromoArchiveAction => 'Arxiv';
+
+  @override
+  String get catalogPromoShowHistoryAction => 'Tarix';
+
+  @override
+  String get catalogPromoShowUsageAction => 'Foydalanish';
+
+  @override
+  String catalogPromoUsageLine(String customer, String redemption) {
+    return '$customer · $redemption';
+  }
+
+  @override
+  String get catalogPromoCreateTitle => 'Yangi promo-kod';
+
+  @override
+  String get catalogPromoEditTitle => 'Qoralama';
+
+  @override
+  String get catalogPromoCodeField => 'Kod';
+
+  @override
+  String get catalogPromoMinBasketField => 'Min savat';
+
+  @override
+  String get catalogPromoMaxTotalUsesField => 'Max jami foydalanish';
+
+  @override
+  String get catalogPromoMaxCustomerUsesField => 'Max mijoz foydalanishi';
+
+  @override
+  String get catalogPromoActivateDiscountError =>
+      'Bog‘langan chegirma mos emas.';
+
+  @override
+  String get catalogPromoSaveFailed => 'Saqlab bo‘lmadi.';
+
+  @override
+  String get catalogPromoActiveImmutable => 'Faol promo jimgina o‘zgarmaydi.';
+
+  @override
+  String get catalogPromoEligibilityEligible => 'Mos — chegirma qo‘llanadi.';
+
+  @override
+  String get catalogPromoEligibilityInvalidCode => 'Noto‘g‘ri kod.';
+
+  @override
+  String get catalogPromoEligibilityInactive => 'Faol emas.';
+
+  @override
+  String get catalogPromoEligibilityNotYetValid => 'Hali amal qilmaydi.';
+
+  @override
+  String get catalogPromoEligibilityExpired => 'Muddati tugagan.';
+
+  @override
+  String get catalogPromoEligibilityScopeMismatch => 'Scope mos emas.';
+
+  @override
+  String get catalogPromoEligibilityDiscountUnavailable =>
+      'Chegirma mavjud emas.';
+
+  @override
+  String get catalogPromoEligibilityMinimumBasket => 'Min savat bajarilmagan.';
+
+  @override
+  String get catalogPromoEligibilityTotalLimit => 'Jami limit to‘lgan.';
+
+  @override
+  String get catalogPromoEligibilityCustomerLimit => 'Mijoz limiti to‘lgan.';
+
+  @override
+  String get catalogPromoEligibilityNoApplicableDiscount =>
+      'Chegirma listingga mos emas.';
+
+  @override
+  String get catalogPromoEligibilityBasePriceRequired => 'Base narx kerak.';
 }

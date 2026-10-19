@@ -3619,4 +3619,170 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get catalogDiscountActivateOverlapError =>
       'Cannot activate: another active rule overlaps this interval for the same target.';
+
+  @override
+  String get catalogPromoSectionTitle => 'Promo codes (preview)';
+
+  @override
+  String get catalogPromoSectionBody =>
+      'Illustrative promo codes and eligibility preview — not connected to live checkout.';
+
+  @override
+  String get catalogPromoListTitle => 'Promo codes';
+
+  @override
+  String get catalogPromoDemoDisclaimer =>
+      'Promo-code preview only — no live redemption or checkout.';
+
+  @override
+  String get catalogPromoAddAction => 'Add promo code';
+
+  @override
+  String get catalogPromoEmptyBody => 'No promo codes match your filters.';
+
+  @override
+  String get catalogPromoBranchFilter => 'Branch';
+
+  @override
+  String get catalogPromoAllBranches => 'All branches';
+
+  @override
+  String get catalogPromoStatusFilter => 'Status';
+
+  @override
+  String get catalogPromoAllStatuses => 'All statuses';
+
+  @override
+  String get catalogPromoPreviewTitle => 'Promo eligibility preview';
+
+  @override
+  String get catalogPromoPreviewCode => 'Enter promo code';
+
+  @override
+  String get catalogPromoPreviewCustomer =>
+      'Demo customer reference (optional)';
+
+  @override
+  String catalogPromoPreviewApplied(
+    String base,
+    String discount,
+    String finalAmount,
+  ) {
+    return 'Base $base · discount −$discount · final $finalAmount';
+  }
+
+  @override
+  String catalogPromoUsageSnapshotLine(int total, int customer) {
+    return 'Usage snapshot: $total total · $customer for this customer (preview only)';
+  }
+
+  @override
+  String catalogPromoLinkedDiscountLabel(String id) {
+    return 'Linked discount: $id';
+  }
+
+  @override
+  String catalogPromoMaxTotalUsesLabel(int count) {
+    return 'Max total uses: $count';
+  }
+
+  @override
+  String catalogPromoMaxCustomerUsesLabel(int count) {
+    return 'Max uses per customer: $count';
+  }
+
+  @override
+  String get catalogPromoEditAction => 'Edit draft';
+
+  @override
+  String get catalogPromoActivateAction => 'Activate';
+
+  @override
+  String get catalogPromoArchiveAction => 'Archive';
+
+  @override
+  String get catalogPromoShowHistoryAction => 'Show history';
+
+  @override
+  String get catalogPromoShowUsageAction => 'Show usage';
+
+  @override
+  String catalogPromoUsageLine(String customer, String redemption) {
+    return 'Customer $customer · redemption $redemption';
+  }
+
+  @override
+  String get catalogPromoCreateTitle => 'New promo code';
+
+  @override
+  String get catalogPromoEditTitle => 'Edit draft promo';
+
+  @override
+  String get catalogPromoCodeField => 'Promo code';
+
+  @override
+  String get catalogPromoMinBasketField => 'Minimum basket (optional, UZS)';
+
+  @override
+  String get catalogPromoMaxTotalUsesField => 'Max total uses (optional)';
+
+  @override
+  String get catalogPromoMaxCustomerUsesField =>
+      'Max uses per customer (optional)';
+
+  @override
+  String get catalogPromoActivateDiscountError =>
+      'Cannot activate: linked discount is inactive or intervals do not overlap.';
+
+  @override
+  String get catalogPromoSaveFailed => 'Could not save. Check your entries.';
+
+  @override
+  String get catalogPromoActiveImmutable =>
+      'Active promo codes cannot be edited silently.';
+
+  @override
+  String get catalogPromoEligibilityEligible =>
+      'Eligible — linked discount applies.';
+
+  @override
+  String get catalogPromoEligibilityInvalidCode =>
+      'Invalid or unknown promo code.';
+
+  @override
+  String get catalogPromoEligibilityInactive => 'Promo code is not active.';
+
+  @override
+  String get catalogPromoEligibilityNotYetValid =>
+      'Promo code is not valid yet.';
+
+  @override
+  String get catalogPromoEligibilityExpired => 'Promo code has expired.';
+
+  @override
+  String get catalogPromoEligibilityScopeMismatch =>
+      'Promo code does not apply to this branch or listing.';
+
+  @override
+  String get catalogPromoEligibilityDiscountUnavailable =>
+      'Linked discount rule is unavailable.';
+
+  @override
+  String get catalogPromoEligibilityMinimumBasket =>
+      'Minimum basket requirement not met.';
+
+  @override
+  String get catalogPromoEligibilityTotalLimit => 'Total usage limit reached.';
+
+  @override
+  String get catalogPromoEligibilityCustomerLimit =>
+      'Customer usage limit reached.';
+
+  @override
+  String get catalogPromoEligibilityNoApplicableDiscount =>
+      'Linked discount does not apply to this listing.';
+
+  @override
+  String get catalogPromoEligibilityBasePriceRequired =>
+      'Base price is required for preview.';
 }

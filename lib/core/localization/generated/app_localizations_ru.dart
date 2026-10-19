@@ -3589,4 +3589,159 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get catalogDiscountActivateOverlapError => 'Active interval overlap.';
+
+  @override
+  String get catalogPromoSectionTitle => 'Промокоды (preview)';
+
+  @override
+  String get catalogPromoSectionBody =>
+      'Illustrative promo codes — not checkout.';
+
+  @override
+  String get catalogPromoListTitle => 'Промокоды';
+
+  @override
+  String get catalogPromoDemoDisclaimer =>
+      'Promo-code preview only — no live redemption or checkout.';
+
+  @override
+  String get catalogPromoAddAction => 'Добавить промокод';
+
+  @override
+  String get catalogPromoEmptyBody => 'Нет промокодов по фильтрам.';
+
+  @override
+  String get catalogPromoBranchFilter => 'Филиал';
+
+  @override
+  String get catalogPromoAllBranches => 'Все филиалы';
+
+  @override
+  String get catalogPromoStatusFilter => 'Статус';
+
+  @override
+  String get catalogPromoAllStatuses => 'Все статусы';
+
+  @override
+  String get catalogPromoPreviewTitle => 'Preview eligibility';
+
+  @override
+  String get catalogPromoPreviewCode => 'Промокод';
+
+  @override
+  String get catalogPromoPreviewCustomer => 'Demo customer ref (optional)';
+
+  @override
+  String catalogPromoPreviewApplied(
+    String base,
+    String discount,
+    String finalAmount,
+  ) {
+    return 'Base $base · −$discount · final $finalAmount';
+  }
+
+  @override
+  String catalogPromoUsageSnapshotLine(int total, int customer) {
+    return 'Usage: $total total · $customer customer';
+  }
+
+  @override
+  String catalogPromoLinkedDiscountLabel(String id) {
+    return 'Discount: $id';
+  }
+
+  @override
+  String catalogPromoMaxTotalUsesLabel(int count) {
+    return 'Max total: $count';
+  }
+
+  @override
+  String catalogPromoMaxCustomerUsesLabel(int count) {
+    return 'Max per customer: $count';
+  }
+
+  @override
+  String get catalogPromoEditAction => 'Edit draft';
+
+  @override
+  String get catalogPromoActivateAction => 'Activate';
+
+  @override
+  String get catalogPromoArchiveAction => 'Archive';
+
+  @override
+  String get catalogPromoShowHistoryAction => 'History';
+
+  @override
+  String get catalogPromoShowUsageAction => 'Usage';
+
+  @override
+  String catalogPromoUsageLine(String customer, String redemption) {
+    return '$customer · $redemption';
+  }
+
+  @override
+  String get catalogPromoCreateTitle => 'New promo';
+
+  @override
+  String get catalogPromoEditTitle => 'Edit draft';
+
+  @override
+  String get catalogPromoCodeField => 'Code';
+
+  @override
+  String get catalogPromoMinBasketField => 'Min basket';
+
+  @override
+  String get catalogPromoMaxTotalUsesField => 'Max total uses';
+
+  @override
+  String get catalogPromoMaxCustomerUsesField => 'Max per customer';
+
+  @override
+  String get catalogPromoActivateDiscountError => 'Linked discount invalid.';
+
+  @override
+  String get catalogPromoSaveFailed => 'Save failed.';
+
+  @override
+  String get catalogPromoActiveImmutable => 'Active immutable.';
+
+  @override
+  String get catalogPromoEligibilityEligible => 'Eligible.';
+
+  @override
+  String get catalogPromoEligibilityInvalidCode => 'Invalid code.';
+
+  @override
+  String get catalogPromoEligibilityInactive => 'Inactive.';
+
+  @override
+  String get catalogPromoEligibilityNotYetValid => 'Not yet valid.';
+
+  @override
+  String get catalogPromoEligibilityExpired => 'Expired.';
+
+  @override
+  String get catalogPromoEligibilityScopeMismatch => 'Scope mismatch.';
+
+  @override
+  String get catalogPromoEligibilityDiscountUnavailable =>
+      'Discount unavailable.';
+
+  @override
+  String get catalogPromoEligibilityMinimumBasket => 'Minimum basket not met.';
+
+  @override
+  String get catalogPromoEligibilityTotalLimit => 'Total limit reached.';
+
+  @override
+  String get catalogPromoEligibilityCustomerLimit => 'Customer limit reached.';
+
+  @override
+  String get catalogPromoEligibilityNoApplicableDiscount =>
+      'Discount not applicable.';
+
+  @override
+  String get catalogPromoEligibilityBasePriceRequired => 'Base price required.';
 }

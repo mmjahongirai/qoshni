@@ -27,6 +27,7 @@ import 'package:qoshni/features/business_platform/data/in_memory_business_catalo
 import 'package:qoshni/features/business_platform/data/in_memory_business_catalog_resource_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_catalog_pricing_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_catalog_discount_repository.dart';
+import 'package:qoshni/features/business_platform/data/in_memory_business_catalog_promo_code_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_staff_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_owner_profile_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_profile_repository.dart';
@@ -47,6 +48,7 @@ import 'package:qoshni/features/business_platform/domain/repositories/business_c
 import 'package:qoshni/features/business_platform/domain/repositories/business_catalog_resource_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_catalog_pricing_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_catalog_discount_repository.dart';
+import 'package:qoshni/features/business_platform/domain/repositories/business_catalog_promo_code_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_staff_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_owner_profile_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_profile_repository.dart';
@@ -70,6 +72,7 @@ import 'package:qoshni/features/business_platform/presentation/business_catalog_
 import 'package:qoshni/features/business_platform/presentation/business_catalog_resource_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_catalog_pricing_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_catalog_discount_controller.dart';
+import 'package:qoshni/features/business_platform/presentation/business_catalog_promo_code_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_staff_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_owner_profile_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_profile_controller.dart';
@@ -234,6 +237,13 @@ Future<void> configureDependencies(AppConfig config) async {
         getIt<BusinessBranchRepository>(),
       ),
     )
+    ..registerLazySingleton<BusinessCatalogPromoCodeRepository>(
+      () => InMemoryBusinessCatalogPromoCodeRepository(
+        getIt<BusinessOwnerProfileRepository>(),
+        getIt<BusinessBranchRepository>(),
+        getIt<BusinessCatalogDiscountRepository>(),
+      ),
+    )
     ..registerLazySingleton<BusinessCatalogDemoItemRepository>(
       () => InMemoryBusinessCatalogOverviewRepository(
         getIt<BusinessCatalogProductRepository>(),
@@ -297,6 +307,12 @@ Future<void> configureDependencies(AppConfig config) async {
     )
     ..registerLazySingleton<BusinessCatalogDiscountController>(
       () => BusinessCatalogDiscountController(
+        getIt<BusinessCatalogDiscountRepository>(),
+      ),
+    )
+    ..registerLazySingleton<BusinessCatalogPromoCodeController>(
+      () => BusinessCatalogPromoCodeController(
+        getIt<BusinessCatalogPromoCodeRepository>(),
         getIt<BusinessCatalogDiscountRepository>(),
       ),
     )
