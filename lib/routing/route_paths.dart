@@ -148,6 +148,9 @@ abstract final class RoutePaths {
       '/business-center/catalog/commercial-fees';
 
   static const String businessFulfillment = '/business-center/fulfillment';
+
+  static const String businessDeliveryTasks =
+      '/business-center/fulfillment/delivery-tasks';
 }
 
 abstract final class RouteNames {
@@ -226,4 +229,5 @@ abstract final class RouteNames {
   static const String businessCatalogCommercialFees =
       'businessCatalogCommercialFees';
   static const String businessFulfillment = 'businessFulfillment';
+  static const String businessDeliveryTasks = 'businessDeliveryTasks';
 }

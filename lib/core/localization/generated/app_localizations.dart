@@ -7241,6 +7241,256 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Select at least one fulfillment mode.'**
   String get businessFulfillmentSelectAtLeastOneType;
+
+  /// No description provided for @businessFulfillmentDeliveryTasksLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Open delivery tasks'**
+  String get businessFulfillmentDeliveryTasksLink;
+
+  /// No description provided for @businessFulfillmentDeliveryTasksBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage demo delivery task lifecycle separately from order status.'**
+  String get businessFulfillmentDeliveryTasksBody;
+
+  /// No description provided for @businessDeliveryTaskListTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery tasks'**
+  String get businessDeliveryTaskListTitle;
+
+  /// No description provided for @businessDeliveryTaskDemoDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo delivery tasks only — not connected to live orders, couriers or tracking.'**
+  String get businessDeliveryTaskDemoDisclaimer;
+
+  /// No description provided for @businessDeliveryTaskEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'No delivery tasks match your filters.'**
+  String get businessDeliveryTaskEmptyBody;
+
+  /// No description provided for @businessDeliveryTaskBranchFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch'**
+  String get businessDeliveryTaskBranchFilter;
+
+  /// No description provided for @businessDeliveryTaskAllBranches.
+  ///
+  /// In en, this message translates to:
+  /// **'All branches'**
+  String get businessDeliveryTaskAllBranches;
+
+  /// No description provided for @businessDeliveryTaskStatusFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get businessDeliveryTaskStatusFilter;
+
+  /// No description provided for @businessDeliveryTaskAllStatuses.
+  ///
+  /// In en, this message translates to:
+  /// **'All statuses'**
+  String get businessDeliveryTaskAllStatuses;
+
+  /// No description provided for @businessDeliveryTaskStatusCreated.
+  ///
+  /// In en, this message translates to:
+  /// **'Created'**
+  String get businessDeliveryTaskStatusCreated;
+
+  /// No description provided for @businessDeliveryTaskStatusReadyForPickup.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready for pickup'**
+  String get businessDeliveryTaskStatusReadyForPickup;
+
+  /// No description provided for @businessDeliveryTaskStatusAssigned.
+  ///
+  /// In en, this message translates to:
+  /// **'Assigned (demo)'**
+  String get businessDeliveryTaskStatusAssigned;
+
+  /// No description provided for @businessDeliveryTaskStatusPickedUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Picked up'**
+  String get businessDeliveryTaskStatusPickedUp;
+
+  /// No description provided for @businessDeliveryTaskStatusInTransit.
+  ///
+  /// In en, this message translates to:
+  /// **'In transit'**
+  String get businessDeliveryTaskStatusInTransit;
+
+  /// No description provided for @businessDeliveryTaskStatusDelivered.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivered'**
+  String get businessDeliveryTaskStatusDelivered;
+
+  /// No description provided for @businessDeliveryTaskStatusFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed'**
+  String get businessDeliveryTaskStatusFailed;
+
+  /// No description provided for @businessDeliveryTaskStatusCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancelled'**
+  String get businessDeliveryTaskStatusCancelled;
+
+  /// No description provided for @businessDeliveryTaskBranchLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch: {name}'**
+  String businessDeliveryTaskBranchLabel(String name);
+
+  /// No description provided for @businessDeliveryTaskStatusLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Status: {status}'**
+  String businessDeliveryTaskStatusLine(String status);
+
+  /// No description provided for @businessDeliveryTaskPickupLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Pickup: {label}'**
+  String businessDeliveryTaskPickupLabel(String label);
+
+  /// No description provided for @businessDeliveryTaskDropOffLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Drop-off: {label}'**
+  String businessDeliveryTaskDropOffLabel(String label);
+
+  /// No description provided for @businessDeliveryTaskAssignmentLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo assignment: {ref}'**
+  String businessDeliveryTaskAssignmentLabel(String ref);
+
+  /// No description provided for @businessDeliveryTaskFailureLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Failure reason: {reason}'**
+  String businessDeliveryTaskFailureLine(String reason);
+
+  /// No description provided for @businessDeliveryTaskUpdatedAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Updated: {timestamp}'**
+  String businessDeliveryTaskUpdatedAt(String timestamp);
+
+  /// No description provided for @businessDeliveryTaskActionReadyForPickup.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark ready for pickup'**
+  String get businessDeliveryTaskActionReadyForPickup;
+
+  /// No description provided for @businessDeliveryTaskActionAssignDemo.
+  ///
+  /// In en, this message translates to:
+  /// **'Assign (demo)'**
+  String get businessDeliveryTaskActionAssignDemo;
+
+  /// No description provided for @businessDeliveryTaskActionConfirmPickup.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm pickup'**
+  String get businessDeliveryTaskActionConfirmPickup;
+
+  /// No description provided for @businessDeliveryTaskActionMarkInTransit.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark in transit'**
+  String get businessDeliveryTaskActionMarkInTransit;
+
+  /// No description provided for @businessDeliveryTaskActionMarkDelivered.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark delivered'**
+  String get businessDeliveryTaskActionMarkDelivered;
+
+  /// No description provided for @businessDeliveryTaskActionMarkFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark failed'**
+  String get businessDeliveryTaskActionMarkFailed;
+
+  /// No description provided for @businessDeliveryTaskActionCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel task'**
+  String get businessDeliveryTaskActionCancel;
+
+  /// No description provided for @businessDeliveryTaskShowHistoryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Show history'**
+  String get businessDeliveryTaskShowHistoryAction;
+
+  /// No description provided for @businessDeliveryTaskHideHistoryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide history'**
+  String get businessDeliveryTaskHideHistoryAction;
+
+  /// No description provided for @businessDeliveryTaskHistoryLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{from} → {to} at {timestamp}'**
+  String businessDeliveryTaskHistoryLine(
+    String from,
+    String to,
+    String timestamp,
+  );
+
+  /// No description provided for @businessDeliveryTaskFailureDialogTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery failure reason'**
+  String get businessDeliveryTaskFailureDialogTitle;
+
+  /// No description provided for @businessDeliveryTaskFailureReasonLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Reason (demo only)'**
+  String get businessDeliveryTaskFailureReasonLabel;
+
+  /// No description provided for @businessDeliveryTaskFailureDialogCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get businessDeliveryTaskFailureDialogCancel;
+
+  /// No description provided for @businessDeliveryTaskFailureDialogConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm failure'**
+  String get businessDeliveryTaskFailureDialogConfirm;
+
+  /// No description provided for @businessDeliveryTaskFailureReasonInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a failure reason to continue.'**
+  String get businessDeliveryTaskFailureReasonInvalid;
+
+  /// No description provided for @businessDeliveryTaskTransitionInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'That status change is not allowed for this task.'**
+  String get businessDeliveryTaskTransitionInvalid;
+
+  /// No description provided for @businessDeliveryTaskTransitionSaveError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save the status change. Try again.'**
+  String get businessDeliveryTaskTransitionSaveError;
 }
 
 class _AppLocalizationsDelegate

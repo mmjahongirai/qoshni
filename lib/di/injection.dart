@@ -29,6 +29,7 @@ import 'package:qoshni/features/business_platform/data/in_memory_business_catalo
 import 'package:qoshni/features/business_platform/data/in_memory_business_catalog_discount_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_catalog_promo_code_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_catalog_commercial_fee_repository.dart';
+import 'package:qoshni/features/business_platform/data/in_memory_business_delivery_task_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_fulfillment_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_staff_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_owner_profile_repository.dart';
@@ -52,6 +53,7 @@ import 'package:qoshni/features/business_platform/domain/repositories/business_c
 import 'package:qoshni/features/business_platform/domain/repositories/business_catalog_discount_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_catalog_promo_code_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_catalog_commercial_fee_repository.dart';
+import 'package:qoshni/features/business_platform/domain/repositories/business_delivery_task_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_fulfillment_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_staff_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_owner_profile_repository.dart';
@@ -78,6 +80,7 @@ import 'package:qoshni/features/business_platform/presentation/business_catalog_
 import 'package:qoshni/features/business_platform/presentation/business_catalog_discount_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_catalog_promo_code_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_catalog_commercial_fee_controller.dart';
+import 'package:qoshni/features/business_platform/presentation/business_delivery_task_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_fulfillment_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_staff_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_owner_profile_controller.dart';
@@ -264,6 +267,13 @@ Future<void> configureDependencies(AppConfig config) async {
         getIt<BusinessCatalogServiceRepository>(),
       ),
     )
+    ..registerLazySingleton<BusinessDeliveryTaskRepository>(
+      () => InMemoryBusinessDeliveryTaskRepository(
+        getIt<BusinessOwnerProfileRepository>(),
+        getIt<BusinessBranchRepository>(),
+        getIt<BusinessFulfillmentRepository>(),
+      ),
+    )
     ..registerLazySingleton<BusinessCatalogDemoItemRepository>(
       () => InMemoryBusinessCatalogOverviewRepository(
         getIt<BusinessCatalogProductRepository>(),
@@ -344,6 +354,11 @@ Future<void> configureDependencies(AppConfig config) async {
     ..registerLazySingleton<BusinessFulfillmentController>(
       () => BusinessFulfillmentController(
         getIt<BusinessFulfillmentRepository>(),
+      ),
+    )
+    ..registerLazySingleton<BusinessDeliveryTaskController>(
+      () => BusinessDeliveryTaskController(
+        getIt<BusinessDeliveryTaskRepository>(),
       ),
     )
     ..registerLazySingleton<BusinessCatalogController>(

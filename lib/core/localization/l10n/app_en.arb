@@ -1567,5 +1567,74 @@
   "businessFulfillmentTypesField": "Supported fulfillment modes",
   "businessFulfillmentSaveFailed": "Could not save. Check your entries.",
   "businessFulfillmentActivateConflictError": "Another active configuration already exists for this branch and scope.",
-  "businessFulfillmentSelectAtLeastOneType": "Select at least one fulfillment mode."
+  "businessFulfillmentSelectAtLeastOneType": "Select at least one fulfillment mode.",
+  "businessFulfillmentDeliveryTasksLink": "Open delivery tasks",
+  "businessFulfillmentDeliveryTasksBody": "Manage demo delivery task lifecycle separately from order status.",
+  "businessDeliveryTaskListTitle": "Delivery tasks",
+  "businessDeliveryTaskDemoDisclaimer": "Demo delivery tasks only — not connected to live orders, couriers or tracking.",
+  "businessDeliveryTaskEmptyBody": "No delivery tasks match your filters.",
+  "businessDeliveryTaskBranchFilter": "Branch",
+  "businessDeliveryTaskAllBranches": "All branches",
+  "businessDeliveryTaskStatusFilter": "Status",
+  "businessDeliveryTaskAllStatuses": "All statuses",
+  "businessDeliveryTaskStatusCreated": "Created",
+  "businessDeliveryTaskStatusReadyForPickup": "Ready for pickup",
+  "businessDeliveryTaskStatusAssigned": "Assigned (demo)",
+  "businessDeliveryTaskStatusPickedUp": "Picked up",
+  "businessDeliveryTaskStatusInTransit": "In transit",
+  "businessDeliveryTaskStatusDelivered": "Delivered",
+  "businessDeliveryTaskStatusFailed": "Failed",
+  "businessDeliveryTaskStatusCancelled": "Cancelled",
+  "businessDeliveryTaskBranchLabel": "Branch: {name}",
+  "@businessDeliveryTaskBranchLabel": {
+    "placeholders": {"name": {"type": "String"}}
+  },
+  "businessDeliveryTaskStatusLine": "Status: {status}",
+  "@businessDeliveryTaskStatusLine": {
+    "placeholders": {"status": {"type": "String"}}
+  },
+  "businessDeliveryTaskPickupLabel": "Pickup: {label}",
+  "@businessDeliveryTaskPickupLabel": {
+    "placeholders": {"label": {"type": "String"}}
+  },
+  "businessDeliveryTaskDropOffLabel": "Drop-off: {label}",
+  "@businessDeliveryTaskDropOffLabel": {
+    "placeholders": {"label": {"type": "String"}}
+  },
+  "businessDeliveryTaskAssignmentLabel": "Demo assignment: {ref}",
+  "@businessDeliveryTaskAssignmentLabel": {
+    "placeholders": {"ref": {"type": "String"}}
+  },
+  "businessDeliveryTaskFailureLine": "Failure reason: {reason}",
+  "@businessDeliveryTaskFailureLine": {
+    "placeholders": {"reason": {"type": "String"}}
+  },
+  "businessDeliveryTaskUpdatedAt": "Updated: {timestamp}",
+  "@businessDeliveryTaskUpdatedAt": {
+    "placeholders": {"timestamp": {"type": "String"}}
+  },
+  "businessDeliveryTaskActionReadyForPickup": "Mark ready for pickup",
+  "businessDeliveryTaskActionAssignDemo": "Assign (demo)",
+  "businessDeliveryTaskActionConfirmPickup": "Confirm pickup",
+  "businessDeliveryTaskActionMarkInTransit": "Mark in transit",
+  "businessDeliveryTaskActionMarkDelivered": "Mark delivered",
+  "businessDeliveryTaskActionMarkFailed": "Mark failed",
+  "businessDeliveryTaskActionCancel": "Cancel task",
+  "businessDeliveryTaskShowHistoryAction": "Show history",
+  "businessDeliveryTaskHideHistoryAction": "Hide history",
+  "businessDeliveryTaskHistoryLine": "{from} → {to} at {timestamp}",
+  "@businessDeliveryTaskHistoryLine": {
+    "placeholders": {
+      "from": {"type": "String"},
+      "to": {"type": "String"},
+      "timestamp": {"type": "String"}
+    }
+  },
+  "businessDeliveryTaskFailureDialogTitle": "Delivery failure reason",
+  "businessDeliveryTaskFailureReasonLabel": "Reason (demo only)",
+  "businessDeliveryTaskFailureDialogCancel": "Cancel",
+  "businessDeliveryTaskFailureDialogConfirm": "Confirm failure",
+  "businessDeliveryTaskFailureReasonInvalid": "Enter a failure reason to continue.",
+  "businessDeliveryTaskTransitionInvalid": "That status change is not allowed for this task.",
+  "businessDeliveryTaskTransitionSaveError": "Could not save the status change. Try again."
 }

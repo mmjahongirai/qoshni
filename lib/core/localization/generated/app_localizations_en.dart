@@ -4063,4 +4063,155 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get businessFulfillmentSelectAtLeastOneType =>
       'Select at least one fulfillment mode.';
+
+  @override
+  String get businessFulfillmentDeliveryTasksLink => 'Open delivery tasks';
+
+  @override
+  String get businessFulfillmentDeliveryTasksBody =>
+      'Manage demo delivery task lifecycle separately from order status.';
+
+  @override
+  String get businessDeliveryTaskListTitle => 'Delivery tasks';
+
+  @override
+  String get businessDeliveryTaskDemoDisclaimer =>
+      'Demo delivery tasks only — not connected to live orders, couriers or tracking.';
+
+  @override
+  String get businessDeliveryTaskEmptyBody =>
+      'No delivery tasks match your filters.';
+
+  @override
+  String get businessDeliveryTaskBranchFilter => 'Branch';
+
+  @override
+  String get businessDeliveryTaskAllBranches => 'All branches';
+
+  @override
+  String get businessDeliveryTaskStatusFilter => 'Status';
+
+  @override
+  String get businessDeliveryTaskAllStatuses => 'All statuses';
+
+  @override
+  String get businessDeliveryTaskStatusCreated => 'Created';
+
+  @override
+  String get businessDeliveryTaskStatusReadyForPickup => 'Ready for pickup';
+
+  @override
+  String get businessDeliveryTaskStatusAssigned => 'Assigned (demo)';
+
+  @override
+  String get businessDeliveryTaskStatusPickedUp => 'Picked up';
+
+  @override
+  String get businessDeliveryTaskStatusInTransit => 'In transit';
+
+  @override
+  String get businessDeliveryTaskStatusDelivered => 'Delivered';
+
+  @override
+  String get businessDeliveryTaskStatusFailed => 'Failed';
+
+  @override
+  String get businessDeliveryTaskStatusCancelled => 'Cancelled';
+
+  @override
+  String businessDeliveryTaskBranchLabel(String name) {
+    return 'Branch: $name';
+  }
+
+  @override
+  String businessDeliveryTaskStatusLine(String status) {
+    return 'Status: $status';
+  }
+
+  @override
+  String businessDeliveryTaskPickupLabel(String label) {
+    return 'Pickup: $label';
+  }
+
+  @override
+  String businessDeliveryTaskDropOffLabel(String label) {
+    return 'Drop-off: $label';
+  }
+
+  @override
+  String businessDeliveryTaskAssignmentLabel(String ref) {
+    return 'Demo assignment: $ref';
+  }
+
+  @override
+  String businessDeliveryTaskFailureLine(String reason) {
+    return 'Failure reason: $reason';
+  }
+
+  @override
+  String businessDeliveryTaskUpdatedAt(String timestamp) {
+    return 'Updated: $timestamp';
+  }
+
+  @override
+  String get businessDeliveryTaskActionReadyForPickup =>
+      'Mark ready for pickup';
+
+  @override
+  String get businessDeliveryTaskActionAssignDemo => 'Assign (demo)';
+
+  @override
+  String get businessDeliveryTaskActionConfirmPickup => 'Confirm pickup';
+
+  @override
+  String get businessDeliveryTaskActionMarkInTransit => 'Mark in transit';
+
+  @override
+  String get businessDeliveryTaskActionMarkDelivered => 'Mark delivered';
+
+  @override
+  String get businessDeliveryTaskActionMarkFailed => 'Mark failed';
+
+  @override
+  String get businessDeliveryTaskActionCancel => 'Cancel task';
+
+  @override
+  String get businessDeliveryTaskShowHistoryAction => 'Show history';
+
+  @override
+  String get businessDeliveryTaskHideHistoryAction => 'Hide history';
+
+  @override
+  String businessDeliveryTaskHistoryLine(
+    String from,
+    String to,
+    String timestamp,
+  ) {
+    return '$from → $to at $timestamp';
+  }
+
+  @override
+  String get businessDeliveryTaskFailureDialogTitle =>
+      'Delivery failure reason';
+
+  @override
+  String get businessDeliveryTaskFailureReasonLabel => 'Reason (demo only)';
+
+  @override
+  String get businessDeliveryTaskFailureDialogCancel => 'Cancel';
+
+  @override
+  String get businessDeliveryTaskFailureDialogConfirm => 'Confirm failure';
+
+  @override
+  String get businessDeliveryTaskFailureReasonInvalid =>
+      'Enter a failure reason to continue.';
+
+  @override
+  String get businessDeliveryTaskTransitionInvalid =>
+      'That status change is not allowed for this task.';
+
+  @override
+  String get businessDeliveryTaskTransitionSaveError =>
+      'Could not save the status change. Try again.';
 }

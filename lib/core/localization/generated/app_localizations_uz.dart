@@ -4042,4 +4042,153 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get businessFulfillmentSelectAtLeastOneType =>
       'Kamida bitta rejim tanlang.';
+
+  @override
+  String get businessFulfillmentDeliveryTasksLink => 'Delivery task’lar';
+
+  @override
+  String get businessFulfillmentDeliveryTasksBody =>
+      'Demo delivery task lifecycle (buyurtma holatidan alohida).';
+
+  @override
+  String get businessDeliveryTaskListTitle => 'Delivery task’lar';
+
+  @override
+  String get businessDeliveryTaskDemoDisclaimer =>
+      'Demo delivery tasks only — not connected to live orders, couriers or tracking.';
+
+  @override
+  String get businessDeliveryTaskEmptyBody =>
+      'Filter bo‘yicha delivery task topilmadi.';
+
+  @override
+  String get businessDeliveryTaskBranchFilter => 'Filial';
+
+  @override
+  String get businessDeliveryTaskAllBranches => 'Barcha filiallar';
+
+  @override
+  String get businessDeliveryTaskStatusFilter => 'Holat';
+
+  @override
+  String get businessDeliveryTaskAllStatuses => 'Barcha holatlar';
+
+  @override
+  String get businessDeliveryTaskStatusCreated => 'Yaratilgan';
+
+  @override
+  String get businessDeliveryTaskStatusReadyForPickup => 'Pickup uchun tayyor';
+
+  @override
+  String get businessDeliveryTaskStatusAssigned => 'Tayinlangan (demo)';
+
+  @override
+  String get businessDeliveryTaskStatusPickedUp => 'Olib ketilgan';
+
+  @override
+  String get businessDeliveryTaskStatusInTransit => 'Yo‘lda';
+
+  @override
+  String get businessDeliveryTaskStatusDelivered => 'Yetkazilgan';
+
+  @override
+  String get businessDeliveryTaskStatusFailed => 'Muvaffaqiyatsiz';
+
+  @override
+  String get businessDeliveryTaskStatusCancelled => 'Bekor qilingan';
+
+  @override
+  String businessDeliveryTaskBranchLabel(String name) {
+    return 'Filial: $name';
+  }
+
+  @override
+  String businessDeliveryTaskStatusLine(String status) {
+    return 'Holat: $status';
+  }
+
+  @override
+  String businessDeliveryTaskPickupLabel(String label) {
+    return 'Pickup: $label';
+  }
+
+  @override
+  String businessDeliveryTaskDropOffLabel(String label) {
+    return 'Drop-off: $label';
+  }
+
+  @override
+  String businessDeliveryTaskAssignmentLabel(String ref) {
+    return 'Demo tayinlash: $ref';
+  }
+
+  @override
+  String businessDeliveryTaskFailureLine(String reason) {
+    return 'Sabab: $reason';
+  }
+
+  @override
+  String businessDeliveryTaskUpdatedAt(String timestamp) {
+    return 'Yangilangan: $timestamp';
+  }
+
+  @override
+  String get businessDeliveryTaskActionReadyForPickup => 'Pickup uchun tayyor';
+
+  @override
+  String get businessDeliveryTaskActionAssignDemo => 'Tayinlash (demo)';
+
+  @override
+  String get businessDeliveryTaskActionConfirmPickup => 'Pickup tasdiqlash';
+
+  @override
+  String get businessDeliveryTaskActionMarkInTransit => 'Yo‘lda deb belgilash';
+
+  @override
+  String get businessDeliveryTaskActionMarkDelivered => 'Yetkazildi';
+
+  @override
+  String get businessDeliveryTaskActionMarkFailed => 'Muvaffaqiyatsiz';
+
+  @override
+  String get businessDeliveryTaskActionCancel => 'Bekor qilish';
+
+  @override
+  String get businessDeliveryTaskShowHistoryAction => 'Tarix';
+
+  @override
+  String get businessDeliveryTaskHideHistoryAction => 'Yopish';
+
+  @override
+  String businessDeliveryTaskHistoryLine(
+    String from,
+    String to,
+    String timestamp,
+  ) {
+    return '$from → $to · $timestamp';
+  }
+
+  @override
+  String get businessDeliveryTaskFailureDialogTitle =>
+      'Muvaffaqiyatsizlik sababi';
+
+  @override
+  String get businessDeliveryTaskFailureReasonLabel => 'Sabab (faqat demo)';
+
+  @override
+  String get businessDeliveryTaskFailureDialogCancel => 'Bekor';
+
+  @override
+  String get businessDeliveryTaskFailureDialogConfirm => 'Tasdiqlash';
+
+  @override
+  String get businessDeliveryTaskFailureReasonInvalid => 'Sabab kiriting.';
+
+  @override
+  String get businessDeliveryTaskTransitionInvalid =>
+      'Bu holat o‘tishi ruxsat etilmagan.';
+
+  @override
+  String get businessDeliveryTaskTransitionSaveError =>
+      'Saqlab bo‘lmadi. Qayta urinib ko‘ring.';
 }

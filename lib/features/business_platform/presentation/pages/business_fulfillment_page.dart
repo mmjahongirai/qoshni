@@ -6,6 +6,7 @@ import 'package:qoshni/core/theme/app_tokens.dart';
 import 'package:qoshni/core/widgets/app_message_banner.dart';
 import 'package:qoshni/core/widgets/app_surface_card.dart';
 import 'package:qoshni/di/injection.dart';
+import 'package:qoshni/routing/route_paths.dart';
 import 'package:qoshni/features/business_platform/data/business_catalog_inventory_demo_seed.dart';
 import 'package:qoshni/features/business_platform/domain/business_branch.dart';
 import 'package:qoshni/features/business_platform/domain/business_catalog_price_status.dart';
@@ -250,6 +251,28 @@ class _FulfillmentBody extends StatelessWidget {
               message: l10n.businessFulfillmentDemoDisclaimer,
               icon: Icons.info_outline,
               tone: AppMessageTone.info,
+            ),
+            const SizedBox(height: AppSpacing.md),
+            AppSurfaceCard(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    l10n.businessFulfillmentDeliveryTasksBody,
+                    style: textTheme.bodyMedium,
+                  ),
+                  const SizedBox(height: AppSpacing.sm),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: FilledButton.tonal(
+                      onPressed: saveBusy
+                          ? null
+                          : () => context.push(RoutePaths.businessDeliveryTasks),
+                      child: Text(l10n.businessFulfillmentDeliveryTasksLink),
+                    ),
+                  ),
+                ],
+              ),
             ),
             const SizedBox(height: AppSpacing.md),
             AppSurfaceCard(
