@@ -3906,4 +3906,114 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get catalogCommercialFeeActivateOverlapError =>
       'Active interval overlap.';
+
+  @override
+  String get businessCenterFulfillmentTitle => 'Fulfillment settings';
+
+  @override
+  String get businessCenterFulfillmentBody =>
+      'Delivery, pickup, on-site service (preview).';
+
+  @override
+  String get businessFulfillmentListTitle => 'Fulfillment';
+
+  @override
+  String get businessFulfillmentDemoDisclaimer =>
+      'Demo fulfillment settings — not connected to live orders or delivery.';
+
+  @override
+  String get businessFulfillmentAddAction => 'Add configuration';
+
+  @override
+  String get businessFulfillmentEmptyBody => 'No configurations.';
+
+  @override
+  String get businessFulfillmentBranchFilter => 'Branch';
+
+  @override
+  String get businessFulfillmentAllBranches => 'All branches';
+
+  @override
+  String get businessFulfillmentTypeFilter => 'Type';
+
+  @override
+  String get businessFulfillmentAllTypes => 'All types';
+
+  @override
+  String get businessFulfillmentStatusFilter => 'Status';
+
+  @override
+  String get businessFulfillmentAllStatuses => 'All statuses';
+
+  @override
+  String get businessFulfillmentTypeDelivery => 'Delivery';
+
+  @override
+  String get businessFulfillmentTypePickup => 'Pickup';
+
+  @override
+  String get businessFulfillmentTypeServiceAtLocation => 'Service at location';
+
+  @override
+  String get businessFulfillmentScopeBusinessWide => 'Business-wide';
+
+  @override
+  String get businessFulfillmentScopeProduct => 'Product';
+
+  @override
+  String get businessFulfillmentScopeService => 'Service';
+
+  @override
+  String businessFulfillmentTypesLabel(String modes) {
+    return 'Modes: $modes';
+  }
+
+  @override
+  String get businessFulfillmentPreviewTitle => 'Preview';
+
+  @override
+  String get businessFulfillmentPreviewEmpty => 'None';
+
+  @override
+  String businessFulfillmentPreviewSelected(String modes) {
+    return 'Supports: $modes';
+  }
+
+  @override
+  String get businessFulfillmentEditAction => 'Edit draft';
+
+  @override
+  String get businessFulfillmentActivateAction => 'Activate';
+
+  @override
+  String get businessFulfillmentArchiveAction => 'Archive';
+
+  @override
+  String get businessFulfillmentShowHistoryAction => 'History';
+
+  @override
+  String get businessFulfillmentHideHistoryAction => 'Hide';
+
+  @override
+  String get businessFulfillmentCreateTitle => 'New configuration';
+
+  @override
+  String get businessFulfillmentEditTitle => 'Edit draft';
+
+  @override
+  String get businessFulfillmentListingIdField => 'Listing ID';
+
+  @override
+  String get businessFulfillmentTypesField => 'Modes';
+
+  @override
+  String get businessFulfillmentSaveFailed => 'Save failed.';
+
+  @override
+  String get businessFulfillmentActivateConflictError =>
+      'Active configuration conflict.';
+
+  @override
+  String get businessFulfillmentSelectAtLeastOneType =>
+      'Select at least one mode.';
 }

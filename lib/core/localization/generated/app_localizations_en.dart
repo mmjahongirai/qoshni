@@ -3950,4 +3950,117 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get catalogCommercialFeeActivateOverlapError =>
       'Cannot activate: another active rule overlaps this interval for the same scope.';
+
+  @override
+  String get businessCenterFulfillmentTitle => 'Fulfillment settings';
+
+  @override
+  String get businessCenterFulfillmentBody =>
+      'Configure supported delivery, pickup and on-site service modes (preview).';
+
+  @override
+  String get businessFulfillmentListTitle => 'Fulfillment';
+
+  @override
+  String get businessFulfillmentDemoDisclaimer =>
+      'Demo fulfillment settings — not connected to live orders or delivery.';
+
+  @override
+  String get businessFulfillmentAddAction => 'Add configuration';
+
+  @override
+  String get businessFulfillmentEmptyBody =>
+      'No fulfillment configurations match your filters.';
+
+  @override
+  String get businessFulfillmentBranchFilter => 'Branch';
+
+  @override
+  String get businessFulfillmentAllBranches => 'All branches';
+
+  @override
+  String get businessFulfillmentTypeFilter => 'Fulfillment type';
+
+  @override
+  String get businessFulfillmentAllTypes => 'All types';
+
+  @override
+  String get businessFulfillmentStatusFilter => 'Status';
+
+  @override
+  String get businessFulfillmentAllStatuses => 'All statuses';
+
+  @override
+  String get businessFulfillmentTypeDelivery => 'Delivery';
+
+  @override
+  String get businessFulfillmentTypePickup => 'Pickup';
+
+  @override
+  String get businessFulfillmentTypeServiceAtLocation => 'Service at location';
+
+  @override
+  String get businessFulfillmentScopeBusinessWide => 'Business-wide';
+
+  @override
+  String get businessFulfillmentScopeProduct => 'Product listing';
+
+  @override
+  String get businessFulfillmentScopeService => 'Service listing';
+
+  @override
+  String businessFulfillmentTypesLabel(String modes) {
+    return 'Supported modes: $modes';
+  }
+
+  @override
+  String get businessFulfillmentPreviewTitle => 'Modes preview';
+
+  @override
+  String get businessFulfillmentPreviewEmpty => 'No modes selected';
+
+  @override
+  String businessFulfillmentPreviewSelected(String modes) {
+    return 'Selected configuration supports: $modes';
+  }
+
+  @override
+  String get businessFulfillmentEditAction => 'Edit draft';
+
+  @override
+  String get businessFulfillmentActivateAction => 'Activate';
+
+  @override
+  String get businessFulfillmentArchiveAction => 'Archive';
+
+  @override
+  String get businessFulfillmentShowHistoryAction => 'Show history';
+
+  @override
+  String get businessFulfillmentHideHistoryAction => 'Hide history';
+
+  @override
+  String get businessFulfillmentCreateTitle => 'New fulfillment configuration';
+
+  @override
+  String get businessFulfillmentEditTitle => 'Edit draft configuration';
+
+  @override
+  String get businessFulfillmentListingIdField =>
+      'Listing ID (product or service)';
+
+  @override
+  String get businessFulfillmentTypesField => 'Supported fulfillment modes';
+
+  @override
+  String get businessFulfillmentSaveFailed =>
+      'Could not save. Check your entries.';
+
+  @override
+  String get businessFulfillmentActivateConflictError =>
+      'Another active configuration already exists for this branch and scope.';
+
+  @override
+  String get businessFulfillmentSelectAtLeastOneType =>
+      'Select at least one fulfillment mode.';
 }

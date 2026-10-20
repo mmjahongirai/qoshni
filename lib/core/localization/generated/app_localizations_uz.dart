@@ -3932,4 +3932,114 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get catalogCommercialFeeActivateOverlapError =>
       'Faol interval to‘qnashadi.';
+
+  @override
+  String get businessCenterFulfillmentTitle => 'Fulfillment sozlamalari';
+
+  @override
+  String get businessCenterFulfillmentBody =>
+      'Delivery, pickup, joyida xizmat (preview).';
+
+  @override
+  String get businessFulfillmentListTitle => 'Fulfillment';
+
+  @override
+  String get businessFulfillmentDemoDisclaimer =>
+      'Demo fulfillment settings — not connected to live orders or delivery.';
+
+  @override
+  String get businessFulfillmentAddAction => 'Konfiguratsiya qo‘shish';
+
+  @override
+  String get businessFulfillmentEmptyBody => 'Konfiguratsiya yo‘q.';
+
+  @override
+  String get businessFulfillmentBranchFilter => 'Filial';
+
+  @override
+  String get businessFulfillmentAllBranches => 'Barcha filiallar';
+
+  @override
+  String get businessFulfillmentTypeFilter => 'Fulfillment turi';
+
+  @override
+  String get businessFulfillmentAllTypes => 'Barcha turlar';
+
+  @override
+  String get businessFulfillmentStatusFilter => 'Holat';
+
+  @override
+  String get businessFulfillmentAllStatuses => 'Barcha holatlar';
+
+  @override
+  String get businessFulfillmentTypeDelivery => 'Delivery';
+
+  @override
+  String get businessFulfillmentTypePickup => 'Pickup';
+
+  @override
+  String get businessFulfillmentTypeServiceAtLocation => 'Joyida xizmat';
+
+  @override
+  String get businessFulfillmentScopeBusinessWide => 'Business-wide';
+
+  @override
+  String get businessFulfillmentScopeProduct => 'Mahsulot';
+
+  @override
+  String get businessFulfillmentScopeService => 'Xizmat';
+
+  @override
+  String businessFulfillmentTypesLabel(String modes) {
+    return 'Rejimlar: $modes';
+  }
+
+  @override
+  String get businessFulfillmentPreviewTitle => 'Preview';
+
+  @override
+  String get businessFulfillmentPreviewEmpty => 'Tanlanmagan';
+
+  @override
+  String businessFulfillmentPreviewSelected(String modes) {
+    return 'Qo‘llab-quvvatlanadi: $modes';
+  }
+
+  @override
+  String get businessFulfillmentEditAction => 'Qoralama';
+
+  @override
+  String get businessFulfillmentActivateAction => 'Faollashtirish';
+
+  @override
+  String get businessFulfillmentArchiveAction => 'Arxiv';
+
+  @override
+  String get businessFulfillmentShowHistoryAction => 'Tarix';
+
+  @override
+  String get businessFulfillmentHideHistoryAction => 'Yopish';
+
+  @override
+  String get businessFulfillmentCreateTitle => 'Yangi konfiguratsiya';
+
+  @override
+  String get businessFulfillmentEditTitle => 'Qoralama';
+
+  @override
+  String get businessFulfillmentListingIdField => 'Listing ID';
+
+  @override
+  String get businessFulfillmentTypesField => 'Fulfillment rejimlari';
+
+  @override
+  String get businessFulfillmentSaveFailed => 'Saqlab bo‘lmadi.';
+
+  @override
+  String get businessFulfillmentActivateConflictError =>
+      'Faol konfiguratsiya to‘qnashadi.';
+
+  @override
+  String get businessFulfillmentSelectAtLeastOneType =>
+      'Kamida bitta rejim tanlang.';
 }

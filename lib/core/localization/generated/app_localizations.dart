@@ -7037,6 +7037,210 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cannot activate: another active rule overlaps this interval for the same scope.'**
   String get catalogCommercialFeeActivateOverlapError;
+
+  /// No description provided for @businessCenterFulfillmentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Fulfillment settings'**
+  String get businessCenterFulfillmentTitle;
+
+  /// No description provided for @businessCenterFulfillmentBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Configure supported delivery, pickup and on-site service modes (preview).'**
+  String get businessCenterFulfillmentBody;
+
+  /// No description provided for @businessFulfillmentListTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Fulfillment'**
+  String get businessFulfillmentListTitle;
+
+  /// No description provided for @businessFulfillmentDemoDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo fulfillment settings — not connected to live orders or delivery.'**
+  String get businessFulfillmentDemoDisclaimer;
+
+  /// No description provided for @businessFulfillmentAddAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add configuration'**
+  String get businessFulfillmentAddAction;
+
+  /// No description provided for @businessFulfillmentEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'No fulfillment configurations match your filters.'**
+  String get businessFulfillmentEmptyBody;
+
+  /// No description provided for @businessFulfillmentBranchFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch'**
+  String get businessFulfillmentBranchFilter;
+
+  /// No description provided for @businessFulfillmentAllBranches.
+  ///
+  /// In en, this message translates to:
+  /// **'All branches'**
+  String get businessFulfillmentAllBranches;
+
+  /// No description provided for @businessFulfillmentTypeFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Fulfillment type'**
+  String get businessFulfillmentTypeFilter;
+
+  /// No description provided for @businessFulfillmentAllTypes.
+  ///
+  /// In en, this message translates to:
+  /// **'All types'**
+  String get businessFulfillmentAllTypes;
+
+  /// No description provided for @businessFulfillmentStatusFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get businessFulfillmentStatusFilter;
+
+  /// No description provided for @businessFulfillmentAllStatuses.
+  ///
+  /// In en, this message translates to:
+  /// **'All statuses'**
+  String get businessFulfillmentAllStatuses;
+
+  /// No description provided for @businessFulfillmentTypeDelivery.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery'**
+  String get businessFulfillmentTypeDelivery;
+
+  /// No description provided for @businessFulfillmentTypePickup.
+  ///
+  /// In en, this message translates to:
+  /// **'Pickup'**
+  String get businessFulfillmentTypePickup;
+
+  /// No description provided for @businessFulfillmentTypeServiceAtLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Service at location'**
+  String get businessFulfillmentTypeServiceAtLocation;
+
+  /// No description provided for @businessFulfillmentScopeBusinessWide.
+  ///
+  /// In en, this message translates to:
+  /// **'Business-wide'**
+  String get businessFulfillmentScopeBusinessWide;
+
+  /// No description provided for @businessFulfillmentScopeProduct.
+  ///
+  /// In en, this message translates to:
+  /// **'Product listing'**
+  String get businessFulfillmentScopeProduct;
+
+  /// No description provided for @businessFulfillmentScopeService.
+  ///
+  /// In en, this message translates to:
+  /// **'Service listing'**
+  String get businessFulfillmentScopeService;
+
+  /// No description provided for @businessFulfillmentTypesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Supported modes: {modes}'**
+  String businessFulfillmentTypesLabel(String modes);
+
+  /// No description provided for @businessFulfillmentPreviewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Modes preview'**
+  String get businessFulfillmentPreviewTitle;
+
+  /// No description provided for @businessFulfillmentPreviewEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No modes selected'**
+  String get businessFulfillmentPreviewEmpty;
+
+  /// No description provided for @businessFulfillmentPreviewSelected.
+  ///
+  /// In en, this message translates to:
+  /// **'Selected configuration supports: {modes}'**
+  String businessFulfillmentPreviewSelected(String modes);
+
+  /// No description provided for @businessFulfillmentEditAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit draft'**
+  String get businessFulfillmentEditAction;
+
+  /// No description provided for @businessFulfillmentActivateAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Activate'**
+  String get businessFulfillmentActivateAction;
+
+  /// No description provided for @businessFulfillmentArchiveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Archive'**
+  String get businessFulfillmentArchiveAction;
+
+  /// No description provided for @businessFulfillmentShowHistoryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Show history'**
+  String get businessFulfillmentShowHistoryAction;
+
+  /// No description provided for @businessFulfillmentHideHistoryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide history'**
+  String get businessFulfillmentHideHistoryAction;
+
+  /// No description provided for @businessFulfillmentCreateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New fulfillment configuration'**
+  String get businessFulfillmentCreateTitle;
+
+  /// No description provided for @businessFulfillmentEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit draft configuration'**
+  String get businessFulfillmentEditTitle;
+
+  /// No description provided for @businessFulfillmentListingIdField.
+  ///
+  /// In en, this message translates to:
+  /// **'Listing ID (product or service)'**
+  String get businessFulfillmentListingIdField;
+
+  /// No description provided for @businessFulfillmentTypesField.
+  ///
+  /// In en, this message translates to:
+  /// **'Supported fulfillment modes'**
+  String get businessFulfillmentTypesField;
+
+  /// No description provided for @businessFulfillmentSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save. Check your entries.'**
+  String get businessFulfillmentSaveFailed;
+
+  /// No description provided for @businessFulfillmentActivateConflictError.
+  ///
+  /// In en, this message translates to:
+  /// **'Another active configuration already exists for this branch and scope.'**
+  String get businessFulfillmentActivateConflictError;
+
+  /// No description provided for @businessFulfillmentSelectAtLeastOneType.
+  ///
+  /// In en, this message translates to:
+  /// **'Select at least one fulfillment mode.'**
+  String get businessFulfillmentSelectAtLeastOneType;
 }
 
 class _AppLocalizationsDelegate

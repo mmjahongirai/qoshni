@@ -55,6 +55,7 @@ import 'package:qoshni/features/business_platform/presentation/pages/business_ca
 import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_discount_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_promo_code_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_commercial_fee_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_fulfillment_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_service_detail_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_service_editor_page.dart';
 import 'package:qoshni/routing/route_paths.dart';
@@ -449,6 +450,11 @@ class AppRouter {
                     const BusinessCatalogCommercialFeePage(),
               ),
             ],
+          ),
+          GoRoute(
+            path: 'fulfillment',
+            name: RouteNames.businessFulfillment,
+            builder: (context, state) => const BusinessFulfillmentPage(),
           ),
           GoRoute(
             path: 'staff',
