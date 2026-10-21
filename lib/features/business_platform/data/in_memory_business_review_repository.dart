@@ -13,15 +13,18 @@ import 'package:qoshni/features/business_platform/domain/repositories/business_o
 import 'package:qoshni/features/business_platform/presentation/business_rating_summary_calculator.dart';
 import 'package:qoshni/features/business_platform/presentation/business_review_transitions.dart';
 import 'package:qoshni/features/business_platform/presentation/business_review_validation.dart';
+import 'package:qoshni/features/business_platform/presentation/business_reputation_signal_collector.dart';
 
 class InMemoryBusinessReviewRepository implements BusinessReviewRepository {
   InMemoryBusinessReviewRepository(
     this._ownerProfileRepository,
-    this._eligibilityProvider,
-  );
+    this._eligibilityProvider, {
+    BusinessReputationSignalCollector? signalCollector,
+  }) : _signalCollector = signalCollector;
 
   final BusinessOwnerProfileRepository _ownerProfileRepository;
   final ReviewTransactionEligibilityProvider _eligibilityProvider;
+  final BusinessReputationSignalCollector? _signalCollector;
 
   final Map<String, List<BusinessReview>> _byScope = {};
   final Map<String, Map<String, List<BusinessReviewHistoryEvent>>>
@@ -176,6 +179,19 @@ class InMemoryBusinessReviewRepository implements BusinessReviewRepository {
 
     list[index] = updated;
     _appendHistory(event);
+    final collector = _signalCollector;
+    if (collector != null &&
+        (to == BusinessReviewStatus.published ||
+            to == BusinessReviewStatus.rejected ||
+            to == BusinessReviewStatus.hidden)) {
+      collector.recordReviewModerationOutcome(
+        review: updated,
+        previousStatus: from,
+        newStatus: to,
+        occurredAt: now,
+        sourceHistoryEventId: event.eventId,
+      );
+    }
     return BusinessReviewTransitionResult.success;
   }
 

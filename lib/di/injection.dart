@@ -34,6 +34,7 @@ import 'package:qoshni/features/business_platform/data/in_memory_business_delive
 import 'package:qoshni/features/business_platform/data/in_memory_business_review_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_complaint_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_dispute_repository.dart';
+import 'package:qoshni/features/business_platform/data/in_memory_business_reputation_event_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_demo_review_transaction_eligibility_provider.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_delivery_task_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_fulfillment_repository.dart';
@@ -64,6 +65,7 @@ import 'package:qoshni/features/business_platform/domain/repositories/business_d
 import 'package:qoshni/features/business_platform/domain/repositories/business_review_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_complaint_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_dispute_repository.dart';
+import 'package:qoshni/features/business_platform/domain/repositories/business_reputation_event_repository.dart';
 import 'package:qoshni/features/business_platform/domain/review_transaction_eligibility_provider.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_delivery_task_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_fulfillment_repository.dart';
@@ -97,6 +99,8 @@ import 'package:qoshni/features/business_platform/presentation/business_delivery
 import 'package:qoshni/features/business_platform/presentation/business_review_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_complaint_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_dispute_controller.dart';
+import 'package:qoshni/features/business_platform/presentation/business_reputation_event_controller.dart';
+import 'package:qoshni/features/business_platform/presentation/business_reputation_signal_collector.dart';
 import 'package:qoshni/features/business_platform/presentation/business_delivery_task_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_fulfillment_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_staff_controller.dart';
@@ -308,22 +312,35 @@ Future<void> configureDependencies(AppConfig config) async {
         getIt<BusinessOwnerProfileRepository>(),
       ),
     )
+    ..registerLazySingleton<BusinessReputationEventRepository>(
+      () => InMemoryBusinessReputationEventRepository(
+        getIt<BusinessOwnerProfileRepository>(),
+      ),
+    )
+    ..registerLazySingleton<BusinessReputationSignalCollector>(
+      () => BusinessReputationSignalCollector(
+        getIt<BusinessReputationEventRepository>(),
+      ),
+    )
     ..registerLazySingleton<BusinessReviewRepository>(
       () => InMemoryBusinessReviewRepository(
         getIt<BusinessOwnerProfileRepository>(),
         getIt<ReviewTransactionEligibilityProvider>(),
+        signalCollector: getIt<BusinessReputationSignalCollector>(),
       ),
     )
     ..registerLazySingleton<BusinessComplaintRepository>(
       () => InMemoryBusinessComplaintRepository(
         getIt<BusinessOwnerProfileRepository>(),
         getIt<BusinessReviewRepository>(),
+        signalCollector: getIt<BusinessReputationSignalCollector>(),
       ),
     )
     ..registerLazySingleton<BusinessDisputeRepository>(
       () => InMemoryBusinessDisputeRepository(
         getIt<BusinessOwnerProfileRepository>(),
         getIt<BusinessComplaintRepository>(),
+        signalCollector: getIt<BusinessReputationSignalCollector>(),
       ),
     )
     ..registerLazySingleton<BusinessCatalogDemoItemRepository>(
@@ -436,6 +453,11 @@ Future<void> configureDependencies(AppConfig config) async {
     ..registerLazySingleton<BusinessDisputeController>(
       () => BusinessDisputeController(
         getIt<BusinessDisputeRepository>(),
+      ),
+    )
+    ..registerLazySingleton<BusinessReputationEventController>(
+      () => BusinessReputationEventController(
+        getIt<BusinessReputationEventRepository>(),
       ),
     )
     ..registerLazySingleton<BusinessCatalogController>(

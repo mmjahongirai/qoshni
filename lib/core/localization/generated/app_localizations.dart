@@ -8504,6 +8504,169 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Uses synthetic evidence references only.'**
   String get businessComplaintSyntheticEvidenceNote;
+
+  /// No description provided for @businessCenterReputationEventsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Reputation events'**
+  String get businessCenterReputationEventsTitle;
+
+  /// No description provided for @businessCenterReputationEventsBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo signal timeline from reviews, complaints and disputes (preview).'**
+  String get businessCenterReputationEventsBody;
+
+  /// No description provided for @businessReputationEventsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Reputation events'**
+  String get businessReputationEventsTitle;
+
+  /// No description provided for @businessReputationEventsDemoDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo reputation events only — synthetic signals; no production Trust Score is calculated.'**
+  String get businessReputationEventsDemoDisclaimer;
+
+  /// No description provided for @businessReputationEventsInformationalNote.
+  ///
+  /// In en, this message translates to:
+  /// **'These records are informational audit signals, not automated trust decisions.'**
+  String get businessReputationEventsInformationalNote;
+
+  /// No description provided for @businessReputationEventSourceFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Source'**
+  String get businessReputationEventSourceFilter;
+
+  /// No description provided for @businessReputationEventAllSources.
+  ///
+  /// In en, this message translates to:
+  /// **'All sources'**
+  String get businessReputationEventAllSources;
+
+  /// No description provided for @businessReputationEventSourceReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Review'**
+  String get businessReputationEventSourceReview;
+
+  /// No description provided for @businessReputationEventSourceComplaint.
+  ///
+  /// In en, this message translates to:
+  /// **'Complaint'**
+  String get businessReputationEventSourceComplaint;
+
+  /// No description provided for @businessReputationEventSourceDispute.
+  ///
+  /// In en, this message translates to:
+  /// **'Dispute'**
+  String get businessReputationEventSourceDispute;
+
+  /// No description provided for @businessReputationEventTypeFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Event type'**
+  String get businessReputationEventTypeFilter;
+
+  /// No description provided for @businessReputationEventAllTypes.
+  ///
+  /// In en, this message translates to:
+  /// **'All event types'**
+  String get businessReputationEventAllTypes;
+
+  /// No description provided for @businessReputationEventTypeReviewPublished.
+  ///
+  /// In en, this message translates to:
+  /// **'Review published'**
+  String get businessReputationEventTypeReviewPublished;
+
+  /// No description provided for @businessReputationEventTypeReviewRejected.
+  ///
+  /// In en, this message translates to:
+  /// **'Review rejected'**
+  String get businessReputationEventTypeReviewRejected;
+
+  /// No description provided for @businessReputationEventTypeReviewHidden.
+  ///
+  /// In en, this message translates to:
+  /// **'Review hidden'**
+  String get businessReputationEventTypeReviewHidden;
+
+  /// No description provided for @businessReputationEventTypeComplaintCreated.
+  ///
+  /// In en, this message translates to:
+  /// **'Complaint created'**
+  String get businessReputationEventTypeComplaintCreated;
+
+  /// No description provided for @businessReputationEventTypeComplaintStatusChanged.
+  ///
+  /// In en, this message translates to:
+  /// **'Complaint status changed'**
+  String get businessReputationEventTypeComplaintStatusChanged;
+
+  /// No description provided for @businessReputationEventTypeDisputeOpened.
+  ///
+  /// In en, this message translates to:
+  /// **'Dispute opened'**
+  String get businessReputationEventTypeDisputeOpened;
+
+  /// No description provided for @businessReputationEventTypeDisputeStatusChanged.
+  ///
+  /// In en, this message translates to:
+  /// **'Dispute status changed'**
+  String get businessReputationEventTypeDisputeStatusChanged;
+
+  /// No description provided for @businessReputationEventsEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'No reputation events match your filters.'**
+  String get businessReputationEventsEmptyBody;
+
+  /// No description provided for @businessReputationEventCardLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{type} · {source} · {sourceId}'**
+  String businessReputationEventCardLine(
+    String type,
+    String source,
+    String sourceId,
+  );
+
+  /// No description provided for @businessReputationEventTargetLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Target: {targetType} · {targetId}'**
+  String businessReputationEventTargetLine(String targetType, String targetId);
+
+  /// No description provided for @businessReputationEventStatusLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Status: {from} → {to}'**
+  String businessReputationEventStatusLine(String from, String to);
+
+  /// No description provided for @businessReputationEventTimestampsLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Occurred: {occurred} · Recorded: {recorded}'**
+  String businessReputationEventTimestampsLine(
+    String occurred,
+    String recorded,
+  );
+
+  /// No description provided for @businessReputationEventProvenanceLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Correlation: {correlation}'**
+  String businessReputationEventProvenanceLine(String correlation);
+
+  /// No description provided for @businessReputationEventSyntheticBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Synthetic demo signal — not verified customer behavior.'**
+  String get businessReputationEventSyntheticBadge;
 }
 
 class _AppLocalizationsDelegate

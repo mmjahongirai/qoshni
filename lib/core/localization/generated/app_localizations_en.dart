@@ -4797,4 +4797,106 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get businessComplaintSyntheticEvidenceNote =>
       'Uses synthetic evidence references only.';
+
+  @override
+  String get businessCenterReputationEventsTitle => 'Reputation events';
+
+  @override
+  String get businessCenterReputationEventsBody =>
+      'Demo signal timeline from reviews, complaints and disputes (preview).';
+
+  @override
+  String get businessReputationEventsTitle => 'Reputation events';
+
+  @override
+  String get businessReputationEventsDemoDisclaimer =>
+      'Demo reputation events only — synthetic signals; no production Trust Score is calculated.';
+
+  @override
+  String get businessReputationEventsInformationalNote =>
+      'These records are informational audit signals, not automated trust decisions.';
+
+  @override
+  String get businessReputationEventSourceFilter => 'Source';
+
+  @override
+  String get businessReputationEventAllSources => 'All sources';
+
+  @override
+  String get businessReputationEventSourceReview => 'Review';
+
+  @override
+  String get businessReputationEventSourceComplaint => 'Complaint';
+
+  @override
+  String get businessReputationEventSourceDispute => 'Dispute';
+
+  @override
+  String get businessReputationEventTypeFilter => 'Event type';
+
+  @override
+  String get businessReputationEventAllTypes => 'All event types';
+
+  @override
+  String get businessReputationEventTypeReviewPublished => 'Review published';
+
+  @override
+  String get businessReputationEventTypeReviewRejected => 'Review rejected';
+
+  @override
+  String get businessReputationEventTypeReviewHidden => 'Review hidden';
+
+  @override
+  String get businessReputationEventTypeComplaintCreated => 'Complaint created';
+
+  @override
+  String get businessReputationEventTypeComplaintStatusChanged =>
+      'Complaint status changed';
+
+  @override
+  String get businessReputationEventTypeDisputeOpened => 'Dispute opened';
+
+  @override
+  String get businessReputationEventTypeDisputeStatusChanged =>
+      'Dispute status changed';
+
+  @override
+  String get businessReputationEventsEmptyBody =>
+      'No reputation events match your filters.';
+
+  @override
+  String businessReputationEventCardLine(
+    String type,
+    String source,
+    String sourceId,
+  ) {
+    return '$type · $source · $sourceId';
+  }
+
+  @override
+  String businessReputationEventTargetLine(String targetType, String targetId) {
+    return 'Target: $targetType · $targetId';
+  }
+
+  @override
+  String businessReputationEventStatusLine(String from, String to) {
+    return 'Status: $from → $to';
+  }
+
+  @override
+  String businessReputationEventTimestampsLine(
+    String occurred,
+    String recorded,
+  ) {
+    return 'Occurred: $occurred · Recorded: $recorded';
+  }
+
+  @override
+  String businessReputationEventProvenanceLine(String correlation) {
+    return 'Correlation: $correlation';
+  }
+
+  @override
+  String get businessReputationEventSyntheticBadge =>
+      'Synthetic demo signal — not verified customer behavior.';
 }

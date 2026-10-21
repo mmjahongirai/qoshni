@@ -4726,4 +4726,104 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get businessComplaintSyntheticEvidenceNote =>
       'Synthetic evidence only.';
+
+  @override
+  String get businessCenterReputationEventsTitle => 'Reputation events';
+
+  @override
+  String get businessCenterReputationEventsBody =>
+      'Demo signal timeline (preview).';
+
+  @override
+  String get businessReputationEventsTitle => 'Reputation events';
+
+  @override
+  String get businessReputationEventsDemoDisclaimer =>
+      'Demo reputation events only — synthetic signals; no production Trust Score is calculated.';
+
+  @override
+  String get businessReputationEventsInformationalNote =>
+      'Informational signals only.';
+
+  @override
+  String get businessReputationEventSourceFilter => 'Source';
+
+  @override
+  String get businessReputationEventAllSources => 'All sources';
+
+  @override
+  String get businessReputationEventSourceReview => 'Review';
+
+  @override
+  String get businessReputationEventSourceComplaint => 'Complaint';
+
+  @override
+  String get businessReputationEventSourceDispute => 'Dispute';
+
+  @override
+  String get businessReputationEventTypeFilter => 'Event type';
+
+  @override
+  String get businessReputationEventAllTypes => 'All types';
+
+  @override
+  String get businessReputationEventTypeReviewPublished => 'Review published';
+
+  @override
+  String get businessReputationEventTypeReviewRejected => 'Review rejected';
+
+  @override
+  String get businessReputationEventTypeReviewHidden => 'Review hidden';
+
+  @override
+  String get businessReputationEventTypeComplaintCreated => 'Complaint created';
+
+  @override
+  String get businessReputationEventTypeComplaintStatusChanged =>
+      'Complaint status changed';
+
+  @override
+  String get businessReputationEventTypeDisputeOpened => 'Dispute opened';
+
+  @override
+  String get businessReputationEventTypeDisputeStatusChanged =>
+      'Dispute status changed';
+
+  @override
+  String get businessReputationEventsEmptyBody => 'No events.';
+
+  @override
+  String businessReputationEventCardLine(
+    String type,
+    String source,
+    String sourceId,
+  ) {
+    return '$type · $source · $sourceId';
+  }
+
+  @override
+  String businessReputationEventTargetLine(String targetType, String targetId) {
+    return 'Target: $targetType · $targetId';
+  }
+
+  @override
+  String businessReputationEventStatusLine(String from, String to) {
+    return '$from → $to';
+  }
+
+  @override
+  String businessReputationEventTimestampsLine(
+    String occurred,
+    String recorded,
+  ) {
+    return '$occurred · $recorded';
+  }
+
+  @override
+  String businessReputationEventProvenanceLine(String correlation) {
+    return 'Correlation: $correlation';
+  }
+
+  @override
+  String get businessReputationEventSyntheticBadge => 'Synthetic demo signal.';
 }

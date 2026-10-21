@@ -156,6 +156,9 @@ abstract final class RoutePaths {
 
   static const String businessComplaintsDisputes =
       '/business-center/complaints-disputes';
+
+  static const String businessReputationEvents =
+      '/business-center/reputation-events';
 }
 
 abstract final class RouteNames {
@@ -237,4 +240,5 @@ abstract final class RouteNames {
   static const String businessDeliveryTasks = 'businessDeliveryTasks';
   static const String businessReviews = 'businessReviews';
   static const String businessComplaintsDisputes = 'businessComplaintsDisputes';
+  static const String businessReputationEvents = 'businessReputationEvents';
 }

@@ -10,15 +10,18 @@ import 'package:qoshni/features/business_platform/domain/repositories/business_d
 import 'package:qoshni/features/business_platform/domain/repositories/business_owner_profile_repository.dart';
 import 'package:qoshni/features/business_platform/presentation/business_dispute_transitions.dart';
 import 'package:qoshni/features/business_platform/presentation/business_dispute_validation.dart';
+import 'package:qoshni/features/business_platform/presentation/business_reputation_signal_collector.dart';
 
 class InMemoryBusinessDisputeRepository implements BusinessDisputeRepository {
   InMemoryBusinessDisputeRepository(
     this._ownerProfileRepository,
-    this._complaintRepository,
-  );
+    this._complaintRepository, {
+    BusinessReputationSignalCollector? signalCollector,
+  }) : _signalCollector = signalCollector;
 
   final BusinessOwnerProfileRepository _ownerProfileRepository;
   final BusinessComplaintRepository _complaintRepository;
+  final BusinessReputationSignalCollector? _signalCollector;
 
   final Map<String, List<BusinessDispute>> _byScope = {};
   final Map<String, Map<String, List<BusinessDisputeHistoryEvent>>>
@@ -124,15 +127,19 @@ class InMemoryBusinessDisputeRepository implements BusinessDisputeRepository {
     );
 
     _ensureScopeList().add(dispute);
-    _appendHistory(
-      BusinessDisputeHistoryEvent(
-        eventId: _nextEventId(),
-        disputeId: id,
-        complaintId: complaint.complaintId,
-        action: BusinessDisputeHistoryAction.created,
-        newStatus: BusinessDisputeStatus.filed,
-        recordedAt: now,
-      ),
+    final historyEvent = BusinessDisputeHistoryEvent(
+      eventId: _nextEventId(),
+      disputeId: id,
+      complaintId: complaint.complaintId,
+      action: BusinessDisputeHistoryAction.created,
+      newStatus: BusinessDisputeStatus.filed,
+      recordedAt: now,
+    );
+    _appendHistory(historyEvent);
+    _signalCollector?.recordDisputeOpened(
+      dispute: dispute,
+      occurredAt: now,
+      sourceHistoryEventId: historyEvent.eventId,
     );
     return BusinessDisputeCreateResult.success;
   }
@@ -198,6 +205,13 @@ class InMemoryBusinessDisputeRepository implements BusinessDisputeRepository {
 
     list[index] = updated;
     _appendHistory(event);
+    _signalCollector?.recordDisputeStatusChanged(
+      dispute: updated,
+      previousStatus: from,
+      newStatus: to,
+      occurredAt: now,
+      sourceHistoryEventId: event.eventId,
+    );
     return BusinessDisputeTransitionResult.success;
   }
 

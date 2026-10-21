@@ -11,15 +11,18 @@ import 'package:qoshni/features/business_platform/domain/repositories/business_o
 import 'package:qoshni/features/business_platform/domain/repositories/business_review_repository.dart';
 import 'package:qoshni/features/business_platform/presentation/business_complaint_transitions.dart';
 import 'package:qoshni/features/business_platform/presentation/business_complaint_validation.dart';
+import 'package:qoshni/features/business_platform/presentation/business_reputation_signal_collector.dart';
 
 class InMemoryBusinessComplaintRepository implements BusinessComplaintRepository {
   InMemoryBusinessComplaintRepository(
     this._ownerProfileRepository,
-    this._reviewRepository,
-  );
+    this._reviewRepository, {
+    BusinessReputationSignalCollector? signalCollector,
+  }) : _signalCollector = signalCollector;
 
   final BusinessOwnerProfileRepository _ownerProfileRepository;
   final BusinessReviewRepository _reviewRepository;
+  final BusinessReputationSignalCollector? _signalCollector;
 
   final Map<String, List<BusinessComplaint>> _byScope = {};
   final Map<String, Map<String, List<BusinessComplaintHistoryEvent>>>
@@ -120,14 +123,18 @@ class InMemoryBusinessComplaintRepository implements BusinessComplaintRepository
     );
 
     _ensureScopeList().add(complaint);
-    _appendHistory(
-      BusinessComplaintHistoryEvent(
-        eventId: _nextEventId(),
-        complaintId: id,
-        action: BusinessComplaintHistoryAction.created,
-        newStatus: BusinessComplaintStatus.submitted,
-        recordedAt: now,
-      ),
+    final historyEvent = BusinessComplaintHistoryEvent(
+      eventId: _nextEventId(),
+      complaintId: id,
+      action: BusinessComplaintHistoryAction.created,
+      newStatus: BusinessComplaintStatus.submitted,
+      recordedAt: now,
+    );
+    _appendHistory(historyEvent);
+    _signalCollector?.recordComplaintCreated(
+      complaint: complaint,
+      occurredAt: now,
+      sourceHistoryEventId: historyEvent.eventId,
     );
     return BusinessComplaintCreateResult.success;
   }
@@ -189,6 +196,13 @@ class InMemoryBusinessComplaintRepository implements BusinessComplaintRepository
 
     list[index] = updated;
     _appendHistory(event);
+    _signalCollector?.recordComplaintStatusChanged(
+      complaint: updated,
+      previousStatus: from,
+      newStatus: to,
+      occurredAt: now,
+      sourceHistoryEventId: event.eventId,
+    );
     return BusinessComplaintTransitionResult.success;
   }
 
