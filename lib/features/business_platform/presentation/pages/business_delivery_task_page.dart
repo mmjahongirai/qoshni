@@ -12,7 +12,10 @@ import 'package:qoshni/features/business_platform/domain/business_delivery_task_
 import 'package:qoshni/features/business_platform/domain/business_delivery_task_status.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_delivery_task_repository.dart';
 import 'package:qoshni/features/business_platform/presentation/business_branch_controller.dart';
+import 'package:qoshni/features/business_platform/presentation/business_delivery_exception_controller.dart';
+import 'package:qoshni/features/business_platform/presentation/business_delivery_proof_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_delivery_task_controller.dart';
+import 'package:qoshni/features/business_platform/presentation/widgets/business_delivery_task_exception_proof_panel.dart';
 import 'package:qoshni/features/business_platform/presentation/business_delivery_task_labels.dart';
 import 'package:qoshni/features/business_platform/presentation/business_delivery_task_transitions.dart';
 import 'package:qoshni/features/business_platform/presentation/business_delivery_task_validation.dart';
@@ -43,6 +46,8 @@ class _BusinessDeliveryTaskPageState extends State<BusinessDeliveryTaskPage> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final taskController = getIt<BusinessDeliveryTaskController>();
+    final exceptionController = getIt<BusinessDeliveryExceptionController>();
+    final proofController = getIt<BusinessDeliveryProofController>();
     final branchController = getIt<BusinessBranchController>();
 
     return Scaffold(
@@ -52,7 +57,12 @@ class _BusinessDeliveryTaskPageState extends State<BusinessDeliveryTaskPage> {
       ),
       body: SafeArea(
         child: ListenableBuilder(
-          listenable: Listenable.merge([taskController, branchController]),
+          listenable: Listenable.merge([
+            taskController,
+            exceptionController,
+            proofController,
+            branchController,
+          ]),
           builder: (context, _) {
             if (taskController.listLoading) {
               return const Center(child: CircularProgressIndicator());
@@ -73,7 +83,9 @@ class _BusinessDeliveryTaskPageState extends State<BusinessDeliveryTaskPage> {
                 branchFilter: _branchFilter,
                 statusFilter: _statusFilter,
                 expandedHistoryId: _expandedHistoryId,
-                transitionBusy: taskController.transitionBusy,
+                transitionBusy: taskController.transitionBusy ||
+                    exceptionController.saveBusy ||
+                    proofController.saveBusy,
                 errorMessage: _lastErrorMessage,
                 branchLabel: (id) =>
                     branchController.branchById(id)?.name ?? id,
@@ -96,7 +108,9 @@ class _BusinessDeliveryTaskPageState extends State<BusinessDeliveryTaskPage> {
                 branchFilter: _branchFilter,
                 statusFilter: _statusFilter,
                 expandedHistoryId: _expandedHistoryId,
-                transitionBusy: taskController.transitionBusy,
+                transitionBusy: taskController.transitionBusy ||
+                    exceptionController.saveBusy ||
+                    proofController.saveBusy,
                 errorMessage: _lastErrorMessage,
                 branchLabel: (id) =>
                     branchController.branchById(id)?.name ?? id,
@@ -442,6 +456,10 @@ class _TaskCard extends StatelessWidget {
                   style: textTheme.bodySmall,
                 ),
               ),
+          BusinessDeliveryTaskExceptionProofPanel(
+            task: task,
+            busy: transitionBusy,
+          ),
         ],
       ),
     );

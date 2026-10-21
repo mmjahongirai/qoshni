@@ -4214,4 +4214,196 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get businessDeliveryTaskTransitionSaveError =>
       'Could not save the status change. Try again.';
+
+  @override
+  String get businessDeliveryExceptionDemoDisclaimer =>
+      'Demo delivery exceptions — operational notes only, not the same as task failed status.';
+
+  @override
+  String get businessDeliveryProofDemoDisclaimer =>
+      'Demo proof only — no real photo upload, OTP verification or signature storage.';
+
+  @override
+  String get businessDeliveryExceptionSectionTitle => 'Delivery exceptions';
+
+  @override
+  String get businessDeliveryProofSectionTitle => 'Proof of delivery';
+
+  @override
+  String get businessDeliveryExceptionAddAction => 'Log exception';
+
+  @override
+  String get businessDeliveryProofAddAction => 'Add demo proof';
+
+  @override
+  String get businessDeliveryExceptionEmptyForTask =>
+      'No exceptions logged for this task.';
+
+  @override
+  String get businessDeliveryProofEmptyForTask =>
+      'No proof records for this task.';
+
+  @override
+  String get businessDeliveryExceptionCategoryRecipientUnavailable =>
+      'Recipient unavailable';
+
+  @override
+  String get businessDeliveryExceptionCategoryAddressIssue =>
+      'Address or location issue';
+
+  @override
+  String get businessDeliveryExceptionCategoryAccessBlocked => 'Access blocked';
+
+  @override
+  String get businessDeliveryExceptionCategoryDeliveryDelayed =>
+      'Delivery delayed';
+
+  @override
+  String get businessDeliveryExceptionCategoryItemIssue =>
+      'Item or package issue';
+
+  @override
+  String get businessDeliveryExceptionCategoryOther => 'Other';
+
+  @override
+  String get businessDeliveryExceptionStatusOpen => 'Open';
+
+  @override
+  String get businessDeliveryExceptionStatusResolved => 'Resolved';
+
+  @override
+  String get businessDeliveryExceptionStatusDismissed => 'Dismissed';
+
+  @override
+  String get businessDeliveryExceptionSeverityLow => 'Low';
+
+  @override
+  String get businessDeliveryExceptionSeverityMedium => 'Medium';
+
+  @override
+  String get businessDeliveryExceptionSeverityHigh => 'High';
+
+  @override
+  String businessDeliveryExceptionLine(
+    String category,
+    String status,
+    String reason,
+  ) {
+    return '$category · $status · $reason';
+  }
+
+  @override
+  String businessDeliveryProofLine(
+    String method,
+    String status,
+    String reference,
+  ) {
+    return '$method · $status · $reference';
+  }
+
+  @override
+  String get businessDeliveryExceptionResolveAction => 'Resolve';
+
+  @override
+  String get businessDeliveryExceptionDismissAction => 'Dismiss';
+
+  @override
+  String get businessDeliveryExceptionReopenAction => 'Reopen';
+
+  @override
+  String get businessDeliveryProofVerifyDemoAction => 'Demo verify';
+
+  @override
+  String get businessDeliveryProofRejectDemoAction => 'Demo reject';
+
+  @override
+  String get businessDeliveryExceptionCreateTitle => 'Log delivery exception';
+
+  @override
+  String get businessDeliveryExceptionReasonField =>
+      'Reason (non-PII demo text)';
+
+  @override
+  String get businessDeliveryExceptionCategoryField => 'Category';
+
+  @override
+  String get businessDeliveryExceptionResolveTitle => 'Resolve exception';
+
+  @override
+  String get businessDeliveryExceptionResolutionField => 'Resolution note';
+
+  @override
+  String get businessDeliveryProofCreateTitle => 'Add demo proof';
+
+  @override
+  String get businessDeliveryProofMethodField => 'Proof method';
+
+  @override
+  String get businessDeliveryProofEvidenceField => 'Demo evidence reference';
+
+  @override
+  String get businessDeliveryProofDescriptionField => 'Description';
+
+  @override
+  String get businessDeliveryProofVerifyTitle => 'Demo verification';
+
+  @override
+  String get businessDeliveryProofVerificationReasonField =>
+      'Verification note (demo)';
+
+  @override
+  String get businessDeliveryDialogCancel => 'Cancel';
+
+  @override
+  String get businessDeliveryDialogSave => 'Save';
+
+  @override
+  String get businessDeliveryDialogConfirm => 'Confirm';
+
+  @override
+  String get businessDeliveryExceptionSaveError =>
+      'Could not save exception. Try again.';
+
+  @override
+  String get businessDeliveryProofSaveError =>
+      'Could not save proof. Try again.';
+
+  @override
+  String get businessDeliveryExceptionValidationError =>
+      'Check exception fields and try again.';
+
+  @override
+  String get businessDeliveryProofValidationError =>
+      'Check proof fields — use demo references only.';
+
+  @override
+  String get businessDeliveryProofMethodPhoto => 'Photo (demo reference)';
+
+  @override
+  String get businessDeliveryProofMethodRecipientOtp => 'Recipient OTP (demo)';
+
+  @override
+  String get businessDeliveryProofMethodSignature => 'Signature (demo)';
+
+  @override
+  String get businessDeliveryProofMethodRecipientConfirmation =>
+      'Recipient confirmation';
+
+  @override
+  String get businessDeliveryProofStatusPending => 'Pending';
+
+  @override
+  String get businessDeliveryProofStatusVerified => 'Verified (demo)';
+
+  @override
+  String get businessDeliveryProofStatusRejected => 'Rejected';
+
+  @override
+  String get businessDeliveryProofStatusSuperseded => 'Superseded';
+
+  @override
+  String get businessDeliveryExceptionHistoryAction => 'Exception history';
+
+  @override
+  String get businessDeliveryProofHistoryAction => 'Proof history';
 }

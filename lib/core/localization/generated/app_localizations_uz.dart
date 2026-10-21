@@ -4191,4 +4191,188 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get businessDeliveryTaskTransitionSaveError =>
       'Saqlab bo‘lmadi. Qayta urinib ko‘ring.';
+
+  @override
+  String get businessDeliveryExceptionDemoDisclaimer =>
+      'Demo delivery exception — task failed holati bilan bir xil emas.';
+
+  @override
+  String get businessDeliveryProofDemoDisclaimer =>
+      'Demo proof only — no real photo upload, OTP verification or signature storage.';
+
+  @override
+  String get businessDeliveryExceptionSectionTitle => 'Delivery exception’lar';
+
+  @override
+  String get businessDeliveryProofSectionTitle => 'Proof of delivery';
+
+  @override
+  String get businessDeliveryExceptionAddAction => 'Exception yozish';
+
+  @override
+  String get businessDeliveryProofAddAction => 'Demo proof qo‘shish';
+
+  @override
+  String get businessDeliveryExceptionEmptyForTask =>
+      'Bu task uchun exception yo‘q.';
+
+  @override
+  String get businessDeliveryProofEmptyForTask => 'Bu task uchun proof yo‘q.';
+
+  @override
+  String get businessDeliveryExceptionCategoryRecipientUnavailable =>
+      'Qabul qiluvchi yo‘q';
+
+  @override
+  String get businessDeliveryExceptionCategoryAddressIssue => 'Manzil muammosi';
+
+  @override
+  String get businessDeliveryExceptionCategoryAccessBlocked =>
+      'Kirish bloklangan';
+
+  @override
+  String get businessDeliveryExceptionCategoryDeliveryDelayed => 'Kechikish';
+
+  @override
+  String get businessDeliveryExceptionCategoryItemIssue => 'Buyum muammosi';
+
+  @override
+  String get businessDeliveryExceptionCategoryOther => 'Boshqa';
+
+  @override
+  String get businessDeliveryExceptionStatusOpen => 'Ochiq';
+
+  @override
+  String get businessDeliveryExceptionStatusResolved => 'Hal qilindi';
+
+  @override
+  String get businessDeliveryExceptionStatusDismissed => 'Rad etildi';
+
+  @override
+  String get businessDeliveryExceptionSeverityLow => 'Past';
+
+  @override
+  String get businessDeliveryExceptionSeverityMedium => 'O‘rta';
+
+  @override
+  String get businessDeliveryExceptionSeverityHigh => 'Yuqori';
+
+  @override
+  String businessDeliveryExceptionLine(
+    String category,
+    String status,
+    String reason,
+  ) {
+    return '$category · $status · $reason';
+  }
+
+  @override
+  String businessDeliveryProofLine(
+    String method,
+    String status,
+    String reference,
+  ) {
+    return '$method · $status · $reference';
+  }
+
+  @override
+  String get businessDeliveryExceptionResolveAction => 'Hal qilish';
+
+  @override
+  String get businessDeliveryExceptionDismissAction => 'Yopish (dismiss)';
+
+  @override
+  String get businessDeliveryExceptionReopenAction => 'Qayta ochish';
+
+  @override
+  String get businessDeliveryProofVerifyDemoAction => 'Demo verify';
+
+  @override
+  String get businessDeliveryProofRejectDemoAction => 'Demo reject';
+
+  @override
+  String get businessDeliveryExceptionCreateTitle => 'Exception yozish';
+
+  @override
+  String get businessDeliveryExceptionReasonField => 'Sabab (demo, PII yo‘q)';
+
+  @override
+  String get businessDeliveryExceptionCategoryField => 'Kategoriya';
+
+  @override
+  String get businessDeliveryExceptionResolveTitle => 'Hal qilish';
+
+  @override
+  String get businessDeliveryExceptionResolutionField => 'Resolution note';
+
+  @override
+  String get businessDeliveryProofCreateTitle => 'Demo proof';
+
+  @override
+  String get businessDeliveryProofMethodField => 'Usul';
+
+  @override
+  String get businessDeliveryProofEvidenceField => 'Demo evidence reference';
+
+  @override
+  String get businessDeliveryProofDescriptionField => 'Tavsif';
+
+  @override
+  String get businessDeliveryProofVerifyTitle => 'Demo verification';
+
+  @override
+  String get businessDeliveryProofVerificationReasonField => 'Eslatma (demo)';
+
+  @override
+  String get businessDeliveryDialogCancel => 'Bekor';
+
+  @override
+  String get businessDeliveryDialogSave => 'Saqlash';
+
+  @override
+  String get businessDeliveryDialogConfirm => 'Tasdiqlash';
+
+  @override
+  String get businessDeliveryExceptionSaveError => 'Exception saqlanmadi.';
+
+  @override
+  String get businessDeliveryProofSaveError => 'Proof saqlanmadi.';
+
+  @override
+  String get businessDeliveryExceptionValidationError =>
+      'Maydonlarni tekshiring.';
+
+  @override
+  String get businessDeliveryProofValidationError =>
+      'Faqat demo reference ishlating.';
+
+  @override
+  String get businessDeliveryProofMethodPhoto => 'Photo (demo)';
+
+  @override
+  String get businessDeliveryProofMethodRecipientOtp => 'OTP (demo)';
+
+  @override
+  String get businessDeliveryProofMethodSignature => 'Signature (demo)';
+
+  @override
+  String get businessDeliveryProofMethodRecipientConfirmation => 'Confirmation';
+
+  @override
+  String get businessDeliveryProofStatusPending => 'Pending';
+
+  @override
+  String get businessDeliveryProofStatusVerified => 'Verified (demo)';
+
+  @override
+  String get businessDeliveryProofStatusRejected => 'Rejected';
+
+  @override
+  String get businessDeliveryProofStatusSuperseded => 'Superseded';
+
+  @override
+  String get businessDeliveryExceptionHistoryAction => 'Exception tarixi';
+
+  @override
+  String get businessDeliveryProofHistoryAction => 'Proof tarixi';
 }

@@ -7491,6 +7491,344 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Could not save the status change. Try again.'**
   String get businessDeliveryTaskTransitionSaveError;
+
+  /// No description provided for @businessDeliveryExceptionDemoDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo delivery exceptions — operational notes only, not the same as task failed status.'**
+  String get businessDeliveryExceptionDemoDisclaimer;
+
+  /// No description provided for @businessDeliveryProofDemoDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo proof only — no real photo upload, OTP verification or signature storage.'**
+  String get businessDeliveryProofDemoDisclaimer;
+
+  /// No description provided for @businessDeliveryExceptionSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery exceptions'**
+  String get businessDeliveryExceptionSectionTitle;
+
+  /// No description provided for @businessDeliveryProofSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Proof of delivery'**
+  String get businessDeliveryProofSectionTitle;
+
+  /// No description provided for @businessDeliveryExceptionAddAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Log exception'**
+  String get businessDeliveryExceptionAddAction;
+
+  /// No description provided for @businessDeliveryProofAddAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add demo proof'**
+  String get businessDeliveryProofAddAction;
+
+  /// No description provided for @businessDeliveryExceptionEmptyForTask.
+  ///
+  /// In en, this message translates to:
+  /// **'No exceptions logged for this task.'**
+  String get businessDeliveryExceptionEmptyForTask;
+
+  /// No description provided for @businessDeliveryProofEmptyForTask.
+  ///
+  /// In en, this message translates to:
+  /// **'No proof records for this task.'**
+  String get businessDeliveryProofEmptyForTask;
+
+  /// No description provided for @businessDeliveryExceptionCategoryRecipientUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipient unavailable'**
+  String get businessDeliveryExceptionCategoryRecipientUnavailable;
+
+  /// No description provided for @businessDeliveryExceptionCategoryAddressIssue.
+  ///
+  /// In en, this message translates to:
+  /// **'Address or location issue'**
+  String get businessDeliveryExceptionCategoryAddressIssue;
+
+  /// No description provided for @businessDeliveryExceptionCategoryAccessBlocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Access blocked'**
+  String get businessDeliveryExceptionCategoryAccessBlocked;
+
+  /// No description provided for @businessDeliveryExceptionCategoryDeliveryDelayed.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery delayed'**
+  String get businessDeliveryExceptionCategoryDeliveryDelayed;
+
+  /// No description provided for @businessDeliveryExceptionCategoryItemIssue.
+  ///
+  /// In en, this message translates to:
+  /// **'Item or package issue'**
+  String get businessDeliveryExceptionCategoryItemIssue;
+
+  /// No description provided for @businessDeliveryExceptionCategoryOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get businessDeliveryExceptionCategoryOther;
+
+  /// No description provided for @businessDeliveryExceptionStatusOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get businessDeliveryExceptionStatusOpen;
+
+  /// No description provided for @businessDeliveryExceptionStatusResolved.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolved'**
+  String get businessDeliveryExceptionStatusResolved;
+
+  /// No description provided for @businessDeliveryExceptionStatusDismissed.
+  ///
+  /// In en, this message translates to:
+  /// **'Dismissed'**
+  String get businessDeliveryExceptionStatusDismissed;
+
+  /// No description provided for @businessDeliveryExceptionSeverityLow.
+  ///
+  /// In en, this message translates to:
+  /// **'Low'**
+  String get businessDeliveryExceptionSeverityLow;
+
+  /// No description provided for @businessDeliveryExceptionSeverityMedium.
+  ///
+  /// In en, this message translates to:
+  /// **'Medium'**
+  String get businessDeliveryExceptionSeverityMedium;
+
+  /// No description provided for @businessDeliveryExceptionSeverityHigh.
+  ///
+  /// In en, this message translates to:
+  /// **'High'**
+  String get businessDeliveryExceptionSeverityHigh;
+
+  /// No description provided for @businessDeliveryExceptionLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{category} · {status} · {reason}'**
+  String businessDeliveryExceptionLine(
+    String category,
+    String status,
+    String reason,
+  );
+
+  /// No description provided for @businessDeliveryProofLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{method} · {status} · {reference}'**
+  String businessDeliveryProofLine(
+    String method,
+    String status,
+    String reference,
+  );
+
+  /// No description provided for @businessDeliveryExceptionResolveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolve'**
+  String get businessDeliveryExceptionResolveAction;
+
+  /// No description provided for @businessDeliveryExceptionDismissAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Dismiss'**
+  String get businessDeliveryExceptionDismissAction;
+
+  /// No description provided for @businessDeliveryExceptionReopenAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Reopen'**
+  String get businessDeliveryExceptionReopenAction;
+
+  /// No description provided for @businessDeliveryProofVerifyDemoAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo verify'**
+  String get businessDeliveryProofVerifyDemoAction;
+
+  /// No description provided for @businessDeliveryProofRejectDemoAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo reject'**
+  String get businessDeliveryProofRejectDemoAction;
+
+  /// No description provided for @businessDeliveryExceptionCreateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Log delivery exception'**
+  String get businessDeliveryExceptionCreateTitle;
+
+  /// No description provided for @businessDeliveryExceptionReasonField.
+  ///
+  /// In en, this message translates to:
+  /// **'Reason (non-PII demo text)'**
+  String get businessDeliveryExceptionReasonField;
+
+  /// No description provided for @businessDeliveryExceptionCategoryField.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get businessDeliveryExceptionCategoryField;
+
+  /// No description provided for @businessDeliveryExceptionResolveTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolve exception'**
+  String get businessDeliveryExceptionResolveTitle;
+
+  /// No description provided for @businessDeliveryExceptionResolutionField.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolution note'**
+  String get businessDeliveryExceptionResolutionField;
+
+  /// No description provided for @businessDeliveryProofCreateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Add demo proof'**
+  String get businessDeliveryProofCreateTitle;
+
+  /// No description provided for @businessDeliveryProofMethodField.
+  ///
+  /// In en, this message translates to:
+  /// **'Proof method'**
+  String get businessDeliveryProofMethodField;
+
+  /// No description provided for @businessDeliveryProofEvidenceField.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo evidence reference'**
+  String get businessDeliveryProofEvidenceField;
+
+  /// No description provided for @businessDeliveryProofDescriptionField.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get businessDeliveryProofDescriptionField;
+
+  /// No description provided for @businessDeliveryProofVerifyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo verification'**
+  String get businessDeliveryProofVerifyTitle;
+
+  /// No description provided for @businessDeliveryProofVerificationReasonField.
+  ///
+  /// In en, this message translates to:
+  /// **'Verification note (demo)'**
+  String get businessDeliveryProofVerificationReasonField;
+
+  /// No description provided for @businessDeliveryDialogCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get businessDeliveryDialogCancel;
+
+  /// No description provided for @businessDeliveryDialogSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get businessDeliveryDialogSave;
+
+  /// No description provided for @businessDeliveryDialogConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm'**
+  String get businessDeliveryDialogConfirm;
+
+  /// No description provided for @businessDeliveryExceptionSaveError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save exception. Try again.'**
+  String get businessDeliveryExceptionSaveError;
+
+  /// No description provided for @businessDeliveryProofSaveError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save proof. Try again.'**
+  String get businessDeliveryProofSaveError;
+
+  /// No description provided for @businessDeliveryExceptionValidationError.
+  ///
+  /// In en, this message translates to:
+  /// **'Check exception fields and try again.'**
+  String get businessDeliveryExceptionValidationError;
+
+  /// No description provided for @businessDeliveryProofValidationError.
+  ///
+  /// In en, this message translates to:
+  /// **'Check proof fields — use demo references only.'**
+  String get businessDeliveryProofValidationError;
+
+  /// No description provided for @businessDeliveryProofMethodPhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Photo (demo reference)'**
+  String get businessDeliveryProofMethodPhoto;
+
+  /// No description provided for @businessDeliveryProofMethodRecipientOtp.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipient OTP (demo)'**
+  String get businessDeliveryProofMethodRecipientOtp;
+
+  /// No description provided for @businessDeliveryProofMethodSignature.
+  ///
+  /// In en, this message translates to:
+  /// **'Signature (demo)'**
+  String get businessDeliveryProofMethodSignature;
+
+  /// No description provided for @businessDeliveryProofMethodRecipientConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipient confirmation'**
+  String get businessDeliveryProofMethodRecipientConfirmation;
+
+  /// No description provided for @businessDeliveryProofStatusPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get businessDeliveryProofStatusPending;
+
+  /// No description provided for @businessDeliveryProofStatusVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified (demo)'**
+  String get businessDeliveryProofStatusVerified;
+
+  /// No description provided for @businessDeliveryProofStatusRejected.
+  ///
+  /// In en, this message translates to:
+  /// **'Rejected'**
+  String get businessDeliveryProofStatusRejected;
+
+  /// No description provided for @businessDeliveryProofStatusSuperseded.
+  ///
+  /// In en, this message translates to:
+  /// **'Superseded'**
+  String get businessDeliveryProofStatusSuperseded;
+
+  /// No description provided for @businessDeliveryExceptionHistoryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Exception history'**
+  String get businessDeliveryExceptionHistoryAction;
+
+  /// No description provided for @businessDeliveryProofHistoryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Proof history'**
+  String get businessDeliveryProofHistoryAction;
 }
 
 class _AppLocalizationsDelegate

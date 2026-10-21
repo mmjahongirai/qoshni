@@ -29,6 +29,8 @@ import 'package:qoshni/features/business_platform/data/in_memory_business_catalo
 import 'package:qoshni/features/business_platform/data/in_memory_business_catalog_discount_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_catalog_promo_code_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_catalog_commercial_fee_repository.dart';
+import 'package:qoshni/features/business_platform/data/in_memory_business_delivery_exception_repository.dart';
+import 'package:qoshni/features/business_platform/data/in_memory_business_delivery_proof_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_delivery_task_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_fulfillment_repository.dart';
 import 'package:qoshni/features/business_platform/data/in_memory_business_staff_repository.dart';
@@ -53,6 +55,8 @@ import 'package:qoshni/features/business_platform/domain/repositories/business_c
 import 'package:qoshni/features/business_platform/domain/repositories/business_catalog_discount_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_catalog_promo_code_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_catalog_commercial_fee_repository.dart';
+import 'package:qoshni/features/business_platform/domain/repositories/business_delivery_exception_repository.dart';
+import 'package:qoshni/features/business_platform/domain/repositories/business_delivery_proof_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_delivery_task_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_fulfillment_repository.dart';
 import 'package:qoshni/features/business_platform/domain/repositories/business_staff_repository.dart';
@@ -80,6 +84,8 @@ import 'package:qoshni/features/business_platform/presentation/business_catalog_
 import 'package:qoshni/features/business_platform/presentation/business_catalog_discount_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_catalog_promo_code_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_catalog_commercial_fee_controller.dart';
+import 'package:qoshni/features/business_platform/presentation/business_delivery_exception_controller.dart';
+import 'package:qoshni/features/business_platform/presentation/business_delivery_proof_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_delivery_task_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_fulfillment_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_staff_controller.dart';
@@ -274,6 +280,18 @@ Future<void> configureDependencies(AppConfig config) async {
         getIt<BusinessFulfillmentRepository>(),
       ),
     )
+    ..registerLazySingleton<BusinessDeliveryExceptionRepository>(
+      () => InMemoryBusinessDeliveryExceptionRepository(
+        getIt<BusinessOwnerProfileRepository>(),
+        getIt<BusinessDeliveryTaskRepository>(),
+      ),
+    )
+    ..registerLazySingleton<BusinessDeliveryProofRepository>(
+      () => InMemoryBusinessDeliveryProofRepository(
+        getIt<BusinessOwnerProfileRepository>(),
+        getIt<BusinessDeliveryTaskRepository>(),
+      ),
+    )
     ..registerLazySingleton<BusinessCatalogDemoItemRepository>(
       () => InMemoryBusinessCatalogOverviewRepository(
         getIt<BusinessCatalogProductRepository>(),
@@ -359,6 +377,16 @@ Future<void> configureDependencies(AppConfig config) async {
     ..registerLazySingleton<BusinessDeliveryTaskController>(
       () => BusinessDeliveryTaskController(
         getIt<BusinessDeliveryTaskRepository>(),
+      ),
+    )
+    ..registerLazySingleton<BusinessDeliveryExceptionController>(
+      () => BusinessDeliveryExceptionController(
+        getIt<BusinessDeliveryExceptionRepository>(),
+      ),
+    )
+    ..registerLazySingleton<BusinessDeliveryProofController>(
+      () => BusinessDeliveryProofController(
+        getIt<BusinessDeliveryProofRepository>(),
       ),
     )
     ..registerLazySingleton<BusinessCatalogController>(
