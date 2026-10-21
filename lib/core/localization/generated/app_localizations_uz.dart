@@ -4567,4 +4567,190 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get businessReviewEligibilityDuplicate => 'Duplicate review.';
+
+  @override
+  String get businessCenterComplaintsDisputesTitle => 'Shikoyatlar va nizolar';
+
+  @override
+  String get businessCenterComplaintsDisputesBody =>
+      'Demo case boshqaruvi (preview).';
+
+  @override
+  String get businessComplaintDisputeListTitle => 'Shikoyatlar va nizolar';
+
+  @override
+  String get businessComplaintDisputeDemoDisclaimer =>
+      'Demo complaints and disputes only — synthetic cases and evidence; no real customer cases.';
+
+  @override
+  String get businessComplaintDisputeDemoResolutionNote =>
+      'Demo yechim haqiqiy qaror emas.';
+
+  @override
+  String get businessComplaintTab => 'Shikoyatlar';
+
+  @override
+  String get businessDisputeTab => 'Nizolar';
+
+  @override
+  String get businessComplaintCategoryFilter => 'Kategoriya';
+
+  @override
+  String get businessComplaintAllCategories => 'Barchasi';
+
+  @override
+  String get businessComplaintCategoryProductQuality => 'Mahsulot sifati';
+
+  @override
+  String get businessComplaintCategoryServiceIssue => 'Xizmat';
+
+  @override
+  String get businessComplaintCategoryBilling => 'To‘lov';
+
+  @override
+  String get businessComplaintCategoryDelivery => 'Yetkazish';
+
+  @override
+  String get businessComplaintCategoryOther => 'Boshqa';
+
+  @override
+  String get businessComplaintStatusSubmitted => 'Submitted';
+
+  @override
+  String get businessComplaintStatusUnderReview => 'Under review';
+
+  @override
+  String get businessComplaintStatusResolved => 'Resolved';
+
+  @override
+  String get businessComplaintStatusDismissed => 'Dismissed';
+
+  @override
+  String get businessDisputeStatusFiled => 'Filed';
+
+  @override
+  String get businessDisputeStatusUnderReview => 'Under review';
+
+  @override
+  String get businessDisputeStatusResolvedBusiness => 'Resolved (business)';
+
+  @override
+  String get businessDisputeStatusResolvedReporter => 'Resolved (reporter)';
+
+  @override
+  String get businessDisputeStatusDismissed => 'Dismissed';
+
+  @override
+  String get businessComplaintEmptyBody => 'Filtr bo‘yicha shikoyat yo‘q.';
+
+  @override
+  String get businessDisputeEmptyBody => 'Filtr bo‘yicha nizo yo‘q.';
+
+  @override
+  String businessComplaintCardLine(
+    String target,
+    String category,
+    String status,
+  ) {
+    return '$target · $category · $status';
+  }
+
+  @override
+  String businessDisputeCardLine(String complaintId, String status) {
+    return 'Complaint $complaintId · $status';
+  }
+
+  @override
+  String businessComplaintEvidenceLine(String refs, String reporter) {
+    return 'Evidence: $refs · Reporter: $reporter';
+  }
+
+  @override
+  String businessComplaintLinkedDispute(String disputeId) {
+    return 'Nizo: $disputeId';
+  }
+
+  @override
+  String get businessComplaintNoDispute => 'Nizo yo‘q.';
+
+  @override
+  String get businessComplaintCreateDemoAction => 'Demo shikoyat';
+
+  @override
+  String get businessDisputeCreateDemoAction => 'Demo nizo';
+
+  @override
+  String get businessComplaintActionBeginReview => 'Begin review';
+
+  @override
+  String get businessComplaintActionResolve => 'Resolve';
+
+  @override
+  String get businessComplaintActionDismiss => 'Dismiss';
+
+  @override
+  String get businessDisputeActionBeginReview => 'Begin review';
+
+  @override
+  String get businessDisputeActionResolveBusiness => 'For business';
+
+  @override
+  String get businessDisputeActionResolveReporter => 'For reporter';
+
+  @override
+  String get businessDisputeActionDismiss => 'Dismiss';
+
+  @override
+  String get businessComplaintHistoryAction => 'History';
+
+  @override
+  String get businessDisputeHistoryAction => 'History';
+
+  @override
+  String businessComplaintHistoryLine(
+    String from,
+    String to,
+    String timestamp,
+  ) {
+    return '$from → $to · $timestamp';
+  }
+
+  @override
+  String businessDisputeHistoryLine(String from, String to, String timestamp) {
+    return '$from → $to · $timestamp';
+  }
+
+  @override
+  String get businessComplaintSyntheticBadge => 'Synthetic demo case.';
+
+  @override
+  String get businessComplaintClearFilters => 'Clear filters';
+
+  @override
+  String get businessComplaintSaveError => 'Saqlab bo‘lmadi.';
+
+  @override
+  String get businessDisputeSaveError => 'Saqlab bo‘lmadi.';
+
+  @override
+  String get businessDisputeDuplicateError => 'Nizo allaqachon mavjud.';
+
+  @override
+  String get businessComplaintCreateDialogTitle => 'Demo shikoyat';
+
+  @override
+  String get businessDisputeCreateDialogTitle => 'Demo nizo';
+
+  @override
+  String get businessComplaintDescriptionField => 'Tavsif';
+
+  @override
+  String get businessDisputeSummaryField => 'Xulosa';
+
+  @override
+  String get businessComplaintSelectComplaintField => 'Shikoyat';
+
+  @override
+  String get businessComplaintSyntheticEvidenceNote =>
+      'Faqat synthetic evidence.';
 }

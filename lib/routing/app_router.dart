@@ -56,6 +56,7 @@ import 'package:qoshni/features/business_platform/presentation/pages/business_ca
 import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_promo_code_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_commercial_fee_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_reviews_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_complaints_disputes_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_delivery_task_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_fulfillment_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_service_detail_page.dart';
@@ -470,6 +471,12 @@ class AppRouter {
             path: 'reviews',
             name: RouteNames.businessReviews,
             builder: (context, state) => const BusinessReviewsPage(),
+          ),
+          GoRoute(
+            path: 'complaints-disputes',
+            name: RouteNames.businessComplaintsDisputes,
+            builder: (context, state) =>
+                const BusinessComplaintsDisputesPage(),
           ),
           GoRoute(
             path: 'staff',

@@ -8176,6 +8176,334 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'A review already exists for this evidence and reviewer.'**
   String get businessReviewEligibilityDuplicate;
+
+  /// No description provided for @businessCenterComplaintsDisputesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Complaints & disputes'**
+  String get businessCenterComplaintsDisputesTitle;
+
+  /// No description provided for @businessCenterComplaintsDisputesBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo case management with synthetic evidence (preview).'**
+  String get businessCenterComplaintsDisputesBody;
+
+  /// No description provided for @businessComplaintDisputeListTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Complaints & disputes'**
+  String get businessComplaintDisputeListTitle;
+
+  /// No description provided for @businessComplaintDisputeDemoDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo complaints and disputes only — synthetic cases and evidence; no real customer cases.'**
+  String get businessComplaintDisputeDemoDisclaimer;
+
+  /// No description provided for @businessComplaintDisputeDemoResolutionNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolving a demo case is not an authoritative real-world decision.'**
+  String get businessComplaintDisputeDemoResolutionNote;
+
+  /// No description provided for @businessComplaintTab.
+  ///
+  /// In en, this message translates to:
+  /// **'Complaints'**
+  String get businessComplaintTab;
+
+  /// No description provided for @businessDisputeTab.
+  ///
+  /// In en, this message translates to:
+  /// **'Disputes'**
+  String get businessDisputeTab;
+
+  /// No description provided for @businessComplaintCategoryFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get businessComplaintCategoryFilter;
+
+  /// No description provided for @businessComplaintAllCategories.
+  ///
+  /// In en, this message translates to:
+  /// **'All categories'**
+  String get businessComplaintAllCategories;
+
+  /// No description provided for @businessComplaintCategoryProductQuality.
+  ///
+  /// In en, this message translates to:
+  /// **'Product quality'**
+  String get businessComplaintCategoryProductQuality;
+
+  /// No description provided for @businessComplaintCategoryServiceIssue.
+  ///
+  /// In en, this message translates to:
+  /// **'Service issue'**
+  String get businessComplaintCategoryServiceIssue;
+
+  /// No description provided for @businessComplaintCategoryBilling.
+  ///
+  /// In en, this message translates to:
+  /// **'Billing'**
+  String get businessComplaintCategoryBilling;
+
+  /// No description provided for @businessComplaintCategoryDelivery.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery'**
+  String get businessComplaintCategoryDelivery;
+
+  /// No description provided for @businessComplaintCategoryOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get businessComplaintCategoryOther;
+
+  /// No description provided for @businessComplaintStatusSubmitted.
+  ///
+  /// In en, this message translates to:
+  /// **'Submitted'**
+  String get businessComplaintStatusSubmitted;
+
+  /// No description provided for @businessComplaintStatusUnderReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Under review'**
+  String get businessComplaintStatusUnderReview;
+
+  /// No description provided for @businessComplaintStatusResolved.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolved'**
+  String get businessComplaintStatusResolved;
+
+  /// No description provided for @businessComplaintStatusDismissed.
+  ///
+  /// In en, this message translates to:
+  /// **'Dismissed'**
+  String get businessComplaintStatusDismissed;
+
+  /// No description provided for @businessDisputeStatusFiled.
+  ///
+  /// In en, this message translates to:
+  /// **'Filed'**
+  String get businessDisputeStatusFiled;
+
+  /// No description provided for @businessDisputeStatusUnderReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Under review'**
+  String get businessDisputeStatusUnderReview;
+
+  /// No description provided for @businessDisputeStatusResolvedBusiness.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolved (business)'**
+  String get businessDisputeStatusResolvedBusiness;
+
+  /// No description provided for @businessDisputeStatusResolvedReporter.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolved (reporter)'**
+  String get businessDisputeStatusResolvedReporter;
+
+  /// No description provided for @businessDisputeStatusDismissed.
+  ///
+  /// In en, this message translates to:
+  /// **'Dismissed'**
+  String get businessDisputeStatusDismissed;
+
+  /// No description provided for @businessComplaintEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'No complaints match your filters.'**
+  String get businessComplaintEmptyBody;
+
+  /// No description provided for @businessDisputeEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'No disputes match your filters.'**
+  String get businessDisputeEmptyBody;
+
+  /// No description provided for @businessComplaintCardLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{target} · {category} · {status}'**
+  String businessComplaintCardLine(
+    String target,
+    String category,
+    String status,
+  );
+
+  /// No description provided for @businessDisputeCardLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Complaint {complaintId} · {status}'**
+  String businessDisputeCardLine(String complaintId, String status);
+
+  /// No description provided for @businessComplaintEvidenceLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Evidence: {refs} · Reporter: {reporter}'**
+  String businessComplaintEvidenceLine(String refs, String reporter);
+
+  /// No description provided for @businessComplaintLinkedDispute.
+  ///
+  /// In en, this message translates to:
+  /// **'Linked dispute: {disputeId}'**
+  String businessComplaintLinkedDispute(String disputeId);
+
+  /// No description provided for @businessComplaintNoDispute.
+  ///
+  /// In en, this message translates to:
+  /// **'No dispute filed for this complaint.'**
+  String get businessComplaintNoDispute;
+
+  /// No description provided for @businessComplaintCreateDemoAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Create demo complaint'**
+  String get businessComplaintCreateDemoAction;
+
+  /// No description provided for @businessDisputeCreateDemoAction.
+  ///
+  /// In en, this message translates to:
+  /// **'File demo dispute'**
+  String get businessDisputeCreateDemoAction;
+
+  /// No description provided for @businessComplaintActionBeginReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Begin review'**
+  String get businessComplaintActionBeginReview;
+
+  /// No description provided for @businessComplaintActionResolve.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolve'**
+  String get businessComplaintActionResolve;
+
+  /// No description provided for @businessComplaintActionDismiss.
+  ///
+  /// In en, this message translates to:
+  /// **'Dismiss'**
+  String get businessComplaintActionDismiss;
+
+  /// No description provided for @businessDisputeActionBeginReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Begin review'**
+  String get businessDisputeActionBeginReview;
+
+  /// No description provided for @businessDisputeActionResolveBusiness.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolve for business'**
+  String get businessDisputeActionResolveBusiness;
+
+  /// No description provided for @businessDisputeActionResolveReporter.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolve for reporter'**
+  String get businessDisputeActionResolveReporter;
+
+  /// No description provided for @businessDisputeActionDismiss.
+  ///
+  /// In en, this message translates to:
+  /// **'Dismiss'**
+  String get businessDisputeActionDismiss;
+
+  /// No description provided for @businessComplaintHistoryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Show history'**
+  String get businessComplaintHistoryAction;
+
+  /// No description provided for @businessDisputeHistoryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Show history'**
+  String get businessDisputeHistoryAction;
+
+  /// No description provided for @businessComplaintHistoryLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{from} → {to} at {timestamp}'**
+  String businessComplaintHistoryLine(String from, String to, String timestamp);
+
+  /// No description provided for @businessDisputeHistoryLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{from} → {to} at {timestamp}'**
+  String businessDisputeHistoryLine(String from, String to, String timestamp);
+
+  /// No description provided for @businessComplaintSyntheticBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Synthetic demo case — not a real customer complaint.'**
+  String get businessComplaintSyntheticBadge;
+
+  /// No description provided for @businessComplaintClearFilters.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear filters'**
+  String get businessComplaintClearFilters;
+
+  /// No description provided for @businessComplaintSaveError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save complaint. Try again.'**
+  String get businessComplaintSaveError;
+
+  /// No description provided for @businessDisputeSaveError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save dispute. Try again.'**
+  String get businessDisputeSaveError;
+
+  /// No description provided for @businessDisputeDuplicateError.
+  ///
+  /// In en, this message translates to:
+  /// **'A dispute already exists for this complaint.'**
+  String get businessDisputeDuplicateError;
+
+  /// No description provided for @businessComplaintCreateDialogTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Create demo complaint'**
+  String get businessComplaintCreateDialogTitle;
+
+  /// No description provided for @businessDisputeCreateDialogTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'File demo dispute'**
+  String get businessDisputeCreateDialogTitle;
+
+  /// No description provided for @businessComplaintDescriptionField.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get businessComplaintDescriptionField;
+
+  /// No description provided for @businessDisputeSummaryField.
+  ///
+  /// In en, this message translates to:
+  /// **'Summary'**
+  String get businessDisputeSummaryField;
+
+  /// No description provided for @businessComplaintSelectComplaintField.
+  ///
+  /// In en, this message translates to:
+  /// **'Complaint'**
+  String get businessComplaintSelectComplaintField;
+
+  /// No description provided for @businessComplaintSyntheticEvidenceNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Uses synthetic evidence references only.'**
+  String get businessComplaintSyntheticEvidenceNote;
 }
 
 class _AppLocalizationsDelegate
