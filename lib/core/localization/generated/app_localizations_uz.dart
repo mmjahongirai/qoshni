@@ -4375,4 +4375,196 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get businessDeliveryProofHistoryAction => 'Proof tarixi';
+
+  @override
+  String get businessCenterReviewsTitle => 'Reviews & ratings';
+
+  @override
+  String get businessCenterReviewsBody =>
+      'Demo verified reviews (synthetic evidence).';
+
+  @override
+  String get businessReviewListTitle => 'Reviews & ratings';
+
+  @override
+  String get businessReviewDemoDisclaimer =>
+      'Demo reviews only — synthetic transaction evidence; no real customer reviews.';
+
+  @override
+  String get businessReviewDemoRatingNote =>
+      'Demo rating — production reputation emas.';
+
+  @override
+  String get businessReviewCreateDemoAction => 'Demo review yaratish';
+
+  @override
+  String get businessReviewSummaryTitle => 'Rating summary';
+
+  @override
+  String businessReviewSummaryAverage(String average) {
+    return 'O‘rtacha: $average';
+  }
+
+  @override
+  String businessReviewSummaryCount(int count) {
+    return 'Published: $count';
+  }
+
+  @override
+  String businessReviewDistributionLine(int stars, int count) {
+    return '$stars★ — $count';
+  }
+
+  @override
+  String get businessReviewBranchFilter => 'Filial';
+
+  @override
+  String get businessReviewAllBranches => 'Barcha filiallar';
+
+  @override
+  String get businessReviewTargetTypeFilter => 'Target turi';
+
+  @override
+  String get businessReviewAllTargetTypes => 'Barcha turlar';
+
+  @override
+  String get businessReviewStatusFilter => 'Holat';
+
+  @override
+  String get businessReviewAllStatuses => 'Barcha holatlar';
+
+  @override
+  String get businessReviewTargetBusiness => 'Business';
+
+  @override
+  String get businessReviewTargetProduct => 'Product';
+
+  @override
+  String get businessReviewTargetService => 'Service';
+
+  @override
+  String get businessReviewTargetBusinessScope => 'Business scope';
+
+  @override
+  String get businessReviewStatusDraft => 'Draft';
+
+  @override
+  String get businessReviewStatusPendingModeration => 'Moderation kutilmoqda';
+
+  @override
+  String get businessReviewStatusPublished => 'Published';
+
+  @override
+  String get businessReviewStatusRejected => 'Rejected';
+
+  @override
+  String get businessReviewStatusHidden => 'Hidden';
+
+  @override
+  String get businessReviewEmptyBody => 'Review topilmadi.';
+
+  @override
+  String businessReviewCardLine(
+    String target,
+    String type,
+    String rating,
+    String status,
+  ) {
+    return '$target · $type · $rating★ · $status';
+  }
+
+  @override
+  String businessReviewProvenanceLine(String evidence, String reviewer) {
+    return 'Evidence: $evidence · Reviewer: $reviewer';
+  }
+
+  @override
+  String get businessReviewSyntheticBadge => 'Synthetic demo review.';
+
+  @override
+  String get businessReviewHistoryAction => 'Tarix';
+
+  @override
+  String businessReviewHistoryLine(String from, String to, String timestamp) {
+    return '$from → $to · $timestamp';
+  }
+
+  @override
+  String get businessReviewActionSubmitModeration => 'Moderationga yuborish';
+
+  @override
+  String get businessReviewActionPublish => 'Publish';
+
+  @override
+  String get businessReviewActionReject => 'Reject';
+
+  @override
+  String get businessReviewActionHide => 'Hide';
+
+  @override
+  String get businessReviewCreateDialogTitle => 'Demo review';
+
+  @override
+  String get businessReviewSyntheticEvidenceNote => 'Faqat synthetic evidence.';
+
+  @override
+  String get businessReviewTargetTypeField => 'Target turi';
+
+  @override
+  String get businessReviewTargetIdField => 'Target ID';
+
+  @override
+  String get businessReviewRatingField => 'Rating';
+
+  @override
+  String get businessReviewTitleField => 'Sarlavha';
+
+  @override
+  String get businessReviewTextField => 'Matn';
+
+  @override
+  String get businessReviewCheckEligibilityAction => 'Eligibility tekshirish';
+
+  @override
+  String get businessReviewDialogCancel => 'Bekor';
+
+  @override
+  String get businessReviewDialogSave => 'Saqlash';
+
+  @override
+  String get businessReviewDialogConfirm => 'Tasdiqlash';
+
+  @override
+  String get businessReviewSaveError => 'Saqlab bo‘lmadi.';
+
+  @override
+  String get businessReviewCreateIneligible => 'Eligible emas.';
+
+  @override
+  String get businessReviewValidationError => 'Maydonlarni tekshiring.';
+
+  @override
+  String get businessReviewModerationReasonTitle => 'Moderation eslatmasi';
+
+  @override
+  String get businessReviewModerationReasonLabel => 'Sabab';
+
+  @override
+  String get businessReviewEligibilityEligible => 'Eligible (demo).';
+
+  @override
+  String get businessReviewEligibilityEvidenceNotFound => 'Evidence topilmadi.';
+
+  @override
+  String get businessReviewEligibilityIncomplete => 'Transaction incomplete.';
+
+  @override
+  String get businessReviewEligibilityScopeMismatch => 'Scope mos emas.';
+
+  @override
+  String get businessReviewEligibilityTargetMismatch =>
+      'Target/reviewer mos emas.';
+
+  @override
+  String get businessReviewEligibilityDuplicate => 'Duplicate review.';
 }

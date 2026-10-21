@@ -7829,6 +7829,353 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Proof history'**
   String get businessDeliveryProofHistoryAction;
+
+  /// No description provided for @businessCenterReviewsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Reviews & ratings'**
+  String get businessCenterReviewsTitle;
+
+  /// No description provided for @businessCenterReviewsBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo verified reviews with synthetic transaction evidence (preview).'**
+  String get businessCenterReviewsBody;
+
+  /// No description provided for @businessReviewListTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Reviews & ratings'**
+  String get businessReviewListTitle;
+
+  /// No description provided for @businessReviewDemoDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo reviews only — synthetic transaction evidence; no real customer reviews.'**
+  String get businessReviewDemoDisclaimer;
+
+  /// No description provided for @businessReviewDemoRatingNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo rating summary — not this business’s production reputation score.'**
+  String get businessReviewDemoRatingNote;
+
+  /// No description provided for @businessReviewCreateDemoAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Create demo review'**
+  String get businessReviewCreateDemoAction;
+
+  /// No description provided for @businessReviewSummaryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Rating summary (published only)'**
+  String get businessReviewSummaryTitle;
+
+  /// No description provided for @businessReviewSummaryAverage.
+  ///
+  /// In en, this message translates to:
+  /// **'Average: {average}'**
+  String businessReviewSummaryAverage(String average);
+
+  /// No description provided for @businessReviewSummaryCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Published reviews: {count}'**
+  String businessReviewSummaryCount(int count);
+
+  /// No description provided for @businessReviewDistributionLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{stars}★ — {count}'**
+  String businessReviewDistributionLine(int stars, int count);
+
+  /// No description provided for @businessReviewBranchFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch'**
+  String get businessReviewBranchFilter;
+
+  /// No description provided for @businessReviewAllBranches.
+  ///
+  /// In en, this message translates to:
+  /// **'All branches'**
+  String get businessReviewAllBranches;
+
+  /// No description provided for @businessReviewTargetTypeFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Target type'**
+  String get businessReviewTargetTypeFilter;
+
+  /// No description provided for @businessReviewAllTargetTypes.
+  ///
+  /// In en, this message translates to:
+  /// **'All target types'**
+  String get businessReviewAllTargetTypes;
+
+  /// No description provided for @businessReviewStatusFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get businessReviewStatusFilter;
+
+  /// No description provided for @businessReviewAllStatuses.
+  ///
+  /// In en, this message translates to:
+  /// **'All statuses'**
+  String get businessReviewAllStatuses;
+
+  /// No description provided for @businessReviewTargetBusiness.
+  ///
+  /// In en, this message translates to:
+  /// **'Business'**
+  String get businessReviewTargetBusiness;
+
+  /// No description provided for @businessReviewTargetProduct.
+  ///
+  /// In en, this message translates to:
+  /// **'Product'**
+  String get businessReviewTargetProduct;
+
+  /// No description provided for @businessReviewTargetService.
+  ///
+  /// In en, this message translates to:
+  /// **'Service'**
+  String get businessReviewTargetService;
+
+  /// No description provided for @businessReviewTargetBusinessScope.
+  ///
+  /// In en, this message translates to:
+  /// **'Business scope'**
+  String get businessReviewTargetBusinessScope;
+
+  /// No description provided for @businessReviewStatusDraft.
+  ///
+  /// In en, this message translates to:
+  /// **'Draft'**
+  String get businessReviewStatusDraft;
+
+  /// No description provided for @businessReviewStatusPendingModeration.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending moderation'**
+  String get businessReviewStatusPendingModeration;
+
+  /// No description provided for @businessReviewStatusPublished.
+  ///
+  /// In en, this message translates to:
+  /// **'Published'**
+  String get businessReviewStatusPublished;
+
+  /// No description provided for @businessReviewStatusRejected.
+  ///
+  /// In en, this message translates to:
+  /// **'Rejected'**
+  String get businessReviewStatusRejected;
+
+  /// No description provided for @businessReviewStatusHidden.
+  ///
+  /// In en, this message translates to:
+  /// **'Hidden'**
+  String get businessReviewStatusHidden;
+
+  /// No description provided for @businessReviewEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'No reviews match your filters.'**
+  String get businessReviewEmptyBody;
+
+  /// No description provided for @businessReviewCardLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{target} · {type} · {rating}★ · {status}'**
+  String businessReviewCardLine(
+    String target,
+    String type,
+    String rating,
+    String status,
+  );
+
+  /// No description provided for @businessReviewProvenanceLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Evidence: {evidence} · Reviewer: {reviewer}'**
+  String businessReviewProvenanceLine(String evidence, String reviewer);
+
+  /// No description provided for @businessReviewSyntheticBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Synthetic demo review — not verified by a real transaction backend.'**
+  String get businessReviewSyntheticBadge;
+
+  /// No description provided for @businessReviewHistoryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Show history'**
+  String get businessReviewHistoryAction;
+
+  /// No description provided for @businessReviewHistoryLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{from} → {to} at {timestamp}'**
+  String businessReviewHistoryLine(String from, String to, String timestamp);
+
+  /// No description provided for @businessReviewActionSubmitModeration.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit for moderation'**
+  String get businessReviewActionSubmitModeration;
+
+  /// No description provided for @businessReviewActionPublish.
+  ///
+  /// In en, this message translates to:
+  /// **'Publish'**
+  String get businessReviewActionPublish;
+
+  /// No description provided for @businessReviewActionReject.
+  ///
+  /// In en, this message translates to:
+  /// **'Reject'**
+  String get businessReviewActionReject;
+
+  /// No description provided for @businessReviewActionHide.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide'**
+  String get businessReviewActionHide;
+
+  /// No description provided for @businessReviewCreateDialogTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Create demo review'**
+  String get businessReviewCreateDialogTitle;
+
+  /// No description provided for @businessReviewSyntheticEvidenceNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Uses synthetic transaction evidence only.'**
+  String get businessReviewSyntheticEvidenceNote;
+
+  /// No description provided for @businessReviewTargetTypeField.
+  ///
+  /// In en, this message translates to:
+  /// **'Target type'**
+  String get businessReviewTargetTypeField;
+
+  /// No description provided for @businessReviewTargetIdField.
+  ///
+  /// In en, this message translates to:
+  /// **'Target ID'**
+  String get businessReviewTargetIdField;
+
+  /// No description provided for @businessReviewRatingField.
+  ///
+  /// In en, this message translates to:
+  /// **'Rating (1–5)'**
+  String get businessReviewRatingField;
+
+  /// No description provided for @businessReviewTitleField.
+  ///
+  /// In en, this message translates to:
+  /// **'Title (optional)'**
+  String get businessReviewTitleField;
+
+  /// No description provided for @businessReviewTextField.
+  ///
+  /// In en, this message translates to:
+  /// **'Review text (optional)'**
+  String get businessReviewTextField;
+
+  /// No description provided for @businessReviewCheckEligibilityAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Check eligibility'**
+  String get businessReviewCheckEligibilityAction;
+
+  /// No description provided for @businessReviewDialogCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get businessReviewDialogCancel;
+
+  /// No description provided for @businessReviewDialogSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get businessReviewDialogSave;
+
+  /// No description provided for @businessReviewDialogConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm'**
+  String get businessReviewDialogConfirm;
+
+  /// No description provided for @businessReviewSaveError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save review. Try again.'**
+  String get businessReviewSaveError;
+
+  /// No description provided for @businessReviewCreateIneligible.
+  ///
+  /// In en, this message translates to:
+  /// **'Not eligible — check evidence, target and reviewer.'**
+  String get businessReviewCreateIneligible;
+
+  /// No description provided for @businessReviewValidationError.
+  ///
+  /// In en, this message translates to:
+  /// **'Check review fields and try again.'**
+  String get businessReviewValidationError;
+
+  /// No description provided for @businessReviewModerationReasonTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Moderation note'**
+  String get businessReviewModerationReasonTitle;
+
+  /// No description provided for @businessReviewModerationReasonLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Reason (demo)'**
+  String get businessReviewModerationReasonLabel;
+
+  /// No description provided for @businessReviewEligibilityEligible.
+  ///
+  /// In en, this message translates to:
+  /// **'Eligible — synthetic completed transaction matches target.'**
+  String get businessReviewEligibilityEligible;
+
+  /// No description provided for @businessReviewEligibilityEvidenceNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Transaction evidence not found.'**
+  String get businessReviewEligibilityEvidenceNotFound;
+
+  /// No description provided for @businessReviewEligibilityIncomplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Transaction is not completed.'**
+  String get businessReviewEligibilityIncomplete;
+
+  /// No description provided for @businessReviewEligibilityScopeMismatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Business or branch scope does not match.'**
+  String get businessReviewEligibilityScopeMismatch;
+
+  /// No description provided for @businessReviewEligibilityTargetMismatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Evidence does not match target or reviewer.'**
+  String get businessReviewEligibilityTargetMismatch;
+
+  /// No description provided for @businessReviewEligibilityDuplicate.
+  ///
+  /// In en, this message translates to:
+  /// **'A review already exists for this evidence and reviewer.'**
+  String get businessReviewEligibilityDuplicate;
 }
 
 class _AppLocalizationsDelegate

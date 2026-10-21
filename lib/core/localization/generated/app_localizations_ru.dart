@@ -4348,4 +4348,196 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get businessDeliveryProofHistoryAction => 'Proof history';
+
+  @override
+  String get businessCenterReviewsTitle => 'Reviews & ratings';
+
+  @override
+  String get businessCenterReviewsBody =>
+      'Demo verified reviews (synthetic evidence).';
+
+  @override
+  String get businessReviewListTitle => 'Reviews & ratings';
+
+  @override
+  String get businessReviewDemoDisclaimer =>
+      'Demo reviews only — synthetic transaction evidence; no real customer reviews.';
+
+  @override
+  String get businessReviewDemoRatingNote =>
+      'Demo rating summary — not production reputation.';
+
+  @override
+  String get businessReviewCreateDemoAction => 'Create demo review';
+
+  @override
+  String get businessReviewSummaryTitle => 'Rating summary';
+
+  @override
+  String businessReviewSummaryAverage(String average) {
+    return 'Average: $average';
+  }
+
+  @override
+  String businessReviewSummaryCount(int count) {
+    return 'Published: $count';
+  }
+
+  @override
+  String businessReviewDistributionLine(int stars, int count) {
+    return '$stars★ — $count';
+  }
+
+  @override
+  String get businessReviewBranchFilter => 'Branch';
+
+  @override
+  String get businessReviewAllBranches => 'All branches';
+
+  @override
+  String get businessReviewTargetTypeFilter => 'Target type';
+
+  @override
+  String get businessReviewAllTargetTypes => 'All types';
+
+  @override
+  String get businessReviewStatusFilter => 'Status';
+
+  @override
+  String get businessReviewAllStatuses => 'All statuses';
+
+  @override
+  String get businessReviewTargetBusiness => 'Business';
+
+  @override
+  String get businessReviewTargetProduct => 'Product';
+
+  @override
+  String get businessReviewTargetService => 'Service';
+
+  @override
+  String get businessReviewTargetBusinessScope => 'Business scope';
+
+  @override
+  String get businessReviewStatusDraft => 'Draft';
+
+  @override
+  String get businessReviewStatusPendingModeration => 'Pending moderation';
+
+  @override
+  String get businessReviewStatusPublished => 'Published';
+
+  @override
+  String get businessReviewStatusRejected => 'Rejected';
+
+  @override
+  String get businessReviewStatusHidden => 'Hidden';
+
+  @override
+  String get businessReviewEmptyBody => 'No reviews.';
+
+  @override
+  String businessReviewCardLine(
+    String target,
+    String type,
+    String rating,
+    String status,
+  ) {
+    return '$target · $type · $rating★ · $status';
+  }
+
+  @override
+  String businessReviewProvenanceLine(String evidence, String reviewer) {
+    return 'Evidence: $evidence · Reviewer: $reviewer';
+  }
+
+  @override
+  String get businessReviewSyntheticBadge => 'Synthetic demo review.';
+
+  @override
+  String get businessReviewHistoryAction => 'History';
+
+  @override
+  String businessReviewHistoryLine(String from, String to, String timestamp) {
+    return '$from → $to at $timestamp';
+  }
+
+  @override
+  String get businessReviewActionSubmitModeration => 'Submit moderation';
+
+  @override
+  String get businessReviewActionPublish => 'Publish';
+
+  @override
+  String get businessReviewActionReject => 'Reject';
+
+  @override
+  String get businessReviewActionHide => 'Hide';
+
+  @override
+  String get businessReviewCreateDialogTitle => 'Create demo review';
+
+  @override
+  String get businessReviewSyntheticEvidenceNote => 'Synthetic evidence only.';
+
+  @override
+  String get businessReviewTargetTypeField => 'Target type';
+
+  @override
+  String get businessReviewTargetIdField => 'Target ID';
+
+  @override
+  String get businessReviewRatingField => 'Rating';
+
+  @override
+  String get businessReviewTitleField => 'Title';
+
+  @override
+  String get businessReviewTextField => 'Text';
+
+  @override
+  String get businessReviewCheckEligibilityAction => 'Check eligibility';
+
+  @override
+  String get businessReviewDialogCancel => 'Cancel';
+
+  @override
+  String get businessReviewDialogSave => 'Save';
+
+  @override
+  String get businessReviewDialogConfirm => 'Confirm';
+
+  @override
+  String get businessReviewSaveError => 'Could not save.';
+
+  @override
+  String get businessReviewCreateIneligible => 'Not eligible.';
+
+  @override
+  String get businessReviewValidationError => 'Invalid fields.';
+
+  @override
+  String get businessReviewModerationReasonTitle => 'Moderation note';
+
+  @override
+  String get businessReviewModerationReasonLabel => 'Reason';
+
+  @override
+  String get businessReviewEligibilityEligible => 'Eligible (demo).';
+
+  @override
+  String get businessReviewEligibilityEvidenceNotFound => 'Evidence not found.';
+
+  @override
+  String get businessReviewEligibilityIncomplete => 'Transaction incomplete.';
+
+  @override
+  String get businessReviewEligibilityScopeMismatch => 'Scope mismatch.';
+
+  @override
+  String get businessReviewEligibilityTargetMismatch =>
+      'Target/reviewer mismatch.';
+
+  @override
+  String get businessReviewEligibilityDuplicate => 'Duplicate review.';
 }

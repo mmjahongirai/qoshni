@@ -1,0 +1,4 @@
+enum BusinessReviewProvenance {
+  syntheticDemo,
+  futureAuthoritativeSource,
+}
