@@ -5,10 +5,12 @@ import 'package:qoshni/app/app.dart';
 import 'package:qoshni/core/config/app_config.dart';
 import 'package:qoshni/core/config/app_environment.dart';
 import 'package:qoshni/core/logging/app_logger.dart';
+import 'package:qoshni/core/mapbox/mapbox_initializer.dart';
 import 'package:qoshni/di/injection.dart';
 
 Future<void> bootstrap(AppEnvironment environment) async {
   WidgetsFlutterBinding.ensureInitialized();
+  initializeMapboxIfConfigured();
 
   final config = AppConfig.forEnvironment(environment);
   await configureDependencies(config);

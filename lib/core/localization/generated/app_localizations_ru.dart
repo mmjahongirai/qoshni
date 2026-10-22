@@ -43,8 +43,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get openMap => 'Открыть карту';
 
   @override
-  String get homeMapPreviewStatus =>
-      'Демо-карта — живая геолокация и места появятся позже.';
+  String get homeMapPreviewStatusNotConfigured =>
+      'Mapbox — укажите MAPBOX_ACCESS_TOKEN для карты.';
+
+  @override
+  String get homeMapPreviewStatusConfigured =>
+      'Mapbox — вид по Узбекистану (не ваше местоположение).';
 
   @override
   String get homeNearbyChainsTitle => 'Сети и важные места рядом';
@@ -86,6 +90,20 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get mapPlaceholderBody =>
       'Интерактивная карта будет подключена позже.';
+
+  @override
+  String get mapboxConfigRequiredTitle => 'Нужен токен Mapbox';
+
+  @override
+  String get mapboxConfigRequiredBody =>
+      'Передайте pk-токен через --dart-define=MAPBOX_ACCESS_TOKEN=…';
+
+  @override
+  String get mapboxDefaultViewLabel => 'Вид по умолчанию — Узбекистан';
+
+  @override
+  String get mapboxLoadErrorBody =>
+      'Карта не загрузилась. Проверьте токен и сеть.';
 
   @override
   String get categoryGroceries => 'Продукты';

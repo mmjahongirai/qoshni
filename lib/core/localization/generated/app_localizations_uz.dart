@@ -43,8 +43,12 @@ class AppLocalizationsUz extends AppLocalizations {
   String get openMap => 'Xaritani ochish';
 
   @override
-  String get homeMapPreviewStatus =>
-      'Demo xarita ko‘rinishi — jonli joylashuv keyinroq ulanadi.';
+  String get homeMapPreviewStatusNotConfigured =>
+      'Mapbox — MAPBOX_ACCESS_TOKEN qo‘shing.';
+
+  @override
+  String get homeMapPreviewStatusConfigured =>
+      'Mapbox — O‘zbekiston (joylashuvingiz emas).';
 
   @override
   String get homeNearbyChainsTitle => 'Yaqin atrofdagi tarmoqlar';
@@ -86,6 +90,20 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get mapPlaceholderBody =>
       'Interaktiv xarita keyingi bosqichda ulanadi.';
+
+  @override
+  String get mapboxConfigRequiredTitle => 'Mapbox token kerak';
+
+  @override
+  String get mapboxConfigRequiredBody =>
+      '--dart-define=MAPBOX_ACCESS_TOKEN=… orqali pk token bering.';
+
+  @override
+  String get mapboxDefaultViewLabel => 'Standart ko‘rinish — O‘zbekiston';
+
+  @override
+  String get mapboxLoadErrorBody =>
+      'Xarita yuklanmadi. Token va tarmoqni tekshiring.';
 
   @override
   String get categoryGroceries => 'Oziq-ovqat';

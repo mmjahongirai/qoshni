@@ -43,8 +43,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get openMap => 'Open map';
 
   @override
-  String get homeMapPreviewStatus =>
-      'Demo map preview — live location and places will connect later.';
+  String get homeMapPreviewStatusNotConfigured =>
+      'Mapbox map preview — add MAPBOX_ACCESS_TOKEN to enable the live map.';
+
+  @override
+  String get homeMapPreviewStatusConfigured =>
+      'Interactive Mapbox map — default Uzbekistan view (not your location).';
 
   @override
   String get homeNearbyChainsTitle => 'Nearby chains & essentials';
@@ -86,6 +90,20 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get mapPlaceholderBody =>
       'Interactive map will connect in a later release.';
+
+  @override
+  String get mapboxConfigRequiredTitle => 'Mapbox access token required';
+
+  @override
+  String get mapboxConfigRequiredBody =>
+      'Pass a public pk token at build or run time using --dart-define=MAPBOX_ACCESS_TOKEN=…. Nearby markers and GPS are not part of this preview.';
+
+  @override
+  String get mapboxDefaultViewLabel => 'Default map view — Uzbekistan';
+
+  @override
+  String get mapboxLoadErrorBody =>
+      'The map could not load. Check your Mapbox token and network, then try again.';
 
   @override
   String get categoryGroceries => 'Groceries';

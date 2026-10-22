@@ -160,11 +160,17 @@ abstract class AppLocalizations {
   /// **'Open map'**
   String get openMap;
 
-  /// No description provided for @homeMapPreviewStatus.
+  /// No description provided for @homeMapPreviewStatusNotConfigured.
   ///
   /// In en, this message translates to:
-  /// **'Demo map preview — live location and places will connect later.'**
-  String get homeMapPreviewStatus;
+  /// **'Mapbox map preview — add MAPBOX_ACCESS_TOKEN to enable the live map.'**
+  String get homeMapPreviewStatusNotConfigured;
+
+  /// No description provided for @homeMapPreviewStatusConfigured.
+  ///
+  /// In en, this message translates to:
+  /// **'Interactive Mapbox map — default Uzbekistan view (not your location).'**
+  String get homeMapPreviewStatusConfigured;
 
   /// No description provided for @homeNearbyChainsTitle.
   ///
@@ -243,6 +249,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Interactive map will connect in a later release.'**
   String get mapPlaceholderBody;
+
+  /// No description provided for @mapboxConfigRequiredTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Mapbox access token required'**
+  String get mapboxConfigRequiredTitle;
+
+  /// No description provided for @mapboxConfigRequiredBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Pass a public pk token at build or run time using --dart-define=MAPBOX_ACCESS_TOKEN=…. Nearby markers and GPS are not part of this preview.'**
+  String get mapboxConfigRequiredBody;
+
+  /// No description provided for @mapboxDefaultViewLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Default map view — Uzbekistan'**
+  String get mapboxDefaultViewLabel;
+
+  /// No description provided for @mapboxLoadErrorBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The map could not load. Check your Mapbox token and network, then try again.'**
+  String get mapboxLoadErrorBody;
 
   /// No description provided for @categoryGroceries.
   ///
