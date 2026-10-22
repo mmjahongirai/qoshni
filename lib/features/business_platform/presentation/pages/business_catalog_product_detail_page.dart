@@ -11,6 +11,10 @@ import 'package:qoshni/features/business_platform/presentation/business_catalog_
 import 'package:qoshni/features/business_platform/presentation/business_catalog_product_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_catalog_product_variant_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/widgets/catalog_listing_placeholder.dart';
+import 'package:qoshni/features/business_platform/domain/business_catalog_listing_kind.dart';
+import 'package:qoshni/features/business_platform/presentation/widgets/catalog_listing_attributes_section.dart';
+import 'package:qoshni/features/business_platform/presentation/widgets/catalog_product_media_gallery_section.dart';
+import 'package:qoshni/features/business_platform/presentation/widgets/catalog_product_options_section.dart';
 import 'package:qoshni/routing/route_paths.dart';
 
 class BusinessCatalogProductDetailPage extends StatelessWidget {
@@ -147,6 +151,22 @@ class _Body extends StatelessWidget {
                 ),
                 const SizedBox(height: AppSpacing.md),
               ],
+              CatalogProductMediaGallerySection(
+                productId: productId,
+                readOnly: true,
+              ),
+              const SizedBox(height: AppSpacing.md),
+              CatalogProductOptionsSection(
+                productId: productId,
+                readOnly: true,
+              ),
+              const SizedBox(height: AppSpacing.md),
+              CatalogListingAttributesSection(
+                listingKind: BusinessCatalogListingKind.product,
+                listingId: productId,
+                readOnly: true,
+              ),
+              const SizedBox(height: AppSpacing.md),
               const CatalogListingPlaceholder(),
               const SizedBox(height: AppSpacing.md),
               AppSurfaceCard(

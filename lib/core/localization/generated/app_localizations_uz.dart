@@ -43,8 +43,12 @@ class AppLocalizationsUz extends AppLocalizations {
   String get openMap => 'Xaritani ochish';
 
   @override
-  String get homeMapPreviewStatus =>
-      'Demo xarita ko‘rinishi — jonli joylashuv keyinroq ulanadi.';
+  String get homeMapPreviewStatusNotConfigured =>
+      'Mapbox — MAPBOX_ACCESS_TOKEN qo‘shing.';
+
+  @override
+  String get homeMapPreviewStatusConfigured =>
+      'Mapbox — O‘zbekiston (joylashuvingiz emas).';
 
   @override
   String get homeNearbyChainsTitle => 'Yaqin atrofdagi tarmoqlar';
@@ -86,6 +90,20 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get mapPlaceholderBody =>
       'Interaktiv xarita keyingi bosqichda ulanadi.';
+
+  @override
+  String get mapboxConfigRequiredTitle => 'Mapbox token kerak';
+
+  @override
+  String get mapboxConfigRequiredBody =>
+      '--dart-define=MAPBOX_ACCESS_TOKEN=… orqali pk token bering.';
+
+  @override
+  String get mapboxDefaultViewLabel => 'Standart ko‘rinish — O‘zbekiston';
+
+  @override
+  String get mapboxLoadErrorBody =>
+      'Xarita yuklanmadi. Token va tarmoqni tekshiring.';
 
   @override
   String get categoryGroceries => 'Oziq-ovqat';
@@ -2569,4 +2587,2288 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get catalogVariantDuplicateSku =>
       'Bu SKU preview doirasida allaqachon mavjud.';
+
+  @override
+  String get catalogOptionSelectionSingle => 'Bitta tanlov';
+
+  @override
+  String get catalogOptionSelectionMultiple => 'Ko‘p tanlov';
+
+  @override
+  String get catalogProductOptionsSectionTitle => 'Opsiyalar va qo‘shimchalar';
+
+  @override
+  String get catalogProductOptionsEmptyBody => 'Hali opsiya guruhi yo‘q.';
+
+  @override
+  String get catalogProductOptionsRequiresSaveHint =>
+      'Opsiya va media boshqarish uchun avval mahsulotni saqlang.';
+
+  @override
+  String get catalogProductOptionGroupAddAction => 'Opsiya guruhi qo‘shish';
+
+  @override
+  String get catalogProductOptionGroupCreateTitle => 'Yangi opsiya guruhi';
+
+  @override
+  String get catalogProductOptionGroupEditTitle => 'Opsiya guruhini tahrirlash';
+
+  @override
+  String get catalogProductOptionGroupRequired => 'Majburiy';
+
+  @override
+  String get catalogProductOptionGroupOptional => 'Ixtiyoriy';
+
+  @override
+  String get catalogProductOptionSelectionModeLabel => 'Tanlov rejimi';
+
+  @override
+  String get catalogProductOptionMinSelectionsLabel => 'Minimal tanlov';
+
+  @override
+  String get catalogProductOptionMaxSelectionsLabel => 'Maksimal tanlov';
+
+  @override
+  String catalogProductOptionSelectionLimits(int min, int max) {
+    return 'Tanlov $min–$max';
+  }
+
+  @override
+  String get catalogProductOptionGroupSaveSuccess =>
+      'Opsiya guruhi sessiya uchun saqlandi.';
+
+  @override
+  String get catalogProductOptionGroupSaveFailed =>
+      'Opsiya guruhini saqlab bo‘lmadi.';
+
+  @override
+  String get catalogProductOptionGroupInvalidInput =>
+      'Tanlov chegaralari va nomlarni tekshiring.';
+
+  @override
+  String get catalogProductOptionGroupArchiveTitle =>
+      'Opsiya guruhini arxivlash?';
+
+  @override
+  String get catalogProductOptionGroupArchiveBody =>
+      'Guruhi faol preview ro‘yxatlaridan yashiriladi.';
+
+  @override
+  String get catalogProductOptionGroupArchiveConfirm => 'Arxivlash';
+
+  @override
+  String get catalogProductOptionGroupArchiveSuccess =>
+      'Opsiya guruhi arxivlandi.';
+
+  @override
+  String get catalogProductOptionAddAction => 'Opsiya qo‘shish';
+
+  @override
+  String get catalogProductOptionCreateTitle => 'Yangi opsiya';
+
+  @override
+  String get catalogProductOptionEditTitle => 'Opsiyani tahrirlash';
+
+  @override
+  String get catalogProductOptionActiveLabel => 'Faol';
+
+  @override
+  String get catalogProductOptionInactiveLabel => 'Nofaol';
+
+  @override
+  String get catalogProductOptionSaveSuccess =>
+      'Opsiya sessiya uchun saqlandi.';
+
+  @override
+  String get catalogProductOptionSaveFailed => 'Opsiyani saqlab bo‘lmadi.';
+
+  @override
+  String get catalogProductOptionInvalidInput =>
+      'Kamida bitta til uchun nom kiriting.';
+
+  @override
+  String get catalogProductMediaGalleryTitle => 'Media galereya';
+
+  @override
+  String get catalogProductMediaPreviewOnlyNotice =>
+      'Faqat preview — yuklash keyingi bosqichda. Rasmlar sessiyada qoladi va serverga yuborilmaydi.';
+
+  @override
+  String get catalogProductMediaEmptyBody => 'Hali rasm yo‘q.';
+
+  @override
+  String get catalogProductMediaNoPrimary => 'Asosiy rasm tanlanmagan';
+
+  @override
+  String get catalogProductMediaPrimaryBadge => 'Asosiy';
+
+  @override
+  String get catalogProductMediaAddAction => 'Rasm qo‘shish';
+
+  @override
+  String get catalogProductMediaMakePrimaryAction => 'Asosiy qilish';
+
+  @override
+  String get catalogProductMediaPickFailed =>
+      'Tanlangan rasmni o‘qib bo‘lmadi.';
+
+  @override
+  String get catalogProductMediaPreviewAdded =>
+      'Preview rasm sessiyaga qo‘shildi.';
+
+  @override
+  String get catalogProductMediaSaveFailed =>
+      'Media preview yangilab bo‘lmadi.';
+
+  @override
+  String get catalogAttributeValueKindText => 'Matn';
+
+  @override
+  String get catalogAttributeValueKindNumber => 'Raqam';
+
+  @override
+  String get catalogAttributeValueKindChoice => 'Tanlov';
+
+  @override
+  String get catalogListingAttributesSectionTitle => 'Atributlar';
+
+  @override
+  String get catalogListingAttributesEmptyBody => 'Hali atribut yo‘q.';
+
+  @override
+  String get catalogListingAttributeAddAction => 'Atribut qo‘shish';
+
+  @override
+  String get catalogListingAttributeCreateTitle => 'Yangi atribut';
+
+  @override
+  String get catalogListingAttributeEditTitle => 'Atributni tahrirlash';
+
+  @override
+  String get catalogListingAttributeKeyLabel => 'Atribut kaliti';
+
+  @override
+  String get catalogListingAttributeKeyHint =>
+      'Kichik harflar, raqamlar va pastki chiziq.';
+
+  @override
+  String get catalogListingAttributeKeyRequired => 'Atribut kalitini kiriting.';
+
+  @override
+  String get catalogListingAttributeKeyInvalid => 'Kalit formati noto‘g‘ri.';
+
+  @override
+  String get catalogListingAttributeValueKindLabel => 'Qiymat turi';
+
+  @override
+  String get catalogListingAttributeTextValueLabel => 'Matn qiymati';
+
+  @override
+  String get catalogListingAttributeNumberValueLabel => 'Raqam qiymati';
+
+  @override
+  String get catalogListingAttributeChoiceValueLabel => 'Tanlov qiymati';
+
+  @override
+  String get catalogListingAttributeSaveSuccess =>
+      'Atribut sessiya uchun saqlandi.';
+
+  @override
+  String get catalogListingAttributeSaveFailed => 'Atributni saqlab bo‘lmadi.';
+
+  @override
+  String get catalogListingAttributeInvalidInput =>
+      'Kalit, nom va qiymatni tekshiring.';
+
+  @override
+  String get catalogListingAttributeDuplicateKey =>
+      'Bu kalit ushbu pozitsiyada allaqachon mavjud.';
+
+  @override
+  String get catalogListingAttributeDeleteTitle => 'Atributni olib tashlash?';
+
+  @override
+  String get catalogListingAttributeDeleteBody =>
+      'Atribut sessiya preview’dan olib tashlanadi.';
+
+  @override
+  String get catalogListingAttributeDeleteConfirm => 'Olib tashlash';
+
+  @override
+  String get catalogListingAttributeDeleteFailed =>
+      'Atributni olib tashlab bo‘lmadi.';
+
+  @override
+  String get catalogInventorySectionTitle => 'Mahsulot ombori (preview)';
+
+  @override
+  String get catalogInventorySectionBody =>
+      'Katalog mahsulotlari uchun filial bo‘yicha on-hand va reserved miqdorlar. Faqat demo — jonli omborga ulanmagan.';
+
+  @override
+  String get catalogInventoryListTitle => 'Ombor';
+
+  @override
+  String get catalogInventoryDemoDisclaimer =>
+      'Demo ma’lumot — jonli omborga ulanmagan. O‘zgarishlar faqat sessiya preview’ida qoladi.';
+
+  @override
+  String get catalogInventoryBranchFilter => 'Filial';
+
+  @override
+  String get catalogInventoryAllBranches => 'Barcha filiallar';
+
+  @override
+  String get catalogInventoryAvailabilityFilter => 'Mavjudlik';
+
+  @override
+  String get catalogInventoryAllAvailability => 'Barcha holatlar';
+
+  @override
+  String get catalogInventoryEmptyBody =>
+      'Filtrlarga mos ombor qatorlari yo‘q.';
+
+  @override
+  String get catalogInventoryLoadFailed =>
+      'Preview sessiyasi uchun omborni yuklab bo‘lmadi.';
+
+  @override
+  String get catalogInventoryRetryAction => 'Qayta urinish';
+
+  @override
+  String catalogInventoryVariantLabel(String name) {
+    return 'Variant: $name';
+  }
+
+  @override
+  String catalogInventoryBranchLabel(String name) {
+    return 'Filial: $name';
+  }
+
+  @override
+  String catalogInventoryOnHandLabel(int qty) {
+    return 'Qo‘lda: $qty';
+  }
+
+  @override
+  String catalogInventoryReservedLabel(int qty) {
+    return 'Band: $qty';
+  }
+
+  @override
+  String catalogInventoryAvailableLabel(int qty) {
+    return 'Mavjud: $qty';
+  }
+
+  @override
+  String catalogInventoryLowStockThresholdLabel(int qty) {
+    return 'Kam qoldiq: $qty';
+  }
+
+  @override
+  String get catalogInventoryAvailabilityInStock => 'Yetarli';
+
+  @override
+  String get catalogInventoryAvailabilityLowStock => 'Kam qoldiq';
+
+  @override
+  String get catalogInventoryAvailabilityOutOfStock => 'Tugagan';
+
+  @override
+  String get catalogInventoryAvailabilityUnavailable => 'Mavjud emas';
+
+  @override
+  String get catalogInventoryAdjustAction => 'Miqdorni o‘zgartirish';
+
+  @override
+  String get catalogInventoryMarkUnavailableAction =>
+      'Mavjud emas deb belgilash';
+
+  @override
+  String get catalogInventoryMarkAvailableAction => 'Mavjud deb belgilash';
+
+  @override
+  String get catalogInventoryShowHistoryAction => 'Tarixni ko‘rsatish';
+
+  @override
+  String get catalogInventoryHideHistoryAction => 'Tarixni yashirish';
+
+  @override
+  String get catalogInventoryHistoryEmpty =>
+      'Bu preview sessiyada hali o‘zgarishlar yo‘q.';
+
+  @override
+  String catalogInventoryHistoryLine(
+    int delta,
+    int before,
+    int after,
+    String reason,
+  ) {
+    return 'Δ $delta · qo‘lda $before → $after · $reason';
+  }
+
+  @override
+  String get catalogInventoryAdjustTitle => 'Ombor tuzatishi';
+
+  @override
+  String get catalogInventoryAdjustKindLabel => 'Tuzatish turi';
+
+  @override
+  String get catalogInventoryAdjustKindOnHand => 'On-hand miqdori';
+
+  @override
+  String get catalogInventoryAdjustKindReserved => 'Band miqdori';
+
+  @override
+  String get catalogInventoryAdjustDeltaLabel => 'O‘zgarish (+/−)';
+
+  @override
+  String get catalogInventoryAdjustDeltaHint =>
+      'Kamaytirish uchun manfiy son kiriting.';
+
+  @override
+  String get catalogInventoryAdjustReasonLabel => 'Sabab';
+
+  @override
+  String get catalogInventoryAdjustConfirmAction => 'Qo‘llash';
+
+  @override
+  String get catalogInventoryAdjustReasonRequired => 'Qisqa sabab kiriting.';
+
+  @override
+  String get catalogInventoryAdjustDeltaZero =>
+      'Noldan farqli o‘zgarish kiriting.';
+
+  @override
+  String get catalogInventoryAdjustDeltaInvalid => 'Butun son kiriting.';
+
+  @override
+  String get catalogInventoryAdjustInvalidQuantities =>
+      'Bu o‘zgarish miqdorlarni noto‘g‘ri qiladi.';
+
+  @override
+  String get catalogInventoryAdjustSaveFailed => 'Tuzatishni qo‘llab bo‘lmadi.';
+
+  @override
+  String get catalogInventoryAdjustSuccess =>
+      'Ombor preview sessiyasida yangilandi.';
+
+  @override
+  String get catalogInventoryReservationsNavAction => 'Band qilishlar';
+
+  @override
+  String get catalogInventoryReservationsTitle => 'Ombor band qilishlari';
+
+  @override
+  String get catalogInventoryReservationDemoDisclaimer =>
+      'Faqat demo band qilish — jonli checkout yoki omborga ulanmagan.';
+
+  @override
+  String get catalogInventoryReservationCreateAction => 'Band qilish';
+
+  @override
+  String get catalogInventoryReservationCreateTitle => 'Demo band qilish';
+
+  @override
+  String get catalogInventoryReservationCreateConfirm => 'Band qilish';
+
+  @override
+  String get catalogInventoryReservationCreateSuccess =>
+      'Band qilish preview sessiyasida yaratildi.';
+
+  @override
+  String get catalogInventoryReservationItemLabel => 'Ombor qatori';
+
+  @override
+  String get catalogInventoryReservationItemRequired =>
+      'Ombor qatorini tanlang.';
+
+  @override
+  String get catalogInventoryReservationQuantityField => 'Miqdor';
+
+  @override
+  String catalogInventoryReservationQuantityLabel(int qty) {
+    return 'Miqdor: $qty';
+  }
+
+  @override
+  String get catalogInventoryReservationQuantityInvalid =>
+      'Musbat miqdor kiriting.';
+
+  @override
+  String get catalogInventoryReservationExpiryMinutesField =>
+      'Muddati (daqiqa)';
+
+  @override
+  String get catalogInventoryReservationExpiryInvalid =>
+      'Muddat kelajakda bo‘lishi kerak.';
+
+  @override
+  String get catalogInventoryReservationInsufficientStock =>
+      'Mavjud zaxira yetarli emas.';
+
+  @override
+  String get catalogInventoryReservationItemUnavailable =>
+      'Bu qator mavjud emas deb belgilangan.';
+
+  @override
+  String get catalogInventoryReservationSaveFailed =>
+      'Band qilishni saqlab bo‘lmadi.';
+
+  @override
+  String get catalogInventoryReservationEmpty =>
+      'Preview sessiyada band qilishlar yo‘q.';
+
+  @override
+  String get catalogInventoryReservationStatusFilter => 'Holat';
+
+  @override
+  String get catalogInventoryReservationAllStatuses => 'Barcha holatlar';
+
+  @override
+  String get catalogInventoryReservationStatusReserved => 'Band';
+
+  @override
+  String get catalogInventoryReservationStatusConfirmed => 'Tasdiqlangan';
+
+  @override
+  String get catalogInventoryReservationStatusReleased => 'Bo‘shatilgan';
+
+  @override
+  String get catalogInventoryReservationStatusExpired => 'Muddati o‘tgan';
+
+  @override
+  String catalogInventoryReservationCreatedLabel(String date) {
+    return 'Yaratilgan: $date';
+  }
+
+  @override
+  String catalogInventoryReservationExpiresLabel(String date) {
+    return 'Tugaydi: $date';
+  }
+
+  @override
+  String get catalogInventoryReservationReleaseAction => 'Bo‘shatish';
+
+  @override
+  String get catalogInventoryReservationConfirmAction => 'Sotuvni tasdiqlash';
+
+  @override
+  String get catalogInventoryReservationExpireAction => 'Muddati o‘tish';
+
+  @override
+  String get catalogInventoryReservationExpireAllDue =>
+      'Muddati o‘tganlarni yopish';
+
+  @override
+  String catalogInventoryReservationExpireAllResult(int count) {
+    return 'Muddati o‘tgan band qilishlar: $count.';
+  }
+
+  @override
+  String get catalogInventoryReservationReleaseSuccess =>
+      'Band qilish bo‘shatildi.';
+
+  @override
+  String get catalogInventoryReservationConfirmSuccess =>
+      'Band qilish demo sotuv sifatida tasdiqlandi.';
+
+  @override
+  String get catalogInventoryReservationExpireSuccess =>
+      'Band qilish muddati o‘tdi.';
+
+  @override
+  String get catalogInventoryReservationHistoryEmpty =>
+      'Lifecycle hodisalari yo‘q.';
+
+  @override
+  String catalogInventoryReservationHistoryLine(
+    String action,
+    String fromStatus,
+    String toStatus,
+    int quantity,
+  ) {
+    return '$action: $fromStatus → $toStatus · miqdor $quantity';
+  }
+
+  @override
+  String get catalogInventoryReservationReconcileAction => 'Audit';
+
+  @override
+  String get catalogInventoryReservationReconcileTitle =>
+      'Reserved audit (demo)';
+
+  @override
+  String get catalogInventoryReservationReconcileDemoNote =>
+      'Faol band qilishlar inventory reserved bilan solishtiriladi. Stock o‘zgarmaydi.';
+
+  @override
+  String get catalogInventoryReservationReconcileClean =>
+      'Nomuvofiqlik topilmadi.';
+
+  @override
+  String catalogInventoryReservationReconcileLine(
+    String itemId,
+    int expected,
+    int actual,
+  ) {
+    return '$itemId: kutilgan $expected, haqiqiy $actual';
+  }
+
+  @override
+  String get catalogResourceSectionTitle => 'Resurs sig‘imi (preview)';
+
+  @override
+  String get catalogResourceSectionBody =>
+      'Uskuna, xodim va xizmat sig‘imi — mahsulot stock’dan alohida.';
+
+  @override
+  String get catalogResourceListTitle => 'Resurslar';
+
+  @override
+  String get catalogResourceDemoDisclaimer =>
+      'Demo resurs sig‘imi — jonli bron bilan bog‘lanmagan.';
+
+  @override
+  String get catalogResourceAddAction => 'Resurs qo‘shish';
+
+  @override
+  String get catalogResourceEmptyBody => 'Filtrlarga mos resurs yo‘q.';
+
+  @override
+  String get catalogResourceBranchFilter => 'Filial';
+
+  @override
+  String get catalogResourceAllBranches => 'Barcha filiallar';
+
+  @override
+  String get catalogResourceTypeFilter => 'Resurs turi';
+
+  @override
+  String get catalogResourceAllTypes => 'Barcha turlar';
+
+  @override
+  String get catalogResourceStatusFilter => 'Holat';
+
+  @override
+  String get catalogResourceAllStatuses => 'Barcha holatlar';
+
+  @override
+  String get catalogResourceTypeEquipment => 'Uskuna';
+
+  @override
+  String get catalogResourceTypeStaff => 'Xodim';
+
+  @override
+  String get catalogResourceTypeServiceCapacity => 'Xizmat sig‘imi';
+
+  @override
+  String get catalogResourceStatusActive => 'Faol';
+
+  @override
+  String get catalogResourceStatusUnavailable => 'Mavjud emas';
+
+  @override
+  String get catalogResourceStatusArchived => 'Arxiv';
+
+  @override
+  String catalogResourceTotalLabel(int qty) {
+    return 'Jami sig‘im: $qty';
+  }
+
+  @override
+  String catalogResourceAllocatedLabel(int qty) {
+    return 'Allocated (demo): $qty';
+  }
+
+  @override
+  String catalogResourceAvailableLabel(int qty) {
+    return 'Mavjud: $qty';
+  }
+
+  @override
+  String catalogResourceUnitLabel(String unit) {
+    return 'Birlik: $unit';
+  }
+
+  @override
+  String get catalogResourceEditAction => 'Tahrirlash';
+
+  @override
+  String get catalogResourceChangeCapacityAction => 'Sig‘imni o‘zgartirish';
+
+  @override
+  String get catalogResourceMarkUnavailableAction => 'Mavjud emas';
+
+  @override
+  String get catalogResourceMarkActiveAction => 'Faol qilish';
+
+  @override
+  String get catalogResourceArchiveAction => 'Arxivlash';
+
+  @override
+  String get catalogResourceHistoryEmpty => 'Sig‘im o‘zgarishlari yo‘q.';
+
+  @override
+  String catalogResourceHistoryLine(int before, int after, String reason) {
+    return 'Jami $before → $after · $reason';
+  }
+
+  @override
+  String get catalogResourceCreateTitle => 'Yangi resurs';
+
+  @override
+  String get catalogResourceEditTitle => 'Resursni tahrirlash';
+
+  @override
+  String get catalogResourceNameField => 'Nom (EN preview)';
+
+  @override
+  String get catalogResourceUnitField => 'Sig‘im birligi';
+
+  @override
+  String get catalogResourceTotalField => 'Jami sig‘im';
+
+  @override
+  String get catalogResourceSaveAction => 'Saqlash';
+
+  @override
+  String get catalogResourceSaveSuccess =>
+      'Resurs preview sessiyasida saqlandi.';
+
+  @override
+  String get catalogResourceSaveFailed => 'Saqlab bo‘lmadi.';
+
+  @override
+  String get catalogResourceBranchRequired => 'Filialni tanlang.';
+
+  @override
+  String get catalogResourceCapacityInvalid => 'To‘g‘ri sig‘im kiriting.';
+
+  @override
+  String get catalogResourceBelowAllocated =>
+      'Jami sig‘im demo allocated dan kichik bo‘lmasin.';
+
+  @override
+  String get catalogResourceChangeCapacityTitle => 'Jami sig‘imni o‘zgartirish';
+
+  @override
+  String get catalogResourceReasonField => 'Sabab';
+
+  @override
+  String get catalogResourceReasonRequired => 'Sabab kiriting.';
+
+  @override
+  String get catalogResourceNoCapacityChange => 'Boshqa sig‘im kiriting.';
+
+  @override
+  String catalogResourceAllocatedHint(int qty) {
+    return 'Demo allocated: $qty (faqat o‘qish).';
+  }
+
+  @override
+  String get catalogResourceCapacityChangeSuccess =>
+      'Sig‘im preview sessiyasida yangilandi.';
+
+  @override
+  String get catalogPricingSectionTitle => 'Asosiy narxlar (preview)';
+
+  @override
+  String get catalogPricingSectionBody =>
+      'Filial va muddat bo‘yicha narx qoidalari. Illustrative demo — checkout emas.';
+
+  @override
+  String get catalogPricingListTitle => 'Narxlar';
+
+  @override
+  String get catalogPricingDemoDisclaimer =>
+      'Illustrative demo prices — not connected to live checkout.';
+
+  @override
+  String get catalogPricingAddAction => 'Narx qoidasi qo‘shish';
+
+  @override
+  String get catalogPricingEmptyBody => 'Filtrlarga mos narx yo‘q.';
+
+  @override
+  String get catalogPricingBranchFilter => 'Filial';
+
+  @override
+  String get catalogPricingAllBranches => 'Barcha filiallar';
+
+  @override
+  String get catalogPricingKindFilter => 'Listing turi';
+
+  @override
+  String get catalogPricingAllKinds => 'Barcha turlar';
+
+  @override
+  String get catalogPricingKindProduct => 'Mahsulot';
+
+  @override
+  String get catalogPricingKindService => 'Xizmat';
+
+  @override
+  String get catalogPricingStatusFilter => 'Holat';
+
+  @override
+  String get catalogPricingAllStatuses => 'Barcha holatlar';
+
+  @override
+  String get catalogPricingStatusDraft => 'Qoralama';
+
+  @override
+  String get catalogPricingStatusActive => 'Faol';
+
+  @override
+  String get catalogPricingStatusArchived => 'Arxiv';
+
+  @override
+  String catalogPricingVariantLabel(String name) {
+    return 'Variant: $name';
+  }
+
+  @override
+  String catalogPricingBranchLabel(String name) {
+    return 'Filial: $name';
+  }
+
+  @override
+  String catalogPricingAmountLabel(String amount) {
+    return 'Miqdor: $amount';
+  }
+
+  @override
+  String catalogPricingEffectiveIntervalLabel(String from, String until) {
+    return 'Amal qilish: $from → $until';
+  }
+
+  @override
+  String get catalogPricingOpenEnded => 'cheksiz';
+
+  @override
+  String catalogPricingRevisionLabel(int revision) {
+    return 'Reviziya: $revision';
+  }
+
+  @override
+  String catalogPricingEffectivePreviewLine(String result) {
+    return 'Preview vaqtida effective: $result';
+  }
+
+  @override
+  String catalogPricingEffectiveFound(String amount) {
+    return '$amount';
+  }
+
+  @override
+  String get catalogPricingEffectiveNotFound => 'Mos faol narx yo‘q';
+
+  @override
+  String get catalogPricingEffectiveAmbiguous =>
+      'Noaniq — bir nechta faol narx';
+
+  @override
+  String get catalogPricingEditAction => 'Qoralamani tahrirlash';
+
+  @override
+  String get catalogPricingActivateAction => 'Faollashtirish';
+
+  @override
+  String get catalogPricingArchiveAction => 'Arxivlash';
+
+  @override
+  String get catalogPricingShowHistoryAction => 'Tarixni ko‘rish';
+
+  @override
+  String get catalogPricingHideHistoryAction => 'Tarixni yopish';
+
+  @override
+  String get catalogPricingHistoryEmpty => 'Tarix hali yo‘q.';
+
+  @override
+  String catalogPricingHistoryLine(String action, String before, String after) {
+    return '$action: $before → $after';
+  }
+
+  @override
+  String get catalogPricingPreviewTitle => 'Effective narx preview';
+
+  @override
+  String get catalogPricingPreviewBody => 'Demo as-of sanasini tanlang.';
+
+  @override
+  String catalogPricingPreviewAsOfLabel(String date) {
+    return 'As of: $date';
+  }
+
+  @override
+  String get catalogPricingPreviewHint => 'Variant narxi base listing ustun.';
+
+  @override
+  String get catalogPricingCreateTitle => 'Yangi narx qoidasi';
+
+  @override
+  String get catalogPricingEditTitle => 'Qoralama narx';
+
+  @override
+  String get catalogPricingVariantOptional => 'Variant (ixtiyoriy)';
+
+  @override
+  String get catalogPricingBaseListingPrice => 'Asosiy listing';
+
+  @override
+  String get catalogPricingAmountField => 'Miqdor (butun UZS so‘m)';
+
+  @override
+  String get catalogPricingEffectiveFromField =>
+      'Effective from (YYYY-MM-DD UTC)';
+
+  @override
+  String get catalogPricingEffectiveUntilField => 'Effective until (ixtiyoriy)';
+
+  @override
+  String get catalogPricingCurrencyHint =>
+      'Valyuta: UZS (butun so‘m, kasrsiz).';
+
+  @override
+  String get catalogPricingCancelAction => 'Bekor qilish';
+
+  @override
+  String get catalogPricingSaveAction => 'Saqlash';
+
+  @override
+  String get catalogPricingScopeRequired => 'Filial va listing tanlang.';
+
+  @override
+  String get catalogPricingAmountInvalid => 'Noto‘g‘ri miqdor.';
+
+  @override
+  String get catalogPricingDateInvalid => 'Sana: YYYY-MM-DD.';
+
+  @override
+  String get catalogPricingActiveImmutable =>
+      'Faol narxni jimgina o‘zgartirib bo‘lmaydi — revision yarating.';
+
+  @override
+  String get catalogPricingSaveFailed => 'Saqlab bo‘lmadi.';
+
+  @override
+  String get catalogPricingEffectiveRangeInvalid =>
+      'Until from dan keyin bo‘lishi kerak.';
+
+  @override
+  String get catalogPricingActivateOverlapError =>
+      'Boshqa faol interval bilan to‘qnashadi.';
+
+  @override
+  String get catalogDiscountSectionTitle => 'Chegirmalar (preview)';
+
+  @override
+  String get catalogDiscountSectionBody =>
+      'Illustrative discount rules — checkout emas.';
+
+  @override
+  String get catalogDiscountListTitle => 'Chegirmalar';
+
+  @override
+  String get catalogDiscountDemoDisclaimer =>
+      'Illustrative discounts only — not connected to live checkout.';
+
+  @override
+  String get catalogDiscountAddAction => 'Chegirma qoidasi';
+
+  @override
+  String get catalogDiscountEmptyBody => 'Filtrlarga mos qoida yo‘q.';
+
+  @override
+  String get catalogDiscountBranchFilter => 'Filial';
+
+  @override
+  String get catalogDiscountAllBranches => 'Barcha filiallar';
+
+  @override
+  String get catalogDiscountScopeFilter => 'Target scope';
+
+  @override
+  String get catalogDiscountAllScopes => 'Barcha scope';
+
+  @override
+  String get catalogDiscountScopeBusinessWide => 'Business-wide';
+
+  @override
+  String get catalogDiscountScopeProduct => 'Mahsulot';
+
+  @override
+  String get catalogDiscountScopeService => 'Xizmat';
+
+  @override
+  String get catalogDiscountStatusFilter => 'Holat';
+
+  @override
+  String get catalogDiscountAllStatuses => 'Barcha holatlar';
+
+  @override
+  String get catalogDiscountTypeFilter => 'Chegirma turi';
+
+  @override
+  String get catalogDiscountTypePercentage => 'Foiz';
+
+  @override
+  String get catalogDiscountTypeFixed => 'Fixed UZS';
+
+  @override
+  String catalogDiscountPercentLabel(int percent) {
+    return '$percent% off';
+  }
+
+  @override
+  String catalogDiscountFixedLabel(String amount) {
+    return '$amount off';
+  }
+
+  @override
+  String catalogDiscountMinBasketLabel(String amount) {
+    return 'Min savat: $amount';
+  }
+
+  @override
+  String catalogDiscountPriorityLabel(int priority) {
+    return 'Priority: $priority';
+  }
+
+  @override
+  String get catalogDiscountEditAction => 'Qoralama';
+
+  @override
+  String get catalogDiscountActivateAction => 'Faollashtirish';
+
+  @override
+  String get catalogDiscountArchiveAction => 'Arxiv';
+
+  @override
+  String get catalogDiscountShowHistoryAction => 'Tarix';
+
+  @override
+  String get catalogDiscountHideHistoryAction => 'Yopish';
+
+  @override
+  String get catalogDiscountHistoryEmpty => 'Tarix yo‘q.';
+
+  @override
+  String catalogDiscountHistoryLine(
+    String action,
+    String before,
+    String after,
+  ) {
+    return '$action: rev $before → $after';
+  }
+
+  @override
+  String get catalogDiscountPreviewTitle => 'Chegirmadan keyin preview';
+
+  @override
+  String get catalogDiscountPreviewListingKind => 'Listing turi';
+
+  @override
+  String get catalogDiscountPreviewListing => 'Listing';
+
+  @override
+  String get catalogDiscountPreviewSubtotal => 'Subtotal (ixtiyoriy)';
+
+  @override
+  String get catalogDiscountPreviewNoBasePrice => 'Base narx yo‘q.';
+
+  @override
+  String get catalogDiscountPreviewNoDiscount => 'Preview hisoblanmadi.';
+
+  @override
+  String catalogDiscountPreviewApplied(
+    String base,
+    String discount,
+    String finalAmount,
+  ) {
+    return 'Base $base · −$discount · final $finalAmount';
+  }
+
+  @override
+  String get catalogDiscountPreviewNotApplied => 'Mos chegirma yo‘q.';
+
+  @override
+  String get catalogDiscountPreviewAmbiguous => 'Priority noaniq.';
+
+  @override
+  String get catalogDiscountCreateTitle => 'Yangi chegirma';
+
+  @override
+  String get catalogDiscountEditTitle => 'Qoralama';
+
+  @override
+  String get catalogDiscountBasisPointsField => 'Basis points';
+
+  @override
+  String get catalogDiscountFixedAmountField => 'Fixed UZS';
+
+  @override
+  String get catalogDiscountMinBasketField => 'Min savat';
+
+  @override
+  String get catalogDiscountPriorityField => 'Priority';
+
+  @override
+  String get catalogDiscountScopeRequired => 'Filial/target tanlang.';
+
+  @override
+  String get catalogDiscountValueInvalid => 'Noto‘g‘ri qiymat.';
+
+  @override
+  String get catalogDiscountActiveImmutable =>
+      'Faol qoida jimgina o‘zgarmaydi.';
+
+  @override
+  String get catalogDiscountSaveFailed => 'Saqlab bo‘lmadi.';
+
+  @override
+  String get catalogDiscountActivateOverlapError =>
+      'Faol interval to‘qnashadi.';
+
+  @override
+  String get catalogPromoSectionTitle => 'Promo-kodlar (preview)';
+
+  @override
+  String get catalogPromoSectionBody =>
+      'Illustrative promo-kodlar — checkout emas.';
+
+  @override
+  String get catalogPromoListTitle => 'Promo-kodlar';
+
+  @override
+  String get catalogPromoDemoDisclaimer =>
+      'Promo-code preview only — no live redemption or checkout.';
+
+  @override
+  String get catalogPromoAddAction => 'Promo-kod qo‘shish';
+
+  @override
+  String get catalogPromoEmptyBody => 'Filtrlarga mos promo-kod yo‘q.';
+
+  @override
+  String get catalogPromoBranchFilter => 'Filial';
+
+  @override
+  String get catalogPromoAllBranches => 'Barcha filiallar';
+
+  @override
+  String get catalogPromoStatusFilter => 'Holat';
+
+  @override
+  String get catalogPromoAllStatuses => 'Barcha holatlar';
+
+  @override
+  String get catalogPromoPreviewTitle => 'Eligibility preview';
+
+  @override
+  String get catalogPromoPreviewCode => 'Promo-kod';
+
+  @override
+  String get catalogPromoPreviewCustomer => 'Demo mijoz reference (ixtiyoriy)';
+
+  @override
+  String catalogPromoPreviewApplied(
+    String base,
+    String discount,
+    String finalAmount,
+  ) {
+    return 'Base $base · −$discount · final $finalAmount';
+  }
+
+  @override
+  String catalogPromoUsageSnapshotLine(int total, int customer) {
+    return 'Foydalanish: $total jami · $customer mijoz';
+  }
+
+  @override
+  String catalogPromoLinkedDiscountLabel(String id) {
+    return 'Chegirma: $id';
+  }
+
+  @override
+  String catalogPromoMaxTotalUsesLabel(int count) {
+    return 'Max jami: $count';
+  }
+
+  @override
+  String catalogPromoMaxCustomerUsesLabel(int count) {
+    return 'Max mijoz: $count';
+  }
+
+  @override
+  String get catalogPromoEditAction => 'Qoralama';
+
+  @override
+  String get catalogPromoActivateAction => 'Faollashtirish';
+
+  @override
+  String get catalogPromoArchiveAction => 'Arxiv';
+
+  @override
+  String get catalogPromoShowHistoryAction => 'Tarix';
+
+  @override
+  String get catalogPromoShowUsageAction => 'Foydalanish';
+
+  @override
+  String catalogPromoUsageLine(String customer, String redemption) {
+    return '$customer · $redemption';
+  }
+
+  @override
+  String get catalogPromoCreateTitle => 'Yangi promo-kod';
+
+  @override
+  String get catalogPromoEditTitle => 'Qoralama';
+
+  @override
+  String get catalogPromoCodeField => 'Kod';
+
+  @override
+  String get catalogPromoMinBasketField => 'Min savat';
+
+  @override
+  String get catalogPromoMaxTotalUsesField => 'Max jami foydalanish';
+
+  @override
+  String get catalogPromoMaxCustomerUsesField => 'Max mijoz foydalanishi';
+
+  @override
+  String get catalogPromoActivateDiscountError =>
+      'Bog‘langan chegirma mos emas.';
+
+  @override
+  String get catalogPromoSaveFailed => 'Saqlab bo‘lmadi.';
+
+  @override
+  String get catalogPromoActiveImmutable => 'Faol promo jimgina o‘zgarmaydi.';
+
+  @override
+  String get catalogPromoEligibilityEligible => 'Mos — chegirma qo‘llanadi.';
+
+  @override
+  String get catalogPromoEligibilityInvalidCode => 'Noto‘g‘ri kod.';
+
+  @override
+  String get catalogPromoEligibilityInactive => 'Faol emas.';
+
+  @override
+  String get catalogPromoEligibilityNotYetValid => 'Hali amal qilmaydi.';
+
+  @override
+  String get catalogPromoEligibilityExpired => 'Muddati tugagan.';
+
+  @override
+  String get catalogPromoEligibilityScopeMismatch => 'Scope mos emas.';
+
+  @override
+  String get catalogPromoEligibilityDiscountUnavailable =>
+      'Chegirma mavjud emas.';
+
+  @override
+  String get catalogPromoEligibilityMinimumBasket => 'Min savat bajarilmagan.';
+
+  @override
+  String get catalogPromoEligibilityTotalLimit => 'Jami limit to‘lgan.';
+
+  @override
+  String get catalogPromoEligibilityCustomerLimit => 'Mijoz limiti to‘lgan.';
+
+  @override
+  String get catalogPromoEligibilityNoApplicableDiscount =>
+      'Chegirma listingga mos emas.';
+
+  @override
+  String get catalogPromoEligibilityBasePriceRequired => 'Base narx kerak.';
+
+  @override
+  String get catalogCommercialFeeSectionTitle => 'Commercial fee (preview)';
+
+  @override
+  String get catalogCommercialFeeSectionBody =>
+      'Illustrative fee qoidalari — settlement emas.';
+
+  @override
+  String get catalogCommercialFeeListTitle => 'Commercial fee';
+
+  @override
+  String get catalogCommercialFeeDemoDisclaimer =>
+      'Illustrative commercial fees only — not connected to live checkout or settlement.';
+
+  @override
+  String get catalogCommercialFeeAddAction => 'Fee qoidasi';
+
+  @override
+  String get catalogCommercialFeeEmptyBody => 'Qoida yo‘q.';
+
+  @override
+  String get catalogCommercialFeeTypeFilter => 'Fee turi';
+
+  @override
+  String get catalogCommercialFeeAllTypes => 'Barcha turlar';
+
+  @override
+  String get catalogCommercialFeeStatusFilter => 'Holat';
+
+  @override
+  String get catalogCommercialFeeAllStatuses => 'Barcha holatlar';
+
+  @override
+  String get catalogCommercialFeeBranchFilter => 'Filial';
+
+  @override
+  String get catalogCommercialFeeAllBranches => 'Barcha filiallar';
+
+  @override
+  String get catalogCommercialFeeTypePlatform => 'Platform fee';
+
+  @override
+  String get catalogCommercialFeeTypeService => 'Service fee';
+
+  @override
+  String get catalogCommercialFeeTypeDelivery => 'Delivery fee';
+
+  @override
+  String get catalogCommercialFeeTypeCommission => 'Commission';
+
+  @override
+  String get catalogCommercialFeeBearerCustomer => 'Mijoz';
+
+  @override
+  String get catalogCommercialFeeBearerBusiness => 'Business';
+
+  @override
+  String get catalogCommercialFeeBearerPlatform => 'Platform accounting';
+
+  @override
+  String get catalogCommercialFeeCalcFixed => 'Fixed UZS';
+
+  @override
+  String get catalogCommercialFeeCalcPercent => 'Foiz';
+
+  @override
+  String get catalogCommercialFeeBasisListing => 'Listing base';
+
+  @override
+  String get catalogCommercialFeeBasisService => 'Service amount';
+
+  @override
+  String get catalogCommercialFeeBasisDelivery => 'Delivery basis';
+
+  @override
+  String get catalogCommercialFeeBasisCommission => 'Commission basis';
+
+  @override
+  String catalogCommercialFeePriorityLabel(int priority) {
+    return 'Priority: $priority';
+  }
+
+  @override
+  String get catalogCommercialFeeEditAction => 'Qoralama';
+
+  @override
+  String get catalogCommercialFeeActivateAction => 'Faollashtirish';
+
+  @override
+  String get catalogCommercialFeeArchiveAction => 'Arxiv';
+
+  @override
+  String get catalogCommercialFeeShowHistoryAction => 'Tarix';
+
+  @override
+  String get catalogCommercialFeeHideHistoryAction => 'Yopish';
+
+  @override
+  String get catalogCommercialFeePreviewTitle => 'Fee preview';
+
+  @override
+  String get catalogCommercialFeePreviewListingBase => 'Listing base';
+
+  @override
+  String get catalogCommercialFeePreviewService => 'Service amount';
+
+  @override
+  String get catalogCommercialFeePreviewDelivery => 'Delivery basis';
+
+  @override
+  String get catalogCommercialFeePreviewCommission => 'Commission basis';
+
+  @override
+  String catalogCommercialFeePreviewLine(
+    String type,
+    String bearer,
+    String basis,
+    String fee,
+  ) {
+    return '$type · $bearer · $basis · $fee';
+  }
+
+  @override
+  String catalogCommercialFeePreviewBasisMissing(String type, String bearer) {
+    return '$type ($bearer): basis yo‘q';
+  }
+
+  @override
+  String catalogCommercialFeePreviewAmbiguous(String types) {
+    return 'Noaniq: $types';
+  }
+
+  @override
+  String catalogCommercialFeePreviewTotal(String amount) {
+    return 'Jami: $amount';
+  }
+
+  @override
+  String get catalogCommercialFeeCreateTitle => 'Yangi fee';
+
+  @override
+  String get catalogCommercialFeeEditTitle => 'Qoralama';
+
+  @override
+  String get catalogCommercialFeeFixedField => 'Fixed UZS';
+
+  @override
+  String get catalogCommercialFeeBasisPointsField => 'Basis points';
+
+  @override
+  String get catalogCommercialFeePriorityField => 'Priority';
+
+  @override
+  String get catalogCommercialFeeSaveFailed => 'Saqlab bo‘lmadi.';
+
+  @override
+  String get catalogCommercialFeeActiveImmutable =>
+      'Faol qoida jimgina o‘zgarmaydi.';
+
+  @override
+  String get catalogCommercialFeeActivateOverlapError =>
+      'Faol interval to‘qnashadi.';
+
+  @override
+  String get businessCenterFulfillmentTitle => 'Fulfillment sozlamalari';
+
+  @override
+  String get businessCenterFulfillmentBody =>
+      'Delivery, pickup, joyida xizmat (preview).';
+
+  @override
+  String get businessFulfillmentListTitle => 'Fulfillment';
+
+  @override
+  String get businessFulfillmentDemoDisclaimer =>
+      'Demo fulfillment settings — not connected to live orders or delivery.';
+
+  @override
+  String get businessFulfillmentAddAction => 'Konfiguratsiya qo‘shish';
+
+  @override
+  String get businessFulfillmentEmptyBody => 'Konfiguratsiya yo‘q.';
+
+  @override
+  String get businessFulfillmentBranchFilter => 'Filial';
+
+  @override
+  String get businessFulfillmentAllBranches => 'Barcha filiallar';
+
+  @override
+  String get businessFulfillmentTypeFilter => 'Fulfillment turi';
+
+  @override
+  String get businessFulfillmentAllTypes => 'Barcha turlar';
+
+  @override
+  String get businessFulfillmentStatusFilter => 'Holat';
+
+  @override
+  String get businessFulfillmentAllStatuses => 'Barcha holatlar';
+
+  @override
+  String get businessFulfillmentTypeDelivery => 'Delivery';
+
+  @override
+  String get businessFulfillmentTypePickup => 'Pickup';
+
+  @override
+  String get businessFulfillmentTypeServiceAtLocation => 'Joyida xizmat';
+
+  @override
+  String get businessFulfillmentScopeBusinessWide => 'Business-wide';
+
+  @override
+  String get businessFulfillmentScopeProduct => 'Mahsulot';
+
+  @override
+  String get businessFulfillmentScopeService => 'Xizmat';
+
+  @override
+  String businessFulfillmentTypesLabel(String modes) {
+    return 'Rejimlar: $modes';
+  }
+
+  @override
+  String get businessFulfillmentPreviewTitle => 'Preview';
+
+  @override
+  String get businessFulfillmentPreviewEmpty => 'Tanlanmagan';
+
+  @override
+  String businessFulfillmentPreviewSelected(String modes) {
+    return 'Qo‘llab-quvvatlanadi: $modes';
+  }
+
+  @override
+  String get businessFulfillmentEditAction => 'Qoralama';
+
+  @override
+  String get businessFulfillmentActivateAction => 'Faollashtirish';
+
+  @override
+  String get businessFulfillmentArchiveAction => 'Arxiv';
+
+  @override
+  String get businessFulfillmentShowHistoryAction => 'Tarix';
+
+  @override
+  String get businessFulfillmentHideHistoryAction => 'Yopish';
+
+  @override
+  String get businessFulfillmentCreateTitle => 'Yangi konfiguratsiya';
+
+  @override
+  String get businessFulfillmentEditTitle => 'Qoralama';
+
+  @override
+  String get businessFulfillmentListingIdField => 'Listing ID';
+
+  @override
+  String get businessFulfillmentTypesField => 'Fulfillment rejimlari';
+
+  @override
+  String get businessFulfillmentSaveFailed => 'Saqlab bo‘lmadi.';
+
+  @override
+  String get businessFulfillmentActivateConflictError =>
+      'Faol konfiguratsiya to‘qnashadi.';
+
+  @override
+  String get businessFulfillmentSelectAtLeastOneType =>
+      'Kamida bitta rejim tanlang.';
+
+  @override
+  String get businessFulfillmentDeliveryTasksLink => 'Delivery task’lar';
+
+  @override
+  String get businessFulfillmentDeliveryTasksBody =>
+      'Demo delivery task lifecycle (buyurtma holatidan alohida).';
+
+  @override
+  String get businessDeliveryTaskListTitle => 'Delivery task’lar';
+
+  @override
+  String get businessDeliveryTaskDemoDisclaimer =>
+      'Demo delivery tasks only — not connected to live orders, couriers or tracking.';
+
+  @override
+  String get businessDeliveryTaskEmptyBody =>
+      'Filter bo‘yicha delivery task topilmadi.';
+
+  @override
+  String get businessDeliveryTaskBranchFilter => 'Filial';
+
+  @override
+  String get businessDeliveryTaskAllBranches => 'Barcha filiallar';
+
+  @override
+  String get businessDeliveryTaskStatusFilter => 'Holat';
+
+  @override
+  String get businessDeliveryTaskAllStatuses => 'Barcha holatlar';
+
+  @override
+  String get businessDeliveryTaskStatusCreated => 'Yaratilgan';
+
+  @override
+  String get businessDeliveryTaskStatusReadyForPickup => 'Pickup uchun tayyor';
+
+  @override
+  String get businessDeliveryTaskStatusAssigned => 'Tayinlangan (demo)';
+
+  @override
+  String get businessDeliveryTaskStatusPickedUp => 'Olib ketilgan';
+
+  @override
+  String get businessDeliveryTaskStatusInTransit => 'Yo‘lda';
+
+  @override
+  String get businessDeliveryTaskStatusDelivered => 'Yetkazilgan';
+
+  @override
+  String get businessDeliveryTaskStatusFailed => 'Muvaffaqiyatsiz';
+
+  @override
+  String get businessDeliveryTaskStatusCancelled => 'Bekor qilingan';
+
+  @override
+  String businessDeliveryTaskBranchLabel(String name) {
+    return 'Filial: $name';
+  }
+
+  @override
+  String businessDeliveryTaskStatusLine(String status) {
+    return 'Holat: $status';
+  }
+
+  @override
+  String businessDeliveryTaskPickupLabel(String label) {
+    return 'Pickup: $label';
+  }
+
+  @override
+  String businessDeliveryTaskDropOffLabel(String label) {
+    return 'Drop-off: $label';
+  }
+
+  @override
+  String businessDeliveryTaskAssignmentLabel(String ref) {
+    return 'Demo tayinlash: $ref';
+  }
+
+  @override
+  String businessDeliveryTaskFailureLine(String reason) {
+    return 'Sabab: $reason';
+  }
+
+  @override
+  String businessDeliveryTaskUpdatedAt(String timestamp) {
+    return 'Yangilangan: $timestamp';
+  }
+
+  @override
+  String get businessDeliveryTaskActionReadyForPickup => 'Pickup uchun tayyor';
+
+  @override
+  String get businessDeliveryTaskActionAssignDemo => 'Tayinlash (demo)';
+
+  @override
+  String get businessDeliveryTaskActionConfirmPickup => 'Pickup tasdiqlash';
+
+  @override
+  String get businessDeliveryTaskActionMarkInTransit => 'Yo‘lda deb belgilash';
+
+  @override
+  String get businessDeliveryTaskActionMarkDelivered => 'Yetkazildi';
+
+  @override
+  String get businessDeliveryTaskActionMarkFailed => 'Muvaffaqiyatsiz';
+
+  @override
+  String get businessDeliveryTaskActionCancel => 'Bekor qilish';
+
+  @override
+  String get businessDeliveryTaskShowHistoryAction => 'Tarix';
+
+  @override
+  String get businessDeliveryTaskHideHistoryAction => 'Yopish';
+
+  @override
+  String businessDeliveryTaskHistoryLine(
+    String from,
+    String to,
+    String timestamp,
+  ) {
+    return '$from → $to · $timestamp';
+  }
+
+  @override
+  String get businessDeliveryTaskFailureDialogTitle =>
+      'Muvaffaqiyatsizlik sababi';
+
+  @override
+  String get businessDeliveryTaskFailureReasonLabel => 'Sabab (faqat demo)';
+
+  @override
+  String get businessDeliveryTaskFailureDialogCancel => 'Bekor';
+
+  @override
+  String get businessDeliveryTaskFailureDialogConfirm => 'Tasdiqlash';
+
+  @override
+  String get businessDeliveryTaskFailureReasonInvalid => 'Sabab kiriting.';
+
+  @override
+  String get businessDeliveryTaskTransitionInvalid =>
+      'Bu holat o‘tishi ruxsat etilmagan.';
+
+  @override
+  String get businessDeliveryTaskTransitionSaveError =>
+      'Saqlab bo‘lmadi. Qayta urinib ko‘ring.';
+
+  @override
+  String get businessDeliveryExceptionDemoDisclaimer =>
+      'Demo delivery exception — task failed holati bilan bir xil emas.';
+
+  @override
+  String get businessDeliveryProofDemoDisclaimer =>
+      'Demo proof only — no real photo upload, OTP verification or signature storage.';
+
+  @override
+  String get businessDeliveryExceptionSectionTitle => 'Delivery exception’lar';
+
+  @override
+  String get businessDeliveryProofSectionTitle => 'Proof of delivery';
+
+  @override
+  String get businessDeliveryExceptionAddAction => 'Exception yozish';
+
+  @override
+  String get businessDeliveryProofAddAction => 'Demo proof qo‘shish';
+
+  @override
+  String get businessDeliveryExceptionEmptyForTask =>
+      'Bu task uchun exception yo‘q.';
+
+  @override
+  String get businessDeliveryProofEmptyForTask => 'Bu task uchun proof yo‘q.';
+
+  @override
+  String get businessDeliveryExceptionCategoryRecipientUnavailable =>
+      'Qabul qiluvchi yo‘q';
+
+  @override
+  String get businessDeliveryExceptionCategoryAddressIssue => 'Manzil muammosi';
+
+  @override
+  String get businessDeliveryExceptionCategoryAccessBlocked =>
+      'Kirish bloklangan';
+
+  @override
+  String get businessDeliveryExceptionCategoryDeliveryDelayed => 'Kechikish';
+
+  @override
+  String get businessDeliveryExceptionCategoryItemIssue => 'Buyum muammosi';
+
+  @override
+  String get businessDeliveryExceptionCategoryOther => 'Boshqa';
+
+  @override
+  String get businessDeliveryExceptionStatusOpen => 'Ochiq';
+
+  @override
+  String get businessDeliveryExceptionStatusResolved => 'Hal qilindi';
+
+  @override
+  String get businessDeliveryExceptionStatusDismissed => 'Rad etildi';
+
+  @override
+  String get businessDeliveryExceptionSeverityLow => 'Past';
+
+  @override
+  String get businessDeliveryExceptionSeverityMedium => 'O‘rta';
+
+  @override
+  String get businessDeliveryExceptionSeverityHigh => 'Yuqori';
+
+  @override
+  String businessDeliveryExceptionLine(
+    String category,
+    String status,
+    String reason,
+  ) {
+    return '$category · $status · $reason';
+  }
+
+  @override
+  String businessDeliveryProofLine(
+    String method,
+    String status,
+    String reference,
+  ) {
+    return '$method · $status · $reference';
+  }
+
+  @override
+  String get businessDeliveryExceptionResolveAction => 'Hal qilish';
+
+  @override
+  String get businessDeliveryExceptionDismissAction => 'Yopish (dismiss)';
+
+  @override
+  String get businessDeliveryExceptionReopenAction => 'Qayta ochish';
+
+  @override
+  String get businessDeliveryProofVerifyDemoAction => 'Demo verify';
+
+  @override
+  String get businessDeliveryProofRejectDemoAction => 'Demo reject';
+
+  @override
+  String get businessDeliveryExceptionCreateTitle => 'Exception yozish';
+
+  @override
+  String get businessDeliveryExceptionReasonField => 'Sabab (demo, PII yo‘q)';
+
+  @override
+  String get businessDeliveryExceptionCategoryField => 'Kategoriya';
+
+  @override
+  String get businessDeliveryExceptionResolveTitle => 'Hal qilish';
+
+  @override
+  String get businessDeliveryExceptionResolutionField => 'Resolution note';
+
+  @override
+  String get businessDeliveryProofCreateTitle => 'Demo proof';
+
+  @override
+  String get businessDeliveryProofMethodField => 'Usul';
+
+  @override
+  String get businessDeliveryProofEvidenceField => 'Demo evidence reference';
+
+  @override
+  String get businessDeliveryProofDescriptionField => 'Tavsif';
+
+  @override
+  String get businessDeliveryProofVerifyTitle => 'Demo verification';
+
+  @override
+  String get businessDeliveryProofVerificationReasonField => 'Eslatma (demo)';
+
+  @override
+  String get businessDeliveryDialogCancel => 'Bekor';
+
+  @override
+  String get businessDeliveryDialogSave => 'Saqlash';
+
+  @override
+  String get businessDeliveryDialogConfirm => 'Tasdiqlash';
+
+  @override
+  String get businessDeliveryExceptionSaveError => 'Exception saqlanmadi.';
+
+  @override
+  String get businessDeliveryProofSaveError => 'Proof saqlanmadi.';
+
+  @override
+  String get businessDeliveryExceptionValidationError =>
+      'Maydonlarni tekshiring.';
+
+  @override
+  String get businessDeliveryProofValidationError =>
+      'Faqat demo reference ishlating.';
+
+  @override
+  String get businessDeliveryProofMethodPhoto => 'Photo (demo)';
+
+  @override
+  String get businessDeliveryProofMethodRecipientOtp => 'OTP (demo)';
+
+  @override
+  String get businessDeliveryProofMethodSignature => 'Signature (demo)';
+
+  @override
+  String get businessDeliveryProofMethodRecipientConfirmation => 'Confirmation';
+
+  @override
+  String get businessDeliveryProofStatusPending => 'Pending';
+
+  @override
+  String get businessDeliveryProofStatusVerified => 'Verified (demo)';
+
+  @override
+  String get businessDeliveryProofStatusRejected => 'Rejected';
+
+  @override
+  String get businessDeliveryProofStatusSuperseded => 'Superseded';
+
+  @override
+  String get businessDeliveryExceptionHistoryAction => 'Exception tarixi';
+
+  @override
+  String get businessDeliveryProofHistoryAction => 'Proof tarixi';
+
+  @override
+  String get businessCenterReviewsTitle => 'Reviews & ratings';
+
+  @override
+  String get businessCenterReviewsBody =>
+      'Demo verified reviews (synthetic evidence).';
+
+  @override
+  String get businessReviewListTitle => 'Reviews & ratings';
+
+  @override
+  String get businessReviewDemoDisclaimer =>
+      'Demo reviews only — synthetic transaction evidence; no real customer reviews.';
+
+  @override
+  String get businessReviewDemoRatingNote =>
+      'Demo rating — production reputation emas.';
+
+  @override
+  String get businessReviewCreateDemoAction => 'Demo review yaratish';
+
+  @override
+  String get businessReviewSummaryTitle => 'Rating summary';
+
+  @override
+  String businessReviewSummaryAverage(String average) {
+    return 'O‘rtacha: $average';
+  }
+
+  @override
+  String businessReviewSummaryCount(int count) {
+    return 'Published: $count';
+  }
+
+  @override
+  String businessReviewDistributionLine(int stars, int count) {
+    return '$stars★ — $count';
+  }
+
+  @override
+  String get businessReviewBranchFilter => 'Filial';
+
+  @override
+  String get businessReviewAllBranches => 'Barcha filiallar';
+
+  @override
+  String get businessReviewTargetTypeFilter => 'Target turi';
+
+  @override
+  String get businessReviewAllTargetTypes => 'Barcha turlar';
+
+  @override
+  String get businessReviewStatusFilter => 'Holat';
+
+  @override
+  String get businessReviewAllStatuses => 'Barcha holatlar';
+
+  @override
+  String get businessReviewTargetBusiness => 'Business';
+
+  @override
+  String get businessReviewTargetProduct => 'Product';
+
+  @override
+  String get businessReviewTargetService => 'Service';
+
+  @override
+  String get businessReviewTargetBusinessScope => 'Business scope';
+
+  @override
+  String get businessReviewStatusDraft => 'Draft';
+
+  @override
+  String get businessReviewStatusPendingModeration => 'Moderation kutilmoqda';
+
+  @override
+  String get businessReviewStatusPublished => 'Published';
+
+  @override
+  String get businessReviewStatusRejected => 'Rejected';
+
+  @override
+  String get businessReviewStatusHidden => 'Hidden';
+
+  @override
+  String get businessReviewEmptyBody => 'Review topilmadi.';
+
+  @override
+  String businessReviewCardLine(
+    String target,
+    String type,
+    String rating,
+    String status,
+  ) {
+    return '$target · $type · $rating★ · $status';
+  }
+
+  @override
+  String businessReviewProvenanceLine(String evidence, String reviewer) {
+    return 'Evidence: $evidence · Reviewer: $reviewer';
+  }
+
+  @override
+  String get businessReviewSyntheticBadge => 'Synthetic demo review.';
+
+  @override
+  String get businessReviewHistoryAction => 'Tarix';
+
+  @override
+  String businessReviewHistoryLine(String from, String to, String timestamp) {
+    return '$from → $to · $timestamp';
+  }
+
+  @override
+  String get businessReviewActionSubmitModeration => 'Moderationga yuborish';
+
+  @override
+  String get businessReviewActionPublish => 'Publish';
+
+  @override
+  String get businessReviewActionReject => 'Reject';
+
+  @override
+  String get businessReviewActionHide => 'Hide';
+
+  @override
+  String get businessReviewCreateDialogTitle => 'Demo review';
+
+  @override
+  String get businessReviewSyntheticEvidenceNote => 'Faqat synthetic evidence.';
+
+  @override
+  String get businessReviewTargetTypeField => 'Target turi';
+
+  @override
+  String get businessReviewTargetIdField => 'Target ID';
+
+  @override
+  String get businessReviewRatingField => 'Rating';
+
+  @override
+  String get businessReviewTitleField => 'Sarlavha';
+
+  @override
+  String get businessReviewTextField => 'Matn';
+
+  @override
+  String get businessReviewCheckEligibilityAction => 'Eligibility tekshirish';
+
+  @override
+  String get businessReviewDialogCancel => 'Bekor';
+
+  @override
+  String get businessReviewDialogSave => 'Saqlash';
+
+  @override
+  String get businessReviewDialogConfirm => 'Tasdiqlash';
+
+  @override
+  String get businessReviewSaveError => 'Saqlab bo‘lmadi.';
+
+  @override
+  String get businessReviewCreateIneligible => 'Eligible emas.';
+
+  @override
+  String get businessReviewValidationError => 'Maydonlarni tekshiring.';
+
+  @override
+  String get businessReviewModerationReasonTitle => 'Moderation eslatmasi';
+
+  @override
+  String get businessReviewModerationReasonLabel => 'Sabab';
+
+  @override
+  String get businessReviewEligibilityEligible => 'Eligible (demo).';
+
+  @override
+  String get businessReviewEligibilityEvidenceNotFound => 'Evidence topilmadi.';
+
+  @override
+  String get businessReviewEligibilityIncomplete => 'Transaction incomplete.';
+
+  @override
+  String get businessReviewEligibilityScopeMismatch => 'Scope mos emas.';
+
+  @override
+  String get businessReviewEligibilityTargetMismatch =>
+      'Target/reviewer mos emas.';
+
+  @override
+  String get businessReviewEligibilityDuplicate => 'Duplicate review.';
+
+  @override
+  String get businessCenterComplaintsDisputesTitle => 'Shikoyatlar va nizolar';
+
+  @override
+  String get businessCenterComplaintsDisputesBody =>
+      'Demo case boshqaruvi (preview).';
+
+  @override
+  String get businessComplaintDisputeListTitle => 'Shikoyatlar va nizolar';
+
+  @override
+  String get businessComplaintDisputeDemoDisclaimer =>
+      'Demo complaints and disputes only — synthetic cases and evidence; no real customer cases.';
+
+  @override
+  String get businessComplaintDisputeDemoResolutionNote =>
+      'Demo yechim haqiqiy qaror emas.';
+
+  @override
+  String get businessComplaintTab => 'Shikoyatlar';
+
+  @override
+  String get businessDisputeTab => 'Nizolar';
+
+  @override
+  String get businessComplaintCategoryFilter => 'Kategoriya';
+
+  @override
+  String get businessComplaintAllCategories => 'Barchasi';
+
+  @override
+  String get businessComplaintCategoryProductQuality => 'Mahsulot sifati';
+
+  @override
+  String get businessComplaintCategoryServiceIssue => 'Xizmat';
+
+  @override
+  String get businessComplaintCategoryBilling => 'To‘lov';
+
+  @override
+  String get businessComplaintCategoryDelivery => 'Yetkazish';
+
+  @override
+  String get businessComplaintCategoryOther => 'Boshqa';
+
+  @override
+  String get businessComplaintStatusSubmitted => 'Submitted';
+
+  @override
+  String get businessComplaintStatusUnderReview => 'Under review';
+
+  @override
+  String get businessComplaintStatusResolved => 'Resolved';
+
+  @override
+  String get businessComplaintStatusDismissed => 'Dismissed';
+
+  @override
+  String get businessDisputeStatusFiled => 'Filed';
+
+  @override
+  String get businessDisputeStatusUnderReview => 'Under review';
+
+  @override
+  String get businessDisputeStatusResolvedBusiness => 'Resolved (business)';
+
+  @override
+  String get businessDisputeStatusResolvedReporter => 'Resolved (reporter)';
+
+  @override
+  String get businessDisputeStatusDismissed => 'Dismissed';
+
+  @override
+  String get businessComplaintEmptyBody => 'Filtr bo‘yicha shikoyat yo‘q.';
+
+  @override
+  String get businessDisputeEmptyBody => 'Filtr bo‘yicha nizo yo‘q.';
+
+  @override
+  String businessComplaintCardLine(
+    String target,
+    String category,
+    String status,
+  ) {
+    return '$target · $category · $status';
+  }
+
+  @override
+  String businessDisputeCardLine(String complaintId, String status) {
+    return 'Complaint $complaintId · $status';
+  }
+
+  @override
+  String businessComplaintEvidenceLine(String refs, String reporter) {
+    return 'Evidence: $refs · Reporter: $reporter';
+  }
+
+  @override
+  String businessComplaintLinkedDispute(String disputeId) {
+    return 'Nizo: $disputeId';
+  }
+
+  @override
+  String get businessComplaintNoDispute => 'Nizo yo‘q.';
+
+  @override
+  String get businessComplaintCreateDemoAction => 'Demo shikoyat';
+
+  @override
+  String get businessDisputeCreateDemoAction => 'Demo nizo';
+
+  @override
+  String get businessComplaintActionBeginReview => 'Begin review';
+
+  @override
+  String get businessComplaintActionResolve => 'Resolve';
+
+  @override
+  String get businessComplaintActionDismiss => 'Dismiss';
+
+  @override
+  String get businessDisputeActionBeginReview => 'Begin review';
+
+  @override
+  String get businessDisputeActionResolveBusiness => 'For business';
+
+  @override
+  String get businessDisputeActionResolveReporter => 'For reporter';
+
+  @override
+  String get businessDisputeActionDismiss => 'Dismiss';
+
+  @override
+  String get businessComplaintHistoryAction => 'History';
+
+  @override
+  String get businessDisputeHistoryAction => 'History';
+
+  @override
+  String businessComplaintHistoryLine(
+    String from,
+    String to,
+    String timestamp,
+  ) {
+    return '$from → $to · $timestamp';
+  }
+
+  @override
+  String businessDisputeHistoryLine(String from, String to, String timestamp) {
+    return '$from → $to · $timestamp';
+  }
+
+  @override
+  String get businessComplaintSyntheticBadge => 'Synthetic demo case.';
+
+  @override
+  String get businessComplaintClearFilters => 'Clear filters';
+
+  @override
+  String get businessComplaintSaveError => 'Saqlab bo‘lmadi.';
+
+  @override
+  String get businessDisputeSaveError => 'Saqlab bo‘lmadi.';
+
+  @override
+  String get businessDisputeDuplicateError => 'Nizo allaqachon mavjud.';
+
+  @override
+  String get businessComplaintCreateDialogTitle => 'Demo shikoyat';
+
+  @override
+  String get businessDisputeCreateDialogTitle => 'Demo nizo';
+
+  @override
+  String get businessComplaintDescriptionField => 'Tavsif';
+
+  @override
+  String get businessDisputeSummaryField => 'Xulosa';
+
+  @override
+  String get businessComplaintSelectComplaintField => 'Shikoyat';
+
+  @override
+  String get businessComplaintSyntheticEvidenceNote =>
+      'Faqat synthetic evidence.';
+
+  @override
+  String get businessCenterReputationEventsTitle => 'Reputation events';
+
+  @override
+  String get businessCenterReputationEventsBody =>
+      'Demo signal timeline (preview).';
+
+  @override
+  String get businessReputationEventsTitle => 'Reputation events';
+
+  @override
+  String get businessReputationEventsDemoDisclaimer =>
+      'Demo reputation events only — synthetic signals; no production Trust Score is calculated.';
+
+  @override
+  String get businessReputationEventsInformationalNote =>
+      'Faqat ma\'lumot signallari.';
+
+  @override
+  String get businessReputationEventSourceFilter => 'Source';
+
+  @override
+  String get businessReputationEventAllSources => 'All sources';
+
+  @override
+  String get businessReputationEventSourceReview => 'Review';
+
+  @override
+  String get businessReputationEventSourceComplaint => 'Complaint';
+
+  @override
+  String get businessReputationEventSourceDispute => 'Dispute';
+
+  @override
+  String get businessReputationEventTypeFilter => 'Event type';
+
+  @override
+  String get businessReputationEventAllTypes => 'All types';
+
+  @override
+  String get businessReputationEventTypeReviewPublished => 'Review published';
+
+  @override
+  String get businessReputationEventTypeReviewRejected => 'Review rejected';
+
+  @override
+  String get businessReputationEventTypeReviewHidden => 'Review hidden';
+
+  @override
+  String get businessReputationEventTypeComplaintCreated => 'Complaint created';
+
+  @override
+  String get businessReputationEventTypeComplaintStatusChanged =>
+      'Complaint status changed';
+
+  @override
+  String get businessReputationEventTypeDisputeOpened => 'Dispute opened';
+
+  @override
+  String get businessReputationEventTypeDisputeStatusChanged =>
+      'Dispute status changed';
+
+  @override
+  String get businessReputationEventsEmptyBody => 'Event yo‘q.';
+
+  @override
+  String businessReputationEventCardLine(
+    String type,
+    String source,
+    String sourceId,
+  ) {
+    return '$type · $source · $sourceId';
+  }
+
+  @override
+  String businessReputationEventTargetLine(String targetType, String targetId) {
+    return 'Target: $targetType · $targetId';
+  }
+
+  @override
+  String businessReputationEventStatusLine(String from, String to) {
+    return '$from → $to';
+  }
+
+  @override
+  String businessReputationEventTimestampsLine(
+    String occurred,
+    String recorded,
+  ) {
+    return '$occurred · $recorded';
+  }
+
+  @override
+  String businessReputationEventProvenanceLine(String correlation) {
+    return 'Correlation: $correlation';
+  }
+
+  @override
+  String get businessReputationEventSyntheticBadge => 'Synthetic demo signal.';
 }

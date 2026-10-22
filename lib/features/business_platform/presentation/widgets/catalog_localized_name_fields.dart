@@ -13,6 +13,7 @@ class CatalogLocalizedNameFields extends StatelessWidget {
     required this.descEn,
     required this.onChanged,
     required this.nameValidator,
+    this.includeDescriptions = true,
     super.key,
   });
 
@@ -25,6 +26,7 @@ class CatalogLocalizedNameFields extends StatelessWidget {
   final TextEditingController descEn;
   final VoidCallback onChanged;
   final String? Function() nameValidator;
+  final bool includeDescriptions;
 
   @override
   Widget build(BuildContext context) {
@@ -60,36 +62,38 @@ class CatalogLocalizedNameFields extends StatelessWidget {
           ),
           onChanged: (_) => onChanged(),
         ),
-        const SizedBox(height: AppSpacing.lg),
-        TextFormField(
-          controller: descUz,
-          maxLines: 3,
-          decoration: InputDecoration(
-            labelText: l10n.catalogCategoryDescUzLabel,
-            border: const OutlineInputBorder(),
+        if (includeDescriptions) ...[
+          const SizedBox(height: AppSpacing.lg),
+          TextFormField(
+            controller: descUz,
+            maxLines: 3,
+            decoration: InputDecoration(
+              labelText: l10n.catalogCategoryDescUzLabel,
+              border: const OutlineInputBorder(),
+            ),
+            onChanged: (_) => onChanged(),
           ),
-          onChanged: (_) => onChanged(),
-        ),
-        const SizedBox(height: AppSpacing.sm),
-        TextFormField(
-          controller: descRu,
-          maxLines: 3,
-          decoration: InputDecoration(
-            labelText: l10n.catalogCategoryDescRuLabel,
-            border: const OutlineInputBorder(),
+          const SizedBox(height: AppSpacing.sm),
+          TextFormField(
+            controller: descRu,
+            maxLines: 3,
+            decoration: InputDecoration(
+              labelText: l10n.catalogCategoryDescRuLabel,
+              border: const OutlineInputBorder(),
+            ),
+            onChanged: (_) => onChanged(),
           ),
-          onChanged: (_) => onChanged(),
-        ),
-        const SizedBox(height: AppSpacing.sm),
-        TextFormField(
-          controller: descEn,
-          maxLines: 3,
-          decoration: InputDecoration(
-            labelText: l10n.catalogCategoryDescEnLabel,
-            border: const OutlineInputBorder(),
+          const SizedBox(height: AppSpacing.sm),
+          TextFormField(
+            controller: descEn,
+            maxLines: 3,
+            decoration: InputDecoration(
+              labelText: l10n.catalogCategoryDescEnLabel,
+              border: const OutlineInputBorder(),
+            ),
+            onChanged: (_) => onChanged(),
           ),
-          onChanged: (_) => onChanged(),
-        ),
+        ],
       ],
     );
   }

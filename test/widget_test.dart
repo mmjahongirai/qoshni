@@ -33,7 +33,7 @@ void main() {
     expect(find.text('Nearby chains & essentials'), findsOneWidget);
     expect(
       find.text(
-        'Demo map preview — live location and places will connect later.',
+        'Mapbox map preview — add MAPBOX_ACCESS_TOKEN to enable the live map.',
       ),
       findsOneWidget,
     );
@@ -73,9 +73,6 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Map'), findsWidgets);
-    expect(
-      find.text('Interactive map will connect in a later release.'),
-      findsOneWidget,
-    );
+    expect(find.text('Mapbox access token required'), findsOneWidget);
   });
 }

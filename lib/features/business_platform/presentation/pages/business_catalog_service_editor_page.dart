@@ -14,6 +14,8 @@ import 'package:qoshni/features/business_platform/presentation/business_catalog_
 import 'package:qoshni/features/business_platform/presentation/business_catalog_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_catalog_listing_validation.dart';
 import 'package:qoshni/features/business_platform/presentation/business_catalog_service_controller.dart';
+import 'package:qoshni/features/business_platform/domain/business_catalog_listing_kind.dart';
+import 'package:qoshni/features/business_platform/presentation/widgets/catalog_listing_attributes_section.dart';
 import 'package:qoshni/features/business_platform/presentation/widgets/catalog_localized_name_fields.dart';
 
 class BusinessCatalogServiceEditorPage extends StatefulWidget {
@@ -249,6 +251,7 @@ class _BusinessCatalogServiceEditorPageState
                   nameValidator: _nameValidator,
                   onSave: busy ? null : _save,
                   onCancel: busy ? null : _cancel,
+                  serviceId: widget.isEdit ? widget.serviceId!.trim() : null,
                 ),
                 tablet: _Form(
                   maxWidth: 760,
@@ -277,6 +280,7 @@ class _BusinessCatalogServiceEditorPageState
                   nameValidator: _nameValidator,
                   onSave: busy ? null : _save,
                   onCancel: busy ? null : _cancel,
+                  serviceId: widget.isEdit ? widget.serviceId!.trim() : null,
                 ),
               );
             },
@@ -309,6 +313,7 @@ class _Form extends StatelessWidget {
     required this.nameValidator,
     required this.onSave,
     required this.onCancel,
+    this.serviceId,
   });
 
   final double maxWidth;
@@ -331,6 +336,7 @@ class _Form extends StatelessWidget {
   final String? Function() nameValidator;
   final VoidCallback? onSave;
   final VoidCallback? onCancel;
+  final String? serviceId;
 
   @override
   Widget build(BuildContext context) {
@@ -412,6 +418,20 @@ class _Form extends StatelessWidget {
                           }
                         },
                 ),
+                if (serviceId != null) ...[
+                  const SizedBox(height: AppSpacing.lg),
+                  CatalogListingAttributesSection(
+                    listingKind: BusinessCatalogListingKind.service,
+                    listingId: serviceId!,
+                  ),
+                ] else ...[
+                  const SizedBox(height: AppSpacing.lg),
+                  AppMessageBanner(
+                    message: l10n.catalogProductOptionsRequiresSaveHint,
+                    icon: Icons.tune_outlined,
+                    tone: AppMessageTone.info,
+                  ),
+                ],
                 const SizedBox(height: AppSpacing.xl),
                 if (busy)
                   const Center(child: CircularProgressIndicator())

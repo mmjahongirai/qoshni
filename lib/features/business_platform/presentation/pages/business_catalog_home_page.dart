@@ -354,6 +354,133 @@ class _CatalogHomeBody extends StatelessWidget {
                   ],
                 ),
               ),
+              const SizedBox(height: AppSpacing.md),
+              AppSurfaceCard(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      l10n.catalogInventorySectionTitle,
+                      style: textTheme.titleSmall?.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(l10n.catalogInventorySectionBody),
+                    const SizedBox(height: AppSpacing.sm),
+                    FilledButton.tonal(
+                      onPressed: () =>
+                          context.push(RoutePaths.businessCatalogInventory),
+                      child: Text(l10n.catalogInventoryListTitle),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: AppSpacing.md),
+              AppSurfaceCard(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      l10n.catalogResourceSectionTitle,
+                      style: textTheme.titleSmall?.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(l10n.catalogResourceSectionBody),
+                    const SizedBox(height: AppSpacing.sm),
+                    FilledButton.tonal(
+                      onPressed: () =>
+                          context.push(RoutePaths.businessCatalogResources),
+                      child: Text(l10n.catalogResourceListTitle),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: AppSpacing.md),
+              AppSurfaceCard(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      l10n.catalogPricingSectionTitle,
+                      style: textTheme.titleSmall?.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(l10n.catalogPricingSectionBody),
+                    const SizedBox(height: AppSpacing.sm),
+                    FilledButton.tonal(
+                      onPressed: () =>
+                          context.push(RoutePaths.businessCatalogPricing),
+                      child: Text(l10n.catalogPricingListTitle),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: AppSpacing.md),
+              AppSurfaceCard(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      l10n.catalogDiscountSectionTitle,
+                      style: textTheme.titleSmall?.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(l10n.catalogDiscountSectionBody),
+                    const SizedBox(height: AppSpacing.sm),
+                    FilledButton.tonal(
+                      onPressed: () =>
+                          context.push(RoutePaths.businessCatalogDiscounts),
+                      child: Text(l10n.catalogDiscountListTitle),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: AppSpacing.md),
+              AppSurfaceCard(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      l10n.catalogPromoSectionTitle,
+                      style: textTheme.titleSmall?.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(l10n.catalogPromoSectionBody),
+                    const SizedBox(height: AppSpacing.sm),
+                    FilledButton.tonal(
+                      onPressed: () =>
+                          context.push(RoutePaths.businessCatalogPromoCodes),
+                      child: Text(l10n.catalogPromoListTitle),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: AppSpacing.md),
+              AppSurfaceCard(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      l10n.catalogCommercialFeeSectionTitle,
+                      style: textTheme.titleSmall?.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(l10n.catalogCommercialFeeSectionBody),
+                    const SizedBox(height: AppSpacing.sm),
+                    FilledButton.tonal(
+                      onPressed: () => context.push(
+                        RoutePaths.businessCatalogCommercialFees,
+                      ),
+                      child: Text(l10n.catalogCommercialFeeListTitle),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),

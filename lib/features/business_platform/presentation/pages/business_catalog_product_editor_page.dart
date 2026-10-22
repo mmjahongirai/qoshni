@@ -15,6 +15,10 @@ import 'package:qoshni/features/business_platform/presentation/business_catalog_
 import 'package:qoshni/features/business_platform/presentation/business_catalog_listing_validation.dart';
 import 'package:qoshni/features/business_platform/presentation/business_catalog_product_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/widgets/catalog_localized_name_fields.dart';
+import 'package:qoshni/features/business_platform/domain/business_catalog_listing_kind.dart';
+import 'package:qoshni/features/business_platform/presentation/widgets/catalog_listing_attributes_section.dart';
+import 'package:qoshni/features/business_platform/presentation/widgets/catalog_product_media_gallery_section.dart';
+import 'package:qoshni/features/business_platform/presentation/widgets/catalog_product_options_section.dart';
 class BusinessCatalogProductEditorPage extends StatefulWidget {
   const BusinessCatalogProductEditorPage({this.productId, super.key});
 
@@ -36,8 +40,6 @@ class _BusinessCatalogProductEditorPageState
   late final TextEditingController _descUz;
   late final TextEditingController _descRu;
   late final TextEditingController _descEn;
-  late final TextEditingController _attrKey;
-  late final TextEditingController _attrValue;
   late String? _categoryId;
   late BusinessCatalogListingStatus _status;
   bool _dirty = false;
@@ -56,12 +58,6 @@ class _BusinessCatalogProductEditorPageState
     _descUz = TextEditingController(text: loc.descriptionUz);
     _descRu = TextEditingController(text: loc.descriptionRu);
     _descEn = TextEditingController(text: loc.descriptionEn);
-    _attrKey = TextEditingController(
-      text: existing?.attributes.firstOrNull?.key ?? '',
-    );
-    _attrValue = TextEditingController(
-      text: existing?.attributes.firstOrNull?.value ?? '',
-    );
     _categoryId = existing?.categoryId;
     _status = existing?.status ?? BusinessCatalogListingStatus.draft;
   }
@@ -74,8 +70,6 @@ class _BusinessCatalogProductEditorPageState
     _descUz.dispose();
     _descRu.dispose();
     _descEn.dispose();
-    _attrKey.dispose();
-    _attrValue.dispose();
     super.dispose();
   }
 
@@ -86,15 +80,10 @@ class _BusinessCatalogProductEditorPageState
   }
 
   BusinessCatalogProductInput _input() {
-    final attrs = <CatalogProductAttribute>[];
-    if (_attrKey.text.trim().isNotEmpty) {
-      attrs.add(
-        CatalogProductAttribute(
-          key: _attrKey.text,
-          value: _attrValue.text,
-        ),
-      );
-    }
+    final existing = widget.isEdit
+        ? getIt<BusinessCatalogProductController>()
+            .productById(widget.productId!.trim())
+        : null;
     return BusinessCatalogProductInput(
       categoryId: _categoryId ?? '',
       localized: BusinessCatalogLocalizedFields(
@@ -106,7 +95,7 @@ class _BusinessCatalogProductEditorPageState
         descriptionEn: _descEn.text,
       ),
       status: _status,
-      attributes: attrs,
+      attributes: existing?.attributes ?? const [],
     );
   }
 
@@ -237,8 +226,6 @@ class _BusinessCatalogProductEditorPageState
                   descUz: _descUz,
                   descRu: _descRu,
                   descEn: _descEn,
-                  attrKey: _attrKey,
-                  attrValue: _attrValue,
                   onChanged: _markDirty,
                   onCategory: (v) {
                     _markDirty();
@@ -251,6 +238,7 @@ class _BusinessCatalogProductEditorPageState
                   nameValidator: _nameValidator,
                   onSave: busy ? null : _save,
                   onCancel: busy ? null : _cancel,
+                  productId: widget.isEdit ? widget.productId!.trim() : null,
                 ),
                 tablet: _Form(
                   maxWidth: 760,
@@ -266,8 +254,6 @@ class _BusinessCatalogProductEditorPageState
                   descUz: _descUz,
                   descRu: _descRu,
                   descEn: _descEn,
-                  attrKey: _attrKey,
-                  attrValue: _attrValue,
                   onChanged: _markDirty,
                   onCategory: (v) {
                     _markDirty();
@@ -280,6 +266,7 @@ class _BusinessCatalogProductEditorPageState
                   nameValidator: _nameValidator,
                   onSave: busy ? null : _save,
                   onCancel: busy ? null : _cancel,
+                  productId: widget.isEdit ? widget.productId!.trim() : null,
                 ),
               );
             },
@@ -305,14 +292,13 @@ class _Form extends StatelessWidget {
     required this.descUz,
     required this.descRu,
     required this.descEn,
-    required this.attrKey,
-    required this.attrValue,
     required this.onChanged,
     required this.onCategory,
     required this.onStatus,
     required this.nameValidator,
     required this.onSave,
     required this.onCancel,
+    this.productId,
   });
 
   final double maxWidth;
@@ -328,14 +314,13 @@ class _Form extends StatelessWidget {
   final TextEditingController descUz;
   final TextEditingController descRu;
   final TextEditingController descEn;
-  final TextEditingController attrKey;
-  final TextEditingController attrValue;
   final VoidCallback onChanged;
   final ValueChanged<String?> onCategory;
   final ValueChanged<BusinessCatalogListingStatus> onStatus;
   final String? Function() nameValidator;
   final VoidCallback? onSave;
   final VoidCallback? onCancel;
+  final String? productId;
 
   @override
   Widget build(BuildContext context) {
@@ -385,24 +370,6 @@ class _Form extends StatelessWidget {
                   nameValidator: nameValidator,
                 ),
                 const SizedBox(height: AppSpacing.md),
-                TextFormField(
-                  controller: attrKey,
-                  decoration: InputDecoration(
-                    labelText: l10n.catalogProductAttributeKeyLabel,
-                    border: const OutlineInputBorder(),
-                  ),
-                  onChanged: (_) => onChanged(),
-                ),
-                const SizedBox(height: AppSpacing.sm),
-                TextFormField(
-                  controller: attrValue,
-                  decoration: InputDecoration(
-                    labelText: l10n.catalogProductAttributeValueLabel,
-                    border: const OutlineInputBorder(),
-                  ),
-                  onChanged: (_) => onChanged(),
-                ),
-                const SizedBox(height: AppSpacing.md),
                 DropdownButtonFormField<BusinessCatalogListingStatus>(
                   value: status,
                   decoration: InputDecoration(
@@ -425,6 +392,24 @@ class _Form extends StatelessWidget {
                           }
                         },
                 ),
+                if (productId != null) ...[
+                  const SizedBox(height: AppSpacing.lg),
+                  CatalogProductMediaGallerySection(productId: productId!),
+                  const SizedBox(height: AppSpacing.lg),
+                  CatalogProductOptionsSection(productId: productId!),
+                  const SizedBox(height: AppSpacing.lg),
+                  CatalogListingAttributesSection(
+                    listingKind: BusinessCatalogListingKind.product,
+                    listingId: productId!,
+                  ),
+                ] else ...[
+                  const SizedBox(height: AppSpacing.lg),
+                  AppMessageBanner(
+                    message: l10n.catalogProductOptionsRequiresSaveHint,
+                    icon: Icons.tune_outlined,
+                    tone: AppMessageTone.info,
+                  ),
+                ],
                 const SizedBox(height: AppSpacing.xl),
                 if (busy)
                   const Center(child: CircularProgressIndicator())
@@ -452,14 +437,5 @@ class _Form extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-extension _FirstAttr<E> on List<E> {
-  E? get firstOrNull {
-    if (isEmpty) {
-      return null;
-    }
-    return first;
   }
 }

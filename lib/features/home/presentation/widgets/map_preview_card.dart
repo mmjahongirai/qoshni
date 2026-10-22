@@ -3,7 +3,9 @@ import 'package:qoshni/core/localization/generated/app_localizations.dart';
 import 'package:qoshni/core/theme/app_tokens.dart';
 import 'package:qoshni/core/widgets/app_surface_card.dart';
 import 'package:qoshni/core/widgets/demo_content_badge.dart';
+import 'package:qoshni/core/config/mapbox_access_config.dart';
 import 'package:qoshni/features/home/presentation/data/home_essential_place.dart';
+import 'package:qoshni/features/home/presentation/widgets/qoshni_mapbox_view.dart';
 
 /// Premium home map preview — not a live map; no invented GPS markers.
 class MapPreviewCard extends StatelessWidget {
@@ -69,49 +71,19 @@ class MapPreviewCard extends StatelessWidget {
                 child: SizedBox(
                   height: mapHeight,
                   width: double.infinity,
-                  child: Stack(
-                    fit: StackFit.expand,
-                    children: [
-                      _MapPreviewCanvas(colorScheme: colorScheme),
-                      Center(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.all(AppSpacing.sm),
-                              decoration: BoxDecoration(
-                                color: colorScheme.surface.withValues(alpha: 0.92),
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: colorScheme.outlineVariant
-                                      .withValues(alpha: 0.65),
-                                ),
-                              ),
-                              child: Icon(
-                                Icons.my_location_outlined,
-                                size: 28,
-                                color: colorScheme.primary,
-                              ),
-                            ),
-                            const SizedBox(height: AppSpacing.xs),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: AppSpacing.md,
-                              ),
-                              child: Text(
-                                l10n.homeMapPreviewStatus,
-                                style: textTheme.labelMedium?.copyWith(
-                                  color: colorScheme.onSurfaceVariant,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+                  child: QoshniMapboxView(
+                    showDefaultViewLabel: MapboxAccessConfig.isConfigured,
                   ),
+                ),
+              ),
+              const SizedBox(height: AppSpacing.sm),
+              Text(
+                MapboxAccessConfig.isConfigured
+                    ? l10n.homeMapPreviewStatusConfigured
+                    : l10n.homeMapPreviewStatusNotConfigured,
+                style: textTheme.bodySmall?.copyWith(
+                  color: colorScheme.onSurfaceVariant,
+                  height: 1.35,
                 ),
               ),
               const SizedBox(height: AppSpacing.sm),
@@ -139,60 +111,6 @@ class MapPreviewCard extends StatelessWidget {
       },
     );
   }
-}
-
-class _MapPreviewCanvas extends StatelessWidget {
-  const _MapPreviewCanvas({required this.colorScheme});
-
-  final ColorScheme colorScheme;
-
-  @override
-  Widget build(BuildContext context) {
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            colorScheme.surfaceContainerHighest.withValues(alpha: 0.85),
-            colorScheme.primaryContainer.withValues(alpha: 0.35),
-          ],
-        ),
-        border: Border.all(
-          color: colorScheme.outlineVariant.withValues(alpha: 0.5),
-        ),
-      ),
-      child: CustomPaint(
-        painter: _MapGridPainter(
-          lineColor: colorScheme.outlineVariant.withValues(alpha: 0.28),
-        ),
-      ),
-    );
-  }
-}
-
-class _MapGridPainter extends CustomPainter {
-  _MapGridPainter({required this.lineColor});
-
-  final Color lineColor;
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = lineColor
-      ..strokeWidth = 1;
-
-    const step = 36.0;
-    for (var x = 0.0; x <= size.width; x += step) {
-      canvas.drawLine(Offset(x, 0), Offset(x, size.height), paint);
-    }
-    for (var y = 0.0; y <= size.height; y += step) {
-      canvas.drawLine(Offset(0, y), Offset(size.width, y), paint);
-    }
-  }
-
-  @override
-  bool shouldRepaint(covariant _MapGridPainter oldDelegate) => false;
 }
 
 class _MapLegendChip extends StatelessWidget {

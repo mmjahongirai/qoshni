@@ -43,8 +43,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get openMap => 'Open map';
 
   @override
-  String get homeMapPreviewStatus =>
-      'Demo map preview — live location and places will connect later.';
+  String get homeMapPreviewStatusNotConfigured =>
+      'Mapbox map preview — add MAPBOX_ACCESS_TOKEN to enable the live map.';
+
+  @override
+  String get homeMapPreviewStatusConfigured =>
+      'Interactive Mapbox map — default Uzbekistan view (not your location).';
 
   @override
   String get homeNearbyChainsTitle => 'Nearby chains & essentials';
@@ -86,6 +90,20 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get mapPlaceholderBody =>
       'Interactive map will connect in a later release.';
+
+  @override
+  String get mapboxConfigRequiredTitle => 'Mapbox access token required';
+
+  @override
+  String get mapboxConfigRequiredBody =>
+      'Pass a public pk token at build or run time using --dart-define=MAPBOX_ACCESS_TOKEN=…. Nearby markers and GPS are not part of this preview.';
+
+  @override
+  String get mapboxDefaultViewLabel => 'Default map view — Uzbekistan';
+
+  @override
+  String get mapboxLoadErrorBody =>
+      'The map could not load. Check your Mapbox token and network, then try again.';
 
   @override
   String get categoryGroceries => 'Groceries';
@@ -2559,4 +2577,2344 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get catalogVariantDuplicateSku =>
       'This SKU already exists in the preview scope.';
+
+  @override
+  String get catalogOptionSelectionSingle => 'Single choice';
+
+  @override
+  String get catalogOptionSelectionMultiple => 'Multiple choice';
+
+  @override
+  String get catalogProductOptionsSectionTitle => 'Options & add-ons';
+
+  @override
+  String get catalogProductOptionsEmptyBody =>
+      'No option groups yet for this product.';
+
+  @override
+  String get catalogProductOptionsRequiresSaveHint =>
+      'Save the product first to manage options and media in this session.';
+
+  @override
+  String get catalogProductOptionGroupAddAction => 'Add option group';
+
+  @override
+  String get catalogProductOptionGroupCreateTitle => 'New option group';
+
+  @override
+  String get catalogProductOptionGroupEditTitle => 'Edit option group';
+
+  @override
+  String get catalogProductOptionGroupRequired => 'Required';
+
+  @override
+  String get catalogProductOptionGroupOptional => 'Optional';
+
+  @override
+  String get catalogProductOptionSelectionModeLabel => 'Selection mode';
+
+  @override
+  String get catalogProductOptionMinSelectionsLabel => 'Minimum selections';
+
+  @override
+  String get catalogProductOptionMaxSelectionsLabel => 'Maximum selections';
+
+  @override
+  String catalogProductOptionSelectionLimits(int min, int max) {
+    return 'Select $min–$max';
+  }
+
+  @override
+  String get catalogProductOptionGroupSaveSuccess =>
+      'Option group saved for this session.';
+
+  @override
+  String get catalogProductOptionGroupSaveFailed =>
+      'Could not save option group.';
+
+  @override
+  String get catalogProductOptionGroupInvalidInput =>
+      'Check selection limits and names.';
+
+  @override
+  String get catalogProductOptionGroupArchiveTitle => 'Archive option group?';
+
+  @override
+  String get catalogProductOptionGroupArchiveBody =>
+      'The group will be hidden from active preview lists. Existing options stay attached.';
+
+  @override
+  String get catalogProductOptionGroupArchiveConfirm => 'Archive';
+
+  @override
+  String get catalogProductOptionGroupArchiveSuccess =>
+      'Option group archived.';
+
+  @override
+  String get catalogProductOptionAddAction => 'Add option';
+
+  @override
+  String get catalogProductOptionCreateTitle => 'New option';
+
+  @override
+  String get catalogProductOptionEditTitle => 'Edit option';
+
+  @override
+  String get catalogProductOptionActiveLabel => 'Active';
+
+  @override
+  String get catalogProductOptionInactiveLabel => 'Inactive';
+
+  @override
+  String get catalogProductOptionSaveSuccess =>
+      'Option saved for this session.';
+
+  @override
+  String get catalogProductOptionSaveFailed => 'Could not save option.';
+
+  @override
+  String get catalogProductOptionInvalidInput =>
+      'Enter a name in at least one language.';
+
+  @override
+  String get catalogProductMediaGalleryTitle => 'Media gallery';
+
+  @override
+  String get catalogProductMediaPreviewOnlyNotice =>
+      'Preview only — upload comes in a later phase. Images stay in this session and are not sent to a server.';
+
+  @override
+  String get catalogProductMediaEmptyBody =>
+      'No images yet. Add a local preview image for this session.';
+
+  @override
+  String get catalogProductMediaNoPrimary => 'No primary image selected';
+
+  @override
+  String get catalogProductMediaPrimaryBadge => 'Primary';
+
+  @override
+  String get catalogProductMediaAddAction => 'Add image';
+
+  @override
+  String get catalogProductMediaMakePrimaryAction => 'Make primary';
+
+  @override
+  String get catalogProductMediaPickFailed =>
+      'Could not read the selected image for preview.';
+
+  @override
+  String get catalogProductMediaPreviewAdded =>
+      'Preview image added for this session.';
+
+  @override
+  String get catalogProductMediaSaveFailed => 'Could not update media preview.';
+
+  @override
+  String get catalogAttributeValueKindText => 'Text';
+
+  @override
+  String get catalogAttributeValueKindNumber => 'Number';
+
+  @override
+  String get catalogAttributeValueKindChoice => 'Choice';
+
+  @override
+  String get catalogListingAttributesSectionTitle => 'Attributes';
+
+  @override
+  String get catalogListingAttributesEmptyBody =>
+      'No attributes yet for this listing.';
+
+  @override
+  String get catalogListingAttributeAddAction => 'Add attribute';
+
+  @override
+  String get catalogListingAttributeCreateTitle => 'New attribute';
+
+  @override
+  String get catalogListingAttributeEditTitle => 'Edit attribute';
+
+  @override
+  String get catalogListingAttributeKeyLabel => 'Attribute key';
+
+  @override
+  String get catalogListingAttributeKeyHint =>
+      'Lowercase letters, numbers, and underscores (e.g. unit).';
+
+  @override
+  String get catalogListingAttributeKeyRequired => 'Enter an attribute key.';
+
+  @override
+  String get catalogListingAttributeKeyInvalid =>
+      'Use lowercase letters, numbers, and underscores only.';
+
+  @override
+  String get catalogListingAttributeValueKindLabel => 'Value type';
+
+  @override
+  String get catalogListingAttributeTextValueLabel => 'Text value';
+
+  @override
+  String get catalogListingAttributeNumberValueLabel => 'Number value';
+
+  @override
+  String get catalogListingAttributeChoiceValueLabel => 'Choice value';
+
+  @override
+  String get catalogListingAttributeSaveSuccess =>
+      'Attribute saved for this session.';
+
+  @override
+  String get catalogListingAttributeSaveFailed => 'Could not save attribute.';
+
+  @override
+  String get catalogListingAttributeInvalidInput =>
+      'Check the key, label, and value.';
+
+  @override
+  String get catalogListingAttributeDuplicateKey =>
+      'This key already exists on this listing.';
+
+  @override
+  String get catalogListingAttributeDeleteTitle => 'Remove attribute?';
+
+  @override
+  String get catalogListingAttributeDeleteBody =>
+      'This removes the attribute from the session preview.';
+
+  @override
+  String get catalogListingAttributeDeleteConfirm => 'Remove';
+
+  @override
+  String get catalogListingAttributeDeleteFailed =>
+      'Could not remove attribute.';
+
+  @override
+  String get catalogInventorySectionTitle => 'Product inventory (preview)';
+
+  @override
+  String get catalogInventorySectionBody =>
+      'Track on-hand and reserved quantities per branch for catalog products. Demo data only — not connected to live inventory.';
+
+  @override
+  String get catalogInventoryListTitle => 'Inventory';
+
+  @override
+  String get catalogInventoryDemoDisclaimer =>
+      'Demo data — not connected to live inventory. Adjustments stay in this session preview only.';
+
+  @override
+  String get catalogInventoryBranchFilter => 'Branch';
+
+  @override
+  String get catalogInventoryAllBranches => 'All branches';
+
+  @override
+  String get catalogInventoryAvailabilityFilter => 'Availability';
+
+  @override
+  String get catalogInventoryAllAvailability => 'All availability states';
+
+  @override
+  String get catalogInventoryEmptyBody =>
+      'No inventory rows match your filters.';
+
+  @override
+  String get catalogInventoryLoadFailed =>
+      'Could not load inventory for this preview session.';
+
+  @override
+  String get catalogInventoryRetryAction => 'Try again';
+
+  @override
+  String catalogInventoryVariantLabel(String name) {
+    return 'Variant: $name';
+  }
+
+  @override
+  String catalogInventoryBranchLabel(String name) {
+    return 'Branch: $name';
+  }
+
+  @override
+  String catalogInventoryOnHandLabel(int qty) {
+    return 'On hand: $qty';
+  }
+
+  @override
+  String catalogInventoryReservedLabel(int qty) {
+    return 'Reserved: $qty';
+  }
+
+  @override
+  String catalogInventoryAvailableLabel(int qty) {
+    return 'Available: $qty';
+  }
+
+  @override
+  String catalogInventoryLowStockThresholdLabel(int qty) {
+    return 'Low stock at: $qty';
+  }
+
+  @override
+  String get catalogInventoryAvailabilityInStock => 'In stock';
+
+  @override
+  String get catalogInventoryAvailabilityLowStock => 'Low stock';
+
+  @override
+  String get catalogInventoryAvailabilityOutOfStock => 'Out of stock';
+
+  @override
+  String get catalogInventoryAvailabilityUnavailable => 'Unavailable';
+
+  @override
+  String get catalogInventoryAdjustAction => 'Adjust stock';
+
+  @override
+  String get catalogInventoryMarkUnavailableAction => 'Mark unavailable';
+
+  @override
+  String get catalogInventoryMarkAvailableAction => 'Mark available';
+
+  @override
+  String get catalogInventoryShowHistoryAction => 'Show history';
+
+  @override
+  String get catalogInventoryHideHistoryAction => 'Hide history';
+
+  @override
+  String get catalogInventoryHistoryEmpty =>
+      'No adjustments recorded in this preview session yet.';
+
+  @override
+  String catalogInventoryHistoryLine(
+    int delta,
+    int before,
+    int after,
+    String reason,
+  ) {
+    return 'Δ $delta · on-hand $before → $after · $reason';
+  }
+
+  @override
+  String get catalogInventoryAdjustTitle => 'Stock adjustment';
+
+  @override
+  String get catalogInventoryAdjustKindLabel => 'Adjustment type';
+
+  @override
+  String get catalogInventoryAdjustKindOnHand => 'On-hand quantity';
+
+  @override
+  String get catalogInventoryAdjustKindReserved => 'Reserved quantity';
+
+  @override
+  String get catalogInventoryAdjustDeltaLabel => 'Change (+/−)';
+
+  @override
+  String get catalogInventoryAdjustDeltaHint =>
+      'Use negative numbers to decrease.';
+
+  @override
+  String get catalogInventoryAdjustReasonLabel => 'Reason';
+
+  @override
+  String get catalogInventoryAdjustConfirmAction => 'Apply';
+
+  @override
+  String get catalogInventoryAdjustReasonRequired => 'Enter a short reason.';
+
+  @override
+  String get catalogInventoryAdjustDeltaZero => 'Enter a non-zero change.';
+
+  @override
+  String get catalogInventoryAdjustDeltaInvalid => 'Enter a whole number.';
+
+  @override
+  String get catalogInventoryAdjustInvalidQuantities =>
+      'This change would make quantities invalid.';
+
+  @override
+  String get catalogInventoryAdjustSaveFailed =>
+      'Could not apply adjustment. Try again.';
+
+  @override
+  String get catalogInventoryAdjustSuccess =>
+      'Stock updated for this preview session.';
+
+  @override
+  String get catalogInventoryReservationsNavAction => 'Reservations';
+
+  @override
+  String get catalogInventoryReservationsTitle => 'Inventory reservations';
+
+  @override
+  String get catalogInventoryReservationDemoDisclaimer =>
+      'Demo reservations only — not connected to live checkout or inventory.';
+
+  @override
+  String get catalogInventoryReservationCreateAction => 'Reserve stock';
+
+  @override
+  String get catalogInventoryReservationCreateTitle =>
+      'Create demo reservation';
+
+  @override
+  String get catalogInventoryReservationCreateConfirm => 'Reserve';
+
+  @override
+  String get catalogInventoryReservationCreateSuccess =>
+      'Reservation created for this preview session.';
+
+  @override
+  String get catalogInventoryReservationItemLabel => 'Inventory row';
+
+  @override
+  String get catalogInventoryReservationItemRequired =>
+      'Select an inventory row.';
+
+  @override
+  String get catalogInventoryReservationQuantityField => 'Quantity';
+
+  @override
+  String catalogInventoryReservationQuantityLabel(int qty) {
+    return 'Quantity: $qty';
+  }
+
+  @override
+  String get catalogInventoryReservationQuantityInvalid =>
+      'Enter a positive quantity.';
+
+  @override
+  String get catalogInventoryReservationExpiryMinutesField =>
+      'Expires in (minutes)';
+
+  @override
+  String get catalogInventoryReservationExpiryInvalid =>
+      'Expiry must be in the future.';
+
+  @override
+  String get catalogInventoryReservationInsufficientStock =>
+      'Not enough available stock for this preview row.';
+
+  @override
+  String get catalogInventoryReservationItemUnavailable =>
+      'This inventory row is marked unavailable.';
+
+  @override
+  String get catalogInventoryReservationSaveFailed =>
+      'Could not save reservation. Try again.';
+
+  @override
+  String get catalogInventoryReservationEmpty =>
+      'No reservations in this preview session yet.';
+
+  @override
+  String get catalogInventoryReservationStatusFilter => 'Status';
+
+  @override
+  String get catalogInventoryReservationAllStatuses => 'All statuses';
+
+  @override
+  String get catalogInventoryReservationStatusReserved => 'Reserved';
+
+  @override
+  String get catalogInventoryReservationStatusConfirmed => 'Confirmed';
+
+  @override
+  String get catalogInventoryReservationStatusReleased => 'Released';
+
+  @override
+  String get catalogInventoryReservationStatusExpired => 'Expired';
+
+  @override
+  String catalogInventoryReservationCreatedLabel(String date) {
+    return 'Created: $date';
+  }
+
+  @override
+  String catalogInventoryReservationExpiresLabel(String date) {
+    return 'Expires: $date';
+  }
+
+  @override
+  String get catalogInventoryReservationReleaseAction => 'Release';
+
+  @override
+  String get catalogInventoryReservationConfirmAction => 'Confirm sale';
+
+  @override
+  String get catalogInventoryReservationExpireAction => 'Expire';
+
+  @override
+  String get catalogInventoryReservationExpireAllDue => 'Expire due';
+
+  @override
+  String catalogInventoryReservationExpireAllResult(int count) {
+    return 'Expired $count due reservation(s) in preview.';
+  }
+
+  @override
+  String get catalogInventoryReservationReleaseSuccess =>
+      'Reservation released.';
+
+  @override
+  String get catalogInventoryReservationConfirmSuccess =>
+      'Reservation confirmed as demo sale.';
+
+  @override
+  String get catalogInventoryReservationExpireSuccess => 'Reservation expired.';
+
+  @override
+  String get catalogInventoryReservationHistoryEmpty =>
+      'No lifecycle events yet.';
+
+  @override
+  String catalogInventoryReservationHistoryLine(
+    String action,
+    String fromStatus,
+    String toStatus,
+    int quantity,
+  ) {
+    return '$action: $fromStatus → $toStatus · qty $quantity';
+  }
+
+  @override
+  String get catalogInventoryReservationReconcileAction => 'Run audit';
+
+  @override
+  String get catalogInventoryReservationReconcileTitle =>
+      'Reserved quantity audit (demo)';
+
+  @override
+  String get catalogInventoryReservationReconcileDemoNote =>
+      'This audit compares active reservations to inventory reserved totals. It does not change stock.';
+
+  @override
+  String get catalogInventoryReservationReconcileClean =>
+      'No discrepancies found.';
+
+  @override
+  String catalogInventoryReservationReconcileLine(
+    String itemId,
+    int expected,
+    int actual,
+  ) {
+    return '$itemId: expected $expected, actual $actual';
+  }
+
+  @override
+  String get catalogResourceSectionTitle => 'Resource capacity (preview)';
+
+  @override
+  String get catalogResourceSectionBody =>
+      'Equipment, staff, and service capacity per branch — separate from product stock.';
+
+  @override
+  String get catalogResourceListTitle => 'Resources';
+
+  @override
+  String get catalogResourceDemoDisclaimer =>
+      'Demo resource capacity — not connected to live bookings.';
+
+  @override
+  String get catalogResourceAddAction => 'Add resource';
+
+  @override
+  String get catalogResourceEmptyBody => 'No resources match your filters.';
+
+  @override
+  String get catalogResourceBranchFilter => 'Branch';
+
+  @override
+  String get catalogResourceAllBranches => 'All branches';
+
+  @override
+  String get catalogResourceTypeFilter => 'Resource type';
+
+  @override
+  String get catalogResourceAllTypes => 'All types';
+
+  @override
+  String get catalogResourceStatusFilter => 'Status';
+
+  @override
+  String get catalogResourceAllStatuses => 'All statuses';
+
+  @override
+  String get catalogResourceTypeEquipment => 'Equipment';
+
+  @override
+  String get catalogResourceTypeStaff => 'Staff';
+
+  @override
+  String get catalogResourceTypeServiceCapacity => 'Service capacity';
+
+  @override
+  String get catalogResourceStatusActive => 'Active';
+
+  @override
+  String get catalogResourceStatusUnavailable => 'Unavailable';
+
+  @override
+  String get catalogResourceStatusArchived => 'Archived';
+
+  @override
+  String catalogResourceTotalLabel(int qty) {
+    return 'Total capacity: $qty';
+  }
+
+  @override
+  String catalogResourceAllocatedLabel(int qty) {
+    return 'Allocated (demo): $qty';
+  }
+
+  @override
+  String catalogResourceAvailableLabel(int qty) {
+    return 'Available: $qty';
+  }
+
+  @override
+  String catalogResourceUnitLabel(String unit) {
+    return 'Unit: $unit';
+  }
+
+  @override
+  String get catalogResourceEditAction => 'Edit';
+
+  @override
+  String get catalogResourceChangeCapacityAction => 'Change capacity';
+
+  @override
+  String get catalogResourceMarkUnavailableAction => 'Mark unavailable';
+
+  @override
+  String get catalogResourceMarkActiveAction => 'Mark active';
+
+  @override
+  String get catalogResourceArchiveAction => 'Archive';
+
+  @override
+  String get catalogResourceHistoryEmpty =>
+      'No capacity changes in this preview session yet.';
+
+  @override
+  String catalogResourceHistoryLine(int before, int after, String reason) {
+    return 'Total $before → $after · $reason';
+  }
+
+  @override
+  String get catalogResourceCreateTitle => 'New resource';
+
+  @override
+  String get catalogResourceEditTitle => 'Edit resource';
+
+  @override
+  String get catalogResourceNameField => 'Name (English preview)';
+
+  @override
+  String get catalogResourceUnitField => 'Capacity unit';
+
+  @override
+  String get catalogResourceTotalField => 'Total capacity';
+
+  @override
+  String get catalogResourceSaveAction => 'Save';
+
+  @override
+  String get catalogResourceSaveSuccess =>
+      'Resource saved for this preview session.';
+
+  @override
+  String get catalogResourceSaveFailed => 'Could not save. Check your entries.';
+
+  @override
+  String get catalogResourceBranchRequired => 'Select a branch.';
+
+  @override
+  String get catalogResourceCapacityInvalid =>
+      'Enter a valid non-negative capacity.';
+
+  @override
+  String get catalogResourceBelowAllocated =>
+      'Total capacity cannot be below demo allocated amount.';
+
+  @override
+  String get catalogResourceChangeCapacityTitle => 'Change total capacity';
+
+  @override
+  String get catalogResourceReasonField => 'Reason';
+
+  @override
+  String get catalogResourceReasonRequired => 'Enter a short reason.';
+
+  @override
+  String get catalogResourceNoCapacityChange =>
+      'Enter a different total capacity.';
+
+  @override
+  String catalogResourceAllocatedHint(int qty) {
+    return 'Demo allocated: $qty (read-only in this phase).';
+  }
+
+  @override
+  String get catalogResourceCapacityChangeSuccess =>
+      'Capacity updated for this preview session.';
+
+  @override
+  String get catalogPricingSectionTitle => 'Base pricing (preview)';
+
+  @override
+  String get catalogPricingSectionBody =>
+      'Manage catalog price rules per branch with effective dates. Illustrative demo prices — not connected to live checkout.';
+
+  @override
+  String get catalogPricingListTitle => 'Pricing';
+
+  @override
+  String get catalogPricingDemoDisclaimer =>
+      'Illustrative demo prices — not connected to live checkout.';
+
+  @override
+  String get catalogPricingAddAction => 'Add price rule';
+
+  @override
+  String get catalogPricingEmptyBody => 'No price rules match your filters.';
+
+  @override
+  String get catalogPricingBranchFilter => 'Branch';
+
+  @override
+  String get catalogPricingAllBranches => 'All branches';
+
+  @override
+  String get catalogPricingKindFilter => 'Listing type';
+
+  @override
+  String get catalogPricingAllKinds => 'All listing types';
+
+  @override
+  String get catalogPricingKindProduct => 'Product';
+
+  @override
+  String get catalogPricingKindService => 'Service';
+
+  @override
+  String get catalogPricingStatusFilter => 'Status';
+
+  @override
+  String get catalogPricingAllStatuses => 'All statuses';
+
+  @override
+  String get catalogPricingStatusDraft => 'Draft';
+
+  @override
+  String get catalogPricingStatusActive => 'Active';
+
+  @override
+  String get catalogPricingStatusArchived => 'Archived';
+
+  @override
+  String catalogPricingVariantLabel(String name) {
+    return 'Variant: $name';
+  }
+
+  @override
+  String catalogPricingBranchLabel(String name) {
+    return 'Branch: $name';
+  }
+
+  @override
+  String catalogPricingAmountLabel(String amount) {
+    return 'Amount: $amount';
+  }
+
+  @override
+  String catalogPricingEffectiveIntervalLabel(String from, String until) {
+    return 'Effective: $from → $until';
+  }
+
+  @override
+  String get catalogPricingOpenEnded => 'open-ended';
+
+  @override
+  String catalogPricingRevisionLabel(int revision) {
+    return 'Revision: $revision';
+  }
+
+  @override
+  String catalogPricingEffectivePreviewLine(String result) {
+    return 'Effective price at preview time: $result';
+  }
+
+  @override
+  String catalogPricingEffectiveFound(String amount) {
+    return '$amount';
+  }
+
+  @override
+  String get catalogPricingEffectiveNotFound => 'No matching active price';
+
+  @override
+  String get catalogPricingEffectiveAmbiguous =>
+      'Ambiguous — multiple active prices match';
+
+  @override
+  String get catalogPricingEditAction => 'Edit draft';
+
+  @override
+  String get catalogPricingActivateAction => 'Activate';
+
+  @override
+  String get catalogPricingArchiveAction => 'Archive';
+
+  @override
+  String get catalogPricingShowHistoryAction => 'Show history';
+
+  @override
+  String get catalogPricingHideHistoryAction => 'Hide history';
+
+  @override
+  String get catalogPricingHistoryEmpty =>
+      'No price history in this preview session yet.';
+
+  @override
+  String catalogPricingHistoryLine(String action, String before, String after) {
+    return '$action: $before → $after';
+  }
+
+  @override
+  String get catalogPricingPreviewTitle => 'Effective price preview';
+
+  @override
+  String get catalogPricingPreviewBody =>
+      'Pick a demo as-of date to evaluate which active rule applies.';
+
+  @override
+  String catalogPricingPreviewAsOfLabel(String date) {
+    return 'As of: $date';
+  }
+
+  @override
+  String get catalogPricingPreviewHint =>
+      'Resolver uses active rules only; variant-specific prices override base listing prices.';
+
+  @override
+  String get catalogPricingCreateTitle => 'New price rule';
+
+  @override
+  String get catalogPricingEditTitle => 'Edit draft price';
+
+  @override
+  String get catalogPricingVariantOptional => 'Variant (optional)';
+
+  @override
+  String get catalogPricingBaseListingPrice => 'Base listing (no variant)';
+
+  @override
+  String get catalogPricingAmountField => 'Amount (whole UZS som)';
+
+  @override
+  String get catalogPricingEffectiveFromField =>
+      'Effective from (YYYY-MM-DD UTC)';
+
+  @override
+  String get catalogPricingEffectiveUntilField =>
+      'Effective until (optional, YYYY-MM-DD UTC)';
+
+  @override
+  String get catalogPricingCurrencyHint =>
+      'Currency: UZS (whole som, no fractional conversion).';
+
+  @override
+  String get catalogPricingCancelAction => 'Cancel';
+
+  @override
+  String get catalogPricingSaveAction => 'Save';
+
+  @override
+  String get catalogPricingScopeRequired => 'Select branch and listing.';
+
+  @override
+  String get catalogPricingAmountInvalid =>
+      'Enter a valid non-negative whole amount.';
+
+  @override
+  String get catalogPricingDateInvalid => 'Enter dates as YYYY-MM-DD.';
+
+  @override
+  String get catalogPricingActiveImmutable =>
+      'Active prices cannot be edited silently. Create a new revision draft instead.';
+
+  @override
+  String get catalogPricingSaveFailed => 'Could not save. Check your entries.';
+
+  @override
+  String get catalogPricingEffectiveRangeInvalid =>
+      'Effective until must be after effective from.';
+
+  @override
+  String get catalogPricingActivateOverlapError =>
+      'Cannot activate: another active price overlaps this interval for the same target.';
+
+  @override
+  String get catalogDiscountSectionTitle => 'Discount rules (preview)';
+
+  @override
+  String get catalogDiscountSectionBody =>
+      'Illustrative discount rules on top of catalog base prices — not connected to live checkout.';
+
+  @override
+  String get catalogDiscountListTitle => 'Discounts';
+
+  @override
+  String get catalogDiscountDemoDisclaimer =>
+      'Illustrative discounts only — not connected to live checkout.';
+
+  @override
+  String get catalogDiscountAddAction => 'Add discount rule';
+
+  @override
+  String get catalogDiscountEmptyBody =>
+      'No discount rules match your filters.';
+
+  @override
+  String get catalogDiscountBranchFilter => 'Branch';
+
+  @override
+  String get catalogDiscountAllBranches => 'All branches';
+
+  @override
+  String get catalogDiscountScopeFilter => 'Target scope';
+
+  @override
+  String get catalogDiscountAllScopes => 'All scopes';
+
+  @override
+  String get catalogDiscountScopeBusinessWide => 'Business-wide';
+
+  @override
+  String get catalogDiscountScopeProduct => 'Product';
+
+  @override
+  String get catalogDiscountScopeService => 'Service';
+
+  @override
+  String get catalogDiscountStatusFilter => 'Status';
+
+  @override
+  String get catalogDiscountAllStatuses => 'All statuses';
+
+  @override
+  String get catalogDiscountTypeFilter => 'Discount type';
+
+  @override
+  String get catalogDiscountTypePercentage => 'Percentage';
+
+  @override
+  String get catalogDiscountTypeFixed => 'Fixed amount (UZS)';
+
+  @override
+  String catalogDiscountPercentLabel(int percent) {
+    return '$percent% off';
+  }
+
+  @override
+  String catalogDiscountFixedLabel(String amount) {
+    return '$amount off';
+  }
+
+  @override
+  String catalogDiscountMinBasketLabel(String amount) {
+    return 'Minimum basket: $amount';
+  }
+
+  @override
+  String catalogDiscountPriorityLabel(int priority) {
+    return 'Priority: $priority';
+  }
+
+  @override
+  String get catalogDiscountEditAction => 'Edit draft';
+
+  @override
+  String get catalogDiscountActivateAction => 'Activate';
+
+  @override
+  String get catalogDiscountArchiveAction => 'Archive';
+
+  @override
+  String get catalogDiscountShowHistoryAction => 'Show history';
+
+  @override
+  String get catalogDiscountHideHistoryAction => 'Hide history';
+
+  @override
+  String get catalogDiscountHistoryEmpty =>
+      'No discount history in this preview session yet.';
+
+  @override
+  String catalogDiscountHistoryLine(
+    String action,
+    String before,
+    String after,
+  ) {
+    return '$action: rev $before → $after';
+  }
+
+  @override
+  String get catalogDiscountPreviewTitle => 'Illustrative price after discount';
+
+  @override
+  String get catalogDiscountPreviewListingKind => 'Preview listing type';
+
+  @override
+  String get catalogDiscountPreviewListing => 'Preview listing';
+
+  @override
+  String get catalogDiscountPreviewSubtotal =>
+      'Qualifying subtotal (optional, UZS)';
+
+  @override
+  String get catalogDiscountPreviewNoBasePrice =>
+      'No active base price for this preview target.';
+
+  @override
+  String get catalogDiscountPreviewNoDiscount =>
+      'Could not compute discount preview.';
+
+  @override
+  String catalogDiscountPreviewApplied(
+    String base,
+    String discount,
+    String finalAmount,
+  ) {
+    return 'Base $base · discount −$discount · final $finalAmount';
+  }
+
+  @override
+  String get catalogDiscountPreviewNotApplied =>
+      'No eligible discount rule applies.';
+
+  @override
+  String get catalogDiscountPreviewAmbiguous =>
+      'Ambiguous — multiple rules share top priority.';
+
+  @override
+  String get catalogDiscountCreateTitle => 'New discount rule';
+
+  @override
+  String get catalogDiscountEditTitle => 'Edit draft discount';
+
+  @override
+  String get catalogDiscountBasisPointsField => 'Basis points (1000 = 10%)';
+
+  @override
+  String get catalogDiscountFixedAmountField => 'Fixed discount (whole UZS)';
+
+  @override
+  String get catalogDiscountMinBasketField => 'Minimum basket (optional, UZS)';
+
+  @override
+  String get catalogDiscountPriorityField => 'Priority (higher wins)';
+
+  @override
+  String get catalogDiscountScopeRequired => 'Select branch and target.';
+
+  @override
+  String get catalogDiscountValueInvalid =>
+      'Enter a valid discount value and priority.';
+
+  @override
+  String get catalogDiscountActiveImmutable =>
+      'Active rules cannot be edited silently. Create a revision draft instead.';
+
+  @override
+  String get catalogDiscountSaveFailed => 'Could not save. Check your entries.';
+
+  @override
+  String get catalogDiscountActivateOverlapError =>
+      'Cannot activate: another active rule overlaps this interval for the same target.';
+
+  @override
+  String get catalogPromoSectionTitle => 'Promo codes (preview)';
+
+  @override
+  String get catalogPromoSectionBody =>
+      'Illustrative promo codes and eligibility preview — not connected to live checkout.';
+
+  @override
+  String get catalogPromoListTitle => 'Promo codes';
+
+  @override
+  String get catalogPromoDemoDisclaimer =>
+      'Promo-code preview only — no live redemption or checkout.';
+
+  @override
+  String get catalogPromoAddAction => 'Add promo code';
+
+  @override
+  String get catalogPromoEmptyBody => 'No promo codes match your filters.';
+
+  @override
+  String get catalogPromoBranchFilter => 'Branch';
+
+  @override
+  String get catalogPromoAllBranches => 'All branches';
+
+  @override
+  String get catalogPromoStatusFilter => 'Status';
+
+  @override
+  String get catalogPromoAllStatuses => 'All statuses';
+
+  @override
+  String get catalogPromoPreviewTitle => 'Promo eligibility preview';
+
+  @override
+  String get catalogPromoPreviewCode => 'Enter promo code';
+
+  @override
+  String get catalogPromoPreviewCustomer =>
+      'Demo customer reference (optional)';
+
+  @override
+  String catalogPromoPreviewApplied(
+    String base,
+    String discount,
+    String finalAmount,
+  ) {
+    return 'Base $base · discount −$discount · final $finalAmount';
+  }
+
+  @override
+  String catalogPromoUsageSnapshotLine(int total, int customer) {
+    return 'Usage snapshot: $total total · $customer for this customer (preview only)';
+  }
+
+  @override
+  String catalogPromoLinkedDiscountLabel(String id) {
+    return 'Linked discount: $id';
+  }
+
+  @override
+  String catalogPromoMaxTotalUsesLabel(int count) {
+    return 'Max total uses: $count';
+  }
+
+  @override
+  String catalogPromoMaxCustomerUsesLabel(int count) {
+    return 'Max uses per customer: $count';
+  }
+
+  @override
+  String get catalogPromoEditAction => 'Edit draft';
+
+  @override
+  String get catalogPromoActivateAction => 'Activate';
+
+  @override
+  String get catalogPromoArchiveAction => 'Archive';
+
+  @override
+  String get catalogPromoShowHistoryAction => 'Show history';
+
+  @override
+  String get catalogPromoShowUsageAction => 'Show usage';
+
+  @override
+  String catalogPromoUsageLine(String customer, String redemption) {
+    return 'Customer $customer · redemption $redemption';
+  }
+
+  @override
+  String get catalogPromoCreateTitle => 'New promo code';
+
+  @override
+  String get catalogPromoEditTitle => 'Edit draft promo';
+
+  @override
+  String get catalogPromoCodeField => 'Promo code';
+
+  @override
+  String get catalogPromoMinBasketField => 'Minimum basket (optional, UZS)';
+
+  @override
+  String get catalogPromoMaxTotalUsesField => 'Max total uses (optional)';
+
+  @override
+  String get catalogPromoMaxCustomerUsesField =>
+      'Max uses per customer (optional)';
+
+  @override
+  String get catalogPromoActivateDiscountError =>
+      'Cannot activate: linked discount is inactive or intervals do not overlap.';
+
+  @override
+  String get catalogPromoSaveFailed => 'Could not save. Check your entries.';
+
+  @override
+  String get catalogPromoActiveImmutable =>
+      'Active promo codes cannot be edited silently.';
+
+  @override
+  String get catalogPromoEligibilityEligible =>
+      'Eligible — linked discount applies.';
+
+  @override
+  String get catalogPromoEligibilityInvalidCode =>
+      'Invalid or unknown promo code.';
+
+  @override
+  String get catalogPromoEligibilityInactive => 'Promo code is not active.';
+
+  @override
+  String get catalogPromoEligibilityNotYetValid =>
+      'Promo code is not valid yet.';
+
+  @override
+  String get catalogPromoEligibilityExpired => 'Promo code has expired.';
+
+  @override
+  String get catalogPromoEligibilityScopeMismatch =>
+      'Promo code does not apply to this branch or listing.';
+
+  @override
+  String get catalogPromoEligibilityDiscountUnavailable =>
+      'Linked discount rule is unavailable.';
+
+  @override
+  String get catalogPromoEligibilityMinimumBasket =>
+      'Minimum basket requirement not met.';
+
+  @override
+  String get catalogPromoEligibilityTotalLimit => 'Total usage limit reached.';
+
+  @override
+  String get catalogPromoEligibilityCustomerLimit =>
+      'Customer usage limit reached.';
+
+  @override
+  String get catalogPromoEligibilityNoApplicableDiscount =>
+      'Linked discount does not apply to this listing.';
+
+  @override
+  String get catalogPromoEligibilityBasePriceRequired =>
+      'Base price is required for preview.';
+
+  @override
+  String get catalogCommercialFeeSectionTitle => 'Commercial fees (preview)';
+
+  @override
+  String get catalogCommercialFeeSectionBody =>
+      'Illustrative platform, service, delivery and commission rules — not settlement.';
+
+  @override
+  String get catalogCommercialFeeListTitle => 'Commercial fees';
+
+  @override
+  String get catalogCommercialFeeDemoDisclaimer =>
+      'Illustrative commercial fees only — not connected to live checkout or settlement.';
+
+  @override
+  String get catalogCommercialFeeAddAction => 'Add fee rule';
+
+  @override
+  String get catalogCommercialFeeEmptyBody =>
+      'No fee rules match your filters.';
+
+  @override
+  String get catalogCommercialFeeTypeFilter => 'Fee type';
+
+  @override
+  String get catalogCommercialFeeAllTypes => 'All fee types';
+
+  @override
+  String get catalogCommercialFeeStatusFilter => 'Status';
+
+  @override
+  String get catalogCommercialFeeAllStatuses => 'All statuses';
+
+  @override
+  String get catalogCommercialFeeBranchFilter => 'Branch';
+
+  @override
+  String get catalogCommercialFeeAllBranches => 'All branches';
+
+  @override
+  String get catalogCommercialFeeTypePlatform => 'Platform fee';
+
+  @override
+  String get catalogCommercialFeeTypeService => 'Service fee';
+
+  @override
+  String get catalogCommercialFeeTypeDelivery => 'Delivery fee';
+
+  @override
+  String get catalogCommercialFeeTypeCommission => 'Commission';
+
+  @override
+  String get catalogCommercialFeeBearerCustomer => 'Customer';
+
+  @override
+  String get catalogCommercialFeeBearerBusiness => 'Business';
+
+  @override
+  String get catalogCommercialFeeBearerPlatform => 'Platform accounting';
+
+  @override
+  String get catalogCommercialFeeCalcFixed => 'Fixed amount (UZS)';
+
+  @override
+  String get catalogCommercialFeeCalcPercent => 'Percentage';
+
+  @override
+  String get catalogCommercialFeeBasisListing => 'Listing base';
+
+  @override
+  String get catalogCommercialFeeBasisService => 'Service amount';
+
+  @override
+  String get catalogCommercialFeeBasisDelivery => 'Delivery basis';
+
+  @override
+  String get catalogCommercialFeeBasisCommission => 'Commission basis';
+
+  @override
+  String catalogCommercialFeePriorityLabel(int priority) {
+    return 'Priority: $priority';
+  }
+
+  @override
+  String get catalogCommercialFeeEditAction => 'Edit draft';
+
+  @override
+  String get catalogCommercialFeeActivateAction => 'Activate';
+
+  @override
+  String get catalogCommercialFeeArchiveAction => 'Archive';
+
+  @override
+  String get catalogCommercialFeeShowHistoryAction => 'Show history';
+
+  @override
+  String get catalogCommercialFeeHideHistoryAction => 'Hide history';
+
+  @override
+  String get catalogCommercialFeePreviewTitle => 'Fee preview';
+
+  @override
+  String get catalogCommercialFeePreviewListingBase => 'Listing base (UZS)';
+
+  @override
+  String get catalogCommercialFeePreviewService => 'Service amount (UZS)';
+
+  @override
+  String get catalogCommercialFeePreviewDelivery => 'Delivery basis (UZS)';
+
+  @override
+  String get catalogCommercialFeePreviewCommission => 'Commission basis (UZS)';
+
+  @override
+  String catalogCommercialFeePreviewLine(
+    String type,
+    String bearer,
+    String basis,
+    String fee,
+  ) {
+    return '$type · $bearer · basis $basis · fee $fee';
+  }
+
+  @override
+  String catalogCommercialFeePreviewBasisMissing(String type, String bearer) {
+    return '$type ($bearer): basis not provided.';
+  }
+
+  @override
+  String catalogCommercialFeePreviewAmbiguous(String types) {
+    return 'Ambiguous fee selection for: $types';
+  }
+
+  @override
+  String catalogCommercialFeePreviewTotal(String amount) {
+    return 'Illustrative fee total: $amount';
+  }
+
+  @override
+  String get catalogCommercialFeeCreateTitle => 'New fee rule';
+
+  @override
+  String get catalogCommercialFeeEditTitle => 'Edit draft fee rule';
+
+  @override
+  String get catalogCommercialFeeFixedField => 'Fixed amount (UZS)';
+
+  @override
+  String get catalogCommercialFeeBasisPointsField => 'Basis points (500 = 5%)';
+
+  @override
+  String get catalogCommercialFeePriorityField => 'Priority';
+
+  @override
+  String get catalogCommercialFeeSaveFailed =>
+      'Could not save. Check your entries.';
+
+  @override
+  String get catalogCommercialFeeActiveImmutable =>
+      'Active fee rules cannot be edited silently.';
+
+  @override
+  String get catalogCommercialFeeActivateOverlapError =>
+      'Cannot activate: another active rule overlaps this interval for the same scope.';
+
+  @override
+  String get businessCenterFulfillmentTitle => 'Fulfillment settings';
+
+  @override
+  String get businessCenterFulfillmentBody =>
+      'Configure supported delivery, pickup and on-site service modes (preview).';
+
+  @override
+  String get businessFulfillmentListTitle => 'Fulfillment';
+
+  @override
+  String get businessFulfillmentDemoDisclaimer =>
+      'Demo fulfillment settings — not connected to live orders or delivery.';
+
+  @override
+  String get businessFulfillmentAddAction => 'Add configuration';
+
+  @override
+  String get businessFulfillmentEmptyBody =>
+      'No fulfillment configurations match your filters.';
+
+  @override
+  String get businessFulfillmentBranchFilter => 'Branch';
+
+  @override
+  String get businessFulfillmentAllBranches => 'All branches';
+
+  @override
+  String get businessFulfillmentTypeFilter => 'Fulfillment type';
+
+  @override
+  String get businessFulfillmentAllTypes => 'All types';
+
+  @override
+  String get businessFulfillmentStatusFilter => 'Status';
+
+  @override
+  String get businessFulfillmentAllStatuses => 'All statuses';
+
+  @override
+  String get businessFulfillmentTypeDelivery => 'Delivery';
+
+  @override
+  String get businessFulfillmentTypePickup => 'Pickup';
+
+  @override
+  String get businessFulfillmentTypeServiceAtLocation => 'Service at location';
+
+  @override
+  String get businessFulfillmentScopeBusinessWide => 'Business-wide';
+
+  @override
+  String get businessFulfillmentScopeProduct => 'Product listing';
+
+  @override
+  String get businessFulfillmentScopeService => 'Service listing';
+
+  @override
+  String businessFulfillmentTypesLabel(String modes) {
+    return 'Supported modes: $modes';
+  }
+
+  @override
+  String get businessFulfillmentPreviewTitle => 'Modes preview';
+
+  @override
+  String get businessFulfillmentPreviewEmpty => 'No modes selected';
+
+  @override
+  String businessFulfillmentPreviewSelected(String modes) {
+    return 'Selected configuration supports: $modes';
+  }
+
+  @override
+  String get businessFulfillmentEditAction => 'Edit draft';
+
+  @override
+  String get businessFulfillmentActivateAction => 'Activate';
+
+  @override
+  String get businessFulfillmentArchiveAction => 'Archive';
+
+  @override
+  String get businessFulfillmentShowHistoryAction => 'Show history';
+
+  @override
+  String get businessFulfillmentHideHistoryAction => 'Hide history';
+
+  @override
+  String get businessFulfillmentCreateTitle => 'New fulfillment configuration';
+
+  @override
+  String get businessFulfillmentEditTitle => 'Edit draft configuration';
+
+  @override
+  String get businessFulfillmentListingIdField =>
+      'Listing ID (product or service)';
+
+  @override
+  String get businessFulfillmentTypesField => 'Supported fulfillment modes';
+
+  @override
+  String get businessFulfillmentSaveFailed =>
+      'Could not save. Check your entries.';
+
+  @override
+  String get businessFulfillmentActivateConflictError =>
+      'Another active configuration already exists for this branch and scope.';
+
+  @override
+  String get businessFulfillmentSelectAtLeastOneType =>
+      'Select at least one fulfillment mode.';
+
+  @override
+  String get businessFulfillmentDeliveryTasksLink => 'Open delivery tasks';
+
+  @override
+  String get businessFulfillmentDeliveryTasksBody =>
+      'Manage demo delivery task lifecycle separately from order status.';
+
+  @override
+  String get businessDeliveryTaskListTitle => 'Delivery tasks';
+
+  @override
+  String get businessDeliveryTaskDemoDisclaimer =>
+      'Demo delivery tasks only — not connected to live orders, couriers or tracking.';
+
+  @override
+  String get businessDeliveryTaskEmptyBody =>
+      'No delivery tasks match your filters.';
+
+  @override
+  String get businessDeliveryTaskBranchFilter => 'Branch';
+
+  @override
+  String get businessDeliveryTaskAllBranches => 'All branches';
+
+  @override
+  String get businessDeliveryTaskStatusFilter => 'Status';
+
+  @override
+  String get businessDeliveryTaskAllStatuses => 'All statuses';
+
+  @override
+  String get businessDeliveryTaskStatusCreated => 'Created';
+
+  @override
+  String get businessDeliveryTaskStatusReadyForPickup => 'Ready for pickup';
+
+  @override
+  String get businessDeliveryTaskStatusAssigned => 'Assigned (demo)';
+
+  @override
+  String get businessDeliveryTaskStatusPickedUp => 'Picked up';
+
+  @override
+  String get businessDeliveryTaskStatusInTransit => 'In transit';
+
+  @override
+  String get businessDeliveryTaskStatusDelivered => 'Delivered';
+
+  @override
+  String get businessDeliveryTaskStatusFailed => 'Failed';
+
+  @override
+  String get businessDeliveryTaskStatusCancelled => 'Cancelled';
+
+  @override
+  String businessDeliveryTaskBranchLabel(String name) {
+    return 'Branch: $name';
+  }
+
+  @override
+  String businessDeliveryTaskStatusLine(String status) {
+    return 'Status: $status';
+  }
+
+  @override
+  String businessDeliveryTaskPickupLabel(String label) {
+    return 'Pickup: $label';
+  }
+
+  @override
+  String businessDeliveryTaskDropOffLabel(String label) {
+    return 'Drop-off: $label';
+  }
+
+  @override
+  String businessDeliveryTaskAssignmentLabel(String ref) {
+    return 'Demo assignment: $ref';
+  }
+
+  @override
+  String businessDeliveryTaskFailureLine(String reason) {
+    return 'Failure reason: $reason';
+  }
+
+  @override
+  String businessDeliveryTaskUpdatedAt(String timestamp) {
+    return 'Updated: $timestamp';
+  }
+
+  @override
+  String get businessDeliveryTaskActionReadyForPickup =>
+      'Mark ready for pickup';
+
+  @override
+  String get businessDeliveryTaskActionAssignDemo => 'Assign (demo)';
+
+  @override
+  String get businessDeliveryTaskActionConfirmPickup => 'Confirm pickup';
+
+  @override
+  String get businessDeliveryTaskActionMarkInTransit => 'Mark in transit';
+
+  @override
+  String get businessDeliveryTaskActionMarkDelivered => 'Mark delivered';
+
+  @override
+  String get businessDeliveryTaskActionMarkFailed => 'Mark failed';
+
+  @override
+  String get businessDeliveryTaskActionCancel => 'Cancel task';
+
+  @override
+  String get businessDeliveryTaskShowHistoryAction => 'Show history';
+
+  @override
+  String get businessDeliveryTaskHideHistoryAction => 'Hide history';
+
+  @override
+  String businessDeliveryTaskHistoryLine(
+    String from,
+    String to,
+    String timestamp,
+  ) {
+    return '$from → $to at $timestamp';
+  }
+
+  @override
+  String get businessDeliveryTaskFailureDialogTitle =>
+      'Delivery failure reason';
+
+  @override
+  String get businessDeliveryTaskFailureReasonLabel => 'Reason (demo only)';
+
+  @override
+  String get businessDeliveryTaskFailureDialogCancel => 'Cancel';
+
+  @override
+  String get businessDeliveryTaskFailureDialogConfirm => 'Confirm failure';
+
+  @override
+  String get businessDeliveryTaskFailureReasonInvalid =>
+      'Enter a failure reason to continue.';
+
+  @override
+  String get businessDeliveryTaskTransitionInvalid =>
+      'That status change is not allowed for this task.';
+
+  @override
+  String get businessDeliveryTaskTransitionSaveError =>
+      'Could not save the status change. Try again.';
+
+  @override
+  String get businessDeliveryExceptionDemoDisclaimer =>
+      'Demo delivery exceptions — operational notes only, not the same as task failed status.';
+
+  @override
+  String get businessDeliveryProofDemoDisclaimer =>
+      'Demo proof only — no real photo upload, OTP verification or signature storage.';
+
+  @override
+  String get businessDeliveryExceptionSectionTitle => 'Delivery exceptions';
+
+  @override
+  String get businessDeliveryProofSectionTitle => 'Proof of delivery';
+
+  @override
+  String get businessDeliveryExceptionAddAction => 'Log exception';
+
+  @override
+  String get businessDeliveryProofAddAction => 'Add demo proof';
+
+  @override
+  String get businessDeliveryExceptionEmptyForTask =>
+      'No exceptions logged for this task.';
+
+  @override
+  String get businessDeliveryProofEmptyForTask =>
+      'No proof records for this task.';
+
+  @override
+  String get businessDeliveryExceptionCategoryRecipientUnavailable =>
+      'Recipient unavailable';
+
+  @override
+  String get businessDeliveryExceptionCategoryAddressIssue =>
+      'Address or location issue';
+
+  @override
+  String get businessDeliveryExceptionCategoryAccessBlocked => 'Access blocked';
+
+  @override
+  String get businessDeliveryExceptionCategoryDeliveryDelayed =>
+      'Delivery delayed';
+
+  @override
+  String get businessDeliveryExceptionCategoryItemIssue =>
+      'Item or package issue';
+
+  @override
+  String get businessDeliveryExceptionCategoryOther => 'Other';
+
+  @override
+  String get businessDeliveryExceptionStatusOpen => 'Open';
+
+  @override
+  String get businessDeliveryExceptionStatusResolved => 'Resolved';
+
+  @override
+  String get businessDeliveryExceptionStatusDismissed => 'Dismissed';
+
+  @override
+  String get businessDeliveryExceptionSeverityLow => 'Low';
+
+  @override
+  String get businessDeliveryExceptionSeverityMedium => 'Medium';
+
+  @override
+  String get businessDeliveryExceptionSeverityHigh => 'High';
+
+  @override
+  String businessDeliveryExceptionLine(
+    String category,
+    String status,
+    String reason,
+  ) {
+    return '$category · $status · $reason';
+  }
+
+  @override
+  String businessDeliveryProofLine(
+    String method,
+    String status,
+    String reference,
+  ) {
+    return '$method · $status · $reference';
+  }
+
+  @override
+  String get businessDeliveryExceptionResolveAction => 'Resolve';
+
+  @override
+  String get businessDeliveryExceptionDismissAction => 'Dismiss';
+
+  @override
+  String get businessDeliveryExceptionReopenAction => 'Reopen';
+
+  @override
+  String get businessDeliveryProofVerifyDemoAction => 'Demo verify';
+
+  @override
+  String get businessDeliveryProofRejectDemoAction => 'Demo reject';
+
+  @override
+  String get businessDeliveryExceptionCreateTitle => 'Log delivery exception';
+
+  @override
+  String get businessDeliveryExceptionReasonField =>
+      'Reason (non-PII demo text)';
+
+  @override
+  String get businessDeliveryExceptionCategoryField => 'Category';
+
+  @override
+  String get businessDeliveryExceptionResolveTitle => 'Resolve exception';
+
+  @override
+  String get businessDeliveryExceptionResolutionField => 'Resolution note';
+
+  @override
+  String get businessDeliveryProofCreateTitle => 'Add demo proof';
+
+  @override
+  String get businessDeliveryProofMethodField => 'Proof method';
+
+  @override
+  String get businessDeliveryProofEvidenceField => 'Demo evidence reference';
+
+  @override
+  String get businessDeliveryProofDescriptionField => 'Description';
+
+  @override
+  String get businessDeliveryProofVerifyTitle => 'Demo verification';
+
+  @override
+  String get businessDeliveryProofVerificationReasonField =>
+      'Verification note (demo)';
+
+  @override
+  String get businessDeliveryDialogCancel => 'Cancel';
+
+  @override
+  String get businessDeliveryDialogSave => 'Save';
+
+  @override
+  String get businessDeliveryDialogConfirm => 'Confirm';
+
+  @override
+  String get businessDeliveryExceptionSaveError =>
+      'Could not save exception. Try again.';
+
+  @override
+  String get businessDeliveryProofSaveError =>
+      'Could not save proof. Try again.';
+
+  @override
+  String get businessDeliveryExceptionValidationError =>
+      'Check exception fields and try again.';
+
+  @override
+  String get businessDeliveryProofValidationError =>
+      'Check proof fields — use demo references only.';
+
+  @override
+  String get businessDeliveryProofMethodPhoto => 'Photo (demo reference)';
+
+  @override
+  String get businessDeliveryProofMethodRecipientOtp => 'Recipient OTP (demo)';
+
+  @override
+  String get businessDeliveryProofMethodSignature => 'Signature (demo)';
+
+  @override
+  String get businessDeliveryProofMethodRecipientConfirmation =>
+      'Recipient confirmation';
+
+  @override
+  String get businessDeliveryProofStatusPending => 'Pending';
+
+  @override
+  String get businessDeliveryProofStatusVerified => 'Verified (demo)';
+
+  @override
+  String get businessDeliveryProofStatusRejected => 'Rejected';
+
+  @override
+  String get businessDeliveryProofStatusSuperseded => 'Superseded';
+
+  @override
+  String get businessDeliveryExceptionHistoryAction => 'Exception history';
+
+  @override
+  String get businessDeliveryProofHistoryAction => 'Proof history';
+
+  @override
+  String get businessCenterReviewsTitle => 'Reviews & ratings';
+
+  @override
+  String get businessCenterReviewsBody =>
+      'Demo verified reviews with synthetic transaction evidence (preview).';
+
+  @override
+  String get businessReviewListTitle => 'Reviews & ratings';
+
+  @override
+  String get businessReviewDemoDisclaimer =>
+      'Demo reviews only — synthetic transaction evidence; no real customer reviews.';
+
+  @override
+  String get businessReviewDemoRatingNote =>
+      'Demo rating summary — not this business’s production reputation score.';
+
+  @override
+  String get businessReviewCreateDemoAction => 'Create demo review';
+
+  @override
+  String get businessReviewSummaryTitle => 'Rating summary (published only)';
+
+  @override
+  String businessReviewSummaryAverage(String average) {
+    return 'Average: $average';
+  }
+
+  @override
+  String businessReviewSummaryCount(int count) {
+    return 'Published reviews: $count';
+  }
+
+  @override
+  String businessReviewDistributionLine(int stars, int count) {
+    return '$stars★ — $count';
+  }
+
+  @override
+  String get businessReviewBranchFilter => 'Branch';
+
+  @override
+  String get businessReviewAllBranches => 'All branches';
+
+  @override
+  String get businessReviewTargetTypeFilter => 'Target type';
+
+  @override
+  String get businessReviewAllTargetTypes => 'All target types';
+
+  @override
+  String get businessReviewStatusFilter => 'Status';
+
+  @override
+  String get businessReviewAllStatuses => 'All statuses';
+
+  @override
+  String get businessReviewTargetBusiness => 'Business';
+
+  @override
+  String get businessReviewTargetProduct => 'Product';
+
+  @override
+  String get businessReviewTargetService => 'Service';
+
+  @override
+  String get businessReviewTargetBusinessScope => 'Business scope';
+
+  @override
+  String get businessReviewStatusDraft => 'Draft';
+
+  @override
+  String get businessReviewStatusPendingModeration => 'Pending moderation';
+
+  @override
+  String get businessReviewStatusPublished => 'Published';
+
+  @override
+  String get businessReviewStatusRejected => 'Rejected';
+
+  @override
+  String get businessReviewStatusHidden => 'Hidden';
+
+  @override
+  String get businessReviewEmptyBody => 'No reviews match your filters.';
+
+  @override
+  String businessReviewCardLine(
+    String target,
+    String type,
+    String rating,
+    String status,
+  ) {
+    return '$target · $type · $rating★ · $status';
+  }
+
+  @override
+  String businessReviewProvenanceLine(String evidence, String reviewer) {
+    return 'Evidence: $evidence · Reviewer: $reviewer';
+  }
+
+  @override
+  String get businessReviewSyntheticBadge =>
+      'Synthetic demo review — not verified by a real transaction backend.';
+
+  @override
+  String get businessReviewHistoryAction => 'Show history';
+
+  @override
+  String businessReviewHistoryLine(String from, String to, String timestamp) {
+    return '$from → $to at $timestamp';
+  }
+
+  @override
+  String get businessReviewActionSubmitModeration => 'Submit for moderation';
+
+  @override
+  String get businessReviewActionPublish => 'Publish';
+
+  @override
+  String get businessReviewActionReject => 'Reject';
+
+  @override
+  String get businessReviewActionHide => 'Hide';
+
+  @override
+  String get businessReviewCreateDialogTitle => 'Create demo review';
+
+  @override
+  String get businessReviewSyntheticEvidenceNote =>
+      'Uses synthetic transaction evidence only.';
+
+  @override
+  String get businessReviewTargetTypeField => 'Target type';
+
+  @override
+  String get businessReviewTargetIdField => 'Target ID';
+
+  @override
+  String get businessReviewRatingField => 'Rating (1–5)';
+
+  @override
+  String get businessReviewTitleField => 'Title (optional)';
+
+  @override
+  String get businessReviewTextField => 'Review text (optional)';
+
+  @override
+  String get businessReviewCheckEligibilityAction => 'Check eligibility';
+
+  @override
+  String get businessReviewDialogCancel => 'Cancel';
+
+  @override
+  String get businessReviewDialogSave => 'Save';
+
+  @override
+  String get businessReviewDialogConfirm => 'Confirm';
+
+  @override
+  String get businessReviewSaveError => 'Could not save review. Try again.';
+
+  @override
+  String get businessReviewCreateIneligible =>
+      'Not eligible — check evidence, target and reviewer.';
+
+  @override
+  String get businessReviewValidationError =>
+      'Check review fields and try again.';
+
+  @override
+  String get businessReviewModerationReasonTitle => 'Moderation note';
+
+  @override
+  String get businessReviewModerationReasonLabel => 'Reason (demo)';
+
+  @override
+  String get businessReviewEligibilityEligible =>
+      'Eligible — synthetic completed transaction matches target.';
+
+  @override
+  String get businessReviewEligibilityEvidenceNotFound =>
+      'Transaction evidence not found.';
+
+  @override
+  String get businessReviewEligibilityIncomplete =>
+      'Transaction is not completed.';
+
+  @override
+  String get businessReviewEligibilityScopeMismatch =>
+      'Business or branch scope does not match.';
+
+  @override
+  String get businessReviewEligibilityTargetMismatch =>
+      'Evidence does not match target or reviewer.';
+
+  @override
+  String get businessReviewEligibilityDuplicate =>
+      'A review already exists for this evidence and reviewer.';
+
+  @override
+  String get businessCenterComplaintsDisputesTitle => 'Complaints & disputes';
+
+  @override
+  String get businessCenterComplaintsDisputesBody =>
+      'Demo case management with synthetic evidence (preview).';
+
+  @override
+  String get businessComplaintDisputeListTitle => 'Complaints & disputes';
+
+  @override
+  String get businessComplaintDisputeDemoDisclaimer =>
+      'Demo complaints and disputes only — synthetic cases and evidence; no real customer cases.';
+
+  @override
+  String get businessComplaintDisputeDemoResolutionNote =>
+      'Resolving a demo case is not an authoritative real-world decision.';
+
+  @override
+  String get businessComplaintTab => 'Complaints';
+
+  @override
+  String get businessDisputeTab => 'Disputes';
+
+  @override
+  String get businessComplaintCategoryFilter => 'Category';
+
+  @override
+  String get businessComplaintAllCategories => 'All categories';
+
+  @override
+  String get businessComplaintCategoryProductQuality => 'Product quality';
+
+  @override
+  String get businessComplaintCategoryServiceIssue => 'Service issue';
+
+  @override
+  String get businessComplaintCategoryBilling => 'Billing';
+
+  @override
+  String get businessComplaintCategoryDelivery => 'Delivery';
+
+  @override
+  String get businessComplaintCategoryOther => 'Other';
+
+  @override
+  String get businessComplaintStatusSubmitted => 'Submitted';
+
+  @override
+  String get businessComplaintStatusUnderReview => 'Under review';
+
+  @override
+  String get businessComplaintStatusResolved => 'Resolved';
+
+  @override
+  String get businessComplaintStatusDismissed => 'Dismissed';
+
+  @override
+  String get businessDisputeStatusFiled => 'Filed';
+
+  @override
+  String get businessDisputeStatusUnderReview => 'Under review';
+
+  @override
+  String get businessDisputeStatusResolvedBusiness => 'Resolved (business)';
+
+  @override
+  String get businessDisputeStatusResolvedReporter => 'Resolved (reporter)';
+
+  @override
+  String get businessDisputeStatusDismissed => 'Dismissed';
+
+  @override
+  String get businessComplaintEmptyBody => 'No complaints match your filters.';
+
+  @override
+  String get businessDisputeEmptyBody => 'No disputes match your filters.';
+
+  @override
+  String businessComplaintCardLine(
+    String target,
+    String category,
+    String status,
+  ) {
+    return '$target · $category · $status';
+  }
+
+  @override
+  String businessDisputeCardLine(String complaintId, String status) {
+    return 'Complaint $complaintId · $status';
+  }
+
+  @override
+  String businessComplaintEvidenceLine(String refs, String reporter) {
+    return 'Evidence: $refs · Reporter: $reporter';
+  }
+
+  @override
+  String businessComplaintLinkedDispute(String disputeId) {
+    return 'Linked dispute: $disputeId';
+  }
+
+  @override
+  String get businessComplaintNoDispute =>
+      'No dispute filed for this complaint.';
+
+  @override
+  String get businessComplaintCreateDemoAction => 'Create demo complaint';
+
+  @override
+  String get businessDisputeCreateDemoAction => 'File demo dispute';
+
+  @override
+  String get businessComplaintActionBeginReview => 'Begin review';
+
+  @override
+  String get businessComplaintActionResolve => 'Resolve';
+
+  @override
+  String get businessComplaintActionDismiss => 'Dismiss';
+
+  @override
+  String get businessDisputeActionBeginReview => 'Begin review';
+
+  @override
+  String get businessDisputeActionResolveBusiness => 'Resolve for business';
+
+  @override
+  String get businessDisputeActionResolveReporter => 'Resolve for reporter';
+
+  @override
+  String get businessDisputeActionDismiss => 'Dismiss';
+
+  @override
+  String get businessComplaintHistoryAction => 'Show history';
+
+  @override
+  String get businessDisputeHistoryAction => 'Show history';
+
+  @override
+  String businessComplaintHistoryLine(
+    String from,
+    String to,
+    String timestamp,
+  ) {
+    return '$from → $to at $timestamp';
+  }
+
+  @override
+  String businessDisputeHistoryLine(String from, String to, String timestamp) {
+    return '$from → $to at $timestamp';
+  }
+
+  @override
+  String get businessComplaintSyntheticBadge =>
+      'Synthetic demo case — not a real customer complaint.';
+
+  @override
+  String get businessComplaintClearFilters => 'Clear filters';
+
+  @override
+  String get businessComplaintSaveError =>
+      'Could not save complaint. Try again.';
+
+  @override
+  String get businessDisputeSaveError => 'Could not save dispute. Try again.';
+
+  @override
+  String get businessDisputeDuplicateError =>
+      'A dispute already exists for this complaint.';
+
+  @override
+  String get businessComplaintCreateDialogTitle => 'Create demo complaint';
+
+  @override
+  String get businessDisputeCreateDialogTitle => 'File demo dispute';
+
+  @override
+  String get businessComplaintDescriptionField => 'Description';
+
+  @override
+  String get businessDisputeSummaryField => 'Summary';
+
+  @override
+  String get businessComplaintSelectComplaintField => 'Complaint';
+
+  @override
+  String get businessComplaintSyntheticEvidenceNote =>
+      'Uses synthetic evidence references only.';
+
+  @override
+  String get businessCenterReputationEventsTitle => 'Reputation events';
+
+  @override
+  String get businessCenterReputationEventsBody =>
+      'Demo signal timeline from reviews, complaints and disputes (preview).';
+
+  @override
+  String get businessReputationEventsTitle => 'Reputation events';
+
+  @override
+  String get businessReputationEventsDemoDisclaimer =>
+      'Demo reputation events only — synthetic signals; no production Trust Score is calculated.';
+
+  @override
+  String get businessReputationEventsInformationalNote =>
+      'These records are informational audit signals, not automated trust decisions.';
+
+  @override
+  String get businessReputationEventSourceFilter => 'Source';
+
+  @override
+  String get businessReputationEventAllSources => 'All sources';
+
+  @override
+  String get businessReputationEventSourceReview => 'Review';
+
+  @override
+  String get businessReputationEventSourceComplaint => 'Complaint';
+
+  @override
+  String get businessReputationEventSourceDispute => 'Dispute';
+
+  @override
+  String get businessReputationEventTypeFilter => 'Event type';
+
+  @override
+  String get businessReputationEventAllTypes => 'All event types';
+
+  @override
+  String get businessReputationEventTypeReviewPublished => 'Review published';
+
+  @override
+  String get businessReputationEventTypeReviewRejected => 'Review rejected';
+
+  @override
+  String get businessReputationEventTypeReviewHidden => 'Review hidden';
+
+  @override
+  String get businessReputationEventTypeComplaintCreated => 'Complaint created';
+
+  @override
+  String get businessReputationEventTypeComplaintStatusChanged =>
+      'Complaint status changed';
+
+  @override
+  String get businessReputationEventTypeDisputeOpened => 'Dispute opened';
+
+  @override
+  String get businessReputationEventTypeDisputeStatusChanged =>
+      'Dispute status changed';
+
+  @override
+  String get businessReputationEventsEmptyBody =>
+      'No reputation events match your filters.';
+
+  @override
+  String businessReputationEventCardLine(
+    String type,
+    String source,
+    String sourceId,
+  ) {
+    return '$type · $source · $sourceId';
+  }
+
+  @override
+  String businessReputationEventTargetLine(String targetType, String targetId) {
+    return 'Target: $targetType · $targetId';
+  }
+
+  @override
+  String businessReputationEventStatusLine(String from, String to) {
+    return 'Status: $from → $to';
+  }
+
+  @override
+  String businessReputationEventTimestampsLine(
+    String occurred,
+    String recorded,
+  ) {
+    return 'Occurred: $occurred · Recorded: $recorded';
+  }
+
+  @override
+  String businessReputationEventProvenanceLine(String correlation) {
+    return 'Correlation: $correlation';
+  }
+
+  @override
+  String get businessReputationEventSyntheticBadge =>
+      'Synthetic demo signal — not verified customer behavior.';
 }

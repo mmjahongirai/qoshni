@@ -48,6 +48,18 @@ import 'package:qoshni/features/business_platform/presentation/pages/business_ca
 import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_product_variants_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_product_variant_editor_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_service_list_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_inventory_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_inventory_reservations_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_resource_list_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_pricing_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_discount_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_promo_code_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_commercial_fee_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_reviews_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_complaints_disputes_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_reputation_events_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_delivery_task_page.dart';
+import 'package:qoshni/features/business_platform/presentation/pages/business_fulfillment_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_service_detail_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_service_editor_page.dart';
 import 'package:qoshni/routing/route_paths.dart';
@@ -397,7 +409,80 @@ class AppRouter {
                   ),
                 ],
               ),
+              GoRoute(
+                path: 'inventory',
+                name: RouteNames.businessCatalogInventory,
+                builder: (context, state) =>
+                    const BusinessCatalogInventoryPage(),
+                routes: [
+                  GoRoute(
+                    path: 'reservations',
+                    name: RouteNames.businessCatalogInventoryReservations,
+                    builder: (context, state) =>
+                        const BusinessCatalogInventoryReservationsPage(),
+                  ),
+                ],
+              ),
+              GoRoute(
+                path: 'resources',
+                name: RouteNames.businessCatalogResources,
+                builder: (context, state) =>
+                    const BusinessCatalogResourceListPage(),
+              ),
+              GoRoute(
+                path: 'pricing',
+                name: RouteNames.businessCatalogPricing,
+                builder: (context, state) =>
+                    const BusinessCatalogPricingPage(),
+              ),
+              GoRoute(
+                path: 'discounts',
+                name: RouteNames.businessCatalogDiscounts,
+                builder: (context, state) =>
+                    const BusinessCatalogDiscountPage(),
+              ),
+              GoRoute(
+                path: 'promo-codes',
+                name: RouteNames.businessCatalogPromoCodes,
+                builder: (context, state) =>
+                    const BusinessCatalogPromoCodePage(),
+              ),
+              GoRoute(
+                path: 'commercial-fees',
+                name: RouteNames.businessCatalogCommercialFees,
+                builder: (context, state) =>
+                    const BusinessCatalogCommercialFeePage(),
+              ),
             ],
+          ),
+          GoRoute(
+            path: 'fulfillment',
+            name: RouteNames.businessFulfillment,
+            builder: (context, state) => const BusinessFulfillmentPage(),
+            routes: [
+              GoRoute(
+                path: 'delivery-tasks',
+                name: RouteNames.businessDeliveryTasks,
+                builder: (context, state) =>
+                    const BusinessDeliveryTaskPage(),
+              ),
+            ],
+          ),
+          GoRoute(
+            path: 'reviews',
+            name: RouteNames.businessReviews,
+            builder: (context, state) => const BusinessReviewsPage(),
+          ),
+          GoRoute(
+            path: 'complaints-disputes',
+            name: RouteNames.businessComplaintsDisputes,
+            builder: (context, state) =>
+                const BusinessComplaintsDisputesPage(),
+          ),
+          GoRoute(
+            path: 'reputation-events',
+            name: RouteNames.businessReputationEvents,
+            builder: (context, state) => const BusinessReputationEventsPage(),
           ),
           GoRoute(
             path: 'staff',

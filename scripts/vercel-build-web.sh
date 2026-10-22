@@ -35,6 +35,11 @@ if [ -n "${QOSHNI_API_BASE_URL:-}" ]; then
     "--dart-define=QOSHNI_API_BASE_URL=${QOSHNI_API_BASE_URL}"
   )
 fi
+if [ -n "${MAPBOX_ACCESS_TOKEN:-}" ]; then
+  DART_DEFINES+=(
+    "--dart-define=MAPBOX_ACCESS_TOKEN=${MAPBOX_ACCESS_TOKEN}"
+  )
+fi
 
 flutter pub get
 flutter build web --release -t lib/main_development.dart "${DART_DEFINES[@]}"

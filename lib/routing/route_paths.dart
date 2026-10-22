@@ -125,6 +125,40 @@ abstract final class RoutePaths {
 
   static String businessCatalogServiceEditPath(String serviceId) =>
       '/business-center/catalog/services/$serviceId/edit';
+
+  static const String businessCatalogInventory =
+      '/business-center/catalog/inventory';
+
+  static const String businessCatalogInventoryReservations =
+      '/business-center/catalog/inventory/reservations';
+
+  static const String businessCatalogResources =
+      '/business-center/catalog/resources';
+
+  static const String businessCatalogPricing =
+      '/business-center/catalog/pricing';
+
+  static const String businessCatalogDiscounts =
+      '/business-center/catalog/discounts';
+
+  static const String businessCatalogPromoCodes =
+      '/business-center/catalog/promo-codes';
+
+  static const String businessCatalogCommercialFees =
+      '/business-center/catalog/commercial-fees';
+
+  static const String businessFulfillment = '/business-center/fulfillment';
+
+  static const String businessDeliveryTasks =
+      '/business-center/fulfillment/delivery-tasks';
+
+  static const String businessReviews = '/business-center/reviews';
+
+  static const String businessComplaintsDisputes =
+      '/business-center/complaints-disputes';
+
+  static const String businessReputationEvents =
+      '/business-center/reputation-events';
 }
 
 abstract final class RouteNames {
@@ -193,4 +227,18 @@ abstract final class RouteNames {
       'businessCatalogServiceDetail';
   static const String businessCatalogServiceEdit =
       'businessCatalogServiceEdit';
+  static const String businessCatalogInventory = 'businessCatalogInventory';
+  static const String businessCatalogInventoryReservations =
+      'businessCatalogInventoryReservations';
+  static const String businessCatalogResources = 'businessCatalogResources';
+  static const String businessCatalogPricing = 'businessCatalogPricing';
+  static const String businessCatalogDiscounts = 'businessCatalogDiscounts';
+  static const String businessCatalogPromoCodes = 'businessCatalogPromoCodes';
+  static const String businessCatalogCommercialFees =
+      'businessCatalogCommercialFees';
+  static const String businessFulfillment = 'businessFulfillment';
+  static const String businessDeliveryTasks = 'businessDeliveryTasks';
+  static const String businessReviews = 'businessReviews';
+  static const String businessComplaintsDisputes = 'businessComplaintsDisputes';
+  static const String businessReputationEvents = 'businessReputationEvents';
 }
