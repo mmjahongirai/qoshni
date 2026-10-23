@@ -4871,4 +4871,156 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get businessReputationEventSyntheticBadge => 'Synthetic demo signal.';
+
+  @override
+  String get notificationInboxTitle => 'Bildirishnomalar';
+
+  @override
+  String get notificationInboxDemoDisclaimer =>
+      'Faqat demo bildirishnomalar — xotiradagi maʼlumot; haqiqiy push, SMS yoki email yuborilmaydi.';
+
+  @override
+  String notificationInboxUnreadCount(int count) {
+    return 'Oʻqilmagan: $count';
+  }
+
+  @override
+  String get notificationInboxOpenTooltip => 'Bildirishnomalarni ochish';
+
+  @override
+  String get notificationFilterAll => 'Hammasi';
+
+  @override
+  String get notificationFilterUnread => 'Oʻqilmagan';
+
+  @override
+  String get notificationCategoryFilter => 'Kategoriya';
+
+  @override
+  String get notificationCategoryAll => 'Barcha kategoriyalar';
+
+  @override
+  String get notificationClearFilters => 'Filtrlarni tozalash';
+
+  @override
+  String get notificationCategoryOrders => 'Buyurtmalar';
+
+  @override
+  String get notificationCategoryBookings => 'Bronlar';
+
+  @override
+  String get notificationCategoryDelivery => 'Yetkazib berish';
+
+  @override
+  String get notificationCategoryWalletPayments => 'Hamyon va toʻlovlar';
+
+  @override
+  String get notificationCategoryAiAlerts => 'AI ogohlantirishlari';
+
+  @override
+  String get notificationCategoryLocation => 'Joylashuv';
+
+  @override
+  String get notificationCategoryBusiness => 'Biznes';
+
+  @override
+  String get notificationCategoryTrustReviews => 'Ishonch va sharhlar';
+
+  @override
+  String get notificationCategorySecurity => 'Xavfsizlik';
+
+  @override
+  String get notificationCategoryPromotions => 'Aksiyalar';
+
+  @override
+  String get notificationChannelInApp => 'Ilova ichida';
+
+  @override
+  String get notificationChannelPushPreview => 'Push (preview)';
+
+  @override
+  String get notificationChannelSmsPreview => 'SMS (preview)';
+
+  @override
+  String get notificationChannelEmailPreview => 'Email (preview)';
+
+  @override
+  String get notificationPriorityLow => 'Past';
+
+  @override
+  String get notificationPriorityNormal => 'Oddiy';
+
+  @override
+  String get notificationPriorityHigh => 'Yuqori';
+
+  @override
+  String get notificationPriorityUrgent => 'Shoshilinch';
+
+  @override
+  String get notificationInboxEmptyBody =>
+      'Tanlangan filtrlarga mos bildirishnoma yoʻq.';
+
+  @override
+  String get notificationMarkReadAction => 'Oʻqilgan deb belgilash';
+
+  @override
+  String get notificationMarkAllReadAction => 'Hammasini oʻqilgan qilish';
+
+  @override
+  String get notificationMarkReadSuccess =>
+      'Bildirishnoma oʻqilgan deb belgilandi.';
+
+  @override
+  String get notificationMarkReadAlready =>
+      'Bildirishnoma allaqachon oʻqilgan.';
+
+  @override
+  String get notificationMarkReadNotFound => 'Bildirishnoma topilmadi.';
+
+  @override
+  String get notificationMarkReadInvalid =>
+      'Bildirishnoma identifikatori notoʻgʻri.';
+
+  @override
+  String get notificationMarkReadFailure =>
+      'Bildirishnomani oʻqilgan deb belgilab boʻlmadi.';
+
+  @override
+  String get notificationMarkAllReadSuccess =>
+      'Barcha bildirishnomalar oʻqilgan deb belgilandi.';
+
+  @override
+  String get notificationMarkAllReadFailure =>
+      'Barcha bildirishnomalarni oʻqilgan deb belgilab boʻlmadi.';
+
+  @override
+  String get notificationStatusUnread => 'Oʻqilmagan';
+
+  @override
+  String get notificationStatusRead => 'Oʻqilgan';
+
+  @override
+  String notificationCardMetaLine(
+    String category,
+    String timestamp,
+    String status,
+  ) {
+    return '$category · $timestamp · $status';
+  }
+
+  @override
+  String get notificationSyntheticBadge =>
+      'Sintetik demo bildirishnoma — haqiqiy xabar emas.';
+
+  @override
+  String get notificationOpenLinkedRouteAction =>
+      'Bogʻlangan ekranni ochish uchun bosing';
+
+  @override
+  String get profileNotificationsTitle => 'Bildirishnomalar';
+
+  @override
+  String profileNotificationsUnreadCount(int count) {
+    return 'Demo qutida oʻqilmagan: $count';
+  }
 }

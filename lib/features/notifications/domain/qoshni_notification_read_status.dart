@@ -1,0 +1,4 @@
+enum QoshniNotificationReadStatus {
+  unread,
+  read,
+}

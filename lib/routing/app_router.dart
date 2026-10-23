@@ -13,6 +13,7 @@ import 'package:qoshni/features/home/presentation/pages/checkout_page.dart';
 import 'package:qoshni/features/home/presentation/pages/demo_order_confirmation_page.dart';
 import 'package:qoshni/features/home/presentation/pages/demo_order_detail_page.dart';
 import 'package:qoshni/features/home/presentation/pages/demo_orders_page.dart';
+import 'package:qoshni/features/notifications/presentation/pages/notification_inbox_page.dart';
 import 'package:qoshni/features/home/presentation/pages/catalog_item_detail_page.dart';
 import 'package:qoshni/features/home/presentation/pages/favorites_page.dart';
 import 'package:qoshni/features/home/presentation/pages/profile_page.dart';
@@ -169,6 +170,11 @@ class AppRouter {
             snapshot: extra is DemoOrderSnapshot ? extra : null,
           );
         },
+      ),
+      GoRoute(
+        path: RoutePaths.notificationsInbox,
+        name: RouteNames.notificationsInbox,
+        builder: (context, state) => const NotificationInboxPage(),
       ),
       GoRoute(
         path: RoutePaths.demoOrders,

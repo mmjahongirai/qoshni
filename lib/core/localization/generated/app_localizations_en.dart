@@ -4917,4 +4917,153 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get businessReputationEventSyntheticBadge =>
       'Synthetic demo signal — not verified customer behavior.';
+
+  @override
+  String get notificationInboxTitle => 'Notifications';
+
+  @override
+  String get notificationInboxDemoDisclaimer =>
+      'Demo notifications only — in-memory data; no real push, SMS or email is sent.';
+
+  @override
+  String notificationInboxUnreadCount(int count) {
+    return '$count unread';
+  }
+
+  @override
+  String get notificationInboxOpenTooltip => 'Open notifications';
+
+  @override
+  String get notificationFilterAll => 'All';
+
+  @override
+  String get notificationFilterUnread => 'Unread';
+
+  @override
+  String get notificationCategoryFilter => 'Category';
+
+  @override
+  String get notificationCategoryAll => 'All categories';
+
+  @override
+  String get notificationClearFilters => 'Clear filters';
+
+  @override
+  String get notificationCategoryOrders => 'Orders';
+
+  @override
+  String get notificationCategoryBookings => 'Bookings';
+
+  @override
+  String get notificationCategoryDelivery => 'Delivery';
+
+  @override
+  String get notificationCategoryWalletPayments => 'Wallet & payments';
+
+  @override
+  String get notificationCategoryAiAlerts => 'AI alerts';
+
+  @override
+  String get notificationCategoryLocation => 'Location';
+
+  @override
+  String get notificationCategoryBusiness => 'Business';
+
+  @override
+  String get notificationCategoryTrustReviews => 'Trust & reviews';
+
+  @override
+  String get notificationCategorySecurity => 'Security';
+
+  @override
+  String get notificationCategoryPromotions => 'Promotions';
+
+  @override
+  String get notificationChannelInApp => 'In-app';
+
+  @override
+  String get notificationChannelPushPreview => 'Push (preview)';
+
+  @override
+  String get notificationChannelSmsPreview => 'SMS (preview)';
+
+  @override
+  String get notificationChannelEmailPreview => 'Email (preview)';
+
+  @override
+  String get notificationPriorityLow => 'Low';
+
+  @override
+  String get notificationPriorityNormal => 'Normal';
+
+  @override
+  String get notificationPriorityHigh => 'High';
+
+  @override
+  String get notificationPriorityUrgent => 'Urgent';
+
+  @override
+  String get notificationInboxEmptyBody =>
+      'No notifications match your filters.';
+
+  @override
+  String get notificationMarkReadAction => 'Mark as read';
+
+  @override
+  String get notificationMarkAllReadAction => 'Mark all read';
+
+  @override
+  String get notificationMarkReadSuccess => 'Notification marked as read.';
+
+  @override
+  String get notificationMarkReadAlready => 'Notification was already read.';
+
+  @override
+  String get notificationMarkReadNotFound => 'Notification not found.';
+
+  @override
+  String get notificationMarkReadInvalid => 'Invalid notification identifier.';
+
+  @override
+  String get notificationMarkReadFailure =>
+      'Could not mark notification as read.';
+
+  @override
+  String get notificationMarkAllReadSuccess =>
+      'All notifications marked as read.';
+
+  @override
+  String get notificationMarkAllReadFailure =>
+      'Could not mark all notifications as read.';
+
+  @override
+  String get notificationStatusUnread => 'Unread';
+
+  @override
+  String get notificationStatusRead => 'Read';
+
+  @override
+  String notificationCardMetaLine(
+    String category,
+    String timestamp,
+    String status,
+  ) {
+    return '$category · $timestamp · $status';
+  }
+
+  @override
+  String get notificationSyntheticBadge =>
+      'Synthetic demo notification — not a real message.';
+
+  @override
+  String get notificationOpenLinkedRouteAction =>
+      'Tap to open linked in-app screen';
+
+  @override
+  String get profileNotificationsTitle => 'Notifications';
+
+  @override
+  String profileNotificationsUnreadCount(int count) {
+    return '$count unread in demo inbox';
+  }
 }

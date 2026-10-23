@@ -8697,6 +8697,274 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Synthetic demo signal — not verified customer behavior.'**
   String get businessReputationEventSyntheticBadge;
+
+  /// No description provided for @notificationInboxTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get notificationInboxTitle;
+
+  /// No description provided for @notificationInboxDemoDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo notifications only — in-memory data; no real push, SMS or email is sent.'**
+  String get notificationInboxDemoDisclaimer;
+
+  /// No description provided for @notificationInboxUnreadCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} unread'**
+  String notificationInboxUnreadCount(int count);
+
+  /// No description provided for @notificationInboxOpenTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Open notifications'**
+  String get notificationInboxOpenTooltip;
+
+  /// No description provided for @notificationFilterAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get notificationFilterAll;
+
+  /// No description provided for @notificationFilterUnread.
+  ///
+  /// In en, this message translates to:
+  /// **'Unread'**
+  String get notificationFilterUnread;
+
+  /// No description provided for @notificationCategoryFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get notificationCategoryFilter;
+
+  /// No description provided for @notificationCategoryAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All categories'**
+  String get notificationCategoryAll;
+
+  /// No description provided for @notificationClearFilters.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear filters'**
+  String get notificationClearFilters;
+
+  /// No description provided for @notificationCategoryOrders.
+  ///
+  /// In en, this message translates to:
+  /// **'Orders'**
+  String get notificationCategoryOrders;
+
+  /// No description provided for @notificationCategoryBookings.
+  ///
+  /// In en, this message translates to:
+  /// **'Bookings'**
+  String get notificationCategoryBookings;
+
+  /// No description provided for @notificationCategoryDelivery.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery'**
+  String get notificationCategoryDelivery;
+
+  /// No description provided for @notificationCategoryWalletPayments.
+  ///
+  /// In en, this message translates to:
+  /// **'Wallet & payments'**
+  String get notificationCategoryWalletPayments;
+
+  /// No description provided for @notificationCategoryAiAlerts.
+  ///
+  /// In en, this message translates to:
+  /// **'AI alerts'**
+  String get notificationCategoryAiAlerts;
+
+  /// No description provided for @notificationCategoryLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get notificationCategoryLocation;
+
+  /// No description provided for @notificationCategoryBusiness.
+  ///
+  /// In en, this message translates to:
+  /// **'Business'**
+  String get notificationCategoryBusiness;
+
+  /// No description provided for @notificationCategoryTrustReviews.
+  ///
+  /// In en, this message translates to:
+  /// **'Trust & reviews'**
+  String get notificationCategoryTrustReviews;
+
+  /// No description provided for @notificationCategorySecurity.
+  ///
+  /// In en, this message translates to:
+  /// **'Security'**
+  String get notificationCategorySecurity;
+
+  /// No description provided for @notificationCategoryPromotions.
+  ///
+  /// In en, this message translates to:
+  /// **'Promotions'**
+  String get notificationCategoryPromotions;
+
+  /// No description provided for @notificationChannelInApp.
+  ///
+  /// In en, this message translates to:
+  /// **'In-app'**
+  String get notificationChannelInApp;
+
+  /// No description provided for @notificationChannelPushPreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Push (preview)'**
+  String get notificationChannelPushPreview;
+
+  /// No description provided for @notificationChannelSmsPreview.
+  ///
+  /// In en, this message translates to:
+  /// **'SMS (preview)'**
+  String get notificationChannelSmsPreview;
+
+  /// No description provided for @notificationChannelEmailPreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Email (preview)'**
+  String get notificationChannelEmailPreview;
+
+  /// No description provided for @notificationPriorityLow.
+  ///
+  /// In en, this message translates to:
+  /// **'Low'**
+  String get notificationPriorityLow;
+
+  /// No description provided for @notificationPriorityNormal.
+  ///
+  /// In en, this message translates to:
+  /// **'Normal'**
+  String get notificationPriorityNormal;
+
+  /// No description provided for @notificationPriorityHigh.
+  ///
+  /// In en, this message translates to:
+  /// **'High'**
+  String get notificationPriorityHigh;
+
+  /// No description provided for @notificationPriorityUrgent.
+  ///
+  /// In en, this message translates to:
+  /// **'Urgent'**
+  String get notificationPriorityUrgent;
+
+  /// No description provided for @notificationInboxEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'No notifications match your filters.'**
+  String get notificationInboxEmptyBody;
+
+  /// No description provided for @notificationMarkReadAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark as read'**
+  String get notificationMarkReadAction;
+
+  /// No description provided for @notificationMarkAllReadAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark all read'**
+  String get notificationMarkAllReadAction;
+
+  /// No description provided for @notificationMarkReadSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification marked as read.'**
+  String get notificationMarkReadSuccess;
+
+  /// No description provided for @notificationMarkReadAlready.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification was already read.'**
+  String get notificationMarkReadAlready;
+
+  /// No description provided for @notificationMarkReadNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification not found.'**
+  String get notificationMarkReadNotFound;
+
+  /// No description provided for @notificationMarkReadInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid notification identifier.'**
+  String get notificationMarkReadInvalid;
+
+  /// No description provided for @notificationMarkReadFailure.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not mark notification as read.'**
+  String get notificationMarkReadFailure;
+
+  /// No description provided for @notificationMarkAllReadSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'All notifications marked as read.'**
+  String get notificationMarkAllReadSuccess;
+
+  /// No description provided for @notificationMarkAllReadFailure.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not mark all notifications as read.'**
+  String get notificationMarkAllReadFailure;
+
+  /// No description provided for @notificationStatusUnread.
+  ///
+  /// In en, this message translates to:
+  /// **'Unread'**
+  String get notificationStatusUnread;
+
+  /// No description provided for @notificationStatusRead.
+  ///
+  /// In en, this message translates to:
+  /// **'Read'**
+  String get notificationStatusRead;
+
+  /// No description provided for @notificationCardMetaLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{category} · {timestamp} · {status}'**
+  String notificationCardMetaLine(
+    String category,
+    String timestamp,
+    String status,
+  );
+
+  /// No description provided for @notificationSyntheticBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Synthetic demo notification — not a real message.'**
+  String get notificationSyntheticBadge;
+
+  /// No description provided for @notificationOpenLinkedRouteAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to open linked in-app screen'**
+  String get notificationOpenLinkedRouteAction;
+
+  /// No description provided for @profileNotificationsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get profileNotificationsTitle;
+
+  /// No description provided for @profileNotificationsUnreadCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} unread in demo inbox'**
+  String profileNotificationsUnreadCount(int count);
 }
 
 class _AppLocalizationsDelegate

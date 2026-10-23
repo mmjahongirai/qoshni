@@ -4844,4 +4844,154 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get businessReputationEventSyntheticBadge => 'Synthetic demo signal.';
+
+  @override
+  String get notificationInboxTitle => 'Уведомления';
+
+  @override
+  String get notificationInboxDemoDisclaimer =>
+      'Только демо-уведомления — данные в памяти; реальные push, SMS и email не отправляются.';
+
+  @override
+  String notificationInboxUnreadCount(int count) {
+    return 'Непрочитано: $count';
+  }
+
+  @override
+  String get notificationInboxOpenTooltip => 'Открыть уведомления';
+
+  @override
+  String get notificationFilterAll => 'Все';
+
+  @override
+  String get notificationFilterUnread => 'Непрочитанные';
+
+  @override
+  String get notificationCategoryFilter => 'Категория';
+
+  @override
+  String get notificationCategoryAll => 'Все категории';
+
+  @override
+  String get notificationClearFilters => 'Сбросить фильтры';
+
+  @override
+  String get notificationCategoryOrders => 'Заказы';
+
+  @override
+  String get notificationCategoryBookings => 'Бронирования';
+
+  @override
+  String get notificationCategoryDelivery => 'Доставка';
+
+  @override
+  String get notificationCategoryWalletPayments => 'Кошелёк и платежи';
+
+  @override
+  String get notificationCategoryAiAlerts => 'AI-оповещения';
+
+  @override
+  String get notificationCategoryLocation => 'Локация';
+
+  @override
+  String get notificationCategoryBusiness => 'Бизнес';
+
+  @override
+  String get notificationCategoryTrustReviews => 'Доверие и отзывы';
+
+  @override
+  String get notificationCategorySecurity => 'Безопасность';
+
+  @override
+  String get notificationCategoryPromotions => 'Акции';
+
+  @override
+  String get notificationChannelInApp => 'В приложении';
+
+  @override
+  String get notificationChannelPushPreview => 'Push (превью)';
+
+  @override
+  String get notificationChannelSmsPreview => 'SMS (превью)';
+
+  @override
+  String get notificationChannelEmailPreview => 'Email (превью)';
+
+  @override
+  String get notificationPriorityLow => 'Низкий';
+
+  @override
+  String get notificationPriorityNormal => 'Обычный';
+
+  @override
+  String get notificationPriorityHigh => 'Высокий';
+
+  @override
+  String get notificationPriorityUrgent => 'Срочный';
+
+  @override
+  String get notificationInboxEmptyBody =>
+      'Нет уведомлений по выбранным фильтрам.';
+
+  @override
+  String get notificationMarkReadAction => 'Отметить прочитанным';
+
+  @override
+  String get notificationMarkAllReadAction => 'Прочитать все';
+
+  @override
+  String get notificationMarkReadSuccess => 'Уведомление отмечено прочитанным.';
+
+  @override
+  String get notificationMarkReadAlready => 'Уведомление уже прочитано.';
+
+  @override
+  String get notificationMarkReadNotFound => 'Уведомление не найдено.';
+
+  @override
+  String get notificationMarkReadInvalid =>
+      'Недопустимый идентификатор уведомления.';
+
+  @override
+  String get notificationMarkReadFailure =>
+      'Не удалось отметить уведомление прочитанным.';
+
+  @override
+  String get notificationMarkAllReadSuccess =>
+      'Все уведомления отмечены прочитанными.';
+
+  @override
+  String get notificationMarkAllReadFailure =>
+      'Не удалось отметить все уведомления прочитанными.';
+
+  @override
+  String get notificationStatusUnread => 'Непрочитано';
+
+  @override
+  String get notificationStatusRead => 'Прочитано';
+
+  @override
+  String notificationCardMetaLine(
+    String category,
+    String timestamp,
+    String status,
+  ) {
+    return '$category · $timestamp · $status';
+  }
+
+  @override
+  String get notificationSyntheticBadge =>
+      'Синтетическое демо-уведомление — не реальное сообщение.';
+
+  @override
+  String get notificationOpenLinkedRouteAction =>
+      'Нажмите, чтобы открыть связанный экран';
+
+  @override
+  String get profileNotificationsTitle => 'Уведомления';
+
+  @override
+  String profileNotificationsUnreadCount(int count) {
+    return 'Непрочитано в демо-ящике: $count';
+  }
 }

@@ -16,6 +16,7 @@ abstract final class RoutePaths {
   static const String demoOrderConfirmation = '/order/demo-confirmation';
   static const String demoOrders = '/orders';
   static const String demoOrderDetail = '/orders/:referenceId';
+  static const String notificationsInbox = '/notifications';
   static const String businessCenter = '/business-center';
   static const String businessProfileCreate = '/business-center/profile/new';
   static const String businessProfileDetail =
@@ -177,6 +178,7 @@ abstract final class RouteNames {
   static const String demoOrderConfirmation = 'demoOrderConfirmation';
   static const String demoOrders = 'demoOrders';
   static const String demoOrderDetail = 'demoOrderDetail';
+  static const String notificationsInbox = 'notificationsInbox';
   static const String businessCenter = 'businessCenter';
   static const String businessProfileCreate = 'businessProfileCreate';
   static const String businessProfileDetail = 'businessProfileDetail';
