@@ -5023,4 +5023,119 @@ class AppLocalizationsUz extends AppLocalizations {
   String profileNotificationsUnreadCount(int count) {
     return 'Demo qutida oʻqilmagan: $count';
   }
+
+  @override
+  String get notificationPreferencesTitle => 'Bildirishnoma sozlamalari';
+
+  @override
+  String get notificationPreferencesOpenTooltip => 'Bildirishnoma sozlamalari';
+
+  @override
+  String get notificationPreferencesDemoDisclaimer =>
+      'Faqat demo sozlamalar — xotirada; haqiqiy push, SMS yoki email yuborilmaydi.';
+
+  @override
+  String get notificationPreferencesInMemoryNote =>
+      'Oʻzgarishlar faqat shu sessiyada; backend bilan sinxronlanmaydi.';
+
+  @override
+  String get notificationPreferencesCategoriesSection => 'Kategoriyalar';
+
+  @override
+  String get notificationPreferencesChannelsSection => 'Kanallar';
+
+  @override
+  String get notificationChannelPreviewNote =>
+      'Preview kanali — haqiqiy provayderga ulanmagan.';
+
+  @override
+  String get notificationPromotionalConsentTitle =>
+      'Marketing va aksiyalar roziligi';
+
+  @override
+  String get notificationPromotionalConsentBody =>
+      'Promo bildirishnomalar uchun aksiyalar tugmasidan tashqari alohida rozilik kerak.';
+
+  @override
+  String get notificationQuietHoursSection => 'Tinch soatlar';
+
+  @override
+  String get notificationQuietHoursEnabled => 'Tinch soatlarni yoqish';
+
+  @override
+  String get notificationQuietHoursLocalTimeNote =>
+      'Demo baholovchi uchun qurilma mahalliy vaqti ishlatiladi.';
+
+  @override
+  String get notificationQuietHoursStart => 'Tinch soatlar boshlanishi';
+
+  @override
+  String get notificationQuietHoursEnd => 'Tinch soatlar tugashi';
+
+  @override
+  String get notificationPreferencesRestoreDefaults =>
+      'Demo standart sozlamalarni tiklash';
+
+  @override
+  String get notificationPreferenceSaveSuccess => 'Sozlamalar yangilandi.';
+
+  @override
+  String get notificationPreferenceSaveInvalid =>
+      'Saqlab boʻlmadi — notoʻgʻri qiymatlar.';
+
+  @override
+  String get notificationPreferenceSaveFailure =>
+      'Sozlamalarni saqlab boʻlmadi. Qayta urining.';
+
+  @override
+  String get notificationPreferenceRestoreSuccess =>
+      'Demo sozlamalar tiklandi.';
+
+  @override
+  String get notificationEligibilityPreviewSection =>
+      'Gipotetik yetkazish preview';
+
+  @override
+  String get notificationPreferencesPreviewChannel => 'Preview kanali';
+
+  @override
+  String get notificationPreferencesPreviewPriority => 'Preview ustuvorligi';
+
+  @override
+  String get notificationEligibilityPreviewTime =>
+      'Mahalliy vaqt bo\'yicha baholash';
+
+  @override
+  String get notificationEligibilityPreviewAction => 'Mosligini baholash';
+
+  @override
+  String get notificationEligibilityPreviewEligible => 'Mos (giipotetik)';
+
+  @override
+  String get notificationEligibilityPreviewSuppressed =>
+      'Bosib turilgan (giipotetik)';
+
+  @override
+  String get notificationEligibilityReasonEligible =>
+      'Barcha qoidalar yetkazishga ruxsat beradi.';
+
+  @override
+  String get notificationEligibilityReasonCategoryDisabled =>
+      'Kategoriya sozlamalarda oʻchirilgan.';
+
+  @override
+  String get notificationEligibilityReasonChannelDisabled =>
+      'Kanal sozlamalarda oʻchirilgan.';
+
+  @override
+  String get notificationEligibilityReasonPromoConsentDisabled =>
+      'Marketing roziligi oʻchirilgan.';
+
+  @override
+  String get notificationEligibilityReasonQuietHours =>
+      'Kritik boʻlmagan bildirishnomalar uchun tinch soatlarda bloklangan.';
+
+  @override
+  String get notificationEligibilityReasonInvalid =>
+      'Preview stsenariysi notoʻgʻri.';
 }

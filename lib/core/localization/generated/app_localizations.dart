@@ -8965,6 +8965,198 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{count} unread in demo inbox'**
   String profileNotificationsUnreadCount(int count);
+
+  /// No description provided for @notificationPreferencesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification preferences'**
+  String get notificationPreferencesTitle;
+
+  /// No description provided for @notificationPreferencesOpenTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification preferences'**
+  String get notificationPreferencesOpenTooltip;
+
+  /// No description provided for @notificationPreferencesDemoDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo notification preferences only — settings are in memory; no real push, SMS or email delivery occurs.'**
+  String get notificationPreferencesDemoDisclaimer;
+
+  /// No description provided for @notificationPreferencesInMemoryNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Changes apply to this session only and are not synced to a backend.'**
+  String get notificationPreferencesInMemoryNote;
+
+  /// No description provided for @notificationPreferencesCategoriesSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Categories'**
+  String get notificationPreferencesCategoriesSection;
+
+  /// No description provided for @notificationPreferencesChannelsSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Channels'**
+  String get notificationPreferencesChannelsSection;
+
+  /// No description provided for @notificationChannelPreviewNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview channel — not connected to a real provider.'**
+  String get notificationChannelPreviewNote;
+
+  /// No description provided for @notificationPromotionalConsentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Marketing & promotions consent'**
+  String get notificationPromotionalConsentTitle;
+
+  /// No description provided for @notificationPromotionalConsentBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Separate consent required for promotional notifications in addition to the promotions category toggle.'**
+  String get notificationPromotionalConsentBody;
+
+  /// No description provided for @notificationQuietHoursSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiet hours'**
+  String get notificationQuietHoursSection;
+
+  /// No description provided for @notificationQuietHoursEnabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable quiet hours'**
+  String get notificationQuietHoursEnabled;
+
+  /// No description provided for @notificationQuietHoursLocalTimeNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Uses local device time for this demo evaluator only.'**
+  String get notificationQuietHoursLocalTimeNote;
+
+  /// No description provided for @notificationQuietHoursStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiet hours start'**
+  String get notificationQuietHoursStart;
+
+  /// No description provided for @notificationQuietHoursEnd.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiet hours end'**
+  String get notificationQuietHoursEnd;
+
+  /// No description provided for @notificationPreferencesRestoreDefaults.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore demo defaults'**
+  String get notificationPreferencesRestoreDefaults;
+
+  /// No description provided for @notificationPreferenceSaveSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Preferences updated.'**
+  String get notificationPreferenceSaveSuccess;
+
+  /// No description provided for @notificationPreferenceSaveInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save — invalid preference values.'**
+  String get notificationPreferenceSaveInvalid;
+
+  /// No description provided for @notificationPreferenceSaveFailure.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save preferences. Try again.'**
+  String get notificationPreferenceSaveFailure;
+
+  /// No description provided for @notificationPreferenceRestoreSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo preferences restored.'**
+  String get notificationPreferenceRestoreSuccess;
+
+  /// No description provided for @notificationEligibilityPreviewSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Hypothetical delivery preview'**
+  String get notificationEligibilityPreviewSection;
+
+  /// No description provided for @notificationPreferencesPreviewChannel.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview channel'**
+  String get notificationPreferencesPreviewChannel;
+
+  /// No description provided for @notificationPreferencesPreviewPriority.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview priority'**
+  String get notificationPreferencesPreviewPriority;
+
+  /// No description provided for @notificationEligibilityPreviewTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Evaluate at local time'**
+  String get notificationEligibilityPreviewTime;
+
+  /// No description provided for @notificationEligibilityPreviewAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Evaluate eligibility'**
+  String get notificationEligibilityPreviewAction;
+
+  /// No description provided for @notificationEligibilityPreviewEligible.
+  ///
+  /// In en, this message translates to:
+  /// **'Eligible (hypothetical)'**
+  String get notificationEligibilityPreviewEligible;
+
+  /// No description provided for @notificationEligibilityPreviewSuppressed.
+  ///
+  /// In en, this message translates to:
+  /// **'Suppressed (hypothetical)'**
+  String get notificationEligibilityPreviewSuppressed;
+
+  /// No description provided for @notificationEligibilityReasonEligible.
+  ///
+  /// In en, this message translates to:
+  /// **'All configured rules allow delivery.'**
+  String get notificationEligibilityReasonEligible;
+
+  /// No description provided for @notificationEligibilityReasonCategoryDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Category is disabled in preferences.'**
+  String get notificationEligibilityReasonCategoryDisabled;
+
+  /// No description provided for @notificationEligibilityReasonChannelDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Channel is disabled in preferences.'**
+  String get notificationEligibilityReasonChannelDisabled;
+
+  /// No description provided for @notificationEligibilityReasonPromoConsentDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Promotional marketing consent is off.'**
+  String get notificationEligibilityReasonPromoConsentDisabled;
+
+  /// No description provided for @notificationEligibilityReasonQuietHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Blocked by quiet hours for non-critical notifications.'**
+  String get notificationEligibilityReasonQuietHours;
+
+  /// No description provided for @notificationEligibilityReasonInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid preview scenario.'**
+  String get notificationEligibilityReasonInvalid;
 }
 
 class _AppLocalizationsDelegate

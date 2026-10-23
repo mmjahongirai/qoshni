@@ -4994,4 +4994,120 @@ class AppLocalizationsRu extends AppLocalizations {
   String profileNotificationsUnreadCount(int count) {
     return 'Непрочитано в демо-ящике: $count';
   }
+
+  @override
+  String get notificationPreferencesTitle => 'Настройки уведомлений';
+
+  @override
+  String get notificationPreferencesOpenTooltip => 'Настройки уведомлений';
+
+  @override
+  String get notificationPreferencesDemoDisclaimer =>
+      'Только демо-настройки — данные в памяти; реальные push, SMS и email не отправляются.';
+
+  @override
+  String get notificationPreferencesInMemoryNote =>
+      'Изменения действуют только в этой сессии и не синхронизируются с сервером.';
+
+  @override
+  String get notificationPreferencesCategoriesSection => 'Категории';
+
+  @override
+  String get notificationPreferencesChannelsSection => 'Каналы';
+
+  @override
+  String get notificationChannelPreviewNote =>
+      'Канал-превью — не подключён к реальному провайдеру.';
+
+  @override
+  String get notificationPromotionalConsentTitle =>
+      'Согласие на маркетинг и акции';
+
+  @override
+  String get notificationPromotionalConsentBody =>
+      'Для промо-уведомлений нужно отдельное согласие помимо категории «Акции».';
+
+  @override
+  String get notificationQuietHoursSection => 'Тихие часы';
+
+  @override
+  String get notificationQuietHoursEnabled => 'Включить тихие часы';
+
+  @override
+  String get notificationQuietHoursLocalTimeNote =>
+      'Для демо используется локальное время устройства.';
+
+  @override
+  String get notificationQuietHoursStart => 'Начало тихих часов';
+
+  @override
+  String get notificationQuietHoursEnd => 'Конец тихих часов';
+
+  @override
+  String get notificationPreferencesRestoreDefaults =>
+      'Восстановить демо-настройки';
+
+  @override
+  String get notificationPreferenceSaveSuccess => 'Настройки обновлены.';
+
+  @override
+  String get notificationPreferenceSaveInvalid =>
+      'Не удалось сохранить — недопустимые значения.';
+
+  @override
+  String get notificationPreferenceSaveFailure =>
+      'Не удалось сохранить настройки. Попробуйте снова.';
+
+  @override
+  String get notificationPreferenceRestoreSuccess =>
+      'Демо-настройки восстановлены.';
+
+  @override
+  String get notificationEligibilityPreviewSection =>
+      'Гипотетическая проверка доставки';
+
+  @override
+  String get notificationPreferencesPreviewChannel => 'Канал для превью';
+
+  @override
+  String get notificationPreferencesPreviewPriority => 'Приоритет для превью';
+
+  @override
+  String get notificationEligibilityPreviewTime =>
+      'Оценить по локальному времени';
+
+  @override
+  String get notificationEligibilityPreviewAction => 'Проверить допустимость';
+
+  @override
+  String get notificationEligibilityPreviewEligible =>
+      'Допустимо (гипотетически)';
+
+  @override
+  String get notificationEligibilityPreviewSuppressed =>
+      'Подавлено (гипотетически)';
+
+  @override
+  String get notificationEligibilityReasonEligible =>
+      'Все настроенные правила разрешают доставку.';
+
+  @override
+  String get notificationEligibilityReasonCategoryDisabled =>
+      'Категория отключена в настройках.';
+
+  @override
+  String get notificationEligibilityReasonChannelDisabled =>
+      'Канал отключён в настройках.';
+
+  @override
+  String get notificationEligibilityReasonPromoConsentDisabled =>
+      'Согласие на маркетинг выключено.';
+
+  @override
+  String get notificationEligibilityReasonQuietHours =>
+      'Заблокировано тихими часами для некритичных уведомлений.';
+
+  @override
+  String get notificationEligibilityReasonInvalid =>
+      'Недопустимый сценарий превью.';
 }

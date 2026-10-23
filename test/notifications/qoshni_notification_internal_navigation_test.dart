@@ -8,6 +8,10 @@ void main() {
     expect(isAllowedQoshniNotificationInternalRoute(RoutePaths.map), isTrue);
     expect(isAllowedQoshniNotificationInternalRoute(RoutePaths.notificationsInbox), isTrue);
     expect(
+      isAllowedQoshniNotificationInternalRoute(RoutePaths.notificationPreferences),
+      isTrue,
+    );
+    expect(
       isAllowedQoshniNotificationInternalRoute('${RoutePaths.demoOrders}/demo-order-042'),
       isTrue,
     );

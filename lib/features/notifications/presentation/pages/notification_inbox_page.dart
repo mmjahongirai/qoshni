@@ -13,6 +13,7 @@ import 'package:qoshni/features/notifications/presentation/qoshni_notification_c
 import 'package:qoshni/features/notifications/presentation/qoshni_notification_date_format.dart';
 import 'package:qoshni/features/notifications/presentation/qoshni_notification_internal_navigation.dart';
 import 'package:qoshni/features/notifications/presentation/qoshni_notification_labels.dart';
+import 'package:qoshni/routing/route_paths.dart';
 
 class NotificationInboxPage extends StatefulWidget {
   const NotificationInboxPage({super.key});
@@ -64,6 +65,12 @@ class _NotificationInboxPageState extends State<NotificationInboxPage> {
         leading: BackButton(onPressed: () => context.pop()),
         title: Text(l10n.notificationInboxTitle),
         actions: [
+          IconButton(
+            tooltip: l10n.notificationPreferencesOpenTooltip,
+            icon: const Icon(Icons.settings_outlined),
+            onPressed: () =>
+                context.pushNamed(RouteNames.notificationPreferences),
+          ),
           ListenableBuilder(
             listenable: controller,
             builder: (context, _) {

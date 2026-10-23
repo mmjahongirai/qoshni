@@ -14,6 +14,7 @@ import 'package:qoshni/features/home/presentation/pages/demo_order_confirmation_
 import 'package:qoshni/features/home/presentation/pages/demo_order_detail_page.dart';
 import 'package:qoshni/features/home/presentation/pages/demo_orders_page.dart';
 import 'package:qoshni/features/notifications/presentation/pages/notification_inbox_page.dart';
+import 'package:qoshni/features/notifications/presentation/pages/notification_preferences_page.dart';
 import 'package:qoshni/features/home/presentation/pages/catalog_item_detail_page.dart';
 import 'package:qoshni/features/home/presentation/pages/favorites_page.dart';
 import 'package:qoshni/features/home/presentation/pages/profile_page.dart';
@@ -175,6 +176,13 @@ class AppRouter {
         path: RoutePaths.notificationsInbox,
         name: RouteNames.notificationsInbox,
         builder: (context, state) => const NotificationInboxPage(),
+        routes: [
+          GoRoute(
+            path: 'preferences',
+            name: RouteNames.notificationPreferences,
+            builder: (context, state) => const NotificationPreferencesPage(),
+          ),
+        ],
       ),
       GoRoute(
         path: RoutePaths.demoOrders,

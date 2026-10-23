@@ -5066,4 +5066,118 @@ class AppLocalizationsEn extends AppLocalizations {
   String profileNotificationsUnreadCount(int count) {
     return '$count unread in demo inbox';
   }
+
+  @override
+  String get notificationPreferencesTitle => 'Notification preferences';
+
+  @override
+  String get notificationPreferencesOpenTooltip => 'Notification preferences';
+
+  @override
+  String get notificationPreferencesDemoDisclaimer =>
+      'Demo notification preferences only — settings are in memory; no real push, SMS or email delivery occurs.';
+
+  @override
+  String get notificationPreferencesInMemoryNote =>
+      'Changes apply to this session only and are not synced to a backend.';
+
+  @override
+  String get notificationPreferencesCategoriesSection => 'Categories';
+
+  @override
+  String get notificationPreferencesChannelsSection => 'Channels';
+
+  @override
+  String get notificationChannelPreviewNote =>
+      'Preview channel — not connected to a real provider.';
+
+  @override
+  String get notificationPromotionalConsentTitle =>
+      'Marketing & promotions consent';
+
+  @override
+  String get notificationPromotionalConsentBody =>
+      'Separate consent required for promotional notifications in addition to the promotions category toggle.';
+
+  @override
+  String get notificationQuietHoursSection => 'Quiet hours';
+
+  @override
+  String get notificationQuietHoursEnabled => 'Enable quiet hours';
+
+  @override
+  String get notificationQuietHoursLocalTimeNote =>
+      'Uses local device time for this demo evaluator only.';
+
+  @override
+  String get notificationQuietHoursStart => 'Quiet hours start';
+
+  @override
+  String get notificationQuietHoursEnd => 'Quiet hours end';
+
+  @override
+  String get notificationPreferencesRestoreDefaults => 'Restore demo defaults';
+
+  @override
+  String get notificationPreferenceSaveSuccess => 'Preferences updated.';
+
+  @override
+  String get notificationPreferenceSaveInvalid =>
+      'Could not save — invalid preference values.';
+
+  @override
+  String get notificationPreferenceSaveFailure =>
+      'Could not save preferences. Try again.';
+
+  @override
+  String get notificationPreferenceRestoreSuccess =>
+      'Demo preferences restored.';
+
+  @override
+  String get notificationEligibilityPreviewSection =>
+      'Hypothetical delivery preview';
+
+  @override
+  String get notificationPreferencesPreviewChannel => 'Preview channel';
+
+  @override
+  String get notificationPreferencesPreviewPriority => 'Preview priority';
+
+  @override
+  String get notificationEligibilityPreviewTime => 'Evaluate at local time';
+
+  @override
+  String get notificationEligibilityPreviewAction => 'Evaluate eligibility';
+
+  @override
+  String get notificationEligibilityPreviewEligible =>
+      'Eligible (hypothetical)';
+
+  @override
+  String get notificationEligibilityPreviewSuppressed =>
+      'Suppressed (hypothetical)';
+
+  @override
+  String get notificationEligibilityReasonEligible =>
+      'All configured rules allow delivery.';
+
+  @override
+  String get notificationEligibilityReasonCategoryDisabled =>
+      'Category is disabled in preferences.';
+
+  @override
+  String get notificationEligibilityReasonChannelDisabled =>
+      'Channel is disabled in preferences.';
+
+  @override
+  String get notificationEligibilityReasonPromoConsentDisabled =>
+      'Promotional marketing consent is off.';
+
+  @override
+  String get notificationEligibilityReasonQuietHours =>
+      'Blocked by quiet hours for non-critical notifications.';
+
+  @override
+  String get notificationEligibilityReasonInvalid =>
+      'Invalid preview scenario.';
 }

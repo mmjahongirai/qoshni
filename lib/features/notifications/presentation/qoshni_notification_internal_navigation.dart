@@ -22,6 +22,7 @@ bool isAllowedQoshniNotificationInternalRoute(String route) {
     RoutePaths.demoOrderConfirmation,
     RoutePaths.businessCenter,
     RoutePaths.notificationsInbox,
+    RoutePaths.notificationPreferences,
   };
 
   if (exactAllowed.contains(normalized)) {
