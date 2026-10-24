@@ -16,6 +16,7 @@ import 'package:qoshni/features/home/presentation/pages/demo_orders_page.dart';
 import 'package:qoshni/features/notifications/presentation/pages/notification_inbox_page.dart';
 import 'package:qoshni/features/notifications/presentation/pages/notification_dispatch_diagnostics_page.dart';
 import 'package:qoshni/features/notifications/presentation/pages/notification_preferences_page.dart';
+import 'package:qoshni/features/notifications/presentation/pages/notification_templates_page.dart';
 import 'package:qoshni/features/home/presentation/pages/catalog_item_detail_page.dart';
 import 'package:qoshni/features/home/presentation/pages/favorites_page.dart';
 import 'package:qoshni/features/home/presentation/pages/profile_page.dart';
@@ -504,6 +505,11 @@ class AppRouter {
             path: 'reputation-events',
             name: RouteNames.businessReputationEvents,
             builder: (context, state) => const BusinessReputationEventsPage(),
+          ),
+          GoRoute(
+            path: 'notification-templates',
+            name: RouteNames.businessNotificationTemplates,
+            builder: (context, state) => const NotificationTemplatesPage(),
           ),
           GoRoute(
             path: 'staff',

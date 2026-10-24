@@ -5282,4 +5282,131 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get notificationDispatchSourceSecurityScenario => 'Security scenario';
+
+  @override
+  String get notificationDispatchSourceTemplatePreview => 'Template preview';
+
+  @override
+  String get notificationDispatchTemplatesSection =>
+      'Template-driven dispatch (demo)';
+
+  @override
+  String get notificationDispatchTemplateSimulateAction =>
+      'Simulate dispatch with rendered template';
+
+  @override
+  String get notificationDispatchTemplateRenderFailed =>
+      'Template render failed — dispatch was not run.';
+
+  @override
+  String get notificationTemplatesTitle => 'Notification templates';
+
+  @override
+  String get notificationTemplatesDemoDisclaimer =>
+      'Demo notification templates only — previews are synthetic; no real messages are sent.';
+
+  @override
+  String get notificationTemplatesFiltersSection => 'Filters';
+
+  @override
+  String get notificationTemplatesClearFilters => 'Clear filters';
+
+  @override
+  String get notificationTemplatesLocaleSection => 'Preview locale';
+
+  @override
+  String notificationTemplatesLocaleFallbackLine(
+    String requested,
+    String resolved,
+  ) {
+    return 'Requested $requested — using fallback $resolved.';
+  }
+
+  @override
+  String notificationTemplatesLocaleExactLine(String locale) {
+    return 'Using locale $locale (no fallback).';
+  }
+
+  @override
+  String get notificationTemplatesCatalogSection =>
+      'Synthetic template catalog';
+
+  @override
+  String get notificationTemplatesEmpty =>
+      'No templates match the current filters.';
+
+  @override
+  String get notificationTemplatesPreviewSection =>
+      'Rendered preview (demo variables)';
+
+  @override
+  String notificationTemplatesMetaLine(
+    String category,
+    String channel,
+    String status,
+    String locale,
+  ) {
+    return '$category · $channel · $status · $locale';
+  }
+
+  @override
+  String get notificationTemplateStatusFilter => 'Template status';
+
+  @override
+  String get notificationTemplateStatusDraft => 'Draft';
+
+  @override
+  String get notificationTemplateStatusActive => 'Active';
+
+  @override
+  String get notificationTemplateStatusArchived => 'Archived';
+
+  @override
+  String get notificationTemplateLocaleEnglish => 'English';
+
+  @override
+  String get notificationTemplateLocaleRussian => 'Russian';
+
+  @override
+  String get notificationTemplateLocaleUzbek => 'Uzbek';
+
+  @override
+  String get notificationTemplateErrorInactive =>
+      'Template is not active — preview and dispatch are blocked.';
+
+  @override
+  String notificationTemplateErrorMissingVariables(String names) {
+    return 'Missing required variables: $names.';
+  }
+
+  @override
+  String get notificationTemplateErrorUndeclaredPlaceholder =>
+      'Template contains undeclared placeholders.';
+
+  @override
+  String get notificationTemplateErrorMalformedPlaceholder =>
+      'Malformed placeholder syntax.';
+
+  @override
+  String get notificationTemplateErrorSensitiveValue =>
+      'Variable value looks sensitive and was rejected for preview.';
+
+  @override
+  String get notificationTemplateErrorUnresolvedPlaceholder =>
+      'Rendered text still contains unresolved placeholders.';
+
+  @override
+  String get notificationTemplateErrorIncompatibleChannel =>
+      'Category and channel combination is not allowed for this template.';
+
+  @override
+  String get notificationTemplateErrorGeneric => 'Template render failed.';
+
+  @override
+  String get businessCenterNotificationTemplatesTitle =>
+      'Notification templates';
+
+  @override
+  String get businessCenterNotificationTemplatesBody =>
+      'Preview localized synthetic message templates (demo).';
 }

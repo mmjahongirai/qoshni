@@ -7,6 +7,11 @@ import 'package:qoshni/core/widgets/app_message_banner.dart';
 import 'package:qoshni/core/widgets/app_surface_card.dart';
 import 'package:qoshni/di/injection.dart';
 import 'package:qoshni/features/notifications/data/qoshni_notification_dispatch_demo_scenarios.dart';
+import 'package:qoshni/features/notifications/data/qoshni_notification_template_demo_variables.dart';
+import 'package:qoshni/features/notifications/domain/qoshni_notification_template_definition.dart';
+import 'package:qoshni/features/notifications/domain/qoshni_notification_template_status.dart';
+import 'package:qoshni/features/notifications/domain/repositories/qoshni_notification_template_repository.dart';
+import 'package:qoshni/features/notifications/presentation/qoshni_notification_template_labels.dart';
 import 'package:qoshni/features/notifications/domain/qoshni_notification_category.dart';
 import 'package:qoshni/features/notifications/domain/qoshni_notification_channel.dart';
 import 'package:qoshni/features/notifications/domain/qoshni_notification_dispatch_audit_record.dart';
@@ -27,6 +32,8 @@ class NotificationDispatchDiagnosticsPage extends StatefulWidget {
 
 class _NotificationDispatchDiagnosticsPageState
     extends State<NotificationDispatchDiagnosticsPage> {
+  String? _selectedTemplateId;
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
@@ -54,6 +61,9 @@ class _NotificationDispatchDiagnosticsPageState
                 records: records,
                 lastRecord: last,
                 lastOutcome: controller.lastOutcome,
+                selectedTemplateId: _selectedTemplateId,
+                onTemplateSelected: (id) =>
+                    setState(() => _selectedTemplateId = id),
               ),
               tablet: _Body(
                 maxWidth: 720,
@@ -63,6 +73,9 @@ class _NotificationDispatchDiagnosticsPageState
                 records: records,
                 lastRecord: last,
                 lastOutcome: controller.lastOutcome,
+                selectedTemplateId: _selectedTemplateId,
+                onTemplateSelected: (id) =>
+                    setState(() => _selectedTemplateId = id),
               ),
             );
           },
@@ -81,6 +94,8 @@ class _Body extends StatelessWidget {
     required this.records,
     required this.lastRecord,
     required this.lastOutcome,
+    required this.selectedTemplateId,
+    required this.onTemplateSelected,
   });
 
   final double maxWidth;
@@ -90,6 +105,8 @@ class _Body extends StatelessWidget {
   final List<QoshniNotificationDispatchAuditRecord> records;
   final QoshniNotificationDispatchAuditRecord? lastRecord;
   final QoshniNotificationDispatchOutcome? lastOutcome;
+  final String? selectedTemplateId;
+  final ValueChanged<String?> onTemplateSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -136,6 +153,111 @@ class _Body extends StatelessWidget {
                     child: Text(_scenarioLabel(l10n, scenario)),
                   ),
               ],
+            ),
+            const SizedBox(height: AppSpacing.md),
+            Text(
+              l10n.notificationDispatchTemplatesSection,
+              style: Theme.of(context).textTheme.titleSmall,
+            ),
+            const SizedBox(height: AppSpacing.sm),
+            Builder(
+              builder: (context) {
+                final templateRepo = getIt<QoshniNotificationTemplateRepository>();
+                final activeTemplates = templateRepo.list(
+                  status: QoshniNotificationTemplateStatus.active,
+                  channel: QoshniNotificationChannel.inApp,
+                );
+                final distinctKeys = <String>{};
+                final options = <QoshniNotificationTemplateDefinition>[];
+                for (final t in activeTemplates) {
+                  if (distinctKeys.add(t.templateKey)) {
+                    options.add(t);
+                  }
+                }
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    DropdownButtonFormField<String?>(
+                      isExpanded: true,
+                      initialValue: selectedTemplateId,
+                      decoration: InputDecoration(
+                        labelText: l10n.notificationTemplatesTitle,
+                      ),
+                      items: [
+                        DropdownMenuItem(
+                          value: null,
+                          child: Text(l10n.notificationDispatchFilterAll),
+                        ),
+                        for (final template in options)
+                          DropdownMenuItem(
+                            value: template.templateId,
+                            child: Text(template.templateKey),
+                          ),
+                      ],
+                      onChanged: onTemplateSelected,
+                    ),
+                    const SizedBox(height: AppSpacing.sm),
+                    FilledButton(
+                      onPressed: selectedTemplateId == null
+                          ? null
+                          : () {
+                              final template =
+                                  templateRepo.getById(selectedTemplateId!);
+                              if (template == null) {
+                                return;
+                              }
+                              final variables =
+                                  qoshniNotificationTemplateDemoVariablesForKey(
+                                template.templateKey,
+                              );
+                              final result = controller.dispatchFromTemplate(
+                                template: template,
+                                variables: variables,
+                                evaluationLocalDateTime:
+                                    DateTime(2025, 4, 10, 12, 0),
+                              );
+                              if (result == null) {
+                                final failure =
+                                    controller.lastTemplateRenderResult
+                                        ?.failureOrNull;
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      failure == null
+                                          ? l10n
+                                              .notificationDispatchTemplateRenderFailed
+                                          : qoshniNotificationTemplateRenderErrorLabel(
+                                              l10n,
+                                              failure.errorCode,
+                                              missingVariables:
+                                                  failure.missingVariables,
+                                            ),
+                                    ),
+                                  ),
+                                );
+                                return;
+                              }
+                              final outcome = controller.lastOutcome;
+                              if (outcome != null) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      qoshniNotificationDispatchOutcomeLabel(
+                                        l10n,
+                                        outcome,
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
+                            },
+                      child: Text(
+                        l10n.notificationDispatchTemplateSimulateAction,
+                      ),
+                    ),
+                  ],
+                );
+              },
             ),
             if (lastRecord != null) ...[
               const SizedBox(height: AppSpacing.md),

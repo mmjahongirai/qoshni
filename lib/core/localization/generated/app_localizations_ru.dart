@@ -5213,4 +5213,130 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get notificationDispatchSourceSecurityScenario =>
       'Сценарий безопасности';
+
+  @override
+  String get notificationDispatchSourceTemplatePreview =>
+      'Предпросмотр шаблона';
+
+  @override
+  String get notificationDispatchTemplatesSection =>
+      'Отправка по шаблону (демо)';
+
+  @override
+  String get notificationDispatchTemplateSimulateAction =>
+      'Симулировать отправку с отрендеренным шаблоном';
+
+  @override
+  String get notificationDispatchTemplateRenderFailed =>
+      'Ошибка рендера шаблона — отправка не выполнялась.';
+
+  @override
+  String get notificationTemplatesTitle => 'Шаблоны уведомлений';
+
+  @override
+  String get notificationTemplatesDemoDisclaimer =>
+      'Только демо-шаблоны — предпросмотры синтетические; реальные сообщения не отправляются.';
+
+  @override
+  String get notificationTemplatesFiltersSection => 'Фильтры';
+
+  @override
+  String get notificationTemplatesClearFilters => 'Сбросить фильтры';
+
+  @override
+  String get notificationTemplatesLocaleSection => 'Локаль предпросмотра';
+
+  @override
+  String notificationTemplatesLocaleFallbackLine(
+    String requested,
+    String resolved,
+  ) {
+    return 'Запрошено $requested — используется запасная $resolved.';
+  }
+
+  @override
+  String notificationTemplatesLocaleExactLine(String locale) {
+    return 'Локаль $locale (без запасной).';
+  }
+
+  @override
+  String get notificationTemplatesCatalogSection =>
+      'Синтетический каталог шаблонов';
+
+  @override
+  String get notificationTemplatesEmpty => 'Нет шаблонов по текущим фильтрам.';
+
+  @override
+  String get notificationTemplatesPreviewSection => 'Рендер (демо-переменные)';
+
+  @override
+  String notificationTemplatesMetaLine(
+    String category,
+    String channel,
+    String status,
+    String locale,
+  ) {
+    return '$category · $channel · $status · $locale';
+  }
+
+  @override
+  String get notificationTemplateStatusFilter => 'Статус шаблона';
+
+  @override
+  String get notificationTemplateStatusDraft => 'Черновик';
+
+  @override
+  String get notificationTemplateStatusActive => 'Активный';
+
+  @override
+  String get notificationTemplateStatusArchived => 'Архив';
+
+  @override
+  String get notificationTemplateLocaleEnglish => 'Английский';
+
+  @override
+  String get notificationTemplateLocaleRussian => 'Русский';
+
+  @override
+  String get notificationTemplateLocaleUzbek => 'Узбекский';
+
+  @override
+  String get notificationTemplateErrorInactive =>
+      'Шаблон не активен — предпросмотр и отправка заблокированы.';
+
+  @override
+  String notificationTemplateErrorMissingVariables(String names) {
+    return 'Не хватает обязательных переменных: $names.';
+  }
+
+  @override
+  String get notificationTemplateErrorUndeclaredPlaceholder =>
+      'В шаблоне есть необъявленные плейсхолдеры.';
+
+  @override
+  String get notificationTemplateErrorMalformedPlaceholder =>
+      'Некорректный синтаксис плейсхолдера.';
+
+  @override
+  String get notificationTemplateErrorSensitiveValue =>
+      'Значение похоже на чувствительные данные и отклонено.';
+
+  @override
+  String get notificationTemplateErrorUnresolvedPlaceholder =>
+      'В тексте остались неразрешённые плейсхолдеры.';
+
+  @override
+  String get notificationTemplateErrorIncompatibleChannel =>
+      'Сочетание категории и канала недопустимо.';
+
+  @override
+  String get notificationTemplateErrorGeneric =>
+      'Не удалось отрендерить шаблон.';
+
+  @override
+  String get businessCenterNotificationTemplatesTitle => 'Шаблоны уведомлений';
+
+  @override
+  String get businessCenterNotificationTemplatesBody =>
+      'Предпросмотр локализованных синтетических шаблонов (демо).';
 }

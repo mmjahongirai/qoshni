@@ -163,6 +163,9 @@ abstract final class RoutePaths {
 
   static const String businessReputationEvents =
       '/business-center/reputation-events';
+
+  static const String businessNotificationTemplates =
+      '/business-center/notification-templates';
 }
 
 abstract final class RouteNames {
@@ -249,4 +252,6 @@ abstract final class RouteNames {
   static const String businessReviews = 'businessReviews';
   static const String businessComplaintsDisputes = 'businessComplaintsDisputes';
   static const String businessReputationEvents = 'businessReputationEvents';
+  static const String businessNotificationTemplates =
+      'businessNotificationTemplates';
 }

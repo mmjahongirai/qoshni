@@ -9324,6 +9324,206 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Security scenario'**
   String get notificationDispatchSourceSecurityScenario;
+
+  /// No description provided for @notificationDispatchSourceTemplatePreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Template preview'**
+  String get notificationDispatchSourceTemplatePreview;
+
+  /// No description provided for @notificationDispatchTemplatesSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Template-driven dispatch (demo)'**
+  String get notificationDispatchTemplatesSection;
+
+  /// No description provided for @notificationDispatchTemplateSimulateAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Simulate dispatch with rendered template'**
+  String get notificationDispatchTemplateSimulateAction;
+
+  /// No description provided for @notificationDispatchTemplateRenderFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Template render failed — dispatch was not run.'**
+  String get notificationDispatchTemplateRenderFailed;
+
+  /// No description provided for @notificationTemplatesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification templates'**
+  String get notificationTemplatesTitle;
+
+  /// No description provided for @notificationTemplatesDemoDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo notification templates only — previews are synthetic; no real messages are sent.'**
+  String get notificationTemplatesDemoDisclaimer;
+
+  /// No description provided for @notificationTemplatesFiltersSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Filters'**
+  String get notificationTemplatesFiltersSection;
+
+  /// No description provided for @notificationTemplatesClearFilters.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear filters'**
+  String get notificationTemplatesClearFilters;
+
+  /// No description provided for @notificationTemplatesLocaleSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview locale'**
+  String get notificationTemplatesLocaleSection;
+
+  /// No description provided for @notificationTemplatesLocaleFallbackLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Requested {requested} — using fallback {resolved}.'**
+  String notificationTemplatesLocaleFallbackLine(
+    String requested,
+    String resolved,
+  );
+
+  /// No description provided for @notificationTemplatesLocaleExactLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Using locale {locale} (no fallback).'**
+  String notificationTemplatesLocaleExactLine(String locale);
+
+  /// No description provided for @notificationTemplatesCatalogSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Synthetic template catalog'**
+  String get notificationTemplatesCatalogSection;
+
+  /// No description provided for @notificationTemplatesEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No templates match the current filters.'**
+  String get notificationTemplatesEmpty;
+
+  /// No description provided for @notificationTemplatesPreviewSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Rendered preview (demo variables)'**
+  String get notificationTemplatesPreviewSection;
+
+  /// No description provided for @notificationTemplatesMetaLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{category} · {channel} · {status} · {locale}'**
+  String notificationTemplatesMetaLine(
+    String category,
+    String channel,
+    String status,
+    String locale,
+  );
+
+  /// No description provided for @notificationTemplateStatusFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Template status'**
+  String get notificationTemplateStatusFilter;
+
+  /// No description provided for @notificationTemplateStatusDraft.
+  ///
+  /// In en, this message translates to:
+  /// **'Draft'**
+  String get notificationTemplateStatusDraft;
+
+  /// No description provided for @notificationTemplateStatusActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get notificationTemplateStatusActive;
+
+  /// No description provided for @notificationTemplateStatusArchived.
+  ///
+  /// In en, this message translates to:
+  /// **'Archived'**
+  String get notificationTemplateStatusArchived;
+
+  /// No description provided for @notificationTemplateLocaleEnglish.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get notificationTemplateLocaleEnglish;
+
+  /// No description provided for @notificationTemplateLocaleRussian.
+  ///
+  /// In en, this message translates to:
+  /// **'Russian'**
+  String get notificationTemplateLocaleRussian;
+
+  /// No description provided for @notificationTemplateLocaleUzbek.
+  ///
+  /// In en, this message translates to:
+  /// **'Uzbek'**
+  String get notificationTemplateLocaleUzbek;
+
+  /// No description provided for @notificationTemplateErrorInactive.
+  ///
+  /// In en, this message translates to:
+  /// **'Template is not active — preview and dispatch are blocked.'**
+  String get notificationTemplateErrorInactive;
+
+  /// No description provided for @notificationTemplateErrorMissingVariables.
+  ///
+  /// In en, this message translates to:
+  /// **'Missing required variables: {names}.'**
+  String notificationTemplateErrorMissingVariables(String names);
+
+  /// No description provided for @notificationTemplateErrorUndeclaredPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Template contains undeclared placeholders.'**
+  String get notificationTemplateErrorUndeclaredPlaceholder;
+
+  /// No description provided for @notificationTemplateErrorMalformedPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Malformed placeholder syntax.'**
+  String get notificationTemplateErrorMalformedPlaceholder;
+
+  /// No description provided for @notificationTemplateErrorSensitiveValue.
+  ///
+  /// In en, this message translates to:
+  /// **'Variable value looks sensitive and was rejected for preview.'**
+  String get notificationTemplateErrorSensitiveValue;
+
+  /// No description provided for @notificationTemplateErrorUnresolvedPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Rendered text still contains unresolved placeholders.'**
+  String get notificationTemplateErrorUnresolvedPlaceholder;
+
+  /// No description provided for @notificationTemplateErrorIncompatibleChannel.
+  ///
+  /// In en, this message translates to:
+  /// **'Category and channel combination is not allowed for this template.'**
+  String get notificationTemplateErrorIncompatibleChannel;
+
+  /// No description provided for @notificationTemplateErrorGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'Template render failed.'**
+  String get notificationTemplateErrorGeneric;
+
+  /// No description provided for @businessCenterNotificationTemplatesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification templates'**
+  String get businessCenterNotificationTemplatesTitle;
+
+  /// No description provided for @businessCenterNotificationTemplatesBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview localized synthetic message templates (demo).'**
+  String get businessCenterNotificationTemplatesBody;
 }
 
 class _AppLocalizationsDelegate

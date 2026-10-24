@@ -39,5 +39,7 @@ String qoshniNotificationDispatchSourceLabel(
       l10n.notificationDispatchSourcePromotionScenario,
     QoshniNotificationDispatchSource.demoScenarioSecurityAlert =>
       l10n.notificationDispatchSourceSecurityScenario,
+    QoshniNotificationDispatchSource.demoTemplatePreview =>
+      l10n.notificationDispatchSourceTemplatePreview,
   };
 }

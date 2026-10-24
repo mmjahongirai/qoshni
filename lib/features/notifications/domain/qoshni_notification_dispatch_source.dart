@@ -3,4 +3,5 @@ enum QoshniNotificationDispatchSource {
   demoScenarioOrderUpdate,
   demoScenarioPromotion,
   demoScenarioSecurityAlert,
+  demoTemplatePreview,
 }

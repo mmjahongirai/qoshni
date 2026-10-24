@@ -5244,4 +5244,131 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get notificationDispatchSourceSecurityScenario =>
       'Xavfsizlik stsenariysi';
+
+  @override
+  String get notificationDispatchSourceTemplatePreview =>
+      'Shablon oldindan ko‘rish';
+
+  @override
+  String get notificationDispatchTemplatesSection =>
+      'Shablon orqali yuborish (demo)';
+
+  @override
+  String get notificationDispatchTemplateSimulateAction =>
+      'Render qilingan shablon bilan simulyatsiya';
+
+  @override
+  String get notificationDispatchTemplateRenderFailed =>
+      'Shablon renderi xato — yuborish bajarilmadi.';
+
+  @override
+  String get notificationTemplatesTitle => 'Bildirishnoma shablonlari';
+
+  @override
+  String get notificationTemplatesDemoDisclaimer =>
+      'Faqat demo shablonlar — oldindan ko‘rishlar sintetik; haqiqiy xabarlar yuborilmaydi.';
+
+  @override
+  String get notificationTemplatesFiltersSection => 'Filtrlar';
+
+  @override
+  String get notificationTemplatesClearFilters => 'Filtrlarni tozalash';
+
+  @override
+  String get notificationTemplatesLocaleSection => 'Oldindan ko‘rish tili';
+
+  @override
+  String notificationTemplatesLocaleFallbackLine(
+    String requested,
+    String resolved,
+  ) {
+    return 'So‘ralgan $requested — zaxira $resolved ishlatilmoqda.';
+  }
+
+  @override
+  String notificationTemplatesLocaleExactLine(String locale) {
+    return '$locale tili (zaxirasiz).';
+  }
+
+  @override
+  String get notificationTemplatesCatalogSection => 'Sintetik shablon katalogi';
+
+  @override
+  String get notificationTemplatesEmpty => 'Joriy filtrlarga mos shablon yo‘q.';
+
+  @override
+  String get notificationTemplatesPreviewSection =>
+      'Render (demo o‘zgaruvchilar)';
+
+  @override
+  String notificationTemplatesMetaLine(
+    String category,
+    String channel,
+    String status,
+    String locale,
+  ) {
+    return '$category · $channel · $status · $locale';
+  }
+
+  @override
+  String get notificationTemplateStatusFilter => 'Shablon holati';
+
+  @override
+  String get notificationTemplateStatusDraft => 'Qoralama';
+
+  @override
+  String get notificationTemplateStatusActive => 'Faol';
+
+  @override
+  String get notificationTemplateStatusArchived => 'Arxiv';
+
+  @override
+  String get notificationTemplateLocaleEnglish => 'Inglizcha';
+
+  @override
+  String get notificationTemplateLocaleRussian => 'Ruscha';
+
+  @override
+  String get notificationTemplateLocaleUzbek => 'O‘zbekcha';
+
+  @override
+  String get notificationTemplateErrorInactive =>
+      'Shablon faol emas — oldindan ko‘rish va yuborish bloklangan.';
+
+  @override
+  String notificationTemplateErrorMissingVariables(String names) {
+    return 'Majburiy o‘zgaruvchilar yetishmaydi: $names.';
+  }
+
+  @override
+  String get notificationTemplateErrorUndeclaredPlaceholder =>
+      'Shablonda e’lon qilinmagan placeholderlar bor.';
+
+  @override
+  String get notificationTemplateErrorMalformedPlaceholder =>
+      'Placeholder sintaksisi noto‘g‘ri.';
+
+  @override
+  String get notificationTemplateErrorSensitiveValue =>
+      'Qiymat maxfiy ma’lumotga o‘xshaydi va rad etildi.';
+
+  @override
+  String get notificationTemplateErrorUnresolvedPlaceholder =>
+      'Matnda hal qilinmagan placeholderlar qoldi.';
+
+  @override
+  String get notificationTemplateErrorIncompatibleChannel =>
+      'Kategoriya va kanal birikmalari ruxsat etilmagan.';
+
+  @override
+  String get notificationTemplateErrorGeneric =>
+      'Shablon renderi muvaffaqiyatsiz.';
+
+  @override
+  String get businessCenterNotificationTemplatesTitle =>
+      'Bildirishnoma shablonlari';
+
+  @override
+  String get businessCenterNotificationTemplatesBody =>
+      'Lokalizatsiyalangan sintetik shablonlarni ko‘rish (demo).';
 }
