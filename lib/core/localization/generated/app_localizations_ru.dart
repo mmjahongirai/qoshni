@@ -5451,4 +5451,81 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get systemMessageMutationNotFound => 'Сообщение не найдено.';
+
+  @override
+  String get demoConversationsListTitle => 'Сообщения';
+
+  @override
+  String get demoConversationsDisclaimer =>
+      'Только демо — сообщения в памяти; реального общения с клиентами или поддержкой нет.';
+
+  @override
+  String get demoConversationsEmpty => 'Нет демо-диалогов для этого участника.';
+
+  @override
+  String get demoConversationDetailTitle => 'Диалог';
+
+  @override
+  String get demoConversationNotFound => 'Диалог не найден или недоступен.';
+
+  @override
+  String demoConversationListMetaLine(String state, String preview) {
+    return '$state · $preview';
+  }
+
+  @override
+  String get demoConversationTypeCustomerBusiness => 'Клиент ↔ бизнес (демо)';
+
+  @override
+  String get demoConversationTypeSupportDemo => 'Демо поддержки';
+
+  @override
+  String get demoConversationStateOpen => 'Открыт';
+
+  @override
+  String get demoConversationStateClosed => 'Закрыт';
+
+  @override
+  String get demoConversationStateArchived => 'Архив';
+
+  @override
+  String get demoConversationRoleCustomer => 'Демо-клиент';
+
+  @override
+  String get demoConversationRoleBusinessAgent => 'Демо-агент бизнеса';
+
+  @override
+  String get demoConversationRoleSupportAgent => 'Демо-поддержка';
+
+  @override
+  String get demoConversationComposerHint => 'Текстовое сообщение';
+
+  @override
+  String get demoConversationComposerDisabledClosed =>
+      'Диалог закрыт или в архиве — отправка отключена.';
+
+  @override
+  String get demoConversationSendAction => 'Отправить';
+
+  @override
+  String get demoConversationSendValidationError =>
+      'Введите корректное текстовое сообщение.';
+
+  @override
+  String get demoConversationSendNotOpen =>
+      'Нельзя отправить, пока диалог не открыт.';
+
+  @override
+  String get demoConversationSendUnsafeContent =>
+      'Содержимое отклонено по соображениям безопасности.';
+
+  @override
+  String get demoConversationSendFailure => 'Сообщение не отправлено.';
+
+  @override
+  String get profileDemoConversationsTitle => 'Демо-сообщения';
+
+  @override
+  String get profileDemoConversationsSubtitle =>
+      'Диалоги в памяти (граница чата)';
 }

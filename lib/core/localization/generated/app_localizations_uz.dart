@@ -5483,4 +5483,82 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get systemMessageMutationNotFound => 'Xabar topilmadi.';
+
+  @override
+  String get demoConversationsListTitle => 'Xabarlar';
+
+  @override
+  String get demoConversationsDisclaimer =>
+      'Faqat demo — xabarlar xotirada; haqiqiy mijoz yoki qo‘llab-quvvatlash muloqoti yo‘q.';
+
+  @override
+  String get demoConversationsEmpty =>
+      'Bu ishtirokchi uchun demo suhbatlar yo‘q.';
+
+  @override
+  String get demoConversationDetailTitle => 'Suhbat';
+
+  @override
+  String get demoConversationNotFound => 'Suhbat topilmadi yoki ruxsat yo‘q.';
+
+  @override
+  String demoConversationListMetaLine(String state, String preview) {
+    return '$state · $preview';
+  }
+
+  @override
+  String get demoConversationTypeCustomerBusiness => 'Mijoz ↔ biznes (demo)';
+
+  @override
+  String get demoConversationTypeSupportDemo => 'Qo‘llab-quvvatlash demo';
+
+  @override
+  String get demoConversationStateOpen => 'Ochiq';
+
+  @override
+  String get demoConversationStateClosed => 'Yopiq';
+
+  @override
+  String get demoConversationStateArchived => 'Arxiv';
+
+  @override
+  String get demoConversationRoleCustomer => 'Demo mijoz';
+
+  @override
+  String get demoConversationRoleBusinessAgent => 'Demo biznes agenti';
+
+  @override
+  String get demoConversationRoleSupportAgent => 'Demo qo‘llab-quvvatlash';
+
+  @override
+  String get demoConversationComposerHint => 'Oddiy matn xabari';
+
+  @override
+  String get demoConversationComposerDisabledClosed =>
+      'Suhbat yopiq yoki arxivda — yuborish o‘chirilgan.';
+
+  @override
+  String get demoConversationSendAction => 'Yuborish';
+
+  @override
+  String get demoConversationSendValidationError =>
+      'To‘g‘ri matn xabarini kiriting.';
+
+  @override
+  String get demoConversationSendNotOpen =>
+      'Suhbat ochiq emas — yuborib bo‘lmaydi.';
+
+  @override
+  String get demoConversationSendUnsafeContent =>
+      'Xabar xavfsizlik sababli rad etildi.';
+
+  @override
+  String get demoConversationSendFailure => 'Xabar yuborilmadi.';
+
+  @override
+  String get profileDemoConversationsTitle => 'Demo xabarlar';
+
+  @override
+  String get profileDemoConversationsSubtitle =>
+      'Xotiradagi suhbatlar (chat chegarasi)';
 }

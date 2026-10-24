@@ -5521,4 +5521,84 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get systemMessageMutationNotFound => 'Message not found.';
+
+  @override
+  String get demoConversationsListTitle => 'Messages';
+
+  @override
+  String get demoConversationsDisclaimer =>
+      'Demo conversations only — messages are stored in memory; no real customer or support communication occurs.';
+
+  @override
+  String get demoConversationsEmpty =>
+      'No demo conversations for this participant.';
+
+  @override
+  String get demoConversationDetailTitle => 'Conversation';
+
+  @override
+  String get demoConversationNotFound =>
+      'Conversation not found or not accessible.';
+
+  @override
+  String demoConversationListMetaLine(String state, String preview) {
+    return '$state · $preview';
+  }
+
+  @override
+  String get demoConversationTypeCustomerBusiness =>
+      'Customer ↔ business (demo)';
+
+  @override
+  String get demoConversationTypeSupportDemo => 'Support demo';
+
+  @override
+  String get demoConversationStateOpen => 'Open';
+
+  @override
+  String get demoConversationStateClosed => 'Closed';
+
+  @override
+  String get demoConversationStateArchived => 'Archived';
+
+  @override
+  String get demoConversationRoleCustomer => 'Demo customer';
+
+  @override
+  String get demoConversationRoleBusinessAgent => 'Demo business agent';
+
+  @override
+  String get demoConversationRoleSupportAgent => 'Demo support agent';
+
+  @override
+  String get demoConversationComposerHint => 'Plain-text message';
+
+  @override
+  String get demoConversationComposerDisabledClosed =>
+      'Conversation is closed or archived — sending is disabled.';
+
+  @override
+  String get demoConversationSendAction => 'Send';
+
+  @override
+  String get demoConversationSendValidationError =>
+      'Enter a valid plain-text message.';
+
+  @override
+  String get demoConversationSendNotOpen =>
+      'Cannot send while the conversation is not open.';
+
+  @override
+  String get demoConversationSendUnsafeContent =>
+      'Message content was rejected for safety.';
+
+  @override
+  String get demoConversationSendFailure => 'Message was not sent.';
+
+  @override
+  String get profileDemoConversationsTitle => 'Demo messages';
+
+  @override
+  String get profileDemoConversationsSubtitle =>
+      'In-memory conversations (demo boundary)';
 }

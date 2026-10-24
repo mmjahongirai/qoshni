@@ -20,6 +20,12 @@ abstract final class RoutePaths {
   static const String notificationPreferences = '/notifications/preferences';
   static const String notificationDispatchDiagnostics =
       '/notifications/dispatch';
+  static const String demoConversations = '/messages';
+  static const String demoConversationDetail = '/messages/:conversationId';
+
+  static String demoConversationDetailPath(String conversationId) =>
+      '/messages/$conversationId';
+
   static const String systemMessages = '/system-messages';
   static const String systemMessagesDemoLifecycle =
       '/system-messages/demo-lifecycle';
@@ -191,6 +197,8 @@ abstract final class RouteNames {
   static const String notificationPreferences = 'notificationPreferences';
   static const String notificationDispatchDiagnostics =
       'notificationDispatchDiagnostics';
+  static const String demoConversations = 'demoConversations';
+  static const String demoConversationDetail = 'demoConversationDetail';
   static const String systemMessages = 'systemMessages';
   static const String systemMessagesDemoLifecycle =
       'systemMessagesDemoLifecycle';

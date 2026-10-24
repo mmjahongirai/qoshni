@@ -18,6 +18,8 @@ import 'package:qoshni/features/notifications/presentation/pages/notification_di
 import 'package:qoshni/features/notifications/presentation/pages/notification_preferences_page.dart';
 import 'package:qoshni/features/notifications/presentation/pages/notification_templates_page.dart';
 import 'package:qoshni/features/system_messages/presentation/pages/system_messages_demo_lifecycle_page.dart';
+import 'package:qoshni/features/conversations/presentation/pages/demo_conversation_detail_page.dart';
+import 'package:qoshni/features/conversations/presentation/pages/demo_conversations_list_page.dart';
 import 'package:qoshni/features/system_messages/presentation/pages/system_messages_feed_page.dart';
 import 'package:qoshni/features/home/presentation/pages/catalog_item_detail_page.dart';
 import 'package:qoshni/features/home/presentation/pages/favorites_page.dart';
@@ -175,6 +177,22 @@ class AppRouter {
             snapshot: extra is DemoOrderSnapshot ? extra : null,
           );
         },
+      ),
+      GoRoute(
+        path: RoutePaths.demoConversations,
+        name: RouteNames.demoConversations,
+        builder: (context, state) => const DemoConversationsListPage(),
+        routes: [
+          GoRoute(
+            path: ':conversationId',
+            name: RouteNames.demoConversationDetail,
+            builder: (context, state) {
+              return DemoConversationDetailPage(
+                conversationId: state.pathParameters['conversationId'],
+              );
+            },
+          ),
+        ],
       ),
       GoRoute(
         path: RoutePaths.systemMessages,

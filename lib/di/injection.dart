@@ -122,6 +122,9 @@ import 'package:qoshni/features/notifications/domain/repositories/qoshni_notific
 import 'package:qoshni/features/notifications/presentation/qoshni_notification_controller.dart';
 import 'package:qoshni/features/notifications/presentation/qoshni_notification_dispatch_controller.dart';
 import 'package:qoshni/features/notifications/presentation/qoshni_notification_template_controller.dart';
+import 'package:qoshni/features/conversations/data/in_memory_qoshni_conversation_repository.dart';
+import 'package:qoshni/features/conversations/domain/repositories/qoshni_conversation_repository.dart';
+import 'package:qoshni/features/conversations/presentation/qoshni_conversation_controller.dart';
 import 'package:qoshni/features/system_messages/data/in_memory_qoshni_system_message_repository.dart';
 import 'package:qoshni/features/system_messages/domain/repositories/qoshni_system_message_repository.dart';
 import 'package:qoshni/features/system_messages/presentation/qoshni_system_message_controller.dart';
@@ -203,6 +206,14 @@ Future<void> configureDependencies(AppConfig config) async {
     ..registerLazySingleton<QoshniSystemMessageController>(
       () => QoshniSystemMessageController(
         getIt<QoshniSystemMessageRepository>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniConversationRepository>(
+      InMemoryQoshniConversationRepository.new,
+    )
+    ..registerLazySingleton<QoshniConversationController>(
+      () => QoshniConversationController(
+        getIt<QoshniConversationRepository>(),
       ),
     )
     ..registerLazySingleton<BusinessProfileRepository>(

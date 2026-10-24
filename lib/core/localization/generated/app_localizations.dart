@@ -9722,6 +9722,144 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Message not found.'**
   String get systemMessageMutationNotFound;
+
+  /// No description provided for @demoConversationsListTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Messages'**
+  String get demoConversationsListTitle;
+
+  /// No description provided for @demoConversationsDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo conversations only — messages are stored in memory; no real customer or support communication occurs.'**
+  String get demoConversationsDisclaimer;
+
+  /// No description provided for @demoConversationsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No demo conversations for this participant.'**
+  String get demoConversationsEmpty;
+
+  /// No description provided for @demoConversationDetailTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Conversation'**
+  String get demoConversationDetailTitle;
+
+  /// No description provided for @demoConversationNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Conversation not found or not accessible.'**
+  String get demoConversationNotFound;
+
+  /// No description provided for @demoConversationListMetaLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{state} · {preview}'**
+  String demoConversationListMetaLine(String state, String preview);
+
+  /// No description provided for @demoConversationTypeCustomerBusiness.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer ↔ business (demo)'**
+  String get demoConversationTypeCustomerBusiness;
+
+  /// No description provided for @demoConversationTypeSupportDemo.
+  ///
+  /// In en, this message translates to:
+  /// **'Support demo'**
+  String get demoConversationTypeSupportDemo;
+
+  /// No description provided for @demoConversationStateOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get demoConversationStateOpen;
+
+  /// No description provided for @demoConversationStateClosed.
+  ///
+  /// In en, this message translates to:
+  /// **'Closed'**
+  String get demoConversationStateClosed;
+
+  /// No description provided for @demoConversationStateArchived.
+  ///
+  /// In en, this message translates to:
+  /// **'Archived'**
+  String get demoConversationStateArchived;
+
+  /// No description provided for @demoConversationRoleCustomer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo customer'**
+  String get demoConversationRoleCustomer;
+
+  /// No description provided for @demoConversationRoleBusinessAgent.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo business agent'**
+  String get demoConversationRoleBusinessAgent;
+
+  /// No description provided for @demoConversationRoleSupportAgent.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo support agent'**
+  String get demoConversationRoleSupportAgent;
+
+  /// No description provided for @demoConversationComposerHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Plain-text message'**
+  String get demoConversationComposerHint;
+
+  /// No description provided for @demoConversationComposerDisabledClosed.
+  ///
+  /// In en, this message translates to:
+  /// **'Conversation is closed or archived — sending is disabled.'**
+  String get demoConversationComposerDisabledClosed;
+
+  /// No description provided for @demoConversationSendAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Send'**
+  String get demoConversationSendAction;
+
+  /// No description provided for @demoConversationSendValidationError.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid plain-text message.'**
+  String get demoConversationSendValidationError;
+
+  /// No description provided for @demoConversationSendNotOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Cannot send while the conversation is not open.'**
+  String get demoConversationSendNotOpen;
+
+  /// No description provided for @demoConversationSendUnsafeContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Message content was rejected for safety.'**
+  String get demoConversationSendUnsafeContent;
+
+  /// No description provided for @demoConversationSendFailure.
+  ///
+  /// In en, this message translates to:
+  /// **'Message was not sent.'**
+  String get demoConversationSendFailure;
+
+  /// No description provided for @profileDemoConversationsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo messages'**
+  String get profileDemoConversationsTitle;
+
+  /// No description provided for @profileDemoConversationsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'In-memory conversations (demo boundary)'**
+  String get profileDemoConversationsSubtitle;
 }
 
 class _AppLocalizationsDelegate
