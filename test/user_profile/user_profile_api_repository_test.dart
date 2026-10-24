@@ -15,6 +15,7 @@ const _config = AppConfig(
   enableLogging: false,
   enableBusinessProfileSamples: false,
   enableBusinessOfferingSamples: false,
+  enableRemoteSearchDiscovery: false,
 );
 
 const _profileJson = {
@@ -266,6 +267,7 @@ void main() {
       enableLogging: false,
       enableBusinessProfileSamples: false,
       enableBusinessOfferingSamples: false,
+  enableRemoteSearchDiscovery: false,
     );
     final repo = UserProfileApiRepository(
       apiClient: ApiClient(

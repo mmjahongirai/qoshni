@@ -157,6 +157,15 @@ import 'package:qoshni/features/notifications/presentation/qoshni_notification_p
 import 'package:qoshni/features/user_profile/data/user_profile_api_repository.dart';
 import 'package:qoshni/features/user_profile/domain/user_profile_repository.dart';
 import 'package:qoshni/features/user_profile/presentation/user_profile_controller.dart';
+import 'package:qoshni/features/search/application/qoshni_search_autocomplete_service.dart';
+import 'package:qoshni/features/search/application/qoshni_search_execution_coordinator.dart';
+import 'package:qoshni/features/search/application/qoshni_search_execution_service.dart';
+import 'package:qoshni/features/search/data/remote_qoshni_search_data_source.dart';
+import 'package:qoshni/features/search/application/qoshni_search_query_processor.dart';
+import 'package:qoshni/features/search/data/in_memory_qoshni_search_index_repository.dart';
+import 'package:qoshni/features/search/data/in_memory_qoshni_search_vocabulary_repository.dart';
+import 'package:qoshni/features/search/domain/repositories/qoshni_search_index_repository.dart';
+import 'package:qoshni/features/search/domain/repositories/qoshni_search_vocabulary_repository.dart';
 import 'package:qoshni/routing/app_router.dart';
 
 final GetIt getIt = GetIt.instance;
@@ -735,6 +744,39 @@ Future<void> configureDependencies(AppConfig config) async {
         repository: getIt<OnboardingRepository>(),
         authController: getIt<AuthController>(),
         config: getIt<AppConfig>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniSearchVocabularyRepository>(
+      InMemoryQoshniSearchVocabularyRepository.new,
+    )
+    ..registerLazySingleton<QoshniSearchQueryProcessor>(
+      () => QoshniSearchQueryProcessor(
+        getIt<QoshniSearchVocabularyRepository>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniSearchAutocompleteService>(
+      () => QoshniSearchAutocompleteService(
+        getIt<QoshniSearchVocabularyRepository>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniSearchIndexRepository>(
+      InMemoryQoshniSearchIndexRepository.new,
+    )
+    ..registerLazySingleton<QoshniSearchExecutionService>(
+      () => QoshniSearchExecutionService(
+        queryProcessor: getIt<QoshniSearchQueryProcessor>(),
+        indexRepository: getIt<QoshniSearchIndexRepository>(),
+      ),
+    )
+    ..registerLazySingleton<RemoteQoshniSearchDataSource>(
+      () => RemoteQoshniSearchDataSource(apiClient: getIt<ApiClient>()),
+    )
+    ..registerLazySingleton<QoshniSearchExecutionCoordinator>(
+      () => QoshniSearchExecutionCoordinator(
+        config: getIt<AppConfig>(),
+        demoExecutionService: getIt<QoshniSearchExecutionService>(),
+        remoteDataSource: getIt<RemoteQoshniSearchDataSource>(),
+        authController: getIt<AuthController>(),
       ),
     )
     ..registerLazySingleton<AppRouter>(

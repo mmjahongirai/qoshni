@@ -7,6 +7,8 @@ abstract final class AppConfigDefines {
       'ENABLE_BUSINESS_PROFILE_SAMPLES';
   static const String enableBusinessOfferingSamples =
       'ENABLE_BUSINESS_OFFERING_SAMPLES';
+  static const String enableRemoteSearchDiscovery =
+      'ENABLE_REMOTE_SEARCH_DISCOVERY';
   static const String apiBaseUrl = 'QOSHNI_API_BASE_URL';
 }
 
@@ -19,6 +21,7 @@ class AppConfig {
     required this.enableLogging,
     required this.enableBusinessProfileSamples,
     required this.enableBusinessOfferingSamples,
+    required this.enableRemoteSearchDiscovery,
   });
 
   factory AppConfig.forEnvironment(AppEnvironment environment) {
@@ -43,6 +46,9 @@ class AppConfig {
       ),
       enableBusinessOfferingSamples: _businessOfferingSamplesFromEnvironment(
         defaultValue: offeringSamplesDefault,
+      ),
+      enableRemoteSearchDiscovery: _remoteSearchDiscoveryFromEnvironment(
+        defaultValue: false,
       ),
     );
   }
@@ -106,6 +112,15 @@ class AppConfig {
     return parseBoolDefineValue(raw, defaultValue: defaultValue);
   }
 
+  static bool _remoteSearchDiscoveryFromEnvironment({
+    required bool defaultValue,
+  }) {
+    const raw = String.fromEnvironment(
+      AppConfigDefines.enableRemoteSearchDiscovery,
+    );
+    return parseBoolDefineValue(raw, defaultValue: defaultValue);
+  }
+
   final AppEnvironment environment;
   final String appName;
 
@@ -120,4 +135,7 @@ class AppConfig {
 
   /// Read-only sample offerings on sample profiles only.
   final bool enableBusinessOfferingSamples;
+
+  /// When true and [apiConfigured], search uses `/api/v1/search/discovery`.
+  final bool enableRemoteSearchDiscovery;
 }

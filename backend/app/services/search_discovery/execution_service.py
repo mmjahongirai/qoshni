@@ -1,0 +1,192 @@
+"""Execute authenticated search against the derived index."""
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+
+from sqlalchemy import select
+from sqlalchemy.orm import Session
+
+from app.core.config import Settings
+from app.db.models.search_discovery import SearchIndexRecord
+from app.domain.search_discovery import (
+    SEARCH_DEFAULT_PAGE_SIZE,
+    SEARCH_MAX_PAGE_SIZE,
+    SEARCH_MIN_PAGE_SIZE,
+    SEARCH_QUERY_MAX_LENGTH,
+    SearchDiscoveryErrorCode,
+)
+from app.services.search_discovery.cursor import (
+    CURSOR_VERSION,
+    RankedRowLike,
+    SearchCursorPayload,
+    cursor_is_after_row,
+    decode_signed_cursor,
+    encode_signed_cursor,
+)
+from app.services.search_discovery.metadata import get_catalog_generation
+from app.services.search_discovery.ranking import RankedSearchRow, rank_records
+from app.services.search_discovery.text_normalizer import normalize_query_text
+
+
+@dataclass(frozen=True, slots=True)
+class SearchResultItem:
+    stable_id: str
+    kind: str
+    title: str
+    is_sponsored: bool
+
+
+@dataclass(frozen=True, slots=True)
+class SearchExecutionResult:
+    items: tuple[SearchResultItem, ...]
+    next_cursor: str | None
+    query_fingerprint: str
+    catalog_generation: int
+
+
+@dataclass(frozen=True, slots=True)
+class SearchExecutionError:
+    code: SearchDiscoveryErrorCode
+    message: str
+
+
+def _query_fingerprint(raw_query: str, category_scope: str | None, only_open: bool) -> str:
+    normalized = normalize_query_text(raw_query)
+    return "|".join(
+        [
+            normalized,
+            category_scope or "",
+            "open" if only_open else "",
+        ]
+    )
+
+
+def _validate_request(
+    *,
+    raw_query: str,
+    page_size: int,
+    only_open: bool,
+    max_distance_meters: int | None,
+) -> SearchExecutionError | None:
+    normalized = normalize_query_text(raw_query)
+    if not normalized:
+        return SearchExecutionError(
+            code=SearchDiscoveryErrorCode.VALIDATION_FAILED,
+            message="Query is required.",
+        )
+    if len(raw_query) > SEARCH_QUERY_MAX_LENGTH:
+        return SearchExecutionError(
+            code=SearchDiscoveryErrorCode.VALIDATION_FAILED,
+            message="Query is too long.",
+        )
+    if page_size < SEARCH_MIN_PAGE_SIZE or page_size > SEARCH_MAX_PAGE_SIZE:
+        return SearchExecutionError(
+            code=SearchDiscoveryErrorCode.VALIDATION_FAILED,
+            message="Page size is out of bounds.",
+        )
+    if max_distance_meters is not None and max_distance_meters < 0:
+        return SearchExecutionError(
+            code=SearchDiscoveryErrorCode.VALIDATION_FAILED,
+            message="Distance filter is invalid.",
+        )
+    if only_open:
+        return SearchExecutionError(
+            code=SearchDiscoveryErrorCode.VALIDATION_FAILED,
+            message="Open-now filter is not supported on the backend index yet.",
+        )
+    return None
+
+
+def execute_search(
+    session: Session,
+    settings: Settings,
+    *,
+    raw_query: str,
+    page_size: int = SEARCH_DEFAULT_PAGE_SIZE,
+    cursor: str | None = None,
+    category_scope: str | None = None,
+    only_open: bool = False,
+    max_distance_meters: int | None = None,
+) -> SearchExecutionResult | SearchExecutionError:
+    validation = _validate_request(
+        raw_query=raw_query,
+        page_size=page_size,
+        only_open=only_open,
+        max_distance_meters=max_distance_meters,
+    )
+    if validation is not None:
+        return validation
+
+    fingerprint = _query_fingerprint(raw_query, category_scope, only_open)
+    generation = get_catalog_generation(session)
+
+    cursor_payload: SearchCursorPayload | None = None
+    if cursor:
+        cursor_payload = decode_signed_cursor(settings, cursor)
+        if cursor_payload is None:
+            return SearchExecutionError(
+                code=SearchDiscoveryErrorCode.INVALID_CURSOR,
+                message="Cursor is invalid or tampered.",
+            )
+        if (
+            cursor_payload.query_fingerprint != fingerprint
+            or cursor_payload.catalog_generation != generation
+        ):
+            return SearchExecutionError(
+                code=SearchDiscoveryErrorCode.INVALID_CURSOR,
+                message="Cursor does not match the current query or catalog generation.",
+            )
+
+    records = list(session.scalars(select(SearchIndexRecord)).all())
+    if category_scope:
+        records = [r for r in records if r.category_scope == category_scope]
+
+    ranked = rank_records(records, raw_query=raw_query)
+    window: list[RankedSearchRow] = ranked
+    if cursor_payload is not None:
+        window = [
+            row
+            for row in ranked
+            if cursor_is_after_row(
+                cursor_payload,
+                RankedRowLike(
+                    stable_id=row.record.stable_id,
+                    total_score=row.total_score,
+                    relevance_score=row.relevance_score,
+                ),
+            )
+        ]
+
+    page = window[:page_size]
+    items = tuple(
+        SearchResultItem(
+            stable_id=row.record.stable_id,
+            kind=row.record.kind,
+            title=row.record.title,
+            is_sponsored=False,
+        )
+        for row in page
+    )
+
+    next_cursor: str | None = None
+    if len(window) > page_size and page:
+        last = page[-1]
+        next_cursor = encode_signed_cursor(
+            settings,
+            SearchCursorPayload(
+                version=CURSOR_VERSION,
+                query_fingerprint=fingerprint,
+                catalog_generation=generation,
+                after_total_score=last.total_score,
+                after_relevance_score=last.relevance_score,
+                after_stable_id=last.record.stable_id,
+            ),
+        )
+
+    return SearchExecutionResult(
+        items=items,
+        next_cursor=next_cursor,
+        query_fingerprint=fingerprint,
+        catalog_generation=generation,
+    )

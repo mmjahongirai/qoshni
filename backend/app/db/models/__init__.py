@@ -8,6 +8,11 @@ from app.db.models.business_onboarding import (
 from app.db.models.identity import AuthAuditEvent, AuthSession, OtpChallenge, User
 from app.db.models.platform_roles import UserPlatformRoleAssignment
 from app.db.models.profile import UserPreferences, UserProfile
+from app.db.models.search_discovery import (
+    SearchIndexMetadata,
+    SearchIndexProjectionReceipt,
+    SearchIndexRecord,
+)
 
 __all__ = [
     "AuthAuditEvent",
@@ -20,4 +25,7 @@ __all__ = [
     "UserPlatformRoleAssignment",
     "UserPreferences",
     "UserProfile",
+    "SearchIndexMetadata",
+    "SearchIndexProjectionReceipt",
+    "SearchIndexRecord",
 ]

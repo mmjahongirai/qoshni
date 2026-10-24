@@ -10,6 +10,7 @@ from app.api.routes.business_onboarding_documents import (
 from app.api.routes.business_onboarding_review import router as business_onboarding_review_router
 from app.api.routes.health import router as health_router
 from app.api.routes.me import router as me_router
+from app.api.routes.search_discovery import router as search_discovery_router
 
 
 api_router = APIRouter()
@@ -19,3 +20,4 @@ api_router.include_router(me_router)
 api_router.include_router(business_onboarding_router)
 api_router.include_router(business_onboarding_documents_router)
 api_router.include_router(business_onboarding_review_router)
+api_router.include_router(search_discovery_router)

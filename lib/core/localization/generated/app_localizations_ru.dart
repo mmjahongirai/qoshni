@@ -331,6 +331,32 @@ class AppLocalizationsRu extends AppLocalizations {
   String get searchEmptyBody => 'Попробуйте другой запрос.';
 
   @override
+  String get searchSpellingSuggestionLabel => 'Возможно, вы имели в виду';
+
+  @override
+  String get searchLoadMore => 'Показать ещё';
+
+  @override
+  String get searchSponsoredLabel => 'Реклама';
+
+  @override
+  String get searchRemoteUnauthorizedTitle => 'Войдите, чтобы искать';
+
+  @override
+  String get searchRemoteUnauthorizedBody =>
+      'Для удалённого поиска нужна активная сессия. Войдите и повторите попытку.';
+
+  @override
+  String get searchRemoteUnavailableTitle => 'Поиск временно недоступен';
+
+  @override
+  String get searchRemoteUnavailableBody =>
+      'Не удалось связаться с сервисом поиска. Проверьте подключение и попробуйте снова.';
+
+  @override
+  String get searchRemoteRetry => 'Повторить';
+
+  @override
   String get searchCategoryEntrySubtitle => 'Категория';
 
   @override

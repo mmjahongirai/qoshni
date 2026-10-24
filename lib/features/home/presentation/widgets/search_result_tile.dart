@@ -10,11 +10,15 @@ class SearchResultTile extends StatelessWidget {
   const SearchResultTile({
     required this.entry,
     this.trailing,
+    this.showSponsoredLabel = false,
+    this.sponsoredLabel,
     super.key,
   });
 
   final SearchCatalogEntry entry;
   final Widget? trailing;
+  final bool showSponsoredLabel;
+  final String? sponsoredLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -38,11 +42,26 @@ class SearchResultTile extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  entry.title,
-                  style: textTheme.titleMedium,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        entry.title,
+                        style: textTheme.titleMedium,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                    if (showSponsoredLabel && sponsoredLabel != null) ...[
+                      const SizedBox(width: AppSpacing.xxs),
+                      Text(
+                        sponsoredLabel!,
+                        style: textTheme.labelSmall?.copyWith(
+                          color: Theme.of(context).colorScheme.outline,
+                        ),
+                      ),
+                    ],
+                  ],
                 ),
                 if (entry.subtitle.isNotEmpty) ...[
                   const SizedBox(height: AppSpacing.xxs),

@@ -700,6 +700,54 @@ abstract class AppLocalizations {
   /// **'Try a different search term.'**
   String get searchEmptyBody;
 
+  /// No description provided for @searchSpellingSuggestionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Did you mean'**
+  String get searchSpellingSuggestionLabel;
+
+  /// No description provided for @searchLoadMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Load more results'**
+  String get searchLoadMore;
+
+  /// No description provided for @searchSponsoredLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Sponsored'**
+  String get searchSponsoredLabel;
+
+  /// No description provided for @searchRemoteUnauthorizedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to search'**
+  String get searchRemoteUnauthorizedTitle;
+
+  /// No description provided for @searchRemoteUnauthorizedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Remote search needs an active session. Sign in and try again.'**
+  String get searchRemoteUnauthorizedBody;
+
+  /// No description provided for @searchRemoteUnavailableTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Search is temporarily unavailable'**
+  String get searchRemoteUnavailableTitle;
+
+  /// No description provided for @searchRemoteUnavailableBody.
+  ///
+  /// In en, this message translates to:
+  /// **'We could not reach the search service. Check your connection and try again.'**
+  String get searchRemoteUnavailableBody;
+
+  /// No description provided for @searchRemoteRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get searchRemoteRetry;
+
   /// No description provided for @searchCategoryEntrySubtitle.
   ///
   /// In en, this message translates to:

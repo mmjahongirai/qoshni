@@ -335,6 +335,32 @@ class AppLocalizationsUz extends AppLocalizations {
   String get searchEmptyBody => 'Boshqa so‘z bilan qidirib ko‘ring.';
 
   @override
+  String get searchSpellingSuggestionLabel => 'Balki siz nazarda tutgandirsiz';
+
+  @override
+  String get searchLoadMore => 'Yana ko‘rsatish';
+
+  @override
+  String get searchSponsoredLabel => 'Reklama';
+
+  @override
+  String get searchRemoteUnauthorizedTitle => 'Qidirish uchun kiring';
+
+  @override
+  String get searchRemoteUnauthorizedBody =>
+      'Masofaviy qidiruv faol seansni talab qiladi. Tizimga kiring va qayta urinib ko‘ring.';
+
+  @override
+  String get searchRemoteUnavailableTitle => 'Qidiruv vaqtincha ishlamayapti';
+
+  @override
+  String get searchRemoteUnavailableBody =>
+      'Qidiruv xizmatiga ulanib bo‘lmadi. Internetni tekshiring va qayta urinib ko‘ring.';
+
+  @override
+  String get searchRemoteRetry => 'Qayta urinish';
+
+  @override
   String get searchCategoryEntrySubtitle => 'Kategoriya';
 
   @override

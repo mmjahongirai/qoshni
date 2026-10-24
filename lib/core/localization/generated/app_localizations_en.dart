@@ -332,6 +332,33 @@ class AppLocalizationsEn extends AppLocalizations {
   String get searchEmptyBody => 'Try a different search term.';
 
   @override
+  String get searchSpellingSuggestionLabel => 'Did you mean';
+
+  @override
+  String get searchLoadMore => 'Load more results';
+
+  @override
+  String get searchSponsoredLabel => 'Sponsored';
+
+  @override
+  String get searchRemoteUnauthorizedTitle => 'Sign in to search';
+
+  @override
+  String get searchRemoteUnauthorizedBody =>
+      'Remote search needs an active session. Sign in and try again.';
+
+  @override
+  String get searchRemoteUnavailableTitle =>
+      'Search is temporarily unavailable';
+
+  @override
+  String get searchRemoteUnavailableBody =>
+      'We could not reach the search service. Check your connection and try again.';
+
+  @override
+  String get searchRemoteRetry => 'Try again';
+
+  @override
   String get searchCategoryEntrySubtitle => 'Category';
 
   @override
