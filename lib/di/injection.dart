@@ -125,6 +125,31 @@ import 'package:qoshni/features/notifications/presentation/qoshni_notification_t
 import 'package:qoshni/features/conversations/data/in_memory_qoshni_conversation_repository.dart';
 import 'package:qoshni/features/conversations/domain/repositories/qoshni_conversation_repository.dart';
 import 'package:qoshni/features/conversations/presentation/qoshni_conversation_controller.dart';
+import 'package:qoshni/features/platform_governance/application/qoshni_platform_governance_audit_service.dart';
+import 'package:qoshni/features/platform_governance/application/qoshni_platform_governance_authorizer.dart';
+import 'package:qoshni/features/platform_governance/application/qoshni_platform_governance_operations_summary_service.dart';
+import 'package:qoshni/features/platform_governance/data/in_memory_qoshni_platform_approval_repository.dart';
+import 'package:qoshni/features/platform_governance/data/in_memory_qoshni_platform_business_verification_queue_repository.dart';
+import 'package:qoshni/features/platform_governance/data/in_memory_qoshni_platform_configuration_repository.dart';
+import 'package:qoshni/features/platform_governance/data/in_memory_qoshni_platform_governance_audit_repository.dart';
+import 'package:qoshni/features/platform_governance/data/in_memory_qoshni_platform_governance_repository.dart';
+import 'package:qoshni/features/platform_governance/data/in_memory_qoshni_platform_moderation_queue_repository.dart';
+import 'package:qoshni/features/platform_governance/data/in_memory_qoshni_platform_support_case_repository.dart';
+import 'package:qoshni/features/platform_governance/domain/repositories/qoshni_platform_approval_repository.dart';
+import 'package:qoshni/features/platform_governance/domain/repositories/qoshni_platform_business_verification_queue_repository.dart';
+import 'package:qoshni/features/platform_governance/domain/repositories/qoshni_platform_configuration_repository.dart';
+import 'package:qoshni/features/platform_governance/domain/repositories/qoshni_platform_governance_audit_repository.dart';
+import 'package:qoshni/features/platform_governance/domain/repositories/qoshni_platform_governance_repository.dart';
+import 'package:qoshni/features/platform_governance/domain/repositories/qoshni_platform_moderation_queue_repository.dart';
+import 'package:qoshni/features/platform_governance/domain/repositories/qoshni_platform_support_case_repository.dart';
+import 'package:qoshni/features/platform_governance/presentation/qoshni_platform_approval_controller.dart';
+import 'package:qoshni/features/platform_governance/presentation/qoshni_platform_business_verification_queue_controller.dart';
+import 'package:qoshni/features/platform_governance/presentation/qoshni_platform_configuration_controller.dart';
+import 'package:qoshni/features/platform_governance/presentation/qoshni_platform_governance_audit_trail_controller.dart';
+import 'package:qoshni/features/platform_governance/presentation/qoshni_platform_governance_controller.dart';
+import 'package:qoshni/features/platform_governance/presentation/qoshni_platform_governance_operations_controller.dart';
+import 'package:qoshni/features/platform_governance/presentation/qoshni_platform_moderation_queue_controller.dart';
+import 'package:qoshni/features/platform_governance/presentation/qoshni_platform_support_case_controller.dart';
 import 'package:qoshni/features/system_messages/data/in_memory_qoshni_system_message_repository.dart';
 import 'package:qoshni/features/system_messages/domain/repositories/qoshni_system_message_repository.dart';
 import 'package:qoshni/features/system_messages/presentation/qoshni_system_message_controller.dart';
@@ -214,6 +239,106 @@ Future<void> configureDependencies(AppConfig config) async {
     ..registerLazySingleton<QoshniConversationController>(
       () => QoshniConversationController(
         getIt<QoshniConversationRepository>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniPlatformGovernanceRepository>(
+      InMemoryQoshniPlatformGovernanceRepository.new,
+    )
+    ..registerLazySingleton<QoshniPlatformGovernanceController>(
+      () => QoshniPlatformGovernanceController(
+        getIt<QoshniPlatformGovernanceRepository>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniPlatformGovernanceAuthorizer>(
+      () => QoshniPlatformGovernanceAuthorizer(
+        getIt<QoshniPlatformGovernanceRepository>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniPlatformGovernanceAuditRepository>(
+      InMemoryQoshniPlatformGovernanceAuditRepository.new,
+    )
+    ..registerLazySingleton<QoshniPlatformGovernanceAuditService>(
+      () => QoshniPlatformGovernanceAuditService(
+        auditRepository: getIt<QoshniPlatformGovernanceAuditRepository>(),
+        governanceRepository: getIt<QoshniPlatformGovernanceRepository>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniPlatformConfigurationRepository>(
+      InMemoryQoshniPlatformConfigurationRepository.new,
+    )
+    ..registerLazySingleton<QoshniPlatformApprovalRepository>(
+      InMemoryQoshniPlatformApprovalRepository.new,
+    )
+    ..registerLazySingleton<QoshniPlatformBusinessVerificationQueueRepository>(
+      InMemoryQoshniPlatformBusinessVerificationQueueRepository.new,
+    )
+    ..registerLazySingleton<QoshniPlatformModerationQueueRepository>(
+      InMemoryQoshniPlatformModerationQueueRepository.new,
+    )
+    ..registerLazySingleton<QoshniPlatformSupportCaseRepository>(
+      InMemoryQoshniPlatformSupportCaseRepository.new,
+    )
+    ..registerLazySingleton<QoshniPlatformGovernanceOperationsSummaryService>(
+      () => QoshniPlatformGovernanceOperationsSummaryService(
+        verificationRepository:
+            getIt<QoshniPlatformBusinessVerificationQueueRepository>(),
+        moderationRepository: getIt<QoshniPlatformModerationQueueRepository>(),
+        supportRepository: getIt<QoshniPlatformSupportCaseRepository>(),
+        auditRepository: getIt<QoshniPlatformGovernanceAuditRepository>(),
+        approvalRepository: getIt<QoshniPlatformApprovalRepository>(),
+        configurationRepository: getIt<QoshniPlatformConfigurationRepository>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniPlatformBusinessVerificationQueueController>(
+      () => QoshniPlatformBusinessVerificationQueueController(
+        repository: getIt<QoshniPlatformBusinessVerificationQueueRepository>(),
+        governanceRepository: getIt<QoshniPlatformGovernanceRepository>(),
+        authorizer: getIt<QoshniPlatformGovernanceAuthorizer>(),
+        auditService: getIt<QoshniPlatformGovernanceAuditService>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniPlatformModerationQueueController>(
+      () => QoshniPlatformModerationQueueController(
+        repository: getIt<QoshniPlatformModerationQueueRepository>(),
+        governanceRepository: getIt<QoshniPlatformGovernanceRepository>(),
+        authorizer: getIt<QoshniPlatformGovernanceAuthorizer>(),
+        auditService: getIt<QoshniPlatformGovernanceAuditService>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniPlatformSupportCaseController>(
+      () => QoshniPlatformSupportCaseController(
+        repository: getIt<QoshniPlatformSupportCaseRepository>(),
+        governanceRepository: getIt<QoshniPlatformGovernanceRepository>(),
+        authorizer: getIt<QoshniPlatformGovernanceAuthorizer>(),
+        auditService: getIt<QoshniPlatformGovernanceAuditService>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniPlatformGovernanceAuditTrailController>(
+      () => QoshniPlatformGovernanceAuditTrailController(
+        auditRepository: getIt<QoshniPlatformGovernanceAuditRepository>(),
+        authorizer: getIt<QoshniPlatformGovernanceAuthorizer>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniPlatformConfigurationController>(
+      () => QoshniPlatformConfigurationController(
+        repository: getIt<QoshniPlatformConfigurationRepository>(),
+        governanceRepository: getIt<QoshniPlatformGovernanceRepository>(),
+        authorizer: getIt<QoshniPlatformGovernanceAuthorizer>(),
+        auditService: getIt<QoshniPlatformGovernanceAuditService>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniPlatformApprovalController>(
+      () => QoshniPlatformApprovalController(
+        repository: getIt<QoshniPlatformApprovalRepository>(),
+        governanceRepository: getIt<QoshniPlatformGovernanceRepository>(),
+        authorizer: getIt<QoshniPlatformGovernanceAuthorizer>(),
+        auditService: getIt<QoshniPlatformGovernanceAuditService>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniPlatformGovernanceOperationsController>(
+      () => QoshniPlatformGovernanceOperationsController(
+        summaryService: getIt<QoshniPlatformGovernanceOperationsSummaryService>(),
+        authorizer: getIt<QoshniPlatformGovernanceAuthorizer>(),
       ),
     )
     ..registerLazySingleton<BusinessProfileRepository>(

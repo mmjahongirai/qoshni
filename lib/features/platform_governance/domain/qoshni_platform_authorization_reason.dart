@@ -1,0 +1,16 @@
+enum QoshniPlatformAuthorizationReason {
+  allowedExplicitGrant,
+  deniedInvalidInput,
+  deniedAdminSuspended,
+  deniedAdminNotFound,
+  deniedNoEnabledRoles,
+  deniedRoleDisabled,
+  deniedPermissionNotGranted,
+  deniedScopePlatformWideRequired,
+  deniedScopeBusinessReferenceRequired,
+  deniedScopeBranchReferenceRequired,
+  deniedCrossBusinessAccess,
+  deniedCrossBranchAccess,
+  deniedBusinessAssignmentRequired,
+  deniedBranchAssignmentRequired,
+}

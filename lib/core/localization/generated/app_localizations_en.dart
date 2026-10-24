@@ -5601,4 +5601,471 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get profileDemoConversationsSubtitle =>
       'In-memory conversations (demo boundary)';
+
+  @override
+  String get platformAdminRolesTitle => 'Platform admin roles';
+
+  @override
+  String get platformAdminGovernanceDisclaimer =>
+      'Demo admin governance only — roles and permissions are in memory; no production authorization is enforced.';
+
+  @override
+  String get platformAdminHighRiskBoundaryNotice =>
+      'Financial, wallet, secret, and unrestricted private-content permissions are intentionally absent in this demo catalog.';
+
+  @override
+  String get platformAdminIdentitiesSectionTitle => 'Demo admin identities';
+
+  @override
+  String get platformAdminIdentitiesEmpty =>
+      'No demo admin identities are loaded.';
+
+  @override
+  String get platformAdminRolesSectionTitle => 'Roles and permissions';
+
+  @override
+  String get platformAdminRolesEmpty => 'No platform roles are defined.';
+
+  @override
+  String get platformAdminRoleDetailTitle => 'Role permissions';
+
+  @override
+  String get platformAdminPermissionCountLabel => 'permissions';
+
+  @override
+  String get platformAdminAuthPreviewTitle =>
+      'Authorization preview (read-only)';
+
+  @override
+  String get platformAdminAuthPreviewHint =>
+      'Evaluates the demo policy only — does not perform actions or persist audit records.';
+
+  @override
+  String get platformAdminAuthPreviewPermissionLabel => 'Required permission';
+
+  @override
+  String get platformAdminAuthPreviewScopeKindLabel => 'Resource scope';
+
+  @override
+  String get platformAdminAuthPreviewBusinessRefLabel => 'Business reference';
+
+  @override
+  String get platformAdminAuthPreviewBranchRefLabel => 'Branch reference';
+
+  @override
+  String get platformAdminAuthPreviewActionLabel => 'Action label';
+
+  @override
+  String get platformAdminAuthPreviewSelectAdmin =>
+      'Select an admin identity to preview authorization.';
+
+  @override
+  String get platformAdminAuthPreviewError =>
+      'Unable to evaluate authorization for the current selection.';
+
+  @override
+  String get platformAdminAuthDecisionAllowed => 'Allowed (demo policy)';
+
+  @override
+  String get platformAdminAuthDecisionDenied => 'Denied (demo policy)';
+
+  @override
+  String platformAdminAuthMatchedRole(String roleId) {
+    return 'Matched role: $roleId';
+  }
+
+  @override
+  String get platformAdminSuspendedNotice =>
+      'Suspended admins are denied regardless of role assignments.';
+
+  @override
+  String get platformAdminStatusActive => 'Active';
+
+  @override
+  String get platformAdminStatusSuspended => 'Suspended';
+
+  @override
+  String get platformRoleStatusEnabled => 'Enabled';
+
+  @override
+  String get platformRoleStatusDisabled => 'Disabled';
+
+  @override
+  String get platformScopeKindPlatform => 'Platform-wide';
+
+  @override
+  String get platformScopeKindBusiness => 'Assigned business';
+
+  @override
+  String get platformScopeKindBranch => 'Assigned branch';
+
+  @override
+  String get profilePlatformAdminGovernanceTitle => 'Demo platform admin';
+
+  @override
+  String get profilePlatformAdminGovernanceSubtitle =>
+      'Roles, permissions and policy preview (in memory)';
+
+  @override
+  String get platformRoleViewerName => 'Platform Viewer';
+
+  @override
+  String get platformRoleViewerPurpose =>
+      'Read-only visibility into the demo admin dashboard and audit records.';
+
+  @override
+  String get platformRoleVerificationReviewerName =>
+      'Business Verification Reviewer';
+
+  @override
+  String get platformRoleVerificationReviewerPurpose =>
+      'Review synthetic business verification submissions within assigned scope.';
+
+  @override
+  String get platformRoleModeratorName => 'Content Moderator';
+
+  @override
+  String get platformRoleModeratorPurpose =>
+      'Inspect moderation queues and perform permitted demo moderation actions.';
+
+  @override
+  String get platformRoleSupportAgentName => 'Support Agent';
+
+  @override
+  String get platformRoleSupportAgentPurpose =>
+      'View and respond to demo support cases within assigned business or branch scope.';
+
+  @override
+  String get platformRoleOperationsAdminName => 'Platform Operations Admin';
+
+  @override
+  String get platformRoleOperationsAdminPurpose =>
+      'View platform configuration and manage low-risk demo settings only.';
+
+  @override
+  String get platformRoleDisabledAuditName => 'Disabled Audit Role (demo)';
+
+  @override
+  String get platformRoleDisabledAuditPurpose =>
+      'Seed role kept disabled to validate denial when roles are not enabled.';
+
+  @override
+  String get platformPermissionViewDashboard => 'View platform admin dashboard';
+
+  @override
+  String get platformPermissionViewVerificationQueue =>
+      'View business verification queue';
+
+  @override
+  String get platformPermissionReviewVerification =>
+      'Review business verification submissions';
+
+  @override
+  String get platformPermissionViewModerationQueue => 'View moderation queue';
+
+  @override
+  String get platformPermissionPerformModeration =>
+      'Perform permitted moderation actions';
+
+  @override
+  String get platformPermissionViewSupportCases => 'View support cases';
+
+  @override
+  String get platformPermissionRespondSupportCases =>
+      'Respond to support cases';
+
+  @override
+  String get platformPermissionViewConfiguration =>
+      'View platform configuration';
+
+  @override
+  String get platformPermissionManageLowRiskConfiguration =>
+      'Manage low-risk platform configuration';
+
+  @override
+  String get platformPermissionViewAuditRecords => 'View audit records';
+
+  @override
+  String get platformAuthReasonAllowedExplicitGrant =>
+      'Allowed by an explicit permission grant on an enabled role.';
+
+  @override
+  String get platformAuthReasonDeniedInvalidInput =>
+      'Denied — invalid authorization input.';
+
+  @override
+  String get platformAuthReasonDeniedAdminSuspended =>
+      'Denied — admin identity is suspended.';
+
+  @override
+  String get platformAuthReasonDeniedAdminNotFound =>
+      'Denied — admin identity was not found.';
+
+  @override
+  String get platformAuthReasonDeniedNoEnabledRoles =>
+      'Denied — no enabled roles are assigned.';
+
+  @override
+  String get platformAuthReasonDeniedRoleDisabled =>
+      'Denied — assigned role is disabled.';
+
+  @override
+  String get platformAuthReasonDeniedPermissionNotGranted =>
+      'Denied — permission is not granted to any enabled role.';
+
+  @override
+  String get platformAuthReasonDeniedScopePlatformWideRequired =>
+      'Denied — this permission requires an explicit platform-wide scope.';
+
+  @override
+  String get platformAuthReasonDeniedScopeBusinessReferenceRequired =>
+      'Denied — business scope requires a business reference.';
+
+  @override
+  String get platformAuthReasonDeniedScopeBranchReferenceRequired =>
+      'Denied — branch scope requires a branch reference.';
+
+  @override
+  String get platformAuthReasonDeniedCrossBusinessAccess =>
+      'Denied — cross-business access is not allowed for this admin.';
+
+  @override
+  String get platformAuthReasonDeniedCrossBranchAccess =>
+      'Denied — cross-branch access is not allowed for this admin.';
+
+  @override
+  String get platformAuthReasonDeniedBusinessAssignmentRequired =>
+      'Denied — business-scoped action requires business assignments on the admin.';
+
+  @override
+  String get platformAuthReasonDeniedBranchAssignmentRequired =>
+      'Denied — branch-scoped action requires branch assignments on the admin.';
+
+  @override
+  String get platformGovernanceWorkflowDisclaimer =>
+      'Demo governance workflows only — no real business verification, moderation decision or customer support action is executed.';
+
+  @override
+  String get platformBusinessVerificationTitle => 'Business verification queue';
+
+  @override
+  String get platformModerationTitle => 'Moderation queue';
+
+  @override
+  String get platformSupportCasesTitle => 'Support cases';
+
+  @override
+  String get platformWorkflowActiveAdminLabel => 'Acting demo admin';
+
+  @override
+  String get platformWorkflowHistoryTitle => 'History';
+
+  @override
+  String get platformWorkflowOutcomeSuccess =>
+      'Demo action recorded in memory.';
+
+  @override
+  String get platformWorkflowOutcomeAuthorizationDenied =>
+      'Action denied by demo authorization policy.';
+
+  @override
+  String get platformWorkflowOutcomeInvalidTransition =>
+      'Invalid status transition.';
+
+  @override
+  String get platformWorkflowOutcomeInvalidInput => 'Invalid input.';
+
+  @override
+  String get platformWorkflowOutcomeNotFound => 'Record not found.';
+
+  @override
+  String get platformWorkflowOutcomeFailure =>
+      'Demo repository failure — no changes saved.';
+
+  @override
+  String get platformAdminNavBusinessVerification =>
+      'Business verification queue';
+
+  @override
+  String get platformAdminNavModeration => 'Moderation queue';
+
+  @override
+  String get platformAdminNavSupportCases => 'Support cases';
+
+  @override
+  String get platformBverStatusPending => 'Pending';
+
+  @override
+  String get platformBverStatusUnderReview => 'Under review';
+
+  @override
+  String get platformBverStatusApproved => 'Approved (demo)';
+
+  @override
+  String get platformBverStatusRejected => 'Rejected (demo)';
+
+  @override
+  String get platformBverStatusNeedsInfo => 'Needs more information';
+
+  @override
+  String get platformBverActionBeginReview => 'Begin review';
+
+  @override
+  String get platformBverActionApprove => 'Approve (demo)';
+
+  @override
+  String get platformBverActionReject => 'Reject (demo)';
+
+  @override
+  String get platformModStatusPending => 'Pending';
+
+  @override
+  String get platformModStatusUnderReview => 'Under review';
+
+  @override
+  String get platformModStatusActionProposed => 'Action proposed';
+
+  @override
+  String get platformModStatusResolved => 'Resolved (demo)';
+
+  @override
+  String get platformModStatusDismissed => 'Dismissed (demo)';
+
+  @override
+  String get platformModActionBeginReview => 'Begin review';
+
+  @override
+  String get platformSupportStatusOpen => 'Open';
+
+  @override
+  String get platformSupportStatusAssigned => 'Assigned';
+
+  @override
+  String get platformSupportStatusInProgress => 'In progress';
+
+  @override
+  String get platformSupportStatusResolved => 'Resolved';
+
+  @override
+  String get platformSupportStatusClosed => 'Closed';
+
+  @override
+  String get platformSupportNoteHint => 'Internal note (plain text)';
+
+  @override
+  String get platformSupportAddNoteAction => 'Add internal note (demo)';
+
+  @override
+  String get platformSupportAssignAction => 'Assign support role (demo)';
+
+  @override
+  String get platformGovernancePhase15Disclaimer =>
+      'Demo platform governance only — configuration, audit and approvals are in memory; no production platform action is executed.';
+
+  @override
+  String get platformGovernanceAuditTitle => 'Platform audit trail';
+
+  @override
+  String get platformGovernanceConfigurationTitle => 'Platform configuration';
+
+  @override
+  String get platformGovernanceApprovalsTitle => 'Approval requests';
+
+  @override
+  String get platformGovernanceOperationsTitle => 'Operations dashboard';
+
+  @override
+  String get platformGovernanceAuditEmpty =>
+      'No audit events match the current filters.';
+
+  @override
+  String get platformGovernanceAccessDenied =>
+      'Access denied by demo authorization policy.';
+
+  @override
+  String get platformGovernanceSeedBadge => 'Seed';
+
+  @override
+  String get platformConfigRestrictedNotice =>
+      'Restricted — maker-checker approval required; not editable in this demo.';
+
+  @override
+  String platformConfigRevisionLabel(int revision) {
+    return 'Revision $revision';
+  }
+
+  @override
+  String get platformGovernanceApprovalNoExecutionNotice =>
+      'Approving or rejecting a proposal updates the demo request only. No wallet, payment, or security operation runs.';
+
+  @override
+  String get platformGovernanceApprovalCreateAction => 'Submit demo proposal';
+
+  @override
+  String get platformGovernanceApprovalApproveAction =>
+      'Approve (demo lifecycle only)';
+
+  @override
+  String get platformGovernanceApprovalRejectAction =>
+      'Reject (demo lifecycle only)';
+
+  @override
+  String get platformGovernanceOperationsSyntheticNotice =>
+      'Counts below are derived from in-memory demo repositories — not production KPIs.';
+
+  @override
+  String get platformGovernanceOperationsRefresh => 'Refresh summary';
+
+  @override
+  String get platformGovernanceOperationsEmpty => 'No summary available.';
+
+  @override
+  String get platformGovernanceOperationsAsOf => 'As of (UTC)';
+
+  @override
+  String get platformGovernanceOperationsPendingApprovals =>
+      'Pending approval requests';
+
+  @override
+  String get platformGovernanceOperationsConfigRevisions =>
+      'Configuration revision entries';
+
+  @override
+  String get platformGovernanceOperationsVerificationSection =>
+      'Verification submissions';
+
+  @override
+  String get platformGovernanceOperationsModerationSection =>
+      'Moderation cases';
+
+  @override
+  String get platformAdminNavAudit => 'Audit trail';
+
+  @override
+  String get platformAdminNavConfiguration => 'Platform configuration';
+
+  @override
+  String get platformAdminNavApprovals => 'Approval requests';
+
+  @override
+  String get platformAdminNavOperations => 'Operations dashboard';
+
+  @override
+  String get platformPermissionSubmitApprovalProposal =>
+      'Submit high-risk administrative proposal (demo)';
+
+  @override
+  String get platformPermissionDecideApprovalProposal =>
+      'Decide high-risk administrative proposal (demo)';
+
+  @override
+  String get platformRoleGovernanceApproverName => 'Governance Approver';
+
+  @override
+  String get platformRoleGovernanceApproverPurpose =>
+      'Second-party approval for hypothetical high-risk proposals — does not grant other platform privileges.';
+
+  @override
+  String get platformWorkflowOutcomeAuditPersistFailure =>
+      'Domain change may have occurred, but audit append failed (in-memory demo limitation).';
 }

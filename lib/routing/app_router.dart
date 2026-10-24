@@ -21,6 +21,14 @@ import 'package:qoshni/features/system_messages/presentation/pages/system_messag
 import 'package:qoshni/features/conversations/presentation/pages/demo_conversation_detail_page.dart';
 import 'package:qoshni/features/conversations/presentation/pages/demo_conversations_list_page.dart';
 import 'package:qoshni/features/system_messages/presentation/pages/system_messages_feed_page.dart';
+import 'package:qoshni/features/platform_governance/presentation/pages/platform_admin_roles_page.dart';
+import 'package:qoshni/features/platform_governance/presentation/pages/platform_business_verification_queue_page.dart';
+import 'package:qoshni/features/platform_governance/presentation/pages/platform_moderation_queue_page.dart';
+import 'package:qoshni/features/platform_governance/presentation/pages/platform_support_cases_page.dart';
+import 'package:qoshni/features/platform_governance/presentation/pages/platform_governance_audit_trail_page.dart';
+import 'package:qoshni/features/platform_governance/presentation/pages/platform_governance_configuration_page.dart';
+import 'package:qoshni/features/platform_governance/presentation/pages/platform_governance_approvals_page.dart';
+import 'package:qoshni/features/platform_governance/presentation/pages/platform_governance_operations_page.dart';
 import 'package:qoshni/features/home/presentation/pages/catalog_item_detail_page.dart';
 import 'package:qoshni/features/home/presentation/pages/favorites_page.dart';
 import 'package:qoshni/features/home/presentation/pages/profile_page.dart';
@@ -193,6 +201,48 @@ class AppRouter {
             },
           ),
         ],
+      ),
+      GoRoute(
+        path: RoutePaths.platformAdminGovernanceRoles,
+        name: RouteNames.platformAdminGovernanceRoles,
+        builder: (context, state) => const PlatformAdminRolesPage(),
+      ),
+      GoRoute(
+        path: RoutePaths.platformAdminBusinessVerification,
+        name: RouteNames.platformAdminBusinessVerification,
+        builder: (context, state) =>
+            const PlatformBusinessVerificationQueuePage(),
+      ),
+      GoRoute(
+        path: RoutePaths.platformAdminModeration,
+        name: RouteNames.platformAdminModeration,
+        builder: (context, state) => const PlatformModerationQueuePage(),
+      ),
+      GoRoute(
+        path: RoutePaths.platformAdminSupportCases,
+        name: RouteNames.platformAdminSupportCases,
+        builder: (context, state) => const PlatformSupportCasesPage(),
+      ),
+      GoRoute(
+        path: RoutePaths.platformAdminGovernanceAudit,
+        name: RouteNames.platformAdminGovernanceAudit,
+        builder: (context, state) => const PlatformGovernanceAuditTrailPage(),
+      ),
+      GoRoute(
+        path: RoutePaths.platformAdminGovernanceConfiguration,
+        name: RouteNames.platformAdminGovernanceConfiguration,
+        builder: (context, state) =>
+            const PlatformGovernanceConfigurationPage(),
+      ),
+      GoRoute(
+        path: RoutePaths.platformAdminGovernanceApprovals,
+        name: RouteNames.platformAdminGovernanceApprovals,
+        builder: (context, state) => const PlatformGovernanceApprovalsPage(),
+      ),
+      GoRoute(
+        path: RoutePaths.platformAdminGovernanceOperations,
+        name: RouteNames.platformAdminGovernanceOperations,
+        builder: (context, state) => const PlatformGovernanceOperationsPage(),
       ),
       GoRoute(
         path: RoutePaths.systemMessages,

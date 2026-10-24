@@ -9860,6 +9860,816 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'In-memory conversations (demo boundary)'**
   String get profileDemoConversationsSubtitle;
+
+  /// No description provided for @platformAdminRolesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Platform admin roles'**
+  String get platformAdminRolesTitle;
+
+  /// No description provided for @platformAdminGovernanceDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo admin governance only — roles and permissions are in memory; no production authorization is enforced.'**
+  String get platformAdminGovernanceDisclaimer;
+
+  /// No description provided for @platformAdminHighRiskBoundaryNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Financial, wallet, secret, and unrestricted private-content permissions are intentionally absent in this demo catalog.'**
+  String get platformAdminHighRiskBoundaryNotice;
+
+  /// No description provided for @platformAdminIdentitiesSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo admin identities'**
+  String get platformAdminIdentitiesSectionTitle;
+
+  /// No description provided for @platformAdminIdentitiesEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No demo admin identities are loaded.'**
+  String get platformAdminIdentitiesEmpty;
+
+  /// No description provided for @platformAdminRolesSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Roles and permissions'**
+  String get platformAdminRolesSectionTitle;
+
+  /// No description provided for @platformAdminRolesEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No platform roles are defined.'**
+  String get platformAdminRolesEmpty;
+
+  /// No description provided for @platformAdminRoleDetailTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Role permissions'**
+  String get platformAdminRoleDetailTitle;
+
+  /// No description provided for @platformAdminPermissionCountLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'permissions'**
+  String get platformAdminPermissionCountLabel;
+
+  /// No description provided for @platformAdminAuthPreviewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Authorization preview (read-only)'**
+  String get platformAdminAuthPreviewTitle;
+
+  /// No description provided for @platformAdminAuthPreviewHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Evaluates the demo policy only — does not perform actions or persist audit records.'**
+  String get platformAdminAuthPreviewHint;
+
+  /// No description provided for @platformAdminAuthPreviewPermissionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Required permission'**
+  String get platformAdminAuthPreviewPermissionLabel;
+
+  /// No description provided for @platformAdminAuthPreviewScopeKindLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Resource scope'**
+  String get platformAdminAuthPreviewScopeKindLabel;
+
+  /// No description provided for @platformAdminAuthPreviewBusinessRefLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Business reference'**
+  String get platformAdminAuthPreviewBusinessRefLabel;
+
+  /// No description provided for @platformAdminAuthPreviewBranchRefLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch reference'**
+  String get platformAdminAuthPreviewBranchRefLabel;
+
+  /// No description provided for @platformAdminAuthPreviewActionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Action label'**
+  String get platformAdminAuthPreviewActionLabel;
+
+  /// No description provided for @platformAdminAuthPreviewSelectAdmin.
+  ///
+  /// In en, this message translates to:
+  /// **'Select an admin identity to preview authorization.'**
+  String get platformAdminAuthPreviewSelectAdmin;
+
+  /// No description provided for @platformAdminAuthPreviewError.
+  ///
+  /// In en, this message translates to:
+  /// **'Unable to evaluate authorization for the current selection.'**
+  String get platformAdminAuthPreviewError;
+
+  /// No description provided for @platformAdminAuthDecisionAllowed.
+  ///
+  /// In en, this message translates to:
+  /// **'Allowed (demo policy)'**
+  String get platformAdminAuthDecisionAllowed;
+
+  /// No description provided for @platformAdminAuthDecisionDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied (demo policy)'**
+  String get platformAdminAuthDecisionDenied;
+
+  /// No description provided for @platformAdminAuthMatchedRole.
+  ///
+  /// In en, this message translates to:
+  /// **'Matched role: {roleId}'**
+  String platformAdminAuthMatchedRole(String roleId);
+
+  /// No description provided for @platformAdminSuspendedNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Suspended admins are denied regardless of role assignments.'**
+  String get platformAdminSuspendedNotice;
+
+  /// No description provided for @platformAdminStatusActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get platformAdminStatusActive;
+
+  /// No description provided for @platformAdminStatusSuspended.
+  ///
+  /// In en, this message translates to:
+  /// **'Suspended'**
+  String get platformAdminStatusSuspended;
+
+  /// No description provided for @platformRoleStatusEnabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Enabled'**
+  String get platformRoleStatusEnabled;
+
+  /// No description provided for @platformRoleStatusDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Disabled'**
+  String get platformRoleStatusDisabled;
+
+  /// No description provided for @platformScopeKindPlatform.
+  ///
+  /// In en, this message translates to:
+  /// **'Platform-wide'**
+  String get platformScopeKindPlatform;
+
+  /// No description provided for @platformScopeKindBusiness.
+  ///
+  /// In en, this message translates to:
+  /// **'Assigned business'**
+  String get platformScopeKindBusiness;
+
+  /// No description provided for @platformScopeKindBranch.
+  ///
+  /// In en, this message translates to:
+  /// **'Assigned branch'**
+  String get platformScopeKindBranch;
+
+  /// No description provided for @profilePlatformAdminGovernanceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo platform admin'**
+  String get profilePlatformAdminGovernanceTitle;
+
+  /// No description provided for @profilePlatformAdminGovernanceSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Roles, permissions and policy preview (in memory)'**
+  String get profilePlatformAdminGovernanceSubtitle;
+
+  /// No description provided for @platformRoleViewerName.
+  ///
+  /// In en, this message translates to:
+  /// **'Platform Viewer'**
+  String get platformRoleViewerName;
+
+  /// No description provided for @platformRoleViewerPurpose.
+  ///
+  /// In en, this message translates to:
+  /// **'Read-only visibility into the demo admin dashboard and audit records.'**
+  String get platformRoleViewerPurpose;
+
+  /// No description provided for @platformRoleVerificationReviewerName.
+  ///
+  /// In en, this message translates to:
+  /// **'Business Verification Reviewer'**
+  String get platformRoleVerificationReviewerName;
+
+  /// No description provided for @platformRoleVerificationReviewerPurpose.
+  ///
+  /// In en, this message translates to:
+  /// **'Review synthetic business verification submissions within assigned scope.'**
+  String get platformRoleVerificationReviewerPurpose;
+
+  /// No description provided for @platformRoleModeratorName.
+  ///
+  /// In en, this message translates to:
+  /// **'Content Moderator'**
+  String get platformRoleModeratorName;
+
+  /// No description provided for @platformRoleModeratorPurpose.
+  ///
+  /// In en, this message translates to:
+  /// **'Inspect moderation queues and perform permitted demo moderation actions.'**
+  String get platformRoleModeratorPurpose;
+
+  /// No description provided for @platformRoleSupportAgentName.
+  ///
+  /// In en, this message translates to:
+  /// **'Support Agent'**
+  String get platformRoleSupportAgentName;
+
+  /// No description provided for @platformRoleSupportAgentPurpose.
+  ///
+  /// In en, this message translates to:
+  /// **'View and respond to demo support cases within assigned business or branch scope.'**
+  String get platformRoleSupportAgentPurpose;
+
+  /// No description provided for @platformRoleOperationsAdminName.
+  ///
+  /// In en, this message translates to:
+  /// **'Platform Operations Admin'**
+  String get platformRoleOperationsAdminName;
+
+  /// No description provided for @platformRoleOperationsAdminPurpose.
+  ///
+  /// In en, this message translates to:
+  /// **'View platform configuration and manage low-risk demo settings only.'**
+  String get platformRoleOperationsAdminPurpose;
+
+  /// No description provided for @platformRoleDisabledAuditName.
+  ///
+  /// In en, this message translates to:
+  /// **'Disabled Audit Role (demo)'**
+  String get platformRoleDisabledAuditName;
+
+  /// No description provided for @platformRoleDisabledAuditPurpose.
+  ///
+  /// In en, this message translates to:
+  /// **'Seed role kept disabled to validate denial when roles are not enabled.'**
+  String get platformRoleDisabledAuditPurpose;
+
+  /// No description provided for @platformPermissionViewDashboard.
+  ///
+  /// In en, this message translates to:
+  /// **'View platform admin dashboard'**
+  String get platformPermissionViewDashboard;
+
+  /// No description provided for @platformPermissionViewVerificationQueue.
+  ///
+  /// In en, this message translates to:
+  /// **'View business verification queue'**
+  String get platformPermissionViewVerificationQueue;
+
+  /// No description provided for @platformPermissionReviewVerification.
+  ///
+  /// In en, this message translates to:
+  /// **'Review business verification submissions'**
+  String get platformPermissionReviewVerification;
+
+  /// No description provided for @platformPermissionViewModerationQueue.
+  ///
+  /// In en, this message translates to:
+  /// **'View moderation queue'**
+  String get platformPermissionViewModerationQueue;
+
+  /// No description provided for @platformPermissionPerformModeration.
+  ///
+  /// In en, this message translates to:
+  /// **'Perform permitted moderation actions'**
+  String get platformPermissionPerformModeration;
+
+  /// No description provided for @platformPermissionViewSupportCases.
+  ///
+  /// In en, this message translates to:
+  /// **'View support cases'**
+  String get platformPermissionViewSupportCases;
+
+  /// No description provided for @platformPermissionRespondSupportCases.
+  ///
+  /// In en, this message translates to:
+  /// **'Respond to support cases'**
+  String get platformPermissionRespondSupportCases;
+
+  /// No description provided for @platformPermissionViewConfiguration.
+  ///
+  /// In en, this message translates to:
+  /// **'View platform configuration'**
+  String get platformPermissionViewConfiguration;
+
+  /// No description provided for @platformPermissionManageLowRiskConfiguration.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage low-risk platform configuration'**
+  String get platformPermissionManageLowRiskConfiguration;
+
+  /// No description provided for @platformPermissionViewAuditRecords.
+  ///
+  /// In en, this message translates to:
+  /// **'View audit records'**
+  String get platformPermissionViewAuditRecords;
+
+  /// No description provided for @platformAuthReasonAllowedExplicitGrant.
+  ///
+  /// In en, this message translates to:
+  /// **'Allowed by an explicit permission grant on an enabled role.'**
+  String get platformAuthReasonAllowedExplicitGrant;
+
+  /// No description provided for @platformAuthReasonDeniedInvalidInput.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — invalid authorization input.'**
+  String get platformAuthReasonDeniedInvalidInput;
+
+  /// No description provided for @platformAuthReasonDeniedAdminSuspended.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — admin identity is suspended.'**
+  String get platformAuthReasonDeniedAdminSuspended;
+
+  /// No description provided for @platformAuthReasonDeniedAdminNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — admin identity was not found.'**
+  String get platformAuthReasonDeniedAdminNotFound;
+
+  /// No description provided for @platformAuthReasonDeniedNoEnabledRoles.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — no enabled roles are assigned.'**
+  String get platformAuthReasonDeniedNoEnabledRoles;
+
+  /// No description provided for @platformAuthReasonDeniedRoleDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — assigned role is disabled.'**
+  String get platformAuthReasonDeniedRoleDisabled;
+
+  /// No description provided for @platformAuthReasonDeniedPermissionNotGranted.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — permission is not granted to any enabled role.'**
+  String get platformAuthReasonDeniedPermissionNotGranted;
+
+  /// No description provided for @platformAuthReasonDeniedScopePlatformWideRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — this permission requires an explicit platform-wide scope.'**
+  String get platformAuthReasonDeniedScopePlatformWideRequired;
+
+  /// No description provided for @platformAuthReasonDeniedScopeBusinessReferenceRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — business scope requires a business reference.'**
+  String get platformAuthReasonDeniedScopeBusinessReferenceRequired;
+
+  /// No description provided for @platformAuthReasonDeniedScopeBranchReferenceRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — branch scope requires a branch reference.'**
+  String get platformAuthReasonDeniedScopeBranchReferenceRequired;
+
+  /// No description provided for @platformAuthReasonDeniedCrossBusinessAccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — cross-business access is not allowed for this admin.'**
+  String get platformAuthReasonDeniedCrossBusinessAccess;
+
+  /// No description provided for @platformAuthReasonDeniedCrossBranchAccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — cross-branch access is not allowed for this admin.'**
+  String get platformAuthReasonDeniedCrossBranchAccess;
+
+  /// No description provided for @platformAuthReasonDeniedBusinessAssignmentRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — business-scoped action requires business assignments on the admin.'**
+  String get platformAuthReasonDeniedBusinessAssignmentRequired;
+
+  /// No description provided for @platformAuthReasonDeniedBranchAssignmentRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — branch-scoped action requires branch assignments on the admin.'**
+  String get platformAuthReasonDeniedBranchAssignmentRequired;
+
+  /// No description provided for @platformGovernanceWorkflowDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo governance workflows only — no real business verification, moderation decision or customer support action is executed.'**
+  String get platformGovernanceWorkflowDisclaimer;
+
+  /// No description provided for @platformBusinessVerificationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Business verification queue'**
+  String get platformBusinessVerificationTitle;
+
+  /// No description provided for @platformModerationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Moderation queue'**
+  String get platformModerationTitle;
+
+  /// No description provided for @platformSupportCasesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Support cases'**
+  String get platformSupportCasesTitle;
+
+  /// No description provided for @platformWorkflowActiveAdminLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Acting demo admin'**
+  String get platformWorkflowActiveAdminLabel;
+
+  /// No description provided for @platformWorkflowHistoryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'History'**
+  String get platformWorkflowHistoryTitle;
+
+  /// No description provided for @platformWorkflowOutcomeSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo action recorded in memory.'**
+  String get platformWorkflowOutcomeSuccess;
+
+  /// No description provided for @platformWorkflowOutcomeAuthorizationDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Action denied by demo authorization policy.'**
+  String get platformWorkflowOutcomeAuthorizationDenied;
+
+  /// No description provided for @platformWorkflowOutcomeInvalidTransition.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid status transition.'**
+  String get platformWorkflowOutcomeInvalidTransition;
+
+  /// No description provided for @platformWorkflowOutcomeInvalidInput.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid input.'**
+  String get platformWorkflowOutcomeInvalidInput;
+
+  /// No description provided for @platformWorkflowOutcomeNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Record not found.'**
+  String get platformWorkflowOutcomeNotFound;
+
+  /// No description provided for @platformWorkflowOutcomeFailure.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo repository failure — no changes saved.'**
+  String get platformWorkflowOutcomeFailure;
+
+  /// No description provided for @platformAdminNavBusinessVerification.
+  ///
+  /// In en, this message translates to:
+  /// **'Business verification queue'**
+  String get platformAdminNavBusinessVerification;
+
+  /// No description provided for @platformAdminNavModeration.
+  ///
+  /// In en, this message translates to:
+  /// **'Moderation queue'**
+  String get platformAdminNavModeration;
+
+  /// No description provided for @platformAdminNavSupportCases.
+  ///
+  /// In en, this message translates to:
+  /// **'Support cases'**
+  String get platformAdminNavSupportCases;
+
+  /// No description provided for @platformBverStatusPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get platformBverStatusPending;
+
+  /// No description provided for @platformBverStatusUnderReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Under review'**
+  String get platformBverStatusUnderReview;
+
+  /// No description provided for @platformBverStatusApproved.
+  ///
+  /// In en, this message translates to:
+  /// **'Approved (demo)'**
+  String get platformBverStatusApproved;
+
+  /// No description provided for @platformBverStatusRejected.
+  ///
+  /// In en, this message translates to:
+  /// **'Rejected (demo)'**
+  String get platformBverStatusRejected;
+
+  /// No description provided for @platformBverStatusNeedsInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs more information'**
+  String get platformBverStatusNeedsInfo;
+
+  /// No description provided for @platformBverActionBeginReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Begin review'**
+  String get platformBverActionBeginReview;
+
+  /// No description provided for @platformBverActionApprove.
+  ///
+  /// In en, this message translates to:
+  /// **'Approve (demo)'**
+  String get platformBverActionApprove;
+
+  /// No description provided for @platformBverActionReject.
+  ///
+  /// In en, this message translates to:
+  /// **'Reject (demo)'**
+  String get platformBverActionReject;
+
+  /// No description provided for @platformModStatusPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get platformModStatusPending;
+
+  /// No description provided for @platformModStatusUnderReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Under review'**
+  String get platformModStatusUnderReview;
+
+  /// No description provided for @platformModStatusActionProposed.
+  ///
+  /// In en, this message translates to:
+  /// **'Action proposed'**
+  String get platformModStatusActionProposed;
+
+  /// No description provided for @platformModStatusResolved.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolved (demo)'**
+  String get platformModStatusResolved;
+
+  /// No description provided for @platformModStatusDismissed.
+  ///
+  /// In en, this message translates to:
+  /// **'Dismissed (demo)'**
+  String get platformModStatusDismissed;
+
+  /// No description provided for @platformModActionBeginReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Begin review'**
+  String get platformModActionBeginReview;
+
+  /// No description provided for @platformSupportStatusOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get platformSupportStatusOpen;
+
+  /// No description provided for @platformSupportStatusAssigned.
+  ///
+  /// In en, this message translates to:
+  /// **'Assigned'**
+  String get platformSupportStatusAssigned;
+
+  /// No description provided for @platformSupportStatusInProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'In progress'**
+  String get platformSupportStatusInProgress;
+
+  /// No description provided for @platformSupportStatusResolved.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolved'**
+  String get platformSupportStatusResolved;
+
+  /// No description provided for @platformSupportStatusClosed.
+  ///
+  /// In en, this message translates to:
+  /// **'Closed'**
+  String get platformSupportStatusClosed;
+
+  /// No description provided for @platformSupportNoteHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Internal note (plain text)'**
+  String get platformSupportNoteHint;
+
+  /// No description provided for @platformSupportAddNoteAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add internal note (demo)'**
+  String get platformSupportAddNoteAction;
+
+  /// No description provided for @platformSupportAssignAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Assign support role (demo)'**
+  String get platformSupportAssignAction;
+
+  /// No description provided for @platformGovernancePhase15Disclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo platform governance only — configuration, audit and approvals are in memory; no production platform action is executed.'**
+  String get platformGovernancePhase15Disclaimer;
+
+  /// No description provided for @platformGovernanceAuditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Platform audit trail'**
+  String get platformGovernanceAuditTitle;
+
+  /// No description provided for @platformGovernanceConfigurationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Platform configuration'**
+  String get platformGovernanceConfigurationTitle;
+
+  /// No description provided for @platformGovernanceApprovalsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Approval requests'**
+  String get platformGovernanceApprovalsTitle;
+
+  /// No description provided for @platformGovernanceOperationsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Operations dashboard'**
+  String get platformGovernanceOperationsTitle;
+
+  /// No description provided for @platformGovernanceAuditEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No audit events match the current filters.'**
+  String get platformGovernanceAuditEmpty;
+
+  /// No description provided for @platformGovernanceAccessDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Access denied by demo authorization policy.'**
+  String get platformGovernanceAccessDenied;
+
+  /// No description provided for @platformGovernanceSeedBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Seed'**
+  String get platformGovernanceSeedBadge;
+
+  /// No description provided for @platformConfigRestrictedNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Restricted — maker-checker approval required; not editable in this demo.'**
+  String get platformConfigRestrictedNotice;
+
+  /// No description provided for @platformConfigRevisionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Revision {revision}'**
+  String platformConfigRevisionLabel(int revision);
+
+  /// No description provided for @platformGovernanceApprovalNoExecutionNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Approving or rejecting a proposal updates the demo request only. No wallet, payment, or security operation runs.'**
+  String get platformGovernanceApprovalNoExecutionNotice;
+
+  /// No description provided for @platformGovernanceApprovalCreateAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit demo proposal'**
+  String get platformGovernanceApprovalCreateAction;
+
+  /// No description provided for @platformGovernanceApprovalApproveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Approve (demo lifecycle only)'**
+  String get platformGovernanceApprovalApproveAction;
+
+  /// No description provided for @platformGovernanceApprovalRejectAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Reject (demo lifecycle only)'**
+  String get platformGovernanceApprovalRejectAction;
+
+  /// No description provided for @platformGovernanceOperationsSyntheticNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Counts below are derived from in-memory demo repositories — not production KPIs.'**
+  String get platformGovernanceOperationsSyntheticNotice;
+
+  /// No description provided for @platformGovernanceOperationsRefresh.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh summary'**
+  String get platformGovernanceOperationsRefresh;
+
+  /// No description provided for @platformGovernanceOperationsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No summary available.'**
+  String get platformGovernanceOperationsEmpty;
+
+  /// No description provided for @platformGovernanceOperationsAsOf.
+  ///
+  /// In en, this message translates to:
+  /// **'As of (UTC)'**
+  String get platformGovernanceOperationsAsOf;
+
+  /// No description provided for @platformGovernanceOperationsPendingApprovals.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending approval requests'**
+  String get platformGovernanceOperationsPendingApprovals;
+
+  /// No description provided for @platformGovernanceOperationsConfigRevisions.
+  ///
+  /// In en, this message translates to:
+  /// **'Configuration revision entries'**
+  String get platformGovernanceOperationsConfigRevisions;
+
+  /// No description provided for @platformGovernanceOperationsVerificationSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Verification submissions'**
+  String get platformGovernanceOperationsVerificationSection;
+
+  /// No description provided for @platformGovernanceOperationsModerationSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Moderation cases'**
+  String get platformGovernanceOperationsModerationSection;
+
+  /// No description provided for @platformAdminNavAudit.
+  ///
+  /// In en, this message translates to:
+  /// **'Audit trail'**
+  String get platformAdminNavAudit;
+
+  /// No description provided for @platformAdminNavConfiguration.
+  ///
+  /// In en, this message translates to:
+  /// **'Platform configuration'**
+  String get platformAdminNavConfiguration;
+
+  /// No description provided for @platformAdminNavApprovals.
+  ///
+  /// In en, this message translates to:
+  /// **'Approval requests'**
+  String get platformAdminNavApprovals;
+
+  /// No description provided for @platformAdminNavOperations.
+  ///
+  /// In en, this message translates to:
+  /// **'Operations dashboard'**
+  String get platformAdminNavOperations;
+
+  /// No description provided for @platformPermissionSubmitApprovalProposal.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit high-risk administrative proposal (demo)'**
+  String get platformPermissionSubmitApprovalProposal;
+
+  /// No description provided for @platformPermissionDecideApprovalProposal.
+  ///
+  /// In en, this message translates to:
+  /// **'Decide high-risk administrative proposal (demo)'**
+  String get platformPermissionDecideApprovalProposal;
+
+  /// No description provided for @platformRoleGovernanceApproverName.
+  ///
+  /// In en, this message translates to:
+  /// **'Governance Approver'**
+  String get platformRoleGovernanceApproverName;
+
+  /// No description provided for @platformRoleGovernanceApproverPurpose.
+  ///
+  /// In en, this message translates to:
+  /// **'Second-party approval for hypothetical high-risk proposals — does not grant other platform privileges.'**
+  String get platformRoleGovernanceApproverPurpose;
+
+  /// No description provided for @platformWorkflowOutcomeAuditPersistFailure.
+  ///
+  /// In en, this message translates to:
+  /// **'Domain change may have occurred, but audit append failed (in-memory demo limitation).'**
+  String get platformWorkflowOutcomeAuditPersistFailure;
 }
 
 class _AppLocalizationsDelegate

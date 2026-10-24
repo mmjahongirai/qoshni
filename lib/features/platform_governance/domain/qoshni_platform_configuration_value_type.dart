@@ -1,0 +1,4 @@
+enum QoshniPlatformConfigurationValueType {
+  booleanValue,
+  integerValue,
+}

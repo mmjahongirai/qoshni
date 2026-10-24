@@ -366,6 +366,20 @@ class _ProfileBody extends StatelessWidget {
                       contentPadding:
                           const EdgeInsets.symmetric(horizontal: 8),
                       leading: Icon(
+                        Icons.admin_panel_settings_outlined,
+                        color: colorScheme.primary,
+                      ),
+                      title: Text(l10n.profilePlatformAdminGovernanceTitle),
+                      subtitle: Text(l10n.profilePlatformAdminGovernanceSubtitle),
+                      trailing: const Icon(Icons.chevron_right_rounded),
+                      onTap: () => context.pushNamed(
+                        RouteNames.platformAdminGovernanceRoles,
+                      ),
+                    ),
+                    ListTile(
+                      contentPadding:
+                          const EdgeInsets.symmetric(horizontal: 8),
+                      leading: Icon(
                         Icons.storefront_outlined,
                         color: colorScheme.primary,
                       ),

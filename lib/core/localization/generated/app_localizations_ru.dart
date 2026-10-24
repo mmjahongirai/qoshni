@@ -5528,4 +5528,464 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get profileDemoConversationsSubtitle =>
       'Диалоги в памяти (граница чата)';
+
+  @override
+  String get platformAdminRolesTitle => 'Роли платформенного админа';
+
+  @override
+  String get platformAdminGovernanceDisclaimer =>
+      'Только демо управления — роли и права в памяти; производственная авторизация не применяется.';
+
+  @override
+  String get platformAdminHighRiskBoundaryNotice =>
+      'Права на финансы, кошелёк, секреты и неограниченный доступ к личным данным намеренно отсутствуют в этом демо-каталоге.';
+
+  @override
+  String get platformAdminIdentitiesSectionTitle => 'Демо-идентичности админов';
+
+  @override
+  String get platformAdminIdentitiesEmpty => 'Демо-админы не загружены.';
+
+  @override
+  String get platformAdminRolesSectionTitle => 'Роли и права';
+
+  @override
+  String get platformAdminRolesEmpty => 'Роли платформы не определены.';
+
+  @override
+  String get platformAdminRoleDetailTitle => 'Права роли';
+
+  @override
+  String get platformAdminPermissionCountLabel => 'прав';
+
+  @override
+  String get platformAdminAuthPreviewTitle =>
+      'Предпросмотр авторизации (только чтение)';
+
+  @override
+  String get platformAdminAuthPreviewHint =>
+      'Только демо-политика — действия не выполняются и аудит не сохраняется.';
+
+  @override
+  String get platformAdminAuthPreviewPermissionLabel => 'Требуемое право';
+
+  @override
+  String get platformAdminAuthPreviewScopeKindLabel => 'Область ресурса';
+
+  @override
+  String get platformAdminAuthPreviewBusinessRefLabel => 'Ссылка на бизнес';
+
+  @override
+  String get platformAdminAuthPreviewBranchRefLabel => 'Ссылка на филиал';
+
+  @override
+  String get platformAdminAuthPreviewActionLabel => 'Метка действия';
+
+  @override
+  String get platformAdminAuthPreviewSelectAdmin =>
+      'Выберите админа для предпросмотра.';
+
+  @override
+  String get platformAdminAuthPreviewError => 'Не удалось оценить авторизацию.';
+
+  @override
+  String get platformAdminAuthDecisionAllowed => 'Разрешено (демо-политика)';
+
+  @override
+  String get platformAdminAuthDecisionDenied => 'Отказано (демо-политика)';
+
+  @override
+  String platformAdminAuthMatchedRole(String roleId) {
+    return 'Совпавшая роль: $roleId';
+  }
+
+  @override
+  String get platformAdminSuspendedNotice =>
+      'Приостановленные админы отклоняются независимо от ролей.';
+
+  @override
+  String get platformAdminStatusActive => 'Активен';
+
+  @override
+  String get platformAdminStatusSuspended => 'Приостановлен';
+
+  @override
+  String get platformRoleStatusEnabled => 'Включена';
+
+  @override
+  String get platformRoleStatusDisabled => 'Отключена';
+
+  @override
+  String get platformScopeKindPlatform => 'Вся платформа';
+
+  @override
+  String get platformScopeKindBusiness => 'Назначенный бизнес';
+
+  @override
+  String get platformScopeKindBranch => 'Назначенный филиал';
+
+  @override
+  String get profilePlatformAdminGovernanceTitle => 'Демо админ платформы';
+
+  @override
+  String get profilePlatformAdminGovernanceSubtitle =>
+      'Роли, права и предпросмотр политики (в памяти)';
+
+  @override
+  String get platformRoleViewerName => 'Наблюдатель платформы';
+
+  @override
+  String get platformRoleViewerPurpose =>
+      'Только чтение демо-панели и записей аудита.';
+
+  @override
+  String get platformRoleVerificationReviewerName =>
+      'Ревьюер верификации бизнеса';
+
+  @override
+  String get platformRoleVerificationReviewerPurpose =>
+      'Проверка синтетических заявок в назначенной области.';
+
+  @override
+  String get platformRoleModeratorName => 'Модератор контента';
+
+  @override
+  String get platformRoleModeratorPurpose =>
+      'Очереди модерации и разрешённые демо-действия.';
+
+  @override
+  String get platformRoleSupportAgentName => 'Агент поддержки';
+
+  @override
+  String get platformRoleSupportAgentPurpose =>
+      'Демо-кейсы поддержки в назначенном бизнесе или филиале.';
+
+  @override
+  String get platformRoleOperationsAdminName => 'Админ операций платформы';
+
+  @override
+  String get platformRoleOperationsAdminPurpose =>
+      'Просмотр конфигурации и низкорисковые демо-настройки.';
+
+  @override
+  String get platformRoleDisabledAuditName => 'Отключённая роль аудита (демо)';
+
+  @override
+  String get platformRoleDisabledAuditPurpose =>
+      'Роль отключена для проверки отказа.';
+
+  @override
+  String get platformPermissionViewDashboard => 'Просмотр панели админа';
+
+  @override
+  String get platformPermissionViewVerificationQueue =>
+      'Очередь верификации бизнеса';
+
+  @override
+  String get platformPermissionReviewVerification => 'Ревью заявок верификации';
+
+  @override
+  String get platformPermissionViewModerationQueue => 'Очередь модерации';
+
+  @override
+  String get platformPermissionPerformModeration =>
+      'Разрешённые действия модерации';
+
+  @override
+  String get platformPermissionViewSupportCases => 'Просмотр кейсов поддержки';
+
+  @override
+  String get platformPermissionRespondSupportCases => 'Ответы в поддержке';
+
+  @override
+  String get platformPermissionViewConfiguration => 'Просмотр конфигурации';
+
+  @override
+  String get platformPermissionManageLowRiskConfiguration =>
+      'Низкорисковая конфигурация';
+
+  @override
+  String get platformPermissionViewAuditRecords => 'Просмотр записей аудита';
+
+  @override
+  String get platformAuthReasonAllowedExplicitGrant =>
+      'Разрешено явным правом на включённой роли.';
+
+  @override
+  String get platformAuthReasonDeniedInvalidInput =>
+      'Отказ — неверные входные данные.';
+
+  @override
+  String get platformAuthReasonDeniedAdminSuspended =>
+      'Отказ — админ приостановлен.';
+
+  @override
+  String get platformAuthReasonDeniedAdminNotFound =>
+      'Отказ — админ не найден.';
+
+  @override
+  String get platformAuthReasonDeniedNoEnabledRoles =>
+      'Отказ — нет включённых ролей.';
+
+  @override
+  String get platformAuthReasonDeniedRoleDisabled => 'Отказ — роль отключена.';
+
+  @override
+  String get platformAuthReasonDeniedPermissionNotGranted =>
+      'Отказ — право не назначено.';
+
+  @override
+  String get platformAuthReasonDeniedScopePlatformWideRequired =>
+      'Отказ — нужна область всей платформы.';
+
+  @override
+  String get platformAuthReasonDeniedScopeBusinessReferenceRequired =>
+      'Отказ — нужна ссылка на бизнес.';
+
+  @override
+  String get platformAuthReasonDeniedScopeBranchReferenceRequired =>
+      'Отказ — нужна ссылка на филиал.';
+
+  @override
+  String get platformAuthReasonDeniedCrossBusinessAccess =>
+      'Отказ — доступ к другому бизнесу запрещён.';
+
+  @override
+  String get platformAuthReasonDeniedCrossBranchAccess =>
+      'Отказ — доступ к другому филиалу запрещён.';
+
+  @override
+  String get platformAuthReasonDeniedBusinessAssignmentRequired =>
+      'Отказ — нужны назначения бизнеса.';
+
+  @override
+  String get platformAuthReasonDeniedBranchAssignmentRequired =>
+      'Отказ — нужны назначения филиала.';
+
+  @override
+  String get platformGovernanceWorkflowDisclaimer =>
+      'Только демо — реальная верификация, модерация и поддержка не выполняются.';
+
+  @override
+  String get platformBusinessVerificationTitle => 'Очередь верификации бизнеса';
+
+  @override
+  String get platformModerationTitle => 'Очередь модерации';
+
+  @override
+  String get platformSupportCasesTitle => 'Кейсы поддержки';
+
+  @override
+  String get platformWorkflowActiveAdminLabel => 'Демо-админ';
+
+  @override
+  String get platformWorkflowHistoryTitle => 'История';
+
+  @override
+  String get platformWorkflowOutcomeSuccess =>
+      'Демо-действие сохранено в памяти.';
+
+  @override
+  String get platformWorkflowOutcomeAuthorizationDenied =>
+      'Отказано демо-политикой авторизации.';
+
+  @override
+  String get platformWorkflowOutcomeInvalidTransition =>
+      'Недопустимый переход статуса.';
+
+  @override
+  String get platformWorkflowOutcomeInvalidInput => 'Неверные данные.';
+
+  @override
+  String get platformWorkflowOutcomeNotFound => 'Запись не найдена.';
+
+  @override
+  String get platformWorkflowOutcomeFailure =>
+      'Ошибка репозитория — без изменений.';
+
+  @override
+  String get platformAdminNavBusinessVerification => 'Верификация бизнеса';
+
+  @override
+  String get platformAdminNavModeration => 'Модерация';
+
+  @override
+  String get platformAdminNavSupportCases => 'Поддержка';
+
+  @override
+  String get platformBverStatusPending => 'Ожидает';
+
+  @override
+  String get platformBverStatusUnderReview => 'На проверке';
+
+  @override
+  String get platformBverStatusApproved => 'Одобрено (демо)';
+
+  @override
+  String get platformBverStatusRejected => 'Отклонено (демо)';
+
+  @override
+  String get platformBverStatusNeedsInfo => 'Нужна информация';
+
+  @override
+  String get platformBverActionBeginReview => 'Начать проверку';
+
+  @override
+  String get platformBverActionApprove => 'Одобрить (демо)';
+
+  @override
+  String get platformBverActionReject => 'Отклонить (демо)';
+
+  @override
+  String get platformModStatusPending => 'Ожидает';
+
+  @override
+  String get platformModStatusUnderReview => 'На проверке';
+
+  @override
+  String get platformModStatusActionProposed => 'Действие предложено';
+
+  @override
+  String get platformModStatusResolved => 'Решено (демо)';
+
+  @override
+  String get platformModStatusDismissed => 'Отклонено (демо)';
+
+  @override
+  String get platformModActionBeginReview => 'Начать проверку';
+
+  @override
+  String get platformSupportStatusOpen => 'Открыт';
+
+  @override
+  String get platformSupportStatusAssigned => 'Назначен';
+
+  @override
+  String get platformSupportStatusInProgress => 'В работе';
+
+  @override
+  String get platformSupportStatusResolved => 'Решён';
+
+  @override
+  String get platformSupportStatusClosed => 'Закрыт';
+
+  @override
+  String get platformSupportNoteHint => 'Внутренняя заметка';
+
+  @override
+  String get platformSupportAddNoteAction => 'Добавить заметку (демо)';
+
+  @override
+  String get platformSupportAssignAction => 'Назначить роль (демо)';
+
+  @override
+  String get platformGovernancePhase15Disclaimer =>
+      'Только демо управления платформой — конфигурация, аудит и согласования в памяти; производственные действия не выполняются.';
+
+  @override
+  String get platformGovernanceAuditTitle => 'Журнал аудита платформы';
+
+  @override
+  String get platformGovernanceConfigurationTitle => 'Конфигурация платформы';
+
+  @override
+  String get platformGovernanceApprovalsTitle => 'Запросы на согласование';
+
+  @override
+  String get platformGovernanceOperationsTitle => 'Операционная панель';
+
+  @override
+  String get platformGovernanceAuditEmpty =>
+      'Нет событий аудита по текущим фильтрам.';
+
+  @override
+  String get platformGovernanceAccessDenied =>
+      'Доступ запрещён демо-политикой авторизации.';
+
+  @override
+  String get platformGovernanceSeedBadge => 'Seed';
+
+  @override
+  String get platformConfigRestrictedNotice =>
+      'Ограничено — нужно согласование; в этом демо не редактируется.';
+
+  @override
+  String platformConfigRevisionLabel(int revision) {
+    return 'Ревизия $revision';
+  }
+
+  @override
+  String get platformGovernanceApprovalNoExecutionNotice =>
+      'Согласование меняет только демо-запрос. Кошелёк, платежи и безопасность не выполняются.';
+
+  @override
+  String get platformGovernanceApprovalCreateAction =>
+      'Создать демо-предложение';
+
+  @override
+  String get platformGovernanceApprovalApproveAction =>
+      'Одобрить (только демо)';
+
+  @override
+  String get platformGovernanceApprovalRejectAction =>
+      'Отклонить (только демо)';
+
+  @override
+  String get platformGovernanceOperationsSyntheticNotice =>
+      'Счётчики из демо-репозиториев в памяти — не KPI продакшена.';
+
+  @override
+  String get platformGovernanceOperationsRefresh => 'Обновить сводку';
+
+  @override
+  String get platformGovernanceOperationsEmpty => 'Сводка недоступна.';
+
+  @override
+  String get platformGovernanceOperationsAsOf => 'На момент (UTC)';
+
+  @override
+  String get platformGovernanceOperationsPendingApprovals =>
+      'Ожидающие согласования';
+
+  @override
+  String get platformGovernanceOperationsConfigRevisions =>
+      'Записи ревизий конфигурации';
+
+  @override
+  String get platformGovernanceOperationsVerificationSection =>
+      'Заявки верификации';
+
+  @override
+  String get platformGovernanceOperationsModerationSection => 'Кейсы модерации';
+
+  @override
+  String get platformAdminNavAudit => 'Журнал аудита';
+
+  @override
+  String get platformAdminNavConfiguration => 'Конфигурация платформы';
+
+  @override
+  String get platformAdminNavApprovals => 'Согласования';
+
+  @override
+  String get platformAdminNavOperations => 'Операционная панель';
+
+  @override
+  String get platformPermissionSubmitApprovalProposal =>
+      'Создать предложение высокого риска (демо)';
+
+  @override
+  String get platformPermissionDecideApprovalProposal =>
+      'Решить по предложению высокого риска (демo)';
+
+  @override
+  String get platformRoleGovernanceApproverName => 'Согласующий governance';
+
+  @override
+  String get platformRoleGovernanceApproverPurpose =>
+      'Второе лицо для гипотетических предложений — без других привилегий.';
+
+  @override
+  String get platformWorkflowOutcomeAuditPersistFailure =>
+      'Изменение могло сохраниться, но запись аудита не удалась (ограничение демо в памяти).';
 }

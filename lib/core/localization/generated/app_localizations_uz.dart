@@ -5561,4 +5561,470 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get profileDemoConversationsSubtitle =>
       'Xotiradagi suhbatlar (chat chegarasi)';
+
+  @override
+  String get platformAdminRolesTitle => 'Platforma admin rollari';
+
+  @override
+  String get platformAdminGovernanceDisclaimer =>
+      'Faqat demo boshqaruv — rollar va ruxsatlar xotirada; ishlab chiqarish avtorizatsiyasi qo‘llanmaydi.';
+
+  @override
+  String get platformAdminHighRiskBoundaryNotice =>
+      'Moliyaviy, hamyon, maxfiy va cheklanmagan shaxsiy ma’lumot ruxsatlari bu demo katalogda ataylab yo‘q.';
+
+  @override
+  String get platformAdminIdentitiesSectionTitle =>
+      'Demo admin identifikatorlari';
+
+  @override
+  String get platformAdminIdentitiesEmpty => 'Demo adminlar yuklanmagan.';
+
+  @override
+  String get platformAdminRolesSectionTitle => 'Rollar va ruxsatlar';
+
+  @override
+  String get platformAdminRolesEmpty => 'Platforma rollari aniqlanmagan.';
+
+  @override
+  String get platformAdminRoleDetailTitle => 'Rol ruxsatlari';
+
+  @override
+  String get platformAdminPermissionCountLabel => 'ruxsat';
+
+  @override
+  String get platformAdminAuthPreviewTitle =>
+      'Avtorizatsiya oldindan ko‘rish (faqat o‘qish)';
+
+  @override
+  String get platformAdminAuthPreviewHint =>
+      'Faqat demo siyosati — amallar bajarilmaydi va audit saqlanmaydi.';
+
+  @override
+  String get platformAdminAuthPreviewPermissionLabel =>
+      'Talab qilinadigan ruxsat';
+
+  @override
+  String get platformAdminAuthPreviewScopeKindLabel => 'Resurs doirasi';
+
+  @override
+  String get platformAdminAuthPreviewBusinessRefLabel => 'Biznes havolasi';
+
+  @override
+  String get platformAdminAuthPreviewBranchRefLabel => 'Filial havolasi';
+
+  @override
+  String get platformAdminAuthPreviewActionLabel => 'Amal yorlig‘i';
+
+  @override
+  String get platformAdminAuthPreviewSelectAdmin =>
+      'Oldindan ko‘rish uchun admin tanlang.';
+
+  @override
+  String get platformAdminAuthPreviewError =>
+      'Avtorizatsiyani baholab bo‘lmadi.';
+
+  @override
+  String get platformAdminAuthDecisionAllowed => 'Ruxsat (demo siyosati)';
+
+  @override
+  String get platformAdminAuthDecisionDenied => 'Rad etildi (demo siyosati)';
+
+  @override
+  String platformAdminAuthMatchedRole(String roleId) {
+    return 'Mos rol: $roleId';
+  }
+
+  @override
+  String get platformAdminSuspendedNotice =>
+      'To‘xtatilgan adminlar rollardan qat’i nazar rad etiladi.';
+
+  @override
+  String get platformAdminStatusActive => 'Faol';
+
+  @override
+  String get platformAdminStatusSuspended => 'To‘xtatilgan';
+
+  @override
+  String get platformRoleStatusEnabled => 'Yoqilgan';
+
+  @override
+  String get platformRoleStatusDisabled => 'O‘chirilgan';
+
+  @override
+  String get platformScopeKindPlatform => 'Butun platforma';
+
+  @override
+  String get platformScopeKindBusiness => 'Tayinlangan biznes';
+
+  @override
+  String get platformScopeKindBranch => 'Tayinlangan filial';
+
+  @override
+  String get profilePlatformAdminGovernanceTitle => 'Demo platforma admini';
+
+  @override
+  String get profilePlatformAdminGovernanceSubtitle =>
+      'Rollar, ruxsatlar va siyosat ko‘rinishi (xotirada)';
+
+  @override
+  String get platformRoleViewerName => 'Platforma kuzatuvchisi';
+
+  @override
+  String get platformRoleViewerPurpose =>
+      'Demo admin paneli va audit yozuvlarini o‘qish.';
+
+  @override
+  String get platformRoleVerificationReviewerName =>
+      'Biznes verifikatsiya ko‘rib chiquvchi';
+
+  @override
+  String get platformRoleVerificationReviewerPurpose =>
+      'Tayinlangan doirada sintetik arizalarni ko‘rib chiqish.';
+
+  @override
+  String get platformRoleModeratorName => 'Kontent moderatori';
+
+  @override
+  String get platformRoleModeratorPurpose =>
+      'Moderatsiya navbatlari va ruxsat etilgan demo amallar.';
+
+  @override
+  String get platformRoleSupportAgentName => 'Qo‘llab-quvvatlash agenti';
+
+  @override
+  String get platformRoleSupportAgentPurpose =>
+      'Tayinlangan biznes yoki filialdagi demo support case’lar.';
+
+  @override
+  String get platformRoleOperationsAdminName =>
+      'Platforma operatsiyalari admini';
+
+  @override
+  String get platformRoleOperationsAdminPurpose =>
+      'Konfiguratsiyani ko‘rish va past xavfli demo sozlamalar.';
+
+  @override
+  String get platformRoleDisabledAuditName => 'O‘chirilgan audit roli (demo)';
+
+  @override
+  String get platformRoleDisabledAuditPurpose =>
+      'Rad etishni tekshirish uchun o‘chirilgan rol.';
+
+  @override
+  String get platformPermissionViewDashboard => 'Admin panelini ko‘rish';
+
+  @override
+  String get platformPermissionViewVerificationQueue =>
+      'Biznes verifikatsiya navbati';
+
+  @override
+  String get platformPermissionReviewVerification =>
+      'Verifikatsiya arizalarini ko‘rib chiqish';
+
+  @override
+  String get platformPermissionViewModerationQueue => 'Moderatsiya navbati';
+
+  @override
+  String get platformPermissionPerformModeration =>
+      'Ruxsat etilgan moderatsiya amallari';
+
+  @override
+  String get platformPermissionViewSupportCases => 'Support case’larni ko‘rish';
+
+  @override
+  String get platformPermissionRespondSupportCases =>
+      'Support case’larga javob';
+
+  @override
+  String get platformPermissionViewConfiguration =>
+      'Platforma konfiguratsiyasi';
+
+  @override
+  String get platformPermissionManageLowRiskConfiguration =>
+      'Past xavfli konfiguratsiya';
+
+  @override
+  String get platformPermissionViewAuditRecords => 'Audit yozuvlari';
+
+  @override
+  String get platformAuthReasonAllowedExplicitGrant =>
+      'Yoqilgan roldagi aniq ruxsat bilan ruxsat.';
+
+  @override
+  String get platformAuthReasonDeniedInvalidInput => 'Rad — noto‘g‘ri kirish.';
+
+  @override
+  String get platformAuthReasonDeniedAdminSuspended =>
+      'Rad — admin to‘xtatilgan.';
+
+  @override
+  String get platformAuthReasonDeniedAdminNotFound => 'Rad — admin topilmadi.';
+
+  @override
+  String get platformAuthReasonDeniedNoEnabledRoles =>
+      'Rad — yoqilgan rol yo‘q.';
+
+  @override
+  String get platformAuthReasonDeniedRoleDisabled => 'Rad — rol o‘chirilgan.';
+
+  @override
+  String get platformAuthReasonDeniedPermissionNotGranted =>
+      'Rad — ruxsat berilmagan.';
+
+  @override
+  String get platformAuthReasonDeniedScopePlatformWideRequired =>
+      'Rad — platforma doirasi talab qilinadi.';
+
+  @override
+  String get platformAuthReasonDeniedScopeBusinessReferenceRequired =>
+      'Rad — biznes havolasi kerak.';
+
+  @override
+  String get platformAuthReasonDeniedScopeBranchReferenceRequired =>
+      'Rad — filial havolasi kerak.';
+
+  @override
+  String get platformAuthReasonDeniedCrossBusinessAccess =>
+      'Rad — boshqa biznesga ruxsat yo‘q.';
+
+  @override
+  String get platformAuthReasonDeniedCrossBranchAccess =>
+      'Rad — boshqa filialga ruxsat yo‘q.';
+
+  @override
+  String get platformAuthReasonDeniedBusinessAssignmentRequired =>
+      'Rad — biznes tayinlashlari kerak.';
+
+  @override
+  String get platformAuthReasonDeniedBranchAssignmentRequired =>
+      'Rad — filial tayinlashlari kerak.';
+
+  @override
+  String get platformGovernanceWorkflowDisclaimer =>
+      'Faqat demo — haqiqiy verifikatsiya, moderatsiya yoki qo‘llab-quvvatlash bajarilmaydi.';
+
+  @override
+  String get platformBusinessVerificationTitle =>
+      'Biznes verifikatsiya navbati';
+
+  @override
+  String get platformModerationTitle => 'Moderatsiya navbati';
+
+  @override
+  String get platformSupportCasesTitle => 'Qo‘llab-quvvatlash case’lari';
+
+  @override
+  String get platformWorkflowActiveAdminLabel => 'Demo admin';
+
+  @override
+  String get platformWorkflowHistoryTitle => 'Tarix';
+
+  @override
+  String get platformWorkflowOutcomeSuccess =>
+      'Demo amal xotirada qayd etildi.';
+
+  @override
+  String get platformWorkflowOutcomeAuthorizationDenied =>
+      'Demo avtorizatsiya rad etdi.';
+
+  @override
+  String get platformWorkflowOutcomeInvalidTransition =>
+      'Status o‘tishi noto‘g‘ri.';
+
+  @override
+  String get platformWorkflowOutcomeInvalidInput => 'Noto‘g‘ri ma’lumot.';
+
+  @override
+  String get platformWorkflowOutcomeNotFound => 'Yozuv topilmadi.';
+
+  @override
+  String get platformWorkflowOutcomeFailure =>
+      'Repozitoriy xatosi — o‘zgarish yo‘q.';
+
+  @override
+  String get platformAdminNavBusinessVerification => 'Biznes verifikatsiyasi';
+
+  @override
+  String get platformAdminNavModeration => 'Moderatsiya';
+
+  @override
+  String get platformAdminNavSupportCases => 'Qo‘llab-quvvatlash';
+
+  @override
+  String get platformBverStatusPending => 'Kutilmoqda';
+
+  @override
+  String get platformBverStatusUnderReview => 'Ko‘rib chiqilmoqda';
+
+  @override
+  String get platformBverStatusApproved => 'Tasdiqlangan (demo)';
+
+  @override
+  String get platformBverStatusRejected => 'Rad etilgan (demo)';
+
+  @override
+  String get platformBverStatusNeedsInfo => 'Qo‘shimcha ma’lumot kerak';
+
+  @override
+  String get platformBverActionBeginReview => 'Ko‘rib chiqishni boshlash';
+
+  @override
+  String get platformBverActionApprove => 'Tasdiqlash (demo)';
+
+  @override
+  String get platformBverActionReject => 'Rad etish (demo)';
+
+  @override
+  String get platformModStatusPending => 'Kutilmoqda';
+
+  @override
+  String get platformModStatusUnderReview => 'Ko‘rib chiqilmoqda';
+
+  @override
+  String get platformModStatusActionProposed => 'Amal taklif qilindi';
+
+  @override
+  String get platformModStatusResolved => 'Hal qilindi (demo)';
+
+  @override
+  String get platformModStatusDismissed => 'Bekor qilindi (demo)';
+
+  @override
+  String get platformModActionBeginReview => 'Ko‘rib chiqishni boshlash';
+
+  @override
+  String get platformSupportStatusOpen => 'Ochiq';
+
+  @override
+  String get platformSupportStatusAssigned => 'Tayinlangan';
+
+  @override
+  String get platformSupportStatusInProgress => 'Jarayonda';
+
+  @override
+  String get platformSupportStatusResolved => 'Hal qilingan';
+
+  @override
+  String get platformSupportStatusClosed => 'Yopiq';
+
+  @override
+  String get platformSupportNoteHint => 'Ichki eslatma';
+
+  @override
+  String get platformSupportAddNoteAction => 'Eslatma qo‘shish (demo)';
+
+  @override
+  String get platformSupportAssignAction => 'Rol tayinlash (demo)';
+
+  @override
+  String get platformGovernancePhase15Disclaimer =>
+      'Faqat demo platforma boshqaruvi — konfiguratsiya, audit va tasdiqlar xotirada; ishlab chiqarish amallari bajarilmaydi.';
+
+  @override
+  String get platformGovernanceAuditTitle => 'Platforma audit jurnali';
+
+  @override
+  String get platformGovernanceConfigurationTitle =>
+      'Platforma konfiguratsiyasi';
+
+  @override
+  String get platformGovernanceApprovalsTitle => 'Tasdiq so‘rovlari';
+
+  @override
+  String get platformGovernanceOperationsTitle => 'Operatsion panel';
+
+  @override
+  String get platformGovernanceAuditEmpty =>
+      'Joriy filtrlarga mos audit voqealari yo‘q.';
+
+  @override
+  String get platformGovernanceAccessDenied =>
+      'Demo avtorizatsiya siyosati ruxsat bermadi.';
+
+  @override
+  String get platformGovernanceSeedBadge => 'Seed';
+
+  @override
+  String get platformConfigRestrictedNotice =>
+      'Cheklangan — maker-checker talab qilinadi; bu demoda tahrirlanmaydi.';
+
+  @override
+  String platformConfigRevisionLabel(int revision) {
+    return 'Reviziya $revision';
+  }
+
+  @override
+  String get platformGovernanceApprovalNoExecutionNotice =>
+      'Tasdiq yoki rad faqat demo so‘rovni yangilaydi. Hamyon, to‘lov yoki xavfsizlik amali bajarilmaydi.';
+
+  @override
+  String get platformGovernanceApprovalCreateAction => 'Demo taklif yuborish';
+
+  @override
+  String get platformGovernanceApprovalApproveAction =>
+      'Tasdiqlash (faqat demo)';
+
+  @override
+  String get platformGovernanceApprovalRejectAction => 'Rad etish (faqat demo)';
+
+  @override
+  String get platformGovernanceOperationsSyntheticNotice =>
+      'Hisoblar xotiradagi demo repozitoriyalardan — ishlab chiqarish KPI emas.';
+
+  @override
+  String get platformGovernanceOperationsRefresh => 'Xulosani yangilash';
+
+  @override
+  String get platformGovernanceOperationsEmpty => 'Xulosa mavjud emas.';
+
+  @override
+  String get platformGovernanceOperationsAsOf => 'Vaqt (UTC)';
+
+  @override
+  String get platformGovernanceOperationsPendingApprovals =>
+      'Kutilayotgan tasdiqlar';
+
+  @override
+  String get platformGovernanceOperationsConfigRevisions =>
+      'Konfiguratsiya reviziya yozuvlari';
+
+  @override
+  String get platformGovernanceOperationsVerificationSection =>
+      'Verifikatsiya arizalari';
+
+  @override
+  String get platformGovernanceOperationsModerationSection =>
+      'Moderatsiya case’lari';
+
+  @override
+  String get platformAdminNavAudit => 'Audit jurnali';
+
+  @override
+  String get platformAdminNavConfiguration => 'Platforma konfiguratsiyasi';
+
+  @override
+  String get platformAdminNavApprovals => 'Tasdiq so‘rovlari';
+
+  @override
+  String get platformAdminNavOperations => 'Operatsion panel';
+
+  @override
+  String get platformPermissionSubmitApprovalProposal =>
+      'Yuqori xavfli demo taklif yuborish';
+
+  @override
+  String get platformPermissionDecideApprovalProposal =>
+      'Yuqori xavfli demo taklifni hal qilish';
+
+  @override
+  String get platformRoleGovernanceApproverName => 'Governance tasdiqlovchi';
+
+  @override
+  String get platformRoleGovernanceApproverPurpose =>
+      'Gipotetik takliflar uchun ikkinchi tomondan tasdiq — boshqa imtiyozsiz.';
+
+  @override
+  String get platformWorkflowOutcomeAuditPersistFailure =>
+      'O‘zgarish saqlangan bo‘lishi mumkin, lekin audit yozuvi muvaffaqiyatsiz (xotira demo cheklovi).';
 }

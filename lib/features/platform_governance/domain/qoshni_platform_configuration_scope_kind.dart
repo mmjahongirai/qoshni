@@ -1,0 +1,4 @@
+enum QoshniPlatformConfigurationScopeKind {
+  platformWide,
+  business,
+}

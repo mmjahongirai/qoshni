@@ -175,6 +175,22 @@ abstract final class RoutePaths {
 
   static const String businessNotificationTemplates =
       '/business-center/notification-templates';
+  static const String platformAdminGovernanceRoles =
+      '/admin/governance/roles';
+  static const String platformAdminBusinessVerification =
+      '/admin/governance/business-verification';
+  static const String platformAdminModeration =
+      '/admin/governance/moderation';
+  static const String platformAdminSupportCases =
+      '/admin/governance/support-cases';
+  static const String platformAdminGovernanceAudit =
+      '/admin/governance/audit';
+  static const String platformAdminGovernanceConfiguration =
+      '/admin/governance/configuration';
+  static const String platformAdminGovernanceApprovals =
+      '/admin/governance/approvals';
+  static const String platformAdminGovernanceOperations =
+      '/admin/governance/operations';
 }
 
 abstract final class RouteNames {
@@ -268,4 +284,18 @@ abstract final class RouteNames {
   static const String businessReputationEvents = 'businessReputationEvents';
   static const String businessNotificationTemplates =
       'businessNotificationTemplates';
+  static const String platformAdminGovernanceRoles =
+      'platformAdminGovernanceRoles';
+  static const String platformAdminBusinessVerification =
+      'platformAdminBusinessVerification';
+  static const String platformAdminModeration = 'platformAdminModeration';
+  static const String platformAdminSupportCases = 'platformAdminSupportCases';
+  static const String platformAdminGovernanceAudit =
+      'platformAdminGovernanceAudit';
+  static const String platformAdminGovernanceConfiguration =
+      'platformAdminGovernanceConfiguration';
+  static const String platformAdminGovernanceApprovals =
+      'platformAdminGovernanceApprovals';
+  static const String platformAdminGovernanceOperations =
+      'platformAdminGovernanceOperations';
 }

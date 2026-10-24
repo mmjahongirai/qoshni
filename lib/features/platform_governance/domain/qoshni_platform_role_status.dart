@@ -1,0 +1,4 @@
+enum QoshniPlatformRoleStatus {
+  enabled,
+  disabled,
+}
