@@ -9524,6 +9524,204 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Preview localized synthetic message templates (demo).'**
   String get businessCenterNotificationTemplatesBody;
+
+  /// No description provided for @systemMessagesFeedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'System messages'**
+  String get systemMessagesFeedTitle;
+
+  /// No description provided for @systemMessagesDemoDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo system messages only — synthetic announcements; not official or live service notices.'**
+  String get systemMessagesDemoDisclaimer;
+
+  /// No description provided for @systemMessagesOpenTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Open system messages'**
+  String get systemMessagesOpenTooltip;
+
+  /// No description provided for @systemMessagesFeedEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No published announcements are visible right now.'**
+  String get systemMessagesFeedEmpty;
+
+  /// No description provided for @systemMessageUnreadCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} unread'**
+  String systemMessageUnreadCount(int count);
+
+  /// No description provided for @systemMessageCategoryFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Message category'**
+  String get systemMessageCategoryFilter;
+
+  /// No description provided for @systemMessageCategoryGeneral.
+  ///
+  /// In en, this message translates to:
+  /// **'General announcement'**
+  String get systemMessageCategoryGeneral;
+
+  /// No description provided for @systemMessageCategoryMaintenance.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintenance notice'**
+  String get systemMessageCategoryMaintenance;
+
+  /// No description provided for @systemMessageCategoryServiceUpdate.
+  ///
+  /// In en, this message translates to:
+  /// **'Service update'**
+  String get systemMessageCategoryServiceUpdate;
+
+  /// No description provided for @systemMessageCategoryPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Policy information'**
+  String get systemMessageCategoryPolicy;
+
+  /// No description provided for @systemMessageLifecycleDraft.
+  ///
+  /// In en, this message translates to:
+  /// **'Draft'**
+  String get systemMessageLifecycleDraft;
+
+  /// No description provided for @systemMessageLifecyclePublished.
+  ///
+  /// In en, this message translates to:
+  /// **'Published'**
+  String get systemMessageLifecyclePublished;
+
+  /// No description provided for @systemMessageLifecycleWithdrawn.
+  ///
+  /// In en, this message translates to:
+  /// **'Withdrawn'**
+  String get systemMessageLifecycleWithdrawn;
+
+  /// No description provided for @systemMessageLifecycleArchived.
+  ///
+  /// In en, this message translates to:
+  /// **'Archived'**
+  String get systemMessageLifecycleArchived;
+
+  /// No description provided for @systemMessageMarkReadAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark as read'**
+  String get systemMessageMarkReadAction;
+
+  /// No description provided for @systemMessageMarkAllReadAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark all as read'**
+  String get systemMessageMarkAllReadAction;
+
+  /// No description provided for @systemMessageMarkReadSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Message marked as read.'**
+  String get systemMessageMarkReadSuccess;
+
+  /// No description provided for @systemMessageMarkReadAlready.
+  ///
+  /// In en, this message translates to:
+  /// **'Message was already read.'**
+  String get systemMessageMarkReadAlready;
+
+  /// No description provided for @systemMessageMarkAllReadSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'All visible messages marked as read.'**
+  String get systemMessageMarkAllReadSuccess;
+
+  /// No description provided for @systemMessageOpenAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Open linked screen'**
+  String get systemMessageOpenAction;
+
+  /// No description provided for @systemMessageSimulateNotificationAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Simulate in-app notification (demo)'**
+  String get systemMessageSimulateNotificationAction;
+
+  /// No description provided for @systemMessageMetaLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{category} · {publishedAt}'**
+  String systemMessageMetaLine(String category, String publishedAt);
+
+  /// No description provided for @systemMessageContentUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Localized content is unavailable for this message.'**
+  String get systemMessageContentUnavailable;
+
+  /// No description provided for @systemMessagesDemoLifecycleTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'System message lifecycle (demo)'**
+  String get systemMessagesDemoLifecycleTitle;
+
+  /// No description provided for @systemMessagesDemoLifecycleTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo lifecycle controls'**
+  String get systemMessagesDemoLifecycleTooltip;
+
+  /// No description provided for @systemMessagesDemoLifecycleDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo-only publish/withdraw/archive controls — in-memory and not durable.'**
+  String get systemMessagesDemoLifecycleDisclaimer;
+
+  /// No description provided for @systemMessagePublishAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Publish'**
+  String get systemMessagePublishAction;
+
+  /// No description provided for @systemMessageWithdrawAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Withdraw'**
+  String get systemMessageWithdrawAction;
+
+  /// No description provided for @systemMessageArchiveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Archive'**
+  String get systemMessageArchiveAction;
+
+  /// No description provided for @systemMessageMutationSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get systemMessageMutationSuccess;
+
+  /// No description provided for @systemMessageMutationInvalidTransition.
+  ///
+  /// In en, this message translates to:
+  /// **'Lifecycle transition is not allowed.'**
+  String get systemMessageMutationInvalidTransition;
+
+  /// No description provided for @systemMessageMutationValidationFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Validation failed — no changes were saved.'**
+  String get systemMessageMutationValidationFailed;
+
+  /// No description provided for @systemMessageMutationNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Message not found.'**
+  String get systemMessageMutationNotFound;
 }
 
 class _AppLocalizationsDelegate

@@ -17,6 +17,8 @@ import 'package:qoshni/features/notifications/presentation/pages/notification_in
 import 'package:qoshni/features/notifications/presentation/pages/notification_dispatch_diagnostics_page.dart';
 import 'package:qoshni/features/notifications/presentation/pages/notification_preferences_page.dart';
 import 'package:qoshni/features/notifications/presentation/pages/notification_templates_page.dart';
+import 'package:qoshni/features/system_messages/presentation/pages/system_messages_demo_lifecycle_page.dart';
+import 'package:qoshni/features/system_messages/presentation/pages/system_messages_feed_page.dart';
 import 'package:qoshni/features/home/presentation/pages/catalog_item_detail_page.dart';
 import 'package:qoshni/features/home/presentation/pages/favorites_page.dart';
 import 'package:qoshni/features/home/presentation/pages/profile_page.dart';
@@ -173,6 +175,19 @@ class AppRouter {
             snapshot: extra is DemoOrderSnapshot ? extra : null,
           );
         },
+      ),
+      GoRoute(
+        path: RoutePaths.systemMessages,
+        name: RouteNames.systemMessages,
+        builder: (context, state) => const SystemMessagesFeedPage(),
+        routes: [
+          GoRoute(
+            path: 'demo-lifecycle',
+            name: RouteNames.systemMessagesDemoLifecycle,
+            builder: (context, state) =>
+                const SystemMessagesDemoLifecyclePage(),
+          ),
+        ],
       ),
       GoRoute(
         path: RoutePaths.notificationsInbox,

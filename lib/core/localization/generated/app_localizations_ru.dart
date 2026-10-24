@@ -5339,4 +5339,116 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get businessCenterNotificationTemplatesBody =>
       'Предпросмотр локализованных синтетических шаблонов (демо).';
+
+  @override
+  String get systemMessagesFeedTitle => 'Системные сообщения';
+
+  @override
+  String get systemMessagesDemoDisclaimer =>
+      'Только демо — синтетические объявления; не официальные и не живые сервисные уведомления.';
+
+  @override
+  String get systemMessagesOpenTooltip => 'Открыть системные сообщения';
+
+  @override
+  String get systemMessagesFeedEmpty =>
+      'Сейчас нет видимых опубликованных объявлений.';
+
+  @override
+  String systemMessageUnreadCount(int count) {
+    return 'Непрочитано: $count';
+  }
+
+  @override
+  String get systemMessageCategoryFilter => 'Категория сообщения';
+
+  @override
+  String get systemMessageCategoryGeneral => 'Общее объявление';
+
+  @override
+  String get systemMessageCategoryMaintenance => 'Техобслуживание';
+
+  @override
+  String get systemMessageCategoryServiceUpdate => 'Обновление сервиса';
+
+  @override
+  String get systemMessageCategoryPolicy => 'Политика';
+
+  @override
+  String get systemMessageLifecycleDraft => 'Черновик';
+
+  @override
+  String get systemMessageLifecyclePublished => 'Опубликовано';
+
+  @override
+  String get systemMessageLifecycleWithdrawn => 'Отозвано';
+
+  @override
+  String get systemMessageLifecycleArchived => 'Архив';
+
+  @override
+  String get systemMessageMarkReadAction => 'Отметить прочитанным';
+
+  @override
+  String get systemMessageMarkAllReadAction => 'Отметить все прочитанными';
+
+  @override
+  String get systemMessageMarkReadSuccess => 'Сообщение отмечено прочитанным.';
+
+  @override
+  String get systemMessageMarkReadAlready => 'Сообщение уже было прочитано.';
+
+  @override
+  String get systemMessageMarkAllReadSuccess =>
+      'Все видимые сообщения отмечены прочитанными.';
+
+  @override
+  String get systemMessageOpenAction => 'Открыть связанный экран';
+
+  @override
+  String get systemMessageSimulateNotificationAction =>
+      'Симулировать in-app уведомление (демо)';
+
+  @override
+  String systemMessageMetaLine(String category, String publishedAt) {
+    return '$category · $publishedAt';
+  }
+
+  @override
+  String get systemMessageContentUnavailable =>
+      'Локализованный контент недоступен.';
+
+  @override
+  String get systemMessagesDemoLifecycleTitle => 'Жизненный цикл (демо)';
+
+  @override
+  String get systemMessagesDemoLifecycleTooltip =>
+      'Демо-управление жизненным циклом';
+
+  @override
+  String get systemMessagesDemoLifecycleDisclaimer =>
+      'Только демо publish/withdraw/archive — в памяти, без сохранения.';
+
+  @override
+  String get systemMessagePublishAction => 'Опубликовать';
+
+  @override
+  String get systemMessageWithdrawAction => 'Отозвать';
+
+  @override
+  String get systemMessageArchiveAction => 'Архивировать';
+
+  @override
+  String get systemMessageMutationSuccess => 'OK';
+
+  @override
+  String get systemMessageMutationInvalidTransition =>
+      'Переход жизненного цикла недопустим.';
+
+  @override
+  String get systemMessageMutationValidationFailed =>
+      'Ошибка валидации — изменения не сохранены.';
+
+  @override
+  String get systemMessageMutationNotFound => 'Сообщение не найдено.';
 }

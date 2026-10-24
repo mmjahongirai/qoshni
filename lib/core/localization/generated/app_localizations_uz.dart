@@ -5371,4 +5371,116 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get businessCenterNotificationTemplatesBody =>
       'Lokalizatsiyalangan sintetik shablonlarni ko‘rish (demo).';
+
+  @override
+  String get systemMessagesFeedTitle => 'Tizim xabarlari';
+
+  @override
+  String get systemMessagesDemoDisclaimer =>
+      'Faqat demo — sintetik e’lonlar; rasmiy yoki jonli xizmat ogohlantirishlari emas.';
+
+  @override
+  String get systemMessagesOpenTooltip => 'Tizim xabarlarini ochish';
+
+  @override
+  String get systemMessagesFeedEmpty => 'Hozir ko‘rinadigan e’lonlar yo‘q.';
+
+  @override
+  String systemMessageUnreadCount(int count) {
+    return 'O‘qilmagan: $count';
+  }
+
+  @override
+  String get systemMessageCategoryFilter => 'Xabar kategoriyasi';
+
+  @override
+  String get systemMessageCategoryGeneral => 'Umumiy e’lon';
+
+  @override
+  String get systemMessageCategoryMaintenance => 'Texnik xizmat';
+
+  @override
+  String get systemMessageCategoryServiceUpdate => 'Xizmat yangilanishi';
+
+  @override
+  String get systemMessageCategoryPolicy => 'Siyosat ma’lumoti';
+
+  @override
+  String get systemMessageLifecycleDraft => 'Qoralama';
+
+  @override
+  String get systemMessageLifecyclePublished => 'Nashr qilingan';
+
+  @override
+  String get systemMessageLifecycleWithdrawn => 'Qaytarilgan';
+
+  @override
+  String get systemMessageLifecycleArchived => 'Arxiv';
+
+  @override
+  String get systemMessageMarkReadAction => 'O‘qilgan deb belgilash';
+
+  @override
+  String get systemMessageMarkAllReadAction =>
+      'Hammasini o‘qilgan deb belgilash';
+
+  @override
+  String get systemMessageMarkReadSuccess => 'Xabar o‘qilgan deb belgilandi.';
+
+  @override
+  String get systemMessageMarkReadAlready => 'Xabar allaqachon o‘qilgan.';
+
+  @override
+  String get systemMessageMarkAllReadSuccess =>
+      'Ko‘rinadigan barcha xabarlar o‘qilgan deb belgilandi.';
+
+  @override
+  String get systemMessageOpenAction => 'Bog‘langan ekranni ochish';
+
+  @override
+  String get systemMessageSimulateNotificationAction =>
+      'In-app bildirishnomani simulyatsiya qilish (demo)';
+
+  @override
+  String systemMessageMetaLine(String category, String publishedAt) {
+    return '$category · $publishedAt';
+  }
+
+  @override
+  String get systemMessageContentUnavailable =>
+      'Lokalizatsiyalangan kontent mavjud emas.';
+
+  @override
+  String get systemMessagesDemoLifecycleTitle => 'Xabar hayot sikli (demo)';
+
+  @override
+  String get systemMessagesDemoLifecycleTooltip =>
+      'Demo hayot sikli boshqaruvi';
+
+  @override
+  String get systemMessagesDemoLifecycleDisclaimer =>
+      'Faqat demo publish/withdraw/archive — xotirada, doimiy emas.';
+
+  @override
+  String get systemMessagePublishAction => 'Nashr qilish';
+
+  @override
+  String get systemMessageWithdrawAction => 'Qaytarish';
+
+  @override
+  String get systemMessageArchiveAction => 'Arxivlash';
+
+  @override
+  String get systemMessageMutationSuccess => 'OK';
+
+  @override
+  String get systemMessageMutationInvalidTransition =>
+      'Hayot sikli o‘tishi ruxsat etilmagan.';
+
+  @override
+  String get systemMessageMutationValidationFailed =>
+      'Validatsiya xato — o‘zgarishlar saqlanmadi.';
+
+  @override
+  String get systemMessageMutationNotFound => 'Xabar topilmadi.';
 }

@@ -24,6 +24,8 @@ bool isAllowedQoshniNotificationInternalRoute(String route) {
     RoutePaths.notificationsInbox,
     RoutePaths.notificationPreferences,
     RoutePaths.notificationDispatchDiagnostics,
+    RoutePaths.systemMessages,
+    RoutePaths.systemMessagesDemoLifecycle,
   };
 
   if (exactAllowed.contains(normalized)) {

@@ -20,6 +20,9 @@ abstract final class RoutePaths {
   static const String notificationPreferences = '/notifications/preferences';
   static const String notificationDispatchDiagnostics =
       '/notifications/dispatch';
+  static const String systemMessages = '/system-messages';
+  static const String systemMessagesDemoLifecycle =
+      '/system-messages/demo-lifecycle';
   static const String businessCenter = '/business-center';
   static const String businessProfileCreate = '/business-center/profile/new';
   static const String businessProfileDetail =
@@ -188,6 +191,9 @@ abstract final class RouteNames {
   static const String notificationPreferences = 'notificationPreferences';
   static const String notificationDispatchDiagnostics =
       'notificationDispatchDiagnostics';
+  static const String systemMessages = 'systemMessages';
+  static const String systemMessagesDemoLifecycle =
+      'systemMessagesDemoLifecycle';
   static const String businessCenter = 'businessCenter';
   static const String businessProfileCreate = 'businessProfileCreate';
   static const String businessProfileDetail = 'businessProfileDetail';

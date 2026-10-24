@@ -122,6 +122,9 @@ import 'package:qoshni/features/notifications/domain/repositories/qoshni_notific
 import 'package:qoshni/features/notifications/presentation/qoshni_notification_controller.dart';
 import 'package:qoshni/features/notifications/presentation/qoshni_notification_dispatch_controller.dart';
 import 'package:qoshni/features/notifications/presentation/qoshni_notification_template_controller.dart';
+import 'package:qoshni/features/system_messages/data/in_memory_qoshni_system_message_repository.dart';
+import 'package:qoshni/features/system_messages/domain/repositories/qoshni_system_message_repository.dart';
+import 'package:qoshni/features/system_messages/presentation/qoshni_system_message_controller.dart';
 import 'package:qoshni/features/notifications/presentation/qoshni_notification_preference_controller.dart';
 import 'package:qoshni/features/user_profile/data/user_profile_api_repository.dart';
 import 'package:qoshni/features/user_profile/domain/user_profile_repository.dart';
@@ -192,6 +195,14 @@ Future<void> configureDependencies(AppConfig config) async {
     ..registerLazySingleton<QoshniNotificationTemplateController>(
       () => QoshniNotificationTemplateController(
         getIt<QoshniNotificationTemplateRepository>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniSystemMessageRepository>(
+      InMemoryQoshniSystemMessageRepository.new,
+    )
+    ..registerLazySingleton<QoshniSystemMessageController>(
+      () => QoshniSystemMessageController(
+        getIt<QoshniSystemMessageRepository>(),
       ),
     )
     ..registerLazySingleton<BusinessProfileRepository>(

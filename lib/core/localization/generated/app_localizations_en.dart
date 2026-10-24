@@ -5409,4 +5409,116 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get businessCenterNotificationTemplatesBody =>
       'Preview localized synthetic message templates (demo).';
+
+  @override
+  String get systemMessagesFeedTitle => 'System messages';
+
+  @override
+  String get systemMessagesDemoDisclaimer =>
+      'Demo system messages only — synthetic announcements; not official or live service notices.';
+
+  @override
+  String get systemMessagesOpenTooltip => 'Open system messages';
+
+  @override
+  String get systemMessagesFeedEmpty =>
+      'No published announcements are visible right now.';
+
+  @override
+  String systemMessageUnreadCount(int count) {
+    return '$count unread';
+  }
+
+  @override
+  String get systemMessageCategoryFilter => 'Message category';
+
+  @override
+  String get systemMessageCategoryGeneral => 'General announcement';
+
+  @override
+  String get systemMessageCategoryMaintenance => 'Maintenance notice';
+
+  @override
+  String get systemMessageCategoryServiceUpdate => 'Service update';
+
+  @override
+  String get systemMessageCategoryPolicy => 'Policy information';
+
+  @override
+  String get systemMessageLifecycleDraft => 'Draft';
+
+  @override
+  String get systemMessageLifecyclePublished => 'Published';
+
+  @override
+  String get systemMessageLifecycleWithdrawn => 'Withdrawn';
+
+  @override
+  String get systemMessageLifecycleArchived => 'Archived';
+
+  @override
+  String get systemMessageMarkReadAction => 'Mark as read';
+
+  @override
+  String get systemMessageMarkAllReadAction => 'Mark all as read';
+
+  @override
+  String get systemMessageMarkReadSuccess => 'Message marked as read.';
+
+  @override
+  String get systemMessageMarkReadAlready => 'Message was already read.';
+
+  @override
+  String get systemMessageMarkAllReadSuccess =>
+      'All visible messages marked as read.';
+
+  @override
+  String get systemMessageOpenAction => 'Open linked screen';
+
+  @override
+  String get systemMessageSimulateNotificationAction =>
+      'Simulate in-app notification (demo)';
+
+  @override
+  String systemMessageMetaLine(String category, String publishedAt) {
+    return '$category · $publishedAt';
+  }
+
+  @override
+  String get systemMessageContentUnavailable =>
+      'Localized content is unavailable for this message.';
+
+  @override
+  String get systemMessagesDemoLifecycleTitle =>
+      'System message lifecycle (demo)';
+
+  @override
+  String get systemMessagesDemoLifecycleTooltip => 'Demo lifecycle controls';
+
+  @override
+  String get systemMessagesDemoLifecycleDisclaimer =>
+      'Demo-only publish/withdraw/archive controls — in-memory and not durable.';
+
+  @override
+  String get systemMessagePublishAction => 'Publish';
+
+  @override
+  String get systemMessageWithdrawAction => 'Withdraw';
+
+  @override
+  String get systemMessageArchiveAction => 'Archive';
+
+  @override
+  String get systemMessageMutationSuccess => 'OK';
+
+  @override
+  String get systemMessageMutationInvalidTransition =>
+      'Lifecycle transition is not allowed.';
+
+  @override
+  String get systemMessageMutationValidationFailed =>
+      'Validation failed — no changes were saved.';
+
+  @override
+  String get systemMessageMutationNotFound => 'Message not found.';
 }
