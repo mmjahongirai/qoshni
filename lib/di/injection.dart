@@ -109,11 +109,16 @@ import 'package:qoshni/features/business_platform/presentation/business_profile_
 import 'package:qoshni/features/home/presentation/cart/cart_controller.dart';
 import 'package:qoshni/features/home/presentation/favorites/favorites_controller.dart';
 import 'package:qoshni/features/home/presentation/orders/demo_order_controller.dart';
+import 'package:qoshni/features/notifications/application/qoshni_notification_dispatch_coordinator.dart';
+import 'package:qoshni/features/notifications/data/in_memory_qoshni_notification_dispatch_audit_repository.dart';
 import 'package:qoshni/features/notifications/data/in_memory_qoshni_notification_preference_repository.dart';
 import 'package:qoshni/features/notifications/data/in_memory_qoshni_notification_repository.dart';
+import 'package:qoshni/features/notifications/data/simulated_qoshni_notification_channel_adapters.dart';
+import 'package:qoshni/features/notifications/domain/repositories/qoshni_notification_dispatch_audit_repository.dart';
 import 'package:qoshni/features/notifications/domain/repositories/qoshni_notification_preference_repository.dart';
 import 'package:qoshni/features/notifications/domain/repositories/qoshni_notification_repository.dart';
 import 'package:qoshni/features/notifications/presentation/qoshni_notification_controller.dart';
+import 'package:qoshni/features/notifications/presentation/qoshni_notification_dispatch_controller.dart';
 import 'package:qoshni/features/notifications/presentation/qoshni_notification_preference_controller.dart';
 import 'package:qoshni/features/user_profile/data/user_profile_api_repository.dart';
 import 'package:qoshni/features/user_profile/domain/user_profile_repository.dart';
@@ -151,6 +156,31 @@ Future<void> configureDependencies(AppConfig config) async {
     ..registerLazySingleton<QoshniNotificationPreferenceController>(
       () => QoshniNotificationPreferenceController(
         getIt<QoshniNotificationPreferenceRepository>(),
+      ),
+    )
+    ..registerLazySingleton<InMemoryQoshniNotificationDispatchAuditRepository>(
+      InMemoryQoshniNotificationDispatchAuditRepository.new,
+    )
+    ..registerLazySingleton<QoshniNotificationDispatchAuditRepository>(
+      () => getIt<InMemoryQoshniNotificationDispatchAuditRepository>(),
+    )
+    ..registerLazySingleton<QoshniNotificationDispatchCoordinator>(() {
+      final auditRepo =
+          getIt<InMemoryQoshniNotificationDispatchAuditRepository>();
+      final coordinator = QoshniNotificationDispatchCoordinator(
+        preferenceRepository: getIt<QoshniNotificationPreferenceRepository>(),
+        inboxRepository: getIt<QoshniNotificationRepository>(),
+        auditRepository: auditRepo,
+        channelAdapters: buildSimulatedQoshniNotificationChannelAdapters(),
+      );
+      coordinator.auditIdFactory = auditRepo.nextAuditRecordId;
+      return coordinator;
+    })
+    ..registerLazySingleton<QoshniNotificationDispatchController>(
+      () => QoshniNotificationDispatchController(
+        getIt<QoshniNotificationDispatchCoordinator>(),
+        getIt<QoshniNotificationDispatchAuditRepository>(),
+        getIt<QoshniNotificationController>(),
       ),
     )
     ..registerLazySingleton<BusinessProfileRepository>(

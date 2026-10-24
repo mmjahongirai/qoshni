@@ -9157,6 +9157,173 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Invalid preview scenario.'**
   String get notificationEligibilityReasonInvalid;
+
+  /// No description provided for @notificationDispatchDiagnosticsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Dispatch diagnostics'**
+  String get notificationDispatchDiagnosticsTitle;
+
+  /// No description provided for @notificationDispatchDiagnosticsOpenTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Open dispatch diagnostics'**
+  String get notificationDispatchDiagnosticsOpenTooltip;
+
+  /// No description provided for @notificationDispatchDemoDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo dispatch only — channel results are simulated; no real Push, SMS or email is sent.'**
+  String get notificationDispatchDemoDisclaimer;
+
+  /// No description provided for @notificationDispatchScenariosSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Synthetic dispatch scenarios'**
+  String get notificationDispatchScenariosSection;
+
+  /// No description provided for @notificationDispatchScenarioOrderMidday.
+  ///
+  /// In en, this message translates to:
+  /// **'Order (midday, in-app)'**
+  String get notificationDispatchScenarioOrderMidday;
+
+  /// No description provided for @notificationDispatchScenarioOrderQuiet.
+  ///
+  /// In en, this message translates to:
+  /// **'Order (quiet hours)'**
+  String get notificationDispatchScenarioOrderQuiet;
+
+  /// No description provided for @notificationDispatchScenarioPromotion.
+  ///
+  /// In en, this message translates to:
+  /// **'Promotion (consent check)'**
+  String get notificationDispatchScenarioPromotion;
+
+  /// No description provided for @notificationDispatchScenarioSecurityQuiet.
+  ///
+  /// In en, this message translates to:
+  /// **'Security (quiet hours bypass)'**
+  String get notificationDispatchScenarioSecurityQuiet;
+
+  /// No description provided for @notificationDispatchLastResultTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Latest dispatch result'**
+  String get notificationDispatchLastResultTitle;
+
+  /// No description provided for @notificationDispatchOutcomeFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Outcome'**
+  String get notificationDispatchOutcomeFilter;
+
+  /// No description provided for @notificationDispatchFilterAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get notificationDispatchFilterAll;
+
+  /// No description provided for @notificationDispatchAuditSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery audit trail'**
+  String get notificationDispatchAuditSection;
+
+  /// No description provided for @notificationDispatchAuditEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No dispatch audit records yet.'**
+  String get notificationDispatchAuditEmpty;
+
+  /// No description provided for @notificationDispatchAuditMetaLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{outcome} · {category} · {channel} · {timestamp}'**
+  String notificationDispatchAuditMetaLine(
+    String outcome,
+    String category,
+    String channel,
+    String timestamp,
+  );
+
+  /// No description provided for @notificationDispatchInboxLinkLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Inbox notification: {notificationId}'**
+  String notificationDispatchInboxLinkLine(String notificationId);
+
+  /// No description provided for @notificationDispatchOutcomeDeliveredInbox.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivered to in-app inbox'**
+  String get notificationDispatchOutcomeDeliveredInbox;
+
+  /// No description provided for @notificationDispatchOutcomeSimulatedChannel.
+  ///
+  /// In en, this message translates to:
+  /// **'Simulated channel delivery'**
+  String get notificationDispatchOutcomeSimulatedChannel;
+
+  /// No description provided for @notificationDispatchOutcomeSuppressed.
+  ///
+  /// In en, this message translates to:
+  /// **'Suppressed by policy'**
+  String get notificationDispatchOutcomeSuppressed;
+
+  /// No description provided for @notificationDispatchOutcomeDuplicate.
+  ///
+  /// In en, this message translates to:
+  /// **'Duplicate idempotency reference'**
+  String get notificationDispatchOutcomeDuplicate;
+
+  /// No description provided for @notificationDispatchOutcomeValidationFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Validation failed'**
+  String get notificationDispatchOutcomeValidationFailed;
+
+  /// No description provided for @notificationDispatchOutcomeChannelFailure.
+  ///
+  /// In en, this message translates to:
+  /// **'Simulated channel failure'**
+  String get notificationDispatchOutcomeChannelFailure;
+
+  /// No description provided for @notificationDispatchOutcomeInboxFailure.
+  ///
+  /// In en, this message translates to:
+  /// **'Inbox persist failed'**
+  String get notificationDispatchOutcomeInboxFailure;
+
+  /// No description provided for @notificationDispatchOutcomeCoordinatorFailure.
+  ///
+  /// In en, this message translates to:
+  /// **'Dispatch coordinator failure'**
+  String get notificationDispatchOutcomeCoordinatorFailure;
+
+  /// No description provided for @notificationDispatchSourceDiagnostics.
+  ///
+  /// In en, this message translates to:
+  /// **'Diagnostics'**
+  String get notificationDispatchSourceDiagnostics;
+
+  /// No description provided for @notificationDispatchSourceOrderScenario.
+  ///
+  /// In en, this message translates to:
+  /// **'Order scenario'**
+  String get notificationDispatchSourceOrderScenario;
+
+  /// No description provided for @notificationDispatchSourcePromotionScenario.
+  ///
+  /// In en, this message translates to:
+  /// **'Promotion scenario'**
+  String get notificationDispatchSourcePromotionScenario;
+
+  /// No description provided for @notificationDispatchSourceSecurityScenario.
+  ///
+  /// In en, this message translates to:
+  /// **'Security scenario'**
+  String get notificationDispatchSourceSecurityScenario;
 }
 
 class _AppLocalizationsDelegate

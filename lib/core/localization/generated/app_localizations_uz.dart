@@ -5138,4 +5138,110 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get notificationEligibilityReasonInvalid =>
       'Preview stsenariysi notoʻgʻri.';
+
+  @override
+  String get notificationDispatchDiagnosticsTitle => 'Dispatch diagnostikasi';
+
+  @override
+  String get notificationDispatchDiagnosticsOpenTooltip =>
+      'Dispatch diagnostikasi';
+
+  @override
+  String get notificationDispatchDemoDisclaimer =>
+      'Faqat demo dispatch — kanal natijalari simulyatsiya; haqiqiy Push, SMS yoki email yuborilmaydi.';
+
+  @override
+  String get notificationDispatchScenariosSection =>
+      'Sintetik dispatch stsenariylari';
+
+  @override
+  String get notificationDispatchScenarioOrderMidday =>
+      'Buyurtma (kunduzi, in-app)';
+
+  @override
+  String get notificationDispatchScenarioOrderQuiet =>
+      'Buyurtma (tinch soatlar)';
+
+  @override
+  String get notificationDispatchScenarioPromotion =>
+      'Aksiya (rozilik tekshiruvi)';
+
+  @override
+  String get notificationDispatchScenarioSecurityQuiet =>
+      'Xavfsizlik (tinch soatlarni chetlab oʻtish)';
+
+  @override
+  String get notificationDispatchLastResultTitle => 'Soʻnggi dispatch natijasi';
+
+  @override
+  String get notificationDispatchOutcomeFilter => 'Natija';
+
+  @override
+  String get notificationDispatchFilterAll => 'Hammasi';
+
+  @override
+  String get notificationDispatchAuditSection => 'Yetkazish audit jurnali';
+
+  @override
+  String get notificationDispatchAuditEmpty =>
+      'Hali dispatch audit yozuvlari yoʻq.';
+
+  @override
+  String notificationDispatchAuditMetaLine(
+    String outcome,
+    String category,
+    String channel,
+    String timestamp,
+  ) {
+    return '$outcome · $category · $channel · $timestamp';
+  }
+
+  @override
+  String notificationDispatchInboxLinkLine(String notificationId) {
+    return 'In-app bildirishnoma: $notificationId';
+  }
+
+  @override
+  String get notificationDispatchOutcomeDeliveredInbox =>
+      'In-app qutiga yetkazildi';
+
+  @override
+  String get notificationDispatchOutcomeSimulatedChannel =>
+      'Simulyatsiya qilingan kanal yetkazishi';
+
+  @override
+  String get notificationDispatchOutcomeSuppressed =>
+      'Siyosat tomonidan bosildi';
+
+  @override
+  String get notificationDispatchOutcomeDuplicate => 'Idempotency dublikati';
+
+  @override
+  String get notificationDispatchOutcomeValidationFailed =>
+      'Validatsiya xatosi';
+
+  @override
+  String get notificationDispatchOutcomeChannelFailure =>
+      'Simulyatsiya qilingan kanal xatosi';
+
+  @override
+  String get notificationDispatchOutcomeInboxFailure => 'Inbox saqlanmadi';
+
+  @override
+  String get notificationDispatchOutcomeCoordinatorFailure =>
+      'Dispatch koordinator xatosi';
+
+  @override
+  String get notificationDispatchSourceDiagnostics => 'Diagnostika';
+
+  @override
+  String get notificationDispatchSourceOrderScenario => 'Buyurtma stsenariysi';
+
+  @override
+  String get notificationDispatchSourcePromotionScenario =>
+      'Aksiya stsenariysi';
+
+  @override
+  String get notificationDispatchSourceSecurityScenario =>
+      'Xavfsizlik stsenariysi';
 }

@@ -66,6 +66,13 @@ class _NotificationInboxPageState extends State<NotificationInboxPage> {
         title: Text(l10n.notificationInboxTitle),
         actions: [
           IconButton(
+            tooltip: l10n.notificationDispatchDiagnosticsOpenTooltip,
+            icon: const Icon(Icons.send_outlined),
+            onPressed: () => context.pushNamed(
+              RouteNames.notificationDispatchDiagnostics,
+            ),
+          ),
+          IconButton(
             tooltip: l10n.notificationPreferencesOpenTooltip,
             icon: const Icon(Icons.settings_outlined),
             onPressed: () =>

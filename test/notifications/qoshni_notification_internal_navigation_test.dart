@@ -12,6 +12,12 @@ void main() {
       isTrue,
     );
     expect(
+      isAllowedQoshniNotificationInternalRoute(
+        RoutePaths.notificationDispatchDiagnostics,
+      ),
+      isTrue,
+    );
+    expect(
       isAllowedQoshniNotificationInternalRoute('${RoutePaths.demoOrders}/demo-order-042'),
       isTrue,
     );

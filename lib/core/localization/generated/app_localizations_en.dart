@@ -5180,4 +5180,106 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get notificationEligibilityReasonInvalid =>
       'Invalid preview scenario.';
+
+  @override
+  String get notificationDispatchDiagnosticsTitle => 'Dispatch diagnostics';
+
+  @override
+  String get notificationDispatchDiagnosticsOpenTooltip =>
+      'Open dispatch diagnostics';
+
+  @override
+  String get notificationDispatchDemoDisclaimer =>
+      'Demo dispatch only — channel results are simulated; no real Push, SMS or email is sent.';
+
+  @override
+  String get notificationDispatchScenariosSection =>
+      'Synthetic dispatch scenarios';
+
+  @override
+  String get notificationDispatchScenarioOrderMidday =>
+      'Order (midday, in-app)';
+
+  @override
+  String get notificationDispatchScenarioOrderQuiet => 'Order (quiet hours)';
+
+  @override
+  String get notificationDispatchScenarioPromotion =>
+      'Promotion (consent check)';
+
+  @override
+  String get notificationDispatchScenarioSecurityQuiet =>
+      'Security (quiet hours bypass)';
+
+  @override
+  String get notificationDispatchLastResultTitle => 'Latest dispatch result';
+
+  @override
+  String get notificationDispatchOutcomeFilter => 'Outcome';
+
+  @override
+  String get notificationDispatchFilterAll => 'All';
+
+  @override
+  String get notificationDispatchAuditSection => 'Delivery audit trail';
+
+  @override
+  String get notificationDispatchAuditEmpty => 'No dispatch audit records yet.';
+
+  @override
+  String notificationDispatchAuditMetaLine(
+    String outcome,
+    String category,
+    String channel,
+    String timestamp,
+  ) {
+    return '$outcome · $category · $channel · $timestamp';
+  }
+
+  @override
+  String notificationDispatchInboxLinkLine(String notificationId) {
+    return 'Inbox notification: $notificationId';
+  }
+
+  @override
+  String get notificationDispatchOutcomeDeliveredInbox =>
+      'Delivered to in-app inbox';
+
+  @override
+  String get notificationDispatchOutcomeSimulatedChannel =>
+      'Simulated channel delivery';
+
+  @override
+  String get notificationDispatchOutcomeSuppressed => 'Suppressed by policy';
+
+  @override
+  String get notificationDispatchOutcomeDuplicate =>
+      'Duplicate idempotency reference';
+
+  @override
+  String get notificationDispatchOutcomeValidationFailed => 'Validation failed';
+
+  @override
+  String get notificationDispatchOutcomeChannelFailure =>
+      'Simulated channel failure';
+
+  @override
+  String get notificationDispatchOutcomeInboxFailure => 'Inbox persist failed';
+
+  @override
+  String get notificationDispatchOutcomeCoordinatorFailure =>
+      'Dispatch coordinator failure';
+
+  @override
+  String get notificationDispatchSourceDiagnostics => 'Diagnostics';
+
+  @override
+  String get notificationDispatchSourceOrderScenario => 'Order scenario';
+
+  @override
+  String get notificationDispatchSourcePromotionScenario =>
+      'Promotion scenario';
+
+  @override
+  String get notificationDispatchSourceSecurityScenario => 'Security scenario';
 }

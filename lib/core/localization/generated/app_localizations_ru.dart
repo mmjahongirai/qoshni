@@ -5110,4 +5110,107 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get notificationEligibilityReasonInvalid =>
       'Недопустимый сценарий превью.';
+
+  @override
+  String get notificationDispatchDiagnosticsTitle => 'Диагностика доставки';
+
+  @override
+  String get notificationDispatchDiagnosticsOpenTooltip =>
+      'Диагностика доставки';
+
+  @override
+  String get notificationDispatchDemoDisclaimer =>
+      'Только демо-dispatch — результаты каналов симулированы; реальные Push, SMS и email не отправляются.';
+
+  @override
+  String get notificationDispatchScenariosSection =>
+      'Синтетические сценарии dispatch';
+
+  @override
+  String get notificationDispatchScenarioOrderMidday => 'Заказ (день, in-app)';
+
+  @override
+  String get notificationDispatchScenarioOrderQuiet => 'Заказ (тихие часы)';
+
+  @override
+  String get notificationDispatchScenarioPromotion =>
+      'Акция (проверка согласия)';
+
+  @override
+  String get notificationDispatchScenarioSecurityQuiet =>
+      'Безопасность (обход тихих часов)';
+
+  @override
+  String get notificationDispatchLastResultTitle =>
+      'Последний результат dispatch';
+
+  @override
+  String get notificationDispatchOutcomeFilter => 'Исход';
+
+  @override
+  String get notificationDispatchFilterAll => 'Все';
+
+  @override
+  String get notificationDispatchAuditSection => 'Журнал аудита доставки';
+
+  @override
+  String get notificationDispatchAuditEmpty =>
+      'Записей аудита dispatch пока нет.';
+
+  @override
+  String notificationDispatchAuditMetaLine(
+    String outcome,
+    String category,
+    String channel,
+    String timestamp,
+  ) {
+    return '$outcome · $category · $channel · $timestamp';
+  }
+
+  @override
+  String notificationDispatchInboxLinkLine(String notificationId) {
+    return 'In-app уведомление: $notificationId';
+  }
+
+  @override
+  String get notificationDispatchOutcomeDeliveredInbox =>
+      'Доставлено во in-app inbox';
+
+  @override
+  String get notificationDispatchOutcomeSimulatedChannel =>
+      'Симулированная доставка по каналу';
+
+  @override
+  String get notificationDispatchOutcomeSuppressed => 'Подавлено политикой';
+
+  @override
+  String get notificationDispatchOutcomeDuplicate => 'Дубликат idempotency';
+
+  @override
+  String get notificationDispatchOutcomeValidationFailed => 'Ошибка валидации';
+
+  @override
+  String get notificationDispatchOutcomeChannelFailure =>
+      'Симулированный сбой канала';
+
+  @override
+  String get notificationDispatchOutcomeInboxFailure =>
+      'Не удалось сохранить в inbox';
+
+  @override
+  String get notificationDispatchOutcomeCoordinatorFailure =>
+      'Сбой координатора dispatch';
+
+  @override
+  String get notificationDispatchSourceDiagnostics => 'Диагностика';
+
+  @override
+  String get notificationDispatchSourceOrderScenario => 'Сценарий заказа';
+
+  @override
+  String get notificationDispatchSourcePromotionScenario => 'Сценарий акции';
+
+  @override
+  String get notificationDispatchSourceSecurityScenario =>
+      'Сценарий безопасности';
 }
