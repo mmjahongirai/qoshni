@@ -23,6 +23,8 @@ class SearchDiscoveryResultItem(BaseModel):
     kind: str
     title: str
     is_sponsored: bool
+    branch_latitude: float | None = None
+    branch_longitude: float | None = None
 
 
 class SearchDiscoveryResponse(BaseModel):

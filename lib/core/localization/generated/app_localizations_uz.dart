@@ -102,6 +102,111 @@ class AppLocalizationsUz extends AppLocalizations {
   String get mapboxDefaultViewLabel => 'Standart ko‘rinish — O‘zbekiston';
 
   @override
+  String get mapboxDefaultViewNotYourLocation =>
+      'Standart xarita — bu sizning joylashuvingiz emas';
+
+  @override
+  String get mapLocationMyLocationAction => 'Mening joylashuvim';
+
+  @override
+  String get mapLocationAcquiring => 'Taxminiy joylashuvingiz aniqlanmoqda…';
+
+  @override
+  String get mapLocationDeviceFixLabel =>
+      'Taxminiy qurilma joyi — saqlangan manzil emas';
+
+  @override
+  String get mapLocationPermissionDenied =>
+      'Joylashuv ruxsati yoqilmagan. Xarita standart ko‘rinishda qoladi. Ruxsat bergach qayta urinib ko‘ring.';
+
+  @override
+  String get mapLocationPermissionDeniedForever =>
+      'Qoshni uchun joylashuv ruxsati bloklangan. Sozlamalardan ruxsat bering yoki standart xaritadan foydalaning.';
+
+  @override
+  String get mapLocationServicesDisabled =>
+      'Qurilmada joylashuv xizmatlari o‘chirilgan. Ularni yoqing yoki standart xaritadan foydalaning.';
+
+  @override
+  String get mapLocationTimeout =>
+      'Joylashuv vaqtida olinmadi. Signalni tekshirib qayta urinib ko‘ring.';
+
+  @override
+  String get mapLocationUnavailable =>
+      'Hozir joylashuv mavjud emas. Keyinroq qayta urinib ko‘ring.';
+
+  @override
+  String get mapLocationRetry => 'Qayta urinish';
+
+  @override
+  String get mapLocationOpenSettings => 'Sozlamalarni ochish';
+
+  @override
+  String get geocodingSearchTitle => 'Manzil qidirish';
+
+  @override
+  String get geocodingSearchHint => 'Ko‘cha, tuman yoki joy nomi';
+
+  @override
+  String get geocodingUnavailableBody =>
+      'Manzil qidiruvi uchun Mapbox token kerak. Xaritadan qo‘lda tanlash mumkin.';
+
+  @override
+  String get geocodingSuggestionDisclaimer =>
+      'Mapbox taklifi — saqlashdan oldin tasdiqlang';
+
+  @override
+  String get savedPlaceConfirmTitle => 'Joyni saqlash';
+
+  @override
+  String get savedPlaceLabelField => 'Nom';
+
+  @override
+  String get savedPlaceSaveAction => 'Saqlash';
+
+  @override
+  String savedPlacesCountLabel(int count) {
+    return '$count ta saqlangan joy';
+  }
+
+  @override
+  String get searchNearbyEnableLabel => 'Yaqin atrofda qidirish';
+
+  @override
+  String get searchNearbyOriginNone =>
+      'Qurilma joyi yoki saqlangan joyni tanlang';
+
+  @override
+  String get searchNearbyOriginDevice => 'Taxminiy qurilma joyi';
+
+  @override
+  String get searchNearbyOriginSavedPlacePrefix => 'Saqlangan joy:';
+
+  @override
+  String get searchNearbyOriginManual => 'Xaritadan tanlangan nuqta';
+
+  @override
+  String get searchNearbySavedPlaceLabel => 'Saqlangan joy';
+
+  @override
+  String get searchNearbyRadiusPrefix => 'Radius:';
+
+  @override
+  String get searchNearbyUseDeviceAction => 'Qurilma joyidan foydalanish';
+
+  @override
+  String get searchShowOnMapAction => 'Xaritada ko‘rsatish';
+
+  @override
+  String searchMapVerifiedBranchFocusLabel(String title) {
+    return 'Tasdiqlangan filial: $title — bu sizning GPS emas';
+  }
+
+  @override
+  String get branchCoordinateProposedNotice =>
+      'Bu koordinatalar faqat taklif. Yaqin qidiruv uchun backend tasdiqlashi kerak (onboarding filiali).';
+
+  @override
   String get mapboxLoadErrorBody =>
       'Xarita yuklanmadi. Token va tarmoqni tekshiring.';
 

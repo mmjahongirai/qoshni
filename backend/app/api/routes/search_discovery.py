@@ -16,7 +16,6 @@ from app.api.search_discovery_responses import search_discovery_error_response
 from app.core.config import Settings, get_settings
 from app.core.database import get_db
 from app.services.auth.principal import AuthenticatedPrincipal
-from app.domain.search_discovery import SearchDiscoveryErrorCode
 from app.services.search_discovery.execution_service import SearchExecutionError, execute_search
 
 router = APIRouter(prefix="/search/discovery", tags=["search-discovery"])
@@ -29,14 +28,6 @@ def search_discovery(
     settings: Settings = Depends(get_settings),
     _principal: AuthenticatedPrincipal = Depends(get_current_principal),
 ) -> SearchDiscoveryResponse | JSONResponse:
-    if body.search_latitude is not None or body.search_longitude is not None:
-        return search_discovery_error_response(
-            SearchExecutionError(
-                code=SearchDiscoveryErrorCode.VALIDATION_FAILED,
-                message="Location-based search is not supported on the backend yet.",
-            )
-        )
-
     result = execute_search(
         session,
         settings,
@@ -46,6 +37,8 @@ def search_discovery(
         category_scope=body.category_scope,
         only_open=body.only_open,
         max_distance_meters=body.max_distance_meters,
+        search_latitude=body.search_latitude,
+        search_longitude=body.search_longitude,
     )
     if isinstance(result, SearchExecutionError):
         return search_discovery_error_response(result)
@@ -57,6 +50,8 @@ def search_discovery(
                 kind=item.kind,
                 title=item.title,
                 is_sponsored=item.is_sponsored,
+                branch_latitude=item.branch_latitude,
+                branch_longitude=item.branch_longitude,
             )
             for item in result.items
         ],

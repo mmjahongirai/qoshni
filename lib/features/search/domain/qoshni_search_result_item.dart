@@ -1,5 +1,6 @@
 import 'package:qoshni/features/home/presentation/data/home_mock_data.dart';
 import 'package:qoshni/features/search/domain/qoshni_search_rank_reason.dart';
+import 'package:qoshni/features/search/domain/qoshni_search_verified_branch_location.dart';
 
 class QoshniSearchResultItem {
   const QoshniSearchResultItem({
@@ -9,6 +10,7 @@ class QoshniSearchResultItem {
     required this.relevanceScore,
     required this.rankReasons,
     required this.showSponsoredLabel,
+    this.verifiedBranchLocation,
   });
 
   final String stableId;
@@ -17,4 +19,7 @@ class QoshniSearchResultItem {
   final double relevanceScore;
   final List<QoshniSearchRankReason> rankReasons;
   final bool showSponsoredLabel;
+  final QoshniSearchVerifiedBranchLocation? verifiedBranchLocation;
+
+  bool get hasVerifiedMapLocation => verifiedBranchLocation != null;
 }

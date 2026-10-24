@@ -102,6 +102,113 @@ class AppLocalizationsRu extends AppLocalizations {
   String get mapboxDefaultViewLabel => 'Вид по умолчанию — Узбекистан';
 
   @override
+  String get mapboxDefaultViewNotYourLocation =>
+      'Карта по умолчанию — не ваше местоположение';
+
+  @override
+  String get mapLocationMyLocationAction => 'Моё местоположение';
+
+  @override
+  String get mapLocationAcquiring =>
+      'Определяем приблизительное местоположение…';
+
+  @override
+  String get mapLocationDeviceFixLabel =>
+      'Приблизительное местоположение устройства — не сохранённый адрес';
+
+  @override
+  String get mapLocationPermissionDenied =>
+      'Нет доступа к геолокации. Карта остаётся в виде по умолчанию. Разрешите доступ и попробуйте снова.';
+
+  @override
+  String get mapLocationPermissionDeniedForever =>
+      'Доступ к геолокации для Qoshni заблокирован. Откройте настройки или используйте карту по умолчанию.';
+
+  @override
+  String get mapLocationServicesDisabled =>
+      'Службы геолокации на устройстве выключены. Включите их или используйте карту по умолчанию.';
+
+  @override
+  String get mapLocationTimeout =>
+      'Не удалось получить координаты вовремя. Проверьте сигнал и повторите.';
+
+  @override
+  String get mapLocationUnavailable =>
+      'Геолокация сейчас недоступна. Попробуйте позже.';
+
+  @override
+  String get mapLocationRetry => 'Повторить';
+
+  @override
+  String get mapLocationOpenSettings => 'Открыть настройки';
+
+  @override
+  String get geocodingSearchTitle => 'Поиск адреса';
+
+  @override
+  String get geocodingSearchHint => 'Улица, район или название места';
+
+  @override
+  String get geocodingUnavailableBody =>
+      'Для поиска адреса нужен публичный токен Mapbox. Точку можно выбрать на карте вручную.';
+
+  @override
+  String get geocodingSuggestionDisclaimer =>
+      'Подсказка Mapbox — подтвердите перед сохранением';
+
+  @override
+  String get savedPlaceConfirmTitle => 'Сохранить место';
+
+  @override
+  String get savedPlaceLabelField => 'Название';
+
+  @override
+  String get savedPlaceSaveAction => 'Сохранить';
+
+  @override
+  String savedPlacesCountLabel(int count) {
+    return 'Сохранённых мест: $count';
+  }
+
+  @override
+  String get searchNearbyEnableLabel => 'Поиск рядом';
+
+  @override
+  String get searchNearbyOriginNone =>
+      'Выберите местоположение устройства или сохранённое место';
+
+  @override
+  String get searchNearbyOriginDevice =>
+      'Приблизительное местоположение устройства';
+
+  @override
+  String get searchNearbyOriginSavedPlacePrefix => 'Сохранённое место:';
+
+  @override
+  String get searchNearbyOriginManual => 'Точка на карте';
+
+  @override
+  String get searchNearbySavedPlaceLabel => 'Сохранённое место';
+
+  @override
+  String get searchNearbyRadiusPrefix => 'Радиус:';
+
+  @override
+  String get searchNearbyUseDeviceAction => 'Использовать GPS';
+
+  @override
+  String get searchShowOnMapAction => 'Показать на карте';
+
+  @override
+  String searchMapVerifiedBranchFocusLabel(String title) {
+    return 'Проверенный филиал: $title — не ваш GPS';
+  }
+
+  @override
+  String get branchCoordinateProposedNotice =>
+      'Координаты здесь только предложены. Для публичного поиска рядом нужна проверка на backend (филиал onboarding).';
+
+  @override
   String get mapboxLoadErrorBody =>
       'Карта не загрузилась. Проверьте токен и сеть.';
 

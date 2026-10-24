@@ -102,6 +102,111 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mapboxDefaultViewLabel => 'Default map view — Uzbekistan';
 
   @override
+  String get mapboxDefaultViewNotYourLocation =>
+      'Default map view — not your location';
+
+  @override
+  String get mapLocationMyLocationAction => 'My location';
+
+  @override
+  String get mapLocationAcquiring => 'Getting your approximate location…';
+
+  @override
+  String get mapLocationDeviceFixLabel =>
+      'Approximate device location — not a saved address';
+
+  @override
+  String get mapLocationPermissionDenied =>
+      'Location permission is off. The map stays on the default view. You can try again after allowing access.';
+
+  @override
+  String get mapLocationPermissionDeniedForever =>
+      'Location permission is blocked for Qoshni. Open settings to allow access, or keep using the default map view.';
+
+  @override
+  String get mapLocationServicesDisabled =>
+      'Location services are turned off on this device. Enable them in system settings or continue with the default map view.';
+
+  @override
+  String get mapLocationTimeout =>
+      'Could not get a location fix in time. Check signal and try again.';
+
+  @override
+  String get mapLocationUnavailable =>
+      'Location is unavailable right now. Try again later.';
+
+  @override
+  String get mapLocationRetry => 'Try again';
+
+  @override
+  String get mapLocationOpenSettings => 'Open settings';
+
+  @override
+  String get geocodingSearchTitle => 'Search address';
+
+  @override
+  String get geocodingSearchHint => 'Street, district, or place name';
+
+  @override
+  String get geocodingUnavailableBody =>
+      'Address search needs a Mapbox public token. You can still pick a point on the map.';
+
+  @override
+  String get geocodingSuggestionDisclaimer =>
+      'Provider suggestion — confirm before saving';
+
+  @override
+  String get savedPlaceConfirmTitle => 'Save place';
+
+  @override
+  String get savedPlaceLabelField => 'Label';
+
+  @override
+  String get savedPlaceSaveAction => 'Save place';
+
+  @override
+  String savedPlacesCountLabel(int count) {
+    return '$count saved places';
+  }
+
+  @override
+  String get searchNearbyEnableLabel => 'Nearby search';
+
+  @override
+  String get searchNearbyOriginNone =>
+      'Choose device location or a saved place';
+
+  @override
+  String get searchNearbyOriginDevice => 'Approximate device location';
+
+  @override
+  String get searchNearbyOriginSavedPlacePrefix => 'Saved place:';
+
+  @override
+  String get searchNearbyOriginManual => 'Manual map point';
+
+  @override
+  String get searchNearbySavedPlaceLabel => 'Saved place';
+
+  @override
+  String get searchNearbyRadiusPrefix => 'Radius:';
+
+  @override
+  String get searchNearbyUseDeviceAction => 'Use device location';
+
+  @override
+  String get searchShowOnMapAction => 'Show on map';
+
+  @override
+  String searchMapVerifiedBranchFocusLabel(String title) {
+    return 'Verified branch: $title — not your GPS';
+  }
+
+  @override
+  String get branchCoordinateProposedNotice =>
+      'Coordinates here are proposed only. Public nearby search requires backend verification (onboarding branch record).';
+
+  @override
   String get mapboxLoadErrorBody =>
       'The map could not load. Check your Mapbox token and network, then try again.';
 

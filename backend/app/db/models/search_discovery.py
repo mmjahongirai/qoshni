@@ -5,7 +5,7 @@ from __future__ import annotations
 import uuid
 from datetime import datetime
 
-from sqlalchemy import DateTime, Index, Integer, String, Uuid, func
+from sqlalchemy import DateTime, Float, Index, Integer, String, Uuid, func  # noqa: F401 — Integer used by branch_coordinate_revision
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db.base import Base
@@ -44,6 +44,9 @@ class SearchIndexRecord(Base):
     eligibility_status: Mapped[str] = mapped_column(String(32), nullable=False)
     source_application_id: Mapped[uuid.UUID | None] = mapped_column(Uuid(), nullable=True)
     source_updated_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    branch_latitude: Mapped[float | None] = mapped_column(Float, nullable=True)
+    branch_longitude: Mapped[float | None] = mapped_column(Float, nullable=True)
+    branch_coordinate_revision: Mapped[int | None] = mapped_column(Integer, nullable=True)
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
         nullable=False,

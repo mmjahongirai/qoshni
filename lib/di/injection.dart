@@ -165,7 +165,17 @@ import 'package:qoshni/features/search/application/qoshni_search_query_processor
 import 'package:qoshni/features/search/data/in_memory_qoshni_search_index_repository.dart';
 import 'package:qoshni/features/search/data/in_memory_qoshni_search_vocabulary_repository.dart';
 import 'package:qoshni/features/search/domain/repositories/qoshni_search_index_repository.dart';
+import 'package:qoshni/features/search/application/qoshni_search_map_focus_controller.dart';
 import 'package:qoshni/features/search/domain/repositories/qoshni_search_vocabulary_repository.dart';
+import 'package:qoshni/features/location/application/qoshni_geocoding_service.dart';
+import 'package:qoshni/features/location/application/qoshni_location_service.dart';
+import 'package:qoshni/features/location/application/qoshni_map_location_controller.dart';
+import 'package:qoshni/features/location/application/qoshni_saved_places_controller.dart';
+import 'package:qoshni/features/location/application/qoshni_search_location_selection_controller.dart';
+import 'package:qoshni/features/location/data/geolocator_qoshni_location_provider.dart';
+import 'package:qoshni/features/location/data/mapbox_qoshni_geocoding_provider.dart';
+import 'package:qoshni/features/location/domain/qoshni_geocoding_provider.dart';
+import 'package:qoshni/features/location/domain/qoshni_location_provider.dart';
 import 'package:qoshni/routing/app_router.dart';
 
 final GetIt getIt = GetIt.instance;
@@ -771,6 +781,9 @@ Future<void> configureDependencies(AppConfig config) async {
     ..registerLazySingleton<RemoteQoshniSearchDataSource>(
       () => RemoteQoshniSearchDataSource(apiClient: getIt<ApiClient>()),
     )
+    ..registerLazySingleton<QoshniSearchMapFocusController>(
+      QoshniSearchMapFocusController.new,
+    )
     ..registerLazySingleton<QoshniSearchExecutionCoordinator>(
       () => QoshniSearchExecutionCoordinator(
         config: getIt<AppConfig>(),
@@ -778,6 +791,31 @@ Future<void> configureDependencies(AppConfig config) async {
         remoteDataSource: getIt<RemoteQoshniSearchDataSource>(),
         authController: getIt<AuthController>(),
       ),
+    )
+    ..registerLazySingleton<QoshniLocationProvider>(
+      GeolocatorQoshniLocationProvider.new,
+    )
+    ..registerLazySingleton<QoshniLocationService>(
+      () => QoshniLocationService(getIt<QoshniLocationProvider>()),
+    )
+    ..registerLazySingleton<QoshniMapLocationController>(
+      () => QoshniMapLocationController(getIt<QoshniLocationService>()),
+    )
+    ..registerLazySingleton<QoshniGeocodingProvider>(
+      MapboxQoshniGeocodingProvider.new,
+    )
+    ..registerLazySingleton<QoshniGeocodingService>(
+      () => QoshniGeocodingService(getIt<QoshniGeocodingProvider>()),
+    )
+    ..registerLazySingleton<QoshniSavedPlacesController>(
+      () => QoshniSavedPlacesController(
+        config: getIt<AppConfig>(),
+        authController: getIt<AuthController>(),
+        apiClient: getIt<ApiClient>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniSearchLocationSelectionController>(
+      QoshniSearchLocationSelectionController.new,
     )
     ..registerLazySingleton<AppRouter>(
       () => AppRouter(logger: getIt<AppLogger>()),

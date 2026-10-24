@@ -268,6 +268,186 @@ abstract class AppLocalizations {
   /// **'Default map view — Uzbekistan'**
   String get mapboxDefaultViewLabel;
 
+  /// No description provided for @mapboxDefaultViewNotYourLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Default map view — not your location'**
+  String get mapboxDefaultViewNotYourLocation;
+
+  /// No description provided for @mapLocationMyLocationAction.
+  ///
+  /// In en, this message translates to:
+  /// **'My location'**
+  String get mapLocationMyLocationAction;
+
+  /// No description provided for @mapLocationAcquiring.
+  ///
+  /// In en, this message translates to:
+  /// **'Getting your approximate location…'**
+  String get mapLocationAcquiring;
+
+  /// No description provided for @mapLocationDeviceFixLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Approximate device location — not a saved address'**
+  String get mapLocationDeviceFixLabel;
+
+  /// No description provided for @mapLocationPermissionDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission is off. The map stays on the default view. You can try again after allowing access.'**
+  String get mapLocationPermissionDenied;
+
+  /// No description provided for @mapLocationPermissionDeniedForever.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission is blocked for Qoshni. Open settings to allow access, or keep using the default map view.'**
+  String get mapLocationPermissionDeniedForever;
+
+  /// No description provided for @mapLocationServicesDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Location services are turned off on this device. Enable them in system settings or continue with the default map view.'**
+  String get mapLocationServicesDisabled;
+
+  /// No description provided for @mapLocationTimeout.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not get a location fix in time. Check signal and try again.'**
+  String get mapLocationTimeout;
+
+  /// No description provided for @mapLocationUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Location is unavailable right now. Try again later.'**
+  String get mapLocationUnavailable;
+
+  /// No description provided for @mapLocationRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get mapLocationRetry;
+
+  /// No description provided for @mapLocationOpenSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Open settings'**
+  String get mapLocationOpenSettings;
+
+  /// No description provided for @geocodingSearchTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Search address'**
+  String get geocodingSearchTitle;
+
+  /// No description provided for @geocodingSearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Street, district, or place name'**
+  String get geocodingSearchHint;
+
+  /// No description provided for @geocodingUnavailableBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Address search needs a Mapbox public token. You can still pick a point on the map.'**
+  String get geocodingUnavailableBody;
+
+  /// No description provided for @geocodingSuggestionDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Provider suggestion — confirm before saving'**
+  String get geocodingSuggestionDisclaimer;
+
+  /// No description provided for @savedPlaceConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Save place'**
+  String get savedPlaceConfirmTitle;
+
+  /// No description provided for @savedPlaceLabelField.
+  ///
+  /// In en, this message translates to:
+  /// **'Label'**
+  String get savedPlaceLabelField;
+
+  /// No description provided for @savedPlaceSaveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Save place'**
+  String get savedPlaceSaveAction;
+
+  /// No description provided for @savedPlacesCountLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} saved places'**
+  String savedPlacesCountLabel(int count);
+
+  /// No description provided for @searchNearbyEnableLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Nearby search'**
+  String get searchNearbyEnableLabel;
+
+  /// No description provided for @searchNearbyOriginNone.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose device location or a saved place'**
+  String get searchNearbyOriginNone;
+
+  /// No description provided for @searchNearbyOriginDevice.
+  ///
+  /// In en, this message translates to:
+  /// **'Approximate device location'**
+  String get searchNearbyOriginDevice;
+
+  /// No description provided for @searchNearbyOriginSavedPlacePrefix.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved place:'**
+  String get searchNearbyOriginSavedPlacePrefix;
+
+  /// No description provided for @searchNearbyOriginManual.
+  ///
+  /// In en, this message translates to:
+  /// **'Manual map point'**
+  String get searchNearbyOriginManual;
+
+  /// No description provided for @searchNearbySavedPlaceLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved place'**
+  String get searchNearbySavedPlaceLabel;
+
+  /// No description provided for @searchNearbyRadiusPrefix.
+  ///
+  /// In en, this message translates to:
+  /// **'Radius:'**
+  String get searchNearbyRadiusPrefix;
+
+  /// No description provided for @searchNearbyUseDeviceAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Use device location'**
+  String get searchNearbyUseDeviceAction;
+
+  /// No description provided for @searchShowOnMapAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Show on map'**
+  String get searchShowOnMapAction;
+
+  /// No description provided for @searchMapVerifiedBranchFocusLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified branch: {title} — not your GPS'**
+  String searchMapVerifiedBranchFocusLabel(String title);
+
+  /// No description provided for @branchCoordinateProposedNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Coordinates here are proposed only. Public nearby search requires backend verification (onboarding branch record).'**
+  String get branchCoordinateProposedNotice;
+
   /// No description provided for @mapboxLoadErrorBody.
   ///
   /// In en, this message translates to:

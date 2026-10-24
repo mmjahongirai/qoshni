@@ -5,7 +5,9 @@ import 'package:qoshni/features/home/presentation/data/home_mock_data.dart';
 import 'package:qoshni/features/search/data/qoshni_search_remote_dtos.dart';
 import 'package:qoshni/features/search/domain/qoshni_search_page_result.dart';
 import 'package:qoshni/features/search/domain/qoshni_search_request.dart';
+import 'package:qoshni/features/search/domain/qoshni_search_location.dart';
 import 'package:qoshni/features/search/domain/qoshni_search_result_item.dart';
+import 'package:qoshni/features/search/domain/qoshni_search_verified_branch_location.dart';
 
 class RemoteQoshniSearchDataSource {
   RemoteQoshniSearchDataSource({
@@ -28,6 +30,8 @@ class RemoteQoshniSearchDataSource {
           onlyOpen: request.filters.onlyOpen,
           maxDistanceMeters: request.filters.maxDistanceMeters,
           categoryScope: request.filters.categoryScope?.name,
+          searchLatitude: request.filters.searchLocation?.latitude,
+          searchLongitude: request.filters.searchLocation?.longitude,
         ).toJson(),
         options: Options(
           headers: {'Authorization': 'Bearer $accessToken'},
@@ -85,6 +89,14 @@ class RemoteQoshniSearchDataSource {
     final kind = dto.kind == 'category'
         ? SearchEntryKind.category
         : SearchEntryKind.business;
+    QoshniSearchVerifiedBranchLocation? verifiedLocation;
+    final lat = dto.branchLatitude;
+    final lng = dto.branchLongitude;
+    if (lat != null && lng != null) {
+      verifiedLocation = QoshniSearchVerifiedBranchLocation(
+        searchLocation: QoshniSearchLocation(latitude: lat, longitude: lng),
+      );
+    }
     return QoshniSearchResultItem(
       stableId: dto.stableId,
       catalogEntry: SearchCatalogEntry(
@@ -99,6 +111,7 @@ class RemoteQoshniSearchDataSource {
       relevanceScore: 0,
       rankReasons: const [],
       showSponsoredLabel: dto.isSponsored,
+      verifiedBranchLocation: verifiedLocation,
     );
   }
 }

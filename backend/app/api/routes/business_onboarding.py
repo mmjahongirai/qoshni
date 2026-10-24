@@ -28,6 +28,20 @@ from app.domain.business_onboarding import (
     VerificationStatus,
 )
 from app.services.auth.principal import AuthenticatedPrincipal
+from app.api.branch_coordinate_responses import (
+    branch_coordinate_error_response,
+    branch_coordinate_view,
+)
+from app.api.schemas.branch_coordinates import (
+    BranchCoordinateProposeRequest,
+    BranchCoordinateView,
+)
+from app.services.business_onboarding.branch_coordinate_service import (
+    BranchCoordinateErrorCode,
+    BranchCoordinateServiceError,
+    get_branch_coordinates_view,
+    propose_branch_coordinates,
+)
 from app.services.business_onboarding.onboarding_service import (
     OnboardingServiceError,
     create_application,
@@ -217,3 +231,66 @@ def read_verification_status(
     if isinstance(result, OnboardingServiceError):
         return onboarding_error_response(result)
     return _status_view(result)
+
+
+def _branch_coordinate_http_error(error: BranchCoordinateServiceError) -> JSONResponse:
+    status = 400
+    if error.code == BranchCoordinateErrorCode.NOT_FOUND:
+        status = 404
+    elif error.code in {BranchCoordinateErrorCode.FORBIDDEN}:
+        status = 403
+    elif error.code == BranchCoordinateErrorCode.STALE_REVISION:
+        status = 409
+    return branch_coordinate_error_response(error.code.value, error.message, status)
+
+
+@router.get(
+    "/applications/{application_id}/branch-coordinates",
+    response_model=BranchCoordinateView,
+    responses={404: {"description": "Not found"}},
+)
+def read_branch_coordinates(
+    application_id: uuid.UUID,
+    db: Session = Depends(get_db),
+    principal: AuthenticatedPrincipal = Depends(get_current_principal),
+) -> BranchCoordinateView | JSONResponse:
+    owned = get_owner_application(
+        db,
+        owner_user_id=principal.user_id,
+        application_id=application_id,
+    )
+    if isinstance(owned, OnboardingServiceError):
+        return onboarding_error_response(owned)
+    row = get_branch_coordinates_view(db, application_id)
+    if row is None:
+        return branch_coordinate_error_response(
+            BranchCoordinateErrorCode.NOT_FOUND.value,
+            "Branch coordinates not found.",
+            404,
+        )
+    return branch_coordinate_view(row)
+
+
+@router.put(
+    "/applications/{application_id}/branch-coordinates",
+    response_model=BranchCoordinateView,
+)
+def put_branch_coordinates(
+    application_id: uuid.UUID,
+    payload: BranchCoordinateProposeRequest,
+    db: Session = Depends(get_db),
+    principal: AuthenticatedPrincipal = Depends(get_current_principal),
+) -> BranchCoordinateView | JSONResponse:
+    result = propose_branch_coordinates(
+        db,
+        owner_user_id=principal.user_id,
+        application_id=application_id,
+        latitude=payload.latitude,
+        longitude=payload.longitude,
+        source=payload.coordinate_source,
+        expected_revision=payload.expected_revision,
+    )
+    if isinstance(result, BranchCoordinateServiceError):
+        return _branch_coordinate_http_error(result)
+    db.commit()
+    return branch_coordinate_view(result)

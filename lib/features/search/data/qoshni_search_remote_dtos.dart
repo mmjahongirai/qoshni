@@ -6,6 +6,8 @@ class QoshniSearchRemoteRequestDto {
     this.onlyOpen = false,
     this.maxDistanceMeters,
     this.categoryScope,
+    this.searchLatitude,
+    this.searchLongitude,
   });
 
   final String query;
@@ -14,6 +16,8 @@ class QoshniSearchRemoteRequestDto {
   final bool onlyOpen;
   final int? maxDistanceMeters;
   final String? categoryScope;
+  final double? searchLatitude;
+  final double? searchLongitude;
 
   Map<String, dynamic> toJson() => {
         'query': query,
@@ -22,6 +26,8 @@ class QoshniSearchRemoteRequestDto {
         'only_open': onlyOpen,
         if (maxDistanceMeters != null) 'max_distance_meters': maxDistanceMeters,
         if (categoryScope != null) 'category_scope': categoryScope,
+        if (searchLatitude != null) 'search_latitude': searchLatitude,
+        if (searchLongitude != null) 'search_longitude': searchLongitude,
       };
 }
 
@@ -31,6 +37,8 @@ class QoshniSearchRemoteResultItemDto {
     required this.kind,
     required this.title,
     required this.isSponsored,
+    this.branchLatitude,
+    this.branchLongitude,
   });
 
   factory QoshniSearchRemoteResultItemDto.fromJson(Map<String, dynamic> json) {
@@ -39,6 +47,8 @@ class QoshniSearchRemoteResultItemDto {
       kind: json['kind'] as String,
       title: json['title'] as String,
       isSponsored: json['is_sponsored'] as bool? ?? false,
+      branchLatitude: (json['branch_latitude'] as num?)?.toDouble(),
+      branchLongitude: (json['branch_longitude'] as num?)?.toDouble(),
     );
   }
 
@@ -46,6 +56,8 @@ class QoshniSearchRemoteResultItemDto {
   final String kind;
   final String title;
   final bool isSponsored;
+  final double? branchLatitude;
+  final double? branchLongitude;
 }
 
 class QoshniSearchRemoteResponseDto {

@@ -20,6 +20,7 @@ dependencies:
   logger: ^2.6.1
   file_picker: ^10.3.3
   mapbox_maps_flutter: ^3.33.0
+  geolocator: ^14.0.2
 
 dev_dependencies:
   flutter_test:

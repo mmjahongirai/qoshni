@@ -12,6 +12,9 @@ from app.db.models.business_onboarding import BusinessOnboardingApplication
 from app.db.models.search_discovery import SearchIndexRecord, eligibility_from_verification_status
 from app.domain.business_onboarding import VerificationStatus
 from app.domain.search_discovery import SearchIndexEligibility, SearchIndexRecordKind
+from app.services.search_discovery.branch_coordinate_projection import (
+    sync_branch_coordinates_to_search_index,
+)
 from app.services.search_discovery.metadata import bump_catalog_generation
 
 
@@ -74,6 +77,11 @@ def project_application(
     if bump_generation:
         bump_catalog_generation(session)
     session.flush()
+    sync_branch_coordinates_to_search_index(
+        session,
+        application.id,
+        bump_generation=False,
+    )
     return stable_id
 
 

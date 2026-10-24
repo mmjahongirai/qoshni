@@ -1,5 +1,6 @@
 """Import ORM models so they register on Base.metadata for autogenerate."""
 
+from app.db.models.branch_coordinates import BusinessOnboardingBranchCoordinate
 from app.db.models.business_onboarding import (
     BusinessOnboardingApplication,
     BusinessOnboardingAuditEvent,
@@ -8,6 +9,7 @@ from app.db.models.business_onboarding import (
 from app.db.models.identity import AuthAuditEvent, AuthSession, OtpChallenge, User
 from app.db.models.platform_roles import UserPlatformRoleAssignment
 from app.db.models.profile import UserPreferences, UserProfile
+from app.db.models.saved_places import UserSavedPlace
 from app.db.models.search_discovery import (
     SearchIndexMetadata,
     SearchIndexProjectionReceipt,
@@ -17,6 +19,7 @@ from app.db.models.search_discovery import (
 __all__ = [
     "AuthAuditEvent",
     "AuthSession",
+    "BusinessOnboardingBranchCoordinate",
     "BusinessOnboardingApplication",
     "BusinessOnboardingAuditEvent",
     "BusinessOnboardingDocument",
@@ -28,4 +31,5 @@ __all__ = [
     "SearchIndexMetadata",
     "SearchIndexProjectionReceipt",
     "SearchIndexRecord",
+    "UserSavedPlace",
 ]
