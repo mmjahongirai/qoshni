@@ -106,12 +106,83 @@ import 'package:qoshni/features/business_platform/presentation/business_fulfillm
 import 'package:qoshni/features/business_platform/presentation/business_staff_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_owner_profile_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_profile_controller.dart';
+import 'package:qoshni/features/checkout/application/qoshni_cart_service.dart';
+import 'package:qoshni/features/checkout/application/qoshni_checkout_controller.dart';
+import 'package:qoshni/features/checkout/application/qoshni_checkout_pricing_service.dart';
+import 'package:qoshni/features/checkout/application/qoshni_checkout_session_service.dart';
+import 'package:qoshni/features/checkout/application/qoshni_checkout_quote_service.dart';
+import 'package:qoshni/features/checkout/application/qoshni_order_placement_service.dart';
+import 'package:qoshni/features/auth/presentation/auth_controller.dart';
 import 'package:qoshni/features/home/presentation/cart/cart_controller.dart';
 import 'package:qoshni/features/home/presentation/favorites/favorites_controller.dart';
 import 'package:qoshni/features/home/presentation/orders/demo_order_controller.dart';
+import 'package:qoshni/features/notifications/application/qoshni_notification_dispatch_coordinator.dart';
+import 'package:qoshni/features/notifications/data/in_memory_qoshni_notification_dispatch_audit_repository.dart';
+import 'package:qoshni/features/notifications/data/in_memory_qoshni_notification_template_repository.dart';
+import 'package:qoshni/features/notifications/data/in_memory_qoshni_notification_preference_repository.dart';
+import 'package:qoshni/features/notifications/data/in_memory_qoshni_notification_repository.dart';
+import 'package:qoshni/features/notifications/data/simulated_qoshni_notification_channel_adapters.dart';
+import 'package:qoshni/features/notifications/domain/repositories/qoshni_notification_dispatch_audit_repository.dart';
+import 'package:qoshni/features/notifications/domain/repositories/qoshni_notification_preference_repository.dart';
+import 'package:qoshni/features/notifications/domain/repositories/qoshni_notification_repository.dart';
+import 'package:qoshni/features/notifications/domain/repositories/qoshni_notification_template_repository.dart';
+import 'package:qoshni/features/notifications/presentation/qoshni_notification_controller.dart';
+import 'package:qoshni/features/notifications/presentation/qoshni_notification_dispatch_controller.dart';
+import 'package:qoshni/features/notifications/presentation/qoshni_notification_template_controller.dart';
+import 'package:qoshni/features/conversations/data/in_memory_qoshni_conversation_repository.dart';
+import 'package:qoshni/features/conversations/domain/repositories/qoshni_conversation_repository.dart';
+import 'package:qoshni/features/conversations/presentation/qoshni_conversation_controller.dart';
+import 'package:qoshni/features/platform_governance/application/qoshni_platform_governance_audit_service.dart';
+import 'package:qoshni/features/platform_governance/application/qoshni_platform_governance_authorizer.dart';
+import 'package:qoshni/features/platform_governance/application/qoshni_platform_governance_operations_summary_service.dart';
+import 'package:qoshni/features/platform_governance/data/in_memory_qoshni_platform_approval_repository.dart';
+import 'package:qoshni/features/platform_governance/data/in_memory_qoshni_platform_business_verification_queue_repository.dart';
+import 'package:qoshni/features/platform_governance/data/in_memory_qoshni_platform_configuration_repository.dart';
+import 'package:qoshni/features/platform_governance/data/in_memory_qoshni_platform_governance_audit_repository.dart';
+import 'package:qoshni/features/platform_governance/data/in_memory_qoshni_platform_governance_repository.dart';
+import 'package:qoshni/features/platform_governance/data/in_memory_qoshni_platform_moderation_queue_repository.dart';
+import 'package:qoshni/features/platform_governance/data/in_memory_qoshni_platform_support_case_repository.dart';
+import 'package:qoshni/features/platform_governance/domain/repositories/qoshni_platform_approval_repository.dart';
+import 'package:qoshni/features/platform_governance/domain/repositories/qoshni_platform_business_verification_queue_repository.dart';
+import 'package:qoshni/features/platform_governance/domain/repositories/qoshni_platform_configuration_repository.dart';
+import 'package:qoshni/features/platform_governance/domain/repositories/qoshni_platform_governance_audit_repository.dart';
+import 'package:qoshni/features/platform_governance/domain/repositories/qoshni_platform_governance_repository.dart';
+import 'package:qoshni/features/platform_governance/domain/repositories/qoshni_platform_moderation_queue_repository.dart';
+import 'package:qoshni/features/platform_governance/domain/repositories/qoshni_platform_support_case_repository.dart';
+import 'package:qoshni/features/platform_governance/presentation/qoshni_platform_approval_controller.dart';
+import 'package:qoshni/features/platform_governance/presentation/qoshni_platform_business_verification_queue_controller.dart';
+import 'package:qoshni/features/platform_governance/presentation/qoshni_platform_configuration_controller.dart';
+import 'package:qoshni/features/platform_governance/presentation/qoshni_platform_governance_audit_trail_controller.dart';
+import 'package:qoshni/features/platform_governance/presentation/qoshni_platform_governance_controller.dart';
+import 'package:qoshni/features/platform_governance/presentation/qoshni_platform_governance_operations_controller.dart';
+import 'package:qoshni/features/platform_governance/presentation/qoshni_platform_moderation_queue_controller.dart';
+import 'package:qoshni/features/platform_governance/presentation/qoshni_platform_support_case_controller.dart';
+import 'package:qoshni/features/system_messages/data/in_memory_qoshni_system_message_repository.dart';
+import 'package:qoshni/features/system_messages/domain/repositories/qoshni_system_message_repository.dart';
+import 'package:qoshni/features/system_messages/presentation/qoshni_system_message_controller.dart';
+import 'package:qoshni/features/notifications/presentation/qoshni_notification_preference_controller.dart';
 import 'package:qoshni/features/user_profile/data/user_profile_api_repository.dart';
 import 'package:qoshni/features/user_profile/domain/user_profile_repository.dart';
 import 'package:qoshni/features/user_profile/presentation/user_profile_controller.dart';
+import 'package:qoshni/features/search/application/qoshni_search_autocomplete_service.dart';
+import 'package:qoshni/features/search/application/qoshni_search_execution_coordinator.dart';
+import 'package:qoshni/features/search/application/qoshni_search_execution_service.dart';
+import 'package:qoshni/features/search/data/remote_qoshni_search_data_source.dart';
+import 'package:qoshni/features/search/application/qoshni_search_query_processor.dart';
+import 'package:qoshni/features/search/data/in_memory_qoshni_search_index_repository.dart';
+import 'package:qoshni/features/search/data/in_memory_qoshni_search_vocabulary_repository.dart';
+import 'package:qoshni/features/search/domain/repositories/qoshni_search_index_repository.dart';
+import 'package:qoshni/features/search/application/qoshni_search_map_focus_controller.dart';
+import 'package:qoshni/features/search/domain/repositories/qoshni_search_vocabulary_repository.dart';
+import 'package:qoshni/features/location/application/qoshni_geocoding_service.dart';
+import 'package:qoshni/features/location/application/qoshni_location_service.dart';
+import 'package:qoshni/features/location/application/qoshni_map_location_controller.dart';
+import 'package:qoshni/features/location/application/qoshni_saved_places_controller.dart';
+import 'package:qoshni/features/location/application/qoshni_search_location_selection_controller.dart';
+import 'package:qoshni/features/location/data/geolocator_qoshni_location_provider.dart';
+import 'package:qoshni/features/location/data/mapbox_qoshni_geocoding_provider.dart';
+import 'package:qoshni/features/location/domain/qoshni_geocoding_provider.dart';
+import 'package:qoshni/features/location/domain/qoshni_location_provider.dart';
 import 'package:qoshni/routing/app_router.dart';
 
 final GetIt getIt = GetIt.instance;
@@ -131,8 +202,206 @@ Future<void> configureDependencies(AppConfig config) async {
     ..registerLazySingleton<ThemeController>(ThemeController.new)
     ..registerLazySingleton<LocaleController>(LocaleController.new)
     ..registerLazySingleton<FavoritesController>(FavoritesController.new)
-    ..registerLazySingleton<CartController>(CartController.new)
+    ..registerLazySingleton<QoshniCartService>(QoshniCartService.new)
+    ..registerLazySingleton<QoshniCheckoutPricingService>(
+      QoshniCheckoutPricingService.new,
+    )
+    ..registerLazySingleton<QoshniCheckoutSessionService>(
+      () => QoshniCheckoutSessionService(
+        cartService: getIt<QoshniCartService>(),
+        pricingService: getIt<QoshniCheckoutPricingService>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniCheckoutController>(
+      () => QoshniCheckoutController(
+        cartService: getIt<QoshniCartService>(),
+        sessionService: getIt<QoshniCheckoutSessionService>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniCheckoutQuoteService>(
+      () => QoshniCheckoutQuoteService(
+        appConfig: getIt<AppConfig>(),
+        apiClient: getIt<ApiClient>(),
+        accessTokenProvider: () async => getIt<AuthController>().accessToken,
+      ),
+    )
+    ..registerLazySingleton<QoshniOrderPlacementService>(
+      () => QoshniOrderPlacementService(
+        appConfig: getIt<AppConfig>(),
+        apiClient: getIt<ApiClient>(),
+        accessTokenProvider: () async => getIt<AuthController>().accessToken,
+      ),
+    )
+    ..registerLazySingleton<CartController>(
+      () => CartController(
+        cartService: getIt<QoshniCartService>(),
+        pricingService: getIt<QoshniCheckoutPricingService>(),
+      ),
+    )
     ..registerLazySingleton<DemoOrderController>(DemoOrderController.new)
+    ..registerLazySingleton<QoshniNotificationRepository>(
+      InMemoryQoshniNotificationRepository.new,
+    )
+    ..registerLazySingleton<QoshniNotificationController>(
+      () => QoshniNotificationController(getIt<QoshniNotificationRepository>()),
+    )
+    ..registerLazySingleton<QoshniNotificationPreferenceRepository>(
+      InMemoryQoshniNotificationPreferenceRepository.new,
+    )
+    ..registerLazySingleton<QoshniNotificationPreferenceController>(
+      () => QoshniNotificationPreferenceController(
+        getIt<QoshniNotificationPreferenceRepository>(),
+      ),
+    )
+    ..registerLazySingleton<InMemoryQoshniNotificationDispatchAuditRepository>(
+      InMemoryQoshniNotificationDispatchAuditRepository.new,
+    )
+    ..registerLazySingleton<QoshniNotificationDispatchAuditRepository>(
+      () => getIt<InMemoryQoshniNotificationDispatchAuditRepository>(),
+    )
+    ..registerLazySingleton<QoshniNotificationDispatchCoordinator>(() {
+      final auditRepo =
+          getIt<InMemoryQoshniNotificationDispatchAuditRepository>();
+      final coordinator = QoshniNotificationDispatchCoordinator(
+        preferenceRepository: getIt<QoshniNotificationPreferenceRepository>(),
+        inboxRepository: getIt<QoshniNotificationRepository>(),
+        auditRepository: auditRepo,
+        channelAdapters: buildSimulatedQoshniNotificationChannelAdapters(),
+      );
+      coordinator.auditIdFactory = auditRepo.nextAuditRecordId;
+      return coordinator;
+    })
+    ..registerLazySingleton<QoshniNotificationDispatchController>(
+      () => QoshniNotificationDispatchController(
+        getIt<QoshniNotificationDispatchCoordinator>(),
+        getIt<QoshniNotificationDispatchAuditRepository>(),
+        getIt<QoshniNotificationController>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniNotificationTemplateRepository>(
+      InMemoryQoshniNotificationTemplateRepository.new,
+    )
+    ..registerLazySingleton<QoshniNotificationTemplateController>(
+      () => QoshniNotificationTemplateController(
+        getIt<QoshniNotificationTemplateRepository>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniSystemMessageRepository>(
+      InMemoryQoshniSystemMessageRepository.new,
+    )
+    ..registerLazySingleton<QoshniSystemMessageController>(
+      () => QoshniSystemMessageController(
+        getIt<QoshniSystemMessageRepository>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniConversationRepository>(
+      InMemoryQoshniConversationRepository.new,
+    )
+    ..registerLazySingleton<QoshniConversationController>(
+      () => QoshniConversationController(
+        getIt<QoshniConversationRepository>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniPlatformGovernanceRepository>(
+      InMemoryQoshniPlatformGovernanceRepository.new,
+    )
+    ..registerLazySingleton<QoshniPlatformGovernanceController>(
+      () => QoshniPlatformGovernanceController(
+        getIt<QoshniPlatformGovernanceRepository>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniPlatformGovernanceAuthorizer>(
+      () => QoshniPlatformGovernanceAuthorizer(
+        getIt<QoshniPlatformGovernanceRepository>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniPlatformGovernanceAuditRepository>(
+      InMemoryQoshniPlatformGovernanceAuditRepository.new,
+    )
+    ..registerLazySingleton<QoshniPlatformGovernanceAuditService>(
+      () => QoshniPlatformGovernanceAuditService(
+        auditRepository: getIt<QoshniPlatformGovernanceAuditRepository>(),
+        governanceRepository: getIt<QoshniPlatformGovernanceRepository>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniPlatformConfigurationRepository>(
+      InMemoryQoshniPlatformConfigurationRepository.new,
+    )
+    ..registerLazySingleton<QoshniPlatformApprovalRepository>(
+      InMemoryQoshniPlatformApprovalRepository.new,
+    )
+    ..registerLazySingleton<QoshniPlatformBusinessVerificationQueueRepository>(
+      InMemoryQoshniPlatformBusinessVerificationQueueRepository.new,
+    )
+    ..registerLazySingleton<QoshniPlatformModerationQueueRepository>(
+      InMemoryQoshniPlatformModerationQueueRepository.new,
+    )
+    ..registerLazySingleton<QoshniPlatformSupportCaseRepository>(
+      InMemoryQoshniPlatformSupportCaseRepository.new,
+    )
+    ..registerLazySingleton<QoshniPlatformGovernanceOperationsSummaryService>(
+      () => QoshniPlatformGovernanceOperationsSummaryService(
+        verificationRepository:
+            getIt<QoshniPlatformBusinessVerificationQueueRepository>(),
+        moderationRepository: getIt<QoshniPlatformModerationQueueRepository>(),
+        supportRepository: getIt<QoshniPlatformSupportCaseRepository>(),
+        auditRepository: getIt<QoshniPlatformGovernanceAuditRepository>(),
+        approvalRepository: getIt<QoshniPlatformApprovalRepository>(),
+        configurationRepository: getIt<QoshniPlatformConfigurationRepository>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniPlatformBusinessVerificationQueueController>(
+      () => QoshniPlatformBusinessVerificationQueueController(
+        repository: getIt<QoshniPlatformBusinessVerificationQueueRepository>(),
+        governanceRepository: getIt<QoshniPlatformGovernanceRepository>(),
+        authorizer: getIt<QoshniPlatformGovernanceAuthorizer>(),
+        auditService: getIt<QoshniPlatformGovernanceAuditService>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniPlatformModerationQueueController>(
+      () => QoshniPlatformModerationQueueController(
+        repository: getIt<QoshniPlatformModerationQueueRepository>(),
+        governanceRepository: getIt<QoshniPlatformGovernanceRepository>(),
+        authorizer: getIt<QoshniPlatformGovernanceAuthorizer>(),
+        auditService: getIt<QoshniPlatformGovernanceAuditService>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniPlatformSupportCaseController>(
+      () => QoshniPlatformSupportCaseController(
+        repository: getIt<QoshniPlatformSupportCaseRepository>(),
+        governanceRepository: getIt<QoshniPlatformGovernanceRepository>(),
+        authorizer: getIt<QoshniPlatformGovernanceAuthorizer>(),
+        auditService: getIt<QoshniPlatformGovernanceAuditService>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniPlatformGovernanceAuditTrailController>(
+      () => QoshniPlatformGovernanceAuditTrailController(
+        auditRepository: getIt<QoshniPlatformGovernanceAuditRepository>(),
+        authorizer: getIt<QoshniPlatformGovernanceAuthorizer>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniPlatformConfigurationController>(
+      () => QoshniPlatformConfigurationController(
+        repository: getIt<QoshniPlatformConfigurationRepository>(),
+        governanceRepository: getIt<QoshniPlatformGovernanceRepository>(),
+        authorizer: getIt<QoshniPlatformGovernanceAuthorizer>(),
+        auditService: getIt<QoshniPlatformGovernanceAuditService>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniPlatformApprovalController>(
+      () => QoshniPlatformApprovalController(
+        repository: getIt<QoshniPlatformApprovalRepository>(),
+        governanceRepository: getIt<QoshniPlatformGovernanceRepository>(),
+        authorizer: getIt<QoshniPlatformGovernanceAuthorizer>(),
+        auditService: getIt<QoshniPlatformGovernanceAuditService>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniPlatformGovernanceOperationsController>(
+      () => QoshniPlatformGovernanceOperationsController(
+        summaryService: getIt<QoshniPlatformGovernanceOperationsSummaryService>(),
+        authorizer: getIt<QoshniPlatformGovernanceAuthorizer>(),
+      ),
+    )
     ..registerLazySingleton<BusinessProfileRepository>(
       InMemoryBusinessProfileRepository.new,
     )
@@ -528,6 +797,67 @@ Future<void> configureDependencies(AppConfig config) async {
         authController: getIt<AuthController>(),
         config: getIt<AppConfig>(),
       ),
+    )
+    ..registerLazySingleton<QoshniSearchVocabularyRepository>(
+      InMemoryQoshniSearchVocabularyRepository.new,
+    )
+    ..registerLazySingleton<QoshniSearchQueryProcessor>(
+      () => QoshniSearchQueryProcessor(
+        getIt<QoshniSearchVocabularyRepository>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniSearchAutocompleteService>(
+      () => QoshniSearchAutocompleteService(
+        getIt<QoshniSearchVocabularyRepository>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniSearchIndexRepository>(
+      InMemoryQoshniSearchIndexRepository.new,
+    )
+    ..registerLazySingleton<QoshniSearchExecutionService>(
+      () => QoshniSearchExecutionService(
+        queryProcessor: getIt<QoshniSearchQueryProcessor>(),
+        indexRepository: getIt<QoshniSearchIndexRepository>(),
+      ),
+    )
+    ..registerLazySingleton<RemoteQoshniSearchDataSource>(
+      () => RemoteQoshniSearchDataSource(apiClient: getIt<ApiClient>()),
+    )
+    ..registerLazySingleton<QoshniSearchMapFocusController>(
+      QoshniSearchMapFocusController.new,
+    )
+    ..registerLazySingleton<QoshniSearchExecutionCoordinator>(
+      () => QoshniSearchExecutionCoordinator(
+        config: getIt<AppConfig>(),
+        demoExecutionService: getIt<QoshniSearchExecutionService>(),
+        remoteDataSource: getIt<RemoteQoshniSearchDataSource>(),
+        authController: getIt<AuthController>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniLocationProvider>(
+      GeolocatorQoshniLocationProvider.new,
+    )
+    ..registerLazySingleton<QoshniLocationService>(
+      () => QoshniLocationService(getIt<QoshniLocationProvider>()),
+    )
+    ..registerLazySingleton<QoshniMapLocationController>(
+      () => QoshniMapLocationController(getIt<QoshniLocationService>()),
+    )
+    ..registerLazySingleton<QoshniGeocodingProvider>(
+      MapboxQoshniGeocodingProvider.new,
+    )
+    ..registerLazySingleton<QoshniGeocodingService>(
+      () => QoshniGeocodingService(getIt<QoshniGeocodingProvider>()),
+    )
+    ..registerLazySingleton<QoshniSavedPlacesController>(
+      () => QoshniSavedPlacesController(
+        config: getIt<AppConfig>(),
+        authController: getIt<AuthController>(),
+        apiClient: getIt<ApiClient>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniSearchLocationSelectionController>(
+      QoshniSearchLocationSelectionController.new,
     )
     ..registerLazySingleton<AppRouter>(
       () => AppRouter(logger: getIt<AppLogger>()),

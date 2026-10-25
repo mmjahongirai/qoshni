@@ -1,0 +1,4 @@
+enum QoshniConversationType {
+  customerBusiness,
+  supportDemo,
+}

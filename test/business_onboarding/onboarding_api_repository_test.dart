@@ -15,6 +15,7 @@ const _config = AppConfig(
   enableLogging: false,
   enableBusinessProfileSamples: false,
   enableBusinessOfferingSamples: false,
+  enableRemoteSearchDiscovery: false,
 );
 
 const _applicationJson = {

@@ -16,6 +16,8 @@ import 'package:qoshni/core/widgets/profile_avatar_fallback.dart';
 import 'package:qoshni/features/user_profile/data/user_profile_dtos.dart';
 import 'package:qoshni/features/user_profile/presentation/user_profile_controller.dart';
 import 'package:qoshni/features/user_profile/presentation/user_profile_messages.dart';
+import 'package:qoshni/features/conversations/presentation/qoshni_conversation_controller.dart';
+import 'package:qoshni/features/notifications/presentation/qoshni_notification_controller.dart';
 import 'package:qoshni/routing/route_paths.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -44,6 +46,8 @@ class _ProfilePageState extends State<ProfilePage> {
     final localeController = getIt<LocaleController>();
     final favoritesController = getIt<FavoritesController>();
     final demoOrderController = getIt<DemoOrderController>();
+    final notificationController = getIt<QoshniNotificationController>();
+    final conversationController = getIt<QoshniConversationController>();
     final authController = getIt<AuthController>();
     final userProfileController = getIt<UserProfileController>();
 
@@ -61,6 +65,8 @@ class _ProfilePageState extends State<ProfilePage> {
               localeController,
               favoritesController,
               demoOrderController,
+              notificationController,
+              conversationController,
               authController,
               userProfileController,
             ]),
@@ -73,6 +79,8 @@ class _ProfilePageState extends State<ProfilePage> {
                   localeController: localeController,
                   favoritesController: favoritesController,
                   demoOrderController: demoOrderController,
+                  notificationController: notificationController,
+                  conversationController: conversationController,
                   authController: authController,
                   userProfileController: userProfileController,
                 ),
@@ -83,6 +91,8 @@ class _ProfilePageState extends State<ProfilePage> {
                   localeController: localeController,
                   favoritesController: favoritesController,
                   demoOrderController: demoOrderController,
+                  notificationController: notificationController,
+                  conversationController: conversationController,
                   authController: authController,
                   userProfileController: userProfileController,
                 ),
@@ -103,6 +113,8 @@ class _ProfileBody extends StatelessWidget {
     required this.localeController,
     required this.favoritesController,
     required this.demoOrderController,
+    required this.notificationController,
+    required this.conversationController,
     required this.authController,
     required this.userProfileController,
   });
@@ -113,6 +125,8 @@ class _ProfileBody extends StatelessWidget {
   final LocaleController localeController;
   final FavoritesController favoritesController;
   final DemoOrderController demoOrderController;
+  final QoshniNotificationController notificationController;
+  final QoshniConversationController conversationController;
   final AuthController authController;
   final UserProfileController userProfileController;
 
@@ -122,6 +136,7 @@ class _ProfileBody extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     final favoriteCount = favoritesController.favoriteIds.length;
     final demoOrderCount = demoOrderController.orderCount;
+    final notificationUnreadCount = notificationController.unreadCount;
     final signedIn = authController.isSignedIn;
     final displayName = userProfileController.profile?.displayName;
 
@@ -307,6 +322,36 @@ class _ProfileBody extends StatelessWidget {
                       contentPadding:
                           const EdgeInsets.symmetric(horizontal: 8),
                       leading: Icon(
+                        Icons.notifications_outlined,
+                        color: colorScheme.primary,
+                      ),
+                      title: Text(l10n.profileNotificationsTitle),
+                      subtitle: Text(
+                        l10n.profileNotificationsUnreadCount(
+                          notificationUnreadCount,
+                        ),
+                      ),
+                      trailing: const Icon(Icons.chevron_right_rounded),
+                      onTap: () =>
+                          context.pushNamed(RouteNames.notificationsInbox),
+                    ),
+                    ListTile(
+                      contentPadding:
+                          const EdgeInsets.symmetric(horizontal: 8),
+                      leading: Icon(
+                        Icons.chat_bubble_outline,
+                        color: colorScheme.primary,
+                      ),
+                      title: Text(l10n.profileDemoConversationsTitle),
+                      subtitle: Text(l10n.profileDemoConversationsSubtitle),
+                      trailing: const Icon(Icons.chevron_right_rounded),
+                      onTap: () =>
+                          context.pushNamed(RouteNames.demoConversations),
+                    ),
+                    ListTile(
+                      contentPadding:
+                          const EdgeInsets.symmetric(horizontal: 8),
+                      leading: Icon(
                         Icons.receipt_long_outlined,
                         color: colorScheme.primary,
                       ),
@@ -316,6 +361,20 @@ class _ProfileBody extends StatelessWidget {
                       ),
                       trailing: const Icon(Icons.chevron_right_rounded),
                       onTap: () => context.pushNamed(RouteNames.demoOrders),
+                    ),
+                    ListTile(
+                      contentPadding:
+                          const EdgeInsets.symmetric(horizontal: 8),
+                      leading: Icon(
+                        Icons.admin_panel_settings_outlined,
+                        color: colorScheme.primary,
+                      ),
+                      title: Text(l10n.profilePlatformAdminGovernanceTitle),
+                      subtitle: Text(l10n.profilePlatformAdminGovernanceSubtitle),
+                      trailing: const Icon(Icons.chevron_right_rounded),
+                      onTap: () => context.pushNamed(
+                        RouteNames.platformAdminGovernanceRoles,
+                      ),
                     ),
                     ListTile(
                       contentPadding:

@@ -268,6 +268,186 @@ abstract class AppLocalizations {
   /// **'Default map view — Uzbekistan'**
   String get mapboxDefaultViewLabel;
 
+  /// No description provided for @mapboxDefaultViewNotYourLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Default map view — not your location'**
+  String get mapboxDefaultViewNotYourLocation;
+
+  /// No description provided for @mapLocationMyLocationAction.
+  ///
+  /// In en, this message translates to:
+  /// **'My location'**
+  String get mapLocationMyLocationAction;
+
+  /// No description provided for @mapLocationAcquiring.
+  ///
+  /// In en, this message translates to:
+  /// **'Getting your approximate location…'**
+  String get mapLocationAcquiring;
+
+  /// No description provided for @mapLocationDeviceFixLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Approximate device location — not a saved address'**
+  String get mapLocationDeviceFixLabel;
+
+  /// No description provided for @mapLocationPermissionDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission is off. The map stays on the default view. You can try again after allowing access.'**
+  String get mapLocationPermissionDenied;
+
+  /// No description provided for @mapLocationPermissionDeniedForever.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission is blocked for Qoshni. Open settings to allow access, or keep using the default map view.'**
+  String get mapLocationPermissionDeniedForever;
+
+  /// No description provided for @mapLocationServicesDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Location services are turned off on this device. Enable them in system settings or continue with the default map view.'**
+  String get mapLocationServicesDisabled;
+
+  /// No description provided for @mapLocationTimeout.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not get a location fix in time. Check signal and try again.'**
+  String get mapLocationTimeout;
+
+  /// No description provided for @mapLocationUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Location is unavailable right now. Try again later.'**
+  String get mapLocationUnavailable;
+
+  /// No description provided for @mapLocationRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get mapLocationRetry;
+
+  /// No description provided for @mapLocationOpenSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Open settings'**
+  String get mapLocationOpenSettings;
+
+  /// No description provided for @geocodingSearchTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Search address'**
+  String get geocodingSearchTitle;
+
+  /// No description provided for @geocodingSearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Street, district, or place name'**
+  String get geocodingSearchHint;
+
+  /// No description provided for @geocodingUnavailableBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Address search needs a Mapbox public token. You can still pick a point on the map.'**
+  String get geocodingUnavailableBody;
+
+  /// No description provided for @geocodingSuggestionDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Provider suggestion — confirm before saving'**
+  String get geocodingSuggestionDisclaimer;
+
+  /// No description provided for @savedPlaceConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Save place'**
+  String get savedPlaceConfirmTitle;
+
+  /// No description provided for @savedPlaceLabelField.
+  ///
+  /// In en, this message translates to:
+  /// **'Label'**
+  String get savedPlaceLabelField;
+
+  /// No description provided for @savedPlaceSaveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Save place'**
+  String get savedPlaceSaveAction;
+
+  /// No description provided for @savedPlacesCountLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} saved places'**
+  String savedPlacesCountLabel(int count);
+
+  /// No description provided for @searchNearbyEnableLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Nearby search'**
+  String get searchNearbyEnableLabel;
+
+  /// No description provided for @searchNearbyOriginNone.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose device location or a saved place'**
+  String get searchNearbyOriginNone;
+
+  /// No description provided for @searchNearbyOriginDevice.
+  ///
+  /// In en, this message translates to:
+  /// **'Approximate device location'**
+  String get searchNearbyOriginDevice;
+
+  /// No description provided for @searchNearbyOriginSavedPlacePrefix.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved place:'**
+  String get searchNearbyOriginSavedPlacePrefix;
+
+  /// No description provided for @searchNearbyOriginManual.
+  ///
+  /// In en, this message translates to:
+  /// **'Manual map point'**
+  String get searchNearbyOriginManual;
+
+  /// No description provided for @searchNearbySavedPlaceLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved place'**
+  String get searchNearbySavedPlaceLabel;
+
+  /// No description provided for @searchNearbyRadiusPrefix.
+  ///
+  /// In en, this message translates to:
+  /// **'Radius:'**
+  String get searchNearbyRadiusPrefix;
+
+  /// No description provided for @searchNearbyUseDeviceAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Use device location'**
+  String get searchNearbyUseDeviceAction;
+
+  /// No description provided for @searchShowOnMapAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Show on map'**
+  String get searchShowOnMapAction;
+
+  /// No description provided for @searchMapVerifiedBranchFocusLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified branch: {title} — not your GPS'**
+  String searchMapVerifiedBranchFocusLabel(String title);
+
+  /// No description provided for @branchCoordinateProposedNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Coordinates here are proposed only. Public nearby search requires backend verification (onboarding branch record).'**
+  String get branchCoordinateProposedNotice;
+
   /// No description provided for @mapboxLoadErrorBody.
   ///
   /// In en, this message translates to:
@@ -699,6 +879,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Try a different search term.'**
   String get searchEmptyBody;
+
+  /// No description provided for @searchSpellingSuggestionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Did you mean'**
+  String get searchSpellingSuggestionLabel;
+
+  /// No description provided for @searchLoadMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Load more results'**
+  String get searchLoadMore;
+
+  /// No description provided for @searchSponsoredLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Sponsored'**
+  String get searchSponsoredLabel;
+
+  /// No description provided for @searchRemoteUnauthorizedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to search'**
+  String get searchRemoteUnauthorizedTitle;
+
+  /// No description provided for @searchRemoteUnauthorizedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Remote search needs an active session. Sign in and try again.'**
+  String get searchRemoteUnauthorizedBody;
+
+  /// No description provided for @searchRemoteUnavailableTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Search is temporarily unavailable'**
+  String get searchRemoteUnavailableTitle;
+
+  /// No description provided for @searchRemoteUnavailableBody.
+  ///
+  /// In en, this message translates to:
+  /// **'We could not reach the search service. Check your connection and try again.'**
+  String get searchRemoteUnavailableBody;
+
+  /// No description provided for @searchRemoteRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get searchRemoteRetry;
 
   /// No description provided for @searchCategoryEntrySubtitle.
   ///
@@ -1233,6 +1461,138 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Your cart is empty. Add demo items before checkout.'**
   String get checkoutEmptyBody;
+
+  /// No description provided for @checkoutPreparationNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Checkout preparation only — prices come from the demo catalog calculator. No order is placed until you explicitly confirm the separate demo step.'**
+  String get checkoutPreparationNotice;
+
+  /// No description provided for @checkoutFulfillmentLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Fulfillment'**
+  String get checkoutFulfillmentLabel;
+
+  /// No description provided for @checkoutFulfillmentPickup.
+  ///
+  /// In en, this message translates to:
+  /// **'Pickup'**
+  String get checkoutFulfillmentPickup;
+
+  /// No description provided for @checkoutFulfillmentDelivery.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery'**
+  String get checkoutFulfillmentDelivery;
+
+  /// No description provided for @checkoutFulfillmentServiceAtLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Service at location'**
+  String get checkoutFulfillmentServiceAtLocation;
+
+  /// No description provided for @checkoutRecalculateAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Update quote'**
+  String get checkoutRecalculateAction;
+
+  /// No description provided for @checkoutQuoteStaleTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Cart changed'**
+  String get checkoutQuoteStaleTitle;
+
+  /// No description provided for @checkoutQuoteStaleBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your cart changed after this quote. Update the quote before confirming the demo order.'**
+  String get checkoutQuoteStaleBody;
+
+  /// No description provided for @checkoutPricingErrorTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Pricing unavailable'**
+  String get checkoutPricingErrorTitle;
+
+  /// No description provided for @checkoutPricingErrorBody.
+  ///
+  /// In en, this message translates to:
+  /// **'We could not price one or more cart lines from the demo catalog.'**
+  String get checkoutPricingErrorBody;
+
+  /// No description provided for @checkoutUnsupportedFulfillmentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Fulfillment not supported'**
+  String get checkoutUnsupportedFulfillmentTitle;
+
+  /// No description provided for @checkoutUnsupportedFulfillmentBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This fulfillment choice is not supported for the items in your cart.'**
+  String get checkoutUnsupportedFulfillmentBody;
+
+  /// No description provided for @checkoutMultiBusinessNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Items from multiple demo businesses are grouped separately. One parent checkout may create multiple business orders in a future release.'**
+  String get checkoutMultiBusinessNotice;
+
+  /// No description provided for @checkoutServerOrderSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Server order (not demo)'**
+  String get checkoutServerOrderSectionTitle;
+
+  /// No description provided for @checkoutServerOrderUnavailableBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Backend consumer catalog and inventory are not available yet. Server placement stays disabled until authoritative pricing and stock exist.'**
+  String get checkoutServerOrderUnavailableBody;
+
+  /// No description provided for @checkoutServerOrderTryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Check server placement'**
+  String get checkoutServerOrderTryAction;
+
+  /// No description provided for @checkoutServerOrderCatalogUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Server rejected placement: authoritative catalog is not available.'**
+  String get checkoutServerOrderCatalogUnavailable;
+
+  /// No description provided for @checkoutServerOrderSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Server accepted placement (order {orderId}). Payment and fulfilment are still separate.'**
+  String checkoutServerOrderSuccess(String orderId);
+
+  /// No description provided for @checkoutServerOrderNotConfigured.
+  ///
+  /// In en, this message translates to:
+  /// **'API base URL is not configured for server placement.'**
+  String get checkoutServerOrderNotConfigured;
+
+  /// No description provided for @checkoutServerOrderSignInRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to check server placement.'**
+  String get checkoutServerOrderSignInRequired;
+
+  /// No description provided for @checkoutDemoOrderSeparateNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo order confirmation below is local only and is not a server-confirmed purchase.'**
+  String get checkoutDemoOrderSeparateNotice;
+
+  /// No description provided for @checkoutSessionCorrelationLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Checkout reference: {reference}'**
+  String checkoutSessionCorrelationLabel(String reference);
 
   /// No description provided for @demoOrderConfirmationTitle.
   ///
@@ -8697,6 +9057,1979 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Synthetic demo signal — not verified customer behavior.'**
   String get businessReputationEventSyntheticBadge;
+
+  /// No description provided for @notificationInboxTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get notificationInboxTitle;
+
+  /// No description provided for @notificationInboxDemoDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo notifications only — in-memory data; no real push, SMS or email is sent.'**
+  String get notificationInboxDemoDisclaimer;
+
+  /// No description provided for @notificationInboxUnreadCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} unread'**
+  String notificationInboxUnreadCount(int count);
+
+  /// No description provided for @notificationInboxOpenTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Open notifications'**
+  String get notificationInboxOpenTooltip;
+
+  /// No description provided for @notificationFilterAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get notificationFilterAll;
+
+  /// No description provided for @notificationFilterUnread.
+  ///
+  /// In en, this message translates to:
+  /// **'Unread'**
+  String get notificationFilterUnread;
+
+  /// No description provided for @notificationCategoryFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get notificationCategoryFilter;
+
+  /// No description provided for @notificationCategoryAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All categories'**
+  String get notificationCategoryAll;
+
+  /// No description provided for @notificationClearFilters.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear filters'**
+  String get notificationClearFilters;
+
+  /// No description provided for @notificationCategoryOrders.
+  ///
+  /// In en, this message translates to:
+  /// **'Orders'**
+  String get notificationCategoryOrders;
+
+  /// No description provided for @notificationCategoryBookings.
+  ///
+  /// In en, this message translates to:
+  /// **'Bookings'**
+  String get notificationCategoryBookings;
+
+  /// No description provided for @notificationCategoryDelivery.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery'**
+  String get notificationCategoryDelivery;
+
+  /// No description provided for @notificationCategoryWalletPayments.
+  ///
+  /// In en, this message translates to:
+  /// **'Wallet & payments'**
+  String get notificationCategoryWalletPayments;
+
+  /// No description provided for @notificationCategoryAiAlerts.
+  ///
+  /// In en, this message translates to:
+  /// **'AI alerts'**
+  String get notificationCategoryAiAlerts;
+
+  /// No description provided for @notificationCategoryLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get notificationCategoryLocation;
+
+  /// No description provided for @notificationCategoryBusiness.
+  ///
+  /// In en, this message translates to:
+  /// **'Business'**
+  String get notificationCategoryBusiness;
+
+  /// No description provided for @notificationCategoryTrustReviews.
+  ///
+  /// In en, this message translates to:
+  /// **'Trust & reviews'**
+  String get notificationCategoryTrustReviews;
+
+  /// No description provided for @notificationCategorySecurity.
+  ///
+  /// In en, this message translates to:
+  /// **'Security'**
+  String get notificationCategorySecurity;
+
+  /// No description provided for @notificationCategoryPromotions.
+  ///
+  /// In en, this message translates to:
+  /// **'Promotions'**
+  String get notificationCategoryPromotions;
+
+  /// No description provided for @notificationChannelInApp.
+  ///
+  /// In en, this message translates to:
+  /// **'In-app'**
+  String get notificationChannelInApp;
+
+  /// No description provided for @notificationChannelPushPreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Push (preview)'**
+  String get notificationChannelPushPreview;
+
+  /// No description provided for @notificationChannelSmsPreview.
+  ///
+  /// In en, this message translates to:
+  /// **'SMS (preview)'**
+  String get notificationChannelSmsPreview;
+
+  /// No description provided for @notificationChannelEmailPreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Email (preview)'**
+  String get notificationChannelEmailPreview;
+
+  /// No description provided for @notificationPriorityLow.
+  ///
+  /// In en, this message translates to:
+  /// **'Low'**
+  String get notificationPriorityLow;
+
+  /// No description provided for @notificationPriorityNormal.
+  ///
+  /// In en, this message translates to:
+  /// **'Normal'**
+  String get notificationPriorityNormal;
+
+  /// No description provided for @notificationPriorityHigh.
+  ///
+  /// In en, this message translates to:
+  /// **'High'**
+  String get notificationPriorityHigh;
+
+  /// No description provided for @notificationPriorityUrgent.
+  ///
+  /// In en, this message translates to:
+  /// **'Urgent'**
+  String get notificationPriorityUrgent;
+
+  /// No description provided for @notificationInboxEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'No notifications match your filters.'**
+  String get notificationInboxEmptyBody;
+
+  /// No description provided for @notificationMarkReadAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark as read'**
+  String get notificationMarkReadAction;
+
+  /// No description provided for @notificationMarkAllReadAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark all read'**
+  String get notificationMarkAllReadAction;
+
+  /// No description provided for @notificationMarkReadSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification marked as read.'**
+  String get notificationMarkReadSuccess;
+
+  /// No description provided for @notificationMarkReadAlready.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification was already read.'**
+  String get notificationMarkReadAlready;
+
+  /// No description provided for @notificationMarkReadNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification not found.'**
+  String get notificationMarkReadNotFound;
+
+  /// No description provided for @notificationMarkReadInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid notification identifier.'**
+  String get notificationMarkReadInvalid;
+
+  /// No description provided for @notificationMarkReadFailure.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not mark notification as read.'**
+  String get notificationMarkReadFailure;
+
+  /// No description provided for @notificationMarkAllReadSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'All notifications marked as read.'**
+  String get notificationMarkAllReadSuccess;
+
+  /// No description provided for @notificationMarkAllReadFailure.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not mark all notifications as read.'**
+  String get notificationMarkAllReadFailure;
+
+  /// No description provided for @notificationStatusUnread.
+  ///
+  /// In en, this message translates to:
+  /// **'Unread'**
+  String get notificationStatusUnread;
+
+  /// No description provided for @notificationStatusRead.
+  ///
+  /// In en, this message translates to:
+  /// **'Read'**
+  String get notificationStatusRead;
+
+  /// No description provided for @notificationCardMetaLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{category} · {timestamp} · {status}'**
+  String notificationCardMetaLine(
+    String category,
+    String timestamp,
+    String status,
+  );
+
+  /// No description provided for @notificationSyntheticBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Synthetic demo notification — not a real message.'**
+  String get notificationSyntheticBadge;
+
+  /// No description provided for @notificationOpenLinkedRouteAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to open linked in-app screen'**
+  String get notificationOpenLinkedRouteAction;
+
+  /// No description provided for @profileNotificationsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get profileNotificationsTitle;
+
+  /// No description provided for @profileNotificationsUnreadCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} unread in demo inbox'**
+  String profileNotificationsUnreadCount(int count);
+
+  /// No description provided for @notificationPreferencesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification preferences'**
+  String get notificationPreferencesTitle;
+
+  /// No description provided for @notificationPreferencesOpenTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification preferences'**
+  String get notificationPreferencesOpenTooltip;
+
+  /// No description provided for @notificationPreferencesDemoDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo notification preferences only — settings are in memory; no real push, SMS or email delivery occurs.'**
+  String get notificationPreferencesDemoDisclaimer;
+
+  /// No description provided for @notificationPreferencesInMemoryNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Changes apply to this session only and are not synced to a backend.'**
+  String get notificationPreferencesInMemoryNote;
+
+  /// No description provided for @notificationPreferencesCategoriesSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Categories'**
+  String get notificationPreferencesCategoriesSection;
+
+  /// No description provided for @notificationPreferencesChannelsSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Channels'**
+  String get notificationPreferencesChannelsSection;
+
+  /// No description provided for @notificationChannelPreviewNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview channel — not connected to a real provider.'**
+  String get notificationChannelPreviewNote;
+
+  /// No description provided for @notificationPromotionalConsentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Marketing & promotions consent'**
+  String get notificationPromotionalConsentTitle;
+
+  /// No description provided for @notificationPromotionalConsentBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Separate consent required for promotional notifications in addition to the promotions category toggle.'**
+  String get notificationPromotionalConsentBody;
+
+  /// No description provided for @notificationQuietHoursSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiet hours'**
+  String get notificationQuietHoursSection;
+
+  /// No description provided for @notificationQuietHoursEnabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable quiet hours'**
+  String get notificationQuietHoursEnabled;
+
+  /// No description provided for @notificationQuietHoursLocalTimeNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Uses local device time for this demo evaluator only.'**
+  String get notificationQuietHoursLocalTimeNote;
+
+  /// No description provided for @notificationQuietHoursStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiet hours start'**
+  String get notificationQuietHoursStart;
+
+  /// No description provided for @notificationQuietHoursEnd.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiet hours end'**
+  String get notificationQuietHoursEnd;
+
+  /// No description provided for @notificationPreferencesRestoreDefaults.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore demo defaults'**
+  String get notificationPreferencesRestoreDefaults;
+
+  /// No description provided for @notificationPreferenceSaveSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Preferences updated.'**
+  String get notificationPreferenceSaveSuccess;
+
+  /// No description provided for @notificationPreferenceSaveInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save — invalid preference values.'**
+  String get notificationPreferenceSaveInvalid;
+
+  /// No description provided for @notificationPreferenceSaveFailure.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save preferences. Try again.'**
+  String get notificationPreferenceSaveFailure;
+
+  /// No description provided for @notificationPreferenceRestoreSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo preferences restored.'**
+  String get notificationPreferenceRestoreSuccess;
+
+  /// No description provided for @notificationEligibilityPreviewSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Hypothetical delivery preview'**
+  String get notificationEligibilityPreviewSection;
+
+  /// No description provided for @notificationPreferencesPreviewChannel.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview channel'**
+  String get notificationPreferencesPreviewChannel;
+
+  /// No description provided for @notificationPreferencesPreviewPriority.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview priority'**
+  String get notificationPreferencesPreviewPriority;
+
+  /// No description provided for @notificationEligibilityPreviewTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Evaluate at local time'**
+  String get notificationEligibilityPreviewTime;
+
+  /// No description provided for @notificationEligibilityPreviewAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Evaluate eligibility'**
+  String get notificationEligibilityPreviewAction;
+
+  /// No description provided for @notificationEligibilityPreviewEligible.
+  ///
+  /// In en, this message translates to:
+  /// **'Eligible (hypothetical)'**
+  String get notificationEligibilityPreviewEligible;
+
+  /// No description provided for @notificationEligibilityPreviewSuppressed.
+  ///
+  /// In en, this message translates to:
+  /// **'Suppressed (hypothetical)'**
+  String get notificationEligibilityPreviewSuppressed;
+
+  /// No description provided for @notificationEligibilityReasonEligible.
+  ///
+  /// In en, this message translates to:
+  /// **'All configured rules allow delivery.'**
+  String get notificationEligibilityReasonEligible;
+
+  /// No description provided for @notificationEligibilityReasonCategoryDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Category is disabled in preferences.'**
+  String get notificationEligibilityReasonCategoryDisabled;
+
+  /// No description provided for @notificationEligibilityReasonChannelDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Channel is disabled in preferences.'**
+  String get notificationEligibilityReasonChannelDisabled;
+
+  /// No description provided for @notificationEligibilityReasonPromoConsentDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Promotional marketing consent is off.'**
+  String get notificationEligibilityReasonPromoConsentDisabled;
+
+  /// No description provided for @notificationEligibilityReasonQuietHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Blocked by quiet hours for non-critical notifications.'**
+  String get notificationEligibilityReasonQuietHours;
+
+  /// No description provided for @notificationEligibilityReasonInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid preview scenario.'**
+  String get notificationEligibilityReasonInvalid;
+
+  /// No description provided for @notificationDispatchDiagnosticsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Dispatch diagnostics'**
+  String get notificationDispatchDiagnosticsTitle;
+
+  /// No description provided for @notificationDispatchDiagnosticsOpenTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Open dispatch diagnostics'**
+  String get notificationDispatchDiagnosticsOpenTooltip;
+
+  /// No description provided for @notificationDispatchDemoDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo dispatch only — channel results are simulated; no real Push, SMS or email is sent.'**
+  String get notificationDispatchDemoDisclaimer;
+
+  /// No description provided for @notificationDispatchScenariosSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Synthetic dispatch scenarios'**
+  String get notificationDispatchScenariosSection;
+
+  /// No description provided for @notificationDispatchScenarioOrderMidday.
+  ///
+  /// In en, this message translates to:
+  /// **'Order (midday, in-app)'**
+  String get notificationDispatchScenarioOrderMidday;
+
+  /// No description provided for @notificationDispatchScenarioOrderQuiet.
+  ///
+  /// In en, this message translates to:
+  /// **'Order (quiet hours)'**
+  String get notificationDispatchScenarioOrderQuiet;
+
+  /// No description provided for @notificationDispatchScenarioPromotion.
+  ///
+  /// In en, this message translates to:
+  /// **'Promotion (consent check)'**
+  String get notificationDispatchScenarioPromotion;
+
+  /// No description provided for @notificationDispatchScenarioSecurityQuiet.
+  ///
+  /// In en, this message translates to:
+  /// **'Security (quiet hours bypass)'**
+  String get notificationDispatchScenarioSecurityQuiet;
+
+  /// No description provided for @notificationDispatchLastResultTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Latest dispatch result'**
+  String get notificationDispatchLastResultTitle;
+
+  /// No description provided for @notificationDispatchOutcomeFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Outcome'**
+  String get notificationDispatchOutcomeFilter;
+
+  /// No description provided for @notificationDispatchFilterAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get notificationDispatchFilterAll;
+
+  /// No description provided for @notificationDispatchAuditSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery audit trail'**
+  String get notificationDispatchAuditSection;
+
+  /// No description provided for @notificationDispatchAuditEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No dispatch audit records yet.'**
+  String get notificationDispatchAuditEmpty;
+
+  /// No description provided for @notificationDispatchAuditMetaLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{outcome} · {category} · {channel} · {timestamp}'**
+  String notificationDispatchAuditMetaLine(
+    String outcome,
+    String category,
+    String channel,
+    String timestamp,
+  );
+
+  /// No description provided for @notificationDispatchInboxLinkLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Inbox notification: {notificationId}'**
+  String notificationDispatchInboxLinkLine(String notificationId);
+
+  /// No description provided for @notificationDispatchOutcomeDeliveredInbox.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivered to in-app inbox'**
+  String get notificationDispatchOutcomeDeliveredInbox;
+
+  /// No description provided for @notificationDispatchOutcomeSimulatedChannel.
+  ///
+  /// In en, this message translates to:
+  /// **'Simulated channel delivery'**
+  String get notificationDispatchOutcomeSimulatedChannel;
+
+  /// No description provided for @notificationDispatchOutcomeSuppressed.
+  ///
+  /// In en, this message translates to:
+  /// **'Suppressed by policy'**
+  String get notificationDispatchOutcomeSuppressed;
+
+  /// No description provided for @notificationDispatchOutcomeDuplicate.
+  ///
+  /// In en, this message translates to:
+  /// **'Duplicate idempotency reference'**
+  String get notificationDispatchOutcomeDuplicate;
+
+  /// No description provided for @notificationDispatchOutcomeValidationFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Validation failed'**
+  String get notificationDispatchOutcomeValidationFailed;
+
+  /// No description provided for @notificationDispatchOutcomeChannelFailure.
+  ///
+  /// In en, this message translates to:
+  /// **'Simulated channel failure'**
+  String get notificationDispatchOutcomeChannelFailure;
+
+  /// No description provided for @notificationDispatchOutcomeInboxFailure.
+  ///
+  /// In en, this message translates to:
+  /// **'Inbox persist failed'**
+  String get notificationDispatchOutcomeInboxFailure;
+
+  /// No description provided for @notificationDispatchOutcomeCoordinatorFailure.
+  ///
+  /// In en, this message translates to:
+  /// **'Dispatch coordinator failure'**
+  String get notificationDispatchOutcomeCoordinatorFailure;
+
+  /// No description provided for @notificationDispatchSourceDiagnostics.
+  ///
+  /// In en, this message translates to:
+  /// **'Diagnostics'**
+  String get notificationDispatchSourceDiagnostics;
+
+  /// No description provided for @notificationDispatchSourceOrderScenario.
+  ///
+  /// In en, this message translates to:
+  /// **'Order scenario'**
+  String get notificationDispatchSourceOrderScenario;
+
+  /// No description provided for @notificationDispatchSourcePromotionScenario.
+  ///
+  /// In en, this message translates to:
+  /// **'Promotion scenario'**
+  String get notificationDispatchSourcePromotionScenario;
+
+  /// No description provided for @notificationDispatchSourceSecurityScenario.
+  ///
+  /// In en, this message translates to:
+  /// **'Security scenario'**
+  String get notificationDispatchSourceSecurityScenario;
+
+  /// No description provided for @notificationDispatchSourceTemplatePreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Template preview'**
+  String get notificationDispatchSourceTemplatePreview;
+
+  /// No description provided for @notificationDispatchTemplatesSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Template-driven dispatch (demo)'**
+  String get notificationDispatchTemplatesSection;
+
+  /// No description provided for @notificationDispatchTemplateSimulateAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Simulate dispatch with rendered template'**
+  String get notificationDispatchTemplateSimulateAction;
+
+  /// No description provided for @notificationDispatchTemplateRenderFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Template render failed — dispatch was not run.'**
+  String get notificationDispatchTemplateRenderFailed;
+
+  /// No description provided for @notificationTemplatesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification templates'**
+  String get notificationTemplatesTitle;
+
+  /// No description provided for @notificationTemplatesDemoDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo notification templates only — previews are synthetic; no real messages are sent.'**
+  String get notificationTemplatesDemoDisclaimer;
+
+  /// No description provided for @notificationTemplatesFiltersSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Filters'**
+  String get notificationTemplatesFiltersSection;
+
+  /// No description provided for @notificationTemplatesClearFilters.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear filters'**
+  String get notificationTemplatesClearFilters;
+
+  /// No description provided for @notificationTemplatesLocaleSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview locale'**
+  String get notificationTemplatesLocaleSection;
+
+  /// No description provided for @notificationTemplatesLocaleFallbackLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Requested {requested} — using fallback {resolved}.'**
+  String notificationTemplatesLocaleFallbackLine(
+    String requested,
+    String resolved,
+  );
+
+  /// No description provided for @notificationTemplatesLocaleExactLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Using locale {locale} (no fallback).'**
+  String notificationTemplatesLocaleExactLine(String locale);
+
+  /// No description provided for @notificationTemplatesCatalogSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Synthetic template catalog'**
+  String get notificationTemplatesCatalogSection;
+
+  /// No description provided for @notificationTemplatesEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No templates match the current filters.'**
+  String get notificationTemplatesEmpty;
+
+  /// No description provided for @notificationTemplatesPreviewSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Rendered preview (demo variables)'**
+  String get notificationTemplatesPreviewSection;
+
+  /// No description provided for @notificationTemplatesMetaLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{category} · {channel} · {status} · {locale}'**
+  String notificationTemplatesMetaLine(
+    String category,
+    String channel,
+    String status,
+    String locale,
+  );
+
+  /// No description provided for @notificationTemplateStatusFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Template status'**
+  String get notificationTemplateStatusFilter;
+
+  /// No description provided for @notificationTemplateStatusDraft.
+  ///
+  /// In en, this message translates to:
+  /// **'Draft'**
+  String get notificationTemplateStatusDraft;
+
+  /// No description provided for @notificationTemplateStatusActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get notificationTemplateStatusActive;
+
+  /// No description provided for @notificationTemplateStatusArchived.
+  ///
+  /// In en, this message translates to:
+  /// **'Archived'**
+  String get notificationTemplateStatusArchived;
+
+  /// No description provided for @notificationTemplateLocaleEnglish.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get notificationTemplateLocaleEnglish;
+
+  /// No description provided for @notificationTemplateLocaleRussian.
+  ///
+  /// In en, this message translates to:
+  /// **'Russian'**
+  String get notificationTemplateLocaleRussian;
+
+  /// No description provided for @notificationTemplateLocaleUzbek.
+  ///
+  /// In en, this message translates to:
+  /// **'Uzbek'**
+  String get notificationTemplateLocaleUzbek;
+
+  /// No description provided for @notificationTemplateErrorInactive.
+  ///
+  /// In en, this message translates to:
+  /// **'Template is not active — preview and dispatch are blocked.'**
+  String get notificationTemplateErrorInactive;
+
+  /// No description provided for @notificationTemplateErrorMissingVariables.
+  ///
+  /// In en, this message translates to:
+  /// **'Missing required variables: {names}.'**
+  String notificationTemplateErrorMissingVariables(String names);
+
+  /// No description provided for @notificationTemplateErrorUndeclaredPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Template contains undeclared placeholders.'**
+  String get notificationTemplateErrorUndeclaredPlaceholder;
+
+  /// No description provided for @notificationTemplateErrorMalformedPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Malformed placeholder syntax.'**
+  String get notificationTemplateErrorMalformedPlaceholder;
+
+  /// No description provided for @notificationTemplateErrorSensitiveValue.
+  ///
+  /// In en, this message translates to:
+  /// **'Variable value looks sensitive and was rejected for preview.'**
+  String get notificationTemplateErrorSensitiveValue;
+
+  /// No description provided for @notificationTemplateErrorUnresolvedPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Rendered text still contains unresolved placeholders.'**
+  String get notificationTemplateErrorUnresolvedPlaceholder;
+
+  /// No description provided for @notificationTemplateErrorIncompatibleChannel.
+  ///
+  /// In en, this message translates to:
+  /// **'Category and channel combination is not allowed for this template.'**
+  String get notificationTemplateErrorIncompatibleChannel;
+
+  /// No description provided for @notificationTemplateErrorGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'Template render failed.'**
+  String get notificationTemplateErrorGeneric;
+
+  /// No description provided for @businessCenterNotificationTemplatesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification templates'**
+  String get businessCenterNotificationTemplatesTitle;
+
+  /// No description provided for @businessCenterNotificationTemplatesBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview localized synthetic message templates (demo).'**
+  String get businessCenterNotificationTemplatesBody;
+
+  /// No description provided for @systemMessagesFeedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'System messages'**
+  String get systemMessagesFeedTitle;
+
+  /// No description provided for @systemMessagesDemoDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo system messages only — synthetic announcements; not official or live service notices.'**
+  String get systemMessagesDemoDisclaimer;
+
+  /// No description provided for @systemMessagesOpenTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Open system messages'**
+  String get systemMessagesOpenTooltip;
+
+  /// No description provided for @systemMessagesFeedEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No published announcements are visible right now.'**
+  String get systemMessagesFeedEmpty;
+
+  /// No description provided for @systemMessageUnreadCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} unread'**
+  String systemMessageUnreadCount(int count);
+
+  /// No description provided for @systemMessageCategoryFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Message category'**
+  String get systemMessageCategoryFilter;
+
+  /// No description provided for @systemMessageCategoryGeneral.
+  ///
+  /// In en, this message translates to:
+  /// **'General announcement'**
+  String get systemMessageCategoryGeneral;
+
+  /// No description provided for @systemMessageCategoryMaintenance.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintenance notice'**
+  String get systemMessageCategoryMaintenance;
+
+  /// No description provided for @systemMessageCategoryServiceUpdate.
+  ///
+  /// In en, this message translates to:
+  /// **'Service update'**
+  String get systemMessageCategoryServiceUpdate;
+
+  /// No description provided for @systemMessageCategoryPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Policy information'**
+  String get systemMessageCategoryPolicy;
+
+  /// No description provided for @systemMessageLifecycleDraft.
+  ///
+  /// In en, this message translates to:
+  /// **'Draft'**
+  String get systemMessageLifecycleDraft;
+
+  /// No description provided for @systemMessageLifecyclePublished.
+  ///
+  /// In en, this message translates to:
+  /// **'Published'**
+  String get systemMessageLifecyclePublished;
+
+  /// No description provided for @systemMessageLifecycleWithdrawn.
+  ///
+  /// In en, this message translates to:
+  /// **'Withdrawn'**
+  String get systemMessageLifecycleWithdrawn;
+
+  /// No description provided for @systemMessageLifecycleArchived.
+  ///
+  /// In en, this message translates to:
+  /// **'Archived'**
+  String get systemMessageLifecycleArchived;
+
+  /// No description provided for @systemMessageMarkReadAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark as read'**
+  String get systemMessageMarkReadAction;
+
+  /// No description provided for @systemMessageMarkAllReadAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark all as read'**
+  String get systemMessageMarkAllReadAction;
+
+  /// No description provided for @systemMessageMarkReadSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Message marked as read.'**
+  String get systemMessageMarkReadSuccess;
+
+  /// No description provided for @systemMessageMarkReadAlready.
+  ///
+  /// In en, this message translates to:
+  /// **'Message was already read.'**
+  String get systemMessageMarkReadAlready;
+
+  /// No description provided for @systemMessageMarkAllReadSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'All visible messages marked as read.'**
+  String get systemMessageMarkAllReadSuccess;
+
+  /// No description provided for @systemMessageOpenAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Open linked screen'**
+  String get systemMessageOpenAction;
+
+  /// No description provided for @systemMessageSimulateNotificationAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Simulate in-app notification (demo)'**
+  String get systemMessageSimulateNotificationAction;
+
+  /// No description provided for @systemMessageMetaLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{category} · {publishedAt}'**
+  String systemMessageMetaLine(String category, String publishedAt);
+
+  /// No description provided for @systemMessageContentUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Localized content is unavailable for this message.'**
+  String get systemMessageContentUnavailable;
+
+  /// No description provided for @systemMessagesDemoLifecycleTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'System message lifecycle (demo)'**
+  String get systemMessagesDemoLifecycleTitle;
+
+  /// No description provided for @systemMessagesDemoLifecycleTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo lifecycle controls'**
+  String get systemMessagesDemoLifecycleTooltip;
+
+  /// No description provided for @systemMessagesDemoLifecycleDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo-only publish/withdraw/archive controls — in-memory and not durable.'**
+  String get systemMessagesDemoLifecycleDisclaimer;
+
+  /// No description provided for @systemMessagePublishAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Publish'**
+  String get systemMessagePublishAction;
+
+  /// No description provided for @systemMessageWithdrawAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Withdraw'**
+  String get systemMessageWithdrawAction;
+
+  /// No description provided for @systemMessageArchiveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Archive'**
+  String get systemMessageArchiveAction;
+
+  /// No description provided for @systemMessageMutationSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get systemMessageMutationSuccess;
+
+  /// No description provided for @systemMessageMutationInvalidTransition.
+  ///
+  /// In en, this message translates to:
+  /// **'Lifecycle transition is not allowed.'**
+  String get systemMessageMutationInvalidTransition;
+
+  /// No description provided for @systemMessageMutationValidationFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Validation failed — no changes were saved.'**
+  String get systemMessageMutationValidationFailed;
+
+  /// No description provided for @systemMessageMutationNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Message not found.'**
+  String get systemMessageMutationNotFound;
+
+  /// No description provided for @demoConversationsListTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Messages'**
+  String get demoConversationsListTitle;
+
+  /// No description provided for @demoConversationsDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo conversations only — messages are stored in memory; no real customer or support communication occurs.'**
+  String get demoConversationsDisclaimer;
+
+  /// No description provided for @demoConversationsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No demo conversations for this participant.'**
+  String get demoConversationsEmpty;
+
+  /// No description provided for @demoConversationDetailTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Conversation'**
+  String get demoConversationDetailTitle;
+
+  /// No description provided for @demoConversationNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Conversation not found or not accessible.'**
+  String get demoConversationNotFound;
+
+  /// No description provided for @demoConversationListMetaLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{state} · {preview}'**
+  String demoConversationListMetaLine(String state, String preview);
+
+  /// No description provided for @demoConversationTypeCustomerBusiness.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer ↔ business (demo)'**
+  String get demoConversationTypeCustomerBusiness;
+
+  /// No description provided for @demoConversationTypeSupportDemo.
+  ///
+  /// In en, this message translates to:
+  /// **'Support demo'**
+  String get demoConversationTypeSupportDemo;
+
+  /// No description provided for @demoConversationStateOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get demoConversationStateOpen;
+
+  /// No description provided for @demoConversationStateClosed.
+  ///
+  /// In en, this message translates to:
+  /// **'Closed'**
+  String get demoConversationStateClosed;
+
+  /// No description provided for @demoConversationStateArchived.
+  ///
+  /// In en, this message translates to:
+  /// **'Archived'**
+  String get demoConversationStateArchived;
+
+  /// No description provided for @demoConversationRoleCustomer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo customer'**
+  String get demoConversationRoleCustomer;
+
+  /// No description provided for @demoConversationRoleBusinessAgent.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo business agent'**
+  String get demoConversationRoleBusinessAgent;
+
+  /// No description provided for @demoConversationRoleSupportAgent.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo support agent'**
+  String get demoConversationRoleSupportAgent;
+
+  /// No description provided for @demoConversationComposerHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Plain-text message'**
+  String get demoConversationComposerHint;
+
+  /// No description provided for @demoConversationComposerDisabledClosed.
+  ///
+  /// In en, this message translates to:
+  /// **'Conversation is closed or archived — sending is disabled.'**
+  String get demoConversationComposerDisabledClosed;
+
+  /// No description provided for @demoConversationSendAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Send'**
+  String get demoConversationSendAction;
+
+  /// No description provided for @demoConversationSendValidationError.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid plain-text message.'**
+  String get demoConversationSendValidationError;
+
+  /// No description provided for @demoConversationSendNotOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Cannot send while the conversation is not open.'**
+  String get demoConversationSendNotOpen;
+
+  /// No description provided for @demoConversationSendUnsafeContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Message content was rejected for safety.'**
+  String get demoConversationSendUnsafeContent;
+
+  /// No description provided for @demoConversationSendFailure.
+  ///
+  /// In en, this message translates to:
+  /// **'Message was not sent.'**
+  String get demoConversationSendFailure;
+
+  /// No description provided for @profileDemoConversationsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo messages'**
+  String get profileDemoConversationsTitle;
+
+  /// No description provided for @profileDemoConversationsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'In-memory conversations (demo boundary)'**
+  String get profileDemoConversationsSubtitle;
+
+  /// No description provided for @platformAdminRolesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Platform admin roles'**
+  String get platformAdminRolesTitle;
+
+  /// No description provided for @platformAdminGovernanceDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo admin governance only — roles and permissions are in memory; no production authorization is enforced.'**
+  String get platformAdminGovernanceDisclaimer;
+
+  /// No description provided for @platformAdminHighRiskBoundaryNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Financial, wallet, secret, and unrestricted private-content permissions are intentionally absent in this demo catalog.'**
+  String get platformAdminHighRiskBoundaryNotice;
+
+  /// No description provided for @platformAdminIdentitiesSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo admin identities'**
+  String get platformAdminIdentitiesSectionTitle;
+
+  /// No description provided for @platformAdminIdentitiesEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No demo admin identities are loaded.'**
+  String get platformAdminIdentitiesEmpty;
+
+  /// No description provided for @platformAdminRolesSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Roles and permissions'**
+  String get platformAdminRolesSectionTitle;
+
+  /// No description provided for @platformAdminRolesEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No platform roles are defined.'**
+  String get platformAdminRolesEmpty;
+
+  /// No description provided for @platformAdminRoleDetailTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Role permissions'**
+  String get platformAdminRoleDetailTitle;
+
+  /// No description provided for @platformAdminPermissionCountLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'permissions'**
+  String get platformAdminPermissionCountLabel;
+
+  /// No description provided for @platformAdminAuthPreviewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Authorization preview (read-only)'**
+  String get platformAdminAuthPreviewTitle;
+
+  /// No description provided for @platformAdminAuthPreviewHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Evaluates the demo policy only — does not perform actions or persist audit records.'**
+  String get platformAdminAuthPreviewHint;
+
+  /// No description provided for @platformAdminAuthPreviewPermissionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Required permission'**
+  String get platformAdminAuthPreviewPermissionLabel;
+
+  /// No description provided for @platformAdminAuthPreviewScopeKindLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Resource scope'**
+  String get platformAdminAuthPreviewScopeKindLabel;
+
+  /// No description provided for @platformAdminAuthPreviewBusinessRefLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Business reference'**
+  String get platformAdminAuthPreviewBusinessRefLabel;
+
+  /// No description provided for @platformAdminAuthPreviewBranchRefLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch reference'**
+  String get platformAdminAuthPreviewBranchRefLabel;
+
+  /// No description provided for @platformAdminAuthPreviewActionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Action label'**
+  String get platformAdminAuthPreviewActionLabel;
+
+  /// No description provided for @platformAdminAuthPreviewSelectAdmin.
+  ///
+  /// In en, this message translates to:
+  /// **'Select an admin identity to preview authorization.'**
+  String get platformAdminAuthPreviewSelectAdmin;
+
+  /// No description provided for @platformAdminAuthPreviewError.
+  ///
+  /// In en, this message translates to:
+  /// **'Unable to evaluate authorization for the current selection.'**
+  String get platformAdminAuthPreviewError;
+
+  /// No description provided for @platformAdminAuthDecisionAllowed.
+  ///
+  /// In en, this message translates to:
+  /// **'Allowed (demo policy)'**
+  String get platformAdminAuthDecisionAllowed;
+
+  /// No description provided for @platformAdminAuthDecisionDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied (demo policy)'**
+  String get platformAdminAuthDecisionDenied;
+
+  /// No description provided for @platformAdminAuthMatchedRole.
+  ///
+  /// In en, this message translates to:
+  /// **'Matched role: {roleId}'**
+  String platformAdminAuthMatchedRole(String roleId);
+
+  /// No description provided for @platformAdminSuspendedNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Suspended admins are denied regardless of role assignments.'**
+  String get platformAdminSuspendedNotice;
+
+  /// No description provided for @platformAdminStatusActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get platformAdminStatusActive;
+
+  /// No description provided for @platformAdminStatusSuspended.
+  ///
+  /// In en, this message translates to:
+  /// **'Suspended'**
+  String get platformAdminStatusSuspended;
+
+  /// No description provided for @platformRoleStatusEnabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Enabled'**
+  String get platformRoleStatusEnabled;
+
+  /// No description provided for @platformRoleStatusDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Disabled'**
+  String get platformRoleStatusDisabled;
+
+  /// No description provided for @platformScopeKindPlatform.
+  ///
+  /// In en, this message translates to:
+  /// **'Platform-wide'**
+  String get platformScopeKindPlatform;
+
+  /// No description provided for @platformScopeKindBusiness.
+  ///
+  /// In en, this message translates to:
+  /// **'Assigned business'**
+  String get platformScopeKindBusiness;
+
+  /// No description provided for @platformScopeKindBranch.
+  ///
+  /// In en, this message translates to:
+  /// **'Assigned branch'**
+  String get platformScopeKindBranch;
+
+  /// No description provided for @profilePlatformAdminGovernanceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo platform admin'**
+  String get profilePlatformAdminGovernanceTitle;
+
+  /// No description provided for @profilePlatformAdminGovernanceSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Roles, permissions and policy preview (in memory)'**
+  String get profilePlatformAdminGovernanceSubtitle;
+
+  /// No description provided for @platformRoleViewerName.
+  ///
+  /// In en, this message translates to:
+  /// **'Platform Viewer'**
+  String get platformRoleViewerName;
+
+  /// No description provided for @platformRoleViewerPurpose.
+  ///
+  /// In en, this message translates to:
+  /// **'Read-only visibility into the demo admin dashboard and audit records.'**
+  String get platformRoleViewerPurpose;
+
+  /// No description provided for @platformRoleVerificationReviewerName.
+  ///
+  /// In en, this message translates to:
+  /// **'Business Verification Reviewer'**
+  String get platformRoleVerificationReviewerName;
+
+  /// No description provided for @platformRoleVerificationReviewerPurpose.
+  ///
+  /// In en, this message translates to:
+  /// **'Review synthetic business verification submissions within assigned scope.'**
+  String get platformRoleVerificationReviewerPurpose;
+
+  /// No description provided for @platformRoleModeratorName.
+  ///
+  /// In en, this message translates to:
+  /// **'Content Moderator'**
+  String get platformRoleModeratorName;
+
+  /// No description provided for @platformRoleModeratorPurpose.
+  ///
+  /// In en, this message translates to:
+  /// **'Inspect moderation queues and perform permitted demo moderation actions.'**
+  String get platformRoleModeratorPurpose;
+
+  /// No description provided for @platformRoleSupportAgentName.
+  ///
+  /// In en, this message translates to:
+  /// **'Support Agent'**
+  String get platformRoleSupportAgentName;
+
+  /// No description provided for @platformRoleSupportAgentPurpose.
+  ///
+  /// In en, this message translates to:
+  /// **'View and respond to demo support cases within assigned business or branch scope.'**
+  String get platformRoleSupportAgentPurpose;
+
+  /// No description provided for @platformRoleOperationsAdminName.
+  ///
+  /// In en, this message translates to:
+  /// **'Platform Operations Admin'**
+  String get platformRoleOperationsAdminName;
+
+  /// No description provided for @platformRoleOperationsAdminPurpose.
+  ///
+  /// In en, this message translates to:
+  /// **'View platform configuration and manage low-risk demo settings only.'**
+  String get platformRoleOperationsAdminPurpose;
+
+  /// No description provided for @platformRoleDisabledAuditName.
+  ///
+  /// In en, this message translates to:
+  /// **'Disabled Audit Role (demo)'**
+  String get platformRoleDisabledAuditName;
+
+  /// No description provided for @platformRoleDisabledAuditPurpose.
+  ///
+  /// In en, this message translates to:
+  /// **'Seed role kept disabled to validate denial when roles are not enabled.'**
+  String get platformRoleDisabledAuditPurpose;
+
+  /// No description provided for @platformPermissionViewDashboard.
+  ///
+  /// In en, this message translates to:
+  /// **'View platform admin dashboard'**
+  String get platformPermissionViewDashboard;
+
+  /// No description provided for @platformPermissionViewVerificationQueue.
+  ///
+  /// In en, this message translates to:
+  /// **'View business verification queue'**
+  String get platformPermissionViewVerificationQueue;
+
+  /// No description provided for @platformPermissionReviewVerification.
+  ///
+  /// In en, this message translates to:
+  /// **'Review business verification submissions'**
+  String get platformPermissionReviewVerification;
+
+  /// No description provided for @platformPermissionViewModerationQueue.
+  ///
+  /// In en, this message translates to:
+  /// **'View moderation queue'**
+  String get platformPermissionViewModerationQueue;
+
+  /// No description provided for @platformPermissionPerformModeration.
+  ///
+  /// In en, this message translates to:
+  /// **'Perform permitted moderation actions'**
+  String get platformPermissionPerformModeration;
+
+  /// No description provided for @platformPermissionViewSupportCases.
+  ///
+  /// In en, this message translates to:
+  /// **'View support cases'**
+  String get platformPermissionViewSupportCases;
+
+  /// No description provided for @platformPermissionRespondSupportCases.
+  ///
+  /// In en, this message translates to:
+  /// **'Respond to support cases'**
+  String get platformPermissionRespondSupportCases;
+
+  /// No description provided for @platformPermissionViewConfiguration.
+  ///
+  /// In en, this message translates to:
+  /// **'View platform configuration'**
+  String get platformPermissionViewConfiguration;
+
+  /// No description provided for @platformPermissionManageLowRiskConfiguration.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage low-risk platform configuration'**
+  String get platformPermissionManageLowRiskConfiguration;
+
+  /// No description provided for @platformPermissionViewAuditRecords.
+  ///
+  /// In en, this message translates to:
+  /// **'View audit records'**
+  String get platformPermissionViewAuditRecords;
+
+  /// No description provided for @platformAuthReasonAllowedExplicitGrant.
+  ///
+  /// In en, this message translates to:
+  /// **'Allowed by an explicit permission grant on an enabled role.'**
+  String get platformAuthReasonAllowedExplicitGrant;
+
+  /// No description provided for @platformAuthReasonDeniedInvalidInput.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — invalid authorization input.'**
+  String get platformAuthReasonDeniedInvalidInput;
+
+  /// No description provided for @platformAuthReasonDeniedAdminSuspended.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — admin identity is suspended.'**
+  String get platformAuthReasonDeniedAdminSuspended;
+
+  /// No description provided for @platformAuthReasonDeniedAdminNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — admin identity was not found.'**
+  String get platformAuthReasonDeniedAdminNotFound;
+
+  /// No description provided for @platformAuthReasonDeniedNoEnabledRoles.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — no enabled roles are assigned.'**
+  String get platformAuthReasonDeniedNoEnabledRoles;
+
+  /// No description provided for @platformAuthReasonDeniedRoleDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — assigned role is disabled.'**
+  String get platformAuthReasonDeniedRoleDisabled;
+
+  /// No description provided for @platformAuthReasonDeniedPermissionNotGranted.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — permission is not granted to any enabled role.'**
+  String get platformAuthReasonDeniedPermissionNotGranted;
+
+  /// No description provided for @platformAuthReasonDeniedScopePlatformWideRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — this permission requires an explicit platform-wide scope.'**
+  String get platformAuthReasonDeniedScopePlatformWideRequired;
+
+  /// No description provided for @platformAuthReasonDeniedScopeBusinessReferenceRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — business scope requires a business reference.'**
+  String get platformAuthReasonDeniedScopeBusinessReferenceRequired;
+
+  /// No description provided for @platformAuthReasonDeniedScopeBranchReferenceRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — branch scope requires a branch reference.'**
+  String get platformAuthReasonDeniedScopeBranchReferenceRequired;
+
+  /// No description provided for @platformAuthReasonDeniedCrossBusinessAccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — cross-business access is not allowed for this admin.'**
+  String get platformAuthReasonDeniedCrossBusinessAccess;
+
+  /// No description provided for @platformAuthReasonDeniedCrossBranchAccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — cross-branch access is not allowed for this admin.'**
+  String get platformAuthReasonDeniedCrossBranchAccess;
+
+  /// No description provided for @platformAuthReasonDeniedBusinessAssignmentRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — business-scoped action requires business assignments on the admin.'**
+  String get platformAuthReasonDeniedBusinessAssignmentRequired;
+
+  /// No description provided for @platformAuthReasonDeniedBranchAssignmentRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied — branch-scoped action requires branch assignments on the admin.'**
+  String get platformAuthReasonDeniedBranchAssignmentRequired;
+
+  /// No description provided for @platformGovernanceWorkflowDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo governance workflows only — no real business verification, moderation decision or customer support action is executed.'**
+  String get platformGovernanceWorkflowDisclaimer;
+
+  /// No description provided for @platformBusinessVerificationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Business verification queue'**
+  String get platformBusinessVerificationTitle;
+
+  /// No description provided for @platformModerationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Moderation queue'**
+  String get platformModerationTitle;
+
+  /// No description provided for @platformSupportCasesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Support cases'**
+  String get platformSupportCasesTitle;
+
+  /// No description provided for @platformWorkflowActiveAdminLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Acting demo admin'**
+  String get platformWorkflowActiveAdminLabel;
+
+  /// No description provided for @platformWorkflowHistoryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'History'**
+  String get platformWorkflowHistoryTitle;
+
+  /// No description provided for @platformWorkflowOutcomeSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo action recorded in memory.'**
+  String get platformWorkflowOutcomeSuccess;
+
+  /// No description provided for @platformWorkflowOutcomeAuthorizationDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Action denied by demo authorization policy.'**
+  String get platformWorkflowOutcomeAuthorizationDenied;
+
+  /// No description provided for @platformWorkflowOutcomeInvalidTransition.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid status transition.'**
+  String get platformWorkflowOutcomeInvalidTransition;
+
+  /// No description provided for @platformWorkflowOutcomeInvalidInput.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid input.'**
+  String get platformWorkflowOutcomeInvalidInput;
+
+  /// No description provided for @platformWorkflowOutcomeNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Record not found.'**
+  String get platformWorkflowOutcomeNotFound;
+
+  /// No description provided for @platformWorkflowOutcomeFailure.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo repository failure — no changes saved.'**
+  String get platformWorkflowOutcomeFailure;
+
+  /// No description provided for @platformAdminNavBusinessVerification.
+  ///
+  /// In en, this message translates to:
+  /// **'Business verification queue'**
+  String get platformAdminNavBusinessVerification;
+
+  /// No description provided for @platformAdminNavModeration.
+  ///
+  /// In en, this message translates to:
+  /// **'Moderation queue'**
+  String get platformAdminNavModeration;
+
+  /// No description provided for @platformAdminNavSupportCases.
+  ///
+  /// In en, this message translates to:
+  /// **'Support cases'**
+  String get platformAdminNavSupportCases;
+
+  /// No description provided for @platformBverStatusPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get platformBverStatusPending;
+
+  /// No description provided for @platformBverStatusUnderReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Under review'**
+  String get platformBverStatusUnderReview;
+
+  /// No description provided for @platformBverStatusApproved.
+  ///
+  /// In en, this message translates to:
+  /// **'Approved (demo)'**
+  String get platformBverStatusApproved;
+
+  /// No description provided for @platformBverStatusRejected.
+  ///
+  /// In en, this message translates to:
+  /// **'Rejected (demo)'**
+  String get platformBverStatusRejected;
+
+  /// No description provided for @platformBverStatusNeedsInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs more information'**
+  String get platformBverStatusNeedsInfo;
+
+  /// No description provided for @platformBverActionBeginReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Begin review'**
+  String get platformBverActionBeginReview;
+
+  /// No description provided for @platformBverActionApprove.
+  ///
+  /// In en, this message translates to:
+  /// **'Approve (demo)'**
+  String get platformBverActionApprove;
+
+  /// No description provided for @platformBverActionReject.
+  ///
+  /// In en, this message translates to:
+  /// **'Reject (demo)'**
+  String get platformBverActionReject;
+
+  /// No description provided for @platformModStatusPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get platformModStatusPending;
+
+  /// No description provided for @platformModStatusUnderReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Under review'**
+  String get platformModStatusUnderReview;
+
+  /// No description provided for @platformModStatusActionProposed.
+  ///
+  /// In en, this message translates to:
+  /// **'Action proposed'**
+  String get platformModStatusActionProposed;
+
+  /// No description provided for @platformModStatusResolved.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolved (demo)'**
+  String get platformModStatusResolved;
+
+  /// No description provided for @platformModStatusDismissed.
+  ///
+  /// In en, this message translates to:
+  /// **'Dismissed (demo)'**
+  String get platformModStatusDismissed;
+
+  /// No description provided for @platformModActionBeginReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Begin review'**
+  String get platformModActionBeginReview;
+
+  /// No description provided for @platformSupportStatusOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get platformSupportStatusOpen;
+
+  /// No description provided for @platformSupportStatusAssigned.
+  ///
+  /// In en, this message translates to:
+  /// **'Assigned'**
+  String get platformSupportStatusAssigned;
+
+  /// No description provided for @platformSupportStatusInProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'In progress'**
+  String get platformSupportStatusInProgress;
+
+  /// No description provided for @platformSupportStatusResolved.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolved'**
+  String get platformSupportStatusResolved;
+
+  /// No description provided for @platformSupportStatusClosed.
+  ///
+  /// In en, this message translates to:
+  /// **'Closed'**
+  String get platformSupportStatusClosed;
+
+  /// No description provided for @platformSupportNoteHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Internal note (plain text)'**
+  String get platformSupportNoteHint;
+
+  /// No description provided for @platformSupportAddNoteAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add internal note (demo)'**
+  String get platformSupportAddNoteAction;
+
+  /// No description provided for @platformSupportAssignAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Assign support role (demo)'**
+  String get platformSupportAssignAction;
+
+  /// No description provided for @platformGovernancePhase15Disclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo platform governance only — configuration, audit and approvals are in memory; no production platform action is executed.'**
+  String get platformGovernancePhase15Disclaimer;
+
+  /// No description provided for @platformGovernanceAuditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Platform audit trail'**
+  String get platformGovernanceAuditTitle;
+
+  /// No description provided for @platformGovernanceConfigurationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Platform configuration'**
+  String get platformGovernanceConfigurationTitle;
+
+  /// No description provided for @platformGovernanceApprovalsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Approval requests'**
+  String get platformGovernanceApprovalsTitle;
+
+  /// No description provided for @platformGovernanceOperationsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Operations dashboard'**
+  String get platformGovernanceOperationsTitle;
+
+  /// No description provided for @platformGovernanceAuditEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No audit events match the current filters.'**
+  String get platformGovernanceAuditEmpty;
+
+  /// No description provided for @platformGovernanceAccessDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Access denied by demo authorization policy.'**
+  String get platformGovernanceAccessDenied;
+
+  /// No description provided for @platformGovernanceSeedBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Seed'**
+  String get platformGovernanceSeedBadge;
+
+  /// No description provided for @platformConfigRestrictedNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Restricted — maker-checker approval required; not editable in this demo.'**
+  String get platformConfigRestrictedNotice;
+
+  /// No description provided for @platformConfigRevisionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Revision {revision}'**
+  String platformConfigRevisionLabel(int revision);
+
+  /// No description provided for @platformGovernanceApprovalNoExecutionNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Approving or rejecting a proposal updates the demo request only. No wallet, payment, or security operation runs.'**
+  String get platformGovernanceApprovalNoExecutionNotice;
+
+  /// No description provided for @platformGovernanceApprovalCreateAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit demo proposal'**
+  String get platformGovernanceApprovalCreateAction;
+
+  /// No description provided for @platformGovernanceApprovalApproveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Approve (demo lifecycle only)'**
+  String get platformGovernanceApprovalApproveAction;
+
+  /// No description provided for @platformGovernanceApprovalRejectAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Reject (demo lifecycle only)'**
+  String get platformGovernanceApprovalRejectAction;
+
+  /// No description provided for @platformGovernanceOperationsSyntheticNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Counts below are derived from in-memory demo repositories — not production KPIs.'**
+  String get platformGovernanceOperationsSyntheticNotice;
+
+  /// No description provided for @platformGovernanceOperationsRefresh.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh summary'**
+  String get platformGovernanceOperationsRefresh;
+
+  /// No description provided for @platformGovernanceOperationsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No summary available.'**
+  String get platformGovernanceOperationsEmpty;
+
+  /// No description provided for @platformGovernanceOperationsAsOf.
+  ///
+  /// In en, this message translates to:
+  /// **'As of (UTC)'**
+  String get platformGovernanceOperationsAsOf;
+
+  /// No description provided for @platformGovernanceOperationsPendingApprovals.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending approval requests'**
+  String get platformGovernanceOperationsPendingApprovals;
+
+  /// No description provided for @platformGovernanceOperationsConfigRevisions.
+  ///
+  /// In en, this message translates to:
+  /// **'Configuration revision entries'**
+  String get platformGovernanceOperationsConfigRevisions;
+
+  /// No description provided for @platformGovernanceOperationsVerificationSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Verification submissions'**
+  String get platformGovernanceOperationsVerificationSection;
+
+  /// No description provided for @platformGovernanceOperationsModerationSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Moderation cases'**
+  String get platformGovernanceOperationsModerationSection;
+
+  /// No description provided for @platformAdminNavAudit.
+  ///
+  /// In en, this message translates to:
+  /// **'Audit trail'**
+  String get platformAdminNavAudit;
+
+  /// No description provided for @platformAdminNavConfiguration.
+  ///
+  /// In en, this message translates to:
+  /// **'Platform configuration'**
+  String get platformAdminNavConfiguration;
+
+  /// No description provided for @platformAdminNavApprovals.
+  ///
+  /// In en, this message translates to:
+  /// **'Approval requests'**
+  String get platformAdminNavApprovals;
+
+  /// No description provided for @platformAdminNavOperations.
+  ///
+  /// In en, this message translates to:
+  /// **'Operations dashboard'**
+  String get platformAdminNavOperations;
+
+  /// No description provided for @platformPermissionSubmitApprovalProposal.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit high-risk administrative proposal (demo)'**
+  String get platformPermissionSubmitApprovalProposal;
+
+  /// No description provided for @platformPermissionDecideApprovalProposal.
+  ///
+  /// In en, this message translates to:
+  /// **'Decide high-risk administrative proposal (demo)'**
+  String get platformPermissionDecideApprovalProposal;
+
+  /// No description provided for @platformRoleGovernanceApproverName.
+  ///
+  /// In en, this message translates to:
+  /// **'Governance Approver'**
+  String get platformRoleGovernanceApproverName;
+
+  /// No description provided for @platformRoleGovernanceApproverPurpose.
+  ///
+  /// In en, this message translates to:
+  /// **'Second-party approval for hypothetical high-risk proposals — does not grant other platform privileges.'**
+  String get platformRoleGovernanceApproverPurpose;
+
+  /// No description provided for @platformWorkflowOutcomeAuditPersistFailure.
+  ///
+  /// In en, this message translates to:
+  /// **'Domain change may have occurred, but audit append failed (in-memory demo limitation).'**
+  String get platformWorkflowOutcomeAuditPersistFailure;
 }
 
 class _AppLocalizationsDelegate

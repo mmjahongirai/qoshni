@@ -13,6 +13,22 @@ import 'package:qoshni/features/home/presentation/pages/checkout_page.dart';
 import 'package:qoshni/features/home/presentation/pages/demo_order_confirmation_page.dart';
 import 'package:qoshni/features/home/presentation/pages/demo_order_detail_page.dart';
 import 'package:qoshni/features/home/presentation/pages/demo_orders_page.dart';
+import 'package:qoshni/features/notifications/presentation/pages/notification_inbox_page.dart';
+import 'package:qoshni/features/notifications/presentation/pages/notification_dispatch_diagnostics_page.dart';
+import 'package:qoshni/features/notifications/presentation/pages/notification_preferences_page.dart';
+import 'package:qoshni/features/notifications/presentation/pages/notification_templates_page.dart';
+import 'package:qoshni/features/system_messages/presentation/pages/system_messages_demo_lifecycle_page.dart';
+import 'package:qoshni/features/conversations/presentation/pages/demo_conversation_detail_page.dart';
+import 'package:qoshni/features/conversations/presentation/pages/demo_conversations_list_page.dart';
+import 'package:qoshni/features/system_messages/presentation/pages/system_messages_feed_page.dart';
+import 'package:qoshni/features/platform_governance/presentation/pages/platform_admin_roles_page.dart';
+import 'package:qoshni/features/platform_governance/presentation/pages/platform_business_verification_queue_page.dart';
+import 'package:qoshni/features/platform_governance/presentation/pages/platform_moderation_queue_page.dart';
+import 'package:qoshni/features/platform_governance/presentation/pages/platform_support_cases_page.dart';
+import 'package:qoshni/features/platform_governance/presentation/pages/platform_governance_audit_trail_page.dart';
+import 'package:qoshni/features/platform_governance/presentation/pages/platform_governance_configuration_page.dart';
+import 'package:qoshni/features/platform_governance/presentation/pages/platform_governance_approvals_page.dart';
+import 'package:qoshni/features/platform_governance/presentation/pages/platform_governance_operations_page.dart';
 import 'package:qoshni/features/home/presentation/pages/catalog_item_detail_page.dart';
 import 'package:qoshni/features/home/presentation/pages/favorites_page.dart';
 import 'package:qoshni/features/home/presentation/pages/profile_page.dart';
@@ -169,6 +185,95 @@ class AppRouter {
             snapshot: extra is DemoOrderSnapshot ? extra : null,
           );
         },
+      ),
+      GoRoute(
+        path: RoutePaths.demoConversations,
+        name: RouteNames.demoConversations,
+        builder: (context, state) => const DemoConversationsListPage(),
+        routes: [
+          GoRoute(
+            path: ':conversationId',
+            name: RouteNames.demoConversationDetail,
+            builder: (context, state) {
+              return DemoConversationDetailPage(
+                conversationId: state.pathParameters['conversationId'],
+              );
+            },
+          ),
+        ],
+      ),
+      GoRoute(
+        path: RoutePaths.platformAdminGovernanceRoles,
+        name: RouteNames.platformAdminGovernanceRoles,
+        builder: (context, state) => const PlatformAdminRolesPage(),
+      ),
+      GoRoute(
+        path: RoutePaths.platformAdminBusinessVerification,
+        name: RouteNames.platformAdminBusinessVerification,
+        builder: (context, state) =>
+            const PlatformBusinessVerificationQueuePage(),
+      ),
+      GoRoute(
+        path: RoutePaths.platformAdminModeration,
+        name: RouteNames.platformAdminModeration,
+        builder: (context, state) => const PlatformModerationQueuePage(),
+      ),
+      GoRoute(
+        path: RoutePaths.platformAdminSupportCases,
+        name: RouteNames.platformAdminSupportCases,
+        builder: (context, state) => const PlatformSupportCasesPage(),
+      ),
+      GoRoute(
+        path: RoutePaths.platformAdminGovernanceAudit,
+        name: RouteNames.platformAdminGovernanceAudit,
+        builder: (context, state) => const PlatformGovernanceAuditTrailPage(),
+      ),
+      GoRoute(
+        path: RoutePaths.platformAdminGovernanceConfiguration,
+        name: RouteNames.platformAdminGovernanceConfiguration,
+        builder: (context, state) =>
+            const PlatformGovernanceConfigurationPage(),
+      ),
+      GoRoute(
+        path: RoutePaths.platformAdminGovernanceApprovals,
+        name: RouteNames.platformAdminGovernanceApprovals,
+        builder: (context, state) => const PlatformGovernanceApprovalsPage(),
+      ),
+      GoRoute(
+        path: RoutePaths.platformAdminGovernanceOperations,
+        name: RouteNames.platformAdminGovernanceOperations,
+        builder: (context, state) => const PlatformGovernanceOperationsPage(),
+      ),
+      GoRoute(
+        path: RoutePaths.systemMessages,
+        name: RouteNames.systemMessages,
+        builder: (context, state) => const SystemMessagesFeedPage(),
+        routes: [
+          GoRoute(
+            path: 'demo-lifecycle',
+            name: RouteNames.systemMessagesDemoLifecycle,
+            builder: (context, state) =>
+                const SystemMessagesDemoLifecyclePage(),
+          ),
+        ],
+      ),
+      GoRoute(
+        path: RoutePaths.notificationsInbox,
+        name: RouteNames.notificationsInbox,
+        builder: (context, state) => const NotificationInboxPage(),
+        routes: [
+          GoRoute(
+            path: 'preferences',
+            name: RouteNames.notificationPreferences,
+            builder: (context, state) => const NotificationPreferencesPage(),
+          ),
+          GoRoute(
+            path: 'dispatch',
+            name: RouteNames.notificationDispatchDiagnostics,
+            builder: (context, state) =>
+                const NotificationDispatchDiagnosticsPage(),
+          ),
+        ],
       ),
       GoRoute(
         path: RoutePaths.demoOrders,
@@ -483,6 +588,11 @@ class AppRouter {
             path: 'reputation-events',
             name: RouteNames.businessReputationEvents,
             builder: (context, state) => const BusinessReputationEventsPage(),
+          ),
+          GoRoute(
+            path: 'notification-templates',
+            name: RouteNames.businessNotificationTemplates,
+            builder: (context, state) => const NotificationTemplatesPage(),
           ),
           GoRoute(
             path: 'staff',

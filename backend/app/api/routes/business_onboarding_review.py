@@ -41,6 +41,17 @@ from app.services.business_onboarding.reviewer_document_service import (
     download_reviewer_document,
     list_reviewer_application_documents,
 )
+from app.api.branch_coordinate_responses import (
+    branch_coordinate_error_response,
+    branch_coordinate_view,
+)
+from app.api.schemas.branch_coordinates import BranchCoordinateView
+from app.services.business_onboarding.branch_coordinate_service import (
+    BranchCoordinateErrorCode,
+    BranchCoordinateServiceError,
+    reject_branch_coordinates,
+    verify_branch_coordinates,
+)
 from app.services.business_onboarding.review_service import (
     begin_review,
     get_review_application,
@@ -323,3 +334,52 @@ def post_reinstate_application(
         return onboarding_error_response(result)
     db.commit()
     return _reviewer_view(result)
+
+
+def _branch_coordinate_http_error(error: BranchCoordinateServiceError) -> JSONResponse:
+    status = 400
+    if error.code == BranchCoordinateErrorCode.NOT_FOUND:
+        status = 404
+    elif error.code == BranchCoordinateErrorCode.FORBIDDEN:
+        status = 403
+    return branch_coordinate_error_response(error.code.value, error.message, status)
+
+
+@router.post(
+    "/applications/{application_id}/branch-coordinates/verify",
+    response_model=BranchCoordinateView,
+)
+def post_verify_branch_coordinates(
+    application_id: uuid.UUID,
+    db: Session = Depends(get_db),
+    reviewer: BusinessOnboardingReviewerPrincipal = Depends(require_business_onboarding_reviewer),
+) -> BranchCoordinateView | JSONResponse:
+    result = verify_branch_coordinates(
+        db,
+        application_id=application_id,
+        reviewer_user_id=reviewer.user_id,
+    )
+    if isinstance(result, BranchCoordinateServiceError):
+        return _branch_coordinate_http_error(result)
+    db.commit()
+    return branch_coordinate_view(result)
+
+
+@router.post(
+    "/applications/{application_id}/branch-coordinates/reject",
+    response_model=BranchCoordinateView,
+)
+def post_reject_branch_coordinates(
+    application_id: uuid.UUID,
+    db: Session = Depends(get_db),
+    reviewer: BusinessOnboardingReviewerPrincipal = Depends(require_business_onboarding_reviewer),
+) -> BranchCoordinateView | JSONResponse:
+    result = reject_branch_coordinates(
+        db,
+        application_id=application_id,
+        reviewer_user_id=reviewer.user_id,
+    )
+    if isinstance(result, BranchCoordinateServiceError):
+        return _branch_coordinate_http_error(result)
+    db.commit()
+    return branch_coordinate_view(result)

@@ -1,3 +1,4 @@
+import 'package:qoshni/features/checkout/domain/qoshni_price_quote.dart';
 import 'package:qoshni/features/home/presentation/cart/cart_controller.dart';
 import 'package:qoshni/features/home/presentation/data/mock_business_id.dart';
 import 'package:qoshni/features/home/presentation/data/mock_catalog_item_id.dart';
@@ -40,6 +41,37 @@ class DemoOrderSnapshot {
 
   int get totalUnits =>
       lines.fold<int>(0, (sum, line) => sum + line.quantity);
+
+  static DemoOrderSnapshot? fromPriceQuote({
+    required QoshniPriceQuote quote,
+  }) {
+    if (quote.lines.isEmpty) {
+      return null;
+    }
+    final snapshotLines = quote.lines
+        .map(
+          (line) => DemoOrderLineSnapshot(
+            businessId: tryParseMockBusinessId(line.businessStableId)!,
+            catalogItemId:
+                tryParseMockCatalogItemId(line.catalogItemStableId)!,
+            itemName: line.titleSnapshot,
+            businessName: line.businessTitleSnapshot,
+            quantity: line.quantity,
+            unitPriceUzs: line.unitPriceSom,
+          ),
+        )
+        .toList(growable: false);
+
+    final referenceId =
+        'DEMO-${quote.quotedAt.toUtc().millisecondsSinceEpoch.toRadixString(36).toUpperCase()}';
+
+    return DemoOrderSnapshot(
+      referenceId: referenceId,
+      confirmedAt: quote.quotedAt.toLocal(),
+      lines: snapshotLines,
+      totalUzs: quote.totalSom,
+    );
+  }
 
   static DemoOrderSnapshot? fromResolvedCartLines({
     required List<ResolvedCartLine> lines,

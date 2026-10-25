@@ -102,6 +102,111 @@ class AppLocalizationsUz extends AppLocalizations {
   String get mapboxDefaultViewLabel => 'Standart ko‘rinish — O‘zbekiston';
 
   @override
+  String get mapboxDefaultViewNotYourLocation =>
+      'Standart xarita — bu sizning joylashuvingiz emas';
+
+  @override
+  String get mapLocationMyLocationAction => 'Mening joylashuvim';
+
+  @override
+  String get mapLocationAcquiring => 'Taxminiy joylashuvingiz aniqlanmoqda…';
+
+  @override
+  String get mapLocationDeviceFixLabel =>
+      'Taxminiy qurilma joyi — saqlangan manzil emas';
+
+  @override
+  String get mapLocationPermissionDenied =>
+      'Joylashuv ruxsati yoqilmagan. Xarita standart ko‘rinishda qoladi. Ruxsat bergach qayta urinib ko‘ring.';
+
+  @override
+  String get mapLocationPermissionDeniedForever =>
+      'Qoshni uchun joylashuv ruxsati bloklangan. Sozlamalardan ruxsat bering yoki standart xaritadan foydalaning.';
+
+  @override
+  String get mapLocationServicesDisabled =>
+      'Qurilmada joylashuv xizmatlari o‘chirilgan. Ularni yoqing yoki standart xaritadan foydalaning.';
+
+  @override
+  String get mapLocationTimeout =>
+      'Joylashuv vaqtida olinmadi. Signalni tekshirib qayta urinib ko‘ring.';
+
+  @override
+  String get mapLocationUnavailable =>
+      'Hozir joylashuv mavjud emas. Keyinroq qayta urinib ko‘ring.';
+
+  @override
+  String get mapLocationRetry => 'Qayta urinish';
+
+  @override
+  String get mapLocationOpenSettings => 'Sozlamalarni ochish';
+
+  @override
+  String get geocodingSearchTitle => 'Manzil qidirish';
+
+  @override
+  String get geocodingSearchHint => 'Ko‘cha, tuman yoki joy nomi';
+
+  @override
+  String get geocodingUnavailableBody =>
+      'Manzil qidiruvi uchun Mapbox token kerak. Xaritadan qo‘lda tanlash mumkin.';
+
+  @override
+  String get geocodingSuggestionDisclaimer =>
+      'Mapbox taklifi — saqlashdan oldin tasdiqlang';
+
+  @override
+  String get savedPlaceConfirmTitle => 'Joyni saqlash';
+
+  @override
+  String get savedPlaceLabelField => 'Nom';
+
+  @override
+  String get savedPlaceSaveAction => 'Saqlash';
+
+  @override
+  String savedPlacesCountLabel(int count) {
+    return '$count ta saqlangan joy';
+  }
+
+  @override
+  String get searchNearbyEnableLabel => 'Yaqin atrofda qidirish';
+
+  @override
+  String get searchNearbyOriginNone =>
+      'Qurilma joyi yoki saqlangan joyni tanlang';
+
+  @override
+  String get searchNearbyOriginDevice => 'Taxminiy qurilma joyi';
+
+  @override
+  String get searchNearbyOriginSavedPlacePrefix => 'Saqlangan joy:';
+
+  @override
+  String get searchNearbyOriginManual => 'Xaritadan tanlangan nuqta';
+
+  @override
+  String get searchNearbySavedPlaceLabel => 'Saqlangan joy';
+
+  @override
+  String get searchNearbyRadiusPrefix => 'Radius:';
+
+  @override
+  String get searchNearbyUseDeviceAction => 'Qurilma joyidan foydalanish';
+
+  @override
+  String get searchShowOnMapAction => 'Xaritada ko‘rsatish';
+
+  @override
+  String searchMapVerifiedBranchFocusLabel(String title) {
+    return 'Tasdiqlangan filial: $title — bu sizning GPS emas';
+  }
+
+  @override
+  String get branchCoordinateProposedNotice =>
+      'Bu koordinatalar faqat taklif. Yaqin qidiruv uchun backend tasdiqlashi kerak (onboarding filiali).';
+
+  @override
   String get mapboxLoadErrorBody =>
       'Xarita yuklanmadi. Token va tarmoqni tekshiring.';
 
@@ -333,6 +438,32 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get searchEmptyBody => 'Boshqa so‘z bilan qidirib ko‘ring.';
+
+  @override
+  String get searchSpellingSuggestionLabel => 'Balki siz nazarda tutgandirsiz';
+
+  @override
+  String get searchLoadMore => 'Yana ko‘rsatish';
+
+  @override
+  String get searchSponsoredLabel => 'Reklama';
+
+  @override
+  String get searchRemoteUnauthorizedTitle => 'Qidirish uchun kiring';
+
+  @override
+  String get searchRemoteUnauthorizedBody =>
+      'Masofaviy qidiruv faol seansni talab qiladi. Tizimga kiring va qayta urinib ko‘ring.';
+
+  @override
+  String get searchRemoteUnavailableTitle => 'Qidiruv vaqtincha ishlamayapti';
+
+  @override
+  String get searchRemoteUnavailableBody =>
+      'Qidiruv xizmatiga ulanib bo‘lmadi. Internetni tekshiring va qayta urinib ko‘ring.';
+
+  @override
+  String get searchRemoteRetry => 'Qayta urinish';
 
   @override
   String get searchCategoryEntrySubtitle => 'Kategoriya';
@@ -635,6 +766,86 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get checkoutEmptyBody => 'Savat bo‘sh. Avval demo mahsulot qo‘shing.';
+
+  @override
+  String get checkoutPreparationNotice =>
+      'Faqat checkout tayyorgarligi — narxlar demo katalog kalkulyatoridan. Alohida demo bosqichini tasdiqlamaguncha buyurtma yaratilmaydi.';
+
+  @override
+  String get checkoutFulfillmentLabel => 'Yetkazib berish usuli';
+
+  @override
+  String get checkoutFulfillmentPickup => 'O‘zi olib ketish';
+
+  @override
+  String get checkoutFulfillmentDelivery => 'Yetkazib berish';
+
+  @override
+  String get checkoutFulfillmentServiceAtLocation => 'Joyida xizmat';
+
+  @override
+  String get checkoutRecalculateAction => 'Hisobni yangilash';
+
+  @override
+  String get checkoutQuoteStaleTitle => 'Savat o‘zgardi';
+
+  @override
+  String get checkoutQuoteStaleBody =>
+      'Hisobdan keyin savat o‘zgardi. Demo buyurtmani tasdiqlashdan oldin hisobni yangilang.';
+
+  @override
+  String get checkoutPricingErrorTitle => 'Narx hisoblanmadi';
+
+  @override
+  String get checkoutPricingErrorBody =>
+      'Demo katalogdagi bir yoki bir nechta pozitsiya uchun narx topilmadi.';
+
+  @override
+  String get checkoutUnsupportedFulfillmentTitle =>
+      'Usul qo‘llab-quvvatlanmaydi';
+
+  @override
+  String get checkoutUnsupportedFulfillmentBody =>
+      'Savatdagi mahsulotlar uchun bu yetkazish usuli qo‘llab-quvvatlanmaydi.';
+
+  @override
+  String get checkoutMultiBusinessNotice =>
+      'Turli demo bizneslar alohida guruhlangan. Kelajakda bitta checkout bir nechta buyurtma yaratishi mumkin.';
+
+  @override
+  String get checkoutServerOrderSectionTitle => 'Server buyurtma (demo emas)';
+
+  @override
+  String get checkoutServerOrderUnavailableBody =>
+      'Backendda iste’molchi katalogi va qoldiq hali yo‘q. Server joylash hali o‘chirilgan.';
+
+  @override
+  String get checkoutServerOrderTryAction => 'Server joylashni tekshirish';
+
+  @override
+  String get checkoutServerOrderCatalogUnavailable =>
+      'Server rad etdi: authoritative catalog mavjud emas.';
+
+  @override
+  String checkoutServerOrderSuccess(String orderId) {
+    return 'Server qabul qildi (buyurtma $orderId). To‘lov va yetkazish alohida.';
+  }
+
+  @override
+  String get checkoutServerOrderNotConfigured => 'API manzili sozlanmagan.';
+
+  @override
+  String get checkoutServerOrderSignInRequired =>
+      'Server tekshiruvi uchun tizimga kiring.';
+
+  @override
+  String get checkoutDemoOrderSeparateNotice =>
+      'Quyidagi demo tasdiq faqat mahalliy — server tasdiqlangan xarid emas.';
+
+  @override
+  String checkoutSessionCorrelationLabel(String reference) {
+    return 'Checkout havolasi: $reference';
+  }
 
   @override
   String get demoOrderConfirmationTitle => 'Demo tasdiq';
@@ -4871,4 +5082,1160 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get businessReputationEventSyntheticBadge => 'Synthetic demo signal.';
+
+  @override
+  String get notificationInboxTitle => 'Bildirishnomalar';
+
+  @override
+  String get notificationInboxDemoDisclaimer =>
+      'Faqat demo bildirishnomalar — xotiradagi maʼlumot; haqiqiy push, SMS yoki email yuborilmaydi.';
+
+  @override
+  String notificationInboxUnreadCount(int count) {
+    return 'Oʻqilmagan: $count';
+  }
+
+  @override
+  String get notificationInboxOpenTooltip => 'Bildirishnomalarni ochish';
+
+  @override
+  String get notificationFilterAll => 'Hammasi';
+
+  @override
+  String get notificationFilterUnread => 'Oʻqilmagan';
+
+  @override
+  String get notificationCategoryFilter => 'Kategoriya';
+
+  @override
+  String get notificationCategoryAll => 'Barcha kategoriyalar';
+
+  @override
+  String get notificationClearFilters => 'Filtrlarni tozalash';
+
+  @override
+  String get notificationCategoryOrders => 'Buyurtmalar';
+
+  @override
+  String get notificationCategoryBookings => 'Bronlar';
+
+  @override
+  String get notificationCategoryDelivery => 'Yetkazib berish';
+
+  @override
+  String get notificationCategoryWalletPayments => 'Hamyon va toʻlovlar';
+
+  @override
+  String get notificationCategoryAiAlerts => 'AI ogohlantirishlari';
+
+  @override
+  String get notificationCategoryLocation => 'Joylashuv';
+
+  @override
+  String get notificationCategoryBusiness => 'Biznes';
+
+  @override
+  String get notificationCategoryTrustReviews => 'Ishonch va sharhlar';
+
+  @override
+  String get notificationCategorySecurity => 'Xavfsizlik';
+
+  @override
+  String get notificationCategoryPromotions => 'Aksiyalar';
+
+  @override
+  String get notificationChannelInApp => 'Ilova ichida';
+
+  @override
+  String get notificationChannelPushPreview => 'Push (preview)';
+
+  @override
+  String get notificationChannelSmsPreview => 'SMS (preview)';
+
+  @override
+  String get notificationChannelEmailPreview => 'Email (preview)';
+
+  @override
+  String get notificationPriorityLow => 'Past';
+
+  @override
+  String get notificationPriorityNormal => 'Oddiy';
+
+  @override
+  String get notificationPriorityHigh => 'Yuqori';
+
+  @override
+  String get notificationPriorityUrgent => 'Shoshilinch';
+
+  @override
+  String get notificationInboxEmptyBody =>
+      'Tanlangan filtrlarga mos bildirishnoma yoʻq.';
+
+  @override
+  String get notificationMarkReadAction => 'Oʻqilgan deb belgilash';
+
+  @override
+  String get notificationMarkAllReadAction => 'Hammasini oʻqilgan qilish';
+
+  @override
+  String get notificationMarkReadSuccess =>
+      'Bildirishnoma oʻqilgan deb belgilandi.';
+
+  @override
+  String get notificationMarkReadAlready =>
+      'Bildirishnoma allaqachon oʻqilgan.';
+
+  @override
+  String get notificationMarkReadNotFound => 'Bildirishnoma topilmadi.';
+
+  @override
+  String get notificationMarkReadInvalid =>
+      'Bildirishnoma identifikatori notoʻgʻri.';
+
+  @override
+  String get notificationMarkReadFailure =>
+      'Bildirishnomani oʻqilgan deb belgilab boʻlmadi.';
+
+  @override
+  String get notificationMarkAllReadSuccess =>
+      'Barcha bildirishnomalar oʻqilgan deb belgilandi.';
+
+  @override
+  String get notificationMarkAllReadFailure =>
+      'Barcha bildirishnomalarni oʻqilgan deb belgilab boʻlmadi.';
+
+  @override
+  String get notificationStatusUnread => 'Oʻqilmagan';
+
+  @override
+  String get notificationStatusRead => 'Oʻqilgan';
+
+  @override
+  String notificationCardMetaLine(
+    String category,
+    String timestamp,
+    String status,
+  ) {
+    return '$category · $timestamp · $status';
+  }
+
+  @override
+  String get notificationSyntheticBadge =>
+      'Sintetik demo bildirishnoma — haqiqiy xabar emas.';
+
+  @override
+  String get notificationOpenLinkedRouteAction =>
+      'Bogʻlangan ekranni ochish uchun bosing';
+
+  @override
+  String get profileNotificationsTitle => 'Bildirishnomalar';
+
+  @override
+  String profileNotificationsUnreadCount(int count) {
+    return 'Demo qutida oʻqilmagan: $count';
+  }
+
+  @override
+  String get notificationPreferencesTitle => 'Bildirishnoma sozlamalari';
+
+  @override
+  String get notificationPreferencesOpenTooltip => 'Bildirishnoma sozlamalari';
+
+  @override
+  String get notificationPreferencesDemoDisclaimer =>
+      'Faqat demo sozlamalar — xotirada; haqiqiy push, SMS yoki email yuborilmaydi.';
+
+  @override
+  String get notificationPreferencesInMemoryNote =>
+      'Oʻzgarishlar faqat shu sessiyada; backend bilan sinxronlanmaydi.';
+
+  @override
+  String get notificationPreferencesCategoriesSection => 'Kategoriyalar';
+
+  @override
+  String get notificationPreferencesChannelsSection => 'Kanallar';
+
+  @override
+  String get notificationChannelPreviewNote =>
+      'Preview kanali — haqiqiy provayderga ulanmagan.';
+
+  @override
+  String get notificationPromotionalConsentTitle =>
+      'Marketing va aksiyalar roziligi';
+
+  @override
+  String get notificationPromotionalConsentBody =>
+      'Promo bildirishnomalar uchun aksiyalar tugmasidan tashqari alohida rozilik kerak.';
+
+  @override
+  String get notificationQuietHoursSection => 'Tinch soatlar';
+
+  @override
+  String get notificationQuietHoursEnabled => 'Tinch soatlarni yoqish';
+
+  @override
+  String get notificationQuietHoursLocalTimeNote =>
+      'Demo baholovchi uchun qurilma mahalliy vaqti ishlatiladi.';
+
+  @override
+  String get notificationQuietHoursStart => 'Tinch soatlar boshlanishi';
+
+  @override
+  String get notificationQuietHoursEnd => 'Tinch soatlar tugashi';
+
+  @override
+  String get notificationPreferencesRestoreDefaults =>
+      'Demo standart sozlamalarni tiklash';
+
+  @override
+  String get notificationPreferenceSaveSuccess => 'Sozlamalar yangilandi.';
+
+  @override
+  String get notificationPreferenceSaveInvalid =>
+      'Saqlab boʻlmadi — notoʻgʻri qiymatlar.';
+
+  @override
+  String get notificationPreferenceSaveFailure =>
+      'Sozlamalarni saqlab boʻlmadi. Qayta urining.';
+
+  @override
+  String get notificationPreferenceRestoreSuccess =>
+      'Demo sozlamalar tiklandi.';
+
+  @override
+  String get notificationEligibilityPreviewSection =>
+      'Gipotetik yetkazish preview';
+
+  @override
+  String get notificationPreferencesPreviewChannel => 'Preview kanali';
+
+  @override
+  String get notificationPreferencesPreviewPriority => 'Preview ustuvorligi';
+
+  @override
+  String get notificationEligibilityPreviewTime =>
+      'Mahalliy vaqt bo\'yicha baholash';
+
+  @override
+  String get notificationEligibilityPreviewAction => 'Mosligini baholash';
+
+  @override
+  String get notificationEligibilityPreviewEligible => 'Mos (giipotetik)';
+
+  @override
+  String get notificationEligibilityPreviewSuppressed =>
+      'Bosib turilgan (giipotetik)';
+
+  @override
+  String get notificationEligibilityReasonEligible =>
+      'Barcha qoidalar yetkazishga ruxsat beradi.';
+
+  @override
+  String get notificationEligibilityReasonCategoryDisabled =>
+      'Kategoriya sozlamalarda oʻchirilgan.';
+
+  @override
+  String get notificationEligibilityReasonChannelDisabled =>
+      'Kanal sozlamalarda oʻchirilgan.';
+
+  @override
+  String get notificationEligibilityReasonPromoConsentDisabled =>
+      'Marketing roziligi oʻchirilgan.';
+
+  @override
+  String get notificationEligibilityReasonQuietHours =>
+      'Kritik boʻlmagan bildirishnomalar uchun tinch soatlarda bloklangan.';
+
+  @override
+  String get notificationEligibilityReasonInvalid =>
+      'Preview stsenariysi notoʻgʻri.';
+
+  @override
+  String get notificationDispatchDiagnosticsTitle => 'Dispatch diagnostikasi';
+
+  @override
+  String get notificationDispatchDiagnosticsOpenTooltip =>
+      'Dispatch diagnostikasi';
+
+  @override
+  String get notificationDispatchDemoDisclaimer =>
+      'Faqat demo dispatch — kanal natijalari simulyatsiya; haqiqiy Push, SMS yoki email yuborilmaydi.';
+
+  @override
+  String get notificationDispatchScenariosSection =>
+      'Sintetik dispatch stsenariylari';
+
+  @override
+  String get notificationDispatchScenarioOrderMidday =>
+      'Buyurtma (kunduzi, in-app)';
+
+  @override
+  String get notificationDispatchScenarioOrderQuiet =>
+      'Buyurtma (tinch soatlar)';
+
+  @override
+  String get notificationDispatchScenarioPromotion =>
+      'Aksiya (rozilik tekshiruvi)';
+
+  @override
+  String get notificationDispatchScenarioSecurityQuiet =>
+      'Xavfsizlik (tinch soatlarni chetlab oʻtish)';
+
+  @override
+  String get notificationDispatchLastResultTitle => 'Soʻnggi dispatch natijasi';
+
+  @override
+  String get notificationDispatchOutcomeFilter => 'Natija';
+
+  @override
+  String get notificationDispatchFilterAll => 'Hammasi';
+
+  @override
+  String get notificationDispatchAuditSection => 'Yetkazish audit jurnali';
+
+  @override
+  String get notificationDispatchAuditEmpty =>
+      'Hali dispatch audit yozuvlari yoʻq.';
+
+  @override
+  String notificationDispatchAuditMetaLine(
+    String outcome,
+    String category,
+    String channel,
+    String timestamp,
+  ) {
+    return '$outcome · $category · $channel · $timestamp';
+  }
+
+  @override
+  String notificationDispatchInboxLinkLine(String notificationId) {
+    return 'In-app bildirishnoma: $notificationId';
+  }
+
+  @override
+  String get notificationDispatchOutcomeDeliveredInbox =>
+      'In-app qutiga yetkazildi';
+
+  @override
+  String get notificationDispatchOutcomeSimulatedChannel =>
+      'Simulyatsiya qilingan kanal yetkazishi';
+
+  @override
+  String get notificationDispatchOutcomeSuppressed =>
+      'Siyosat tomonidan bosildi';
+
+  @override
+  String get notificationDispatchOutcomeDuplicate => 'Idempotency dublikati';
+
+  @override
+  String get notificationDispatchOutcomeValidationFailed =>
+      'Validatsiya xatosi';
+
+  @override
+  String get notificationDispatchOutcomeChannelFailure =>
+      'Simulyatsiya qilingan kanal xatosi';
+
+  @override
+  String get notificationDispatchOutcomeInboxFailure => 'Inbox saqlanmadi';
+
+  @override
+  String get notificationDispatchOutcomeCoordinatorFailure =>
+      'Dispatch koordinator xatosi';
+
+  @override
+  String get notificationDispatchSourceDiagnostics => 'Diagnostika';
+
+  @override
+  String get notificationDispatchSourceOrderScenario => 'Buyurtma stsenariysi';
+
+  @override
+  String get notificationDispatchSourcePromotionScenario =>
+      'Aksiya stsenariysi';
+
+  @override
+  String get notificationDispatchSourceSecurityScenario =>
+      'Xavfsizlik stsenariysi';
+
+  @override
+  String get notificationDispatchSourceTemplatePreview =>
+      'Shablon oldindan ko‘rish';
+
+  @override
+  String get notificationDispatchTemplatesSection =>
+      'Shablon orqali yuborish (demo)';
+
+  @override
+  String get notificationDispatchTemplateSimulateAction =>
+      'Render qilingan shablon bilan simulyatsiya';
+
+  @override
+  String get notificationDispatchTemplateRenderFailed =>
+      'Shablon renderi xato — yuborish bajarilmadi.';
+
+  @override
+  String get notificationTemplatesTitle => 'Bildirishnoma shablonlari';
+
+  @override
+  String get notificationTemplatesDemoDisclaimer =>
+      'Faqat demo shablonlar — oldindan ko‘rishlar sintetik; haqiqiy xabarlar yuborilmaydi.';
+
+  @override
+  String get notificationTemplatesFiltersSection => 'Filtrlar';
+
+  @override
+  String get notificationTemplatesClearFilters => 'Filtrlarni tozalash';
+
+  @override
+  String get notificationTemplatesLocaleSection => 'Oldindan ko‘rish tili';
+
+  @override
+  String notificationTemplatesLocaleFallbackLine(
+    String requested,
+    String resolved,
+  ) {
+    return 'So‘ralgan $requested — zaxira $resolved ishlatilmoqda.';
+  }
+
+  @override
+  String notificationTemplatesLocaleExactLine(String locale) {
+    return '$locale tili (zaxirasiz).';
+  }
+
+  @override
+  String get notificationTemplatesCatalogSection => 'Sintetik shablon katalogi';
+
+  @override
+  String get notificationTemplatesEmpty => 'Joriy filtrlarga mos shablon yo‘q.';
+
+  @override
+  String get notificationTemplatesPreviewSection =>
+      'Render (demo o‘zgaruvchilar)';
+
+  @override
+  String notificationTemplatesMetaLine(
+    String category,
+    String channel,
+    String status,
+    String locale,
+  ) {
+    return '$category · $channel · $status · $locale';
+  }
+
+  @override
+  String get notificationTemplateStatusFilter => 'Shablon holati';
+
+  @override
+  String get notificationTemplateStatusDraft => 'Qoralama';
+
+  @override
+  String get notificationTemplateStatusActive => 'Faol';
+
+  @override
+  String get notificationTemplateStatusArchived => 'Arxiv';
+
+  @override
+  String get notificationTemplateLocaleEnglish => 'Inglizcha';
+
+  @override
+  String get notificationTemplateLocaleRussian => 'Ruscha';
+
+  @override
+  String get notificationTemplateLocaleUzbek => 'O‘zbekcha';
+
+  @override
+  String get notificationTemplateErrorInactive =>
+      'Shablon faol emas — oldindan ko‘rish va yuborish bloklangan.';
+
+  @override
+  String notificationTemplateErrorMissingVariables(String names) {
+    return 'Majburiy o‘zgaruvchilar yetishmaydi: $names.';
+  }
+
+  @override
+  String get notificationTemplateErrorUndeclaredPlaceholder =>
+      'Shablonda e’lon qilinmagan placeholderlar bor.';
+
+  @override
+  String get notificationTemplateErrorMalformedPlaceholder =>
+      'Placeholder sintaksisi noto‘g‘ri.';
+
+  @override
+  String get notificationTemplateErrorSensitiveValue =>
+      'Qiymat maxfiy ma’lumotga o‘xshaydi va rad etildi.';
+
+  @override
+  String get notificationTemplateErrorUnresolvedPlaceholder =>
+      'Matnda hal qilinmagan placeholderlar qoldi.';
+
+  @override
+  String get notificationTemplateErrorIncompatibleChannel =>
+      'Kategoriya va kanal birikmalari ruxsat etilmagan.';
+
+  @override
+  String get notificationTemplateErrorGeneric =>
+      'Shablon renderi muvaffaqiyatsiz.';
+
+  @override
+  String get businessCenterNotificationTemplatesTitle =>
+      'Bildirishnoma shablonlari';
+
+  @override
+  String get businessCenterNotificationTemplatesBody =>
+      'Lokalizatsiyalangan sintetik shablonlarni ko‘rish (demo).';
+
+  @override
+  String get systemMessagesFeedTitle => 'Tizim xabarlari';
+
+  @override
+  String get systemMessagesDemoDisclaimer =>
+      'Faqat demo — sintetik e’lonlar; rasmiy yoki jonli xizmat ogohlantirishlari emas.';
+
+  @override
+  String get systemMessagesOpenTooltip => 'Tizim xabarlarini ochish';
+
+  @override
+  String get systemMessagesFeedEmpty => 'Hozir ko‘rinadigan e’lonlar yo‘q.';
+
+  @override
+  String systemMessageUnreadCount(int count) {
+    return 'O‘qilmagan: $count';
+  }
+
+  @override
+  String get systemMessageCategoryFilter => 'Xabar kategoriyasi';
+
+  @override
+  String get systemMessageCategoryGeneral => 'Umumiy e’lon';
+
+  @override
+  String get systemMessageCategoryMaintenance => 'Texnik xizmat';
+
+  @override
+  String get systemMessageCategoryServiceUpdate => 'Xizmat yangilanishi';
+
+  @override
+  String get systemMessageCategoryPolicy => 'Siyosat ma’lumoti';
+
+  @override
+  String get systemMessageLifecycleDraft => 'Qoralama';
+
+  @override
+  String get systemMessageLifecyclePublished => 'Nashr qilingan';
+
+  @override
+  String get systemMessageLifecycleWithdrawn => 'Qaytarilgan';
+
+  @override
+  String get systemMessageLifecycleArchived => 'Arxiv';
+
+  @override
+  String get systemMessageMarkReadAction => 'O‘qilgan deb belgilash';
+
+  @override
+  String get systemMessageMarkAllReadAction =>
+      'Hammasini o‘qilgan deb belgilash';
+
+  @override
+  String get systemMessageMarkReadSuccess => 'Xabar o‘qilgan deb belgilandi.';
+
+  @override
+  String get systemMessageMarkReadAlready => 'Xabar allaqachon o‘qilgan.';
+
+  @override
+  String get systemMessageMarkAllReadSuccess =>
+      'Ko‘rinadigan barcha xabarlar o‘qilgan deb belgilandi.';
+
+  @override
+  String get systemMessageOpenAction => 'Bog‘langan ekranni ochish';
+
+  @override
+  String get systemMessageSimulateNotificationAction =>
+      'In-app bildirishnomani simulyatsiya qilish (demo)';
+
+  @override
+  String systemMessageMetaLine(String category, String publishedAt) {
+    return '$category · $publishedAt';
+  }
+
+  @override
+  String get systemMessageContentUnavailable =>
+      'Lokalizatsiyalangan kontent mavjud emas.';
+
+  @override
+  String get systemMessagesDemoLifecycleTitle => 'Xabar hayot sikli (demo)';
+
+  @override
+  String get systemMessagesDemoLifecycleTooltip =>
+      'Demo hayot sikli boshqaruvi';
+
+  @override
+  String get systemMessagesDemoLifecycleDisclaimer =>
+      'Faqat demo publish/withdraw/archive — xotirada, doimiy emas.';
+
+  @override
+  String get systemMessagePublishAction => 'Nashr qilish';
+
+  @override
+  String get systemMessageWithdrawAction => 'Qaytarish';
+
+  @override
+  String get systemMessageArchiveAction => 'Arxivlash';
+
+  @override
+  String get systemMessageMutationSuccess => 'OK';
+
+  @override
+  String get systemMessageMutationInvalidTransition =>
+      'Hayot sikli o‘tishi ruxsat etilmagan.';
+
+  @override
+  String get systemMessageMutationValidationFailed =>
+      'Validatsiya xato — o‘zgarishlar saqlanmadi.';
+
+  @override
+  String get systemMessageMutationNotFound => 'Xabar topilmadi.';
+
+  @override
+  String get demoConversationsListTitle => 'Xabarlar';
+
+  @override
+  String get demoConversationsDisclaimer =>
+      'Faqat demo — xabarlar xotirada; haqiqiy mijoz yoki qo‘llab-quvvatlash muloqoti yo‘q.';
+
+  @override
+  String get demoConversationsEmpty =>
+      'Bu ishtirokchi uchun demo suhbatlar yo‘q.';
+
+  @override
+  String get demoConversationDetailTitle => 'Suhbat';
+
+  @override
+  String get demoConversationNotFound => 'Suhbat topilmadi yoki ruxsat yo‘q.';
+
+  @override
+  String demoConversationListMetaLine(String state, String preview) {
+    return '$state · $preview';
+  }
+
+  @override
+  String get demoConversationTypeCustomerBusiness => 'Mijoz ↔ biznes (demo)';
+
+  @override
+  String get demoConversationTypeSupportDemo => 'Qo‘llab-quvvatlash demo';
+
+  @override
+  String get demoConversationStateOpen => 'Ochiq';
+
+  @override
+  String get demoConversationStateClosed => 'Yopiq';
+
+  @override
+  String get demoConversationStateArchived => 'Arxiv';
+
+  @override
+  String get demoConversationRoleCustomer => 'Demo mijoz';
+
+  @override
+  String get demoConversationRoleBusinessAgent => 'Demo biznes agenti';
+
+  @override
+  String get demoConversationRoleSupportAgent => 'Demo qo‘llab-quvvatlash';
+
+  @override
+  String get demoConversationComposerHint => 'Oddiy matn xabari';
+
+  @override
+  String get demoConversationComposerDisabledClosed =>
+      'Suhbat yopiq yoki arxivda — yuborish o‘chirilgan.';
+
+  @override
+  String get demoConversationSendAction => 'Yuborish';
+
+  @override
+  String get demoConversationSendValidationError =>
+      'To‘g‘ri matn xabarini kiriting.';
+
+  @override
+  String get demoConversationSendNotOpen =>
+      'Suhbat ochiq emas — yuborib bo‘lmaydi.';
+
+  @override
+  String get demoConversationSendUnsafeContent =>
+      'Xabar xavfsizlik sababli rad etildi.';
+
+  @override
+  String get demoConversationSendFailure => 'Xabar yuborilmadi.';
+
+  @override
+  String get profileDemoConversationsTitle => 'Demo xabarlar';
+
+  @override
+  String get profileDemoConversationsSubtitle =>
+      'Xotiradagi suhbatlar (chat chegarasi)';
+
+  @override
+  String get platformAdminRolesTitle => 'Platforma admin rollari';
+
+  @override
+  String get platformAdminGovernanceDisclaimer =>
+      'Faqat demo boshqaruv — rollar va ruxsatlar xotirada; ishlab chiqarish avtorizatsiyasi qo‘llanmaydi.';
+
+  @override
+  String get platformAdminHighRiskBoundaryNotice =>
+      'Moliyaviy, hamyon, maxfiy va cheklanmagan shaxsiy ma’lumot ruxsatlari bu demo katalogda ataylab yo‘q.';
+
+  @override
+  String get platformAdminIdentitiesSectionTitle =>
+      'Demo admin identifikatorlari';
+
+  @override
+  String get platformAdminIdentitiesEmpty => 'Demo adminlar yuklanmagan.';
+
+  @override
+  String get platformAdminRolesSectionTitle => 'Rollar va ruxsatlar';
+
+  @override
+  String get platformAdminRolesEmpty => 'Platforma rollari aniqlanmagan.';
+
+  @override
+  String get platformAdminRoleDetailTitle => 'Rol ruxsatlari';
+
+  @override
+  String get platformAdminPermissionCountLabel => 'ruxsat';
+
+  @override
+  String get platformAdminAuthPreviewTitle =>
+      'Avtorizatsiya oldindan ko‘rish (faqat o‘qish)';
+
+  @override
+  String get platformAdminAuthPreviewHint =>
+      'Faqat demo siyosati — amallar bajarilmaydi va audit saqlanmaydi.';
+
+  @override
+  String get platformAdminAuthPreviewPermissionLabel =>
+      'Talab qilinadigan ruxsat';
+
+  @override
+  String get platformAdminAuthPreviewScopeKindLabel => 'Resurs doirasi';
+
+  @override
+  String get platformAdminAuthPreviewBusinessRefLabel => 'Biznes havolasi';
+
+  @override
+  String get platformAdminAuthPreviewBranchRefLabel => 'Filial havolasi';
+
+  @override
+  String get platformAdminAuthPreviewActionLabel => 'Amal yorlig‘i';
+
+  @override
+  String get platformAdminAuthPreviewSelectAdmin =>
+      'Oldindan ko‘rish uchun admin tanlang.';
+
+  @override
+  String get platformAdminAuthPreviewError =>
+      'Avtorizatsiyani baholab bo‘lmadi.';
+
+  @override
+  String get platformAdminAuthDecisionAllowed => 'Ruxsat (demo siyosati)';
+
+  @override
+  String get platformAdminAuthDecisionDenied => 'Rad etildi (demo siyosati)';
+
+  @override
+  String platformAdminAuthMatchedRole(String roleId) {
+    return 'Mos rol: $roleId';
+  }
+
+  @override
+  String get platformAdminSuspendedNotice =>
+      'To‘xtatilgan adminlar rollardan qat’i nazar rad etiladi.';
+
+  @override
+  String get platformAdminStatusActive => 'Faol';
+
+  @override
+  String get platformAdminStatusSuspended => 'To‘xtatilgan';
+
+  @override
+  String get platformRoleStatusEnabled => 'Yoqilgan';
+
+  @override
+  String get platformRoleStatusDisabled => 'O‘chirilgan';
+
+  @override
+  String get platformScopeKindPlatform => 'Butun platforma';
+
+  @override
+  String get platformScopeKindBusiness => 'Tayinlangan biznes';
+
+  @override
+  String get platformScopeKindBranch => 'Tayinlangan filial';
+
+  @override
+  String get profilePlatformAdminGovernanceTitle => 'Demo platforma admini';
+
+  @override
+  String get profilePlatformAdminGovernanceSubtitle =>
+      'Rollar, ruxsatlar va siyosat ko‘rinishi (xotirada)';
+
+  @override
+  String get platformRoleViewerName => 'Platforma kuzatuvchisi';
+
+  @override
+  String get platformRoleViewerPurpose =>
+      'Demo admin paneli va audit yozuvlarini o‘qish.';
+
+  @override
+  String get platformRoleVerificationReviewerName =>
+      'Biznes verifikatsiya ko‘rib chiquvchi';
+
+  @override
+  String get platformRoleVerificationReviewerPurpose =>
+      'Tayinlangan doirada sintetik arizalarni ko‘rib chiqish.';
+
+  @override
+  String get platformRoleModeratorName => 'Kontent moderatori';
+
+  @override
+  String get platformRoleModeratorPurpose =>
+      'Moderatsiya navbatlari va ruxsat etilgan demo amallar.';
+
+  @override
+  String get platformRoleSupportAgentName => 'Qo‘llab-quvvatlash agenti';
+
+  @override
+  String get platformRoleSupportAgentPurpose =>
+      'Tayinlangan biznes yoki filialdagi demo support case’lar.';
+
+  @override
+  String get platformRoleOperationsAdminName =>
+      'Platforma operatsiyalari admini';
+
+  @override
+  String get platformRoleOperationsAdminPurpose =>
+      'Konfiguratsiyani ko‘rish va past xavfli demo sozlamalar.';
+
+  @override
+  String get platformRoleDisabledAuditName => 'O‘chirilgan audit roli (demo)';
+
+  @override
+  String get platformRoleDisabledAuditPurpose =>
+      'Rad etishni tekshirish uchun o‘chirilgan rol.';
+
+  @override
+  String get platformPermissionViewDashboard => 'Admin panelini ko‘rish';
+
+  @override
+  String get platformPermissionViewVerificationQueue =>
+      'Biznes verifikatsiya navbati';
+
+  @override
+  String get platformPermissionReviewVerification =>
+      'Verifikatsiya arizalarini ko‘rib chiqish';
+
+  @override
+  String get platformPermissionViewModerationQueue => 'Moderatsiya navbati';
+
+  @override
+  String get platformPermissionPerformModeration =>
+      'Ruxsat etilgan moderatsiya amallari';
+
+  @override
+  String get platformPermissionViewSupportCases => 'Support case’larni ko‘rish';
+
+  @override
+  String get platformPermissionRespondSupportCases =>
+      'Support case’larga javob';
+
+  @override
+  String get platformPermissionViewConfiguration =>
+      'Platforma konfiguratsiyasi';
+
+  @override
+  String get platformPermissionManageLowRiskConfiguration =>
+      'Past xavfli konfiguratsiya';
+
+  @override
+  String get platformPermissionViewAuditRecords => 'Audit yozuvlari';
+
+  @override
+  String get platformAuthReasonAllowedExplicitGrant =>
+      'Yoqilgan roldagi aniq ruxsat bilan ruxsat.';
+
+  @override
+  String get platformAuthReasonDeniedInvalidInput => 'Rad — noto‘g‘ri kirish.';
+
+  @override
+  String get platformAuthReasonDeniedAdminSuspended =>
+      'Rad — admin to‘xtatilgan.';
+
+  @override
+  String get platformAuthReasonDeniedAdminNotFound => 'Rad — admin topilmadi.';
+
+  @override
+  String get platformAuthReasonDeniedNoEnabledRoles =>
+      'Rad — yoqilgan rol yo‘q.';
+
+  @override
+  String get platformAuthReasonDeniedRoleDisabled => 'Rad — rol o‘chirilgan.';
+
+  @override
+  String get platformAuthReasonDeniedPermissionNotGranted =>
+      'Rad — ruxsat berilmagan.';
+
+  @override
+  String get platformAuthReasonDeniedScopePlatformWideRequired =>
+      'Rad — platforma doirasi talab qilinadi.';
+
+  @override
+  String get platformAuthReasonDeniedScopeBusinessReferenceRequired =>
+      'Rad — biznes havolasi kerak.';
+
+  @override
+  String get platformAuthReasonDeniedScopeBranchReferenceRequired =>
+      'Rad — filial havolasi kerak.';
+
+  @override
+  String get platformAuthReasonDeniedCrossBusinessAccess =>
+      'Rad — boshqa biznesga ruxsat yo‘q.';
+
+  @override
+  String get platformAuthReasonDeniedCrossBranchAccess =>
+      'Rad — boshqa filialga ruxsat yo‘q.';
+
+  @override
+  String get platformAuthReasonDeniedBusinessAssignmentRequired =>
+      'Rad — biznes tayinlashlari kerak.';
+
+  @override
+  String get platformAuthReasonDeniedBranchAssignmentRequired =>
+      'Rad — filial tayinlashlari kerak.';
+
+  @override
+  String get platformGovernanceWorkflowDisclaimer =>
+      'Faqat demo — haqiqiy verifikatsiya, moderatsiya yoki qo‘llab-quvvatlash bajarilmaydi.';
+
+  @override
+  String get platformBusinessVerificationTitle =>
+      'Biznes verifikatsiya navbati';
+
+  @override
+  String get platformModerationTitle => 'Moderatsiya navbati';
+
+  @override
+  String get platformSupportCasesTitle => 'Qo‘llab-quvvatlash case’lari';
+
+  @override
+  String get platformWorkflowActiveAdminLabel => 'Demo admin';
+
+  @override
+  String get platformWorkflowHistoryTitle => 'Tarix';
+
+  @override
+  String get platformWorkflowOutcomeSuccess =>
+      'Demo amal xotirada qayd etildi.';
+
+  @override
+  String get platformWorkflowOutcomeAuthorizationDenied =>
+      'Demo avtorizatsiya rad etdi.';
+
+  @override
+  String get platformWorkflowOutcomeInvalidTransition =>
+      'Status o‘tishi noto‘g‘ri.';
+
+  @override
+  String get platformWorkflowOutcomeInvalidInput => 'Noto‘g‘ri ma’lumot.';
+
+  @override
+  String get platformWorkflowOutcomeNotFound => 'Yozuv topilmadi.';
+
+  @override
+  String get platformWorkflowOutcomeFailure =>
+      'Repozitoriy xatosi — o‘zgarish yo‘q.';
+
+  @override
+  String get platformAdminNavBusinessVerification => 'Biznes verifikatsiyasi';
+
+  @override
+  String get platformAdminNavModeration => 'Moderatsiya';
+
+  @override
+  String get platformAdminNavSupportCases => 'Qo‘llab-quvvatlash';
+
+  @override
+  String get platformBverStatusPending => 'Kutilmoqda';
+
+  @override
+  String get platformBverStatusUnderReview => 'Ko‘rib chiqilmoqda';
+
+  @override
+  String get platformBverStatusApproved => 'Tasdiqlangan (demo)';
+
+  @override
+  String get platformBverStatusRejected => 'Rad etilgan (demo)';
+
+  @override
+  String get platformBverStatusNeedsInfo => 'Qo‘shimcha ma’lumot kerak';
+
+  @override
+  String get platformBverActionBeginReview => 'Ko‘rib chiqishni boshlash';
+
+  @override
+  String get platformBverActionApprove => 'Tasdiqlash (demo)';
+
+  @override
+  String get platformBverActionReject => 'Rad etish (demo)';
+
+  @override
+  String get platformModStatusPending => 'Kutilmoqda';
+
+  @override
+  String get platformModStatusUnderReview => 'Ko‘rib chiqilmoqda';
+
+  @override
+  String get platformModStatusActionProposed => 'Amal taklif qilindi';
+
+  @override
+  String get platformModStatusResolved => 'Hal qilindi (demo)';
+
+  @override
+  String get platformModStatusDismissed => 'Bekor qilindi (demo)';
+
+  @override
+  String get platformModActionBeginReview => 'Ko‘rib chiqishni boshlash';
+
+  @override
+  String get platformSupportStatusOpen => 'Ochiq';
+
+  @override
+  String get platformSupportStatusAssigned => 'Tayinlangan';
+
+  @override
+  String get platformSupportStatusInProgress => 'Jarayonda';
+
+  @override
+  String get platformSupportStatusResolved => 'Hal qilingan';
+
+  @override
+  String get platformSupportStatusClosed => 'Yopiq';
+
+  @override
+  String get platformSupportNoteHint => 'Ichki eslatma';
+
+  @override
+  String get platformSupportAddNoteAction => 'Eslatma qo‘shish (demo)';
+
+  @override
+  String get platformSupportAssignAction => 'Rol tayinlash (demo)';
+
+  @override
+  String get platformGovernancePhase15Disclaimer =>
+      'Faqat demo platforma boshqaruvi — konfiguratsiya, audit va tasdiqlar xotirada; ishlab chiqarish amallari bajarilmaydi.';
+
+  @override
+  String get platformGovernanceAuditTitle => 'Platforma audit jurnali';
+
+  @override
+  String get platformGovernanceConfigurationTitle =>
+      'Platforma konfiguratsiyasi';
+
+  @override
+  String get platformGovernanceApprovalsTitle => 'Tasdiq so‘rovlari';
+
+  @override
+  String get platformGovernanceOperationsTitle => 'Operatsion panel';
+
+  @override
+  String get platformGovernanceAuditEmpty =>
+      'Joriy filtrlarga mos audit voqealari yo‘q.';
+
+  @override
+  String get platformGovernanceAccessDenied =>
+      'Demo avtorizatsiya siyosati ruxsat bermadi.';
+
+  @override
+  String get platformGovernanceSeedBadge => 'Seed';
+
+  @override
+  String get platformConfigRestrictedNotice =>
+      'Cheklangan — maker-checker talab qilinadi; bu demoda tahrirlanmaydi.';
+
+  @override
+  String platformConfigRevisionLabel(int revision) {
+    return 'Reviziya $revision';
+  }
+
+  @override
+  String get platformGovernanceApprovalNoExecutionNotice =>
+      'Tasdiq yoki rad faqat demo so‘rovni yangilaydi. Hamyon, to‘lov yoki xavfsizlik amali bajarilmaydi.';
+
+  @override
+  String get platformGovernanceApprovalCreateAction => 'Demo taklif yuborish';
+
+  @override
+  String get platformGovernanceApprovalApproveAction =>
+      'Tasdiqlash (faqat demo)';
+
+  @override
+  String get platformGovernanceApprovalRejectAction => 'Rad etish (faqat demo)';
+
+  @override
+  String get platformGovernanceOperationsSyntheticNotice =>
+      'Hisoblar xotiradagi demo repozitoriyalardan — ishlab chiqarish KPI emas.';
+
+  @override
+  String get platformGovernanceOperationsRefresh => 'Xulosani yangilash';
+
+  @override
+  String get platformGovernanceOperationsEmpty => 'Xulosa mavjud emas.';
+
+  @override
+  String get platformGovernanceOperationsAsOf => 'Vaqt (UTC)';
+
+  @override
+  String get platformGovernanceOperationsPendingApprovals =>
+      'Kutilayotgan tasdiqlar';
+
+  @override
+  String get platformGovernanceOperationsConfigRevisions =>
+      'Konfiguratsiya reviziya yozuvlari';
+
+  @override
+  String get platformGovernanceOperationsVerificationSection =>
+      'Verifikatsiya arizalari';
+
+  @override
+  String get platformGovernanceOperationsModerationSection =>
+      'Moderatsiya case’lari';
+
+  @override
+  String get platformAdminNavAudit => 'Audit jurnali';
+
+  @override
+  String get platformAdminNavConfiguration => 'Platforma konfiguratsiyasi';
+
+  @override
+  String get platformAdminNavApprovals => 'Tasdiq so‘rovlari';
+
+  @override
+  String get platformAdminNavOperations => 'Operatsion panel';
+
+  @override
+  String get platformPermissionSubmitApprovalProposal =>
+      'Yuqori xavfli demo taklif yuborish';
+
+  @override
+  String get platformPermissionDecideApprovalProposal =>
+      'Yuqori xavfli demo taklifni hal qilish';
+
+  @override
+  String get platformRoleGovernanceApproverName => 'Governance tasdiqlovchi';
+
+  @override
+  String get platformRoleGovernanceApproverPurpose =>
+      'Gipotetik takliflar uchun ikkinchi tomondan tasdiq — boshqa imtiyozsiz.';
+
+  @override
+  String get platformWorkflowOutcomeAuditPersistFailure =>
+      'O‘zgarish saqlangan bo‘lishi mumkin, lekin audit yozuvi muvaffaqiyatsiz (xotira demo cheklovi).';
 }

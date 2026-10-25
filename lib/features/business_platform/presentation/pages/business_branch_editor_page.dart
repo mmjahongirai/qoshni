@@ -343,6 +343,15 @@ class _EditorForm extends StatelessWidget {
                   icon: Icons.info_outline,
                   tone: AppMessageTone.info,
                 ),
+                if (latitudeController.text.trim().isNotEmpty &&
+                    longitudeController.text.trim().isNotEmpty) ...[
+                  const SizedBox(height: AppSpacing.sm),
+                  AppMessageBanner(
+                    message: l10n.branchCoordinateProposedNotice,
+                    icon: Icons.place_outlined,
+                    tone: AppMessageTone.warning,
+                  ),
+                ],
                 const SizedBox(height: AppSpacing.md),
                 AppSurfaceCard(
                   child: Column(

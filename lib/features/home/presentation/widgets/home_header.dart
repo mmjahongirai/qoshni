@@ -3,6 +3,7 @@ import 'package:qoshni/core/localization/generated/app_localizations.dart';
 import 'package:qoshni/core/localization/locale_controller.dart';
 import 'package:qoshni/core/theme/theme_controller.dart';
 import 'package:qoshni/features/home/presentation/widgets/home_cart_header_button.dart';
+import 'package:qoshni/features/home/presentation/widgets/home_notifications_header_button.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({
@@ -55,6 +56,7 @@ class HomeHeader extends StatelessWidget {
             alignment: WrapAlignment.end,
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
+              const HomeNotificationsHeaderButton(),
               const HomeCartHeaderButton(),
               IconButton(
                 tooltip: l10n.toggleThemeTooltip,

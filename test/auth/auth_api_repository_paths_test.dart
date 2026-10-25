@@ -40,6 +40,7 @@ void main() {
       enableLogging: false,
       enableBusinessProfileSamples: false,
       enableBusinessOfferingSamples: false,
+      enableRemoteSearchDiscovery: false,
     );
 
     final repository = AuthApiRepository(

@@ -102,6 +102,113 @@ class AppLocalizationsRu extends AppLocalizations {
   String get mapboxDefaultViewLabel => 'Вид по умолчанию — Узбекистан';
 
   @override
+  String get mapboxDefaultViewNotYourLocation =>
+      'Карта по умолчанию — не ваше местоположение';
+
+  @override
+  String get mapLocationMyLocationAction => 'Моё местоположение';
+
+  @override
+  String get mapLocationAcquiring =>
+      'Определяем приблизительное местоположение…';
+
+  @override
+  String get mapLocationDeviceFixLabel =>
+      'Приблизительное местоположение устройства — не сохранённый адрес';
+
+  @override
+  String get mapLocationPermissionDenied =>
+      'Нет доступа к геолокации. Карта остаётся в виде по умолчанию. Разрешите доступ и попробуйте снова.';
+
+  @override
+  String get mapLocationPermissionDeniedForever =>
+      'Доступ к геолокации для Qoshni заблокирован. Откройте настройки или используйте карту по умолчанию.';
+
+  @override
+  String get mapLocationServicesDisabled =>
+      'Службы геолокации на устройстве выключены. Включите их или используйте карту по умолчанию.';
+
+  @override
+  String get mapLocationTimeout =>
+      'Не удалось получить координаты вовремя. Проверьте сигнал и повторите.';
+
+  @override
+  String get mapLocationUnavailable =>
+      'Геолокация сейчас недоступна. Попробуйте позже.';
+
+  @override
+  String get mapLocationRetry => 'Повторить';
+
+  @override
+  String get mapLocationOpenSettings => 'Открыть настройки';
+
+  @override
+  String get geocodingSearchTitle => 'Поиск адреса';
+
+  @override
+  String get geocodingSearchHint => 'Улица, район или название места';
+
+  @override
+  String get geocodingUnavailableBody =>
+      'Для поиска адреса нужен публичный токен Mapbox. Точку можно выбрать на карте вручную.';
+
+  @override
+  String get geocodingSuggestionDisclaimer =>
+      'Подсказка Mapbox — подтвердите перед сохранением';
+
+  @override
+  String get savedPlaceConfirmTitle => 'Сохранить место';
+
+  @override
+  String get savedPlaceLabelField => 'Название';
+
+  @override
+  String get savedPlaceSaveAction => 'Сохранить';
+
+  @override
+  String savedPlacesCountLabel(int count) {
+    return 'Сохранённых мест: $count';
+  }
+
+  @override
+  String get searchNearbyEnableLabel => 'Поиск рядом';
+
+  @override
+  String get searchNearbyOriginNone =>
+      'Выберите местоположение устройства или сохранённое место';
+
+  @override
+  String get searchNearbyOriginDevice =>
+      'Приблизительное местоположение устройства';
+
+  @override
+  String get searchNearbyOriginSavedPlacePrefix => 'Сохранённое место:';
+
+  @override
+  String get searchNearbyOriginManual => 'Точка на карте';
+
+  @override
+  String get searchNearbySavedPlaceLabel => 'Сохранённое место';
+
+  @override
+  String get searchNearbyRadiusPrefix => 'Радиус:';
+
+  @override
+  String get searchNearbyUseDeviceAction => 'Использовать GPS';
+
+  @override
+  String get searchShowOnMapAction => 'Показать на карте';
+
+  @override
+  String searchMapVerifiedBranchFocusLabel(String title) {
+    return 'Проверенный филиал: $title — не ваш GPS';
+  }
+
+  @override
+  String get branchCoordinateProposedNotice =>
+      'Координаты здесь только предложены. Для публичного поиска рядом нужна проверка на backend (филиал onboarding).';
+
+  @override
   String get mapboxLoadErrorBody =>
       'Карта не загрузилась. Проверьте токен и сеть.';
 
@@ -329,6 +436,32 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get searchEmptyBody => 'Попробуйте другой запрос.';
+
+  @override
+  String get searchSpellingSuggestionLabel => 'Возможно, вы имели в виду';
+
+  @override
+  String get searchLoadMore => 'Показать ещё';
+
+  @override
+  String get searchSponsoredLabel => 'Реклама';
+
+  @override
+  String get searchRemoteUnauthorizedTitle => 'Войдите, чтобы искать';
+
+  @override
+  String get searchRemoteUnauthorizedBody =>
+      'Для удалённого поиска нужна активная сессия. Войдите и повторите попытку.';
+
+  @override
+  String get searchRemoteUnavailableTitle => 'Поиск временно недоступен';
+
+  @override
+  String get searchRemoteUnavailableBody =>
+      'Не удалось связаться с сервисом поиска. Проверьте подключение и попробуйте снова.';
+
+  @override
+  String get searchRemoteRetry => 'Повторить';
 
   @override
   String get searchCategoryEntrySubtitle => 'Категория';
@@ -626,6 +759,86 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get checkoutEmptyBody =>
       'Корзина пуста. Добавьте демо-товары перед оформлением.';
+
+  @override
+  String get checkoutPreparationNotice =>
+      'Только подготовка к оформлению — цены из демо-калькулятора каталога. Заказ не создаётся, пока вы явно не подтвердите отдельный демо-шаг.';
+
+  @override
+  String get checkoutFulfillmentLabel => 'Способ получения';
+
+  @override
+  String get checkoutFulfillmentPickup => 'Самовывоз';
+
+  @override
+  String get checkoutFulfillmentDelivery => 'Доставка';
+
+  @override
+  String get checkoutFulfillmentServiceAtLocation => 'Услуга на месте';
+
+  @override
+  String get checkoutRecalculateAction => 'Обновить расчёт';
+
+  @override
+  String get checkoutQuoteStaleTitle => 'Корзина изменилась';
+
+  @override
+  String get checkoutQuoteStaleBody =>
+      'Корзина изменилась после расчёта. Обновите расчёт перед подтверждением демо-заказа.';
+
+  @override
+  String get checkoutPricingErrorTitle => 'Расчёт недоступен';
+
+  @override
+  String get checkoutPricingErrorBody =>
+      'Не удалось рассчитать цену для одной или нескольких позиций демо-каталога.';
+
+  @override
+  String get checkoutUnsupportedFulfillmentTitle =>
+      'Способ получения не поддерживается';
+
+  @override
+  String get checkoutUnsupportedFulfillmentBody =>
+      'Этот способ получения не поддерживается для товаров в корзине.';
+
+  @override
+  String get checkoutMultiBusinessNotice =>
+      'Позиции от разных демо-бизнесов сгруппированы отдельно. В будущем один checkout может создать несколько заказов.';
+
+  @override
+  String get checkoutServerOrderSectionTitle => 'Серверный заказ (не демо)';
+
+  @override
+  String get checkoutServerOrderUnavailableBody =>
+      'На backend пока нет каталога и остатков для потребителя. Размещение на сервере отключено.';
+
+  @override
+  String get checkoutServerOrderTryAction => 'Проверить размещение на сервере';
+
+  @override
+  String get checkoutServerOrderCatalogUnavailable =>
+      'Сервер отклонил: авторitative catalog недоступен.';
+
+  @override
+  String checkoutServerOrderSuccess(String orderId) {
+    return 'Сервер принял заказ ($orderId). Оплата и доставка отдельно.';
+  }
+
+  @override
+  String get checkoutServerOrderNotConfigured => 'API URL не настроен.';
+
+  @override
+  String get checkoutServerOrderSignInRequired =>
+      'Войдите для проверки серверного размещения.';
+
+  @override
+  String get checkoutDemoOrderSeparateNotice =>
+      'Подтверждение демо-заказа ниже — только локально, не серверная покупка.';
+
+  @override
+  String checkoutSessionCorrelationLabel(String reference) {
+    return 'Ссылка checkout: $reference';
+  }
 
   @override
   String get demoOrderConfirmationTitle => 'Демо-подтверждение';
@@ -4844,4 +5057,1148 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get businessReputationEventSyntheticBadge => 'Synthetic demo signal.';
+
+  @override
+  String get notificationInboxTitle => 'Уведомления';
+
+  @override
+  String get notificationInboxDemoDisclaimer =>
+      'Только демо-уведомления — данные в памяти; реальные push, SMS и email не отправляются.';
+
+  @override
+  String notificationInboxUnreadCount(int count) {
+    return 'Непрочитано: $count';
+  }
+
+  @override
+  String get notificationInboxOpenTooltip => 'Открыть уведомления';
+
+  @override
+  String get notificationFilterAll => 'Все';
+
+  @override
+  String get notificationFilterUnread => 'Непрочитанные';
+
+  @override
+  String get notificationCategoryFilter => 'Категория';
+
+  @override
+  String get notificationCategoryAll => 'Все категории';
+
+  @override
+  String get notificationClearFilters => 'Сбросить фильтры';
+
+  @override
+  String get notificationCategoryOrders => 'Заказы';
+
+  @override
+  String get notificationCategoryBookings => 'Бронирования';
+
+  @override
+  String get notificationCategoryDelivery => 'Доставка';
+
+  @override
+  String get notificationCategoryWalletPayments => 'Кошелёк и платежи';
+
+  @override
+  String get notificationCategoryAiAlerts => 'AI-оповещения';
+
+  @override
+  String get notificationCategoryLocation => 'Локация';
+
+  @override
+  String get notificationCategoryBusiness => 'Бизнес';
+
+  @override
+  String get notificationCategoryTrustReviews => 'Доверие и отзывы';
+
+  @override
+  String get notificationCategorySecurity => 'Безопасность';
+
+  @override
+  String get notificationCategoryPromotions => 'Акции';
+
+  @override
+  String get notificationChannelInApp => 'В приложении';
+
+  @override
+  String get notificationChannelPushPreview => 'Push (превью)';
+
+  @override
+  String get notificationChannelSmsPreview => 'SMS (превью)';
+
+  @override
+  String get notificationChannelEmailPreview => 'Email (превью)';
+
+  @override
+  String get notificationPriorityLow => 'Низкий';
+
+  @override
+  String get notificationPriorityNormal => 'Обычный';
+
+  @override
+  String get notificationPriorityHigh => 'Высокий';
+
+  @override
+  String get notificationPriorityUrgent => 'Срочный';
+
+  @override
+  String get notificationInboxEmptyBody =>
+      'Нет уведомлений по выбранным фильтрам.';
+
+  @override
+  String get notificationMarkReadAction => 'Отметить прочитанным';
+
+  @override
+  String get notificationMarkAllReadAction => 'Прочитать все';
+
+  @override
+  String get notificationMarkReadSuccess => 'Уведомление отмечено прочитанным.';
+
+  @override
+  String get notificationMarkReadAlready => 'Уведомление уже прочитано.';
+
+  @override
+  String get notificationMarkReadNotFound => 'Уведомление не найдено.';
+
+  @override
+  String get notificationMarkReadInvalid =>
+      'Недопустимый идентификатор уведомления.';
+
+  @override
+  String get notificationMarkReadFailure =>
+      'Не удалось отметить уведомление прочитанным.';
+
+  @override
+  String get notificationMarkAllReadSuccess =>
+      'Все уведомления отмечены прочитанными.';
+
+  @override
+  String get notificationMarkAllReadFailure =>
+      'Не удалось отметить все уведомления прочитанными.';
+
+  @override
+  String get notificationStatusUnread => 'Непрочитано';
+
+  @override
+  String get notificationStatusRead => 'Прочитано';
+
+  @override
+  String notificationCardMetaLine(
+    String category,
+    String timestamp,
+    String status,
+  ) {
+    return '$category · $timestamp · $status';
+  }
+
+  @override
+  String get notificationSyntheticBadge =>
+      'Синтетическое демо-уведомление — не реальное сообщение.';
+
+  @override
+  String get notificationOpenLinkedRouteAction =>
+      'Нажмите, чтобы открыть связанный экран';
+
+  @override
+  String get profileNotificationsTitle => 'Уведомления';
+
+  @override
+  String profileNotificationsUnreadCount(int count) {
+    return 'Непрочитано в демо-ящике: $count';
+  }
+
+  @override
+  String get notificationPreferencesTitle => 'Настройки уведомлений';
+
+  @override
+  String get notificationPreferencesOpenTooltip => 'Настройки уведомлений';
+
+  @override
+  String get notificationPreferencesDemoDisclaimer =>
+      'Только демо-настройки — данные в памяти; реальные push, SMS и email не отправляются.';
+
+  @override
+  String get notificationPreferencesInMemoryNote =>
+      'Изменения действуют только в этой сессии и не синхронизируются с сервером.';
+
+  @override
+  String get notificationPreferencesCategoriesSection => 'Категории';
+
+  @override
+  String get notificationPreferencesChannelsSection => 'Каналы';
+
+  @override
+  String get notificationChannelPreviewNote =>
+      'Канал-превью — не подключён к реальному провайдеру.';
+
+  @override
+  String get notificationPromotionalConsentTitle =>
+      'Согласие на маркетинг и акции';
+
+  @override
+  String get notificationPromotionalConsentBody =>
+      'Для промо-уведомлений нужно отдельное согласие помимо категории «Акции».';
+
+  @override
+  String get notificationQuietHoursSection => 'Тихие часы';
+
+  @override
+  String get notificationQuietHoursEnabled => 'Включить тихие часы';
+
+  @override
+  String get notificationQuietHoursLocalTimeNote =>
+      'Для демо используется локальное время устройства.';
+
+  @override
+  String get notificationQuietHoursStart => 'Начало тихих часов';
+
+  @override
+  String get notificationQuietHoursEnd => 'Конец тихих часов';
+
+  @override
+  String get notificationPreferencesRestoreDefaults =>
+      'Восстановить демо-настройки';
+
+  @override
+  String get notificationPreferenceSaveSuccess => 'Настройки обновлены.';
+
+  @override
+  String get notificationPreferenceSaveInvalid =>
+      'Не удалось сохранить — недопустимые значения.';
+
+  @override
+  String get notificationPreferenceSaveFailure =>
+      'Не удалось сохранить настройки. Попробуйте снова.';
+
+  @override
+  String get notificationPreferenceRestoreSuccess =>
+      'Демо-настройки восстановлены.';
+
+  @override
+  String get notificationEligibilityPreviewSection =>
+      'Гипотетическая проверка доставки';
+
+  @override
+  String get notificationPreferencesPreviewChannel => 'Канал для превью';
+
+  @override
+  String get notificationPreferencesPreviewPriority => 'Приоритет для превью';
+
+  @override
+  String get notificationEligibilityPreviewTime =>
+      'Оценить по локальному времени';
+
+  @override
+  String get notificationEligibilityPreviewAction => 'Проверить допустимость';
+
+  @override
+  String get notificationEligibilityPreviewEligible =>
+      'Допустимо (гипотетически)';
+
+  @override
+  String get notificationEligibilityPreviewSuppressed =>
+      'Подавлено (гипотетически)';
+
+  @override
+  String get notificationEligibilityReasonEligible =>
+      'Все настроенные правила разрешают доставку.';
+
+  @override
+  String get notificationEligibilityReasonCategoryDisabled =>
+      'Категория отключена в настройках.';
+
+  @override
+  String get notificationEligibilityReasonChannelDisabled =>
+      'Канал отключён в настройках.';
+
+  @override
+  String get notificationEligibilityReasonPromoConsentDisabled =>
+      'Согласие на маркетинг выключено.';
+
+  @override
+  String get notificationEligibilityReasonQuietHours =>
+      'Заблокировано тихими часами для некритичных уведомлений.';
+
+  @override
+  String get notificationEligibilityReasonInvalid =>
+      'Недопустимый сценарий превью.';
+
+  @override
+  String get notificationDispatchDiagnosticsTitle => 'Диагностика доставки';
+
+  @override
+  String get notificationDispatchDiagnosticsOpenTooltip =>
+      'Диагностика доставки';
+
+  @override
+  String get notificationDispatchDemoDisclaimer =>
+      'Только демо-dispatch — результаты каналов симулированы; реальные Push, SMS и email не отправляются.';
+
+  @override
+  String get notificationDispatchScenariosSection =>
+      'Синтетические сценарии dispatch';
+
+  @override
+  String get notificationDispatchScenarioOrderMidday => 'Заказ (день, in-app)';
+
+  @override
+  String get notificationDispatchScenarioOrderQuiet => 'Заказ (тихие часы)';
+
+  @override
+  String get notificationDispatchScenarioPromotion =>
+      'Акция (проверка согласия)';
+
+  @override
+  String get notificationDispatchScenarioSecurityQuiet =>
+      'Безопасность (обход тихих часов)';
+
+  @override
+  String get notificationDispatchLastResultTitle =>
+      'Последний результат dispatch';
+
+  @override
+  String get notificationDispatchOutcomeFilter => 'Исход';
+
+  @override
+  String get notificationDispatchFilterAll => 'Все';
+
+  @override
+  String get notificationDispatchAuditSection => 'Журнал аудита доставки';
+
+  @override
+  String get notificationDispatchAuditEmpty =>
+      'Записей аудита dispatch пока нет.';
+
+  @override
+  String notificationDispatchAuditMetaLine(
+    String outcome,
+    String category,
+    String channel,
+    String timestamp,
+  ) {
+    return '$outcome · $category · $channel · $timestamp';
+  }
+
+  @override
+  String notificationDispatchInboxLinkLine(String notificationId) {
+    return 'In-app уведомление: $notificationId';
+  }
+
+  @override
+  String get notificationDispatchOutcomeDeliveredInbox =>
+      'Доставлено во in-app inbox';
+
+  @override
+  String get notificationDispatchOutcomeSimulatedChannel =>
+      'Симулированная доставка по каналу';
+
+  @override
+  String get notificationDispatchOutcomeSuppressed => 'Подавлено политикой';
+
+  @override
+  String get notificationDispatchOutcomeDuplicate => 'Дубликат idempotency';
+
+  @override
+  String get notificationDispatchOutcomeValidationFailed => 'Ошибка валидации';
+
+  @override
+  String get notificationDispatchOutcomeChannelFailure =>
+      'Симулированный сбой канала';
+
+  @override
+  String get notificationDispatchOutcomeInboxFailure =>
+      'Не удалось сохранить в inbox';
+
+  @override
+  String get notificationDispatchOutcomeCoordinatorFailure =>
+      'Сбой координатора dispatch';
+
+  @override
+  String get notificationDispatchSourceDiagnostics => 'Диагностика';
+
+  @override
+  String get notificationDispatchSourceOrderScenario => 'Сценарий заказа';
+
+  @override
+  String get notificationDispatchSourcePromotionScenario => 'Сценарий акции';
+
+  @override
+  String get notificationDispatchSourceSecurityScenario =>
+      'Сценарий безопасности';
+
+  @override
+  String get notificationDispatchSourceTemplatePreview =>
+      'Предпросмотр шаблона';
+
+  @override
+  String get notificationDispatchTemplatesSection =>
+      'Отправка по шаблону (демо)';
+
+  @override
+  String get notificationDispatchTemplateSimulateAction =>
+      'Симулировать отправку с отрендеренным шаблоном';
+
+  @override
+  String get notificationDispatchTemplateRenderFailed =>
+      'Ошибка рендера шаблона — отправка не выполнялась.';
+
+  @override
+  String get notificationTemplatesTitle => 'Шаблоны уведомлений';
+
+  @override
+  String get notificationTemplatesDemoDisclaimer =>
+      'Только демо-шаблоны — предпросмотры синтетические; реальные сообщения не отправляются.';
+
+  @override
+  String get notificationTemplatesFiltersSection => 'Фильтры';
+
+  @override
+  String get notificationTemplatesClearFilters => 'Сбросить фильтры';
+
+  @override
+  String get notificationTemplatesLocaleSection => 'Локаль предпросмотра';
+
+  @override
+  String notificationTemplatesLocaleFallbackLine(
+    String requested,
+    String resolved,
+  ) {
+    return 'Запрошено $requested — используется запасная $resolved.';
+  }
+
+  @override
+  String notificationTemplatesLocaleExactLine(String locale) {
+    return 'Локаль $locale (без запасной).';
+  }
+
+  @override
+  String get notificationTemplatesCatalogSection =>
+      'Синтетический каталог шаблонов';
+
+  @override
+  String get notificationTemplatesEmpty => 'Нет шаблонов по текущим фильтрам.';
+
+  @override
+  String get notificationTemplatesPreviewSection => 'Рендер (демо-переменные)';
+
+  @override
+  String notificationTemplatesMetaLine(
+    String category,
+    String channel,
+    String status,
+    String locale,
+  ) {
+    return '$category · $channel · $status · $locale';
+  }
+
+  @override
+  String get notificationTemplateStatusFilter => 'Статус шаблона';
+
+  @override
+  String get notificationTemplateStatusDraft => 'Черновик';
+
+  @override
+  String get notificationTemplateStatusActive => 'Активный';
+
+  @override
+  String get notificationTemplateStatusArchived => 'Архив';
+
+  @override
+  String get notificationTemplateLocaleEnglish => 'Английский';
+
+  @override
+  String get notificationTemplateLocaleRussian => 'Русский';
+
+  @override
+  String get notificationTemplateLocaleUzbek => 'Узбекский';
+
+  @override
+  String get notificationTemplateErrorInactive =>
+      'Шаблон не активен — предпросмотр и отправка заблокированы.';
+
+  @override
+  String notificationTemplateErrorMissingVariables(String names) {
+    return 'Не хватает обязательных переменных: $names.';
+  }
+
+  @override
+  String get notificationTemplateErrorUndeclaredPlaceholder =>
+      'В шаблоне есть необъявленные плейсхолдеры.';
+
+  @override
+  String get notificationTemplateErrorMalformedPlaceholder =>
+      'Некорректный синтаксис плейсхолдера.';
+
+  @override
+  String get notificationTemplateErrorSensitiveValue =>
+      'Значение похоже на чувствительные данные и отклонено.';
+
+  @override
+  String get notificationTemplateErrorUnresolvedPlaceholder =>
+      'В тексте остались неразрешённые плейсхолдеры.';
+
+  @override
+  String get notificationTemplateErrorIncompatibleChannel =>
+      'Сочетание категории и канала недопустимо.';
+
+  @override
+  String get notificationTemplateErrorGeneric =>
+      'Не удалось отрендерить шаблон.';
+
+  @override
+  String get businessCenterNotificationTemplatesTitle => 'Шаблоны уведомлений';
+
+  @override
+  String get businessCenterNotificationTemplatesBody =>
+      'Предпросмотр локализованных синтетических шаблонов (демо).';
+
+  @override
+  String get systemMessagesFeedTitle => 'Системные сообщения';
+
+  @override
+  String get systemMessagesDemoDisclaimer =>
+      'Только демо — синтетические объявления; не официальные и не живые сервисные уведомления.';
+
+  @override
+  String get systemMessagesOpenTooltip => 'Открыть системные сообщения';
+
+  @override
+  String get systemMessagesFeedEmpty =>
+      'Сейчас нет видимых опубликованных объявлений.';
+
+  @override
+  String systemMessageUnreadCount(int count) {
+    return 'Непрочитано: $count';
+  }
+
+  @override
+  String get systemMessageCategoryFilter => 'Категория сообщения';
+
+  @override
+  String get systemMessageCategoryGeneral => 'Общее объявление';
+
+  @override
+  String get systemMessageCategoryMaintenance => 'Техобслуживание';
+
+  @override
+  String get systemMessageCategoryServiceUpdate => 'Обновление сервиса';
+
+  @override
+  String get systemMessageCategoryPolicy => 'Политика';
+
+  @override
+  String get systemMessageLifecycleDraft => 'Черновик';
+
+  @override
+  String get systemMessageLifecyclePublished => 'Опубликовано';
+
+  @override
+  String get systemMessageLifecycleWithdrawn => 'Отозвано';
+
+  @override
+  String get systemMessageLifecycleArchived => 'Архив';
+
+  @override
+  String get systemMessageMarkReadAction => 'Отметить прочитанным';
+
+  @override
+  String get systemMessageMarkAllReadAction => 'Отметить все прочитанными';
+
+  @override
+  String get systemMessageMarkReadSuccess => 'Сообщение отмечено прочитанным.';
+
+  @override
+  String get systemMessageMarkReadAlready => 'Сообщение уже было прочитано.';
+
+  @override
+  String get systemMessageMarkAllReadSuccess =>
+      'Все видимые сообщения отмечены прочитанными.';
+
+  @override
+  String get systemMessageOpenAction => 'Открыть связанный экран';
+
+  @override
+  String get systemMessageSimulateNotificationAction =>
+      'Симулировать in-app уведомление (демо)';
+
+  @override
+  String systemMessageMetaLine(String category, String publishedAt) {
+    return '$category · $publishedAt';
+  }
+
+  @override
+  String get systemMessageContentUnavailable =>
+      'Локализованный контент недоступен.';
+
+  @override
+  String get systemMessagesDemoLifecycleTitle => 'Жизненный цикл (демо)';
+
+  @override
+  String get systemMessagesDemoLifecycleTooltip =>
+      'Демо-управление жизненным циклом';
+
+  @override
+  String get systemMessagesDemoLifecycleDisclaimer =>
+      'Только демо publish/withdraw/archive — в памяти, без сохранения.';
+
+  @override
+  String get systemMessagePublishAction => 'Опубликовать';
+
+  @override
+  String get systemMessageWithdrawAction => 'Отозвать';
+
+  @override
+  String get systemMessageArchiveAction => 'Архивировать';
+
+  @override
+  String get systemMessageMutationSuccess => 'OK';
+
+  @override
+  String get systemMessageMutationInvalidTransition =>
+      'Переход жизненного цикла недопустим.';
+
+  @override
+  String get systemMessageMutationValidationFailed =>
+      'Ошибка валидации — изменения не сохранены.';
+
+  @override
+  String get systemMessageMutationNotFound => 'Сообщение не найдено.';
+
+  @override
+  String get demoConversationsListTitle => 'Сообщения';
+
+  @override
+  String get demoConversationsDisclaimer =>
+      'Только демо — сообщения в памяти; реального общения с клиентами или поддержкой нет.';
+
+  @override
+  String get demoConversationsEmpty => 'Нет демо-диалогов для этого участника.';
+
+  @override
+  String get demoConversationDetailTitle => 'Диалог';
+
+  @override
+  String get demoConversationNotFound => 'Диалог не найден или недоступен.';
+
+  @override
+  String demoConversationListMetaLine(String state, String preview) {
+    return '$state · $preview';
+  }
+
+  @override
+  String get demoConversationTypeCustomerBusiness => 'Клиент ↔ бизнес (демо)';
+
+  @override
+  String get demoConversationTypeSupportDemo => 'Демо поддержки';
+
+  @override
+  String get demoConversationStateOpen => 'Открыт';
+
+  @override
+  String get demoConversationStateClosed => 'Закрыт';
+
+  @override
+  String get demoConversationStateArchived => 'Архив';
+
+  @override
+  String get demoConversationRoleCustomer => 'Демо-клиент';
+
+  @override
+  String get demoConversationRoleBusinessAgent => 'Демо-агент бизнеса';
+
+  @override
+  String get demoConversationRoleSupportAgent => 'Демо-поддержка';
+
+  @override
+  String get demoConversationComposerHint => 'Текстовое сообщение';
+
+  @override
+  String get demoConversationComposerDisabledClosed =>
+      'Диалог закрыт или в архиве — отправка отключена.';
+
+  @override
+  String get demoConversationSendAction => 'Отправить';
+
+  @override
+  String get demoConversationSendValidationError =>
+      'Введите корректное текстовое сообщение.';
+
+  @override
+  String get demoConversationSendNotOpen =>
+      'Нельзя отправить, пока диалог не открыт.';
+
+  @override
+  String get demoConversationSendUnsafeContent =>
+      'Содержимое отклонено по соображениям безопасности.';
+
+  @override
+  String get demoConversationSendFailure => 'Сообщение не отправлено.';
+
+  @override
+  String get profileDemoConversationsTitle => 'Демо-сообщения';
+
+  @override
+  String get profileDemoConversationsSubtitle =>
+      'Диалоги в памяти (граница чата)';
+
+  @override
+  String get platformAdminRolesTitle => 'Роли платформенного админа';
+
+  @override
+  String get platformAdminGovernanceDisclaimer =>
+      'Только демо управления — роли и права в памяти; производственная авторизация не применяется.';
+
+  @override
+  String get platformAdminHighRiskBoundaryNotice =>
+      'Права на финансы, кошелёк, секреты и неограниченный доступ к личным данным намеренно отсутствуют в этом демо-каталоге.';
+
+  @override
+  String get platformAdminIdentitiesSectionTitle => 'Демо-идентичности админов';
+
+  @override
+  String get platformAdminIdentitiesEmpty => 'Демо-админы не загружены.';
+
+  @override
+  String get platformAdminRolesSectionTitle => 'Роли и права';
+
+  @override
+  String get platformAdminRolesEmpty => 'Роли платформы не определены.';
+
+  @override
+  String get platformAdminRoleDetailTitle => 'Права роли';
+
+  @override
+  String get platformAdminPermissionCountLabel => 'прав';
+
+  @override
+  String get platformAdminAuthPreviewTitle =>
+      'Предпросмотр авторизации (только чтение)';
+
+  @override
+  String get platformAdminAuthPreviewHint =>
+      'Только демо-политика — действия не выполняются и аудит не сохраняется.';
+
+  @override
+  String get platformAdminAuthPreviewPermissionLabel => 'Требуемое право';
+
+  @override
+  String get platformAdminAuthPreviewScopeKindLabel => 'Область ресурса';
+
+  @override
+  String get platformAdminAuthPreviewBusinessRefLabel => 'Ссылка на бизнес';
+
+  @override
+  String get platformAdminAuthPreviewBranchRefLabel => 'Ссылка на филиал';
+
+  @override
+  String get platformAdminAuthPreviewActionLabel => 'Метка действия';
+
+  @override
+  String get platformAdminAuthPreviewSelectAdmin =>
+      'Выберите админа для предпросмотра.';
+
+  @override
+  String get platformAdminAuthPreviewError => 'Не удалось оценить авторизацию.';
+
+  @override
+  String get platformAdminAuthDecisionAllowed => 'Разрешено (демо-политика)';
+
+  @override
+  String get platformAdminAuthDecisionDenied => 'Отказано (демо-политика)';
+
+  @override
+  String platformAdminAuthMatchedRole(String roleId) {
+    return 'Совпавшая роль: $roleId';
+  }
+
+  @override
+  String get platformAdminSuspendedNotice =>
+      'Приостановленные админы отклоняются независимо от ролей.';
+
+  @override
+  String get platformAdminStatusActive => 'Активен';
+
+  @override
+  String get platformAdminStatusSuspended => 'Приостановлен';
+
+  @override
+  String get platformRoleStatusEnabled => 'Включена';
+
+  @override
+  String get platformRoleStatusDisabled => 'Отключена';
+
+  @override
+  String get platformScopeKindPlatform => 'Вся платформа';
+
+  @override
+  String get platformScopeKindBusiness => 'Назначенный бизнес';
+
+  @override
+  String get platformScopeKindBranch => 'Назначенный филиал';
+
+  @override
+  String get profilePlatformAdminGovernanceTitle => 'Демо админ платформы';
+
+  @override
+  String get profilePlatformAdminGovernanceSubtitle =>
+      'Роли, права и предпросмотр политики (в памяти)';
+
+  @override
+  String get platformRoleViewerName => 'Наблюдатель платформы';
+
+  @override
+  String get platformRoleViewerPurpose =>
+      'Только чтение демо-панели и записей аудита.';
+
+  @override
+  String get platformRoleVerificationReviewerName =>
+      'Ревьюер верификации бизнеса';
+
+  @override
+  String get platformRoleVerificationReviewerPurpose =>
+      'Проверка синтетических заявок в назначенной области.';
+
+  @override
+  String get platformRoleModeratorName => 'Модератор контента';
+
+  @override
+  String get platformRoleModeratorPurpose =>
+      'Очереди модерации и разрешённые демо-действия.';
+
+  @override
+  String get platformRoleSupportAgentName => 'Агент поддержки';
+
+  @override
+  String get platformRoleSupportAgentPurpose =>
+      'Демо-кейсы поддержки в назначенном бизнесе или филиале.';
+
+  @override
+  String get platformRoleOperationsAdminName => 'Админ операций платформы';
+
+  @override
+  String get platformRoleOperationsAdminPurpose =>
+      'Просмотр конфигурации и низкорисковые демо-настройки.';
+
+  @override
+  String get platformRoleDisabledAuditName => 'Отключённая роль аудита (демо)';
+
+  @override
+  String get platformRoleDisabledAuditPurpose =>
+      'Роль отключена для проверки отказа.';
+
+  @override
+  String get platformPermissionViewDashboard => 'Просмотр панели админа';
+
+  @override
+  String get platformPermissionViewVerificationQueue =>
+      'Очередь верификации бизнеса';
+
+  @override
+  String get platformPermissionReviewVerification => 'Ревью заявок верификации';
+
+  @override
+  String get platformPermissionViewModerationQueue => 'Очередь модерации';
+
+  @override
+  String get platformPermissionPerformModeration =>
+      'Разрешённые действия модерации';
+
+  @override
+  String get platformPermissionViewSupportCases => 'Просмотр кейсов поддержки';
+
+  @override
+  String get platformPermissionRespondSupportCases => 'Ответы в поддержке';
+
+  @override
+  String get platformPermissionViewConfiguration => 'Просмотр конфигурации';
+
+  @override
+  String get platformPermissionManageLowRiskConfiguration =>
+      'Низкорисковая конфигурация';
+
+  @override
+  String get platformPermissionViewAuditRecords => 'Просмотр записей аудита';
+
+  @override
+  String get platformAuthReasonAllowedExplicitGrant =>
+      'Разрешено явным правом на включённой роли.';
+
+  @override
+  String get platformAuthReasonDeniedInvalidInput =>
+      'Отказ — неверные входные данные.';
+
+  @override
+  String get platformAuthReasonDeniedAdminSuspended =>
+      'Отказ — админ приостановлен.';
+
+  @override
+  String get platformAuthReasonDeniedAdminNotFound =>
+      'Отказ — админ не найден.';
+
+  @override
+  String get platformAuthReasonDeniedNoEnabledRoles =>
+      'Отказ — нет включённых ролей.';
+
+  @override
+  String get platformAuthReasonDeniedRoleDisabled => 'Отказ — роль отключена.';
+
+  @override
+  String get platformAuthReasonDeniedPermissionNotGranted =>
+      'Отказ — право не назначено.';
+
+  @override
+  String get platformAuthReasonDeniedScopePlatformWideRequired =>
+      'Отказ — нужна область всей платформы.';
+
+  @override
+  String get platformAuthReasonDeniedScopeBusinessReferenceRequired =>
+      'Отказ — нужна ссылка на бизнес.';
+
+  @override
+  String get platformAuthReasonDeniedScopeBranchReferenceRequired =>
+      'Отказ — нужна ссылка на филиал.';
+
+  @override
+  String get platformAuthReasonDeniedCrossBusinessAccess =>
+      'Отказ — доступ к другому бизнесу запрещён.';
+
+  @override
+  String get platformAuthReasonDeniedCrossBranchAccess =>
+      'Отказ — доступ к другому филиалу запрещён.';
+
+  @override
+  String get platformAuthReasonDeniedBusinessAssignmentRequired =>
+      'Отказ — нужны назначения бизнеса.';
+
+  @override
+  String get platformAuthReasonDeniedBranchAssignmentRequired =>
+      'Отказ — нужны назначения филиала.';
+
+  @override
+  String get platformGovernanceWorkflowDisclaimer =>
+      'Только демо — реальная верификация, модерация и поддержка не выполняются.';
+
+  @override
+  String get platformBusinessVerificationTitle => 'Очередь верификации бизнеса';
+
+  @override
+  String get platformModerationTitle => 'Очередь модерации';
+
+  @override
+  String get platformSupportCasesTitle => 'Кейсы поддержки';
+
+  @override
+  String get platformWorkflowActiveAdminLabel => 'Демо-админ';
+
+  @override
+  String get platformWorkflowHistoryTitle => 'История';
+
+  @override
+  String get platformWorkflowOutcomeSuccess =>
+      'Демо-действие сохранено в памяти.';
+
+  @override
+  String get platformWorkflowOutcomeAuthorizationDenied =>
+      'Отказано демо-политикой авторизации.';
+
+  @override
+  String get platformWorkflowOutcomeInvalidTransition =>
+      'Недопустимый переход статуса.';
+
+  @override
+  String get platformWorkflowOutcomeInvalidInput => 'Неверные данные.';
+
+  @override
+  String get platformWorkflowOutcomeNotFound => 'Запись не найдена.';
+
+  @override
+  String get platformWorkflowOutcomeFailure =>
+      'Ошибка репозитория — без изменений.';
+
+  @override
+  String get platformAdminNavBusinessVerification => 'Верификация бизнеса';
+
+  @override
+  String get platformAdminNavModeration => 'Модерация';
+
+  @override
+  String get platformAdminNavSupportCases => 'Поддержка';
+
+  @override
+  String get platformBverStatusPending => 'Ожидает';
+
+  @override
+  String get platformBverStatusUnderReview => 'На проверке';
+
+  @override
+  String get platformBverStatusApproved => 'Одобрено (демо)';
+
+  @override
+  String get platformBverStatusRejected => 'Отклонено (демо)';
+
+  @override
+  String get platformBverStatusNeedsInfo => 'Нужна информация';
+
+  @override
+  String get platformBverActionBeginReview => 'Начать проверку';
+
+  @override
+  String get platformBverActionApprove => 'Одобрить (демо)';
+
+  @override
+  String get platformBverActionReject => 'Отклонить (демо)';
+
+  @override
+  String get platformModStatusPending => 'Ожидает';
+
+  @override
+  String get platformModStatusUnderReview => 'На проверке';
+
+  @override
+  String get platformModStatusActionProposed => 'Действие предложено';
+
+  @override
+  String get platformModStatusResolved => 'Решено (демо)';
+
+  @override
+  String get platformModStatusDismissed => 'Отклонено (демо)';
+
+  @override
+  String get platformModActionBeginReview => 'Начать проверку';
+
+  @override
+  String get platformSupportStatusOpen => 'Открыт';
+
+  @override
+  String get platformSupportStatusAssigned => 'Назначен';
+
+  @override
+  String get platformSupportStatusInProgress => 'В работе';
+
+  @override
+  String get platformSupportStatusResolved => 'Решён';
+
+  @override
+  String get platformSupportStatusClosed => 'Закрыт';
+
+  @override
+  String get platformSupportNoteHint => 'Внутренняя заметка';
+
+  @override
+  String get platformSupportAddNoteAction => 'Добавить заметку (демо)';
+
+  @override
+  String get platformSupportAssignAction => 'Назначить роль (демо)';
+
+  @override
+  String get platformGovernancePhase15Disclaimer =>
+      'Только демо управления платформой — конфигурация, аудит и согласования в памяти; производственные действия не выполняются.';
+
+  @override
+  String get platformGovernanceAuditTitle => 'Журнал аудита платформы';
+
+  @override
+  String get platformGovernanceConfigurationTitle => 'Конфигурация платформы';
+
+  @override
+  String get platformGovernanceApprovalsTitle => 'Запросы на согласование';
+
+  @override
+  String get platformGovernanceOperationsTitle => 'Операционная панель';
+
+  @override
+  String get platformGovernanceAuditEmpty =>
+      'Нет событий аудита по текущим фильтрам.';
+
+  @override
+  String get platformGovernanceAccessDenied =>
+      'Доступ запрещён демо-политикой авторизации.';
+
+  @override
+  String get platformGovernanceSeedBadge => 'Seed';
+
+  @override
+  String get platformConfigRestrictedNotice =>
+      'Ограничено — нужно согласование; в этом демо не редактируется.';
+
+  @override
+  String platformConfigRevisionLabel(int revision) {
+    return 'Ревизия $revision';
+  }
+
+  @override
+  String get platformGovernanceApprovalNoExecutionNotice =>
+      'Согласование меняет только демо-запрос. Кошелёк, платежи и безопасность не выполняются.';
+
+  @override
+  String get platformGovernanceApprovalCreateAction =>
+      'Создать демо-предложение';
+
+  @override
+  String get platformGovernanceApprovalApproveAction =>
+      'Одобрить (только демо)';
+
+  @override
+  String get platformGovernanceApprovalRejectAction =>
+      'Отклонить (только демо)';
+
+  @override
+  String get platformGovernanceOperationsSyntheticNotice =>
+      'Счётчики из демо-репозиториев в памяти — не KPI продакшена.';
+
+  @override
+  String get platformGovernanceOperationsRefresh => 'Обновить сводку';
+
+  @override
+  String get platformGovernanceOperationsEmpty => 'Сводка недоступна.';
+
+  @override
+  String get platformGovernanceOperationsAsOf => 'На момент (UTC)';
+
+  @override
+  String get platformGovernanceOperationsPendingApprovals =>
+      'Ожидающие согласования';
+
+  @override
+  String get platformGovernanceOperationsConfigRevisions =>
+      'Записи ревизий конфигурации';
+
+  @override
+  String get platformGovernanceOperationsVerificationSection =>
+      'Заявки верификации';
+
+  @override
+  String get platformGovernanceOperationsModerationSection => 'Кейсы модерации';
+
+  @override
+  String get platformAdminNavAudit => 'Журнал аудита';
+
+  @override
+  String get platformAdminNavConfiguration => 'Конфигурация платформы';
+
+  @override
+  String get platformAdminNavApprovals => 'Согласования';
+
+  @override
+  String get platformAdminNavOperations => 'Операционная панель';
+
+  @override
+  String get platformPermissionSubmitApprovalProposal =>
+      'Создать предложение высокого риска (демо)';
+
+  @override
+  String get platformPermissionDecideApprovalProposal =>
+      'Решить по предложению высокого риска (демo)';
+
+  @override
+  String get platformRoleGovernanceApproverName => 'Согласующий governance';
+
+  @override
+  String get platformRoleGovernanceApproverPurpose =>
+      'Второе лицо для гипотетических предложений — без других привилегий.';
+
+  @override
+  String get platformWorkflowOutcomeAuditPersistFailure =>
+      'Изменение могло сохраниться, но запись аудита не удалась (ограничение демо в памяти).';
 }

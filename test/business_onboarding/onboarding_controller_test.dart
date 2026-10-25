@@ -18,6 +18,7 @@ const _configured = AppConfig(
   enableLogging: false,
   enableBusinessProfileSamples: false,
   enableBusinessOfferingSamples: false,
+  enableRemoteSearchDiscovery: false,
 );
 
 const _unconfigured = AppConfig(
@@ -27,6 +28,7 @@ const _unconfigured = AppConfig(
   enableLogging: false,
   enableBusinessProfileSamples: false,
   enableBusinessOfferingSamples: false,
+  enableRemoteSearchDiscovery: false,
 );
 
 OwnerApplicationViewDto _application({String status = 'draft'}) {

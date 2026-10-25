@@ -16,6 +16,19 @@ abstract final class RoutePaths {
   static const String demoOrderConfirmation = '/order/demo-confirmation';
   static const String demoOrders = '/orders';
   static const String demoOrderDetail = '/orders/:referenceId';
+  static const String notificationsInbox = '/notifications';
+  static const String notificationPreferences = '/notifications/preferences';
+  static const String notificationDispatchDiagnostics =
+      '/notifications/dispatch';
+  static const String demoConversations = '/messages';
+  static const String demoConversationDetail = '/messages/:conversationId';
+
+  static String demoConversationDetailPath(String conversationId) =>
+      '/messages/$conversationId';
+
+  static const String systemMessages = '/system-messages';
+  static const String systemMessagesDemoLifecycle =
+      '/system-messages/demo-lifecycle';
   static const String businessCenter = '/business-center';
   static const String businessProfileCreate = '/business-center/profile/new';
   static const String businessProfileDetail =
@@ -159,6 +172,25 @@ abstract final class RoutePaths {
 
   static const String businessReputationEvents =
       '/business-center/reputation-events';
+
+  static const String businessNotificationTemplates =
+      '/business-center/notification-templates';
+  static const String platformAdminGovernanceRoles =
+      '/admin/governance/roles';
+  static const String platformAdminBusinessVerification =
+      '/admin/governance/business-verification';
+  static const String platformAdminModeration =
+      '/admin/governance/moderation';
+  static const String platformAdminSupportCases =
+      '/admin/governance/support-cases';
+  static const String platformAdminGovernanceAudit =
+      '/admin/governance/audit';
+  static const String platformAdminGovernanceConfiguration =
+      '/admin/governance/configuration';
+  static const String platformAdminGovernanceApprovals =
+      '/admin/governance/approvals';
+  static const String platformAdminGovernanceOperations =
+      '/admin/governance/operations';
 }
 
 abstract final class RouteNames {
@@ -177,6 +209,15 @@ abstract final class RouteNames {
   static const String demoOrderConfirmation = 'demoOrderConfirmation';
   static const String demoOrders = 'demoOrders';
   static const String demoOrderDetail = 'demoOrderDetail';
+  static const String notificationsInbox = 'notificationsInbox';
+  static const String notificationPreferences = 'notificationPreferences';
+  static const String notificationDispatchDiagnostics =
+      'notificationDispatchDiagnostics';
+  static const String demoConversations = 'demoConversations';
+  static const String demoConversationDetail = 'demoConversationDetail';
+  static const String systemMessages = 'systemMessages';
+  static const String systemMessagesDemoLifecycle =
+      'systemMessagesDemoLifecycle';
   static const String businessCenter = 'businessCenter';
   static const String businessProfileCreate = 'businessProfileCreate';
   static const String businessProfileDetail = 'businessProfileDetail';
@@ -241,4 +282,20 @@ abstract final class RouteNames {
   static const String businessReviews = 'businessReviews';
   static const String businessComplaintsDisputes = 'businessComplaintsDisputes';
   static const String businessReputationEvents = 'businessReputationEvents';
+  static const String businessNotificationTemplates =
+      'businessNotificationTemplates';
+  static const String platformAdminGovernanceRoles =
+      'platformAdminGovernanceRoles';
+  static const String platformAdminBusinessVerification =
+      'platformAdminBusinessVerification';
+  static const String platformAdminModeration = 'platformAdminModeration';
+  static const String platformAdminSupportCases = 'platformAdminSupportCases';
+  static const String platformAdminGovernanceAudit =
+      'platformAdminGovernanceAudit';
+  static const String platformAdminGovernanceConfiguration =
+      'platformAdminGovernanceConfiguration';
+  static const String platformAdminGovernanceApprovals =
+      'platformAdminGovernanceApprovals';
+  static const String platformAdminGovernanceOperations =
+      'platformAdminGovernanceOperations';
 }

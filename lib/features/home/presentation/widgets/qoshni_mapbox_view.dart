@@ -11,10 +11,14 @@ import 'package:qoshni/features/home/presentation/map/qoshni_map_defaults.dart';
 class QoshniMapboxView extends StatefulWidget {
   const QoshniMapboxView({
     this.showDefaultViewLabel = true,
+    this.deviceLocationLabel,
+    this.viewportController,
     super.key,
   });
 
   final bool showDefaultViewLabel;
+  final String? deviceLocationLabel;
+  final ViewportController? viewportController;
 
   @override
   State<QoshniMapboxView> createState() => _QoshniMapboxViewState();
@@ -37,6 +41,7 @@ class _QoshniMapboxViewState extends State<QoshniMapboxView> {
           key: const ValueKey('qoshni-mapbox-map'),
           styleUri: MapboxStyles.MAPBOX_STREETS,
           viewport: QoshniMapDefaults.uzbekistanViewport,
+          viewportController: widget.viewportController,
           gestureRecognizers: _mapGestureRecognizers,
           onMapLoadErrorListener: (event) {
             if (!mounted) {
@@ -58,7 +63,7 @@ class _QoshniMapboxViewState extends State<QoshniMapboxView> {
               ),
             ),
           ),
-        if (widget.showDefaultViewLabel && _loadErrorKey == null)
+        if (_loadErrorKey == null && widget.showDefaultViewLabel)
           Positioned(
             left: AppSpacing.sm,
             top: AppSpacing.sm,
@@ -72,8 +77,33 @@ class _QoshniMapboxViewState extends State<QoshniMapboxView> {
                   vertical: AppSpacing.xxs,
                 ),
                 child: Text(
-                  l10n.mapboxDefaultViewLabel,
+                  l10n.mapboxDefaultViewNotYourLocation,
                   style: Theme.of(context).textTheme.labelSmall,
+                ),
+              ),
+            ),
+          ),
+        if (_loadErrorKey == null &&
+            !widget.showDefaultViewLabel &&
+            widget.deviceLocationLabel != null)
+          Positioned(
+            left: AppSpacing.sm,
+            top: AppSpacing.sm,
+            child: Material(
+              color: Theme.of(context).colorScheme.primaryContainer
+                  .withValues(alpha: 0.95),
+              borderRadius: AppRadius.mdAll,
+              elevation: 1,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: AppSpacing.sm,
+                  vertical: AppSpacing.xxs,
+                ),
+                child: Text(
+                  widget.deviceLocationLabel!,
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                        color: Theme.of(context).colorScheme.onPrimaryContainer,
+                      ),
                 ),
               ),
             ),

@@ -27,6 +27,7 @@ from app.services.business_onboarding.onboarding_service import (
     _is_active_registration_unique_violation,
     _record_audit,
 )
+from app.services.search_discovery.sync import sync_search_index_for_application
 from app.services.business_onboarding.review_authorization import (
     ReviewAuthorizationError,
     assert_reviewer_not_application_owner,
@@ -213,6 +214,7 @@ def _transition_status(
         if _is_active_registration_unique_violation(error):
             return _duplicate_registration_error()
         raise
+    sync_search_index_for_application(session, application)
     return application
 
 

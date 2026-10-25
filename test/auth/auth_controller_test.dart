@@ -108,6 +108,7 @@ void main() {
         enableLogging: false,
         enableBusinessProfileSamples: false,
         enableBusinessOfferingSamples: false,
+        enableRemoteSearchDiscovery: false,
       ),
     );
 
@@ -128,6 +129,7 @@ void main() {
         enableLogging: false,
         enableBusinessProfileSamples: false,
         enableBusinessOfferingSamples: false,
+        enableRemoteSearchDiscovery: false,
       ),
     );
 
@@ -155,6 +157,7 @@ void main() {
         enableLogging: false,
         enableBusinessProfileSamples: false,
         enableBusinessOfferingSamples: false,
+        enableRemoteSearchDiscovery: false,
       ),
     );
 
@@ -176,6 +179,7 @@ void main() {
         enableLogging: false,
         enableBusinessProfileSamples: false,
         enableBusinessOfferingSamples: false,
+        enableRemoteSearchDiscovery: false,
       ),
     );
 
@@ -211,6 +215,7 @@ void main() {
         enableLogging: false,
         enableBusinessProfileSamples: false,
         enableBusinessOfferingSamples: false,
+        enableRemoteSearchDiscovery: false,
       ),
     );
 
@@ -232,6 +237,7 @@ void main() {
         enableLogging: false,
         enableBusinessProfileSamples: false,
         enableBusinessOfferingSamples: false,
+        enableRemoteSearchDiscovery: false,
       ),
     );
 

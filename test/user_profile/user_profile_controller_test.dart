@@ -20,6 +20,7 @@ const _configured = AppConfig(
   enableLogging: false,
   enableBusinessProfileSamples: false,
   enableBusinessOfferingSamples: false,
+  enableRemoteSearchDiscovery: false,
 );
 
 class _MockUserProfileRepository implements UserProfileRepository {

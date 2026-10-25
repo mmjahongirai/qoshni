@@ -282,6 +282,7 @@ SearchCatalogEntry searchCatalogEntryFromBusiness(
     categoryLabel: serviceCategoryLabel(business.categoryId, l10n),
     icon: business.icon,
     accent: business.accent,
+    categoryId: business.categoryId,
     businessId: business.id,
   );
 }
@@ -311,6 +312,7 @@ List<SearchCatalogEntry> buildSearchCatalog(
   ];
 }
 
+/// Legacy substring filter — prefer Phase 16 catalog matcher with query understanding.
 List<SearchCatalogEntry> filterSearchCatalog(
   List<SearchCatalogEntry> catalog,
   String query,

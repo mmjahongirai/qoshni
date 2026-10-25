@@ -102,6 +102,111 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mapboxDefaultViewLabel => 'Default map view — Uzbekistan';
 
   @override
+  String get mapboxDefaultViewNotYourLocation =>
+      'Default map view — not your location';
+
+  @override
+  String get mapLocationMyLocationAction => 'My location';
+
+  @override
+  String get mapLocationAcquiring => 'Getting your approximate location…';
+
+  @override
+  String get mapLocationDeviceFixLabel =>
+      'Approximate device location — not a saved address';
+
+  @override
+  String get mapLocationPermissionDenied =>
+      'Location permission is off. The map stays on the default view. You can try again after allowing access.';
+
+  @override
+  String get mapLocationPermissionDeniedForever =>
+      'Location permission is blocked for Qoshni. Open settings to allow access, or keep using the default map view.';
+
+  @override
+  String get mapLocationServicesDisabled =>
+      'Location services are turned off on this device. Enable them in system settings or continue with the default map view.';
+
+  @override
+  String get mapLocationTimeout =>
+      'Could not get a location fix in time. Check signal and try again.';
+
+  @override
+  String get mapLocationUnavailable =>
+      'Location is unavailable right now. Try again later.';
+
+  @override
+  String get mapLocationRetry => 'Try again';
+
+  @override
+  String get mapLocationOpenSettings => 'Open settings';
+
+  @override
+  String get geocodingSearchTitle => 'Search address';
+
+  @override
+  String get geocodingSearchHint => 'Street, district, or place name';
+
+  @override
+  String get geocodingUnavailableBody =>
+      'Address search needs a Mapbox public token. You can still pick a point on the map.';
+
+  @override
+  String get geocodingSuggestionDisclaimer =>
+      'Provider suggestion — confirm before saving';
+
+  @override
+  String get savedPlaceConfirmTitle => 'Save place';
+
+  @override
+  String get savedPlaceLabelField => 'Label';
+
+  @override
+  String get savedPlaceSaveAction => 'Save place';
+
+  @override
+  String savedPlacesCountLabel(int count) {
+    return '$count saved places';
+  }
+
+  @override
+  String get searchNearbyEnableLabel => 'Nearby search';
+
+  @override
+  String get searchNearbyOriginNone =>
+      'Choose device location or a saved place';
+
+  @override
+  String get searchNearbyOriginDevice => 'Approximate device location';
+
+  @override
+  String get searchNearbyOriginSavedPlacePrefix => 'Saved place:';
+
+  @override
+  String get searchNearbyOriginManual => 'Manual map point';
+
+  @override
+  String get searchNearbySavedPlaceLabel => 'Saved place';
+
+  @override
+  String get searchNearbyRadiusPrefix => 'Radius:';
+
+  @override
+  String get searchNearbyUseDeviceAction => 'Use device location';
+
+  @override
+  String get searchShowOnMapAction => 'Show on map';
+
+  @override
+  String searchMapVerifiedBranchFocusLabel(String title) {
+    return 'Verified branch: $title — not your GPS';
+  }
+
+  @override
+  String get branchCoordinateProposedNotice =>
+      'Coordinates here are proposed only. Public nearby search requires backend verification (onboarding branch record).';
+
+  @override
   String get mapboxLoadErrorBody =>
       'The map could not load. Check your Mapbox token and network, then try again.';
 
@@ -330,6 +435,33 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get searchEmptyBody => 'Try a different search term.';
+
+  @override
+  String get searchSpellingSuggestionLabel => 'Did you mean';
+
+  @override
+  String get searchLoadMore => 'Load more results';
+
+  @override
+  String get searchSponsoredLabel => 'Sponsored';
+
+  @override
+  String get searchRemoteUnauthorizedTitle => 'Sign in to search';
+
+  @override
+  String get searchRemoteUnauthorizedBody =>
+      'Remote search needs an active session. Sign in and try again.';
+
+  @override
+  String get searchRemoteUnavailableTitle =>
+      'Search is temporarily unavailable';
+
+  @override
+  String get searchRemoteUnavailableBody =>
+      'We could not reach the search service. Check your connection and try again.';
+
+  @override
+  String get searchRemoteRetry => 'Try again';
 
   @override
   String get searchCategoryEntrySubtitle => 'Category';
@@ -634,6 +766,86 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get checkoutEmptyBody =>
       'Your cart is empty. Add demo items before checkout.';
+
+  @override
+  String get checkoutPreparationNotice =>
+      'Checkout preparation only — prices come from the demo catalog calculator. No order is placed until you explicitly confirm the separate demo step.';
+
+  @override
+  String get checkoutFulfillmentLabel => 'Fulfillment';
+
+  @override
+  String get checkoutFulfillmentPickup => 'Pickup';
+
+  @override
+  String get checkoutFulfillmentDelivery => 'Delivery';
+
+  @override
+  String get checkoutFulfillmentServiceAtLocation => 'Service at location';
+
+  @override
+  String get checkoutRecalculateAction => 'Update quote';
+
+  @override
+  String get checkoutQuoteStaleTitle => 'Cart changed';
+
+  @override
+  String get checkoutQuoteStaleBody =>
+      'Your cart changed after this quote. Update the quote before confirming the demo order.';
+
+  @override
+  String get checkoutPricingErrorTitle => 'Pricing unavailable';
+
+  @override
+  String get checkoutPricingErrorBody =>
+      'We could not price one or more cart lines from the demo catalog.';
+
+  @override
+  String get checkoutUnsupportedFulfillmentTitle => 'Fulfillment not supported';
+
+  @override
+  String get checkoutUnsupportedFulfillmentBody =>
+      'This fulfillment choice is not supported for the items in your cart.';
+
+  @override
+  String get checkoutMultiBusinessNotice =>
+      'Items from multiple demo businesses are grouped separately. One parent checkout may create multiple business orders in a future release.';
+
+  @override
+  String get checkoutServerOrderSectionTitle => 'Server order (not demo)';
+
+  @override
+  String get checkoutServerOrderUnavailableBody =>
+      'Backend consumer catalog and inventory are not available yet. Server placement stays disabled until authoritative pricing and stock exist.';
+
+  @override
+  String get checkoutServerOrderTryAction => 'Check server placement';
+
+  @override
+  String get checkoutServerOrderCatalogUnavailable =>
+      'Server rejected placement: authoritative catalog is not available.';
+
+  @override
+  String checkoutServerOrderSuccess(String orderId) {
+    return 'Server accepted placement (order $orderId). Payment and fulfilment are still separate.';
+  }
+
+  @override
+  String get checkoutServerOrderNotConfigured =>
+      'API base URL is not configured for server placement.';
+
+  @override
+  String get checkoutServerOrderSignInRequired =>
+      'Sign in to check server placement.';
+
+  @override
+  String get checkoutDemoOrderSeparateNotice =>
+      'Demo order confirmation below is local only and is not a server-confirmed purchase.';
+
+  @override
+  String checkoutSessionCorrelationLabel(String reference) {
+    return 'Checkout reference: $reference';
+  }
 
   @override
   String get demoOrderConfirmationTitle => 'Demo confirmation';
@@ -4917,4 +5129,1155 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get businessReputationEventSyntheticBadge =>
       'Synthetic demo signal — not verified customer behavior.';
+
+  @override
+  String get notificationInboxTitle => 'Notifications';
+
+  @override
+  String get notificationInboxDemoDisclaimer =>
+      'Demo notifications only — in-memory data; no real push, SMS or email is sent.';
+
+  @override
+  String notificationInboxUnreadCount(int count) {
+    return '$count unread';
+  }
+
+  @override
+  String get notificationInboxOpenTooltip => 'Open notifications';
+
+  @override
+  String get notificationFilterAll => 'All';
+
+  @override
+  String get notificationFilterUnread => 'Unread';
+
+  @override
+  String get notificationCategoryFilter => 'Category';
+
+  @override
+  String get notificationCategoryAll => 'All categories';
+
+  @override
+  String get notificationClearFilters => 'Clear filters';
+
+  @override
+  String get notificationCategoryOrders => 'Orders';
+
+  @override
+  String get notificationCategoryBookings => 'Bookings';
+
+  @override
+  String get notificationCategoryDelivery => 'Delivery';
+
+  @override
+  String get notificationCategoryWalletPayments => 'Wallet & payments';
+
+  @override
+  String get notificationCategoryAiAlerts => 'AI alerts';
+
+  @override
+  String get notificationCategoryLocation => 'Location';
+
+  @override
+  String get notificationCategoryBusiness => 'Business';
+
+  @override
+  String get notificationCategoryTrustReviews => 'Trust & reviews';
+
+  @override
+  String get notificationCategorySecurity => 'Security';
+
+  @override
+  String get notificationCategoryPromotions => 'Promotions';
+
+  @override
+  String get notificationChannelInApp => 'In-app';
+
+  @override
+  String get notificationChannelPushPreview => 'Push (preview)';
+
+  @override
+  String get notificationChannelSmsPreview => 'SMS (preview)';
+
+  @override
+  String get notificationChannelEmailPreview => 'Email (preview)';
+
+  @override
+  String get notificationPriorityLow => 'Low';
+
+  @override
+  String get notificationPriorityNormal => 'Normal';
+
+  @override
+  String get notificationPriorityHigh => 'High';
+
+  @override
+  String get notificationPriorityUrgent => 'Urgent';
+
+  @override
+  String get notificationInboxEmptyBody =>
+      'No notifications match your filters.';
+
+  @override
+  String get notificationMarkReadAction => 'Mark as read';
+
+  @override
+  String get notificationMarkAllReadAction => 'Mark all read';
+
+  @override
+  String get notificationMarkReadSuccess => 'Notification marked as read.';
+
+  @override
+  String get notificationMarkReadAlready => 'Notification was already read.';
+
+  @override
+  String get notificationMarkReadNotFound => 'Notification not found.';
+
+  @override
+  String get notificationMarkReadInvalid => 'Invalid notification identifier.';
+
+  @override
+  String get notificationMarkReadFailure =>
+      'Could not mark notification as read.';
+
+  @override
+  String get notificationMarkAllReadSuccess =>
+      'All notifications marked as read.';
+
+  @override
+  String get notificationMarkAllReadFailure =>
+      'Could not mark all notifications as read.';
+
+  @override
+  String get notificationStatusUnread => 'Unread';
+
+  @override
+  String get notificationStatusRead => 'Read';
+
+  @override
+  String notificationCardMetaLine(
+    String category,
+    String timestamp,
+    String status,
+  ) {
+    return '$category · $timestamp · $status';
+  }
+
+  @override
+  String get notificationSyntheticBadge =>
+      'Synthetic demo notification — not a real message.';
+
+  @override
+  String get notificationOpenLinkedRouteAction =>
+      'Tap to open linked in-app screen';
+
+  @override
+  String get profileNotificationsTitle => 'Notifications';
+
+  @override
+  String profileNotificationsUnreadCount(int count) {
+    return '$count unread in demo inbox';
+  }
+
+  @override
+  String get notificationPreferencesTitle => 'Notification preferences';
+
+  @override
+  String get notificationPreferencesOpenTooltip => 'Notification preferences';
+
+  @override
+  String get notificationPreferencesDemoDisclaimer =>
+      'Demo notification preferences only — settings are in memory; no real push, SMS or email delivery occurs.';
+
+  @override
+  String get notificationPreferencesInMemoryNote =>
+      'Changes apply to this session only and are not synced to a backend.';
+
+  @override
+  String get notificationPreferencesCategoriesSection => 'Categories';
+
+  @override
+  String get notificationPreferencesChannelsSection => 'Channels';
+
+  @override
+  String get notificationChannelPreviewNote =>
+      'Preview channel — not connected to a real provider.';
+
+  @override
+  String get notificationPromotionalConsentTitle =>
+      'Marketing & promotions consent';
+
+  @override
+  String get notificationPromotionalConsentBody =>
+      'Separate consent required for promotional notifications in addition to the promotions category toggle.';
+
+  @override
+  String get notificationQuietHoursSection => 'Quiet hours';
+
+  @override
+  String get notificationQuietHoursEnabled => 'Enable quiet hours';
+
+  @override
+  String get notificationQuietHoursLocalTimeNote =>
+      'Uses local device time for this demo evaluator only.';
+
+  @override
+  String get notificationQuietHoursStart => 'Quiet hours start';
+
+  @override
+  String get notificationQuietHoursEnd => 'Quiet hours end';
+
+  @override
+  String get notificationPreferencesRestoreDefaults => 'Restore demo defaults';
+
+  @override
+  String get notificationPreferenceSaveSuccess => 'Preferences updated.';
+
+  @override
+  String get notificationPreferenceSaveInvalid =>
+      'Could not save — invalid preference values.';
+
+  @override
+  String get notificationPreferenceSaveFailure =>
+      'Could not save preferences. Try again.';
+
+  @override
+  String get notificationPreferenceRestoreSuccess =>
+      'Demo preferences restored.';
+
+  @override
+  String get notificationEligibilityPreviewSection =>
+      'Hypothetical delivery preview';
+
+  @override
+  String get notificationPreferencesPreviewChannel => 'Preview channel';
+
+  @override
+  String get notificationPreferencesPreviewPriority => 'Preview priority';
+
+  @override
+  String get notificationEligibilityPreviewTime => 'Evaluate at local time';
+
+  @override
+  String get notificationEligibilityPreviewAction => 'Evaluate eligibility';
+
+  @override
+  String get notificationEligibilityPreviewEligible =>
+      'Eligible (hypothetical)';
+
+  @override
+  String get notificationEligibilityPreviewSuppressed =>
+      'Suppressed (hypothetical)';
+
+  @override
+  String get notificationEligibilityReasonEligible =>
+      'All configured rules allow delivery.';
+
+  @override
+  String get notificationEligibilityReasonCategoryDisabled =>
+      'Category is disabled in preferences.';
+
+  @override
+  String get notificationEligibilityReasonChannelDisabled =>
+      'Channel is disabled in preferences.';
+
+  @override
+  String get notificationEligibilityReasonPromoConsentDisabled =>
+      'Promotional marketing consent is off.';
+
+  @override
+  String get notificationEligibilityReasonQuietHours =>
+      'Blocked by quiet hours for non-critical notifications.';
+
+  @override
+  String get notificationEligibilityReasonInvalid =>
+      'Invalid preview scenario.';
+
+  @override
+  String get notificationDispatchDiagnosticsTitle => 'Dispatch diagnostics';
+
+  @override
+  String get notificationDispatchDiagnosticsOpenTooltip =>
+      'Open dispatch diagnostics';
+
+  @override
+  String get notificationDispatchDemoDisclaimer =>
+      'Demo dispatch only — channel results are simulated; no real Push, SMS or email is sent.';
+
+  @override
+  String get notificationDispatchScenariosSection =>
+      'Synthetic dispatch scenarios';
+
+  @override
+  String get notificationDispatchScenarioOrderMidday =>
+      'Order (midday, in-app)';
+
+  @override
+  String get notificationDispatchScenarioOrderQuiet => 'Order (quiet hours)';
+
+  @override
+  String get notificationDispatchScenarioPromotion =>
+      'Promotion (consent check)';
+
+  @override
+  String get notificationDispatchScenarioSecurityQuiet =>
+      'Security (quiet hours bypass)';
+
+  @override
+  String get notificationDispatchLastResultTitle => 'Latest dispatch result';
+
+  @override
+  String get notificationDispatchOutcomeFilter => 'Outcome';
+
+  @override
+  String get notificationDispatchFilterAll => 'All';
+
+  @override
+  String get notificationDispatchAuditSection => 'Delivery audit trail';
+
+  @override
+  String get notificationDispatchAuditEmpty => 'No dispatch audit records yet.';
+
+  @override
+  String notificationDispatchAuditMetaLine(
+    String outcome,
+    String category,
+    String channel,
+    String timestamp,
+  ) {
+    return '$outcome · $category · $channel · $timestamp';
+  }
+
+  @override
+  String notificationDispatchInboxLinkLine(String notificationId) {
+    return 'Inbox notification: $notificationId';
+  }
+
+  @override
+  String get notificationDispatchOutcomeDeliveredInbox =>
+      'Delivered to in-app inbox';
+
+  @override
+  String get notificationDispatchOutcomeSimulatedChannel =>
+      'Simulated channel delivery';
+
+  @override
+  String get notificationDispatchOutcomeSuppressed => 'Suppressed by policy';
+
+  @override
+  String get notificationDispatchOutcomeDuplicate =>
+      'Duplicate idempotency reference';
+
+  @override
+  String get notificationDispatchOutcomeValidationFailed => 'Validation failed';
+
+  @override
+  String get notificationDispatchOutcomeChannelFailure =>
+      'Simulated channel failure';
+
+  @override
+  String get notificationDispatchOutcomeInboxFailure => 'Inbox persist failed';
+
+  @override
+  String get notificationDispatchOutcomeCoordinatorFailure =>
+      'Dispatch coordinator failure';
+
+  @override
+  String get notificationDispatchSourceDiagnostics => 'Diagnostics';
+
+  @override
+  String get notificationDispatchSourceOrderScenario => 'Order scenario';
+
+  @override
+  String get notificationDispatchSourcePromotionScenario =>
+      'Promotion scenario';
+
+  @override
+  String get notificationDispatchSourceSecurityScenario => 'Security scenario';
+
+  @override
+  String get notificationDispatchSourceTemplatePreview => 'Template preview';
+
+  @override
+  String get notificationDispatchTemplatesSection =>
+      'Template-driven dispatch (demo)';
+
+  @override
+  String get notificationDispatchTemplateSimulateAction =>
+      'Simulate dispatch with rendered template';
+
+  @override
+  String get notificationDispatchTemplateRenderFailed =>
+      'Template render failed — dispatch was not run.';
+
+  @override
+  String get notificationTemplatesTitle => 'Notification templates';
+
+  @override
+  String get notificationTemplatesDemoDisclaimer =>
+      'Demo notification templates only — previews are synthetic; no real messages are sent.';
+
+  @override
+  String get notificationTemplatesFiltersSection => 'Filters';
+
+  @override
+  String get notificationTemplatesClearFilters => 'Clear filters';
+
+  @override
+  String get notificationTemplatesLocaleSection => 'Preview locale';
+
+  @override
+  String notificationTemplatesLocaleFallbackLine(
+    String requested,
+    String resolved,
+  ) {
+    return 'Requested $requested — using fallback $resolved.';
+  }
+
+  @override
+  String notificationTemplatesLocaleExactLine(String locale) {
+    return 'Using locale $locale (no fallback).';
+  }
+
+  @override
+  String get notificationTemplatesCatalogSection =>
+      'Synthetic template catalog';
+
+  @override
+  String get notificationTemplatesEmpty =>
+      'No templates match the current filters.';
+
+  @override
+  String get notificationTemplatesPreviewSection =>
+      'Rendered preview (demo variables)';
+
+  @override
+  String notificationTemplatesMetaLine(
+    String category,
+    String channel,
+    String status,
+    String locale,
+  ) {
+    return '$category · $channel · $status · $locale';
+  }
+
+  @override
+  String get notificationTemplateStatusFilter => 'Template status';
+
+  @override
+  String get notificationTemplateStatusDraft => 'Draft';
+
+  @override
+  String get notificationTemplateStatusActive => 'Active';
+
+  @override
+  String get notificationTemplateStatusArchived => 'Archived';
+
+  @override
+  String get notificationTemplateLocaleEnglish => 'English';
+
+  @override
+  String get notificationTemplateLocaleRussian => 'Russian';
+
+  @override
+  String get notificationTemplateLocaleUzbek => 'Uzbek';
+
+  @override
+  String get notificationTemplateErrorInactive =>
+      'Template is not active — preview and dispatch are blocked.';
+
+  @override
+  String notificationTemplateErrorMissingVariables(String names) {
+    return 'Missing required variables: $names.';
+  }
+
+  @override
+  String get notificationTemplateErrorUndeclaredPlaceholder =>
+      'Template contains undeclared placeholders.';
+
+  @override
+  String get notificationTemplateErrorMalformedPlaceholder =>
+      'Malformed placeholder syntax.';
+
+  @override
+  String get notificationTemplateErrorSensitiveValue =>
+      'Variable value looks sensitive and was rejected for preview.';
+
+  @override
+  String get notificationTemplateErrorUnresolvedPlaceholder =>
+      'Rendered text still contains unresolved placeholders.';
+
+  @override
+  String get notificationTemplateErrorIncompatibleChannel =>
+      'Category and channel combination is not allowed for this template.';
+
+  @override
+  String get notificationTemplateErrorGeneric => 'Template render failed.';
+
+  @override
+  String get businessCenterNotificationTemplatesTitle =>
+      'Notification templates';
+
+  @override
+  String get businessCenterNotificationTemplatesBody =>
+      'Preview localized synthetic message templates (demo).';
+
+  @override
+  String get systemMessagesFeedTitle => 'System messages';
+
+  @override
+  String get systemMessagesDemoDisclaimer =>
+      'Demo system messages only — synthetic announcements; not official or live service notices.';
+
+  @override
+  String get systemMessagesOpenTooltip => 'Open system messages';
+
+  @override
+  String get systemMessagesFeedEmpty =>
+      'No published announcements are visible right now.';
+
+  @override
+  String systemMessageUnreadCount(int count) {
+    return '$count unread';
+  }
+
+  @override
+  String get systemMessageCategoryFilter => 'Message category';
+
+  @override
+  String get systemMessageCategoryGeneral => 'General announcement';
+
+  @override
+  String get systemMessageCategoryMaintenance => 'Maintenance notice';
+
+  @override
+  String get systemMessageCategoryServiceUpdate => 'Service update';
+
+  @override
+  String get systemMessageCategoryPolicy => 'Policy information';
+
+  @override
+  String get systemMessageLifecycleDraft => 'Draft';
+
+  @override
+  String get systemMessageLifecyclePublished => 'Published';
+
+  @override
+  String get systemMessageLifecycleWithdrawn => 'Withdrawn';
+
+  @override
+  String get systemMessageLifecycleArchived => 'Archived';
+
+  @override
+  String get systemMessageMarkReadAction => 'Mark as read';
+
+  @override
+  String get systemMessageMarkAllReadAction => 'Mark all as read';
+
+  @override
+  String get systemMessageMarkReadSuccess => 'Message marked as read.';
+
+  @override
+  String get systemMessageMarkReadAlready => 'Message was already read.';
+
+  @override
+  String get systemMessageMarkAllReadSuccess =>
+      'All visible messages marked as read.';
+
+  @override
+  String get systemMessageOpenAction => 'Open linked screen';
+
+  @override
+  String get systemMessageSimulateNotificationAction =>
+      'Simulate in-app notification (demo)';
+
+  @override
+  String systemMessageMetaLine(String category, String publishedAt) {
+    return '$category · $publishedAt';
+  }
+
+  @override
+  String get systemMessageContentUnavailable =>
+      'Localized content is unavailable for this message.';
+
+  @override
+  String get systemMessagesDemoLifecycleTitle =>
+      'System message lifecycle (demo)';
+
+  @override
+  String get systemMessagesDemoLifecycleTooltip => 'Demo lifecycle controls';
+
+  @override
+  String get systemMessagesDemoLifecycleDisclaimer =>
+      'Demo-only publish/withdraw/archive controls — in-memory and not durable.';
+
+  @override
+  String get systemMessagePublishAction => 'Publish';
+
+  @override
+  String get systemMessageWithdrawAction => 'Withdraw';
+
+  @override
+  String get systemMessageArchiveAction => 'Archive';
+
+  @override
+  String get systemMessageMutationSuccess => 'OK';
+
+  @override
+  String get systemMessageMutationInvalidTransition =>
+      'Lifecycle transition is not allowed.';
+
+  @override
+  String get systemMessageMutationValidationFailed =>
+      'Validation failed — no changes were saved.';
+
+  @override
+  String get systemMessageMutationNotFound => 'Message not found.';
+
+  @override
+  String get demoConversationsListTitle => 'Messages';
+
+  @override
+  String get demoConversationsDisclaimer =>
+      'Demo conversations only — messages are stored in memory; no real customer or support communication occurs.';
+
+  @override
+  String get demoConversationsEmpty =>
+      'No demo conversations for this participant.';
+
+  @override
+  String get demoConversationDetailTitle => 'Conversation';
+
+  @override
+  String get demoConversationNotFound =>
+      'Conversation not found or not accessible.';
+
+  @override
+  String demoConversationListMetaLine(String state, String preview) {
+    return '$state · $preview';
+  }
+
+  @override
+  String get demoConversationTypeCustomerBusiness =>
+      'Customer ↔ business (demo)';
+
+  @override
+  String get demoConversationTypeSupportDemo => 'Support demo';
+
+  @override
+  String get demoConversationStateOpen => 'Open';
+
+  @override
+  String get demoConversationStateClosed => 'Closed';
+
+  @override
+  String get demoConversationStateArchived => 'Archived';
+
+  @override
+  String get demoConversationRoleCustomer => 'Demo customer';
+
+  @override
+  String get demoConversationRoleBusinessAgent => 'Demo business agent';
+
+  @override
+  String get demoConversationRoleSupportAgent => 'Demo support agent';
+
+  @override
+  String get demoConversationComposerHint => 'Plain-text message';
+
+  @override
+  String get demoConversationComposerDisabledClosed =>
+      'Conversation is closed or archived — sending is disabled.';
+
+  @override
+  String get demoConversationSendAction => 'Send';
+
+  @override
+  String get demoConversationSendValidationError =>
+      'Enter a valid plain-text message.';
+
+  @override
+  String get demoConversationSendNotOpen =>
+      'Cannot send while the conversation is not open.';
+
+  @override
+  String get demoConversationSendUnsafeContent =>
+      'Message content was rejected for safety.';
+
+  @override
+  String get demoConversationSendFailure => 'Message was not sent.';
+
+  @override
+  String get profileDemoConversationsTitle => 'Demo messages';
+
+  @override
+  String get profileDemoConversationsSubtitle =>
+      'In-memory conversations (demo boundary)';
+
+  @override
+  String get platformAdminRolesTitle => 'Platform admin roles';
+
+  @override
+  String get platformAdminGovernanceDisclaimer =>
+      'Demo admin governance only — roles and permissions are in memory; no production authorization is enforced.';
+
+  @override
+  String get platformAdminHighRiskBoundaryNotice =>
+      'Financial, wallet, secret, and unrestricted private-content permissions are intentionally absent in this demo catalog.';
+
+  @override
+  String get platformAdminIdentitiesSectionTitle => 'Demo admin identities';
+
+  @override
+  String get platformAdminIdentitiesEmpty =>
+      'No demo admin identities are loaded.';
+
+  @override
+  String get platformAdminRolesSectionTitle => 'Roles and permissions';
+
+  @override
+  String get platformAdminRolesEmpty => 'No platform roles are defined.';
+
+  @override
+  String get platformAdminRoleDetailTitle => 'Role permissions';
+
+  @override
+  String get platformAdminPermissionCountLabel => 'permissions';
+
+  @override
+  String get platformAdminAuthPreviewTitle =>
+      'Authorization preview (read-only)';
+
+  @override
+  String get platformAdminAuthPreviewHint =>
+      'Evaluates the demo policy only — does not perform actions or persist audit records.';
+
+  @override
+  String get platformAdminAuthPreviewPermissionLabel => 'Required permission';
+
+  @override
+  String get platformAdminAuthPreviewScopeKindLabel => 'Resource scope';
+
+  @override
+  String get platformAdminAuthPreviewBusinessRefLabel => 'Business reference';
+
+  @override
+  String get platformAdminAuthPreviewBranchRefLabel => 'Branch reference';
+
+  @override
+  String get platformAdminAuthPreviewActionLabel => 'Action label';
+
+  @override
+  String get platformAdminAuthPreviewSelectAdmin =>
+      'Select an admin identity to preview authorization.';
+
+  @override
+  String get platformAdminAuthPreviewError =>
+      'Unable to evaluate authorization for the current selection.';
+
+  @override
+  String get platformAdminAuthDecisionAllowed => 'Allowed (demo policy)';
+
+  @override
+  String get platformAdminAuthDecisionDenied => 'Denied (demo policy)';
+
+  @override
+  String platformAdminAuthMatchedRole(String roleId) {
+    return 'Matched role: $roleId';
+  }
+
+  @override
+  String get platformAdminSuspendedNotice =>
+      'Suspended admins are denied regardless of role assignments.';
+
+  @override
+  String get platformAdminStatusActive => 'Active';
+
+  @override
+  String get platformAdminStatusSuspended => 'Suspended';
+
+  @override
+  String get platformRoleStatusEnabled => 'Enabled';
+
+  @override
+  String get platformRoleStatusDisabled => 'Disabled';
+
+  @override
+  String get platformScopeKindPlatform => 'Platform-wide';
+
+  @override
+  String get platformScopeKindBusiness => 'Assigned business';
+
+  @override
+  String get platformScopeKindBranch => 'Assigned branch';
+
+  @override
+  String get profilePlatformAdminGovernanceTitle => 'Demo platform admin';
+
+  @override
+  String get profilePlatformAdminGovernanceSubtitle =>
+      'Roles, permissions and policy preview (in memory)';
+
+  @override
+  String get platformRoleViewerName => 'Platform Viewer';
+
+  @override
+  String get platformRoleViewerPurpose =>
+      'Read-only visibility into the demo admin dashboard and audit records.';
+
+  @override
+  String get platformRoleVerificationReviewerName =>
+      'Business Verification Reviewer';
+
+  @override
+  String get platformRoleVerificationReviewerPurpose =>
+      'Review synthetic business verification submissions within assigned scope.';
+
+  @override
+  String get platformRoleModeratorName => 'Content Moderator';
+
+  @override
+  String get platformRoleModeratorPurpose =>
+      'Inspect moderation queues and perform permitted demo moderation actions.';
+
+  @override
+  String get platformRoleSupportAgentName => 'Support Agent';
+
+  @override
+  String get platformRoleSupportAgentPurpose =>
+      'View and respond to demo support cases within assigned business or branch scope.';
+
+  @override
+  String get platformRoleOperationsAdminName => 'Platform Operations Admin';
+
+  @override
+  String get platformRoleOperationsAdminPurpose =>
+      'View platform configuration and manage low-risk demo settings only.';
+
+  @override
+  String get platformRoleDisabledAuditName => 'Disabled Audit Role (demo)';
+
+  @override
+  String get platformRoleDisabledAuditPurpose =>
+      'Seed role kept disabled to validate denial when roles are not enabled.';
+
+  @override
+  String get platformPermissionViewDashboard => 'View platform admin dashboard';
+
+  @override
+  String get platformPermissionViewVerificationQueue =>
+      'View business verification queue';
+
+  @override
+  String get platformPermissionReviewVerification =>
+      'Review business verification submissions';
+
+  @override
+  String get platformPermissionViewModerationQueue => 'View moderation queue';
+
+  @override
+  String get platformPermissionPerformModeration =>
+      'Perform permitted moderation actions';
+
+  @override
+  String get platformPermissionViewSupportCases => 'View support cases';
+
+  @override
+  String get platformPermissionRespondSupportCases =>
+      'Respond to support cases';
+
+  @override
+  String get platformPermissionViewConfiguration =>
+      'View platform configuration';
+
+  @override
+  String get platformPermissionManageLowRiskConfiguration =>
+      'Manage low-risk platform configuration';
+
+  @override
+  String get platformPermissionViewAuditRecords => 'View audit records';
+
+  @override
+  String get platformAuthReasonAllowedExplicitGrant =>
+      'Allowed by an explicit permission grant on an enabled role.';
+
+  @override
+  String get platformAuthReasonDeniedInvalidInput =>
+      'Denied — invalid authorization input.';
+
+  @override
+  String get platformAuthReasonDeniedAdminSuspended =>
+      'Denied — admin identity is suspended.';
+
+  @override
+  String get platformAuthReasonDeniedAdminNotFound =>
+      'Denied — admin identity was not found.';
+
+  @override
+  String get platformAuthReasonDeniedNoEnabledRoles =>
+      'Denied — no enabled roles are assigned.';
+
+  @override
+  String get platformAuthReasonDeniedRoleDisabled =>
+      'Denied — assigned role is disabled.';
+
+  @override
+  String get platformAuthReasonDeniedPermissionNotGranted =>
+      'Denied — permission is not granted to any enabled role.';
+
+  @override
+  String get platformAuthReasonDeniedScopePlatformWideRequired =>
+      'Denied — this permission requires an explicit platform-wide scope.';
+
+  @override
+  String get platformAuthReasonDeniedScopeBusinessReferenceRequired =>
+      'Denied — business scope requires a business reference.';
+
+  @override
+  String get platformAuthReasonDeniedScopeBranchReferenceRequired =>
+      'Denied — branch scope requires a branch reference.';
+
+  @override
+  String get platformAuthReasonDeniedCrossBusinessAccess =>
+      'Denied — cross-business access is not allowed for this admin.';
+
+  @override
+  String get platformAuthReasonDeniedCrossBranchAccess =>
+      'Denied — cross-branch access is not allowed for this admin.';
+
+  @override
+  String get platformAuthReasonDeniedBusinessAssignmentRequired =>
+      'Denied — business-scoped action requires business assignments on the admin.';
+
+  @override
+  String get platformAuthReasonDeniedBranchAssignmentRequired =>
+      'Denied — branch-scoped action requires branch assignments on the admin.';
+
+  @override
+  String get platformGovernanceWorkflowDisclaimer =>
+      'Demo governance workflows only — no real business verification, moderation decision or customer support action is executed.';
+
+  @override
+  String get platformBusinessVerificationTitle => 'Business verification queue';
+
+  @override
+  String get platformModerationTitle => 'Moderation queue';
+
+  @override
+  String get platformSupportCasesTitle => 'Support cases';
+
+  @override
+  String get platformWorkflowActiveAdminLabel => 'Acting demo admin';
+
+  @override
+  String get platformWorkflowHistoryTitle => 'History';
+
+  @override
+  String get platformWorkflowOutcomeSuccess =>
+      'Demo action recorded in memory.';
+
+  @override
+  String get platformWorkflowOutcomeAuthorizationDenied =>
+      'Action denied by demo authorization policy.';
+
+  @override
+  String get platformWorkflowOutcomeInvalidTransition =>
+      'Invalid status transition.';
+
+  @override
+  String get platformWorkflowOutcomeInvalidInput => 'Invalid input.';
+
+  @override
+  String get platformWorkflowOutcomeNotFound => 'Record not found.';
+
+  @override
+  String get platformWorkflowOutcomeFailure =>
+      'Demo repository failure — no changes saved.';
+
+  @override
+  String get platformAdminNavBusinessVerification =>
+      'Business verification queue';
+
+  @override
+  String get platformAdminNavModeration => 'Moderation queue';
+
+  @override
+  String get platformAdminNavSupportCases => 'Support cases';
+
+  @override
+  String get platformBverStatusPending => 'Pending';
+
+  @override
+  String get platformBverStatusUnderReview => 'Under review';
+
+  @override
+  String get platformBverStatusApproved => 'Approved (demo)';
+
+  @override
+  String get platformBverStatusRejected => 'Rejected (demo)';
+
+  @override
+  String get platformBverStatusNeedsInfo => 'Needs more information';
+
+  @override
+  String get platformBverActionBeginReview => 'Begin review';
+
+  @override
+  String get platformBverActionApprove => 'Approve (demo)';
+
+  @override
+  String get platformBverActionReject => 'Reject (demo)';
+
+  @override
+  String get platformModStatusPending => 'Pending';
+
+  @override
+  String get platformModStatusUnderReview => 'Under review';
+
+  @override
+  String get platformModStatusActionProposed => 'Action proposed';
+
+  @override
+  String get platformModStatusResolved => 'Resolved (demo)';
+
+  @override
+  String get platformModStatusDismissed => 'Dismissed (demo)';
+
+  @override
+  String get platformModActionBeginReview => 'Begin review';
+
+  @override
+  String get platformSupportStatusOpen => 'Open';
+
+  @override
+  String get platformSupportStatusAssigned => 'Assigned';
+
+  @override
+  String get platformSupportStatusInProgress => 'In progress';
+
+  @override
+  String get platformSupportStatusResolved => 'Resolved';
+
+  @override
+  String get platformSupportStatusClosed => 'Closed';
+
+  @override
+  String get platformSupportNoteHint => 'Internal note (plain text)';
+
+  @override
+  String get platformSupportAddNoteAction => 'Add internal note (demo)';
+
+  @override
+  String get platformSupportAssignAction => 'Assign support role (demo)';
+
+  @override
+  String get platformGovernancePhase15Disclaimer =>
+      'Demo platform governance only — configuration, audit and approvals are in memory; no production platform action is executed.';
+
+  @override
+  String get platformGovernanceAuditTitle => 'Platform audit trail';
+
+  @override
+  String get platformGovernanceConfigurationTitle => 'Platform configuration';
+
+  @override
+  String get platformGovernanceApprovalsTitle => 'Approval requests';
+
+  @override
+  String get platformGovernanceOperationsTitle => 'Operations dashboard';
+
+  @override
+  String get platformGovernanceAuditEmpty =>
+      'No audit events match the current filters.';
+
+  @override
+  String get platformGovernanceAccessDenied =>
+      'Access denied by demo authorization policy.';
+
+  @override
+  String get platformGovernanceSeedBadge => 'Seed';
+
+  @override
+  String get platformConfigRestrictedNotice =>
+      'Restricted — maker-checker approval required; not editable in this demo.';
+
+  @override
+  String platformConfigRevisionLabel(int revision) {
+    return 'Revision $revision';
+  }
+
+  @override
+  String get platformGovernanceApprovalNoExecutionNotice =>
+      'Approving or rejecting a proposal updates the demo request only. No wallet, payment, or security operation runs.';
+
+  @override
+  String get platformGovernanceApprovalCreateAction => 'Submit demo proposal';
+
+  @override
+  String get platformGovernanceApprovalApproveAction =>
+      'Approve (demo lifecycle only)';
+
+  @override
+  String get platformGovernanceApprovalRejectAction =>
+      'Reject (demo lifecycle only)';
+
+  @override
+  String get platformGovernanceOperationsSyntheticNotice =>
+      'Counts below are derived from in-memory demo repositories — not production KPIs.';
+
+  @override
+  String get platformGovernanceOperationsRefresh => 'Refresh summary';
+
+  @override
+  String get platformGovernanceOperationsEmpty => 'No summary available.';
+
+  @override
+  String get platformGovernanceOperationsAsOf => 'As of (UTC)';
+
+  @override
+  String get platformGovernanceOperationsPendingApprovals =>
+      'Pending approval requests';
+
+  @override
+  String get platformGovernanceOperationsConfigRevisions =>
+      'Configuration revision entries';
+
+  @override
+  String get platformGovernanceOperationsVerificationSection =>
+      'Verification submissions';
+
+  @override
+  String get platformGovernanceOperationsModerationSection =>
+      'Moderation cases';
+
+  @override
+  String get platformAdminNavAudit => 'Audit trail';
+
+  @override
+  String get platformAdminNavConfiguration => 'Platform configuration';
+
+  @override
+  String get platformAdminNavApprovals => 'Approval requests';
+
+  @override
+  String get platformAdminNavOperations => 'Operations dashboard';
+
+  @override
+  String get platformPermissionSubmitApprovalProposal =>
+      'Submit high-risk administrative proposal (demo)';
+
+  @override
+  String get platformPermissionDecideApprovalProposal =>
+      'Decide high-risk administrative proposal (demo)';
+
+  @override
+  String get platformRoleGovernanceApproverName => 'Governance Approver';
+
+  @override
+  String get platformRoleGovernanceApproverPurpose =>
+      'Second-party approval for hypothetical high-risk proposals — does not grant other platform privileges.';
+
+  @override
+  String get platformWorkflowOutcomeAuditPersistFailure =>
+      'Domain change may have occurred, but audit append failed (in-memory demo limitation).';
 }
