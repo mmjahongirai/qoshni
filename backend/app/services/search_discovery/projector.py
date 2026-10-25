@@ -16,10 +16,7 @@ from app.services.search_discovery.branch_coordinate_projection import (
     sync_branch_coordinates_to_search_index,
 )
 from app.services.search_discovery.metadata import bump_catalog_generation
-
-
-def stable_id_for_application(application_id: uuid.UUID) -> str:
-    return f"business:onboarding:{application_id}"
+from app.services.search_discovery.stable_ids import stable_id_for_application
 
 
 def _display_title(application: BusinessOnboardingApplication) -> str:
