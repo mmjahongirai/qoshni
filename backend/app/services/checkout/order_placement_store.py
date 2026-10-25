@@ -38,10 +38,10 @@ class ConsumerOrderRecord:
     subtotal_minor: int
     total_minor: int
     checkout_correlation_id: str
-    checkout_quote_id: uuid.UUID | None = None
     idempotency_key: str
     lines: list[OrderLineSnapshot]
     reservation_ids: list[uuid.UUID]
+    checkout_quote_id: uuid.UUID | None = None
     created_at: datetime = field(default_factory=lambda: datetime.now(UTC))
     updated_at: datetime = field(default_factory=lambda: datetime.now(UTC))
 
