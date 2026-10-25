@@ -106,6 +106,13 @@ import 'package:qoshni/features/business_platform/presentation/business_fulfillm
 import 'package:qoshni/features/business_platform/presentation/business_staff_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_owner_profile_controller.dart';
 import 'package:qoshni/features/business_platform/presentation/business_profile_controller.dart';
+import 'package:qoshni/features/checkout/application/qoshni_cart_service.dart';
+import 'package:qoshni/features/checkout/application/qoshni_checkout_controller.dart';
+import 'package:qoshni/features/checkout/application/qoshni_checkout_pricing_service.dart';
+import 'package:qoshni/features/checkout/application/qoshni_checkout_session_service.dart';
+import 'package:qoshni/features/checkout/application/qoshni_checkout_quote_service.dart';
+import 'package:qoshni/features/checkout/application/qoshni_order_placement_service.dart';
+import 'package:qoshni/features/auth/presentation/auth_controller.dart';
 import 'package:qoshni/features/home/presentation/cart/cart_controller.dart';
 import 'package:qoshni/features/home/presentation/favorites/favorites_controller.dart';
 import 'package:qoshni/features/home/presentation/orders/demo_order_controller.dart';
@@ -195,7 +202,42 @@ Future<void> configureDependencies(AppConfig config) async {
     ..registerLazySingleton<ThemeController>(ThemeController.new)
     ..registerLazySingleton<LocaleController>(LocaleController.new)
     ..registerLazySingleton<FavoritesController>(FavoritesController.new)
-    ..registerLazySingleton<CartController>(CartController.new)
+    ..registerLazySingleton<QoshniCartService>(QoshniCartService.new)
+    ..registerLazySingleton<QoshniCheckoutPricingService>(
+      QoshniCheckoutPricingService.new,
+    )
+    ..registerLazySingleton<QoshniCheckoutSessionService>(
+      () => QoshniCheckoutSessionService(
+        cartService: getIt<QoshniCartService>(),
+        pricingService: getIt<QoshniCheckoutPricingService>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniCheckoutController>(
+      () => QoshniCheckoutController(
+        cartService: getIt<QoshniCartService>(),
+        sessionService: getIt<QoshniCheckoutSessionService>(),
+      ),
+    )
+    ..registerLazySingleton<QoshniCheckoutQuoteService>(
+      () => QoshniCheckoutQuoteService(
+        appConfig: getIt<AppConfig>(),
+        apiClient: getIt<ApiClient>(),
+        accessTokenProvider: () async => getIt<AuthController>().accessToken,
+      ),
+    )
+    ..registerLazySingleton<QoshniOrderPlacementService>(
+      () => QoshniOrderPlacementService(
+        appConfig: getIt<AppConfig>(),
+        apiClient: getIt<ApiClient>(),
+        accessTokenProvider: () async => getIt<AuthController>().accessToken,
+      ),
+    )
+    ..registerLazySingleton<CartController>(
+      () => CartController(
+        cartService: getIt<QoshniCartService>(),
+        pricingService: getIt<QoshniCheckoutPricingService>(),
+      ),
+    )
     ..registerLazySingleton<DemoOrderController>(DemoOrderController.new)
     ..registerLazySingleton<QoshniNotificationRepository>(
       InMemoryQoshniNotificationRepository.new,

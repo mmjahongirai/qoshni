@@ -1462,6 +1462,138 @@ abstract class AppLocalizations {
   /// **'Your cart is empty. Add demo items before checkout.'**
   String get checkoutEmptyBody;
 
+  /// No description provided for @checkoutPreparationNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Checkout preparation only — prices come from the demo catalog calculator. No order is placed until you explicitly confirm the separate demo step.'**
+  String get checkoutPreparationNotice;
+
+  /// No description provided for @checkoutFulfillmentLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Fulfillment'**
+  String get checkoutFulfillmentLabel;
+
+  /// No description provided for @checkoutFulfillmentPickup.
+  ///
+  /// In en, this message translates to:
+  /// **'Pickup'**
+  String get checkoutFulfillmentPickup;
+
+  /// No description provided for @checkoutFulfillmentDelivery.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery'**
+  String get checkoutFulfillmentDelivery;
+
+  /// No description provided for @checkoutFulfillmentServiceAtLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Service at location'**
+  String get checkoutFulfillmentServiceAtLocation;
+
+  /// No description provided for @checkoutRecalculateAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Update quote'**
+  String get checkoutRecalculateAction;
+
+  /// No description provided for @checkoutQuoteStaleTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Cart changed'**
+  String get checkoutQuoteStaleTitle;
+
+  /// No description provided for @checkoutQuoteStaleBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your cart changed after this quote. Update the quote before confirming the demo order.'**
+  String get checkoutQuoteStaleBody;
+
+  /// No description provided for @checkoutPricingErrorTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Pricing unavailable'**
+  String get checkoutPricingErrorTitle;
+
+  /// No description provided for @checkoutPricingErrorBody.
+  ///
+  /// In en, this message translates to:
+  /// **'We could not price one or more cart lines from the demo catalog.'**
+  String get checkoutPricingErrorBody;
+
+  /// No description provided for @checkoutUnsupportedFulfillmentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Fulfillment not supported'**
+  String get checkoutUnsupportedFulfillmentTitle;
+
+  /// No description provided for @checkoutUnsupportedFulfillmentBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This fulfillment choice is not supported for the items in your cart.'**
+  String get checkoutUnsupportedFulfillmentBody;
+
+  /// No description provided for @checkoutMultiBusinessNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Items from multiple demo businesses are grouped separately. One parent checkout may create multiple business orders in a future release.'**
+  String get checkoutMultiBusinessNotice;
+
+  /// No description provided for @checkoutServerOrderSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Server order (not demo)'**
+  String get checkoutServerOrderSectionTitle;
+
+  /// No description provided for @checkoutServerOrderUnavailableBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Backend consumer catalog and inventory are not available yet. Server placement stays disabled until authoritative pricing and stock exist.'**
+  String get checkoutServerOrderUnavailableBody;
+
+  /// No description provided for @checkoutServerOrderTryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Check server placement'**
+  String get checkoutServerOrderTryAction;
+
+  /// No description provided for @checkoutServerOrderCatalogUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Server rejected placement: authoritative catalog is not available.'**
+  String get checkoutServerOrderCatalogUnavailable;
+
+  /// No description provided for @checkoutServerOrderSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Server accepted placement (order {orderId}). Payment and fulfilment are still separate.'**
+  String checkoutServerOrderSuccess(String orderId);
+
+  /// No description provided for @checkoutServerOrderNotConfigured.
+  ///
+  /// In en, this message translates to:
+  /// **'API base URL is not configured for server placement.'**
+  String get checkoutServerOrderNotConfigured;
+
+  /// No description provided for @checkoutServerOrderSignInRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to check server placement.'**
+  String get checkoutServerOrderSignInRequired;
+
+  /// No description provided for @checkoutDemoOrderSeparateNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo order confirmation below is local only and is not a server-confirmed purchase.'**
+  String get checkoutDemoOrderSeparateNotice;
+
+  /// No description provided for @checkoutSessionCorrelationLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Checkout reference: {reference}'**
+  String checkoutSessionCorrelationLabel(String reference);
+
   /// No description provided for @demoOrderConfirmationTitle.
   ///
   /// In en, this message translates to:

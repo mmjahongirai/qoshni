@@ -768,6 +768,86 @@ class AppLocalizationsEn extends AppLocalizations {
       'Your cart is empty. Add demo items before checkout.';
 
   @override
+  String get checkoutPreparationNotice =>
+      'Checkout preparation only — prices come from the demo catalog calculator. No order is placed until you explicitly confirm the separate demo step.';
+
+  @override
+  String get checkoutFulfillmentLabel => 'Fulfillment';
+
+  @override
+  String get checkoutFulfillmentPickup => 'Pickup';
+
+  @override
+  String get checkoutFulfillmentDelivery => 'Delivery';
+
+  @override
+  String get checkoutFulfillmentServiceAtLocation => 'Service at location';
+
+  @override
+  String get checkoutRecalculateAction => 'Update quote';
+
+  @override
+  String get checkoutQuoteStaleTitle => 'Cart changed';
+
+  @override
+  String get checkoutQuoteStaleBody =>
+      'Your cart changed after this quote. Update the quote before confirming the demo order.';
+
+  @override
+  String get checkoutPricingErrorTitle => 'Pricing unavailable';
+
+  @override
+  String get checkoutPricingErrorBody =>
+      'We could not price one or more cart lines from the demo catalog.';
+
+  @override
+  String get checkoutUnsupportedFulfillmentTitle => 'Fulfillment not supported';
+
+  @override
+  String get checkoutUnsupportedFulfillmentBody =>
+      'This fulfillment choice is not supported for the items in your cart.';
+
+  @override
+  String get checkoutMultiBusinessNotice =>
+      'Items from multiple demo businesses are grouped separately. One parent checkout may create multiple business orders in a future release.';
+
+  @override
+  String get checkoutServerOrderSectionTitle => 'Server order (not demo)';
+
+  @override
+  String get checkoutServerOrderUnavailableBody =>
+      'Backend consumer catalog and inventory are not available yet. Server placement stays disabled until authoritative pricing and stock exist.';
+
+  @override
+  String get checkoutServerOrderTryAction => 'Check server placement';
+
+  @override
+  String get checkoutServerOrderCatalogUnavailable =>
+      'Server rejected placement: authoritative catalog is not available.';
+
+  @override
+  String checkoutServerOrderSuccess(String orderId) {
+    return 'Server accepted placement (order $orderId). Payment and fulfilment are still separate.';
+  }
+
+  @override
+  String get checkoutServerOrderNotConfigured =>
+      'API base URL is not configured for server placement.';
+
+  @override
+  String get checkoutServerOrderSignInRequired =>
+      'Sign in to check server placement.';
+
+  @override
+  String get checkoutDemoOrderSeparateNotice =>
+      'Demo order confirmation below is local only and is not a server-confirmed purchase.';
+
+  @override
+  String checkoutSessionCorrelationLabel(String reference) {
+    return 'Checkout reference: $reference';
+  }
+
+  @override
   String get demoOrderConfirmationTitle => 'Demo confirmation';
 
   @override

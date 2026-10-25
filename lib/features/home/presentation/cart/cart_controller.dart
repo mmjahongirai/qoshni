@@ -1,11 +1,16 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:qoshni/core/localization/generated/app_localizations.dart';
+import 'package:qoshni/features/checkout/application/qoshni_cart_service.dart';
+import 'package:qoshni/features/checkout/application/qoshni_checkout_pricing_service.dart';
+import 'package:qoshni/features/checkout/application/qoshni_consumer_catalog_line.dart';
+import 'package:qoshni/features/checkout/domain/qoshni_cart_line_reference.dart';
+import 'package:qoshni/features/checkout/domain/qoshni_price_quote.dart';
+import 'package:qoshni/features/checkout/domain/qoshni_universal_cart.dart';
 import 'package:qoshni/features/home/presentation/cart/cart_line_key.dart';
-import 'package:qoshni/features/home/presentation/data/business_catalog_mock_data.dart';
-import 'package:qoshni/features/home/presentation/data/home_mock_data.dart';
-import 'package:qoshni/features/home/presentation/data/mock_business_id.dart';
 import 'package:qoshni/features/home/presentation/cart/demo_order_snapshot.dart';
+import 'package:qoshni/features/home/presentation/data/business_catalog_mock_data.dart';
+import 'package:qoshni/features/home/presentation/data/mock_business_id.dart';
 import 'package:qoshni/features/home/presentation/data/mock_catalog_item_id.dart';
 
 class ResolvedCartLine {
@@ -26,82 +31,71 @@ class ResolvedCartLine {
   int get subtotalUzs => unitPriceUzs * quantity;
 }
 
-/// In-memory shopping cart for the MVP (not persisted across restarts).
+/// Facade over [QoshniCartService] for existing Home cart UI.
 class CartController extends ChangeNotifier {
-  final List<CartLineKey> _lineOrder = [];
-  final Map<CartLineKey, int> _quantities = {};
-
-  int get totalUnitCount {
-    var total = 0;
-    for (final quantity in _quantities.values) {
-      total += quantity;
-    }
-    return total;
+  CartController({
+    required QoshniCartService cartService,
+    required QoshniCheckoutPricingService pricingService,
+  })  : _cartService = cartService,
+        _pricingService = pricingService {
+    _cartService.addListener(_forwardNotify);
   }
 
-  bool get isEmpty => _quantities.isEmpty;
+  final QoshniCartService _cartService;
+  final QoshniCheckoutPricingService _pricingService;
 
-  List<CartLineKey> get lineKeys => List<CartLineKey>.unmodifiable(_lineOrder);
+  @override
+  void dispose() {
+    _cartService.removeListener(_forwardNotify);
+    super.dispose();
+  }
 
-  int quantityFor(CartLineKey key) => _quantities[key] ?? 0;
+  void _forwardNotify() => notifyListeners();
+
+  int get totalUnitCount => _cartService.cart.totalUnitCount;
+
+  bool get isEmpty => _cartService.isEmpty;
+
+  List<CartLineKey> get lineKeys => _cartService.lineOrder;
+
+  int quantityFor(CartLineKey key) => _cartService.quantityFor(key);
 
   bool addCatalogItem({
     required AppLocalizations l10n,
     required MockBusinessId businessId,
     required MockCatalogItemId catalogItemId,
   }) {
-    final catalogItem = findCatalogItemForBusiness(
+    final probe = resolveConsumerCatalogLine(
       l10n: l10n,
+      colorScheme: const ColorScheme.light(),
       businessId: businessId,
       catalogItemId: catalogItemId,
     );
-    if (catalogItem == null || catalogItem.samplePriceUzs == null) {
+    if (probe.status != QoshniConsumerCatalogResolveStatus.found) {
       return false;
     }
 
-    final key = CartLineKey(
+    final result = _cartService.addLine(
       businessId: businessId,
       catalogItemId: catalogItemId,
     );
-    if (!_quantities.containsKey(key)) {
-      _lineOrder.add(key);
-    }
-    _quantities[key] = (_quantities[key] ?? 0) + 1;
-    notifyListeners();
-    return true;
+    return result == QoshniCartMutationResult.success;
   }
 
   void incrementQuantity(CartLineKey key) {
-    if (!_quantities.containsKey(key)) {
-      return;
-    }
-    _quantities[key] = _quantities[key]! + 1;
-    notifyListeners();
+    _cartService.incrementQuantity(key);
   }
 
   void decrementQuantity(CartLineKey key) {
-    final current = _quantities[key];
-    if (current == null || current <= 1) {
-      return;
-    }
-    _quantities[key] = current - 1;
-    notifyListeners();
+    _cartService.decrementQuantity(key);
   }
 
   void removeLine(CartLineKey key) {
-    if (_quantities.remove(key) != null) {
-      _lineOrder.remove(key);
-      notifyListeners();
-    }
+    _cartService.removeLine(key);
   }
 
   void clear() {
-    if (_quantities.isEmpty) {
-      return;
-    }
-    _quantities.clear();
-    _lineOrder.clear();
-    notifyListeners();
+    _cartService.clear();
   }
 
   List<ResolvedCartLine> resolveLines(
@@ -109,64 +103,75 @@ class CartController extends ChangeNotifier {
     ColorScheme colorScheme,
   ) {
     final lines = <ResolvedCartLine>[];
-    final staleKeys = <CartLineKey>[];
+    final staleKeys = <QoshniCartLineReference>{};
 
-    for (final key in _lineOrder) {
-      final quantity = _quantities[key];
-      if (quantity == null || quantity < 1) {
-        staleKeys.add(key);
-        continue;
-      }
-
-      final catalogItem = findCatalogItemForBusiness(
+    for (final item in _cartService.cart.linesInOrder) {
+      final key = item.reference;
+      final resolved = resolveConsumerCatalogLine(
         l10n: l10n,
+        colorScheme: colorScheme,
         businessId: key.businessId,
         catalogItemId: key.catalogItemId,
       );
-      final business = findMockBusinessById(l10n, colorScheme, key.businessId);
-      final price = catalogItem?.samplePriceUzs;
-
-      if (catalogItem == null || business == null || price == null) {
+      if (resolved.status != QoshniConsumerCatalogResolveStatus.found ||
+          resolved.line == null) {
         staleKeys.add(key);
         continue;
       }
-
+      final line = resolved.line!;
       lines.add(
         ResolvedCartLine(
           key: key,
-          quantity: quantity,
-          catalogItem: catalogItem,
-          businessName: business.name,
-          unitPriceUzs: price,
+          quantity: item.quantity,
+          catalogItem: line.catalogItem,
+          businessName: line.businessName,
+          unitPriceUzs: line.unitPriceSom,
         ),
       );
     }
 
     if (staleKeys.isNotEmpty) {
-      for (final key in staleKeys) {
-        _quantities.remove(key);
-        _lineOrder.remove(key);
-      }
-      notifyListeners();
+      _cartService.purgeInvalidReferences(staleKeys);
     }
 
     return lines;
   }
 
   int estimatedTotalUzs(AppLocalizations l10n, ColorScheme colorScheme) {
-    return resolveLines(l10n, colorScheme)
-        .fold<int>(0, (sum, line) => sum + line.subtotalUzs);
+    final quote = _pricingService.quoteCart(
+      l10n: l10n,
+      colorScheme: colorScheme,
+      cart: _cartService.cart,
+    );
+    return quote.quote?.totalSom ?? 0;
+  }
+
+  QoshniPriceQuote? priceQuote(AppLocalizations l10n, ColorScheme colorScheme) {
+    final result = _pricingService.quoteCart(
+      l10n: l10n,
+      colorScheme: colorScheme,
+      cart: _cartService.cart,
+    );
+    return result.quote;
   }
 
   DemoOrderSnapshot? buildDemoOrderSnapshot(
     AppLocalizations l10n,
-    ColorScheme colorScheme,
-  ) {
-    final lines = resolveLines(l10n, colorScheme);
-    final total = estimatedTotalUzs(l10n, colorScheme);
-    return DemoOrderSnapshot.fromResolvedCartLines(
-      lines: lines,
-      totalUzs: total,
-    );
+    ColorScheme colorScheme, {
+    QoshniPriceQuote? authoritativeQuote,
+  }) {
+    final quote = authoritativeQuote ??
+        _pricingService
+            .quoteCart(
+              l10n: l10n,
+              colorScheme: colorScheme,
+              cart: _cartService.cart,
+            )
+            .quote;
+    if (quote == null || quote.lines.isEmpty) {
+      return null;
+    }
+
+    return DemoOrderSnapshot.fromPriceQuote(quote: quote);
   }
 }

@@ -10,6 +10,15 @@ from app.db.models.identity import AuthAuditEvent, AuthSession, OtpChallenge, Us
 from app.db.models.platform_roles import UserPlatformRoleAssignment
 from app.db.models.profile import UserPreferences, UserProfile
 from app.db.models.saved_places import UserSavedPlace
+from app.db.models.consumer_orders import (
+    CheckoutQuote,
+    CheckoutQuoteLine,
+    ConsumerOrder,
+    ConsumerOrderItem,
+    ConsumerOrderStatusEvent,
+    InventoryReservation,
+    OrderIdempotencyRecord,
+)
 from app.db.models.search_discovery import (
     SearchIndexMetadata,
     SearchIndexProjectionReceipt,
@@ -32,4 +41,11 @@ __all__ = [
     "SearchIndexProjectionReceipt",
     "SearchIndexRecord",
     "UserSavedPlace",
+    "CheckoutQuote",
+    "CheckoutQuoteLine",
+    "ConsumerOrder",
+    "ConsumerOrderItem",
+    "ConsumerOrderStatusEvent",
+    "InventoryReservation",
+    "OrderIdempotencyRecord",
 ]

@@ -768,6 +768,86 @@ class AppLocalizationsUz extends AppLocalizations {
   String get checkoutEmptyBody => 'Savat bo‘sh. Avval demo mahsulot qo‘shing.';
 
   @override
+  String get checkoutPreparationNotice =>
+      'Faqat checkout tayyorgarligi — narxlar demo katalog kalkulyatoridan. Alohida demo bosqichini tasdiqlamaguncha buyurtma yaratilmaydi.';
+
+  @override
+  String get checkoutFulfillmentLabel => 'Yetkazib berish usuli';
+
+  @override
+  String get checkoutFulfillmentPickup => 'O‘zi olib ketish';
+
+  @override
+  String get checkoutFulfillmentDelivery => 'Yetkazib berish';
+
+  @override
+  String get checkoutFulfillmentServiceAtLocation => 'Joyida xizmat';
+
+  @override
+  String get checkoutRecalculateAction => 'Hisobni yangilash';
+
+  @override
+  String get checkoutQuoteStaleTitle => 'Savat o‘zgardi';
+
+  @override
+  String get checkoutQuoteStaleBody =>
+      'Hisobdan keyin savat o‘zgardi. Demo buyurtmani tasdiqlashdan oldin hisobni yangilang.';
+
+  @override
+  String get checkoutPricingErrorTitle => 'Narx hisoblanmadi';
+
+  @override
+  String get checkoutPricingErrorBody =>
+      'Demo katalogdagi bir yoki bir nechta pozitsiya uchun narx topilmadi.';
+
+  @override
+  String get checkoutUnsupportedFulfillmentTitle =>
+      'Usul qo‘llab-quvvatlanmaydi';
+
+  @override
+  String get checkoutUnsupportedFulfillmentBody =>
+      'Savatdagi mahsulotlar uchun bu yetkazish usuli qo‘llab-quvvatlanmaydi.';
+
+  @override
+  String get checkoutMultiBusinessNotice =>
+      'Turli demo bizneslar alohida guruhlangan. Kelajakda bitta checkout bir nechta buyurtma yaratishi mumkin.';
+
+  @override
+  String get checkoutServerOrderSectionTitle => 'Server buyurtma (demo emas)';
+
+  @override
+  String get checkoutServerOrderUnavailableBody =>
+      'Backendda iste’molchi katalogi va qoldiq hali yo‘q. Server joylash hali o‘chirilgan.';
+
+  @override
+  String get checkoutServerOrderTryAction => 'Server joylashni tekshirish';
+
+  @override
+  String get checkoutServerOrderCatalogUnavailable =>
+      'Server rad etdi: authoritative catalog mavjud emas.';
+
+  @override
+  String checkoutServerOrderSuccess(String orderId) {
+    return 'Server qabul qildi (buyurtma $orderId). To‘lov va yetkazish alohida.';
+  }
+
+  @override
+  String get checkoutServerOrderNotConfigured => 'API manzili sozlanmagan.';
+
+  @override
+  String get checkoutServerOrderSignInRequired =>
+      'Server tekshiruvi uchun tizimga kiring.';
+
+  @override
+  String get checkoutDemoOrderSeparateNotice =>
+      'Quyidagi demo tasdiq faqat mahalliy — server tasdiqlangan xarid emas.';
+
+  @override
+  String checkoutSessionCorrelationLabel(String reference) {
+    return 'Checkout havolasi: $reference';
+  }
+
+  @override
   String get demoOrderConfirmationTitle => 'Demo tasdiq';
 
   @override

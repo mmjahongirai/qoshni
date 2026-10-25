@@ -761,6 +761,86 @@ class AppLocalizationsRu extends AppLocalizations {
       'Корзина пуста. Добавьте демо-товары перед оформлением.';
 
   @override
+  String get checkoutPreparationNotice =>
+      'Только подготовка к оформлению — цены из демо-калькулятора каталога. Заказ не создаётся, пока вы явно не подтвердите отдельный демо-шаг.';
+
+  @override
+  String get checkoutFulfillmentLabel => 'Способ получения';
+
+  @override
+  String get checkoutFulfillmentPickup => 'Самовывоз';
+
+  @override
+  String get checkoutFulfillmentDelivery => 'Доставка';
+
+  @override
+  String get checkoutFulfillmentServiceAtLocation => 'Услуга на месте';
+
+  @override
+  String get checkoutRecalculateAction => 'Обновить расчёт';
+
+  @override
+  String get checkoutQuoteStaleTitle => 'Корзина изменилась';
+
+  @override
+  String get checkoutQuoteStaleBody =>
+      'Корзина изменилась после расчёта. Обновите расчёт перед подтверждением демо-заказа.';
+
+  @override
+  String get checkoutPricingErrorTitle => 'Расчёт недоступен';
+
+  @override
+  String get checkoutPricingErrorBody =>
+      'Не удалось рассчитать цену для одной или нескольких позиций демо-каталога.';
+
+  @override
+  String get checkoutUnsupportedFulfillmentTitle =>
+      'Способ получения не поддерживается';
+
+  @override
+  String get checkoutUnsupportedFulfillmentBody =>
+      'Этот способ получения не поддерживается для товаров в корзине.';
+
+  @override
+  String get checkoutMultiBusinessNotice =>
+      'Позиции от разных демо-бизнесов сгруппированы отдельно. В будущем один checkout может создать несколько заказов.';
+
+  @override
+  String get checkoutServerOrderSectionTitle => 'Серверный заказ (не демо)';
+
+  @override
+  String get checkoutServerOrderUnavailableBody =>
+      'На backend пока нет каталога и остатков для потребителя. Размещение на сервере отключено.';
+
+  @override
+  String get checkoutServerOrderTryAction => 'Проверить размещение на сервере';
+
+  @override
+  String get checkoutServerOrderCatalogUnavailable =>
+      'Сервер отклонил: авторitative catalog недоступен.';
+
+  @override
+  String checkoutServerOrderSuccess(String orderId) {
+    return 'Сервер принял заказ ($orderId). Оплата и доставка отдельно.';
+  }
+
+  @override
+  String get checkoutServerOrderNotConfigured => 'API URL не настроен.';
+
+  @override
+  String get checkoutServerOrderSignInRequired =>
+      'Войдите для проверки серверного размещения.';
+
+  @override
+  String get checkoutDemoOrderSeparateNotice =>
+      'Подтверждение демо-заказа ниже — только локально, не серверная покупка.';
+
+  @override
+  String checkoutSessionCorrelationLabel(String reference) {
+    return 'Ссылка checkout: $reference';
+  }
+
+  @override
   String get demoOrderConfirmationTitle => 'Демо-подтверждение';
 
   @override

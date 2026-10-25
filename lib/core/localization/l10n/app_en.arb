@@ -301,6 +301,42 @@
   },
   "checkoutEmptyTitle": "Nothing to check out",
   "checkoutEmptyBody": "Your cart is empty. Add demo items before checkout.",
+  "checkoutPreparationNotice": "Checkout preparation only — prices come from the demo catalog calculator. No order is placed until you explicitly confirm the separate demo step.",
+  "checkoutFulfillmentLabel": "Fulfillment",
+  "checkoutFulfillmentPickup": "Pickup",
+  "checkoutFulfillmentDelivery": "Delivery",
+  "checkoutFulfillmentServiceAtLocation": "Service at location",
+  "checkoutRecalculateAction": "Update quote",
+  "checkoutQuoteStaleTitle": "Cart changed",
+  "checkoutQuoteStaleBody": "Your cart changed after this quote. Update the quote before confirming the demo order.",
+  "checkoutPricingErrorTitle": "Pricing unavailable",
+  "checkoutPricingErrorBody": "We could not price one or more cart lines from the demo catalog.",
+  "checkoutUnsupportedFulfillmentTitle": "Fulfillment not supported",
+  "checkoutUnsupportedFulfillmentBody": "This fulfillment choice is not supported for the items in your cart.",
+  "checkoutMultiBusinessNotice": "Items from multiple demo businesses are grouped separately. One parent checkout may create multiple business orders in a future release.",
+  "checkoutServerOrderSectionTitle": "Server order (not demo)",
+  "checkoutServerOrderUnavailableBody": "Backend consumer catalog and inventory are not available yet. Server placement stays disabled until authoritative pricing and stock exist.",
+  "checkoutServerOrderTryAction": "Check server placement",
+  "checkoutServerOrderCatalogUnavailable": "Server rejected placement: authoritative catalog is not available.",
+  "checkoutServerOrderSuccess": "Server accepted placement (order {orderId}). Payment and fulfilment are still separate.",
+  "@checkoutServerOrderSuccess": {
+    "placeholders": {
+      "orderId": {
+        "type": "String"
+      }
+    }
+  },
+  "checkoutServerOrderNotConfigured": "API base URL is not configured for server placement.",
+  "checkoutServerOrderSignInRequired": "Sign in to check server placement.",
+  "checkoutDemoOrderSeparateNotice": "Demo order confirmation below is local only and is not a server-confirmed purchase.",
+  "checkoutSessionCorrelationLabel": "Checkout reference: {reference}",
+  "@checkoutSessionCorrelationLabel": {
+    "placeholders": {
+      "reference": {
+        "type": "String"
+      }
+    }
+  },
   "demoOrderConfirmationTitle": "Demo confirmation",
   "demoOrderPreparedHeading": "Demo order prepared",
   "demoOrderReferenceLabel": "Demo reference: {referenceId}",
