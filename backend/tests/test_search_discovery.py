@@ -74,7 +74,7 @@ def fake_provider() -> FakeOtpProvider:
 
 
 def _seed_verified_application(session: Session, *, title: str = "Demo Pharmacy") -> uuid.UUID:
-    owner = User(account_status=AccountStatus.ACTIVE.value)
+    owner = User(status=AccountStatus.ACTIVE.value)
     session.add(owner)
     session.flush()
     application = BusinessOnboardingApplication(
@@ -138,7 +138,7 @@ def test_search_returns_verified_business(search_client: TestClient, fake_provid
 
 def test_suspended_business_not_searchable(search_client: TestClient, fake_provider: FakeOtpProvider, search_engine: Engine) -> None:
     session = sessionmaker(bind=search_engine)()
-    owner = User(account_status=AccountStatus.ACTIVE.value)
+    owner = User(status=AccountStatus.ACTIVE.value)
     session.add(owner)
     session.flush()
     application = BusinessOnboardingApplication(
@@ -222,7 +222,7 @@ def test_signed_cursor_tamper_rejected(search_client: TestClient, fake_provider:
 
 def test_projection_consumer_is_idempotent(search_engine: Engine) -> None:
     session = sessionmaker(bind=search_engine)()
-    owner = User(account_status=AccountStatus.ACTIVE.value)
+    owner = User(status=AccountStatus.ACTIVE.value)
     session.add(owner)
     session.flush()
     application = BusinessOnboardingApplication(

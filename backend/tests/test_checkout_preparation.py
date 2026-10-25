@@ -89,7 +89,10 @@ def _auth_headers(client: TestClient, fake_provider: FakeOtpProvider) -> dict[st
 
 
 def test_validate_rejects_empty_lines() -> None:
-    payload = CheckoutPrepareRequest(fulfillment_type=CheckoutFulfillmentType.PICKUP, lines=[])
+    payload = CheckoutPrepareRequest.model_construct(
+        fulfillment_type=CheckoutFulfillmentType.PICKUP,
+        lines=[],
+    )
     error = validate_prepare_request(payload)
     assert error is not None
     assert error.code == CheckoutPreparationErrorCode.EMPTY_CART

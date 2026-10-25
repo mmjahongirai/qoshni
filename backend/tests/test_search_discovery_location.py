@@ -67,7 +67,7 @@ def fake_provider() -> FakeOtpProvider:
 
 
 def _seed_business_with_coords(session: Session, *, title: str, lat: float, lng: float) -> None:
-    owner = User(account_status=AccountStatus.ACTIVE.value)
+    owner = User(status=AccountStatus.ACTIVE.value)
     session.add(owner)
     session.flush()
     application = BusinessOnboardingApplication(
