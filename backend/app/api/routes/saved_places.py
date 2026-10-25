@@ -93,12 +93,15 @@ def patch_saved_place(
     return _view(result)
 
 
-@router.delete("/{place_id}", status_code=204)
+@router.delete(
+    "/{place_id}",
+    responses={204: {"description": "Saved place deleted."}},
+)
 def remove_saved_place(
     place_id: uuid.UUID,
     session: Session = Depends(get_db),
     principal: AuthenticatedPrincipal = Depends(get_current_principal),
-) -> Response | JSONResponse:
+):
     result = delete_saved_place(session, principal.user_id, place_id)
     if isinstance(result, SavedPlaceServiceError):
         return saved_place_error_response(result)

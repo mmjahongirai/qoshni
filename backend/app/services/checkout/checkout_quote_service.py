@@ -158,7 +158,10 @@ def validate_quote_for_placement(
             code=CheckoutQuoteErrorCode.VALIDATION_FAILED,
             message="Checkout quote not found for buyer.",
         )
-    if quote.expires_at <= datetime.now(UTC):
+    expires_at = quote.expires_at
+    if expires_at.tzinfo is None:
+        expires_at = expires_at.replace(tzinfo=UTC)
+    if expires_at <= datetime.now(UTC):
         return CheckoutQuoteError(
             code=CheckoutQuoteErrorCode.VALIDATION_FAILED,
             message="Checkout quote has expired.",
@@ -174,7 +177,7 @@ def validate_quote_for_placement(
             message="Fulfillment does not match quoted request.",
         )
     expected_fp = _fingerprint(fulfillment_type=fulfillment_type, lines=lines)
-    if quote.request_fingerprint != expected_fp or quote.request_fingerprint != request_fingerprint:
+    if quote.request_fingerprint != expected_fp:
         return CheckoutQuoteError(
             code=CheckoutQuoteErrorCode.VALIDATION_FAILED,
             message="Checkout quote does not match placement fingerprint.",

@@ -16,6 +16,7 @@ from app.api.deps.checkout import get_consumer_catalog_authority
 from app.core.config import get_settings
 from app.core.database import get_db
 from app.db.base import Base
+from app.api.routes import orders as orders_routes
 from app.main import create_app
 from app.services.checkout.inventory_reservation_service import InventoryReservationService
 from tests.support.fake_consumer_catalog import FakeConsumerCatalogAuthority
@@ -52,8 +53,8 @@ def wp3_client(
         finally:
             session.close()
 
-    ledger = InventoryReservationService().ledger
-    catalog = FakeConsumerCatalogAuthority(ledger)
+    inventory = InventoryReservationService()
+    catalog = FakeConsumerCatalogAuthority(inventory.ledger)
     catalog.seed(
         business_stable_id="baraka-market",
         catalog_item_stable_id="baraka-fresh-bread",
@@ -63,6 +64,7 @@ def wp3_client(
     )
 
     app = create_app()
+    orders_routes._inventory_service = inventory
     app.dependency_overrides[get_db] = override_db
     app.dependency_overrides[get_otp_delivery_provider] = lambda: fake_provider
     app.dependency_overrides[get_consumer_catalog_authority] = lambda: catalog

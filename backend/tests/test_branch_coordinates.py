@@ -76,8 +76,8 @@ def fake_provider() -> FakeOtpProvider:
 
 
 def _seed_verified_application(session: Session) -> tuple[User, BusinessOnboardingApplication]:
-    owner = User(account_status=AccountStatus.ACTIVE.value)
-    reviewer = User(account_status=AccountStatus.ACTIVE.value)
+    owner = User(phone_e164="+998901234501", status=AccountStatus.ACTIVE.value)
+    reviewer = User(phone_e164="+998901234502", status=AccountStatus.ACTIVE.value)
     session.add_all([owner, reviewer])
     session.flush()
     session.add(

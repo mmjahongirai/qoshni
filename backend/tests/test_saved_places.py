@@ -61,8 +61,12 @@ def fake_provider() -> FakeOtpProvider:
     return FakeOtpProvider()
 
 
-def _auth_headers(client: TestClient, fake_provider: FakeOtpProvider) -> dict[str, str]:
-    phone = "+998901234568"
+def _auth_headers(
+    client: TestClient,
+    fake_provider: FakeOtpProvider,
+    *,
+    phone: str = "+998901234568",
+) -> dict[str, str]:
     challenge = client.post("/api/v1/auth/otp/challenges", json={"phone": phone})
     assert challenge.status_code == 202, challenge.text
     payload = challenge.json()
@@ -124,7 +128,7 @@ def test_cross_user_isolation(
     fake_provider: FakeOtpProvider,
     places_engine: Engine,
 ) -> None:
-    headers_a = _auth_headers(places_client, fake_provider)
+    headers_a = _auth_headers(places_client, fake_provider, phone="+998901234561")
     created = places_client.post(
         "/api/v1/saved-places",
         json={"label": "Secret", "latitude": 41.0, "longitude": 69.0},
@@ -132,7 +136,7 @@ def test_cross_user_isolation(
     )
     place_id = created.json()["id"]
 
-    headers_b = _auth_headers(places_client, fake_provider)
+    headers_b = _auth_headers(places_client, fake_provider, phone="+998901234562")
     forbidden = places_client.patch(
         f"/api/v1/saved-places/{place_id}",
         json={"label": "Hacked"},

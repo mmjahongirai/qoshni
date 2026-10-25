@@ -13,7 +13,7 @@ from app.domain.branch_coordinates import BranchCoordinateVerificationStatus
 from app.domain.business_onboarding import VerificationStatus
 from app.domain.search_discovery import SearchIndexEligibility
 from app.services.search_discovery.metadata import bump_catalog_generation
-from app.services.search_discovery.projector import stable_id_for_application
+from app.services.search_discovery.stable_ids import stable_id_for_application
 
 
 def sync_branch_coordinates_to_search_index(

@@ -29,6 +29,10 @@ def _line() -> CheckoutCartLineRequest:
     )
 
 
+def _server_quote_id() -> str:
+    return str(uuid.uuid4())
+
+
 def test_production_catalog_unavailable_fails_closed() -> None:
     command = PlaceOrderCommand(
         buyer_user_id=uuid.uuid4(),
@@ -72,7 +76,7 @@ def test_success_with_fake_catalog_and_idempotent_replay() -> None:
         idempotency_key="idem-abc",
         fulfillment_type=CheckoutFulfillmentType.PICKUP,
         checkout_correlation_id="corr-1",
-        server_quote_id="quote-1",
+        server_quote_id=_server_quote_id(),
         server_quote_revision=3,
         lines=[_line()],
         client_submitted_total_minor=999_999,
@@ -109,18 +113,19 @@ def test_idempotency_conflict_on_different_body() -> None:
         idempotency_key="idem-x",
         fulfillment_type=CheckoutFulfillmentType.PICKUP,
         checkout_correlation_id="corr-1",
-        server_quote_id="quote-1",
+        server_quote_id=_server_quote_id(),
         server_quote_revision=1,
         lines=[_line()],
         client_submitted_total_minor=None,
     )
+    quote_id = base.server_quote_id
     place_order(base, deps)
     changed = PlaceOrderCommand(
         buyer_user_id=buyer,
         idempotency_key="idem-x",
         fulfillment_type=CheckoutFulfillmentType.PICKUP,
         checkout_correlation_id="corr-1",
-        server_quote_id="quote-1",
+        server_quote_id=quote_id,
         server_quote_revision=1,
         lines=[
             CheckoutCartLineRequest(
