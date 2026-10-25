@@ -2,9 +2,11 @@
 
 from __future__ import annotations
 
+import uuid
 from collections.abc import Generator
 from datetime import UTC, datetime
 from pathlib import Path
+
 import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine, select

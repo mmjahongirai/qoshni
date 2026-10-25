@@ -198,7 +198,7 @@ def test_signed_cursor_tamper_rejected(search_client: TestClient, fake_provider:
         settings,
         SearchCursorPayload(
             version=CURSOR_VERSION,
-            query_fingerprint="apteka||||",
+            query_fingerprint="tampered-query-fingerprint",
             catalog_generation=generation,
             after_total_score=999.0,
             after_relevance_score=999.0,
