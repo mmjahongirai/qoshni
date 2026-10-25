@@ -50,4 +50,15 @@ void main() {
     await controller.openAppSettingsFromUserChoice();
     expect(provider.openAppSettingsCalls, 1);
   });
+
+  test('parallel explicit requests share one in-flight acquire', () async {
+    provider.checkPermissionResult = QoshniLocationPermissionStatus.granted;
+
+    await Future.wait([
+      controller.requestDeviceLocation(),
+      controller.requestDeviceLocation(),
+    ]);
+
+    expect(provider.getCurrentPositionCalls, 1);
+  });
 }

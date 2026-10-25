@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:qoshni/core/logging/app_logger.dart';
 import 'package:qoshni/features/home/presentation/pages/home_page.dart';
+import 'package:qoshni/features/home/presentation/map/qoshni_map_route_intent.dart';
 import 'package:qoshni/features/home/presentation/pages/map_placeholder_page.dart';
 import 'package:qoshni/features/home/presentation/data/service_category_id.dart';
 import 'package:qoshni/features/home/presentation/data/mock_business_id.dart';
@@ -99,7 +100,12 @@ class AppRouter {
       GoRoute(
         path: RoutePaths.map,
         name: RouteNames.map,
-        builder: (context, state) => const MapPlaceholderPage(),
+        builder: (context, state) {
+          final intent = state.extra is QoshniMapRouteIntent
+              ? state.extra! as QoshniMapRouteIntent
+              : const QoshniMapRouteIntent();
+          return MapPlaceholderPage(intent: intent);
+        },
       ),
       GoRoute(
         path: RoutePaths.search,

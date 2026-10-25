@@ -51,6 +51,17 @@ class AppLocalizationsRu extends AppLocalizations {
       'Mapbox — вид по Узбекистану (не ваше местоположение).';
 
   @override
+  String get homeMapPreviewStatusLocated =>
+      'На карте показано приблизительное местоположение устройства — не сохранённый адрес.';
+
+  @override
+  String get mapNearbyLoadingVerified => 'Загрузка проверенных филиалов рядом…';
+
+  @override
+  String get mapNearbyNoVerifiedBranches =>
+      'Нет проверенных координат филиалов рядом из поиска. Демо-метки каталога на карте не показываются.';
+
+  @override
   String get homeNearbyChainsTitle => 'Сети и важные места рядом';
 
   @override

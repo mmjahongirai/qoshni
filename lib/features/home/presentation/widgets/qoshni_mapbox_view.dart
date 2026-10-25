@@ -5,7 +5,9 @@ import 'package:mapbox_maps_flutter/mapbox_maps_flutter.dart';
 import 'package:qoshni/core/config/mapbox_access_config.dart';
 import 'package:qoshni/core/localization/generated/app_localizations.dart';
 import 'package:qoshni/core/theme/app_tokens.dart';
+import 'package:qoshni/features/home/presentation/map/qoshni_map_branch_marker.dart';
 import 'package:qoshni/features/home/presentation/map/qoshni_map_defaults.dart';
+import 'package:qoshni/features/search/domain/qoshni_search_location.dart';
 
 /// Mapbox [MapWidget] when configured; otherwise a localized setup placeholder.
 class QoshniMapboxView extends StatefulWidget {
@@ -13,12 +15,18 @@ class QoshniMapboxView extends StatefulWidget {
     this.showDefaultViewLabel = true,
     this.deviceLocationLabel,
     this.viewportController,
+    this.userLocation,
+    this.branchMarkers = const [],
+    this.mapInstanceKey = 'default',
     super.key,
   });
 
   final bool showDefaultViewLabel;
   final String? deviceLocationLabel;
   final ViewportController? viewportController;
+  final QoshniSearchLocation? userLocation;
+  final List<QoshniMapBranchMarker> branchMarkers;
+  final String mapInstanceKey;
 
   @override
   State<QoshniMapboxView> createState() => _QoshniMapboxViewState();
@@ -26,6 +34,87 @@ class QoshniMapboxView extends StatefulWidget {
 
 class _QoshniMapboxViewState extends State<QoshniMapboxView> {
   String? _loadErrorKey;
+  MapboxMap? _mapboxMap;
+  PointAnnotationManager? _pointManager;
+  bool _annotationSyncScheduled = false;
+
+  @override
+  void didUpdateWidget(covariant QoshniMapboxView oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.userLocation != widget.userLocation ||
+        !_branchMarkersEqual(oldWidget.branchMarkers, widget.branchMarkers)) {
+      _scheduleAnnotationSync();
+    }
+  }
+
+  bool _branchMarkersEqual(
+    List<QoshniMapBranchMarker> a,
+    List<QoshniMapBranchMarker> b,
+  ) {
+    if (a.length != b.length) {
+      return false;
+    }
+    for (var i = 0; i < a.length; i++) {
+      if (a[i].stableId != b[i].stableId) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  void _scheduleAnnotationSync() {
+    if (_mapboxMap == null || _annotationSyncScheduled) {
+      return;
+    }
+    _annotationSyncScheduled = true;
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      _annotationSyncScheduled = false;
+      if (!mounted || _mapboxMap == null) {
+        return;
+      }
+      await _syncPointAnnotations(_mapboxMap!);
+    });
+  }
+
+  Future<void> _syncPointAnnotations(MapboxMap map) async {
+    _pointManager ??= await map.annotations.createPointAnnotationManager();
+    await _pointManager!.deleteAll();
+
+    final scheme = Theme.of(context).colorScheme;
+    final user = widget.userLocation;
+    if (user != null) {
+      await _pointManager!.create(
+        PointAnnotationOptions(
+          geometry: Point(
+            coordinates: Position(user.longitude, user.latitude),
+          ),
+          textField: '●',
+          textSize: 18,
+          textColor: scheme.primary.toARGB32(),
+          textHaloColor: scheme.surface.toARGB32(),
+          textHaloWidth: 1.5,
+        ),
+      );
+    }
+
+    for (final marker in widget.branchMarkers) {
+      await _pointManager!.create(
+        PointAnnotationOptions(
+          geometry: Point(
+            coordinates: Position(
+              marker.location.longitude,
+              marker.location.latitude,
+            ),
+          ),
+          textField: '▪',
+          textSize: 14,
+          textColor: scheme.secondary.toARGB32(),
+          textHaloColor: scheme.surface.toARGB32(),
+          textHaloWidth: 1,
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,11 +127,15 @@ class _QoshniMapboxViewState extends State<QoshniMapboxView> {
       fit: StackFit.expand,
       children: [
         MapWidget(
-          key: const ValueKey('qoshni-mapbox-map'),
+          key: ValueKey('qoshni-mapbox-map-${widget.mapInstanceKey}'),
           styleUri: MapboxStyles.MAPBOX_STREETS,
           viewport: QoshniMapDefaults.uzbekistanViewport,
           viewportController: widget.viewportController,
           gestureRecognizers: _mapGestureRecognizers,
+          onMapCreated: (map) async {
+            _mapboxMap = map;
+            await _syncPointAnnotations(map);
+          },
           onMapLoadErrorListener: (event) {
             if (!mounted) {
               return;
@@ -150,7 +243,7 @@ class MapboxConfigurationPlaceholder extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: AppSpacing.xs),
+              const SizedBox(height: AppSpacing.xxs),
               Text(
                 l10n.mapboxConfigRequiredBody,
                 style: textTheme.bodySmall?.copyWith(

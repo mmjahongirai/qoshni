@@ -172,6 +172,24 @@ abstract class AppLocalizations {
   /// **'Interactive Mapbox map — default Uzbekistan view (not your location).'**
   String get homeMapPreviewStatusConfigured;
 
+  /// No description provided for @homeMapPreviewStatusLocated.
+  ///
+  /// In en, this message translates to:
+  /// **'Approximate device location shown on the map — not a saved address.'**
+  String get homeMapPreviewStatusLocated;
+
+  /// No description provided for @mapNearbyLoadingVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading verified nearby branches…'**
+  String get mapNearbyLoadingVerified;
+
+  /// No description provided for @mapNearbyNoVerifiedBranches.
+  ///
+  /// In en, this message translates to:
+  /// **'No verified branch coordinates nearby from search. Demo catalog pins are not shown on the map.'**
+  String get mapNearbyNoVerifiedBranches;
+
   /// No description provided for @homeNearbyChainsTitle.
   ///
   /// In en, this message translates to:
