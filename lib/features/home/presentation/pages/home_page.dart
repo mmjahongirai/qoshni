@@ -16,6 +16,7 @@ import 'package:qoshni/features/home/presentation/widgets/map_preview_card.dart'
 import 'package:qoshni/features/home/presentation/widgets/nearby_business_section.dart';
 import 'package:qoshni/features/home/presentation/widgets/service_category_grid.dart';
 import 'package:qoshni/core/widgets/primary_navigation_shell.dart';
+import 'package:qoshni/features/home/presentation/map/qoshni_map_route_intent.dart';
 import 'package:qoshni/routing/route_paths.dart';
 
 class HomePage extends StatelessWidget {
@@ -101,7 +102,10 @@ class _HomeScrollContent extends StatelessWidget {
               const SizedBox(height: AppSpacing.lg),
               MapPreviewCard(
                 l10n: l10n,
-                onOpenMap: () => context.pushNamed(RouteNames.map),
+                onOpenMap: (intent) => context.pushNamed(
+                  RouteNames.map,
+                  extra: intent,
+                ),
               ),
               const SizedBox(height: AppSpacing.xl),
               HomeNearbyChainsSection(

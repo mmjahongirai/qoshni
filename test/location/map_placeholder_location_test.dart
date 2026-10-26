@@ -5,6 +5,7 @@ import 'package:qoshni/core/config/app_config.dart';
 import 'package:qoshni/core/config/app_environment.dart';
 import 'package:qoshni/core/localization/generated/app_localizations.dart';
 import 'package:qoshni/di/injection.dart';
+import 'package:qoshni/features/home/presentation/map/qoshni_map_route_intent.dart';
 import 'package:qoshni/features/home/presentation/pages/map_placeholder_page.dart';
 import 'package:qoshni/features/location/application/qoshni_location_service.dart';
 import 'package:qoshni/features/location/application/qoshni_map_location_controller.dart';
@@ -79,6 +80,21 @@ void main() {
     );
     expect(find.byType(BackButton), findsOneWidget);
     expect(find.text('Mapbox access token required'), findsOneWidget);
+  });
+
+  testWidgets('open with intent requests device location once', (tester) async {
+    fakeProvider.checkPermissionResult = QoshniLocationPermissionStatus.granted;
+
+    await tester.pumpWidget(
+      wrap(
+        const MapPlaceholderPage(
+          intent: QoshniMapRouteIntent(requestDeviceLocationOnOpen: true),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(fakeProvider.getCurrentPositionCalls, 1);
   });
 
   testWidgets('rebuild does not repeat permission prompts', (tester) async {

@@ -6,6 +6,11 @@ import 'package:qoshni/core/config/app_environment.dart';
 import 'package:qoshni/core/localization/locale_controller.dart';
 import 'package:qoshni/core/theme/theme_controller.dart';
 import 'package:qoshni/di/injection.dart';
+import 'package:qoshni/features/location/application/qoshni_location_service.dart';
+import 'package:qoshni/features/location/application/qoshni_map_location_controller.dart';
+import 'package:qoshni/features/location/data/fake_qoshni_location_provider.dart';
+import 'package:qoshni/features/location/domain/qoshni_location_permission_status.dart';
+import 'package:qoshni/features/location/domain/qoshni_location_provider.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -61,6 +66,19 @@ void main() {
   });
 
   testWidgets('Map preview navigates to placeholder map screen', (tester) async {
+    final fakeProvider = FakeQoshniLocationProvider();
+    fakeProvider.checkPermissionResult = QoshniLocationPermissionStatus.granted;
+    await getIt.unregister<QoshniMapLocationController>();
+    await getIt.unregister<QoshniLocationService>();
+    await getIt.unregister<QoshniLocationProvider>();
+    getIt.registerLazySingleton<QoshniLocationProvider>(() => fakeProvider);
+    getIt.registerLazySingleton<QoshniLocationService>(
+      () => QoshniLocationService(fakeProvider),
+    );
+    getIt.registerLazySingleton<QoshniMapLocationController>(
+      () => QoshniMapLocationController(getIt<QoshniLocationService>()),
+    );
+
     await tester.pumpWidget(const QoshniApp());
     await tester.pumpAndSettle();
 
@@ -70,9 +88,11 @@ void main() {
       scrollable: find.byType(Scrollable).first,
     );
     await tester.tap(find.text('Open map'));
-    await tester.pumpAndSettle();
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 400));
 
-    expect(find.text('Map'), findsWidgets);
-    expect(find.text('Mapbox access token required'), findsOneWidget);
+    expect(find.text('Map'), findsOneWidget);
+    expect(find.byType(BackButton), findsOneWidget);
+    expect(find.text('Mapbox access token required'), findsWidgets);
   });
 }

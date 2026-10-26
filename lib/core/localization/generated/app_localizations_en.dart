@@ -51,6 +51,17 @@ class AppLocalizationsEn extends AppLocalizations {
       'Interactive Mapbox map — default Uzbekistan view (not your location).';
 
   @override
+  String get homeMapPreviewStatusLocated =>
+      'Approximate device location shown on the map — not a saved address.';
+
+  @override
+  String get mapNearbyLoadingVerified => 'Loading verified nearby branches…';
+
+  @override
+  String get mapNearbyNoVerifiedBranches =>
+      'No verified branch coordinates nearby from search. Demo catalog pins are not shown on the map.';
+
+  @override
   String get homeNearbyChainsTitle => 'Nearby chains & essentials';
 
   @override

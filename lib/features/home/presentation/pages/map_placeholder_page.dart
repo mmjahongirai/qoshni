@@ -4,17 +4,32 @@ import 'package:mapbox_maps_flutter/mapbox_maps_flutter.dart';
 import 'package:qoshni/core/localization/generated/app_localizations.dart';
 import 'package:qoshni/core/theme/app_tokens.dart';
 import 'package:qoshni/di/injection.dart';
+import 'package:qoshni/features/home/presentation/data/home_mock_data.dart';
+import 'package:qoshni/features/home/presentation/map/qoshni_map_branch_marker.dart';
+import 'package:qoshni/features/home/presentation/map/qoshni_map_location_messages.dart';
+import 'package:qoshni/features/home/presentation/map/qoshni_map_nearby_loader.dart';
+import 'package:qoshni/features/home/presentation/map/qoshni_map_route_intent.dart';
+import 'package:qoshni/features/home/presentation/map/qoshni_map_viewport_actions.dart';
 import 'package:qoshni/features/home/presentation/widgets/qoshni_mapbox_view.dart';
-import 'package:qoshni/features/location/application/qoshni_map_location_controller.dart';
 import 'package:qoshni/features/location/application/qoshni_geocoding_service.dart';
+import 'package:qoshni/features/location/application/qoshni_map_location_controller.dart';
 import 'package:qoshni/features/location/application/qoshni_saved_places_controller.dart';
+import 'package:qoshni/features/location/domain/qoshni_current_location_snapshot.dart';
 import 'package:qoshni/features/location/domain/qoshni_location_failure.dart';
 import 'package:qoshni/features/location/presentation/qoshni_geocode_save_sheet.dart';
+import 'package:qoshni/features/search/application/qoshni_search_execution_coordinator.dart';
 import 'package:qoshni/features/search/application/qoshni_search_map_focus_controller.dart';
+import 'package:qoshni/features/search/application/qoshni_search_query_processor.dart';
+import 'package:qoshni/features/search/domain/qoshni_search_location.dart';
 
 /// Full-screen map route — Mapbox when configured, otherwise setup placeholder.
 class MapPlaceholderPage extends StatefulWidget {
-  const MapPlaceholderPage({super.key});
+  const MapPlaceholderPage({
+    this.intent = const QoshniMapRouteIntent(),
+    super.key,
+  });
+
+  final QoshniMapRouteIntent intent;
 
   @override
   State<MapPlaceholderPage> createState() => _MapPlaceholderPageState();
@@ -25,6 +40,10 @@ class _MapPlaceholderPageState extends State<MapPlaceholderPage> {
   late final QoshniMapLocationController _locationController;
   late final QoshniSearchMapFocusController _searchMapFocus;
 
+  List<QoshniMapBranchMarker> _verifiedBranchMarkers = const [];
+  bool _loadingNearby = false;
+  int _nearbyLoadGeneration = 0;
+
   @override
   void initState() {
     super.initState();
@@ -34,6 +53,15 @@ class _MapPlaceholderPageState extends State<MapPlaceholderPage> {
     _searchMapFocus.addListener(_onSearchMapFocusChanged);
     getIt<QoshniSavedPlacesController>().refresh();
     _applySearchMapFocusIfNeeded();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final snapshot = _locationController.deviceSnapshot;
+      if (snapshot != null && snapshot.isDeviceDerived) {
+        _refreshVerifiedNearbyMarkers(snapshot);
+      } else if (widget.intent.requestDeviceLocationOnOpen &&
+          _locationController.phase != QoshniMapLocationUiPhase.deviceFixReady) {
+        _locationController.requestDeviceLocation();
+      }
+    });
   }
 
   @override
@@ -53,17 +81,7 @@ class _MapPlaceholderPageState extends State<MapPlaceholderPage> {
     if (focus == null) {
       return;
     }
-    _viewportController.moveTo(
-      CameraViewportState(
-        center: Point(
-          coordinates: Position(focus.longitude, focus.latitude),
-        ),
-        zoom: 15,
-      ),
-      transition: const FlyViewportTransition(
-        duration: Duration(milliseconds: 900),
-      ),
-    );
+    qoshniMapViewportFlyToSearchLocation(_viewportController, focus, zoom: 15);
     if (mounted) {
       setState(() {});
     }
@@ -72,51 +90,53 @@ class _MapPlaceholderPageState extends State<MapPlaceholderPage> {
   void _onLocationSessionChanged() {
     final snapshot = _locationController.deviceSnapshot;
     if (snapshot != null && snapshot.isDeviceDerived) {
-      _viewportController.moveTo(
-        CameraViewportState(
-          center: Point(
-            coordinates: Position(
-              snapshot.coordinates.longitude,
-              snapshot.coordinates.latitude,
-            ),
-          ),
-          zoom: 14,
-        ),
-        transition: const FlyViewportTransition(
-          duration: Duration(milliseconds: 900),
-        ),
-      );
+      qoshniMapViewportFlyToDeviceSnapshot(_viewportController, snapshot);
+      _refreshVerifiedNearbyMarkers(snapshot);
     }
     if (mounted) {
       setState(() {});
     }
   }
 
-  String? _failureMessage(AppLocalizations l10n, QoshniLocationFailure? failure) {
-    if (failure == null) {
+  Future<void> _refreshVerifiedNearbyMarkers(
+    QoshniCurrentLocationSnapshot snapshot,
+  ) async {
+    final generation = ++_nearbyLoadGeneration;
+    setState(() => _loadingNearby = true);
+    final l10n = AppLocalizations.of(context);
+    final catalog = buildSearchCatalog(l10n, Theme.of(context).colorScheme);
+    final markers = await qoshniLoadVerifiedMapBranchMarkers(
+      execution: getIt<QoshniSearchExecutionCoordinator>(),
+      queryProcessor: getIt<QoshniSearchQueryProcessor>(),
+      catalog: catalog,
+      deviceSnapshot: snapshot,
+    );
+    if (!mounted || generation != _nearbyLoadGeneration) {
+      return;
+    }
+    setState(() {
+      _loadingNearby = false;
+      _verifiedBranchMarkers = markers;
+    });
+  }
+
+  QoshniSearchLocation? _userMapLocation() {
+    final snapshot = _locationController.deviceSnapshot;
+    if (snapshot == null || !snapshot.isDeviceDerived) {
       return null;
     }
-    switch (failure.reason) {
-      case QoshniLocationFailureReason.permissionDenied:
-        return l10n.mapLocationPermissionDenied;
-      case QoshniLocationFailureReason.permissionPermanentlyDenied:
-        return l10n.mapLocationPermissionDeniedForever;
-      case QoshniLocationFailureReason.locationServicesDisabled:
-        return l10n.mapLocationServicesDisabled;
-      case QoshniLocationFailureReason.timeout:
-        return l10n.mapLocationTimeout;
-      case QoshniLocationFailureReason.positionUnavailable:
-        return l10n.mapLocationUnavailable;
-      case QoshniLocationFailureReason.unknown:
-        return l10n.mapLocationUnavailable;
-    }
+    return QoshniSearchLocation(
+      latitude: snapshot.coordinates.latitude,
+      longitude: snapshot.coordinates.longitude,
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final phase = _locationController.phase;
-    final failureMessage = _failureMessage(l10n, _locationController.lastFailure);
+    final failureMessage =
+        qoshniMapLocationFailureMessage(l10n, _locationController.lastFailure);
     final showDeviceLabel = !_locationController.showDefaultMapViewLabel;
     final searchFocusTitle = _searchMapFocus.title;
 
@@ -145,6 +165,7 @@ class _MapPlaceholderPageState extends State<MapPlaceholderPage> {
           children: [
             Expanded(
               child: QoshniMapboxView(
+                mapInstanceKey: 'full',
                 showDefaultViewLabel: _locationController.showDefaultMapViewLabel &&
                     !_searchMapFocus.hasFocus,
                 deviceLocationLabel: _searchMapFocus.hasFocus
@@ -153,10 +174,24 @@ class _MapPlaceholderPageState extends State<MapPlaceholderPage> {
                       )
                     : (showDeviceLabel ? l10n.mapLocationDeviceFixLabel : null),
                 viewportController: _viewportController,
+                userLocation: _userMapLocation(),
+                branchMarkers: _verifiedBranchMarkers,
               ),
             ),
             if (phase == QoshniMapLocationUiPhase.acquiring)
               _MapLocationStatusBar(message: l10n.mapLocationAcquiring),
+            if (_loadingNearby)
+              _MapLocationStatusBar(
+                message: l10n.mapNearbyLoadingVerified,
+                showProgress: true,
+              ),
+            if (showDeviceLabel &&
+                !_loadingNearby &&
+                _verifiedBranchMarkers.isEmpty)
+              _MapLocationStatusBar(
+                message: l10n.mapNearbyNoVerifiedBranches,
+                showProgress: false,
+              ),
             _MapSavedPlacesToolbar(
               l10n: l10n,
               onSearchAddress: () => showQoshniGeocodeSaveSheet(
@@ -230,9 +265,13 @@ class _MapSavedPlacesToolbar extends StatelessWidget {
 }
 
 class _MapLocationStatusBar extends StatelessWidget {
-  const _MapLocationStatusBar({required this.message});
+  const _MapLocationStatusBar({
+    required this.message,
+    this.showProgress = true,
+  });
 
   final String message;
+  final bool showProgress;
 
   @override
   Widget build(BuildContext context) {
@@ -246,15 +285,17 @@ class _MapLocationStatusBar extends StatelessWidget {
         ),
         child: Row(
           children: [
-            SizedBox(
-              width: 18,
-              height: 18,
-              child: CircularProgressIndicator(
-                strokeWidth: 2,
-                color: scheme.primary,
+            if (showProgress) ...[
+              SizedBox(
+                width: 18,
+                height: 18,
+                child: CircularProgressIndicator(
+                  strokeWidth: 2,
+                  color: scheme.primary,
+                ),
               ),
-            ),
-            const SizedBox(width: AppSpacing.sm),
+              const SizedBox(width: AppSpacing.sm),
+            ],
             Expanded(child: Text(message)),
           ],
         ),

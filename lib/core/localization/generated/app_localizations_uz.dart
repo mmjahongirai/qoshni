@@ -51,6 +51,18 @@ class AppLocalizationsUz extends AppLocalizations {
       'Mapbox — O‘zbekiston (joylashuvingiz emas).';
 
   @override
+  String get homeMapPreviewStatusLocated =>
+      'Xaritada taxminiy qurilma joyi — saqlangan manzil emas.';
+
+  @override
+  String get mapNearbyLoadingVerified =>
+      'Tasdiqlangan yaqin filiallar yuklanmoqda…';
+
+  @override
+  String get mapNearbyNoVerifiedBranches =>
+      'Qidiruvdan yaqin atrofda tasdiqlangan filial koordinatalari topilmadi. Demo katalog belgilari xaritada ko‘rsatilmaydi.';
+
+  @override
   String get homeNearbyChainsTitle => 'Yaqin atrofdagi tarmoqlar';
 
   @override
