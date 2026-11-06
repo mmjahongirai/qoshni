@@ -1523,6 +1523,280 @@ class AppLocalizationsUz extends AppLocalizations {
   String get businessCenterOnboardingAction => 'Ro‘yxatdan o‘tish';
 
   @override
+  String get businessLiveCatalogTitle => 'Jonli katalog';
+
+  @override
+  String get businessLiveCatalogLoading =>
+      'Tasdiqlangan biznes arizasi bog‘langanini tekshiryapmiz. Bu ekrandagi namuna profillar jonli katalog emas.';
+
+  @override
+  String get businessLiveCatalogApiOff =>
+      'Jonli katalog API ulanmagan. Bu ekrandagi namuna profillar biznes katalogingiz emas.';
+
+  @override
+  String get businessLiveCatalogSignedOut =>
+      'Jonli katalogni boshqarish uchun kiring. Namuna profillar uning o‘rniga ishlatilmaydi.';
+
+  @override
+  String get businessLiveCatalogSessionEnded =>
+      'Sessiya tugadi. Jonli katalogni boshqarish uchun qayta kiring.';
+
+  @override
+  String get businessLiveCatalogNoApplication =>
+      'Tasdiqlangan biznes arizasi bog‘lanmagan, shuning uchun jonli katalog mavjud emas. Namuna profillar katalog o‘rniga ishlatilmaydi.';
+
+  @override
+  String get businessLiveCatalogAmbiguous =>
+      'Bir nechta tasdiqlangan ariza bor. Bittasi tanlanmaguncha jonli katalog ochilmaydi. Namuna profillar o‘rniga ishlatilmaydi.';
+
+  @override
+  String get businessLiveCatalogForbidden =>
+      'Bu hisob ushbu biznes katalogini boshqara olmaydi.';
+
+  @override
+  String businessLiveCatalogReady(String applicationId) {
+    return 'Jonli katalog tasdiqlangan ariza $applicationId ga bog‘langan. Bu ekrandagi namuna profillar alohida qoladi.';
+  }
+
+  @override
+  String get businessLiveCatalogSectionTitle => 'Katalog itemlari';
+
+  @override
+  String get businessLiveCatalogClosed =>
+      'Jonli katalog boshqaruvi yopiq. Namuna takliflar bu yerda ko‘rsatilmaydi.';
+
+  @override
+  String get businessLiveCatalogEmptyTitle => 'Jonli katalog bo‘sh';
+
+  @override
+  String get businessLiveCatalogEmptyBody =>
+      'Serverda hali katalog item saqlanmagan. Namuna takliflar bu yerga qo‘shilmaydi.';
+
+  @override
+  String get businessLiveCatalogAddItem => 'Katalog item qo‘shish';
+
+  @override
+  String get businessLiveCatalogFieldStableId => 'Barqaror ID';
+
+  @override
+  String get businessLiveCatalogFieldTitle => 'Nomi';
+
+  @override
+  String get businessLiveCatalogFieldKind => 'Turi';
+
+  @override
+  String get businessLiveCatalogKindProduct => 'Mahsulot';
+
+  @override
+  String get businessLiveCatalogKindService => 'Xizmat';
+
+  @override
+  String get businessLiveCatalogFieldPrice => 'Narx, UZS';
+
+  @override
+  String get businessLiveCatalogPriceInvalid =>
+      '0 dan 1000000000 gacha butun UZS kiriting.';
+
+  @override
+  String get businessLiveCatalogFieldRequired =>
+      'Saqlashdan oldin barcha maydonlarni to‘ldiring.';
+
+  @override
+  String get businessLiveCatalogFieldTooLong => 'Qiymat juda uzun.';
+
+  @override
+  String get businessLiveCatalogSave => 'Saqlash';
+
+  @override
+  String get businessLiveCatalogCancel => 'Bekor qilish';
+
+  @override
+  String get businessLiveCatalogChangePrice => 'Narxni o‘zgartirish';
+
+  @override
+  String get businessLiveCatalogStatusLabel => 'Holat';
+
+  @override
+  String get businessLiveCatalogStatusActive => 'Faol';
+
+  @override
+  String get businessLiveCatalogStatusInactive => 'Nofaol';
+
+  @override
+  String get businessLiveCatalogStatusArchived => 'Arxivlangan';
+
+  @override
+  String businessLiveCatalogRevision(int revision) {
+    return 'Narx tahriri $revision';
+  }
+
+  @override
+  String businessLiveCatalogStableId(String stableId) {
+    return 'Barqaror ID: $stableId';
+  }
+
+  @override
+  String businessLiveCatalogCurrency(String currency) {
+    return 'Valyuta: $currency';
+  }
+
+  @override
+  String get businessLiveCatalogErrorSession =>
+      'Sessiya tugadi. Jonli katalogni boshqarishdan oldin qayta kiring.';
+
+  @override
+  String get businessLiveCatalogErrorForbidden =>
+      'Biznes tasdiqlanmagan yoki bu hisobda ruxsat yo‘q.';
+
+  @override
+  String get businessLiveCatalogErrorNotFound =>
+      'Biznes yoki katalog item topilmadi.';
+
+  @override
+  String businessLiveCatalogErrorConflict(String serverCode) {
+    return 'Server bu o‘zgarishni rad etdi ($serverCode). Avvalgi qiymatlar saqlanadi.';
+  }
+
+  @override
+  String get businessLiveCatalogErrorUnavailable =>
+      'Serverda jonli katalog hozir mavjud emas.';
+
+  @override
+  String get businessLiveCatalogErrorGeneric =>
+      'Katalog so‘rovi bajarilmadi. Qayta urinib ko‘ring.';
+
+  @override
+  String get businessLiveCatalogErrorInvalidApplication =>
+      'Onboarding ariza identifikatori noto‘g‘ri, shuning uchun katalog so‘rovi yuborilmadi.';
+
+  @override
+  String get businessLiveInventoryNotOpen =>
+      'Bu item uchun ombor yozuvi hali ochilmagan.';
+
+  @override
+  String get businessLiveInventoryOpen => 'Omborni ochish';
+
+  @override
+  String get businessLiveInventoryOpenQuantity => 'Ombordagi miqdor';
+
+  @override
+  String get businessLiveInventoryOpenQuantityInvalid =>
+      'Nol yoki undan katta butun miqdor kiriting.';
+
+  @override
+  String businessLiveInventoryOnHand(int quantity) {
+    return 'Omborda: $quantity';
+  }
+
+  @override
+  String businessLiveInventoryReserved(int quantity) {
+    return 'Band: $quantity';
+  }
+
+  @override
+  String businessLiveInventoryAvailable(int quantity) {
+    return 'Mavjud: $quantity';
+  }
+
+  @override
+  String get businessLiveInventoryReplenish => 'Omborga qo‘shish';
+
+  @override
+  String get businessLiveInventoryCount => 'Sanoqni yozish';
+
+  @override
+  String get businessLiveInventoryQuantity => 'Miqdor';
+
+  @override
+  String get businessLiveInventoryCounted => 'Sanalgan miqdor';
+
+  @override
+  String get businessLiveInventoryReason => 'Sabab';
+
+  @override
+  String get businessLiveInventorySubmit => 'Yuborish';
+
+  @override
+  String get businessLiveInventoryQuantityInvalid =>
+      'Noldan katta butun miqdor kiriting.';
+
+  @override
+  String get businessLiveInventoryCountInvalid =>
+      'Nol yoki undan katta butun sanalgan miqdor kiriting.';
+
+  @override
+  String get businessLiveInventoryReasonRequired =>
+      'Yuborishdan oldin sababni kiriting.';
+
+  @override
+  String get businessLiveInventorySaved => 'Ombor serverdan yangilandi.';
+
+  @override
+  String get businessLiveInventoryEventsTitle => 'Ombor tarixi';
+
+  @override
+  String get businessLiveInventoryEventsEmpty =>
+      'Ombor hodisalari hali yozilmagan.';
+
+  @override
+  String get businessLiveInventoryKindOpened => 'Ochilgan';
+
+  @override
+  String get businessLiveInventoryKindReplenished => 'To‘ldirilgan';
+
+  @override
+  String get businessLiveInventoryKindCountCorrected => 'Sanoq tuzatilgan';
+
+  @override
+  String businessLiveInventoryEventDelta(int delta) {
+    return 'Farq: $delta';
+  }
+
+  @override
+  String businessLiveInventoryEventOnHand(int quantity) {
+    return 'Keyin omborda: $quantity';
+  }
+
+  @override
+  String businessLiveInventoryEventReserved(int quantity) {
+    return 'Keyin band: $quantity';
+  }
+
+  @override
+  String businessLiveInventoryActor(String actor) {
+    return 'Ijrochi: $actor';
+  }
+
+  @override
+  String get businessLiveInventoryErrorSession =>
+      'Sessiya tugadi. Jonli omborni o‘zgartirishdan oldin qayta kiring.';
+
+  @override
+  String get businessLiveInventoryErrorForbidden =>
+      'Biznes tasdiqlanmagan yoki bu hisob omborni o‘zgartira olmaydi.';
+
+  @override
+  String get businessLiveInventoryErrorNotFound =>
+      'Biznes yoki katalog item topilmadi.';
+
+  @override
+  String businessLiveInventoryErrorConflict(String serverCode) {
+    return 'Server ombor o‘zgarishini rad etdi ($serverCode).';
+  }
+
+  @override
+  String get businessLiveInventoryErrorUnavailable =>
+      'Serverdagi ombor hozir mavjud emas.';
+
+  @override
+  String get businessLiveInventoryErrorNetwork =>
+      'Ombor so‘rovi serverga yetib bormadi.';
+
+  @override
+  String get businessLiveInventoryErrorGeneric =>
+      'Ombor so‘rovi bajarilmadi. Qayta urinib ko‘ring.';
+
+  @override
   String get onboardingHubTitle => 'Biznesni ro‘yxatdan o‘tkazish';
 
   @override

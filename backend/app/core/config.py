@@ -82,6 +82,26 @@ class Settings(BaseSettings):
     malware_scanner_host: str = Field(default="127.0.0.1")
     malware_scanner_port: int = Field(default=3310, ge=1, le=65535)
     malware_scanner_timeout_seconds: float = Field(default=30.0, ge=1.0, le=300.0)
+    consumer_catalog_enabled: bool = Field(
+        default=False,
+        description=(
+            "Serve checkout pricing from the SQL consumer catalog. When false, checkout "
+            "and order endpoints fail closed with 503 authoritative_catalog_unavailable."
+        ),
+    )
+    reservation_maintenance_enabled: bool = Field(
+        default=False,
+        description=(
+            "Allow the separate reservation-maintenance process to expire stale holds. "
+            "The API process never starts that loop. Default false."
+        ),
+    )
+    reservation_maintenance_interval_seconds: int = Field(default=60, ge=5, le=3600)
+    reservation_maintenance_worker_id: str = Field(
+        default="reservation-maintenance",
+        min_length=1,
+        max_length=64,
+    )
 
     model_config = SettingsConfigDict(
         env_file=_ENV_FILE,

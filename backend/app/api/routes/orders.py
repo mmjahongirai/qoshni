@@ -1,4 +1,9 @@
-"""Consumer order placement (fail-closed until catalog authority exists)."""
+"""Consumer order placement.
+
+Catalog stays fail-closed until ``QOSHNI_CONSUMER_CATALOG_ENABLED``. When the SQL
+catalog is wired, stock holds use ``consumer_catalog_inventory`` in the same
+transaction. The in-memory ledger remains only for test catalog overrides.
+"""
 
 from __future__ import annotations
 
@@ -6,6 +11,7 @@ import uuid
 
 from fastapi import APIRouter, Depends, Header
 from fastapi.responses import JSONResponse
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
 from app.api.deps.access import get_current_principal
@@ -28,15 +34,55 @@ from app.services.checkout.order_placement_service import (
     PlaceOrderCommand,
     PlaceOrderSuccess,
     place_order,
+    place_order_request_fingerprint,
 )
+from app.services.checkout.sql_catalog_authority import SqlConsumerCatalogAuthority
+from app.services.checkout.sql_inventory import SqlCatalogInventoryService
 from app.services.checkout.sql_order_repository import (
     SqlAlchemyOrderPlacementStore,
     SqlOrderLifecycleService,
+    is_idempotency_unique_violation,
 )
+from app.services.checkout.order_placement_store import IdempotencyScope
+from app.services.checkout.reservation_maintenance import sweep_stale_reservations
 
 router = APIRouter(prefix="/orders", tags=["orders"])
 
+# Shared only by test catalog overrides. The SQL catalog path builds a
+# session-scoped ``SqlCatalogInventoryService`` per request.
 _inventory_service = InventoryReservationService()
+
+
+def _inventory_for(session: Session, catalog: ConsumerCatalogAuthority):
+    if isinstance(catalog, SqlConsumerCatalogAuthority):
+        return SqlCatalogInventoryService(session)
+    return _inventory_service
+
+
+def _replay_idempotent_order(
+    session: Session,
+    command: PlaceOrderCommand,
+) -> PlaceOrderSuccess | OrderPlacementError | None:
+    """After a unique-key conflict, return the committed order or a 409."""
+    store = SqlAlchemyOrderPlacementStore(session)
+    existing = store.get_idempotency(
+        IdempotencyScope(
+            buyer_user_id=command.buyer_user_id,
+            operation="place_order",
+            idempotency_key=command.idempotency_key.strip(),
+        )
+    )
+    if existing is None:
+        return None
+    if existing.request_fingerprint != place_order_request_fingerprint(command):
+        return OrderPlacementError(
+            code=OrderPlacementErrorCode.IDEMPOTENCY_CONFLICT,
+            message="Idempotency key was already used with a different request.",
+        )
+    order = store.get_order(existing.order_id)
+    if order is None:
+        return None
+    return PlaceOrderSuccess(order=order, idempotent_replay=True)
 
 
 def _error_status(code: OrderPlacementErrorCode) -> int:
@@ -49,7 +95,10 @@ def _error_status(code: OrderPlacementErrorCode) -> int:
         return 400
     if code == OrderPlacementErrorCode.IDEMPOTENCY_CONFLICT:
         return 409
-    if code == OrderPlacementErrorCode.AUTHORITATIVE_CATALOG_UNAVAILABLE:
+    if code in {
+        OrderPlacementErrorCode.AUTHORITATIVE_CATALOG_UNAVAILABLE,
+        OrderPlacementErrorCode.AUTHORITATIVE_INVENTORY_UNAVAILABLE,
+    }:
         return 503
     return 400
 
@@ -82,7 +131,7 @@ def _order_response(success: PlaceOrderSuccess) -> PlaceOrderResponse:
     )
 
 
-def _quote_validator(session: Session):
+def _quote_validator(session: Session, catalog: ConsumerCatalogAuthority):
     def validate(command: PlaceOrderCommand, fingerprint: str) -> OrderPlacementError | None:
         if command.server_quote_id is None or command.server_quote_revision is None:
             return OrderPlacementError(
@@ -104,6 +153,7 @@ def _quote_validator(session: Session):
             request_fingerprint=fingerprint,
             fulfillment_type=command.fulfillment_type,
             lines=command.lines,
+            catalog=catalog,
         )
         if error is None:
             return None
@@ -131,6 +181,9 @@ def post_place_order(
     catalog: ConsumerCatalogAuthority = Depends(get_consumer_catalog_authority),
     idempotency_key: str | None = Header(default=None, alias="Idempotency-Key"),
 ) -> PlaceOrderResponse | JSONResponse:
+    sweep_stale_reservations(session, worker_id="order-placement", record=False)
+    session.commit()
+
     if not idempotency_key or not idempotency_key.strip():
         return JSONResponse(
             status_code=400,
@@ -153,8 +206,8 @@ def post_place_order(
     deps = OrderPlacementDependencies(
         catalog=catalog,
         store=SqlAlchemyOrderPlacementStore(session),
-        inventory=_inventory_service,
-        validate_quote=_quote_validator(session),
+        inventory=_inventory_for(session, catalog),
+        validate_quote=_quote_validator(session, catalog),
     )
     result = place_order(command, deps)
     if isinstance(result, OrderPlacementError):
@@ -168,7 +221,24 @@ def post_place_order(
         )
     assert isinstance(result, PlaceOrderSuccess)
     if not result.idempotent_replay:
-        session.commit()
+        try:
+            session.commit()
+        except IntegrityError as exc:
+            session.rollback()
+            if not is_idempotency_unique_violation(exc):
+                raise
+            replayed = _replay_idempotent_order(session, command)
+            if isinstance(replayed, PlaceOrderSuccess):
+                return _order_response(replayed)
+            if isinstance(replayed, OrderPlacementError):
+                return JSONResponse(
+                    status_code=_error_status(replayed.code),
+                    content=OrderPlacementErrorResponse(
+                        code=replayed.code.value,
+                        message=replayed.message,
+                    ).model_dump(mode="json"),
+                )
+            raise
     return _order_response(result)
 
 
@@ -182,6 +252,8 @@ def post_cancel_order(
     session: Session = Depends(get_db),
     principal: AuthenticatedPrincipal = Depends(get_current_principal),
 ) -> PlaceOrderResponse | JSONResponse:
+    sweep_stale_reservations(session, worker_id="order-cancel", record=False)
+    session.commit()
     lifecycle = SqlOrderLifecycleService(session)
     record = lifecycle.cancel_order(buyer_user_id=principal.user_id, order_id=order_id)
     if record is None:

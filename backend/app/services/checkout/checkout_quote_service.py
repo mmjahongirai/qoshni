@@ -99,8 +99,14 @@ def issue_checkout_quote(
                 code=CheckoutQuoteErrorCode.VALIDATION_FAILED,
                 message="Line is not quotable from authoritative catalog.",
             )
+        if authority.currency_code != CHECKOUT_CURRENCY_UZS:
+            return CheckoutQuoteError(
+                code=CheckoutQuoteErrorCode.VALIDATION_FAILED,
+                message="Line is not quotable from authoritative catalog.",
+            )
         line_subtotal = authority.unit_price_minor * line.quantity
         subtotal += line_subtotal
+        pricing_revision = max(pricing_revision, authority.pricing_revision)
         snapshots.append(
             CheckoutQuoteLine(
                 business_stable_id=line.business_stable_id,
@@ -110,6 +116,7 @@ def issue_checkout_quote(
                 unit_price_minor=authority.unit_price_minor,
                 line_subtotal_minor=line_subtotal,
                 currency_code=authority.currency_code,
+                catalog_pricing_revision=authority.pricing_revision,
             )
         )
 
@@ -151,6 +158,7 @@ def validate_quote_for_placement(
     request_fingerprint: str,
     fulfillment_type: CheckoutFulfillmentType,
     lines: list[CheckoutCartLineRequest],
+    catalog: ConsumerCatalogAuthority | None = None,
 ) -> CheckoutQuoteError | None:
     quote = session.get(CheckoutQuote, server_quote_id)
     if quote is None or quote.buyer_user_id != buyer_user_id:
@@ -182,4 +190,38 @@ def validate_quote_for_placement(
             code=CheckoutQuoteErrorCode.VALIDATION_FAILED,
             message="Checkout quote does not match placement fingerprint.",
         )
+    if catalog is not None:
+        return _catalog_drift_error(quote, catalog)
+    return None
+
+
+def _catalog_drift_error(
+    quote: CheckoutQuote,
+    catalog: ConsumerCatalogAuthority,
+) -> CheckoutQuoteError | None:
+    """Reject placement when any quoted line is no longer priced as it was quoted."""
+    for quoted in quote.lines:
+        current = catalog.resolve_line(
+            business_stable_id=quoted.business_stable_id,
+            catalog_item_stable_id=quoted.catalog_item_stable_id,
+            requested_quantity=quoted.quantity,
+        )
+        if current is None:
+            return CheckoutQuoteError(
+                code=CheckoutQuoteErrorCode.VALIDATION_FAILED,
+                message="A quoted item is no longer available; request a new quote.",
+            )
+        revision_changed = (
+            quoted.catalog_pricing_revision is not None
+            and quoted.catalog_pricing_revision != current.pricing_revision
+        )
+        if (
+            revision_changed
+            or current.unit_price_minor != quoted.unit_price_minor
+            or current.currency_code != quoted.currency_code
+        ):
+            return CheckoutQuoteError(
+                code=CheckoutQuoteErrorCode.VALIDATION_FAILED,
+                message="Catalog pricing changed since the quote; request a new quote.",
+            )
     return None

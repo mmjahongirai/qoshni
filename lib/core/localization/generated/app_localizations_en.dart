@@ -1523,6 +1523,280 @@ class AppLocalizationsEn extends AppLocalizations {
   String get businessCenterOnboardingAction => 'Open registration';
 
   @override
+  String get businessLiveCatalogTitle => 'Live catalog';
+
+  @override
+  String get businessLiveCatalogLoading =>
+      'Checking whether a verified business application is linked. Sample profiles on this screen are not the live catalog.';
+
+  @override
+  String get businessLiveCatalogApiOff =>
+      'The live catalog API is not connected. Sample profiles on this screen are not your business catalog.';
+
+  @override
+  String get businessLiveCatalogSignedOut =>
+      'Sign in to manage the live catalog. Sample profiles are not used in its place.';
+
+  @override
+  String get businessLiveCatalogSessionEnded =>
+      'Your session ended. Sign in again to manage the live catalog.';
+
+  @override
+  String get businessLiveCatalogNoApplication =>
+      'No verified business application is linked, so the live catalog is unavailable. Sample profiles are not used as that catalog.';
+
+  @override
+  String get businessLiveCatalogAmbiguous =>
+      'More than one verified application exists. The live catalog stays unavailable until one application is selected. Sample profiles are not used instead.';
+
+  @override
+  String get businessLiveCatalogForbidden =>
+      'This account cannot manage that business catalog.';
+
+  @override
+  String businessLiveCatalogReady(String applicationId) {
+    return 'Live catalog is linked to verified application $applicationId. Sample profiles on this screen stay separate.';
+  }
+
+  @override
+  String get businessLiveCatalogSectionTitle => 'Catalog items';
+
+  @override
+  String get businessLiveCatalogClosed =>
+      'Live catalog management is closed. Sample offerings are not shown here.';
+
+  @override
+  String get businessLiveCatalogEmptyTitle => 'The live catalog is empty';
+
+  @override
+  String get businessLiveCatalogEmptyBody =>
+      'No catalog items have been saved on the server yet. Sample offerings are not added here.';
+
+  @override
+  String get businessLiveCatalogAddItem => 'Add catalog item';
+
+  @override
+  String get businessLiveCatalogFieldStableId => 'Stable ID';
+
+  @override
+  String get businessLiveCatalogFieldTitle => 'Title';
+
+  @override
+  String get businessLiveCatalogFieldKind => 'Offering kind';
+
+  @override
+  String get businessLiveCatalogKindProduct => 'Product';
+
+  @override
+  String get businessLiveCatalogKindService => 'Service';
+
+  @override
+  String get businessLiveCatalogFieldPrice => 'Price in UZS';
+
+  @override
+  String get businessLiveCatalogPriceInvalid =>
+      'Enter a whole UZS amount from 0 up to 1000000000.';
+
+  @override
+  String get businessLiveCatalogFieldRequired =>
+      'Fill in every field before saving.';
+
+  @override
+  String get businessLiveCatalogFieldTooLong => 'That value is too long.';
+
+  @override
+  String get businessLiveCatalogSave => 'Save';
+
+  @override
+  String get businessLiveCatalogCancel => 'Cancel';
+
+  @override
+  String get businessLiveCatalogChangePrice => 'Change price';
+
+  @override
+  String get businessLiveCatalogStatusLabel => 'Status';
+
+  @override
+  String get businessLiveCatalogStatusActive => 'Active';
+
+  @override
+  String get businessLiveCatalogStatusInactive => 'Inactive';
+
+  @override
+  String get businessLiveCatalogStatusArchived => 'Archived';
+
+  @override
+  String businessLiveCatalogRevision(int revision) {
+    return 'Pricing revision $revision';
+  }
+
+  @override
+  String businessLiveCatalogStableId(String stableId) {
+    return 'Stable ID: $stableId';
+  }
+
+  @override
+  String businessLiveCatalogCurrency(String currency) {
+    return 'Currency: $currency';
+  }
+
+  @override
+  String get businessLiveCatalogErrorSession =>
+      'Your session ended. Sign in again before managing the live catalog.';
+
+  @override
+  String get businessLiveCatalogErrorForbidden =>
+      'This business is not verified, or this account does not have permission.';
+
+  @override
+  String get businessLiveCatalogErrorNotFound =>
+      'That business or catalog item was not found.';
+
+  @override
+  String businessLiveCatalogErrorConflict(String serverCode) {
+    return 'The server rejected this change ($serverCode). The previous values stay in place.';
+  }
+
+  @override
+  String get businessLiveCatalogErrorUnavailable =>
+      'The live catalog is not available on the server right now.';
+
+  @override
+  String get businessLiveCatalogErrorGeneric =>
+      'The catalog request failed. Try again.';
+
+  @override
+  String get businessLiveCatalogErrorInvalidApplication =>
+      'The onboarding application id is not valid, so no catalog request was sent.';
+
+  @override
+  String get businessLiveInventoryNotOpen =>
+      'No stock record exists for this item yet.';
+
+  @override
+  String get businessLiveInventoryOpen => 'Open stock';
+
+  @override
+  String get businessLiveInventoryOpenQuantity => 'Quantity on hand';
+
+  @override
+  String get businessLiveInventoryOpenQuantityInvalid =>
+      'Enter a whole quantity of zero or more.';
+
+  @override
+  String businessLiveInventoryOnHand(int quantity) {
+    return 'On hand: $quantity';
+  }
+
+  @override
+  String businessLiveInventoryReserved(int quantity) {
+    return 'Reserved: $quantity';
+  }
+
+  @override
+  String businessLiveInventoryAvailable(int quantity) {
+    return 'Available: $quantity';
+  }
+
+  @override
+  String get businessLiveInventoryReplenish => 'Add stock';
+
+  @override
+  String get businessLiveInventoryCount => 'Record count';
+
+  @override
+  String get businessLiveInventoryQuantity => 'Quantity';
+
+  @override
+  String get businessLiveInventoryCounted => 'Counted quantity';
+
+  @override
+  String get businessLiveInventoryReason => 'Reason';
+
+  @override
+  String get businessLiveInventorySubmit => 'Submit';
+
+  @override
+  String get businessLiveInventoryQuantityInvalid =>
+      'Enter a whole quantity greater than zero.';
+
+  @override
+  String get businessLiveInventoryCountInvalid =>
+      'Enter a whole counted quantity of zero or more.';
+
+  @override
+  String get businessLiveInventoryReasonRequired =>
+      'Enter a reason before submitting.';
+
+  @override
+  String get businessLiveInventorySaved => 'Stock was updated from the server.';
+
+  @override
+  String get businessLiveInventoryEventsTitle => 'Stock history';
+
+  @override
+  String get businessLiveInventoryEventsEmpty =>
+      'No stock events have been recorded.';
+
+  @override
+  String get businessLiveInventoryKindOpened => 'Opened';
+
+  @override
+  String get businessLiveInventoryKindReplenished => 'Replenished';
+
+  @override
+  String get businessLiveInventoryKindCountCorrected => 'Count corrected';
+
+  @override
+  String businessLiveInventoryEventDelta(int delta) {
+    return 'Delta: $delta';
+  }
+
+  @override
+  String businessLiveInventoryEventOnHand(int quantity) {
+    return 'On hand after: $quantity';
+  }
+
+  @override
+  String businessLiveInventoryEventReserved(int quantity) {
+    return 'Reserved after: $quantity';
+  }
+
+  @override
+  String businessLiveInventoryActor(String actor) {
+    return 'Actor: $actor';
+  }
+
+  @override
+  String get businessLiveInventoryErrorSession =>
+      'Your session ended. Sign in again before changing live stock.';
+
+  @override
+  String get businessLiveInventoryErrorForbidden =>
+      'This business is not verified, or this account cannot change stock.';
+
+  @override
+  String get businessLiveInventoryErrorNotFound =>
+      'That business or catalog item was not found.';
+
+  @override
+  String businessLiveInventoryErrorConflict(String serverCode) {
+    return 'The server rejected the stock change ($serverCode).';
+  }
+
+  @override
+  String get businessLiveInventoryErrorUnavailable =>
+      'Authoritative stock is not available on the server right now.';
+
+  @override
+  String get businessLiveInventoryErrorNetwork =>
+      'The stock request could not reach the server.';
+
+  @override
+  String get businessLiveInventoryErrorGeneric =>
+      'The stock request failed. Try again.';
+
+  @override
   String get onboardingHubTitle => 'Business registration';
 
   @override

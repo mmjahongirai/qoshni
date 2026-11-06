@@ -1,17 +1,18 @@
 # Phase 18 — WP3: Durable Order Lifecycle, Quote Integrity & Recovery
 
-## Authoritative prerequisites (verified — unchanged)
+## Authoritative prerequisites (updated by Phase 18 Closure WP1)
 
 | Dependency | Status |
 | --- | --- |
-| Backend consumer catalog / SKU API | **Not available** |
-| Authoritative server pricing | **Not available** (default `UnavailableConsumerCatalogAuthority`) |
-| Authoritative consumer inventory | **Not available** |
+| Backend consumer catalog | **Implemented, off by default** — `SqlConsumerCatalogAuthority` over `consumer_catalog_items`, enabled only by `QOSHNI_CONSUMER_CATALOG_ENABLED=true` |
+| Authoritative server pricing | **Implemented when enabled**; default remains `UnavailableConsumerCatalogAuthority` |
+| Authoritative consumer inventory | **Implemented when a balance row exists** (`consumer_catalog_inventory`, migration `b0a1f0180003`). A missing row still returns **503** `authoritative_inventory_unavailable` |
+| Owner catalog management API | **Not in WP2** — service-layer only; HTTP API and Flutter Business Center are the next package |
 | Flutter demo quotes | **Not authoritative** |
 
-**Production default:** `POST /api/v1/checkout/quotes` and `POST /api/v1/checkout/prepare` return **503** `authoritative_catalog_unavailable`.
+**Production default (flag unset):** `POST /api/v1/checkout/prepare`, `POST /api/v1/checkout/quotes` and `POST /api/v1/orders` return **503** `authoritative_catalog_unavailable`, before any quote or order row is created.
 
-**Production default:** `POST /api/v1/orders` returns **503** before any order row is created.
+**Catalog enabled:** prepare and quotes are priced from SQL. Orders reserve `consumer_catalog_inventory` when a balance row exists; without one they still return **503** `authoritative_inventory_unavailable`.
 
 Test-only `FakeConsumerCatalogAuthority` is injected via FastAPI overrides in pytest — **never** wired in `get_consumer_catalog_authority()`.
 
@@ -27,9 +28,9 @@ Test-only `FakeConsumerCatalogAuthority` is injected via FastAPI overrides in py
 | `order_idempotency_records` | Unique `(buyer_user_id, operation, idempotency_key)` + fingerprint + `order_id` |
 | `inventory_reservations` | Held/released/expired reservations tied to `order_id` |
 
-**No product catalog table** — lines store `business_stable_id` + `catalog_item_stable_id` strings plus snapshots.
+Order and quote lines store `business_stable_id` + `catalog_item_stable_id` strings plus snapshots — no FK to `consumer_catalog_items`, so order history survives catalog edits.
 
-Earlier migrations (`b0a1f015`–`b0a1f017`) remain **unapplied** operationally.
+Earlier migrations (`b0a1f015`–`b0a1f017`) through `b0a1f0180003` remain **unapplied** operationally.
 
 ## Server quotes
 
@@ -37,6 +38,8 @@ Earlier migrations (`b0a1f015`–`b0a1f017`) remain **unapplied** operationally.
 - 15-minute TTL (`CHECKOUT_QUOTE_TTL`).
 - Placement requires matching buyer, revision, fingerprint, fulfillment, and non-expired quote (`validate_quote_for_placement`).
 - **No quote rows** are written when catalog is unavailable.
+- Each quote line stores `catalog_pricing_revision`; the quote's `pricing_revision` is the highest line revision.
+- At placement every quoted line is re-resolved from the catalog. A changed price, changed revision, archived/inactive item or no-longer-verified business returns **400** `stale_quote` — the client must request a new quote.
 
 ## Idempotency & recovery
 
@@ -45,14 +48,17 @@ Earlier migrations (`b0a1f015`–`b0a1f017`) remain **unapplied** operationally.
 - Different fingerprint → **409** `idempotency_conflict`.
 - Durable uniqueness: DB constraint `uq_order_idempotency_buyer_operation_key`.
 - API uses `SqlAlchemyOrderPlacementStore` + commit on first success; replay does not re-commit side effects.
+- A concurrent insert that hits `uq_order_idempotency_buyer_operation_key` rolls the loser back (including its stock hold) and returns the committed order.
 - Timeout recovery: client retries with the **same** key to load the committed order/idempotency row.
 
 ## Reservations
 
-- Production API still uses in-memory ledger for stock checks until an authoritative inventory service exists; **durable `inventory_reservations` rows** are written when SQL order persistence runs (test/future path).
+- SQL catalog orders hold stock in `consumer_catalog_inventory` (`quantity_on_hand`, `reserved_quantity`) inside the order transaction. PostgreSQL locks the balance with `SELECT … FOR UPDATE`; other dialects use one conditional `UPDATE`. The in-memory ledger remains only for test catalog overrides.
+- **Durable `inventory_reservations` rows** are written with a required `expires_at` (15 minutes).
 - States: `held`, `consumed`, `released`, `expired` (`InventoryReservationStatus`).
-- `SqlOrderLifecycleService.cancel_order` releases held reservations; idempotent if already cancelled.
-- `expire_stale_reservations()` — callable maintenance hook (no scheduler in repo).
+- `available = quantity_on_hand - reserved_quantity`, enforced by `reserved_quantity <= quantity_on_hand`.
+- `SqlOrderLifecycleService.cancel_order` returns held units and marks reservations `released`; idempotent if already cancelled.
+- `expire_stale_reservations()` returns held units for rows whose `expires_at` has passed. No scheduler ships in the repo — call it from ops.
 
 ## Order lifecycle
 
@@ -76,14 +82,14 @@ Earlier migrations (`b0a1f015`–`b0a1f017`) remain **unapplied** operationally.
 
 These must remain true until explicitly resolved — not hidden by schema or UI alone:
 
-1. **No authoritative consumer catalog, pricing, or stock source** on the backend production DI path.
-2. **In-memory stock reservation** (`InventoryReservationService`) is not safe for multi-worker production and is **not rolled back** if SQL persistence fails after an in-memory hold.
-3. **Concurrent SQL idempotency** needs robust insert-or-replay / conflict handling before catalog is enabled (unique constraint exists; route-level race handling is incomplete).
-4. **`inventory_reservations.expires_at`** is not populated on the successful persistence path — `expire_stale_reservations()` is not an operational expiry worker (no scheduler in repo).
-5. **Real backend order placement** remains unavailable until authoritative dependencies are live **and** migrations through `b0a1f0180001` are applied on the target database.
-6. Backend pytest on this branch was **not executed** on hosts without Python/venv — treat API/service tests as unverified until run.
+1. ~~No authoritative consumer catalog or pricing~~ — **resolved by Closure WP1** behind `QOSHNI_CONSUMER_CATALOG_ENABLED` (default off). **No authoritative stock source** remains.
+2. ~~In-memory stock on the SQL catalog path~~ — **replaced in Closure WP2** by `consumer_catalog_inventory` in the order transaction. The in-memory ledger is test-only. No scheduler process ships; ops must call `expire_stale_reservations()`.
+3. ~~Concurrent SQL idempotency~~ — a unique-constraint conflict now rolls back and replays the committed order. Two requests that both pass the first read can still both reserve until one commits; the loser is rolled back.
+4. ~~`expires_at` unset~~ — new reservation rows set a 15-minute `expires_at`. Expiry still needs an external caller.
+5. **Real backend order placement** remains unavailable until the catalog flag is on, each item has an explicit inventory balance, **and** migrations through `b0a1f0180003` are applied on the target database.
+6. Backend pytest was not executed for WP3 itself; Closure WP1 ran the full backend suite locally (see below).
 
-## Verification (this workspace)
+## Verification (WP3, historical)
 
 | Check | Result |
 | --- | --- |
@@ -101,11 +107,98 @@ Backend tests to run when Python is available: `test_checkout_preparation.py`, `
 
 See **Mandatory activation blockers** above. High-level delivery order:
 
-1. Implement real `ConsumerCatalogAuthority` (consumer catalog service).
-2. Apply migrations through `b0a1f0180001` on PostgreSQL.
-3. Replace in-memory inventory with an authoritative inventory port + transaction-safe holds.
-4. Harden idempotency under concurrency; populate reservation expiry or add scheduler.
+1. ~~Implement real `ConsumerCatalogAuthority`~~ — done in Closure WP1 (`SqlConsumerCatalogAuthority`).
+2. Apply migrations through `b0a1f0180003` on PostgreSQL.
+3. ~~Replace in-memory inventory~~ — done in Closure WP2 for the SQL catalog path.
+4. Call `expire_stale_reservations()` from an external scheduler. Idempotency conflicts replay the committed order.
 
-## Next Phase 18 step
+## Phase 18 Closure — WP1: Authoritative Consumer Catalog
 
-Payment capture integration, refund/cancellation financial lifecycle, and operational reconciliation tooling — only after catalog + inventory are live.
+Branch: `feature/phase18-catalog-inventory` (from `d897aeb`). Migration **`b0a1f0180002`** (parent `b0a1f0180001`).
+
+### Source of truth
+
+There is no backend Business Offerings table — Business Center offerings are an in-memory Flutter demo. The only verified business record on the backend is `business_onboarding_applications`, so catalog rows hang off it:
+
+| Requirement | Column / mechanism |
+| --- | --- |
+| business_id | `business_application_id` → FK `business_onboarding_applications.id` (`ON DELETE CASCADE`); public form `business:onboarding:{uuid}` (same as search) |
+| offering_id | `id` (UUID primary key) |
+| product/service identifier | `catalog_item_stable_id` (unique per business) + `offering_kind` (`product` / `service`) |
+| integer UZS price | `unit_price_minor` (`0 … 1 000 000 000`), `currency_code` fixed to `UZS` by CHECK |
+| pricing_revision | starts at 1, incremented by `upsert_catalog_offering` on every price change |
+| availability/status | `status`: `active` / `inactive` / `archived` — only `active` is priceable |
+| timestamps | `created_at`, `updated_at` |
+
+`checkout_quote_lines.catalog_pricing_revision` (nullable) records the revision each line was quoted at.
+
+### Behaviour
+
+- `SqlConsumerCatalogAuthority` resolves a line only when the item is `active` **and** its business is currently `verified`. An item ID requested under a different business never resolves.
+- `upsert_catalog_offering` (service layer) requires the caller to own the business; non-owners get `business_not_found`. Unverified businesses get `business_not_verified`.
+- `get_consumer_catalog_authority()` returns the SQL authority only when `QOSHNI_CONSUMER_CATALOG_ENABLED=true`; otherwise `UnavailableConsumerCatalogAuthority` (503).
+- `POST /checkout/prepare` returns a server-priced `CheckoutPrepareSuccessResponse` (`is_demo_pricing: false`) when enabled.
+- Cart lines reject unknown fields (`extra="forbid"`): a client-sent `unit_price_minor` is **422**. `client_submitted_total_minor` is accepted but never used.
+- With no `consumer_catalog_inventory` row, `available_quantity` stays `None` and `place_order` returns **503** `authoritative_inventory_unavailable` before any reservation or order row. A balance row returns `quantity_on_hand - reserved_quantity`.
+
+### Verification (Closure WP1)
+
+| Check | Result |
+| --- | --- |
+| Backend `pytest` (full suite, Python 3.12.13 temp venv outside repo) | **411 passed, 6 skipped** (5 Windows symlink, 1 pagination fixture) |
+| `tests/test_consumer_catalog_wp1.py` | **40 passed** |
+| `flutter test` | **647 passed** |
+| `flutter analyze` | **0 errors**, 179 issues (unchanged baseline) |
+| `git diff --check` | clean |
+| DB migrations applied | **No** |
+
+## Phase 18 Closure — WP2: Database-backed Inventory
+
+Migration **`b0a1f0180003`** (parent `b0a1f0180002`). No owner HTTP API and no Flutter Business Center work in this package.
+
+### Balance
+
+`consumer_catalog_inventory` is one row per catalog item (`catalog_item_id` primary key, `ON DELETE CASCADE`). It stores `quantity_on_hand` and `reserved_quantity` with **no server default** — a missing row is not zero and not unlimited. Opening a balance passes the counted on-hand quantity explicitly and sets reserved to 0 because nothing is held yet.
+
+`available_quantity = quantity_on_hand - reserved_quantity`. A check constraint keeps reserved within on-hand, so available cannot be negative.
+
+The row follows the catalog item. Today the item points at a verified onboarding application. A future canonical Business Profile can replace that parent reference without rewriting inventory rows. This package does not build that profile.
+
+### Holds
+
+`POST /orders` uses `SqlCatalogInventoryService` only when the catalog authority is the SQL one. Test overrides still use the in-memory ledger.
+
+- PostgreSQL: `SELECT … FOR UPDATE` on the balance, then increment reserved.
+- SQLite (tests) and other dialects: one conditional `UPDATE … WHERE on_hand - reserved >= quantity`.
+- The reservation row is written in the same transaction with `expires_at` set 15 minutes ahead.
+- Cancel and `expire_stale_reservations()` move the units back and set `released` or `expired`. Expiry also moves a still-`pending_acceptance` order to `expired`, so the order does not keep a claim on stock that was returned. Holds on any other order status are left alone.
+- Any error before commit rolls the hold back with the order.
+- A missing balance still returns **503** `authoritative_inventory_unavailable` and writes nothing. Catalog disabled still returns **503** `authoritative_catalog_unavailable`.
+
+Closure WP3 adds a claim-safe sweep on order placement, cancel, and owner inventory reads, plus `POST/GET /api/v1/internal/inventory/reservation-maintenance`. See `docs/business_catalog_inventory_wp3.md`.
+
+### Idempotency
+
+If two placements commit the same buyer/operation/key, the loser hits `uq_order_idempotency_buyer_operation_key`, the request rolls back (stock included), and the response is the committed order. A different body is still **409**.
+
+### Not in this package
+
+Owner catalog/inventory HTTP API and Flutter Business Center stay service-layer only. That is the next package, before payment capture.
+
+### Verification (Closure WP2)
+
+Recorded after the commands below. PostgreSQL was **not** available, so `SELECT … FOR UPDATE` was not executed; SQLite covered the conditional update, including parallel placements.
+
+| Check | Result |
+| --- | --- |
+| Backend `pytest` (full suite, before the final “expire the pending order too” change) | **425 passed, 6 skipped** (5 Windows symlink, 1 pagination fixture) |
+| `tests/test_consumer_inventory_wp2.py` after that change | **14 passed** |
+| WP1 + checkout regression subset, earlier in this WP | **59 passed** |
+| `flutter test` | **647 passed** |
+| `flutter analyze` | **0 errors**, 179 issues (unchanged baseline) |
+| PostgreSQL / `SELECT … FOR UPDATE` | **Not run** — no PostgreSQL on this machine; SQLite conditional `UPDATE` covered the parallel cases |
+| DB migrations applied | **No** |
+
+## Next package
+
+Owner catalog and inventory HTTP is Closure WP3 (`docs/business_catalog_inventory_wp3.md`). Flutter Business Center UI is WP4. Payment capture stays later. Migrations through `b0a1f0180004` are still not applied to any shared database.

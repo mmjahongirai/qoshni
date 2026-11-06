@@ -1,4 +1,4 @@
-"""Checkout preparation API (contract only until catalog authority exists)."""
+"""Checkout preparation and quote API (fail-closed unless the SQL catalog is enabled)."""
 
 from __future__ import annotations
 
@@ -21,12 +21,13 @@ from app.services.checkout.checkout_quote_service import (
 )
 from app.api.schemas.checkout_preparation import (
     CheckoutPrepareRequest,
+    CheckoutPrepareSuccessResponse,
     CheckoutPrepareUnavailableResponse,
     CheckoutPrepareValidationErrorResponse,
 )
 from app.services.checkout.preparation_service import (
     CheckoutPreparationErrorCode,
-    prepare_checkout_pricing,
+    prepare_checkout_with_catalog,
 )
 
 router = APIRouter(prefix="/checkout", tags=["checkout"])
@@ -34,6 +35,7 @@ router = APIRouter(prefix="/checkout", tags=["checkout"])
 
 @router.post(
     "/prepare",
+    response_model=CheckoutPrepareSuccessResponse,
     responses={
         400: {"model": CheckoutPrepareValidationErrorResponse},
         503: {"model": CheckoutPrepareUnavailableResponse},
@@ -42,8 +44,11 @@ router = APIRouter(prefix="/checkout", tags=["checkout"])
 def post_checkout_prepare(
     payload: CheckoutPrepareRequest,
     _principal: AuthenticatedPrincipal = Depends(get_current_principal),
-) -> JSONResponse:
-    result = prepare_checkout_pricing(payload)
+    catalog: ConsumerCatalogAuthority = Depends(get_consumer_catalog_authority),
+) -> CheckoutPrepareSuccessResponse | JSONResponse:
+    result = prepare_checkout_with_catalog(payload, catalog)
+    if isinstance(result, CheckoutPrepareSuccessResponse):
+        return result
     if result.code == CheckoutPreparationErrorCode.EMPTY_CART:
         return JSONResponse(
             status_code=400,

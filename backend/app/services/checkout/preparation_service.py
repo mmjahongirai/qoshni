@@ -1,12 +1,19 @@
-"""Checkout preparation validation — authoritative catalog not available in WP1."""
+"""Checkout preparation validation and authoritative catalog pricing preview."""
 
 from __future__ import annotations
 
 from dataclasses import dataclass
+from datetime import UTC, datetime
 from enum import StrEnum
 
-from app.api.schemas.checkout_preparation import CheckoutPrepareRequest
+from app.api.schemas.checkout_preparation import (
+    CheckoutPreparedLineView,
+    CheckoutPrepareRequest,
+    CheckoutPrepareSuccessResponse,
+    new_checkout_correlation_id,
+)
 from app.domain.checkout_limits import CHECKOUT_CURRENCY_UZS
+from app.services.checkout.catalog_authority import ConsumerCatalogAuthority
 
 
 class CheckoutPreparationErrorCode(StrEnum):
@@ -57,16 +64,70 @@ def validate_prepare_request(
 def prepare_checkout_pricing(
     payload: CheckoutPrepareRequest,
 ) -> CheckoutPreparationError:
-    """No server-side consumer catalog exists yet — pricing remains client demo-only."""
+    """Response when no authoritative catalog is wired (production default)."""
     validation = validate_prepare_request(payload)
     if validation is not None:
         return validation
 
-    _ = CHECKOUT_CURRENCY_UZS  # contract placeholder for future pricing currency
     return CheckoutPreparationError(
         code=CheckoutPreparationErrorCode.AUTHORITATIVE_CATALOG_UNAVAILABLE,
         message=(
             "Authoritative consumer catalog pricing is not available on the backend. "
             "Use the Flutter demo pricing adapter until catalog APIs are delivered."
         ),
+    )
+
+
+def prepare_checkout_with_catalog(
+    payload: CheckoutPrepareRequest,
+    catalog: ConsumerCatalogAuthority,
+) -> CheckoutPrepareSuccessResponse | CheckoutPreparationError:
+    """Price every line from the catalog; ``client_submitted_total_minor`` is never used."""
+    if not catalog.is_operational():
+        return prepare_checkout_pricing(payload)
+    validation = validate_prepare_request(payload)
+    if validation is not None:
+        return validation
+
+    priced: list[CheckoutPreparedLineView] = []
+    for line in payload.lines:
+        authority = catalog.resolve_line(
+            business_stable_id=line.business_stable_id,
+            catalog_item_stable_id=line.catalog_item_stable_id,
+            requested_quantity=line.quantity,
+        )
+        if (
+            authority is None
+            or authority.unit_price_minor < 0
+            or authority.currency_code != CHECKOUT_CURRENCY_UZS
+        ):
+            return CheckoutPreparationError(
+                code=CheckoutPreparationErrorCode.VALIDATION_FAILED,
+                message="Line is not priceable from authoritative catalog.",
+            )
+        priced.append(
+            CheckoutPreparedLineView(
+                business_stable_id=line.business_stable_id,
+                catalog_item_stable_id=line.catalog_item_stable_id,
+                quantity=line.quantity,
+                unit_price_minor=authority.unit_price_minor,
+                line_subtotal_minor=authority.unit_price_minor * line.quantity,
+                currency_code=authority.currency_code,
+                title_snapshot=authority.title_snapshot,
+            )
+        )
+
+    subtotal = sum(line.line_subtotal_minor for line in priced)
+    return CheckoutPrepareSuccessResponse(
+        session_correlation_id=new_checkout_correlation_id(),
+        quoted_at=datetime.now(UTC),
+        currency_code=CHECKOUT_CURRENCY_UZS,
+        subtotal_minor=subtotal,
+        discount_minor=0,
+        delivery_fee_minor=0,
+        tax_minor=0,
+        total_minor=subtotal,
+        lines=priced,
+        cart_revision=payload.cart_revision,
+        is_demo_pricing=False,
     )

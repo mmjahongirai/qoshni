@@ -589,6 +589,154 @@
   "businessCenterOnboardingTitle": "Business registration",
   "businessCenterOnboardingBody": "Submit a verification application, upload documents, and track review status with your signed-in account.",
   "businessCenterOnboardingAction": "Open registration",
+  "businessLiveCatalogTitle": "Live catalog",
+  "businessLiveCatalogLoading": "Checking whether a verified business application is linked. Sample profiles on this screen are not the live catalog.",
+  "businessLiveCatalogApiOff": "The live catalog API is not connected. Sample profiles on this screen are not your business catalog.",
+  "businessLiveCatalogSignedOut": "Sign in to manage the live catalog. Sample profiles are not used in its place.",
+  "businessLiveCatalogSessionEnded": "Your session ended. Sign in again to manage the live catalog.",
+  "businessLiveCatalogNoApplication": "No verified business application is linked, so the live catalog is unavailable. Sample profiles are not used as that catalog.",
+  "businessLiveCatalogAmbiguous": "More than one verified application exists. The live catalog stays unavailable until one application is selected. Sample profiles are not used instead.",
+  "businessLiveCatalogForbidden": "This account cannot manage that business catalog.",
+  "businessLiveCatalogReady": "Live catalog is linked to verified application {applicationId}. Sample profiles on this screen stay separate.",
+  "@businessLiveCatalogReady": {
+    "placeholders": {
+      "applicationId": {
+        "type": "String"
+      }
+    }
+  },
+  "businessLiveCatalogSectionTitle": "Catalog items",
+  "businessLiveCatalogClosed": "Live catalog management is closed. Sample offerings are not shown here.",
+  "businessLiveCatalogEmptyTitle": "The live catalog is empty",
+  "businessLiveCatalogEmptyBody": "No catalog items have been saved on the server yet. Sample offerings are not added here.",
+  "businessLiveCatalogAddItem": "Add catalog item",
+  "businessLiveCatalogFieldStableId": "Stable ID",
+  "businessLiveCatalogFieldTitle": "Title",
+  "businessLiveCatalogFieldKind": "Offering kind",
+  "businessLiveCatalogKindProduct": "Product",
+  "businessLiveCatalogKindService": "Service",
+  "businessLiveCatalogFieldPrice": "Price in UZS",
+  "businessLiveCatalogPriceInvalid": "Enter a whole UZS amount from 0 up to 1000000000.",
+  "businessLiveCatalogFieldRequired": "Fill in every field before saving.",
+  "businessLiveCatalogFieldTooLong": "That value is too long.",
+  "businessLiveCatalogSave": "Save",
+  "businessLiveCatalogCancel": "Cancel",
+  "businessLiveCatalogChangePrice": "Change price",
+  "businessLiveCatalogStatusLabel": "Status",
+  "businessLiveCatalogStatusActive": "Active",
+  "businessLiveCatalogStatusInactive": "Inactive",
+  "businessLiveCatalogStatusArchived": "Archived",
+  "businessLiveCatalogRevision": "Pricing revision {revision}",
+  "@businessLiveCatalogRevision": {
+    "placeholders": {
+      "revision": {
+        "type": "int"
+      }
+    }
+  },
+  "businessLiveCatalogStableId": "Stable ID: {stableId}",
+  "@businessLiveCatalogStableId": {
+    "placeholders": {
+      "stableId": {
+        "type": "String"
+      }
+    }
+  },
+  "businessLiveCatalogCurrency": "Currency: {currency}",
+  "@businessLiveCatalogCurrency": {
+    "placeholders": {
+      "currency": {
+        "type": "String"
+      }
+    }
+  },
+  "businessLiveCatalogErrorSession": "Your session ended. Sign in again before managing the live catalog.",
+  "businessLiveCatalogErrorForbidden": "This business is not verified, or this account does not have permission.",
+  "businessLiveCatalogErrorNotFound": "That business or catalog item was not found.",
+  "businessLiveCatalogErrorConflict": "The server rejected this change ({serverCode}). The previous values stay in place.",
+  "@businessLiveCatalogErrorConflict": {
+    "placeholders": {
+      "serverCode": {
+        "type": "String"
+      }
+    }
+  },
+  "businessLiveCatalogErrorUnavailable": "The live catalog is not available on the server right now.",
+  "businessLiveCatalogErrorGeneric": "The catalog request failed. Try again.",
+  "businessLiveCatalogErrorInvalidApplication": "The onboarding application id is not valid, so no catalog request was sent.",
+  "businessLiveInventoryNotOpen": "No stock record exists for this item yet.",
+  "businessLiveInventoryOpen": "Open stock",
+  "businessLiveInventoryOpenQuantity": "Quantity on hand",
+  "businessLiveInventoryOpenQuantityInvalid": "Enter a whole quantity of zero or more.",
+  "businessLiveInventoryOnHand": "On hand: {quantity}",
+  "@businessLiveInventoryOnHand": {
+    "placeholders": {
+      "quantity": {"type": "int"}
+    }
+  },
+  "businessLiveInventoryReserved": "Reserved: {quantity}",
+  "@businessLiveInventoryReserved": {
+    "placeholders": {
+      "quantity": {"type": "int"}
+    }
+  },
+  "businessLiveInventoryAvailable": "Available: {quantity}",
+  "@businessLiveInventoryAvailable": {
+    "placeholders": {
+      "quantity": {"type": "int"}
+    }
+  },
+  "businessLiveInventoryReplenish": "Add stock",
+  "businessLiveInventoryCount": "Record count",
+  "businessLiveInventoryQuantity": "Quantity",
+  "businessLiveInventoryCounted": "Counted quantity",
+  "businessLiveInventoryReason": "Reason",
+  "businessLiveInventorySubmit": "Submit",
+  "businessLiveInventoryQuantityInvalid": "Enter a whole quantity greater than zero.",
+  "businessLiveInventoryCountInvalid": "Enter a whole counted quantity of zero or more.",
+  "businessLiveInventoryReasonRequired": "Enter a reason before submitting.",
+  "businessLiveInventorySaved": "Stock was updated from the server.",
+  "businessLiveInventoryEventsTitle": "Stock history",
+  "businessLiveInventoryEventsEmpty": "No stock events have been recorded.",
+  "businessLiveInventoryKindOpened": "Opened",
+  "businessLiveInventoryKindReplenished": "Replenished",
+  "businessLiveInventoryKindCountCorrected": "Count corrected",
+  "businessLiveInventoryEventDelta": "Delta: {delta}",
+  "@businessLiveInventoryEventDelta": {
+    "placeholders": {
+      "delta": {"type": "int"}
+    }
+  },
+  "businessLiveInventoryEventOnHand": "On hand after: {quantity}",
+  "@businessLiveInventoryEventOnHand": {
+    "placeholders": {
+      "quantity": {"type": "int"}
+    }
+  },
+  "businessLiveInventoryEventReserved": "Reserved after: {quantity}",
+  "@businessLiveInventoryEventReserved": {
+    "placeholders": {
+      "quantity": {"type": "int"}
+    }
+  },
+  "businessLiveInventoryActor": "Actor: {actor}",
+  "@businessLiveInventoryActor": {
+    "placeholders": {
+      "actor": {"type": "String"}
+    }
+  },
+  "businessLiveInventoryErrorSession": "Your session ended. Sign in again before changing live stock.",
+  "businessLiveInventoryErrorForbidden": "This business is not verified, or this account cannot change stock.",
+  "businessLiveInventoryErrorNotFound": "That business or catalog item was not found.",
+  "businessLiveInventoryErrorConflict": "The server rejected the stock change ({serverCode}).",
+  "@businessLiveInventoryErrorConflict": {
+    "placeholders": {
+      "serverCode": {"type": "String"}
+    }
+  },
+  "businessLiveInventoryErrorUnavailable": "Authoritative stock is not available on the server right now.",
+  "businessLiveInventoryErrorNetwork": "The stock request could not reach the server.",
+  "businessLiveInventoryErrorGeneric": "The stock request failed. Try again.",
   "onboardingHubTitle": "Business registration",
   "onboardingHubIntroTitle": "Register your business",
   "onboardingHubIntroBody": "Create an application, complete the form, upload required documents, and submit for review. Status updates come from the server.",

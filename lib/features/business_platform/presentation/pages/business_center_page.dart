@@ -7,6 +7,8 @@ import 'package:qoshni/core/theme/app_tokens.dart';
 import 'package:qoshni/core/widgets/app_surface_card.dart';
 import 'package:qoshni/di/injection.dart';
 import 'package:qoshni/features/business_platform/presentation/business_profile_controller.dart';
+import 'package:qoshni/features/business_platform/presentation/widgets/business_live_catalog_section.dart';
+import 'package:qoshni/features/business_platform/presentation/widgets/business_live_catalog_status_card.dart';
 import 'package:qoshni/features/business_platform/presentation/widgets/business_planned_capabilities_section.dart';
 import 'package:qoshni/features/business_platform/presentation/widgets/business_profile_summary_card.dart';
 import 'package:qoshni/routing/route_paths.dart';
@@ -113,6 +115,10 @@ class _BusinessCenterBody extends StatelessWidget {
                   ],
                 ),
               ),
+              const SizedBox(height: AppSpacing.md),
+              const BusinessLiveCatalogStatusCard(),
+              const SizedBox(height: AppSpacing.md),
+              const BusinessLiveCatalogSection(),
               const SizedBox(height: AppSpacing.md),
               AppSurfaceCard(
                 onTap: () => context.push(RoutePaths.businessBranches),

@@ -10,6 +10,12 @@ from app.db.models.identity import AuthAuditEvent, AuthSession, OtpChallenge, Us
 from app.db.models.platform_roles import UserPlatformRoleAssignment
 from app.db.models.profile import UserPreferences, UserProfile
 from app.db.models.saved_places import UserSavedPlace
+from app.db.models.consumer_catalog import (
+    ConsumerCatalogInventory,
+    ConsumerCatalogInventoryEvent,
+    ConsumerCatalogItem,
+    InventoryMaintenanceRun,
+)
 from app.db.models.consumer_orders import (
     CheckoutQuote,
     CheckoutQuoteLine,
@@ -41,6 +47,10 @@ __all__ = [
     "SearchIndexProjectionReceipt",
     "SearchIndexRecord",
     "UserSavedPlace",
+    "ConsumerCatalogInventory",
+    "ConsumerCatalogInventoryEvent",
+    "ConsumerCatalogItem",
+    "InventoryMaintenanceRun",
     "CheckoutQuote",
     "CheckoutQuoteLine",
     "ConsumerOrder",
