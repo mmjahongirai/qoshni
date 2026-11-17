@@ -12,8 +12,13 @@ from app.api.routes.health import router as health_router
 from app.api.routes.me import router as me_router
 from app.api.routes.saved_places import router as saved_places_router
 from app.api.routes.search_discovery import router as search_discovery_router
+from app.api.routes.business_catalog import router as business_catalog_router
+from app.api.routes.business_orders import router as business_orders_router
 from app.api.routes.checkout import router as checkout_router
+from app.api.routes.inventory_maintenance import router as inventory_maintenance_router
 from app.api.routes.orders import router as orders_router
+from app.api.routes.payments import router as payments_router
+from app.api.routes.wallets import router as wallets_router
 
 
 api_router = APIRouter()
@@ -27,3 +32,8 @@ api_router.include_router(search_discovery_router)
 api_router.include_router(saved_places_router)
 api_router.include_router(checkout_router)
 api_router.include_router(orders_router)
+api_router.include_router(business_catalog_router)
+api_router.include_router(business_orders_router)
+api_router.include_router(inventory_maintenance_router)
+api_router.include_router(wallets_router)
+api_router.include_router(payments_router)

@@ -36,6 +36,7 @@ class OrderPlacementErrorCode(StrEnum):
     VALIDATION_FAILED = "validation_failed"
     UNAUTHORIZED = "unauthorized"
     AUTHORITATIVE_CATALOG_UNAVAILABLE = "authoritative_catalog_unavailable"
+    AUTHORITATIVE_INVENTORY_UNAVAILABLE = "authoritative_inventory_unavailable"
     STALE_QUOTE = "stale_quote"
     INSUFFICIENT_STOCK = "insufficient_stock"
     IDEMPOTENCY_CONFLICT = "idempotency_conflict"
@@ -84,7 +85,7 @@ class OrderPlacementDependencies:
     validate_quote: Callable[[PlaceOrderCommand, str], OrderPlacementError | None] | None = None
 
 
-def _request_fingerprint(command: PlaceOrderCommand) -> str:
+def place_order_request_fingerprint(command: PlaceOrderCommand) -> str:
     payload = {
         "fulfillment_type": command.fulfillment_type.value,
         "checkout_correlation_id": command.checkout_correlation_id,
@@ -129,7 +130,7 @@ def place_order(
         operation="place_order",
         idempotency_key=command.idempotency_key.strip(),
     )
-    fingerprint = _request_fingerprint(command)
+    fingerprint = place_order_request_fingerprint(command)
     existing = deps.store.get_idempotency(scope)
     if existing is not None:
         if existing.request_fingerprint != fingerprint:
@@ -191,6 +192,11 @@ def place_order(
             return OrderPlacementError(
                 code=OrderPlacementErrorCode.VALIDATION_FAILED,
                 message="Invalid authoritative price.",
+            )
+        if authority.available_quantity is None:
+            return OrderPlacementError(
+                code=OrderPlacementErrorCode.AUTHORITATIVE_INVENTORY_UNAVAILABLE,
+                message="Authoritative inventory is not available on the backend.",
             )
         if line.quantity > authority.available_quantity:
             return OrderPlacementError(

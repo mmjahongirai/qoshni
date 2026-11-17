@@ -70,6 +70,7 @@ class CheckoutQuoteLine(Base):
     unit_price_minor: Mapped[int] = mapped_column(Integer, nullable=False)
     line_subtotal_minor: Mapped[int] = mapped_column(Integer, nullable=False)
     currency_code: Mapped[str] = mapped_column(String(8), nullable=False)
+    catalog_pricing_revision: Mapped[int | None] = mapped_column(Integer, nullable=True)
 
     quote: Mapped[CheckoutQuote] = relationship(back_populates="lines")
 

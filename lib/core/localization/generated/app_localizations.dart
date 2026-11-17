@@ -2751,6 +2751,444 @@ abstract class AppLocalizations {
   /// **'Open registration'**
   String get businessCenterOnboardingAction;
 
+  /// No description provided for @businessLiveCatalogTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Live catalog'**
+  String get businessLiveCatalogTitle;
+
+  /// No description provided for @businessLiveCatalogLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking whether a verified business application is linked. Sample profiles on this screen are not the live catalog.'**
+  String get businessLiveCatalogLoading;
+
+  /// No description provided for @businessLiveCatalogApiOff.
+  ///
+  /// In en, this message translates to:
+  /// **'The live catalog API is not connected. Sample profiles on this screen are not your business catalog.'**
+  String get businessLiveCatalogApiOff;
+
+  /// No description provided for @businessLiveCatalogSignedOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to manage the live catalog. Sample profiles are not used in its place.'**
+  String get businessLiveCatalogSignedOut;
+
+  /// No description provided for @businessLiveCatalogSessionEnded.
+  ///
+  /// In en, this message translates to:
+  /// **'Your session ended. Sign in again to manage the live catalog.'**
+  String get businessLiveCatalogSessionEnded;
+
+  /// No description provided for @businessLiveCatalogNoApplication.
+  ///
+  /// In en, this message translates to:
+  /// **'No verified business application is linked, so the live catalog is unavailable. Sample profiles are not used as that catalog.'**
+  String get businessLiveCatalogNoApplication;
+
+  /// No description provided for @businessLiveCatalogAmbiguous.
+  ///
+  /// In en, this message translates to:
+  /// **'More than one verified application exists. The live catalog stays unavailable until one application is selected. Sample profiles are not used instead.'**
+  String get businessLiveCatalogAmbiguous;
+
+  /// No description provided for @businessLiveCatalogForbidden.
+  ///
+  /// In en, this message translates to:
+  /// **'This account cannot manage that business catalog.'**
+  String get businessLiveCatalogForbidden;
+
+  /// No description provided for @businessLiveCatalogReady.
+  ///
+  /// In en, this message translates to:
+  /// **'Live catalog is linked to verified application {applicationId}. Sample profiles on this screen stay separate.'**
+  String businessLiveCatalogReady(String applicationId);
+
+  /// No description provided for @businessLiveCatalogSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Catalog items'**
+  String get businessLiveCatalogSectionTitle;
+
+  /// No description provided for @businessLiveCatalogClosed.
+  ///
+  /// In en, this message translates to:
+  /// **'Live catalog management is closed. Sample offerings are not shown here.'**
+  String get businessLiveCatalogClosed;
+
+  /// No description provided for @businessLiveCatalogEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'The live catalog is empty'**
+  String get businessLiveCatalogEmptyTitle;
+
+  /// No description provided for @businessLiveCatalogEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'No catalog items have been saved on the server yet. Sample offerings are not added here.'**
+  String get businessLiveCatalogEmptyBody;
+
+  /// No description provided for @businessLiveCatalogAddItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Add catalog item'**
+  String get businessLiveCatalogAddItem;
+
+  /// No description provided for @businessLiveCatalogFieldStableId.
+  ///
+  /// In en, this message translates to:
+  /// **'Stable ID'**
+  String get businessLiveCatalogFieldStableId;
+
+  /// No description provided for @businessLiveCatalogFieldTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Title'**
+  String get businessLiveCatalogFieldTitle;
+
+  /// No description provided for @businessLiveCatalogFieldKind.
+  ///
+  /// In en, this message translates to:
+  /// **'Offering kind'**
+  String get businessLiveCatalogFieldKind;
+
+  /// No description provided for @businessLiveCatalogKindProduct.
+  ///
+  /// In en, this message translates to:
+  /// **'Product'**
+  String get businessLiveCatalogKindProduct;
+
+  /// No description provided for @businessLiveCatalogKindService.
+  ///
+  /// In en, this message translates to:
+  /// **'Service'**
+  String get businessLiveCatalogKindService;
+
+  /// No description provided for @businessLiveCatalogFieldPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Price in UZS'**
+  String get businessLiveCatalogFieldPrice;
+
+  /// No description provided for @businessLiveCatalogPriceInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a whole UZS amount from 0 up to 1000000000.'**
+  String get businessLiveCatalogPriceInvalid;
+
+  /// No description provided for @businessLiveCatalogFieldRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Fill in every field before saving.'**
+  String get businessLiveCatalogFieldRequired;
+
+  /// No description provided for @businessLiveCatalogFieldTooLong.
+  ///
+  /// In en, this message translates to:
+  /// **'That value is too long.'**
+  String get businessLiveCatalogFieldTooLong;
+
+  /// No description provided for @businessLiveCatalogSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get businessLiveCatalogSave;
+
+  /// No description provided for @businessLiveCatalogCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get businessLiveCatalogCancel;
+
+  /// No description provided for @businessLiveCatalogChangePrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Change price'**
+  String get businessLiveCatalogChangePrice;
+
+  /// No description provided for @businessLiveCatalogStatusLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get businessLiveCatalogStatusLabel;
+
+  /// No description provided for @businessLiveCatalogStatusActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get businessLiveCatalogStatusActive;
+
+  /// No description provided for @businessLiveCatalogStatusInactive.
+  ///
+  /// In en, this message translates to:
+  /// **'Inactive'**
+  String get businessLiveCatalogStatusInactive;
+
+  /// No description provided for @businessLiveCatalogStatusArchived.
+  ///
+  /// In en, this message translates to:
+  /// **'Archived'**
+  String get businessLiveCatalogStatusArchived;
+
+  /// No description provided for @businessLiveCatalogRevision.
+  ///
+  /// In en, this message translates to:
+  /// **'Pricing revision {revision}'**
+  String businessLiveCatalogRevision(int revision);
+
+  /// No description provided for @businessLiveCatalogStableId.
+  ///
+  /// In en, this message translates to:
+  /// **'Stable ID: {stableId}'**
+  String businessLiveCatalogStableId(String stableId);
+
+  /// No description provided for @businessLiveCatalogCurrency.
+  ///
+  /// In en, this message translates to:
+  /// **'Currency: {currency}'**
+  String businessLiveCatalogCurrency(String currency);
+
+  /// No description provided for @businessLiveCatalogErrorSession.
+  ///
+  /// In en, this message translates to:
+  /// **'Your session ended. Sign in again before managing the live catalog.'**
+  String get businessLiveCatalogErrorSession;
+
+  /// No description provided for @businessLiveCatalogErrorForbidden.
+  ///
+  /// In en, this message translates to:
+  /// **'This business is not verified, or this account does not have permission.'**
+  String get businessLiveCatalogErrorForbidden;
+
+  /// No description provided for @businessLiveCatalogErrorNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'That business or catalog item was not found.'**
+  String get businessLiveCatalogErrorNotFound;
+
+  /// No description provided for @businessLiveCatalogErrorConflict.
+  ///
+  /// In en, this message translates to:
+  /// **'The server rejected this change ({serverCode}). The previous values stay in place.'**
+  String businessLiveCatalogErrorConflict(String serverCode);
+
+  /// No description provided for @businessLiveCatalogErrorUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'The live catalog is not available on the server right now.'**
+  String get businessLiveCatalogErrorUnavailable;
+
+  /// No description provided for @businessLiveCatalogErrorGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'The catalog request failed. Try again.'**
+  String get businessLiveCatalogErrorGeneric;
+
+  /// No description provided for @businessLiveCatalogErrorInvalidApplication.
+  ///
+  /// In en, this message translates to:
+  /// **'The onboarding application id is not valid, so no catalog request was sent.'**
+  String get businessLiveCatalogErrorInvalidApplication;
+
+  /// No description provided for @businessLiveInventoryNotOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'No stock record exists for this item yet.'**
+  String get businessLiveInventoryNotOpen;
+
+  /// No description provided for @businessLiveInventoryOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Open stock'**
+  String get businessLiveInventoryOpen;
+
+  /// No description provided for @businessLiveInventoryOpenQuantity.
+  ///
+  /// In en, this message translates to:
+  /// **'Quantity on hand'**
+  String get businessLiveInventoryOpenQuantity;
+
+  /// No description provided for @businessLiveInventoryOpenQuantityInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a whole quantity of zero or more.'**
+  String get businessLiveInventoryOpenQuantityInvalid;
+
+  /// No description provided for @businessLiveInventoryOnHand.
+  ///
+  /// In en, this message translates to:
+  /// **'On hand: {quantity}'**
+  String businessLiveInventoryOnHand(int quantity);
+
+  /// No description provided for @businessLiveInventoryReserved.
+  ///
+  /// In en, this message translates to:
+  /// **'Reserved: {quantity}'**
+  String businessLiveInventoryReserved(int quantity);
+
+  /// No description provided for @businessLiveInventoryAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Available: {quantity}'**
+  String businessLiveInventoryAvailable(int quantity);
+
+  /// No description provided for @businessLiveInventoryReplenish.
+  ///
+  /// In en, this message translates to:
+  /// **'Add stock'**
+  String get businessLiveInventoryReplenish;
+
+  /// No description provided for @businessLiveInventoryCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Record count'**
+  String get businessLiveInventoryCount;
+
+  /// No description provided for @businessLiveInventoryQuantity.
+  ///
+  /// In en, this message translates to:
+  /// **'Quantity'**
+  String get businessLiveInventoryQuantity;
+
+  /// No description provided for @businessLiveInventoryCounted.
+  ///
+  /// In en, this message translates to:
+  /// **'Counted quantity'**
+  String get businessLiveInventoryCounted;
+
+  /// No description provided for @businessLiveInventoryReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Reason'**
+  String get businessLiveInventoryReason;
+
+  /// No description provided for @businessLiveInventorySubmit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit'**
+  String get businessLiveInventorySubmit;
+
+  /// No description provided for @businessLiveInventoryQuantityInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a whole quantity greater than zero.'**
+  String get businessLiveInventoryQuantityInvalid;
+
+  /// No description provided for @businessLiveInventoryCountInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a whole counted quantity of zero or more.'**
+  String get businessLiveInventoryCountInvalid;
+
+  /// No description provided for @businessLiveInventoryReasonRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a reason before submitting.'**
+  String get businessLiveInventoryReasonRequired;
+
+  /// No description provided for @businessLiveInventorySaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Stock was updated from the server.'**
+  String get businessLiveInventorySaved;
+
+  /// No description provided for @businessLiveInventoryEventsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Stock history'**
+  String get businessLiveInventoryEventsTitle;
+
+  /// No description provided for @businessLiveInventoryEventsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No stock events have been recorded.'**
+  String get businessLiveInventoryEventsEmpty;
+
+  /// No description provided for @businessLiveInventoryKindOpened.
+  ///
+  /// In en, this message translates to:
+  /// **'Opened'**
+  String get businessLiveInventoryKindOpened;
+
+  /// No description provided for @businessLiveInventoryKindReplenished.
+  ///
+  /// In en, this message translates to:
+  /// **'Replenished'**
+  String get businessLiveInventoryKindReplenished;
+
+  /// No description provided for @businessLiveInventoryKindCountCorrected.
+  ///
+  /// In en, this message translates to:
+  /// **'Count corrected'**
+  String get businessLiveInventoryKindCountCorrected;
+
+  /// No description provided for @businessLiveInventoryEventDelta.
+  ///
+  /// In en, this message translates to:
+  /// **'Delta: {delta}'**
+  String businessLiveInventoryEventDelta(int delta);
+
+  /// No description provided for @businessLiveInventoryEventOnHand.
+  ///
+  /// In en, this message translates to:
+  /// **'On hand after: {quantity}'**
+  String businessLiveInventoryEventOnHand(int quantity);
+
+  /// No description provided for @businessLiveInventoryEventReserved.
+  ///
+  /// In en, this message translates to:
+  /// **'Reserved after: {quantity}'**
+  String businessLiveInventoryEventReserved(int quantity);
+
+  /// No description provided for @businessLiveInventoryActor.
+  ///
+  /// In en, this message translates to:
+  /// **'Actor: {actor}'**
+  String businessLiveInventoryActor(String actor);
+
+  /// No description provided for @businessLiveInventoryErrorSession.
+  ///
+  /// In en, this message translates to:
+  /// **'Your session ended. Sign in again before changing live stock.'**
+  String get businessLiveInventoryErrorSession;
+
+  /// No description provided for @businessLiveInventoryErrorForbidden.
+  ///
+  /// In en, this message translates to:
+  /// **'This business is not verified, or this account cannot change stock.'**
+  String get businessLiveInventoryErrorForbidden;
+
+  /// No description provided for @businessLiveInventoryErrorNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'That business or catalog item was not found.'**
+  String get businessLiveInventoryErrorNotFound;
+
+  /// No description provided for @businessLiveInventoryErrorConflict.
+  ///
+  /// In en, this message translates to:
+  /// **'The server rejected the stock change ({serverCode}).'**
+  String businessLiveInventoryErrorConflict(String serverCode);
+
+  /// No description provided for @businessLiveInventoryErrorUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Authoritative stock is not available on the server right now.'**
+  String get businessLiveInventoryErrorUnavailable;
+
+  /// No description provided for @businessLiveInventoryErrorNetwork.
+  ///
+  /// In en, this message translates to:
+  /// **'The stock request could not reach the server.'**
+  String get businessLiveInventoryErrorNetwork;
+
+  /// No description provided for @businessLiveInventoryErrorGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'The stock request failed. Try again.'**
+  String get businessLiveInventoryErrorGeneric;
+
   /// No description provided for @onboardingHubTitle.
   ///
   /// In en, this message translates to:
@@ -11048,6 +11486,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Domain change may have occurred, but audit append failed (in-memory demo limitation).'**
   String get platformWorkflowOutcomeAuditPersistFailure;
+
+  /// No description provided for @paymentStatusPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment is pending on the server.'**
+  String get paymentStatusPending;
+
+  /// No description provided for @paymentStatusHeld.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment is held on the server. This is not settlement.'**
+  String get paymentStatusHeld;
+
+  /// No description provided for @paymentStatusFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment failed on the server.'**
+  String get paymentStatusFailed;
+
+  /// No description provided for @paymentStatusReleased.
+  ///
+  /// In en, this message translates to:
+  /// **'The payment hold was released on the server.'**
+  String get paymentStatusReleased;
+
+  /// No description provided for @paymentStatusUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'The server returned an unrecognized payment status.'**
+  String get paymentStatusUnknown;
 }
 
 class _AppLocalizationsDelegate

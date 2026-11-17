@@ -10,6 +10,12 @@ from app.db.models.identity import AuthAuditEvent, AuthSession, OtpChallenge, Us
 from app.db.models.platform_roles import UserPlatformRoleAssignment
 from app.db.models.profile import UserPreferences, UserProfile
 from app.db.models.saved_places import UserSavedPlace
+from app.db.models.consumer_catalog import (
+    ConsumerCatalogInventory,
+    ConsumerCatalogInventoryEvent,
+    ConsumerCatalogItem,
+    InventoryMaintenanceRun,
+)
 from app.db.models.consumer_orders import (
     CheckoutQuote,
     CheckoutQuoteLine,
@@ -24,6 +30,8 @@ from app.db.models.search_discovery import (
     SearchIndexProjectionReceipt,
     SearchIndexRecord,
 )
+from app.db.models.wallet import LedgerEntry, LedgerTransaction, Wallet
+from app.db.models.payment import Payment, PaymentIdempotencyRecord, WalletHold
 
 __all__ = [
     "AuthAuditEvent",
@@ -41,6 +49,10 @@ __all__ = [
     "SearchIndexProjectionReceipt",
     "SearchIndexRecord",
     "UserSavedPlace",
+    "ConsumerCatalogInventory",
+    "ConsumerCatalogInventoryEvent",
+    "ConsumerCatalogItem",
+    "InventoryMaintenanceRun",
     "CheckoutQuote",
     "CheckoutQuoteLine",
     "ConsumerOrder",
@@ -48,4 +60,10 @@ __all__ = [
     "ConsumerOrderStatusEvent",
     "InventoryReservation",
     "OrderIdempotencyRecord",
+    "LedgerEntry",
+    "LedgerTransaction",
+    "Wallet",
+    "Payment",
+    "PaymentIdempotencyRecord",
+    "WalletHold",
 ]

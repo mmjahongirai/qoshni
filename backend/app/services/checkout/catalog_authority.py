@@ -13,7 +13,9 @@ class CatalogLineAuthority:
     title_snapshot: str
     unit_price_minor: int
     currency_code: str
-    available_quantity: int
+    available_quantity: int | None
+    """``None`` means no authoritative stock source; placement must fail closed."""
+    pricing_revision: int = 1
 
 
 class ConsumerCatalogAuthority(Protocol):
@@ -31,7 +33,7 @@ class ConsumerCatalogAuthority(Protocol):
 
 
 class UnavailableConsumerCatalogAuthority:
-    """Production default — WP1/WP2 have no server consumer catalog."""
+    """Production default until the SQL catalog is explicitly enabled."""
 
     def is_operational(self) -> bool:
         return False

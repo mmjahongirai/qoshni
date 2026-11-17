@@ -5,7 +5,7 @@ from __future__ import annotations
 import uuid
 from datetime import datetime
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 from app.domain.checkout_fulfillment import CheckoutFulfillmentType
 from app.domain.checkout_limits import (
@@ -16,6 +16,9 @@ from app.domain.checkout_limits import (
 
 
 class CheckoutCartLineRequest(BaseModel):
+    # Clients may not submit per-line prices or titles; the catalog is the only price source.
+    model_config = ConfigDict(extra="forbid")
+
     business_stable_id: str = Field(min_length=1, max_length=128)
     catalog_item_stable_id: str = Field(min_length=1, max_length=128)
     quantity: int = Field(

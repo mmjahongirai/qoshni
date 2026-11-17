@@ -1520,6 +1520,280 @@ class AppLocalizationsRu extends AppLocalizations {
   String get businessCenterOnboardingAction => 'Открыть регистрацию';
 
   @override
+  String get businessLiveCatalogTitle => 'Живой каталог';
+
+  @override
+  String get businessLiveCatalogLoading =>
+      'Проверяем, привязана ли подтверждённая заявка. Примеры на этом экране не являются живым каталогом.';
+
+  @override
+  String get businessLiveCatalogApiOff =>
+      'API живого каталога не подключён. Примеры на этом экране не являются каталогом вашего бизнеса.';
+
+  @override
+  String get businessLiveCatalogSignedOut =>
+      'Войдите, чтобы управлять живым каталогом. Примеры вместо него не используются.';
+
+  @override
+  String get businessLiveCatalogSessionEnded =>
+      'Сессия закончилась. Войдите снова, чтобы управлять живым каталогом.';
+
+  @override
+  String get businessLiveCatalogNoApplication =>
+      'Подтверждённая заявка не привязана, поэтому живой каталог недоступен. Примеры не подставляются вместо него.';
+
+  @override
+  String get businessLiveCatalogAmbiguous =>
+      'Есть несколько подтверждённых заявок. Живой каталог закрыт, пока не выбрана одна. Примеры вместо него не используются.';
+
+  @override
+  String get businessLiveCatalogForbidden =>
+      'Этот аккаунт не может управлять каталогом этого бизнеса.';
+
+  @override
+  String businessLiveCatalogReady(String applicationId) {
+    return 'Живой каталог привязан к подтверждённой заявке $applicationId. Примеры на этом экране остаются отдельно.';
+  }
+
+  @override
+  String get businessLiveCatalogSectionTitle => 'Позиции каталога';
+
+  @override
+  String get businessLiveCatalogClosed =>
+      'Управление живым каталогом закрыто. Примеры предложений здесь не показываются.';
+
+  @override
+  String get businessLiveCatalogEmptyTitle => 'Живой каталог пуст';
+
+  @override
+  String get businessLiveCatalogEmptyBody =>
+      'На сервере ещё нет сохранённых позиций. Примеры предложений сюда не добавляются.';
+
+  @override
+  String get businessLiveCatalogAddItem => 'Добавить позицию';
+
+  @override
+  String get businessLiveCatalogFieldStableId => 'Стабильный ID';
+
+  @override
+  String get businessLiveCatalogFieldTitle => 'Название';
+
+  @override
+  String get businessLiveCatalogFieldKind => 'Тип';
+
+  @override
+  String get businessLiveCatalogKindProduct => 'Товар';
+
+  @override
+  String get businessLiveCatalogKindService => 'Услуга';
+
+  @override
+  String get businessLiveCatalogFieldPrice => 'Цена в UZS';
+
+  @override
+  String get businessLiveCatalogPriceInvalid =>
+      'Введите целое число UZS от 0 до 1000000000.';
+
+  @override
+  String get businessLiveCatalogFieldRequired =>
+      'Заполните все поля перед сохранением.';
+
+  @override
+  String get businessLiveCatalogFieldTooLong => 'Значение слишком длинное.';
+
+  @override
+  String get businessLiveCatalogSave => 'Сохранить';
+
+  @override
+  String get businessLiveCatalogCancel => 'Отмена';
+
+  @override
+  String get businessLiveCatalogChangePrice => 'Изменить цену';
+
+  @override
+  String get businessLiveCatalogStatusLabel => 'Статус';
+
+  @override
+  String get businessLiveCatalogStatusActive => 'Активна';
+
+  @override
+  String get businessLiveCatalogStatusInactive => 'Неактивна';
+
+  @override
+  String get businessLiveCatalogStatusArchived => 'В архиве';
+
+  @override
+  String businessLiveCatalogRevision(int revision) {
+    return 'Редакция цены $revision';
+  }
+
+  @override
+  String businessLiveCatalogStableId(String stableId) {
+    return 'Стабильный ID: $stableId';
+  }
+
+  @override
+  String businessLiveCatalogCurrency(String currency) {
+    return 'Валюта: $currency';
+  }
+
+  @override
+  String get businessLiveCatalogErrorSession =>
+      'Сессия закончилась. Войдите снова, прежде чем управлять живым каталогом.';
+
+  @override
+  String get businessLiveCatalogErrorForbidden =>
+      'Бизнес не подтверждён или у этого аккаунта нет права.';
+
+  @override
+  String get businessLiveCatalogErrorNotFound =>
+      'Бизнес или позиция каталога не найдены.';
+
+  @override
+  String businessLiveCatalogErrorConflict(String serverCode) {
+    return 'Сервер отклонил изменение ($serverCode). Прежние значения остаются.';
+  }
+
+  @override
+  String get businessLiveCatalogErrorUnavailable =>
+      'Живой каталог сейчас недоступен на сервере.';
+
+  @override
+  String get businessLiveCatalogErrorGeneric =>
+      'Запрос каталога не выполнен. Попробуйте ещё раз.';
+
+  @override
+  String get businessLiveCatalogErrorInvalidApplication =>
+      'Идентификатор заявки неверный, поэтому запрос каталога не отправлен.';
+
+  @override
+  String get businessLiveInventoryNotOpen =>
+      'Запись склада для этой позиции ещё не открыта.';
+
+  @override
+  String get businessLiveInventoryOpen => 'Открыть склад';
+
+  @override
+  String get businessLiveInventoryOpenQuantity => 'Количество на складе';
+
+  @override
+  String get businessLiveInventoryOpenQuantityInvalid =>
+      'Введите целое количество от нуля.';
+
+  @override
+  String businessLiveInventoryOnHand(int quantity) {
+    return 'На складе: $quantity';
+  }
+
+  @override
+  String businessLiveInventoryReserved(int quantity) {
+    return 'Зарезервировано: $quantity';
+  }
+
+  @override
+  String businessLiveInventoryAvailable(int quantity) {
+    return 'Доступно: $quantity';
+  }
+
+  @override
+  String get businessLiveInventoryReplenish => 'Пополнить склад';
+
+  @override
+  String get businessLiveInventoryCount => 'Записать пересчёт';
+
+  @override
+  String get businessLiveInventoryQuantity => 'Количество';
+
+  @override
+  String get businessLiveInventoryCounted => 'Фактическое количество';
+
+  @override
+  String get businessLiveInventoryReason => 'Причина';
+
+  @override
+  String get businessLiveInventorySubmit => 'Отправить';
+
+  @override
+  String get businessLiveInventoryQuantityInvalid =>
+      'Введите целое количество больше нуля.';
+
+  @override
+  String get businessLiveInventoryCountInvalid =>
+      'Введите целое фактическое количество от нуля.';
+
+  @override
+  String get businessLiveInventoryReasonRequired =>
+      'Укажите причину перед отправкой.';
+
+  @override
+  String get businessLiveInventorySaved => 'Склад обновлён с сервера.';
+
+  @override
+  String get businessLiveInventoryEventsTitle => 'История склада';
+
+  @override
+  String get businessLiveInventoryEventsEmpty =>
+      'События склада ещё не записаны.';
+
+  @override
+  String get businessLiveInventoryKindOpened => 'Открыто';
+
+  @override
+  String get businessLiveInventoryKindReplenished => 'Пополнение';
+
+  @override
+  String get businessLiveInventoryKindCountCorrected => 'Пересчёт';
+
+  @override
+  String businessLiveInventoryEventDelta(int delta) {
+    return 'Разница: $delta';
+  }
+
+  @override
+  String businessLiveInventoryEventOnHand(int quantity) {
+    return 'На складе после: $quantity';
+  }
+
+  @override
+  String businessLiveInventoryEventReserved(int quantity) {
+    return 'Резерв после: $quantity';
+  }
+
+  @override
+  String businessLiveInventoryActor(String actor) {
+    return 'Автор: $actor';
+  }
+
+  @override
+  String get businessLiveInventoryErrorSession =>
+      'Сессия закончилась. Войдите снова, прежде чем менять живой склад.';
+
+  @override
+  String get businessLiveInventoryErrorForbidden =>
+      'Бизнес не подтверждён или этот аккаунт не может менять склад.';
+
+  @override
+  String get businessLiveInventoryErrorNotFound =>
+      'Бизнес или позиция каталога не найдены.';
+
+  @override
+  String businessLiveInventoryErrorConflict(String serverCode) {
+    return 'Сервер отклонил изменение склада ($serverCode).';
+  }
+
+  @override
+  String get businessLiveInventoryErrorUnavailable =>
+      'Авторитетный склад сейчас недоступен на сервере.';
+
+  @override
+  String get businessLiveInventoryErrorNetwork =>
+      'Запрос склада не дошёл до сервера.';
+
+  @override
+  String get businessLiveInventoryErrorGeneric =>
+      'Запрос склада не выполнен. Попробуйте ещё раз.';
+
+  @override
   String get onboardingHubTitle => 'Регистрация бизнеса';
 
   @override
@@ -6212,4 +6486,20 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get platformWorkflowOutcomeAuditPersistFailure =>
       'Изменение могло сохраниться, но запись аудита не удалась (ограничение демо в памяти).';
+
+  @override
+  String get paymentStatusPending => 'Платёж ожидает на сервере.';
+
+  @override
+  String get paymentStatusHeld => 'Платёж удержан на сервере. Это не расчёт.';
+
+  @override
+  String get paymentStatusFailed => 'Платёж на сервере не прошёл.';
+
+  @override
+  String get paymentStatusReleased => 'Удержание платежа снято на сервере.';
+
+  @override
+  String get paymentStatusUnknown =>
+      'Сервер вернул нераспознанный статус платежа.';
 }

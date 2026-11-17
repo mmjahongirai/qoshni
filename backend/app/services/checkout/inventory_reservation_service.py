@@ -1,4 +1,8 @@
-"""In-process inventory holds for tests; production requires authoritative catalog + persistence."""
+"""In-process inventory holds for tests and fake-catalog overrides.
+
+The production order route uses ``SqlCatalogInventoryService`` when the SQL
+catalog is enabled. This ledger is not that path.
+"""
 
 from __future__ import annotations
 
