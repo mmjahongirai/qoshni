@@ -426,10 +426,17 @@ class SqlOrderLifecycleService:
     def _expire_one(self, reservation_id: uuid.UUID, moment: datetime) -> bool:
         """Expire one hold and, if the order still waits for acceptance, the order.
 
-        The order row is re-read (and locked on PostgreSQL) before the hold is
-        claimed, matching the order-first lock order of reject, cancel, and
-        payment. The order moves to ``expired`` only through a conditional
-        update, so two sweeps over holds of one order write one status event.
+        On PostgreSQL the order row is locked before the hold is claimed,
+        matching the order-first lock order of reject, cancel, and payment.
+
+        On SQLite the hold is claimed first. A savepoint that reads and then
+        writes cannot upgrade its lock while another sweep holds the write
+        lock; SQLite fails it at once with ``database is locked`` instead of
+        waiting. Writing first takes the write lock (or waits for it), and the
+        order is read after that.
+
+        The order moves to ``expired`` only through a conditional update, so
+        two sweeps over holds of one order write one status event.
         """
         expirable = {
             ConsumerOrderStatus.PENDING_ACCEPTANCE.value,
@@ -441,11 +448,14 @@ class SqlOrderLifecycleService:
         order_id = preview.order_id
         if preview.order is not None and preview.order.status not in expirable:
             return False
+        lock_order_first = self._session.get_bind().dialect.name == "postgresql"
         try:
             with self._session.begin_nested():
-                order = None if order_id is None else self._load_order(order_id)
-                if order is not None and order.status not in expirable:
-                    return False
+                order: ConsumerOrder | None = None
+                if lock_order_first and order_id is not None:
+                    order = self._load_order(order_id)
+                    if order is not None and order.status not in expirable:
+                        return False
                 claimed = self._session.execute(
                     update(InventoryReservation)
                     .where(
@@ -462,6 +472,11 @@ class SqlOrderLifecycleService:
                 )
                 if claimed.rowcount != 1:
                     return False
+                if not lock_order_first and order_id is not None:
+                    order = self._load_order(order_id)
+                    if order is not None and order.status not in expirable:
+                        # Undo the claim; this hold belongs to an order that moved on.
+                        raise _ReservationReleaseFailed
                 self._session.expire(preview)
                 row = self._session.get(InventoryReservation, reservation_id)
                 if row is None:

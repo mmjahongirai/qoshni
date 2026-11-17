@@ -15,7 +15,7 @@ from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 import pytest
-from sqlalchemy import create_engine, select
+from sqlalchemy import create_engine, event, select
 from sqlalchemy.engine import Engine
 from sqlalchemy.exc import OperationalError
 from sqlalchemy.orm import Session
@@ -323,3 +323,49 @@ def test_late_cancel_after_sweep_keeps_expired(engine: Engine) -> None:
     assert holds == [InventoryReservationStatus.EXPIRED.value]
     # The other order's two units stay reserved.
     assert reserved == 2
+
+
+def test_parallel_sweeps_over_one_hold_wait_instead_of_failing(engine: Engine) -> None:
+    """Both sweeps reach the hold claim together; neither may fail with ``database is locked``.
+
+    No retries: the losing sweep must wait for the write lock and return 0.
+    """
+    _application_id, _owner_id, order_id, hold_ids = _seed_expired_holds(engine, second_hold=False)
+    barrier = threading.Barrier(2, timeout=10)
+    paused: set[str] = set()
+
+    @event.listens_for(engine, "before_cursor_execute")
+    def _meet_before_claim(conn, cursor, statement, parameters, context, executemany):  # noqa: ANN001, ARG001
+        name = threading.current_thread().name
+        if (
+            name.startswith("sweep-")
+            and name not in paused
+            and statement.lstrip().upper().startswith("UPDATE INVENTORY_RESERVATIONS")
+        ):
+            paused.add(name)
+            barrier.wait()
+
+    outcomes: list[int | str] = []
+
+    def sweep() -> None:
+        try:
+            with Session(engine) as session:
+                expired = SqlOrderLifecycleService(session)._expire_one(hold_ids[0], datetime.now(UTC))
+                session.commit()
+                outcomes.append(int(expired))
+        except OperationalError as exc:
+            outcomes.append(f"OperationalError: {exc.orig}")
+
+    threads = [threading.Thread(target=sweep, name=f"sweep-{index}") for index in range(2)]
+    for thread in threads:
+        thread.start()
+    for thread in threads:
+        thread.join()
+    event.remove(engine, "before_cursor_execute", _meet_before_claim)
+
+    assert sorted(outcomes, key=str) == [0, 1], outcomes
+    status, events, holds, reserved = _sweep_state(engine, order_id)
+    assert status == ConsumerOrderStatus.EXPIRED.value
+    assert events == [ConsumerOrderStatus.EXPIRED.value]
+    assert holds == [InventoryReservationStatus.EXPIRED.value]
+    assert reserved == 0
