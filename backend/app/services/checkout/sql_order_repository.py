@@ -196,6 +196,45 @@ class SqlOrderLifecycleService:
     def __init__(self, session: Session) -> None:
         self._session = session
 
+    def _load_order(self, order_id: uuid.UUID) -> ConsumerOrder | None:
+        """Read the current order row. PostgreSQL locks it before any transition.
+
+        Lock order matches payment creation: the order row first, then
+        reservations, inventory, or wallets.
+        """
+        statement = (
+            select(ConsumerOrder)
+            .where(ConsumerOrder.id == order_id)
+            .execution_options(populate_existing=True)
+        )
+        if self._session.get_bind().dialect.name == "postgresql":
+            statement = statement.with_for_update()
+        return self._session.scalar(statement)
+
+    def _claim_transition(
+        self,
+        order: ConsumerOrder,
+        *,
+        current: ConsumerOrderStatus,
+        target: ConsumerOrderStatus,
+        moment: datetime,
+    ) -> bool:
+        """Move the order only if its stored status is still ``current``.
+
+        A concurrent transition that committed first leaves no matching row,
+        so the late request cannot overwrite a terminal status.
+        """
+        claimed = self._session.execute(
+            update(ConsumerOrder)
+            .where(ConsumerOrder.id == order.id, ConsumerOrder.status == current.value)
+            .values(status=target.value, updated_at=moment)
+            .execution_options(synchronize_session=False)
+        )
+        if claimed.rowcount != 1:
+            return False
+        self._session.refresh(order, attribute_names=["status", "updated_at"])
+        return True
+
     def cancel_order(
         self,
         *,
@@ -203,7 +242,12 @@ class SqlOrderLifecycleService:
         order_id: uuid.UUID,
         reason: str = "buyer_cancelled",
     ) -> ConsumerOrderRecord | None:
-        order = self._session.get(ConsumerOrder, order_id)
+        """Move an order to ``cancelled`` and release its held stock once.
+
+        The status change and each reservation release are conditional. A
+        request that lost a race to another transition changes nothing.
+        """
+        order = self._load_order(order_id)
         if order is None or order.buyer_user_id != buyer_user_id:
             return None
         current = ConsumerOrderStatus(order.status)
@@ -214,24 +258,22 @@ class SqlOrderLifecycleService:
         if not can_transition(current, ConsumerOrderStatus.CANCELLED):
             return None
         now = datetime.now(UTC)
-        held = [
-            reservation
-            for reservation in order.reservations
-            if reservation.status == InventoryReservationStatus.HELD.value
-        ]
-        for reservation in held:
-            restored = release_reservation_stock(
-                self._session,
-                business_stable_id=reservation.business_stable_id,
-                catalog_item_stable_id=reservation.catalog_item_stable_id,
-                quantity=reservation.quantity,
-            )
-            if not restored:
-                return None
-            reservation.status = InventoryReservationStatus.RELEASED.value
-            reservation.updated_at = now
-        order.status = ConsumerOrderStatus.CANCELLED.value
-        order.updated_at = now
+        savepoint = self._session.begin_nested()
+        if not self._claim_transition(
+            order,
+            current=current,
+            target=ConsumerOrderStatus.CANCELLED,
+            moment=now,
+        ):
+            savepoint.rollback()
+            latest = self._load_order(order_id)
+            if latest is not None and latest.status == ConsumerOrderStatus.CANCELLED.value:
+                return _to_record(latest)
+            return None
+        if not self._release_held_reservations(order, now):
+            if savepoint.is_active:
+                savepoint.rollback()
+            return None
         order.status_events.append(
             ConsumerOrderStatusEvent(
                 from_status=current.value,
@@ -240,6 +282,7 @@ class SqlOrderLifecycleService:
             )
         )
         self._session.flush()
+        savepoint.commit()
         return _to_record(order)
 
     def reject_order(
@@ -258,7 +301,7 @@ class SqlOrderLifecycleService:
         application = self._session.get(BusinessOnboardingApplication, business_application_id)
         if application is None or application.owner_user_id != owner_user_id:
             return OrderRejectionResult(outcome=OrderRejectionOutcome.NOT_FOUND)
-        order = self._session.get(ConsumerOrder, order_id)
+        order = self._load_order(order_id)
         if order is None or not order.items:
             return OrderRejectionResult(outcome=OrderRejectionOutcome.NOT_FOUND)
         expected_business = stable_id_for_application(business_application_id)
@@ -276,10 +319,25 @@ class SqlOrderLifecycleService:
             return OrderRejectionResult(outcome=OrderRejectionOutcome.INVALID_TRANSITION)
         now = datetime.now(UTC)
         cleaned = reason.strip() or "business_rejected"
+        savepoint = self._session.begin_nested()
+        if not self._claim_transition(
+            order,
+            current=current,
+            target=ConsumerOrderStatus.REJECTED,
+            moment=now,
+        ):
+            savepoint.rollback()
+            latest = self._load_order(order_id)
+            if latest is not None and latest.status == ConsumerOrderStatus.REJECTED.value:
+                return OrderRejectionResult(
+                    outcome=OrderRejectionOutcome.REPLAY,
+                    record=_to_record(latest),
+                )
+            return OrderRejectionResult(outcome=OrderRejectionOutcome.INVALID_TRANSITION)
         if not self._release_held_reservations(order, now):
+            if savepoint.is_active:
+                savepoint.rollback()
             return OrderRejectionResult(outcome=OrderRejectionOutcome.RELEASE_FAILED)
-        order.status = ConsumerOrderStatus.REJECTED.value
-        order.updated_at = now
         order.status_events.append(
             ConsumerOrderStatusEvent(
                 from_status=current.value,
@@ -288,6 +346,7 @@ class SqlOrderLifecycleService:
             )
         )
         self._session.flush()
+        savepoint.commit()
         return OrderRejectionResult(
             outcome=OrderRejectionOutcome.REJECTED,
             record=_to_record(order),
@@ -365,17 +424,28 @@ class SqlOrderLifecycleService:
         return updated
 
     def _expire_one(self, reservation_id: uuid.UUID, moment: datetime) -> bool:
+        """Expire one hold and, if the order still waits for acceptance, the order.
+
+        The order row is re-read (and locked on PostgreSQL) before the hold is
+        claimed, matching the order-first lock order of reject, cancel, and
+        payment. The order moves to ``expired`` only through a conditional
+        update, so two sweeps over holds of one order write one status event.
+        """
+        expirable = {
+            ConsumerOrderStatus.PENDING_ACCEPTANCE.value,
+            ConsumerOrderStatus.EXPIRED.value,
+        }
         preview = self._session.get(InventoryReservation, reservation_id)
         if preview is None or preview.status != InventoryReservationStatus.HELD.value:
             return False
-        order = preview.order
-        if order is not None and order.status not in {
-            ConsumerOrderStatus.PENDING_ACCEPTANCE.value,
-            ConsumerOrderStatus.EXPIRED.value,
-        }:
+        order_id = preview.order_id
+        if preview.order is not None and preview.order.status not in expirable:
             return False
         try:
             with self._session.begin_nested():
+                order = None if order_id is None else self._load_order(order_id)
+                if order is not None and order.status not in expirable:
+                    return False
                 claimed = self._session.execute(
                     update(InventoryReservation)
                     .where(
@@ -404,14 +474,17 @@ class SqlOrderLifecycleService:
                 )
                 if not restored:
                     raise _ReservationReleaseFailed
-                current_order = row.order
                 if (
-                    current_order is not None
-                    and current_order.status == ConsumerOrderStatus.PENDING_ACCEPTANCE.value
+                    order is not None
+                    and order.status == ConsumerOrderStatus.PENDING_ACCEPTANCE.value
+                    and self._claim_transition(
+                        order,
+                        current=ConsumerOrderStatus.PENDING_ACCEPTANCE,
+                        target=ConsumerOrderStatus.EXPIRED,
+                        moment=moment,
+                    )
                 ):
-                    current_order.status = ConsumerOrderStatus.EXPIRED.value
-                    current_order.updated_at = moment
-                    current_order.status_events.append(
+                    order.status_events.append(
                         ConsumerOrderStatusEvent(
                             from_status=ConsumerOrderStatus.PENDING_ACCEPTANCE.value,
                             to_status=ConsumerOrderStatus.EXPIRED.value,
