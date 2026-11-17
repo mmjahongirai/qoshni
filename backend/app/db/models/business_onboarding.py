@@ -22,6 +22,7 @@ from sqlalchemy import (
     text,
 )
 from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.sql.elements import conv
 
 from app.db.base import Base
 from app.domain.business_onboarding import (
@@ -117,13 +118,16 @@ class BusinessOnboardingApplication(Base):
             "owner_user_id",
             "created_at",
         ),
+        # These names exceed PostgreSQL's 63-character limit. The migration created them
+        # with op.f(), which shortens them the same way conv() does here, so the model
+        # and the migrated schema use the same name on every dialect.
         Index(
-            "ix_business_onboarding_applications_verification_status_updated_at",
+            conv("ix_business_onboarding_applications_verification_status_updated_at"),
             "verification_status",
             "updated_at",
         ),
         Index(
-            "ix_business_onboarding_applications_registration_jurisdiction_registration_identifier",
+            conv("ix_business_onboarding_applications_registration_jurisdiction_registration_identifier"),
             "registration_jurisdiction",
             "registration_identifier",
         ),
