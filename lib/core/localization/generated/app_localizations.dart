@@ -11516,6 +11516,132 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The server returned an unrecognized payment status.'**
   String get paymentStatusUnknown;
+
+  /// No description provided for @walletTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Wallet'**
+  String get walletTitle;
+
+  /// No description provided for @profileWalletSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Balance and payments'**
+  String get profileWalletSubtitle;
+
+  /// No description provided for @walletAvailableBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'Available balance'**
+  String get walletAvailableBalance;
+
+  /// No description provided for @walletHoldBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'Held balance'**
+  String get walletHoldBalance;
+
+  /// No description provided for @walletPendingBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending balance'**
+  String get walletPendingBalance;
+
+  /// No description provided for @walletCurrencyLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Currency'**
+  String get walletCurrencyLabel;
+
+  /// No description provided for @walletStatusLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Wallet status'**
+  String get walletStatusLabel;
+
+  /// No description provided for @walletStatusActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get walletStatusActive;
+
+  /// No description provided for @walletStatusFrozen.
+  ///
+  /// In en, this message translates to:
+  /// **'Frozen'**
+  String get walletStatusFrozen;
+
+  /// No description provided for @walletStatusUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown'**
+  String get walletStatusUnknown;
+
+  /// No description provided for @walletAmountUzs.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} so\'m'**
+  String walletAmountUzs(String amount);
+
+  /// No description provided for @walletRefreshAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh'**
+  String get walletRefreshAction;
+
+  /// No description provided for @walletRetryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get walletRetryAction;
+
+  /// No description provided for @walletSignInTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to see your wallet'**
+  String get walletSignInTitle;
+
+  /// No description provided for @walletSignInMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Your balance is private and loads only for your signed-in account.'**
+  String get walletSignInMessage;
+
+  /// No description provided for @walletNotFoundTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No wallet yet'**
+  String get walletNotFoundTitle;
+
+  /// No description provided for @walletNotFoundMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'There is no wallet linked to this account yet.'**
+  String get walletNotFoundMessage;
+
+  /// No description provided for @walletUnavailableTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Wallet is temporarily unavailable'**
+  String get walletUnavailableTitle;
+
+  /// No description provided for @walletUnavailableMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'We could not load your wallet right now. Please try again later.'**
+  String get walletUnavailableMessage;
+
+  /// No description provided for @walletApiNotConfigured.
+  ///
+  /// In en, this message translates to:
+  /// **'Wallet server is not configured for this build.'**
+  String get walletApiNotConfigured;
+
+  /// No description provided for @walletServerValuesNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Balances are shown exactly as the server reports them. Top-ups and withdrawals are not available yet.'**
+  String get walletServerValuesNote;
 }
 
 class _AppLocalizationsDelegate

@@ -79,6 +79,7 @@ import 'package:qoshni/features/business_platform/presentation/pages/business_de
 import 'package:qoshni/features/business_platform/presentation/pages/business_fulfillment_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_service_detail_page.dart';
 import 'package:qoshni/features/business_platform/presentation/pages/business_catalog_service_editor_page.dart';
+import 'package:qoshni/features/wallet/presentation/pages/wallet_page.dart';
 import 'package:qoshni/routing/route_paths.dart';
 
 /// Application router. Add feature routes here as modules are introduced.
@@ -169,6 +170,11 @@ class AppRouter {
             path: 'sessions',
             name: RouteNames.authSessions,
             builder: (context, state) => const AuthSessionsPage(),
+          ),
+          GoRoute(
+            path: 'wallet',
+            name: RouteNames.wallet,
+            builder: (context, state) => const WalletPage(),
           ),
         ],
       ),

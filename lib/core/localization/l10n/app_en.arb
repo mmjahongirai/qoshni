@@ -2442,5 +2442,33 @@
   "paymentStatusHeld": "Payment is held on the server. This is not settlement.",
   "paymentStatusFailed": "Payment failed on the server.",
   "paymentStatusReleased": "The payment hold was released on the server.",
-  "paymentStatusUnknown": "The server returned an unrecognized payment status."
+  "paymentStatusUnknown": "The server returned an unrecognized payment status.",
+  "walletTitle": "Wallet",
+  "profileWalletSubtitle": "Balance and payments",
+  "walletAvailableBalance": "Available balance",
+  "walletHoldBalance": "Held balance",
+  "walletPendingBalance": "Pending balance",
+  "walletCurrencyLabel": "Currency",
+  "walletStatusLabel": "Wallet status",
+  "walletStatusActive": "Active",
+  "walletStatusFrozen": "Frozen",
+  "walletStatusUnknown": "Unknown",
+  "walletAmountUzs": "{amount} so'm",
+  "@walletAmountUzs": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "walletRefreshAction": "Refresh",
+  "walletRetryAction": "Try again",
+  "walletSignInTitle": "Sign in to see your wallet",
+  "walletSignInMessage": "Your balance is private and loads only for your signed-in account.",
+  "walletNotFoundTitle": "No wallet yet",
+  "walletNotFoundMessage": "There is no wallet linked to this account yet.",
+  "walletUnavailableTitle": "Wallet is temporarily unavailable",
+  "walletUnavailableMessage": "We could not load your wallet right now. Please try again later.",
+  "walletApiNotConfigured": "Wallet server is not configured for this build.",
+  "walletServerValuesNote": "Balances are shown exactly as the server reports them. Top-ups and withdrawals are not available yet."
 }

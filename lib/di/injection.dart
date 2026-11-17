@@ -80,6 +80,9 @@ import 'package:qoshni/features/business_platform/application/business_live_cata
 import 'package:qoshni/features/wallet/application/payment_status_controller.dart';
 import 'package:qoshni/features/wallet/data/payment_api_repository.dart';
 import 'package:qoshni/features/wallet/domain/payment.dart';
+import 'package:qoshni/features/wallet/application/wallet_controller.dart';
+import 'package:qoshni/features/wallet/data/wallet_api_repository.dart';
+import 'package:qoshni/features/wallet/domain/wallet.dart';
 import 'package:qoshni/features/business_platform/data/authoritative_catalog_api_repository.dart';
 import 'package:qoshni/features/business_platform/domain/authoritative_catalog/authoritative_catalog_repository.dart';
 import 'package:qoshni/features/business_onboarding/domain/onboarding_repository.dart';
@@ -834,6 +837,20 @@ Future<void> configureDependencies(AppConfig config) async {
     )
     ..registerLazySingleton<PaymentStatusController>(
       () => PaymentStatusController(getIt<PaymentRepository>()),
+    )
+    ..registerLazySingleton<WalletRepository>(
+      () => WalletApiRepository(
+        apiClient: getIt<ApiClient>(),
+        config: getIt<AppConfig>(),
+      ),
+    )
+    // One controller per Wallet page, so no balance outlives the page.
+    ..registerFactory<WalletController>(
+      () => WalletController(
+        repository: getIt<WalletRepository>(),
+        authController: getIt<AuthController>(),
+        config: getIt<AppConfig>(),
+      ),
     )
     ..registerLazySingleton<QoshniSearchVocabularyRepository>(
       InMemoryQoshniSearchVocabularyRepository.new,
