@@ -1900,5 +1900,10 @@
   "platformPermissionDecideApprovalProposal": "Решить по предложению высокого риска (демo)",
   "platformRoleGovernanceApproverName": "Согласующий governance",
   "platformRoleGovernanceApproverPurpose": "Второе лицо для гипотетических предложений — без других привилегий.",
-  "platformWorkflowOutcomeAuditPersistFailure": "Изменение могло сохраниться, но запись аудита не удалась (ограничение демо в памяти)."
+  "platformWorkflowOutcomeAuditPersistFailure": "Изменение могло сохраниться, но запись аудита не удалась (ограничение демо в памяти).",
+  "paymentStatusPending": "Платёж ожидает на сервере.",
+  "paymentStatusHeld": "Платёж удержан на сервере. Это не расчёт.",
+  "paymentStatusFailed": "Платёж на сервере не прошёл.",
+  "paymentStatusReleased": "Удержание платежа снято на сервере.",
+  "paymentStatusUnknown": "Сервер вернул нераспознанный статус платежа."
 }

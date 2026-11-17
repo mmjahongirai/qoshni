@@ -17,6 +17,8 @@ from app.api.routes.business_orders import router as business_orders_router
 from app.api.routes.checkout import router as checkout_router
 from app.api.routes.inventory_maintenance import router as inventory_maintenance_router
 from app.api.routes.orders import router as orders_router
+from app.api.routes.payments import router as payments_router
+from app.api.routes.wallets import router as wallets_router
 
 
 api_router = APIRouter()
@@ -33,3 +35,5 @@ api_router.include_router(orders_router)
 api_router.include_router(business_catalog_router)
 api_router.include_router(business_orders_router)
 api_router.include_router(inventory_maintenance_router)
+api_router.include_router(wallets_router)
+api_router.include_router(payments_router)

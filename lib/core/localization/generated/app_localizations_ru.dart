@@ -6486,4 +6486,20 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get platformWorkflowOutcomeAuditPersistFailure =>
       'Изменение могло сохраниться, но запись аудита не удалась (ограничение демо в памяти).';
+
+  @override
+  String get paymentStatusPending => 'Платёж ожидает на сервере.';
+
+  @override
+  String get paymentStatusHeld => 'Платёж удержан на сервере. Это не расчёт.';
+
+  @override
+  String get paymentStatusFailed => 'Платёж на сервере не прошёл.';
+
+  @override
+  String get paymentStatusReleased => 'Удержание платежа снято на сервере.';
+
+  @override
+  String get paymentStatusUnknown =>
+      'Сервер вернул нераспознанный статус платежа.';
 }

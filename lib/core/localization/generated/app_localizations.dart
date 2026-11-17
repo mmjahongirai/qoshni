@@ -11486,6 +11486,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Domain change may have occurred, but audit append failed (in-memory demo limitation).'**
   String get platformWorkflowOutcomeAuditPersistFailure;
+
+  /// No description provided for @paymentStatusPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment is pending on the server.'**
+  String get paymentStatusPending;
+
+  /// No description provided for @paymentStatusHeld.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment is held on the server. This is not settlement.'**
+  String get paymentStatusHeld;
+
+  /// No description provided for @paymentStatusFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment failed on the server.'**
+  String get paymentStatusFailed;
+
+  /// No description provided for @paymentStatusReleased.
+  ///
+  /// In en, this message translates to:
+  /// **'The payment hold was released on the server.'**
+  String get paymentStatusReleased;
+
+  /// No description provided for @paymentStatusUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'The server returned an unrecognized payment status.'**
+  String get paymentStatusUnknown;
 }
 
 class _AppLocalizationsDelegate

@@ -1900,5 +1900,10 @@
   "platformPermissionDecideApprovalProposal": "Yuqori xavfli demo taklifni hal qilish",
   "platformRoleGovernanceApproverName": "Governance tasdiqlovchi",
   "platformRoleGovernanceApproverPurpose": "Gipotetik takliflar uchun ikkinchi tomondan tasdiq — boshqa imtiyozsiz.",
-  "platformWorkflowOutcomeAuditPersistFailure": "O‘zgarish saqlangan bo‘lishi mumkin, lekin audit yozuvi muvaffaqiyatsiz (xotira demo cheklovi)."
+  "platformWorkflowOutcomeAuditPersistFailure": "O‘zgarish saqlangan bo‘lishi mumkin, lekin audit yozuvi muvaffaqiyatsiz (xotira demo cheklovi).",
+  "paymentStatusPending": "To‘lov serverda kutilmoqda.",
+  "paymentStatusHeld": "To‘lov serverda ushlab turilgan. Bu hisob-kitob emas.",
+  "paymentStatusFailed": "To‘lov serverda amalga oshmadi.",
+  "paymentStatusReleased": "To‘lov ushlab turishi serverda bo‘shatildi.",
+  "paymentStatusUnknown": "Server notanish to‘lov holatini qaytardi."
 }

@@ -77,6 +77,9 @@ import 'package:qoshni/features/business_platform/presentation/business_offering
 import 'package:qoshni/features/business_onboarding/data/onboarding_api_repository.dart';
 import 'package:qoshni/features/business_platform/application/business_catalog_integration_controller.dart';
 import 'package:qoshni/features/business_platform/application/business_live_catalog_controller.dart';
+import 'package:qoshni/features/wallet/application/payment_status_controller.dart';
+import 'package:qoshni/features/wallet/data/payment_api_repository.dart';
+import 'package:qoshni/features/wallet/domain/payment.dart';
 import 'package:qoshni/features/business_platform/data/authoritative_catalog_api_repository.dart';
 import 'package:qoshni/features/business_platform/domain/authoritative_catalog/authoritative_catalog_repository.dart';
 import 'package:qoshni/features/business_onboarding/domain/onboarding_repository.dart';
@@ -822,6 +825,15 @@ Future<void> configureDependencies(AppConfig config) async {
       () => BusinessLiveCatalogController(
         getIt<BusinessCatalogIntegrationController>(),
       ),
+    )
+    ..registerLazySingleton<PaymentRepository>(
+      () => PaymentApiRepository(
+        apiClient: getIt<ApiClient>(),
+        config: getIt<AppConfig>(),
+      ),
+    )
+    ..registerLazySingleton<PaymentStatusController>(
+      () => PaymentStatusController(getIt<PaymentRepository>()),
     )
     ..registerLazySingleton<QoshniSearchVocabularyRepository>(
       InMemoryQoshniSearchVocabularyRepository.new,

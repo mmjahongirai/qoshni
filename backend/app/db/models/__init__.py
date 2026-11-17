@@ -30,6 +30,8 @@ from app.db.models.search_discovery import (
     SearchIndexProjectionReceipt,
     SearchIndexRecord,
 )
+from app.db.models.wallet import LedgerEntry, LedgerTransaction, Wallet
+from app.db.models.payment import Payment, PaymentIdempotencyRecord, WalletHold
 
 __all__ = [
     "AuthAuditEvent",
@@ -58,4 +60,10 @@ __all__ = [
     "ConsumerOrderStatusEvent",
     "InventoryReservation",
     "OrderIdempotencyRecord",
+    "LedgerEntry",
+    "LedgerTransaction",
+    "Wallet",
+    "Payment",
+    "PaymentIdempotencyRecord",
+    "WalletHold",
 ]

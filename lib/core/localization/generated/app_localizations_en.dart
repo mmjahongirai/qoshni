@@ -6565,4 +6565,22 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get platformWorkflowOutcomeAuditPersistFailure =>
       'Domain change may have occurred, but audit append failed (in-memory demo limitation).';
+
+  @override
+  String get paymentStatusPending => 'Payment is pending on the server.';
+
+  @override
+  String get paymentStatusHeld =>
+      'Payment is held on the server. This is not settlement.';
+
+  @override
+  String get paymentStatusFailed => 'Payment failed on the server.';
+
+  @override
+  String get paymentStatusReleased =>
+      'The payment hold was released on the server.';
+
+  @override
+  String get paymentStatusUnknown =>
+      'The server returned an unrecognized payment status.';
 }

@@ -6524,4 +6524,22 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get platformWorkflowOutcomeAuditPersistFailure =>
       'O‘zgarish saqlangan bo‘lishi mumkin, lekin audit yozuvi muvaffaqiyatsiz (xotira demo cheklovi).';
+
+  @override
+  String get paymentStatusPending => 'To‘lov serverda kutilmoqda.';
+
+  @override
+  String get paymentStatusHeld =>
+      'To‘lov serverda ushlab turilgan. Bu hisob-kitob emas.';
+
+  @override
+  String get paymentStatusFailed => 'To‘lov serverda amalga oshmadi.';
+
+  @override
+  String get paymentStatusReleased =>
+      'To‘lov ushlab turishi serverda bo‘shatildi.';
+
+  @override
+  String get paymentStatusUnknown =>
+      'Server notanish to‘lov holatini qaytardi.';
 }

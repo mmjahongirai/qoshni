@@ -2437,5 +2437,10 @@
   "platformPermissionDecideApprovalProposal": "Decide high-risk administrative proposal (demo)",
   "platformRoleGovernanceApproverName": "Governance Approver",
   "platformRoleGovernanceApproverPurpose": "Second-party approval for hypothetical high-risk proposals — does not grant other platform privileges.",
-  "platformWorkflowOutcomeAuditPersistFailure": "Domain change may have occurred, but audit append failed (in-memory demo limitation)."
+  "platformWorkflowOutcomeAuditPersistFailure": "Domain change may have occurred, but audit append failed (in-memory demo limitation).",
+  "paymentStatusPending": "Payment is pending on the server.",
+  "paymentStatusHeld": "Payment is held on the server. This is not settlement.",
+  "paymentStatusFailed": "Payment failed on the server.",
+  "paymentStatusReleased": "The payment hold was released on the server.",
+  "paymentStatusUnknown": "The server returned an unrecognized payment status."
 }
