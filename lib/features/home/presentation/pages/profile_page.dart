@@ -308,6 +308,18 @@ class _ProfileBody extends StatelessWidget {
                       contentPadding:
                           const EdgeInsets.symmetric(horizontal: 8),
                       leading: Icon(
+                        Icons.account_balance_wallet_outlined,
+                        color: colorScheme.primary,
+                      ),
+                      title: Text(l10n.walletTitle),
+                      subtitle: Text(l10n.profileWalletSubtitle),
+                      trailing: const Icon(Icons.chevron_right_rounded),
+                      onTap: () => context.pushNamed(RouteNames.wallet),
+                    ),
+                    ListTile(
+                      contentPadding:
+                          const EdgeInsets.symmetric(horizontal: 8),
+                      leading: Icon(
                         Icons.favorite_border_rounded,
                         color: colorScheme.primary,
                       ),

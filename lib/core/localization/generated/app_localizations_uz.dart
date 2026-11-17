@@ -6542,4 +6542,73 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get paymentStatusUnknown =>
       'Server notanish to‘lov holatini qaytardi.';
+
+  @override
+  String get walletTitle => 'Hamyon';
+
+  @override
+  String get profileWalletSubtitle => 'Balans va to‘lovlar';
+
+  @override
+  String get walletAvailableBalance => 'Mavjud balans';
+
+  @override
+  String get walletHoldBalance => 'Ushlab turilgan';
+
+  @override
+  String get walletPendingBalance => 'Kutilayotgan';
+
+  @override
+  String get walletCurrencyLabel => 'Valyuta';
+
+  @override
+  String get walletStatusLabel => 'Hamyon holati';
+
+  @override
+  String get walletStatusActive => 'Faol';
+
+  @override
+  String get walletStatusFrozen => 'Muzlatilgan';
+
+  @override
+  String get walletStatusUnknown => 'Noma’lum';
+
+  @override
+  String walletAmountUzs(String amount) {
+    return '$amount so‘m';
+  }
+
+  @override
+  String get walletRefreshAction => 'Yangilash';
+
+  @override
+  String get walletRetryAction => 'Qayta urinish';
+
+  @override
+  String get walletSignInTitle => 'Hamyonni ko‘rish uchun tizimga kiring';
+
+  @override
+  String get walletSignInMessage =>
+      'Balansingiz maxfiy va faqat tizimga kirgan hisobingiz uchun yuklanadi.';
+
+  @override
+  String get walletNotFoundTitle => 'Hamyon hali yo‘q';
+
+  @override
+  String get walletNotFoundMessage => 'Bu hisobga hali hamyon bog‘lanmagan.';
+
+  @override
+  String get walletUnavailableTitle => 'Hamyon vaqtincha mavjud emas';
+
+  @override
+  String get walletUnavailableMessage =>
+      'Hamyonni hozir yuklab bo‘lmadi. Keyinroq qayta urinib ko‘ring.';
+
+  @override
+  String get walletApiNotConfigured =>
+      'Bu build uchun hamyon serveri sozlanmagan.';
+
+  @override
+  String get walletServerValuesNote =>
+      'Balanslar server qanday qaytargan bo‘lsa, aynan shunday ko‘rsatiladi. To‘ldirish va yechib olish hozircha mavjud emas.';
 }

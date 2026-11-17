@@ -6502,4 +6502,74 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get paymentStatusUnknown =>
       'Сервер вернул нераспознанный статус платежа.';
+
+  @override
+  String get walletTitle => 'Кошелёк';
+
+  @override
+  String get profileWalletSubtitle => 'Баланс и платежи';
+
+  @override
+  String get walletAvailableBalance => 'Доступный баланс';
+
+  @override
+  String get walletHoldBalance => 'Удержано';
+
+  @override
+  String get walletPendingBalance => 'Ожидает зачисления';
+
+  @override
+  String get walletCurrencyLabel => 'Валюта';
+
+  @override
+  String get walletStatusLabel => 'Статус кошелька';
+
+  @override
+  String get walletStatusActive => 'Активен';
+
+  @override
+  String get walletStatusFrozen => 'Заморожен';
+
+  @override
+  String get walletStatusUnknown => 'Неизвестно';
+
+  @override
+  String walletAmountUzs(String amount) {
+    return '$amount сум';
+  }
+
+  @override
+  String get walletRefreshAction => 'Обновить';
+
+  @override
+  String get walletRetryAction => 'Повторить';
+
+  @override
+  String get walletSignInTitle => 'Войдите, чтобы увидеть кошелёк';
+
+  @override
+  String get walletSignInMessage =>
+      'Баланс виден только вам и загружается для вашего аккаунта после входа.';
+
+  @override
+  String get walletNotFoundTitle => 'Кошелька пока нет';
+
+  @override
+  String get walletNotFoundMessage =>
+      'К этому аккаунту ещё не привязан кошелёк.';
+
+  @override
+  String get walletUnavailableTitle => 'Кошелёк временно недоступен';
+
+  @override
+  String get walletUnavailableMessage =>
+      'Не удалось загрузить кошелёк. Попробуйте позже.';
+
+  @override
+  String get walletApiNotConfigured =>
+      'Сервер кошелька не настроен для этой сборки.';
+
+  @override
+  String get walletServerValuesNote =>
+      'Балансы показаны точно так, как их передаёт сервер. Пополнение и вывод пока недоступны.';
 }

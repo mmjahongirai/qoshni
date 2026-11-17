@@ -6583,4 +6583,74 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get paymentStatusUnknown =>
       'The server returned an unrecognized payment status.';
+
+  @override
+  String get walletTitle => 'Wallet';
+
+  @override
+  String get profileWalletSubtitle => 'Balance and payments';
+
+  @override
+  String get walletAvailableBalance => 'Available balance';
+
+  @override
+  String get walletHoldBalance => 'Held balance';
+
+  @override
+  String get walletPendingBalance => 'Pending balance';
+
+  @override
+  String get walletCurrencyLabel => 'Currency';
+
+  @override
+  String get walletStatusLabel => 'Wallet status';
+
+  @override
+  String get walletStatusActive => 'Active';
+
+  @override
+  String get walletStatusFrozen => 'Frozen';
+
+  @override
+  String get walletStatusUnknown => 'Unknown';
+
+  @override
+  String walletAmountUzs(String amount) {
+    return '$amount so\'m';
+  }
+
+  @override
+  String get walletRefreshAction => 'Refresh';
+
+  @override
+  String get walletRetryAction => 'Try again';
+
+  @override
+  String get walletSignInTitle => 'Sign in to see your wallet';
+
+  @override
+  String get walletSignInMessage =>
+      'Your balance is private and loads only for your signed-in account.';
+
+  @override
+  String get walletNotFoundTitle => 'No wallet yet';
+
+  @override
+  String get walletNotFoundMessage =>
+      'There is no wallet linked to this account yet.';
+
+  @override
+  String get walletUnavailableTitle => 'Wallet is temporarily unavailable';
+
+  @override
+  String get walletUnavailableMessage =>
+      'We could not load your wallet right now. Please try again later.';
+
+  @override
+  String get walletApiNotConfigured =>
+      'Wallet server is not configured for this build.';
+
+  @override
+  String get walletServerValuesNote =>
+      'Balances are shown exactly as the server reports them. Top-ups and withdrawals are not available yet.';
 }

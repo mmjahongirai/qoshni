@@ -11,6 +11,7 @@ abstract final class RoutePaths {
   static const String profile = '/profile';
   static const String authSignIn = '/profile/sign-in';
   static const String authSessions = '/profile/sessions';
+  static const String wallet = '/profile/wallet';
   static const String cart = '/cart';
   static const String checkout = '/checkout';
   static const String demoOrderConfirmation = '/order/demo-confirmation';
@@ -204,6 +205,7 @@ abstract final class RouteNames {
   static const String profile = 'profile';
   static const String authSignIn = 'authSignIn';
   static const String authSessions = 'authSessions';
+  static const String wallet = 'wallet';
   static const String cart = 'cart';
   static const String checkout = 'checkout';
   static const String demoOrderConfirmation = 'demoOrderConfirmation';
