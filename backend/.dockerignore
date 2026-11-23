@@ -1,0 +1,18 @@
+# Keep secrets, local data, and dev artifacts out of the image build context.
+.env
+.env.*
+!.env.example
+.local_dev/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+tests/
+Dockerfile
+.dockerignore
