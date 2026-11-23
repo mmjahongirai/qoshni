@@ -17,6 +17,22 @@ Any host that builds a Dockerfile works (for example Render or Railway
 "Docker" services). Point the service at `backend/Dockerfile` with
 `backend` as the root/context directory.
 
+## Render (chosen host)
+
+`render.yaml` at the repository root is a Render Blueprint for one Docker
+web service, `qoshni-backend` (Frankfurt, free plan, health check
+`/api/v1/health`, rebuilds only on `backend/**` changes). It sets the
+non-secret production variables and lets Render generate
+`QOSHNI_AUTH_SECRET_DIGEST_KEY`. No database is attached.
+
+To deploy (done by the account owner in the Render dashboard):
+
+1. New → Blueprint → connect the GitHub repository and pick the branch.
+2. Review the `qoshni-backend` service and apply.
+3. Check `https://<service>.onrender.com/api/v1/health` returns `"status": "ok"`.
+
+The free plan sleeps when idle; pick a paid plan before real traffic.
+
 ## Health check
 
 `GET /api/v1/health` (also `GET /health`) returns
